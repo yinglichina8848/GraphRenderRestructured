@@ -12,3 +12,4 @@ docs/doxygen/
 .DS_Store
 Thumbs.db
 
+.aider*
