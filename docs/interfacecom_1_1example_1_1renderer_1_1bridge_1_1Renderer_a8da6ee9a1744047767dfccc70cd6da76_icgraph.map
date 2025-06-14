@@ -1,0 +1,8 @@
+<map id="com.example.renderer.bridge.Renderer.drawTriangle" name="com.example.renderer.bridge.Renderer.drawTriangle">
+<area shape="rect" id="node1" title=" " alt="" coords="681,85,900,126"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8" title=" " alt="" coords="347,15,601,57"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44" title=" " alt="" coords="363,85,585,126"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderertest_1_1adapter_1_1LegacyRendererAdapterTest.html#a965d6ebc402e8bdd074b119ff4164af8" title=" " alt="" coords="315,151,633,207"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a785672431f7951f8d26c27fece370ad8" title=" " alt="" coords="5,5,267,61"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a824f4b3a890ebe7d42c00a5c892223c3" title=" " alt="" coords="25,86,247,127"/>
+</map>
