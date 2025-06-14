@@ -1,0 +1,14 @@
+# Java / Maven
+/target/
+/.idea/
+/*.iml
+*.class
+*.log
+
+# Doxygen HTML
+docs/doxygen/
+
+# System
+.DS_Store
+Thumbs.db
+
