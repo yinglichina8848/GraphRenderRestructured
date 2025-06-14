@@ -25,7 +25,8 @@ public class JSONExportVisitor implements ExportVisitor {
 
     @Override
     public void visitEllipse(Ellipse e) {
-        System.out.printf("{\"type\":\"ellipse\", \"x\":%d, \"y\":%d, \"rx\":%d, \"ry\":%d}\n", e.getX(), e.getY(), e.getX(), e.getY());
+        System.out.printf("{\"type\":\"ellipse\", \"x\":%d, \"y\":%d, \"rx\":%d, \"ry\":%d}\n", 
+            e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);
     }
 
     @Override
