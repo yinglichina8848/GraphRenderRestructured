@@ -117,4 +117,4 @@
     
 ## 📄 项目文档
 
-Doxygen 生成的完整 API 文档见：[点击查看](https://yinglichina8848.github.io/GraphRenderRestructured/docs/index.html)
+Doxygen 生成的完整 API 文档见：[点击查看](https://yinglichina8848.github.io/GraphRenderRestructured/)
