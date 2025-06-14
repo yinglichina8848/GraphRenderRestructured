@@ -1,7 +1,0 @@
-<map id="com.example.renderer.bridge.Renderer" name="com.example.renderer.bridge.Renderer">
-<area shape="rect" id="node1" title=" " alt="" coords="377,5,596,141"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html" title="LegacyRendererAdapter 将旧版 LegacyRenderer 适配到新的 Renderer 接口， 使得旧代码可以在新系统中复用。" alt="" coords="5,189,232,340"/>
-<area shape="rect" id="node3" title=" " alt="" coords="256,197,475,333"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html" title=" " alt="" coords="499,189,717,340"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html" title=" " alt="" coords="742,189,954,340"/>
-</map>
