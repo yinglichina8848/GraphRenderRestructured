@@ -1,0 +1,3 @@
+<map id="com.example.renderer.legacy.LegacyRenderer" name="com.example.renderer.legacy.LegacyRenderer">
+<area shape="rect" id="node1" title="LegacyRenderer 是一个老旧的图形绘制类， 它有自己专门的方法绘制各类图形，但不符合新的 Renderer 接口。" alt="" coords="5,5,224,141"/>
+</map>
