@@ -5,7 +5,7 @@
  * @date 2025-06-15
  * @lastModified 2025-06-15
  */
-package com.example.renderertest.bridge;
+package com.example.renderer.bridge;
 
 import com.example.renderer.bridge.SwingRenderer;
 import org.junit.jupiter.api.BeforeEach;
