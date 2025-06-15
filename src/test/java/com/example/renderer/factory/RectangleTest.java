@@ -69,6 +69,56 @@ public class RectangleTest {
     }
 
     @Test
+    public void testCreate_NegativeWidth() {
+        assertThrows(IllegalArgumentException.class, 
+            () -> new Rectangle(0, 0, -1, 10),
+            "Should throw for negative width");
+    }
+
+    @Test
+    public void testCreate_NegativeHeight() {
+        assertThrows(IllegalArgumentException.class,
+            () -> new Rectangle(0, 0, 10, -1),
+            "Should throw for negative height");
+    }
+
+    @Test
+    public void testMove_ExtremeValues() {
+        Rectangle rect = new Rectangle(0, 0, 10, 10);
+        rect.move(Integer.MAX_VALUE, Integer.MIN_VALUE);
+        assertEquals(Integer.MAX_VALUE, rect.getX());
+        assertEquals(Integer.MIN_VALUE, rect.getY());
+    }
+
+    @Test
+    public void testMove_ZeroMovement() {
+        Rectangle rect = new Rectangle(10, 20, 30, 40);
+        rect.move(0, 0);
+        assertEquals(10, rect.getX());
+        assertEquals(20, rect.getY());
+    }
+
+    @Test
+    public void testGetDimensions_AfterCreation() {
+        Rectangle rect = new Rectangle(5, 10, 15, 20);
+        assertAll("Dimensions",
+            () -> assertEquals(5, rect.getX()),
+            () -> assertEquals(10, rect.getY()),
+            () -> assertEquals(15, rect.getWidth()),
+            () -> assertEquals(20, rect.getHeight())
+        );
+    }
+
+    @Test
+    public void testRender_AfterMoving() {
+        Rectangle rect = new Rectangle(10, 20, 30, 40);
+        rect.move(5, -5);
+        Renderer mockRenderer = mock(Renderer.class);
+        rect.render(mockRenderer);
+        verify(mockRenderer).drawRectangle(15, 15, 30, 40);
+    }
+
+    @Test
     public void testAcceptVisitor() {
         Rectangle rect = new Rectangle(10, 20, 30, 40);
         ExportVisitor mockVisitor = mock(ExportVisitor.class);
