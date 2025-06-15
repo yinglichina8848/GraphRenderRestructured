@@ -1,9 +1,21 @@
 /**
- * AddShapeCommand
- *
+ * 添加图形命令类，实现了命令模式。
+ * 
+ * <p>封装了添加图形到列表的操作，支持撤销功能。
+ * 属于具体命令(Concrete Command)角色。</p>
+ * 
+ * <p>使用示例：
+ * <pre>{@code
+ * List<Shape> shapes = new ArrayList<>();
+ * Command cmd = new AddShapeCommand(shapes, new Circle(10,10,5));
+ * cmd.execute(); // 添加图形
+ * cmd.undo();   // 移除图形
+ * }</pre>
+ * 
+ * @see Command 命令接口
+ * @see Shape 图形接口
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.command;
 

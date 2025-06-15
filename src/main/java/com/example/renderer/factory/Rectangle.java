@@ -1,9 +1,23 @@
 /**
- * Rectangle
- *
+ * 矩形图形实现类。
+ * 
+ * <p>表示一个矩形图形，包含以下属性：
+ * <ul>
+ *   <li>x,y: 左上角坐标</li>
+ *   <li>width: 宽度(必须>0)</li>
+ *   <li>height: 高度(必须>0)</li>
+ * </ul>
+ * 
+ * <p>实现了Shape接口的所有方法，包括：
+ * <ul>
+ *   <li>render(): 使用渲染器绘制矩形</li>
+ *   <li>move(): 移动矩形位置</li>
+ *   <li>accept(): 访问者模式支持</li>
+ * </ul>
+ * 
+ * @see Shape 图形接口
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.factory;
 import com.example.renderer.bridge.Renderer;

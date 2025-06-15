@@ -1,9 +1,23 @@
 /**
- * Triangle
- *
+ * 三角形图形实现类。
+ * 
+ * <p>表示一个由三个顶点定义的三角形图形，包含以下属性：
+ * <ul>
+ *   <li>(x1,y1): 第一个顶点坐标</li>
+ *   <li>(x2,y2): 第二个顶点坐标</li>
+ *   <li>(x3,y3): 第三个顶点坐标</li>
+ * </ul>
+ * 
+ * <p>实现了Shape接口的所有方法：
+ * <ul>
+ *   <li>render(): 使用渲染器绘制三角形</li>
+ *   <li>move(): 移动所有顶点</li>
+ *   <li>accept(): 访问者模式支持</li>
+ * </ul>
+ * 
+ * @see Shape 图形接口
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.factory;
 
