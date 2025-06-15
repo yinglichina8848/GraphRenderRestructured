@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 
 import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * SwingRenderer 的单元测试。

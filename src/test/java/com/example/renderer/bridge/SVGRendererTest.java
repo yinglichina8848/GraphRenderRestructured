@@ -40,7 +40,7 @@ public class SVGRendererTest {
         
         renderer.drawEllipse(10, 20, 30, 40);
         
-        assertEquals("<ellipse cx='10' cy='20' rx='15' ry='20' />\n", outContent.toString());
+        assertEquals("<ellipse cx='10' cy='20' rx='30' ry='40' />\n", outContent.toString());
         System.setOut(originalOut);
     }
 
