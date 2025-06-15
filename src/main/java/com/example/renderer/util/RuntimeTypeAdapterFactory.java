@@ -1,11 +1,22 @@
-/**
- * RuntimeTypeAdapterFactory
- *
- * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
- */
 package com.example.renderer.util;
+
+/**
+ * RuntimeTypeAdapterFactory是Gson的类型适配器工厂，支持运行时多态类型的序列化/反序列化。
+ * 
+ * <p>主要用于解决Gson默认不支持多态类型的问题，通过类型字段(typeFieldName)来区分具体子类。
+ * 
+ * <p>典型用法：
+ * <pre>
+ * RuntimeTypeAdapterFactory&lt;Shape&gt; adapterFactory = 
+ *     RuntimeTypeAdapterFactory.of(Shape.class, "type")
+ *         .registerSubtype(Circle.class, "Circle")
+ *         .registerSubtype(Rectangle.class, "Rectangle");
+ * </pre>
+ * 
+ * @see Gson
+ * @author liying
+ * @since 2025-06-14
+ */
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

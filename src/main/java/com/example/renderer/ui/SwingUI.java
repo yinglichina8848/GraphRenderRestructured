@@ -1,11 +1,28 @@
-/**
- * SwingUI
- *
- * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
- */
 package com.example.renderer.ui;
+
+/**
+ * SwingUI是图形渲染系统的主界面，使用Swing实现。
+ * 
+ * <p>主要功能组件：
+ * <ul>
+ *   <li>绘图面板(DrawingPanel) - 显示图形</li>
+ *   <li>控制按钮 - 添加各种图形</li>
+ *   <li>撤销/重做功能 - 通过UndoManager实现</li>
+ *   <li>文件操作 - 保存/加载图形数据</li>
+ * </ul>
+ * 
+ * <p>设计模式应用：
+ * <ul>
+ *   <li>命令模式 - 通过Command接口实现操作封装</li>
+ *   <li>桥接模式 - 通过Renderer接口分离渲染逻辑</li>
+ *   <li>单例模式 - 使用PersistenceManager管理持久化</li>
+ * </ul>
+ * 
+ * @see DrawingPanel
+ * @see UndoManager
+ * @author liying
+ * @since 2025-06-14
+ */
 
 import javax.swing.*;
 import java.awt.*;

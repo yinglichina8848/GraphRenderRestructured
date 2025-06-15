@@ -1,11 +1,24 @@
-/**
- * JSONExportVisitor
- *
- * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
- */
 package com.example.renderer.visitor;
+
+/**
+ * JSONExportVisitor实现了将图形导出为JSON格式的访问者。
+ * 
+ * <p>作为访问者模式的具体实现，它为每种图形类型提供了专门的visit方法，
+ * 输出符合以下格式的JSON字符串：
+ * <pre>
+ * {
+ *   "type": "circle",
+ *   "x": 100,
+ *   "y": 100,
+ *   "r": 50
+ * }
+ * </pre>
+ * 
+ * @see ExportVisitor
+ * @see Shape#accept(ExportVisitor)
+ * @author liying
+ * @since 2025-06-14
+ */
 
 import com.example.renderer.factory.Circle;
 import com.example.renderer.factory.Rectangle;

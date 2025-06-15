@@ -1,6 +1,20 @@
 package com.example.renderer.bridge;
 
-
+/**
+ * Renderer接口定义了图形渲染的基本操作。
+ * 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。
+ * 
+ * <p>实现类需要提供以下图形的绘制能力：
+ * <ul>
+ *   <li>圆形</li>
+ *   <li>矩形</li> 
+ *   <li>椭圆</li>
+ *   <li>三角形</li>
+ * </ul>
+ * 
+ * @see SwingRenderer
+ * @see SVGRenderer
+ */
 public interface Renderer {
     void drawCircle(int x, int y, int radius);
     void drawRectangle(int x, int y, int width, int height);

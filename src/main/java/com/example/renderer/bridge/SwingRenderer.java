@@ -1,11 +1,21 @@
-/**
- * SwingRenderer
- *
- * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
- */
 package com.example.renderer.bridge;
+
+/**
+ * SwingRenderer实现了使用Java Swing进行图形渲染。
+ * 作为Renderer接口的具体实现，它使用Graphics2D进行实际绘制。
+ * 
+ * <p>该类主要特点：
+ * <ul>
+ *   <li>使用蓝色(BLUE)作为默认绘制颜色</li>
+ *   <li>使用2像素宽的线条</li>
+ *   <li>需要先调用setGraphics()设置绘图上下文</li>
+ * </ul>
+ * 
+ * @see Renderer
+ * @see Graphics2D
+ * @author liying
+ * @since 2025-06-14
+ */
 
 import java.awt.Graphics2D;
 import java.awt.Polygon;
