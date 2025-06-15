@@ -103,9 +103,8 @@ public class PersistenceManagerTest {
         for (int i = 0; i < threadCount; i++) {
             futures.add(executor.submit(() -> {
                 PersistenceManager pm = PersistenceManager.getInstance();
-                assertDoesNotThrow(() -> {
-                    pm.saveShapesToFile(List.of(new Circle(0,0,1)), "concurrent_test.json");
-                });
+                assertDoesNotThrow((org.junit.jupiter.api.function.Executable) () -> 
+                    pm.saveShapesToFile(List.of(new Circle(0,0,1)), "concurrent_test.json"));
             }));
         }
 
