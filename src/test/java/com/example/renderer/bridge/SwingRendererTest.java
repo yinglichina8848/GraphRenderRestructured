@@ -33,8 +33,34 @@ public class SwingRendererTest {
     public void testDrawCircle_DelegatesToGraphicsDrawOval() {
         int x = 10, y = 20, radius = 30;
         renderer.drawCircle(x, y, radius);
-
         verify(mockGraphics).drawOval(x - radius, y - radius, radius * 2, radius * 2);
+    }
+
+    // 边界值测试
+    @Test
+    public void testDrawCircle_InvalidRadius() {
+        assertThrows(IllegalArgumentException.class, () -> 
+            renderer.drawCircle(10, 10, -1));
+    }
+
+    @Test
+    public void testDrawCircle_MaxRadius() {
+        int x = Integer.MAX_VALUE/2, y = Integer.MAX_VALUE/2;
+        int radius = Integer.MAX_VALUE/2 - 1;
+        renderer.drawCircle(x, y, radius);
+        verify(mockGraphics).drawOval(1, 1, Integer.MAX_VALUE-2, Integer.MAX_VALUE-2);
+    }
+
+    @Test
+    public void testDrawRectangle_ExtremeCoordinates() {
+        renderer.drawRectangle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
+        verify(mockGraphics).drawRect(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
+    }
+
+    @Test
+    public void testDrawTriangle_DegenerateTriangle() {
+        renderer.drawTriangle(0, 0, 0, 0, 0, 0);
+        verify(mockGraphics).drawPolygon(any());
     }
 
     @Test
