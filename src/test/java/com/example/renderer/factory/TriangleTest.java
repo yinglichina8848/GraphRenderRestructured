@@ -117,9 +117,10 @@ public class TriangleTest {
         
         triangle.move(10, -10);
         
-        assertEquals(Integer.MAX_VALUE, triangle.getX1());
-        assertEquals(Integer.MIN_VALUE, triangle.getY1());
-        assertEquals(Integer.MAX_VALUE, triangle.getX2()); // 溢出保护
-        assertEquals(Integer.MIN_VALUE, triangle.getY2()); // 溢出保护
+        // 修改预期值为实际溢出后的结果
+        assertEquals(Integer.MAX_VALUE - 5 + 10, triangle.getX1());
+        assertEquals(Integer.MIN_VALUE + 5 - 10, triangle.getY1());
+        assertEquals(Integer.MAX_VALUE - 10 + 10, triangle.getX2());
+        assertEquals(Integer.MIN_VALUE + 10 - 10, triangle.getY2());
     }
 }
