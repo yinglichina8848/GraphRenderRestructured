@@ -64,6 +64,19 @@ public class SwingUI extends JFrame {
     private DrawingPanel drawingPanel;  // 新增绘图面板变量
 
 
+    /**
+     * 创建并初始化Swing图形用户界面。
+     * 
+     * <p>初始化内容包括：
+     * <ul>
+     *   <li>设置窗口标题和大小</li>
+     *   <li>创建绘图面板</li>
+     *   <li>添加各种图形按钮</li>
+     *   <li>设置按钮事件监听器</li>
+     *   <li>添加撤销/重做功能</li>
+     *   <li>添加文件保存/加载功能</li>
+     * </ul>
+     */
     public SwingUI() {
         setTitle("图形渲染系统 - Swing 可视化");
         setSize(800, 600);
@@ -91,7 +104,9 @@ public class SwingUI extends JFrame {
         panel.add(btnUndo);
         panel.add(btnRedo);
 
+        // 添加圆形按钮事件处理
         btnCircle.addActionListener(e -> {
+            // 创建圆形实例，位置和半径根据已有图形数量动态调整
             Circle c = new Circle(100 + shapes.size() * 10, 100, 30 + shapes.size() * 5);
             AddShapeCommand cmd = new AddShapeCommand(shapes, c);
             undoManager.executeCommand(cmd);

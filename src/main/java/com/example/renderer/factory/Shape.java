@@ -47,6 +47,19 @@ public interface Shape {
      * @param renderer 用于绘制图形的渲染器实现，不能为null
      * @throws NullPointerException 如果renderer参数为null
      */
+    /**
+     * 使用指定的渲染器绘制图形。
+     * 
+     * <p>实现类应确保：
+     * <ul>
+     *   <li>参数renderer不为null</li>
+     *   <li>正确调用renderer的对应绘制方法</li>
+     *   <li>处理渲染器抛出的异常</li>
+     * </ul>
+     * 
+     * @param renderer 用于绘制图形的渲染器实现
+     * @throws NullPointerException 如果renderer为null
+     */
     void render(Renderer renderer);
 
     /**

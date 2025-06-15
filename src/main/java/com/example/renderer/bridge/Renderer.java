@@ -56,7 +56,19 @@ public interface Renderer {
  * @since 1.0
  */
 class SVGRenderer implements Renderer {
+    /**
+     * 绘制圆形并输出SVG格式字符串。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
+    @Override
     public void drawCircle(int x, int y, int radius) {
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive (was " + radius + ")");
+        }
         System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", x, y, radius);
     }
     public void drawRectangle(int x, int y, int width, int height) {

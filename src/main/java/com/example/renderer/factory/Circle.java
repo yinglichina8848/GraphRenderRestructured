@@ -77,8 +77,22 @@ public class Circle implements Shape {
         y += dy;
     }
 
+    /**
+     * 获取圆心x坐标
+     * @return 圆心x坐标值
+     */
     public int getX() { return x; }
+
+    /**
+     * 获取圆心y坐标
+     * @return 圆心y坐标值
+     */
     public int getY() { return y; }
+
+    /**
+     * 获取圆形半径
+     * @return 圆形半径值
+     */
     public int getRadius() { return radius; }
 
     /**
