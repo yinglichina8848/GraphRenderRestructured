@@ -1,12 +1,14 @@
 // 5. RemoteRendererProxy.java
-/**
- * RemoteRendererProxy
- *
- * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
- */
 package com.example.renderer.proxy;
+
+/**
+ * RemoteRendererProxy是远程渲染器的代理类，实现了代理模式。
+ * 在调用实际渲染方法前后添加日志记录等控制逻辑。
+ * 
+ * @see Renderer
+ * @author liying
+ * @since 2025-06-14
+ */
 
 import com.example.renderer.bridge.Renderer;
 

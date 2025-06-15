@@ -35,10 +35,20 @@ public class PersistenceManager {
                 .create();
     }
 
+    /**
+     * 获取PersistenceManager单例实例
+     * @return 唯一的PersistenceManager实例
+     */
     public static PersistenceManager getInstance() {
         return INSTANCE;
     }
 
+    /**
+     * 将图形列表保存到指定文件
+     * @param shapes 要保存的图形列表
+     * @param filePath 目标文件路径
+     * @throws IOException 如果文件写入失败
+     */
     public void saveShapesToFile(List<com.example.renderer.factory.Shape> shapes, String filePath) throws IOException {
         try (FileWriter writer = new FileWriter(filePath)) {
             gson.toJson(shapes, writer);

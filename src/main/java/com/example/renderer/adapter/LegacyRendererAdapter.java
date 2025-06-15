@@ -11,8 +11,13 @@ import com.example.renderer.bridge.Renderer;
 import com.example.renderer.legacy.LegacyRenderer;
 
 /**
- * LegacyRendererAdapter 将旧版 LegacyRenderer 适配到新的 Renderer 接口，
- * 使得旧代码可以在新系统中复用。
+ * LegacyRendererAdapter实现了适配器模式，将旧版LegacyRenderer接口
+ * 适配到新的Renderer接口，使得旧代码可以在新系统中复用。
+ * 
+ * <p>适配器模式在这里用于解决新旧接口不兼容的问题。</p>
+ * 
+ * @see Renderer
+ * @see LegacyRenderer
  */
 public class LegacyRendererAdapter implements Renderer {
 
