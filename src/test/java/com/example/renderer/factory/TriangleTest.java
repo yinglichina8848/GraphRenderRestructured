@@ -94,4 +94,32 @@ public class TriangleTest {
             Integer.MAX_VALUE - 1, Integer.MIN_VALUE + 1,
             Integer.MAX_VALUE - 2, Integer.MIN_VALUE + 2);
     }
+
+    @Test
+    public void testCreate_DegenerateTriangle() {
+        // 三个点在同一直线上
+        Triangle triangle = new Triangle(0, 0, 5, 5, 10, 10);
+        assertDoesNotThrow(() -> triangle.render(mock(Renderer.class)));
+    }
+
+    @Test
+    public void testCreate_AllPointsSame() {
+        Triangle triangle = new Triangle(10, 10, 10, 10, 10, 10);
+        assertDoesNotThrow(() -> triangle.render(mock(Renderer.class)));
+    }
+
+    @Test
+    public void testMove_ExtremeValuesWithOverflow() {
+        Triangle triangle = new Triangle(
+            Integer.MAX_VALUE - 5, Integer.MIN_VALUE + 5,
+            Integer.MAX_VALUE - 10, Integer.MIN_VALUE + 10,
+            Integer.MAX_VALUE - 15, Integer.MIN_VALUE + 15);
+        
+        triangle.move(10, -10);
+        
+        assertEquals(Integer.MAX_VALUE, triangle.getX1());
+        assertEquals(Integer.MIN_VALUE, triangle.getY1());
+        assertEquals(Integer.MAX_VALUE, triangle.getX2()); // 溢出保护
+        assertEquals(Integer.MIN_VALUE, triangle.getY2()); // 溢出保护
+    }
 }

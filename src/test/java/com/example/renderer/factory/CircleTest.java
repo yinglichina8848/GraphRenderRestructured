@@ -90,4 +90,27 @@ public class CircleTest {
         circle.render(mockRenderer);
         verify(mockRenderer).drawCircle(5, 5, 5);
     }
+
+    @Test
+    public void testCreate_MinRadius() {
+        Circle circle = new Circle(10, 10, 1);
+        assertEquals(1, circle.getRadius());
+    }
+
+    @Test
+    public void testMove_ExtremeNegativeValues() {
+        Circle circle = new Circle(-100, -100, 10);
+        circle.move(Integer.MIN_VALUE + 100, Integer.MIN_VALUE + 100);
+        assertEquals(Integer.MIN_VALUE, circle.getX());
+        assertEquals(Integer.MIN_VALUE, circle.getY());
+    }
+
+    @Test
+    public void testRender_AfterScaling() {
+        Circle circle = new Circle(10, 10, 5);
+        circle = new Circle(10, 10, 10); // 模拟缩放
+        Renderer mockRenderer = mock(Renderer.class);
+        circle.render(mockRenderer);
+        verify(mockRenderer).drawCircle(10, 10, 10);
+    }
 }

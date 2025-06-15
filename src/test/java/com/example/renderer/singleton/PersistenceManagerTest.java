@@ -130,4 +130,31 @@ public class PersistenceManagerTest {
         assertThrows(IllegalArgumentException.class, () -> 
             PersistenceManager.getInstance().saveShapesToFile(List.of(), ""));
     }
+
+    @Test
+    public void testLoadShapes_CorruptedFile() throws IOException {
+        // 创建损坏的JSON文件
+        File tempFile = File.createTempFile("corrupted", ".json");
+        try (FileWriter writer = new FileWriter(tempFile)) {
+            writer.write("{invalid json}");
+        }
+        
+        assertThrows(JsonParseException.class, () -> 
+            PersistenceManager.getInstance().loadShapesFromFile(tempFile.getAbsolutePath()));
+        
+        tempFile.delete();
+    }
+
+    @Test
+    public void testSaveShapes_ReadOnlyFile() throws IOException {
+        File tempFile = File.createTempFile("readonly", ".json");
+        tempFile.setReadOnly();
+        
+        assertThrows(IOException.class, () -> 
+            PersistenceManager.getInstance().saveShapesToFile(
+                List.of(new Circle(0,0,1)), 
+                tempFile.getAbsolutePath()));
+        
+        tempFile.delete();
+    }
 }

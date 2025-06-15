@@ -127,4 +127,29 @@ public class RectangleTest {
         
         verify(mockVisitor).visitRectangle(rect);
     }
+
+    @Test
+    public void testCreate_MinDimensions() {
+        Rectangle rect = new Rectangle(0, 0, 1, 1);
+        assertEquals(1, rect.getWidth());
+        assertEquals(1, rect.getHeight());
+    }
+
+    @Test
+    public void testMove_ExtremeNegativeValues() {
+        Rectangle rect = new Rectangle(-100, -100, 50, 50);
+        rect.move(Integer.MIN_VALUE + 100, Integer.MIN_VALUE + 100);
+        assertEquals(Integer.MIN_VALUE, rect.getX());
+        assertEquals(Integer.MIN_VALUE, rect.getY());
+    }
+
+    @Test
+    public void testRender_AfterMultipleMoves() {
+        Rectangle rect = new Rectangle(10, 10, 20, 20);
+        rect.move(5, 5);
+        rect.move(-3, -3);
+        Renderer mockRenderer = mock(Renderer.class);
+        rect.render(mockRenderer);
+        verify(mockRenderer).drawRectangle(12, 12, 20, 20);
+    }
 }
