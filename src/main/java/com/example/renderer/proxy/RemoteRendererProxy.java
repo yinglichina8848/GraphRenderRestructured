@@ -2,12 +2,19 @@
 package com.example.renderer.proxy;
 
 /**
- * RemoteRendererProxy是远程渲染器的代理类，实现了代理模式。
- * 在调用实际渲染方法前后添加日志记录等控制逻辑。
+ * 远程渲染器代理类，实现了代理模式。
  * 
- * @see Renderer
+ * <p>主要功能：
+ * <ul>
+ *   <li>在调用实际渲染方法前后添加日志记录</li>
+ *   <li>控制对真实渲染器的访问</li>
+ *   <li>可以添加额外的网络通信逻辑</li>
+ * </ul>
+ * 
+ * @see Renderer 渲染器接口
+ * @see Proxy 代理模式
  * @author liying
- * @since 2025-06-14
+ * @since 1.0
  */
 
 import com.example.renderer.bridge.Renderer;

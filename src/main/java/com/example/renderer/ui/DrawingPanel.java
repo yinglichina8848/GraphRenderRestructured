@@ -26,6 +26,11 @@ public class DrawingPanel extends JPanel {
     private List<com.example.renderer.factory.Shape> shapes;
     private Renderer renderer;
 
+    /**
+     * 创建绘图面板
+     * @param shapes 要显示的图形列表(非null)
+     * @param renderer 使用的渲染器(非null)
+     */
     public DrawingPanel(List<com.example.renderer.factory.Shape> shapes, Renderer renderer) {
         this.shapes = shapes;
         this.renderer = renderer;

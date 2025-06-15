@@ -77,6 +77,13 @@ public class PersistenceManager {
         }
     }
 
+    /**
+     * 从指定文件加载图形列表
+     * @param filePath 文件路径(非null)
+     * @return 加载的图形列表
+     * @throws IOException 如果文件读取失败
+     * @throws JsonParseException 如果JSON解析失败
+     */
     public List<com.example.renderer.factory.Shape> loadShapesFromFile(String filePath) throws IOException {
         try (FileReader reader = new FileReader(filePath)) {
             // 使用数组形式反序列化为 List

@@ -29,6 +29,13 @@ public class SwingRenderer implements Renderer {
         g.setStroke(new java.awt.BasicStroke(2));
     }
 
+    /**
+     * 绘制圆形
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标 
+     * @param radius 半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
     @Override
     public void drawCircle(int x, int y, int radius) {
         if (g != null) {

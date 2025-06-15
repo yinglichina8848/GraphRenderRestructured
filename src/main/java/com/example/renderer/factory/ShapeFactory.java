@@ -35,6 +35,14 @@ public interface ShapeFactory {
  * @since 1.0
  */
 class BasicShapeFactory implements ShapeFactory {
+    /**
+     * 创建圆形实例
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 半径(必须>0)
+     * @return 新创建的圆形实例
+     * @throws IllegalArgumentException 如果半径不合法
+     */
     public Shape createCircle(int x, int y, int radius) {
         return new Circle(x, y, radius);
     }

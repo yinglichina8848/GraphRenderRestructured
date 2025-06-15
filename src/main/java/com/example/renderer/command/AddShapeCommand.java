@@ -28,6 +28,12 @@ public class AddShapeCommand implements Command {
     private final List<Shape> shapes;
     private final Shape shape;
 
+    /**
+     * 创建添加图形命令实例
+     * @param shapes 目标图形列表(非null)
+     * @param shape 要添加的图形(非null)
+     * @throws NullPointerException 如果参数为null
+     */
     public AddShapeCommand(List<Shape> shapes, Shape shape) {
         this.shapes = shapes;
         this.shape = shape;

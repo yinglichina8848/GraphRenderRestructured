@@ -50,6 +50,7 @@ public class Rectangle implements Shape {
         y += dy;
     }
 
+    /** 获取矩形左上角x坐标 */
     public int getX() { return x; }
     public int getY() { return y; }
     public int getWidth() { return width; }
