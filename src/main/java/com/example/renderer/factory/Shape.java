@@ -12,7 +12,22 @@ import com.example.renderer.visitor.ExportVisitor;
 
 
 public interface Shape {
+    /**
+     * 使用指定的渲染器绘制图形
+     * @param renderer 用于绘制图形的渲染器实现
+     */
     void render(Renderer renderer);
+
+    /**
+     * 移动图形的位置
+     * @param dx X轴方向的移动距离
+     * @param dy Y轴方向的移动距离
+     */
     void move(int dx, int dy);
+
+    /**
+     * 接受访问者访问，实现访问者模式
+     * @param visitor 用于处理图形的访问者对象
+     */
     void accept(ExportVisitor visitor);
 }
