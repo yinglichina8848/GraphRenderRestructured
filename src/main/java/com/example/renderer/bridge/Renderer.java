@@ -45,8 +45,8 @@ class SVGRenderer implements Renderer {
     }
 
     @Override
-    public void drawEllipse(int x, int y, int width, int height) {
-        System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width / 2, height / 2);
+    public void drawEllipse(int x, int y, int rx, int ry) {
+        System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, rx, ry);
     }
 
 }
