@@ -6,14 +6,21 @@ package com.example.renderer.bridge;
  * 
  * <p>实现类需要提供以下图形的绘制能力：
  * <ul>
- *   <li>圆形</li>
- *   <li>矩形</li> 
- *   <li>椭圆</li>
- *   <li>三角形</li>
+ *   <li>圆形 - 通过drawCircle方法</li>
+ *   <li>矩形 - 通过drawRectangle方法</li> 
+ *   <li>椭圆 - 通过drawEllipse方法</li>
+ *   <li>三角形 - 通过drawTriangle方法</li>
  * </ul>
  * 
- * @see SwingRenderer
- * @see SVGRenderer
+ * <p>典型用法：
+ * <pre>{@code
+ * Renderer renderer = new SwingRenderer();
+ * renderer.drawCircle(100, 100, 50); // 绘制圆形
+ * }</pre>
+ *
+ * @see SwingRenderer 基于Swing的渲染实现
+ * @see SVGRenderer 基于SVG输出的渲染实现
+ * @since 1.0
  */
 public interface Renderer {
     void drawCircle(int x, int y, int radius);

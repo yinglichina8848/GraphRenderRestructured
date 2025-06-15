@@ -7,9 +7,9 @@ import com.example.renderer.visitor.ExportVisitor;
  * Shape接口定义了所有图形对象的基本行为。
  * 作为图形系统的核心接口，它支持以下操作：
  * <ul>
- *   <li>渲染 - 通过render()方法</li>
- *   <li>移动 - 通过move()方法</li>
- *   <li>访问者模式 - 通过accept()方法</li>
+ *   <li>渲染 - 通过render(Renderer)方法</li>
+ *   <li>移动 - 通过move(int, int)方法</li>
+ *   <li>访问者模式 - 通过accept(ExportVisitor)方法</li>
  * </ul>
  * 所有具体图形类(如圆形、矩形等)都应实现此接口。
  * 
@@ -19,6 +19,22 @@ import com.example.renderer.visitor.ExportVisitor;
  *   <li>访问者模式 - 通过accept方法支持对图形的扩展操作</li>
  *   <li>命令模式 - move方法支持图形位置的变更操作</li>
  * </ul>
+ *
+ * <p>典型实现示例：
+ * <pre>{@code
+ * public class Circle implements Shape {
+ *     public void render(Renderer r) {
+ *         r.drawCircle(x, y, radius);
+ *     }
+ *     // 其他方法实现...
+ * }
+ * }</pre>
+ *
+ * @see Circle 圆形实现
+ * @see Rectangle 矩形实现 
+ * @see Ellipse 椭圆实现
+ * @see Triangle 三角形实现
+ * @since 1.0
  */
 
 

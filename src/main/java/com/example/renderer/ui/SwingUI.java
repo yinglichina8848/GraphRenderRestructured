@@ -6,9 +6,9 @@ package com.example.renderer.ui;
  * <p>主要功能组件：
  * <ul>
  *   <li>绘图面板(DrawingPanel) - 显示图形</li>
- *   <li>控制按钮 - 添加各种图形</li>
- *   <li>撤销/重做功能 - 通过UndoManager实现</li>
- *   <li>文件操作 - 保存/加载图形数据</li>
+ *   <li>控制按钮 - 添加圆形、矩形、椭圆和三角形</li>
+ *   <li>撤销/重做功能 - 通过UndoManager实现命令历史管理</li>
+ *   <li>文件操作 - 通过PersistenceManager实现图形的保存和加载</li>
  * </ul>
  * 
  * <p>设计模式应用：
@@ -16,12 +16,20 @@ package com.example.renderer.ui;
  *   <li>命令模式 - 通过Command接口实现操作封装</li>
  *   <li>桥接模式 - 通过Renderer接口分离渲染逻辑</li>
  *   <li>单例模式 - 使用PersistenceManager管理持久化</li>
+ *   <li>观察者模式 - 图形变化时自动重绘</li>
  * </ul>
+ *
+ * <p>典型使用场景：
+ * <pre>{@code
+ * SwingUI ui = new SwingUI(); // 创建并显示界面
+ * }</pre>
  * 
- * @see DrawingPanel
- * @see UndoManager
+ * @see DrawingPanel 绘图面板实现
+ * @see UndoManager 撤销/重做管理
+ * @see PersistenceManager 持久化管理器
  * @author liying
- * @since 2025-06-14
+ * @since 1.0
+ * @version 1.0.0
  */
 
 import javax.swing.*;
@@ -142,6 +150,20 @@ public class SwingUI extends JFrame {
     // 移除paint()方法重写，完全使用DrawingPanel进行绘制
 
 
+    /**
+     * 保存当前图形列表到文件。
+     * 使用JFileChooser让用户选择保存位置，然后通过PersistenceManager
+     * 将图形列表序列化为JSON格式保存。
+     * 
+     * <p>处理流程：
+     * 1. 显示文件选择对话框
+     * 2. 用户选择保存位置
+     * 3. 调用PersistenceManager保存数据
+     * 4. 显示操作结果提示
+     * 
+     * @throws IOException 如果文件写入失败
+     * @see PersistenceManager#saveShapesToFile(List, String)
+     */
     private void saveShapes() {
         JFileChooser chooser = new JFileChooser();
         int ret = chooser.showSaveDialog(this);
@@ -157,6 +179,23 @@ public class SwingUI extends JFrame {
     }
 
 
+    /**
+     * 从文件加载图形列表。
+     * 使用JFileChooser让用户选择要加载的文件，然后通过PersistenceManager
+     * 从JSON格式反序列化为图形对象列表。
+     * 
+     * <p>处理流程：
+     * 1. 显示文件选择对话框
+     * 2. 用户选择要加载的文件
+     * 3. 调用PersistenceManager加载数据
+     * 4. 清空当前图形列表并添加加载的图形
+     * 5. 刷新绘图面板显示新图形
+     * 6. 显示操作结果提示
+     * 
+     * @throws IOException 如果文件读取失败
+     * @throws JsonParseException 如果JSON解析失败
+     * @see PersistenceManager#loadShapesFromFile(String) 
+     */
     private void loadShapes() {
         JFileChooser chooser = new JFileChooser();
         int ret = chooser.showOpenDialog(this);
