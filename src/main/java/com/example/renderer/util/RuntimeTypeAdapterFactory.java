@@ -92,6 +92,7 @@ public class RuntimeTypeAdapterFactory<T> implements TypeAdapterFactory {
         }
 
         return new TypeAdapter<R>() {
+            @SuppressWarnings("unchecked")
             @Override
             public void write(JsonWriter out, R value) throws IOException {
                 Class<?> srcType = value.getClass();
@@ -105,6 +106,7 @@ public class RuntimeTypeAdapterFactory<T> implements TypeAdapterFactory {
                 Streams.write(jsonObject, out);
             }
 
+            @SuppressWarnings("unchecked")
             @Override
             public R read(JsonReader in) throws IOException {
                 JsonElement jsonElement = Streams.parse(in);
