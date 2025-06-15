@@ -5,7 +5,15 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import static org.junit.jupiter.api.Assertions.*;
+
+public class PersistenceManagerTest {
+    private static final String TEST_FILE = "test_shapes.json";
+    private final File testFile = new File(TEST_FILE);
 
 public class PersistenceManagerTest {
     private static final String TEST_FILE = "test_shapes.json";
@@ -71,12 +79,15 @@ public class PersistenceManagerTest {
             new Rectangle(20, 20, 10, 10),
             new Triangle(0, 0, 10, 0, 5, 10)
         );
-        PersistenceManager.getInstance().saveShapesToFile(shapes, testFile);
-        List<Shape> loaded = PersistenceManager.getInstance().loadShapesFromFile(testFile);
+        PersistenceManager.getInstance().saveShapesToFile(shapes, TEST_FILE);
+        List<Shape> loaded = PersistenceManager.getInstance().loadShapesFromFile(TEST_FILE);
         assertEquals(3, loaded.size());
         assertTrue(loaded.get(0) instanceof Circle);
         assertTrue(loaded.get(1) instanceof Rectangle);
         assertTrue(loaded.get(2) instanceof Triangle);
+        
+        // Cleanup
+        new File(TEST_FILE).delete();
     }
 
     @Test
