@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.function.ThrowingSupplier;
 
 public class PersistenceManagerTest {
     private static final String TEST_FILE = "test_shapes.json";
@@ -111,7 +112,14 @@ public class PersistenceManagerTest {
         }
 
         for (Future<?> future : futures) {
-            assertDoesNotThrow(future::get);
+            //assertDoesNotThrow(future::get);
+            assertDoesNotThrow((ThrowingSupplier<Void>) () -> {
+                future.get();
+                return null;
+            });
+
+
+
         }
         executor.shutdown();
         new File("concurrent_test.json").delete();
