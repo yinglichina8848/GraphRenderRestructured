@@ -18,6 +18,16 @@ import javax.swing.SwingUtilities;
  */
 
 
+/**
+ * 主用户界面类，负责启动图形渲染系统的Swing界面。
+ * 
+ * <p>该类包含程序的主入口点main()方法，使用SwingUtilities.invokeLater()
+ * 确保界面在事件分发线程中创建和显示。</p>
+ * 
+ * @see SwingUI 主界面实现类
+ * @author liying 
+ * @since 1.0
+ */
 public class MainUI {
 
     /**

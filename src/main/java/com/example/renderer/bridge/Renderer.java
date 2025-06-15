@@ -31,6 +31,23 @@ public interface Renderer {
     void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
 }
 
+/**
+ * SVGRenderer实现了将图形渲染为SVG格式字符串输出到控制台。
+ * 
+ * <p>作为Renderer接口的实现，它生成标准的SVG元素字符串：
+ * <ul>
+ *   <li>圆形: &lt;circle&gt; 元素</li>
+ *   <li>矩形: &lt;rect&gt; 元素</li>
+ *   <li>椭圆: &lt;ellipse&gt; 元素</li>
+ *   <li>三角形: &lt;polygon&gt; 元素</li>
+ * </ul>
+ * 
+ * <p>主要用于调试和演示目的，实际应用中可输出到文件或网络。</p>
+ * 
+ * @see Renderer 渲染器接口
+ * @author liying
+ * @since 1.0
+ */
 class SVGRenderer implements Renderer {
     public void drawCircle(int x, int y, int radius) {
         System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", x, y, radius);
