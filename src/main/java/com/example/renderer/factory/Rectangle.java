@@ -55,8 +55,13 @@ public class Rectangle implements Shape {
 
     @Override
     public void move(int dx, int dy) {
-        x += dx;
-        y += dy;
+        // 处理x坐标移动，防止溢出
+        long newX = (long)x + dx;
+        x = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newX));
+        
+        // 处理y坐标移动，防止溢出
+        long newY = (long)y + dy;
+        y = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newY));
     }
 
     /** 获取矩形左上角x坐标 */

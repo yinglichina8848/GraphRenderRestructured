@@ -48,8 +48,16 @@ public class RectangleTest {
     public void testMove_Overflow() {
         Rectangle rect = new Rectangle(Integer.MAX_VALUE - 10, Integer.MIN_VALUE + 10, 20, 20);
         rect.move(20, -20);
+        // 验证x坐标不会超过MAX_VALUE
         assertEquals(Integer.MAX_VALUE, rect.getX());
+        // 验证y坐标不会低于MIN_VALUE
         assertEquals(Integer.MIN_VALUE, rect.getY());
+        
+        // 添加反向溢出的测试
+        rect = new Rectangle(Integer.MIN_VALUE + 10, Integer.MAX_VALUE - 10, 20, 20);
+        rect.move(-20, 20);
+        assertEquals(Integer.MIN_VALUE, rect.getX());
+        assertEquals(Integer.MAX_VALUE, rect.getY());
     }
 
     @Test
