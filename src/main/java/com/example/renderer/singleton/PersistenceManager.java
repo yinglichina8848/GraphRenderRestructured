@@ -1,9 +1,31 @@
 /**
- * PersistenceManager
+ * PersistenceManager 是图形对象的持久化管理器，使用单例模式确保全局唯一实例。
+ * 负责图形的序列化和反序列化，使用GSON库实现JSON格式的持久化。
  *
+ * <p>主要功能：
+ * <ul>
+ *   <li>将图形列表保存到JSON文件</li>
+ *   <li>从JSON文件加载图形列表</li>
+ *   <li>处理多态类型的序列化/反序列化</li>
+ * </ul>
+ * </p>
+ *
+ * <p>使用示例：
+ * <pre>{@code
+ * List<Shape> shapes = ...;
+ * PersistenceManager manager = PersistenceManager.getInstance();
+ * manager.saveShapesToFile(shapes, "shapes.json");
+ * List<Shape> loaded = manager.loadShapesFromFile("shapes.json");
+ * }</pre>
+ * </p>
+ *
+ * <p>线程安全说明：Gson实例是线程安全的，可以并发调用序列化/反序列化方法。</p>
+ *
+ * @see RuntimeTypeAdapterFactory 用于处理多态类型序列化
+ * @see Gson Google的JSON处理库
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
+ * @version 1.0
  */
 package com.example.renderer.singleton;
 

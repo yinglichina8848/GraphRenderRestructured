@@ -2,20 +2,42 @@ package com.example.renderer.util;
 
 /**
  * RuntimeTypeAdapterFactory是Gson的类型适配器工厂，支持运行时多态类型的序列化/反序列化。
- * 
- * <p>主要用于解决Gson默认不支持多态类型的问题，通过类型字段(typeFieldName)来区分具体子类。
- * 
+ * 解决Gson默认不支持多态类型的问题，通过类型字段(typeFieldName)来区分具体子类。
+ *
+ * <p>工作原理：
+ * <ol>
+ *   <li>序列化时添加类型标识字段</li>
+ *   <li>反序列化时根据类型标识字段创建对应子类实例</li>
+ * </ol>
+ * </p>
+ *
  * <p>典型用法：
- * <pre>
- * RuntimeTypeAdapterFactory&lt;Shape&gt; adapterFactory = 
+ * <pre>{@code
+ * RuntimeTypeAdapterFactory<Shape> adapterFactory = 
  *     RuntimeTypeAdapterFactory.of(Shape.class, "type")
- *         .registerSubtype(Circle.class, "Circle")
- *         .registerSubtype(Rectangle.class, "Rectangle");
- * </pre>
- * 
- * @see Gson
+ *         .registerSubtype(Circle.class, "circle")
+ *         .registerSubtype(Rectangle.class, "rectangle");
+ *
+ * Gson gson = new GsonBuilder()
+ *     .registerTypeAdapterFactory(adapterFactory)
+ *     .create();
+ * }</pre>
+ * </p>
+ *
+ * <p>注意事项：
+ * <ul>
+ *   <li>类型字段名称(typeFieldName)必须在JSON中唯一</li>
+ *   <li>所有子类必须提前注册</li>
+ *   <li>子类需要有无参构造函数</li>
+ * </ul>
+ * </p>
+ *
+ * @see <a href="https://github.com/google/gson/blob/master/extras/src/main/java/com/google/gson/typeadapters/RuntimeTypeAdapterFactory.java">
+ *     Gson官方类似实现</a>
+ * @see Gson Google的JSON处理库
  * @author liying
- * @since 2025-06-14
+ * @since 1.0
+ * @version 1.0
  */
 
 import com.google.gson.Gson;
