@@ -11,15 +11,24 @@
  *   <li>文件操作的健壮性（如只读、损坏、特殊字符路径）</li>
  * </ul>
  *
+ * <p><b>测试策略：</b>
+ * <ul>
+ *   <li>使用临时文件进行测试，确保测试隔离性</li>
+ *   <li>每个测试方法都包含完整的清理逻辑</li>
+ *   <li>同时测试正常情况和异常情况</li>
+ * </ul>
+ *
  * <p><b>修改记录：</b>
  * <ul>
  *   <li>2025-04-05 | LiYing | 创建初始版本</li>
- *   <li>2025-04-07 | LiYing | 添加 testLoadShapes_CorruptedFile 和 testSaveShapes_ReadOnlyFile 测试</li>
+ *   <li>2025-04-07 | LiYing | 添加损坏文件和只读文件测试</li>
  *   <li>2025-04-08 | LiYing | 补充完整 Javadoc 注释</li>
+ *   <li>2025-06-15 | LiYing | 增强测试方法文档</li>
  * </ul>
  *
  * @author LiYing
- * @since 2025-04-05
+ * @since 1.0
+ * @version 1.1.0
  */
 package com.example.renderer.singleton;
 
@@ -53,6 +62,29 @@ public class PersistenceManagerTest {
      * </ol>
      *
      * @throws IOException 如果文件读写失败
+     */
+    /**
+     * 测试图形数据的保存和加载功能。
+     * 
+     * <p>验证流程：
+     * <ol>
+     *   <li>创建包含多种图形(Circle, Rectangle, Triangle)的测试列表</li>
+     *   <li>将图形列表保存到临时文件</li>
+     *   <li>从临时文件加载图形列表</li>
+     *   <li>验证加载结果：
+     *     <ul>
+     *       <li>图形数量与保存前一致</li>
+     *       <li>图形类型正确</li>
+     *       <li>图形顺序保持不变</li>
+     *     </ul>
+     *   </li>
+     * </ol>
+     * 
+     * <p>测试文件会在测试完成后自动删除。
+     * 
+     * @throws IOException 如果文件操作失败
+     * @see PersistenceManager#saveShapesToFile(List, String)
+     * @see PersistenceManager#loadShapesFromFile(String)
      */
     @Test
     public void testSaveAndLoadShapes() throws IOException {
@@ -173,6 +205,27 @@ public class PersistenceManagerTest {
      *
      * @throws InterruptedException 如果线程中断
      */
+    /**
+     * 测试多线程环境下PersistenceManager的线程安全性。
+     * 
+     * <p>验证在并发场景下：
+     * <ul>
+     *   <li>不会抛出任何并发异常</li>
+     *   <li>所有线程都能正确完成操作</li>
+     *   <li>文件内容保持一致</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建10个线程的线程池</li>
+     *   <li>每个线程都执行保存操作</li>
+     *   <li>等待所有线程完成</li>
+     *   <li>验证没有抛出异常</li>
+     * </ol>
+     * 
+     * @throws InterruptedException 如果线程被中断
+     * @see ExecutorService
+     */
     @Test
     public void testConcurrentAccess() throws InterruptedException {
         int threadCount = 10;
@@ -216,6 +269,25 @@ public class PersistenceManagerTest {
      * <p>手动构造一个非法 JSON 文件，验证解析失败时是否抛出正确异常。
      *
      * @throws IOException 如果临时文件写入失败
+     */
+    /**
+     * 测试加载损坏的JSON文件时的异常处理。
+     * 
+     * <p>验证当JSON文件格式不正确时：
+     * <ul>
+     *   <li>抛出正确的异常类型(JsonParseException)</li>
+     *   <li>异常消息包含有用的调试信息</li>
+     * </ul>
+     * 
+     * <p>测试步骤：
+     * <ol>
+     *   <li>创建包含非法JSON内容的临时文件</li>
+     *   <li>尝试加载该文件</li>
+     *   <li>验证抛出的异常类型</li>
+     * </ol>
+     * 
+     * @throws IOException 如果临时文件创建失败
+     * @see JsonParseException
      */
     @Test
     public void testLoadShapes_CorruptedFile() throws IOException {
