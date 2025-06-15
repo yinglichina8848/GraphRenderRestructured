@@ -1,9 +1,19 @@
 /**
- * LegacyRendererAdapter
- *
+ * 适配器类，将LegacyRenderer接口适配到新的Renderer接口。
+ * 实现了适配器模式，使旧版渲染器可以在新系统中使用。
+ * 
+ * <p>主要功能：
+ * <ul>
+ *   <li>将drawCircle()适配到drawLegacyCircle()</li>
+ *   <li>将drawRectangle()适配到drawLegacyRectangle()</li>
+ *   <li>将drawTriangle()适配到drawLegacyTriangle()</li>
+ *   <li>将drawEllipse()适配到drawLegacyEllipse()</li>
+ * </ul>
+ * 
+ * @see Renderer
+ * @see LegacyRenderer
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.adapter;
 
