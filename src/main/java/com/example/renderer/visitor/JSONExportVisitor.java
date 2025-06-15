@@ -37,6 +37,21 @@ package com.example.renderer.visitor;
  * @author liying
  * @since 1.0
  * @version 1.0
+ * 
+ * <p>JSON编码说明：
+ * <ul>
+ *   <li>所有输出使用UTF-8编码</li>
+ *   <li>数字值不添加引号</li>
+ *   <li>不进行JSON字符串转义（简单实现）</li>
+ * </ul>
+ * </p>
+ * 
+ * <p>性能优化建议：
+ * <ul>
+ *   <li>对于大批量导出，考虑使用StringBuilder或JSON库</li>
+ *   <li>需要文件输出时可重定向System.out</li>
+ * </ul>
+ * </p>
  */
 
 import com.example.renderer.factory.Circle;
@@ -45,22 +60,46 @@ import com.example.renderer.factory.Ellipse;
 import com.example.renderer.factory.Triangle;
 
 public class JSONExportVisitor implements ExportVisitor {
+    /**
+     * 将圆形对象转换为JSON格式输出
+     * 
+     * @param c 要导出的圆形对象，不能为null
+     * @throws NullPointerException 如果参数c为null
+     */
     @Override
     public void visitCircle(Circle c) {
         System.out.printf("{\"type\":\"circle\", \"x\":%d, \"y\":%d, \"r\":%d}\n", c.getX(), c.getY(), c.getR());
     }
 
+    /**
+     * 将矩形对象转换为JSON格式输出
+     * 
+     * @param r 要导出的矩形对象，不能为null
+     * @throws NullPointerException 如果参数r为null
+     */
     @Override
     public void visitRectangle(Rectangle r) {
         System.out.printf("{\"type\":\"rectangle\", \"x\":%d, \"y\":%d, \"w\":%d, \"h\":%d}\n", r.getX(), r.getY(), r.getWidth(), r.getHeight());
     }
 
+    /**
+     * 将椭圆对象转换为JSON格式输出
+     * 
+     * @param e 要导出的椭圆对象，不能为null
+     * @throws NullPointerException 如果参数e为null
+     */
     @Override
     public void visitEllipse(Ellipse e) {
         System.out.printf("{\"type\":\"ellipse\", \"x\":%d, \"y\":%d, \"rx\":%d, \"ry\":%d}\n", 
             e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);
     }
 
+    /**
+     * 将三角形对象转换为JSON格式输出
+     * 
+     * @param t 要导出的三角形对象，不能为null
+     * @throws NullPointerException 如果参数t为null
+     */
     @Override
     public void visitTriangle(Triangle t) {
         System.out.printf("{\"type\":\"triangle\", \"x1\":%d, \"y1\":%d, \"x2\":%d, \"y2\":%d, \"x3\":%d, \"y3\":%d}\n",
