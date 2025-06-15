@@ -44,16 +44,6 @@ public class Rectangle implements Shape {
     }
 
     @Override
-    public void move(int dx, int dy) {
-        try {
-            this.x = Math.addExact(this.x, dx);
-            this.y = Math.addExact(this.y, dy);
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException("Move operation would cause integer overflow");
-        }
-    }
-
-    @Override
     public void render(Renderer renderer) {
         renderer.drawRectangle(x, y, width, height);
     }
