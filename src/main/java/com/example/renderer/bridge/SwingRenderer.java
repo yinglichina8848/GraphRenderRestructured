@@ -23,6 +23,18 @@ import java.awt.Polygon;
 public class SwingRenderer implements Renderer {
     private Graphics2D g;
 
+    /**
+     * 设置绘图上下文。
+     * 
+     * <p>此方法必须在调用任何绘制方法前调用，用于初始化：
+     * <ul>
+     *   <li>绘图颜色设置为蓝色(BLUE)</li>
+     *   <li>线条宽度设置为2像素</li>
+     * </ul>
+     * 
+     * @param g Graphics2D绘图上下文对象
+     * @see Graphics2D
+     */
     public void setGraphics(Graphics2D g) {
         this.g = g;
         g.setColor(java.awt.Color.BLUE);
@@ -79,6 +91,24 @@ public class SwingRenderer implements Renderer {
         }
     }
 
+    /**
+     * 绘制三角形。
+     * 
+     * <p>实现细节：
+     * <ul>
+     *   <li>使用Polygon类创建三角形路径</li>
+     *   <li>继承自父类的线条样式设置</li>
+     *   <li>如果Graphics2D上下文未设置，则不执行任何操作</li>
+     * </ul>
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @see Polygon
+     */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         if (g != null) {
