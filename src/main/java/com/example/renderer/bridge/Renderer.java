@@ -19,7 +19,16 @@ public interface Renderer {
     void drawCircle(int x, int y, int radius);
     void drawRectangle(int x, int y, int width, int height);
     void drawEllipse(int x, int y, int width, int height);
-    void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);  // 新增
+    /**
+     * 绘制三角形
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     */
+    void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
 }
 
 class SVGRenderer implements Renderer {
