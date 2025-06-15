@@ -5,7 +5,7 @@
  * @date 2025-06-14
  * @lastModified 2025-06-14
  */
-package com.example.renderertest.adapter;
+package com.example.renderer.adapter;
 
 import com.example.renderer.legacy.LegacyRenderer;
 import org.junit.jupiter.api.BeforeEach;

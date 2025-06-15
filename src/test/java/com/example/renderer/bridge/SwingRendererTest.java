@@ -7,7 +7,6 @@
  */
 package com.example.renderer.bridge;
 
-import com.example.renderer.bridge.SwingRenderer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

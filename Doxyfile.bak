@@ -953,7 +953,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = YES
+RECURSIVE              = NO
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
@@ -1224,7 +1224,7 @@ IGNORE_PREFIX          =
 # The default value is: YES.
 
 GENERATE_HTML          = YES
-HTML_OUTPUT            = .
+HTML_OUTPUT            = html
 HTML_EXTRA_STYLESHEET  = docs/doxygen-awesome.css
 HTML_EXTRA_FILES       = docs/logo.png
 
@@ -1234,7 +1234,7 @@ HTML_EXTRA_FILES       = docs/logo.png
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = .
+HTML_OUTPUT            = html
 
 # The HTML_FILE_EXTENSION tag can be used to specify the file extension for each
 # generated HTML page (for example: .htm, .php, .asp).
@@ -2672,20 +2672,3 @@ GENERATE_LEGEND        = YES
 # The default value is: YES.
 
 DOT_CLEANUP            = YES
-
-
-HAVE_DOT               = YES
-DOT_PATH               =               # 可留空，前提是 dot 命令在 PATH 中
-CALL_GRAPH             = YES
-CALLER_GRAPH           = YES
-CLASS_DIAGRAMS         = YES
-DOT_IMAGE_FORMAT       = svg
-INTERACTIVE_SVG        = YES
-DOT_GRAPH_MAX_NODES    = 100           # 可根据项目大小调整
-MAX_DOT_GRAPH_DEPTH    = 0             # 0 表示无限深度
-DOT_MULTI_TARGETS      = YES
-
-UML_LOOK               = YES
-TEMPLATE_RELATIONS     = YES
-DOT_CLEANUP            = YES
-
