@@ -47,6 +47,39 @@ public class TriangleTest {
     }
 
     @Test
+    public void testCreate_RightAngleTriangle() {
+        Triangle triangle = new Triangle(0, 0, 0, 10, 10, 0);
+        Renderer mockRenderer = mock(Renderer.class);
+        triangle.render(mockRenderer);
+        verify(mockRenderer).drawTriangle(0, 0, 0, 10, 10, 0);
+    }
+
+    @Test
+    public void testMove_PartialPointsToBoundary() {
+        Triangle triangle = new Triangle(0, 0, 100, 100, 200, 0);
+        triangle.move(Integer.MAX_VALUE - 200, Integer.MIN_VALUE);
+        assertEquals(Integer.MAX_VALUE - 200, triangle.getX1());
+        assertEquals(Integer.MIN_VALUE, triangle.getY1());
+    }
+
+    @Test
+    public void testCreate_ColinearPoints() {
+        Triangle triangle = new Triangle(0, 0, 5, 5, 10, 10);
+        assertDoesNotThrow(() -> triangle.render(mock(Renderer.class)));
+    }
+
+    @Test
+    public void testRender_AfterComplexTransformation() {
+        Triangle triangle = new Triangle(0, 0, 10, 0, 5, 10);
+        // 模拟旋转和平移
+        triangle.move(20, 30);
+        triangle = new Triangle(20, 30, 30, 30, 25, 40);
+        Renderer mockRenderer = mock(Renderer.class);
+        triangle.render(mockRenderer);
+        verify(mockRenderer).drawTriangle(20, 30, 30, 30, 25, 40);
+    }
+
+    @Test
     public void testRender_ExtremeCoordinates() {
         Triangle triangle = new Triangle(
             Integer.MAX_VALUE, Integer.MIN_VALUE,
