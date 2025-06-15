@@ -56,6 +56,57 @@ public class PersistenceManagerTest {
     }
 
     @Test
+    public void testSaveShapes_WithSpecialCharacters() throws IOException {
+        File tempFile = File.createTempFile("test$#@!", ".json");
+        List<Shape> shapes = List.of(new Circle(10, 10, 5));
+        PersistenceManager.getInstance().saveShapesToFile(shapes, tempFile.getAbsolutePath());
+        assertTrue(tempFile.exists());
+        tempFile.delete();
+    }
+
+    @Test
+    public void testSaveAndLoad_MixedShapes() throws IOException {
+        List<Shape> shapes = List.of(
+            new Circle(10, 10, 5),
+            new Rectangle(20, 20, 10, 10),
+            new Triangle(0, 0, 10, 0, 5, 10)
+        );
+        PersistenceManager.getInstance().saveShapesToFile(shapes, testFile);
+        List<Shape> loaded = PersistenceManager.getInstance().loadShapesFromFile(testFile);
+        assertEquals(3, loaded.size());
+        assertTrue(loaded.get(0) instanceof Circle);
+        assertTrue(loaded.get(1) instanceof Rectangle);
+        assertTrue(loaded.get(2) instanceof Triangle);
+    }
+
+    @Test
+    public void testSave_EmptyFileName() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            PersistenceManager.getInstance().saveShapesToFile(List.of(), "");
+        });
+    }
+
+    @Test
+    public void testConcurrentAccess() throws InterruptedException {
+        int threadCount = 10;
+        ExecutorService executor = Executors.newFixedThreadPool(threadCount);
+        List<Future<?>> futures = new ArrayList<>();
+
+        for (int i = 0; i < threadCount; i++) {
+            futures.add(executor.submit(() -> {
+                PersistenceManager pm = PersistenceManager.getInstance();
+                assertDoesNotThrow(() -> pm.saveShapesToFile(List.of(new Circle(0,0,1)), "concurrent_test.json"));
+            }));
+        }
+
+        for (Future<?> future : futures) {
+            assertDoesNotThrow(future::get);
+        }
+        executor.shutdown();
+        new File("concurrent_test.json").delete();
+    }
+
+    @Test
     public void testSaveShapes_EmptyPath() {
         assertThrows(IllegalArgumentException.class, () -> 
             PersistenceManager.getInstance().saveShapesToFile(List.of(), ""));

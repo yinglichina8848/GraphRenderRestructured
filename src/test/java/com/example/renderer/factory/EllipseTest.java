@@ -43,6 +43,38 @@ public class EllipseTest {
     }
 
     @Test
+    public void testCreate_OnePixelEllipse() {
+        Ellipse ellipse = new Ellipse(0, 0, 1, 1);
+        assertEquals(1, ellipse.getWidth());
+        assertEquals(1, ellipse.getHeight());
+    }
+
+    @Test
+    public void testMove_FromNegativeToPositive() {
+        Ellipse ellipse = new Ellipse(-100, -100, 50, 50);
+        ellipse.move(200, 200);
+        assertEquals(100, ellipse.getX());
+        assertEquals(100, ellipse.getY());
+    }
+
+    @Test
+    public void testRender_AfterScaling() {
+        Ellipse ellipse = new Ellipse(10, 10, 20, 30);
+        // 模拟缩放操作
+        ellipse = new Ellipse(10, 10, 40, 60);
+        Renderer mockRenderer = mock(Renderer.class);
+        ellipse.render(mockRenderer);
+        verify(mockRenderer).drawEllipse(10, 10, 40, 60);
+    }
+
+    @Test
+    public void testCreate_VeryWideEllipse() {
+        Ellipse ellipse = new Ellipse(0, 0, Integer.MAX_VALUE, 1);
+        assertEquals(Integer.MAX_VALUE, ellipse.getWidth());
+        assertEquals(1, ellipse.getHeight());
+    }
+
+    @Test
     public void testRender_ExtremeSize() {
         Ellipse ellipse = new Ellipse(0, 0, Integer.MAX_VALUE, 1);
         Renderer mockRenderer = mock(Renderer.class);

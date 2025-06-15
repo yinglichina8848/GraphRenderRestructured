@@ -57,4 +57,37 @@ public class CircleTest {
         circle.render(mockRenderer);
         verify(mockRenderer).drawCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1);
     }
+
+    @Test
+    public void testMove_FromMinToMax() {
+        Circle circle = new Circle(Integer.MIN_VALUE, Integer.MAX_VALUE, 10);
+        circle.move(1, -1);
+        assertEquals(Integer.MIN_VALUE + 1, circle.getX());
+        assertEquals(Integer.MAX_VALUE - 1, circle.getY());
+    }
+
+    @Test
+    public void testCreate_OnOrigin() {
+        Circle circle = new Circle(0, 0, 10);
+        assertEquals(0, circle.getX());
+        assertEquals(0, circle.getY());
+    }
+
+    @Test
+    public void testMove_CrossZero() {
+        Circle circle = new Circle(-10, -10, 5);
+        circle.move(20, 20);
+        assertEquals(10, circle.getX());
+        assertEquals(10, circle.getY());
+    }
+
+    @Test
+    public void testRender_AfterMultipleMoves() {
+        Circle circle = new Circle(0, 0, 5);
+        circle.move(10, 10);
+        circle.move(-5, -5);
+        Renderer mockRenderer = mock(Renderer.class);
+        circle.render(mockRenderer);
+        verify(mockRenderer).drawCircle(5, 5, 5);
+    }
 }
