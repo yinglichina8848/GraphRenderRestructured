@@ -15,9 +15,6 @@ public class PersistenceManagerTest {
     private static final String TEST_FILE = "test_shapes.json";
     private final File testFile = new File(TEST_FILE);
 
-public class PersistenceManagerTest {
-    private static final String TEST_FILE = "test_shapes.json";
-
     @Test
     public void testSaveAndLoadShapes() throws IOException {
         // Setup
