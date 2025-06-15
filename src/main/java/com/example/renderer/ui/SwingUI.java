@@ -139,16 +139,7 @@ public class SwingUI extends JFrame {
 
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g);
-        if (renderer instanceof SwingRenderer swingRenderer) {
-            swingRenderer.setGraphics((Graphics2D) g);
-            for (com.example.renderer.factory.Shape shape : shapes) {
-                shape.render(renderer);
-            }
-        }
-    }
+    // 移除paint()方法重写，完全使用DrawingPanel进行绘制
 
 
     private void saveShapes() {
