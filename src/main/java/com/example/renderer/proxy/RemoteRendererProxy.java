@@ -22,7 +22,13 @@ import com.example.renderer.bridge.Renderer;
 public class RemoteRendererProxy implements Renderer {
     private final Renderer realRenderer;
 
+    /**
+     * 创建远程渲染器代理
+     * @param realRenderer 实际渲染器实例(非null)
+     * @throws NullPointerException 如果realRenderer为null
+     */
     public RemoteRendererProxy(Renderer realRenderer) {
+        Objects.requireNonNull(realRenderer, "Real renderer cannot be null");
         this.realRenderer = realRenderer;
     }
 

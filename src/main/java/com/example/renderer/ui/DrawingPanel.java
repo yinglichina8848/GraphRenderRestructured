@@ -37,8 +37,14 @@ public class DrawingPanel extends JPanel {
         setPreferredSize(new Dimension(800, 600));
     }
 
+    /**
+     * 绘制组件内容
+     * @param g 绘图上下文对象
+     * @throws NullPointerException 如果g为null
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        Objects.requireNonNull(g, "Graphics context cannot be null");
         super.paintComponent(g);
         System.out.println("绘制图形数量：" + shapes.size());
         if (renderer instanceof SwingRenderer swingRenderer) {

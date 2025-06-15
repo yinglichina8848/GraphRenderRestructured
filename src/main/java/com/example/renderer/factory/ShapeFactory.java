@@ -22,6 +22,15 @@ package com.example.renderer.factory;
  */
 public interface ShapeFactory {
     Shape createCircle(int x, int y, int radius);
+    /**
+     * 创建矩形实例
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @return 新创建的矩形实例
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
     Shape createRectangle(int x, int y, int width, int height);
 }
 
