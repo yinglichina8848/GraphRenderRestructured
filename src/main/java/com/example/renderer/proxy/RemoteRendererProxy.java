@@ -18,6 +18,7 @@ package com.example.renderer.proxy;
  */
 
 import com.example.renderer.bridge.Renderer;
+import java.util.Objects;
 
 public class RemoteRendererProxy implements Renderer {
     private final Renderer realRenderer;
