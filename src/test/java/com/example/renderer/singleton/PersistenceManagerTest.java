@@ -41,4 +41,23 @@ public class PersistenceManagerTest {
         PersistenceManager instance2 = PersistenceManager.getInstance();
         assertSame(instance1, instance2);
     }
+
+    // 边界值测试
+    @Test
+    public void testSaveShapes_NullList() {
+        assertThrows(NullPointerException.class, () -> 
+            PersistenceManager.getInstance().saveShapesToFile(null, "test.json"));
+    }
+
+    @Test
+    public void testLoadShapes_InvalidPath() {
+        assertThrows(IOException.class, () -> 
+            PersistenceManager.getInstance().loadShapesFromFile("/invalid/path"));
+    }
+
+    @Test
+    public void testSaveShapes_EmptyPath() {
+        assertThrows(IllegalArgumentException.class, () -> 
+            PersistenceManager.getInstance().saveShapesToFile(List.of(), ""));
+    }
 }

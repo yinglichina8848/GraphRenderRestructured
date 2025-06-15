@@ -26,6 +26,30 @@ public class EllipseTest {
         assertEquals(15, ellipse.getY());
     }
 
+    // 边界值测试
+    @Test
+    public void testCreate_ExtremeDimensions() {
+        Ellipse ellipse = new Ellipse(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE);
+        assertEquals(Integer.MAX_VALUE, ellipse.getWidth());
+        assertEquals(Integer.MAX_VALUE, ellipse.getHeight());
+    }
+
+    @Test
+    public void testMove_ToBoundary() {
+        Ellipse ellipse = new Ellipse(Integer.MAX_VALUE - 10, Integer.MIN_VALUE + 10, 20, 20);
+        ellipse.move(10, -10);
+        assertEquals(Integer.MAX_VALUE, ellipse.getX());
+        assertEquals(Integer.MIN_VALUE, ellipse.getY());
+    }
+
+    @Test
+    public void testRender_ExtremeSize() {
+        Ellipse ellipse = new Ellipse(0, 0, Integer.MAX_VALUE, 1);
+        Renderer mockRenderer = mock(Renderer.class);
+        ellipse.render(mockRenderer);
+        verify(mockRenderer).drawEllipse(0, 0, Integer.MAX_VALUE, 1);
+    }
+
     @Test
     public void testAcceptVisitor() {
         Ellipse ellipse = new Ellipse(10, 20, 30, 40);

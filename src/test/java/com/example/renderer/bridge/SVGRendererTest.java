@@ -54,4 +54,35 @@ public class SVGRendererTest {
         assertEquals("<polygon points='10,20 30,40 50,60' />\n", outContent.toString());
         System.setOut(originalOut);
     }
+
+    // 边界值测试
+    @Test
+    public void testDrawCircle_ExtremeCoordinates() {
+        System.setOut(new PrintStream(outContent));
+        SVGRenderer renderer = new SVGRenderer();
+        
+        renderer.drawCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1);
+        
+        assertEquals("<circle cx='2147483647' cy='-2147483648' r='1' />\n", outContent.toString());
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void testDrawRectangle_MaxDimensions() {
+        System.setOut(new PrintStream(outContent));
+        SVGRenderer renderer = new SVGRenderer();
+        
+        renderer.drawRectangle(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE);
+        
+        assertEquals("<rect x='0' y='0' width='2147483647' height='2147483647' />\n", outContent.toString());
+        System.setOut(originalOut);
+    }
+
+    @Test
+    public void testDrawEllipse_ZeroRadius() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            SVGRenderer renderer = new SVGRenderer();
+            renderer.drawEllipse(10, 10, 0, 10);
+        });
+    }
 }

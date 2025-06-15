@@ -23,4 +23,22 @@ public class RemoteRendererProxyTest {
         proxy.drawEllipse(10, 20, 30, 40);
         verify(mockRenderer).drawEllipse(10, 20, 30, 40);
     }
+
+    // 边界值测试
+    @Test
+    public void testProxy_ExtremeCoordinates() {
+        Renderer mockRenderer = mock(Renderer.class);
+        RemoteRendererProxy proxy = new RemoteRendererProxy(mockRenderer);
+        
+        proxy.drawCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1);
+        verify(mockRenderer).drawCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1);
+        
+        proxy.drawRectangle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
+        verify(mockRenderer).drawRectangle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
+    }
+
+    @Test
+    public void testConstructor_NullRenderer() {
+        assertThrows(NullPointerException.class, () -> new RemoteRendererProxy(null));
+    }
 }
