@@ -60,15 +60,30 @@ import com.example.renderer.factory.Ellipse;
 import com.example.renderer.factory.Triangle;
 
 public class JSONExportVisitor implements ExportVisitor {
+    // JSON格式模板常量
+    private static final String CIRCLE_JSON = 
+        "{\"type\":\"circle\", \"x\":%d, \"y\":%d, \"r\":%d}";
+    private static final String RECTANGLE_JSON = 
+        "{\"type\":\"rectangle\", \"x\":%d, \"y\":%d, \"w\":%d, \"h\":%d}";
+    private static final String ELLIPSE_JSON = 
+        "{\"type\":\"ellipse\", \"x\":%d, \"y\":%d, \"rx\":%d, \"ry\":%d}";
+    private static final String TRIANGLE_JSON = 
+        "{\"type\":\"triangle\", \"x1\":%d, \"y1\":%d, \"x2\":%d, \"y2\":%d, \"x3\":%d, \"y3\":%d}";
+
     /**
      * 将圆形对象转换为JSON格式输出
+     * 格式: {"type":"circle", "x":x, "y":y, "r":radius}
      * 
      * @param c 要导出的圆形对象，不能为null
      * @throws NullPointerException 如果参数c为null
+     * @throws IllegalArgumentException 如果半径值为负数
      */
     @Override
     public void visitCircle(Circle c) {
-        System.out.printf("{\"type\":\"circle\", \"x\":%d, \"y\":%d, \"r\":%d}\n", c.getX(), c.getY(), c.getR());
+        if (c.getR() < 0) {
+            throw new IllegalArgumentException("圆的半径不能为负数");
+        }
+        System.out.printf(CIRCLE_JSON + "\n", c.getX(), c.getY(), c.getR());
     }
 
     /**
@@ -77,9 +92,20 @@ public class JSONExportVisitor implements ExportVisitor {
      * @param r 要导出的矩形对象，不能为null
      * @throws NullPointerException 如果参数r为null
      */
+    /**
+     * 将矩形对象转换为JSON格式输出
+     * 格式: {"type":"rectangle", "x":x, "y":y, "w":width, "h":height}
+     * 
+     * @param r 要导出的矩形对象，不能为null
+     * @throws NullPointerException 如果参数r为null
+     * @throws IllegalArgumentException 如果宽度或高度为负数
+     */
     @Override
     public void visitRectangle(Rectangle r) {
-        System.out.printf("{\"type\":\"rectangle\", \"x\":%d, \"y\":%d, \"w\":%d, \"h\":%d}\n", r.getX(), r.getY(), r.getWidth(), r.getHeight());
+        if (r.getWidth() < 0 || r.getHeight() < 0) {
+            throw new IllegalArgumentException("矩形的宽度和高度不能为负数");
+        }
+        System.out.printf(RECTANGLE_JSON + "\n", r.getX(), r.getY(), r.getWidth(), r.getHeight());
     }
 
     /**
@@ -88,9 +114,20 @@ public class JSONExportVisitor implements ExportVisitor {
      * @param e 要导出的椭圆对象，不能为null
      * @throws NullPointerException 如果参数e为null
      */
+    /**
+     * 将椭圆对象转换为JSON格式输出
+     * 格式: {"type":"ellipse", "x":x, "y":y, "rx":xRadius, "ry":yRadius}
+     * 
+     * @param e 要导出的椭圆对象，不能为null
+     * @throws NullPointerException 如果参数e为null
+     * @throws IllegalArgumentException 如果宽度或高度为负数
+     */
     @Override
     public void visitEllipse(Ellipse e) {
-        System.out.printf("{\"type\":\"ellipse\", \"x\":%d, \"y\":%d, \"rx\":%d, \"ry\":%d}\n", 
+        if (e.getWidth() < 0 || e.getHeight() < 0) {
+            throw new IllegalArgumentException("椭圆的宽度和高度不能为负数");
+        }
+        System.out.printf(ELLIPSE_JSON + "\n", 
             e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);
     }
 
@@ -100,9 +137,16 @@ public class JSONExportVisitor implements ExportVisitor {
      * @param t 要导出的三角形对象，不能为null
      * @throws NullPointerException 如果参数t为null
      */
+    /**
+     * 将三角形对象转换为JSON格式输出
+     * 格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}
+     * 
+     * @param t 要导出的三角形对象，不能为null
+     * @throws NullPointerException 如果参数t为null
+     */
     @Override
     public void visitTriangle(Triangle t) {
-        System.out.printf("{\"type\":\"triangle\", \"x1\":%d, \"y1\":%d, \"x2\":%d, \"y2\":%d, \"x3\":%d, \"y3\":%d}\n",
+        System.out.printf(TRIANGLE_JSON + "\n",
                 t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());
     }
 
