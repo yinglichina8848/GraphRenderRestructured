@@ -16,7 +16,12 @@ public class Circle implements Shape {
     public Circle() {} // 必须要无参构造器
 
     public Circle(int x, int y, int radius) {
-        this.x = x; this.y = y; this.radius = radius;
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive (was " + radius + ")");
+        }
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
     }
 
     @Override

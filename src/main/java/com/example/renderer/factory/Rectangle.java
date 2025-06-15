@@ -31,7 +31,26 @@ public class Rectangle implements Shape {
     public Rectangle() {} // 必须要无参构造器
 
     public Rectangle(int x, int y, int width, int height) {
-        this.x = x; this.y = y; this.width = width; this.height = height;
+        if (width <= 0) {
+            throw new IllegalArgumentException("Width must be positive (was " + width + ")");
+        }
+        if (height <= 0) {
+            throw new IllegalArgumentException("Height must be positive (was " + height + ")");
+        }
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    public void move(int dx, int dy) {
+        try {
+            this.x = Math.addExact(this.x, dx);
+            this.y = Math.addExact(this.y, dy);
+        } catch (ArithmeticException e) {
+            throw new IllegalArgumentException("Move operation would cause integer overflow");
+        }
     }
 
     @Override
