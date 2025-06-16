@@ -20,7 +20,9 @@ package com.example.renderer.bridge;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.condition.DisabledIf;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import java.awt.*;
 
@@ -45,8 +47,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * @since 1.0
  */
 @Tag("gui")
-@DisabledIf(value = "java.awt.GraphicsEnvironment#isHeadless", 
-           disabledReason = "Requires GUI environment")
+@EnabledOnOs({OS.WINDOWS, OS.MAC, OS.LINUX})
+@EnabledIfSystemProperty(named = "java.awt.headless", matches = "false")
 public class SwingRendererTest {
 
     private SwingRenderer renderer;

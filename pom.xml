@@ -94,10 +94,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Tests.java</include>
-                    </includes>
+                    <excludedGroups>gui</excludedGroups>
                 </configuration>
             </plugin>
             <!-- 编译插件 -->
