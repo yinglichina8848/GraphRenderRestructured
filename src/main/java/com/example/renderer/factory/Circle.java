@@ -32,6 +32,20 @@ import com.example.renderer.bridge.Renderer;
 import com.example.renderer.visitor.ExportVisitor;
 
 
+/**
+ * 圆形图形实现类，表示一个由圆心坐标和半径定义的圆形。
+ * 
+ * <p>实现了Shape接口的所有方法：
+ * <ul>
+ *   <li>render(): 使用渲染器绘制圆形</li>
+ *   <li>move(): 移动圆形位置</li>
+ *   <li>accept(): 接受访问者访问</li>
+ * </ul>
+ * 
+ * @see Shape 图形接口
+ * @author liying
+ * @since 1.0
+ */
 public class Circle implements Shape {
     private int x, y, radius;
 

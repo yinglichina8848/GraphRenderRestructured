@@ -39,7 +39,7 @@ public class Rectangle implements Shape {
      * @param y the y coordinate of top-left corner
      * @param width the width of rectangle (must be > 0)
      * @param height the height of rectangle (must be > 0)
-     * @throws IllegalArgumentException if width or height are <= 0
+     * @throws IllegalArgumentException 如果宽度或高度不合法(<=0)
      */
     public Rectangle(int x, int y, int width, int height) {
         if (width <= 0) {
@@ -76,8 +76,27 @@ public class Rectangle implements Shape {
     }
 
     /** 获取矩形左上角x坐标 */
+    /** 
+     * 获取矩形左上角X坐标
+     * @return 矩形左上角的X坐标值
+     */
     public int getX() { return x; }
+    
+    /**
+     * 获取矩形左上角Y坐标
+     * @return 矩形左上角的Y坐标值
+     */
     public int getY() { return y; }
+    
+    /**
+     * 获取矩形宽度
+     * @return 矩形的宽度值
+     */
     public int getWidth() { return width; }
+    
+    /**
+     * 获取矩形高度
+     * @return 矩形的高度值
+     */
     public int getHeight() { return height; }
 }

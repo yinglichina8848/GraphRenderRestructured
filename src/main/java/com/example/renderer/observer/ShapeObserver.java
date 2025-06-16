@@ -21,7 +21,6 @@ import com.example.renderer.observer.ShapeObservable;
  *     }
  * });
  * </pre>
- * </p>
  * 
  * @see ShapeObservable 可观察对象
  * @see Shape 图形接口

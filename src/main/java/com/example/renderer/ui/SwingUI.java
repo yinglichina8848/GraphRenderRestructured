@@ -57,6 +57,23 @@ import com.example.renderer.singleton.PersistenceManager;
 
 
 
+/**
+ * SwingUI是图形渲染系统的主界面，使用Swing实现。
+ * 
+ * <p>主要功能组件：
+ * <ul>
+ *   <li>绘图面板(DrawingPanel) - 显示图形</li>
+ *   <li>控制按钮 - 添加圆形、矩形、椭圆和三角形</li>
+ *   <li>撤销/重做功能 - 通过UndoManager实现命令历史管理</li>
+ *   <li>文件操作 - 通过PersistenceManager实现图形的保存和加载</li>
+ * </ul>
+ * 
+ * @see DrawingPanel 绘图面板实现
+ * @see UndoManager 撤销/重做管理
+ * @see PersistenceManager 持久化管理器
+ * @author liying
+ * @since 1.0
+ */
 public class SwingUI extends JFrame {
     private final List<com.example.renderer.factory.Shape> shapes = new ArrayList<>();
     private Renderer renderer;
