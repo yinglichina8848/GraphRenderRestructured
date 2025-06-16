@@ -1,8 +1,0 @@
-<map id="com.example.renderer.visitor.JSONExportVisitorTest.testVisitEllipse" name="com.example.renderer.visitor.JSONExportVisitorTest.testVisitEllipse">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,271,145"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#abf62cbdace84ab865289b64afae67bc1" title="将椭圆对象转换为JSON格式输出" alt="" coords="319,104,536,145"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a58b5bcb233cb1e389900df094e38e9cf" title="获取椭圆高度。" alt="" coords="584,5,805,47"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672" title="获取椭圆宽度" alt="" coords="584,71,805,112"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015" title="获取椭圆中心X坐标。" alt="" coords="584,136,805,177"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020" title="获取椭圆中心Y坐标" alt="" coords="584,201,805,243"/>
-</map>

@@ -1,4 +1,4 @@
 <map id="com.example.renderer.ui.SwingUI" name="com.example.renderer.ui.SwingUI">
-<area shape="rect" id="node1" title="SwingUI是图形渲染系统的主界面，使用Swing实现。" alt="" coords="5,131,195,223"/>
-<area shape="rect" id="node2" title=" " alt="" coords="67,5,133,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,195,121"/>
+<area shape="rect" id="node2" title=" " alt="" coords="67,5,133,32"/>
 </map>

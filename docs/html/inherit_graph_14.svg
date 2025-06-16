@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html" target="_top" xlink:title="Shape接口定义了所有图形对象的基本行为。 作为图形系统的核心接口，它支持以下操作：">
+<g id="a_node1"><a xlink:href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-73.5 0,-103.5 166,-103.5 166,-73.5 0,-73.5"/>
 <text text-anchor="start" x="8" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.factory.</text>
 <text text-anchor="middle" x="83" y="-80.5" font-family="Helvetica,sans-Serif" font-size="10.00">Shape</text>
@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html" target="_top" xlink:title="圆形图形实现类，表示一个由圆心坐标和半径定义的圆形。">
+<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-147.5 202,-177.5 368,-177.5 368,-147.5 202,-147.5"/>
 <text text-anchor="start" x="210" y="-165.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.factory.</text>
 <text text-anchor="middle" x="285" y="-154.5" font-family="Helvetica,sans-Serif" font-size="10.00">Circle</text>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html" target="_top" xlink:title="椭圆图形实现类">
+<g id="a_node3"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-98.5 202,-128.5 368,-128.5 368,-98.5 202,-98.5"/>
 <text text-anchor="start" x="210" y="-116.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.factory.</text>
 <text text-anchor="middle" x="285" y="-105.5" font-family="Helvetica,sans-Serif" font-size="10.00">Ellipse</text>
@@ -70,7 +70,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html" target="_top" xlink:title="三角形图形实现类">
+<g id="a_node5"><a xlink:href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="202,-0.5 202,-30.5 368,-30.5 368,-0.5 202,-0.5"/>
 <text text-anchor="start" x="210" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.factory.</text>
 <text text-anchor="middle" x="285" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Triangle</text>

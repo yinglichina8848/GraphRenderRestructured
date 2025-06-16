@@ -1,5 +1,0 @@
-<map id="com.example.renderer.legacy.LegacyRenderer.drawLegacyCircle" name="com.example.renderer.legacy.LegacyRenderer.drawLegacyCircle">
-<area shape="rect" id="node1" title=" " alt="" coords="316,43,561,84"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a66bbddb14487b0ab0827075a9d915350" title="绘制圆形，转发调用到LegacyRenderer的drawLegacyCircle()方法。" alt="" coords="11,5,262,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererTest.html#aa2bad648ed299badc504b059e821ca55" title=" " alt="" coords="5,71,268,127"/>
-</map>

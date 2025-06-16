@@ -1,5 +1,0 @@
-<map id="com.example.renderer.factory.RectangleTest.testAcceptVisitor" name="com.example.renderer.factory.RectangleTest.testAcceptVisitor">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,233,47"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a5b6d782ad3dc266f7757c5c451bbe602" title="接受访问者访问，实现访问者模式。 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。" alt="" coords="281,5,503,47"/>
-<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a33c0696dd06b3a3546ec95fbbb05666d" title=" " alt="" coords="551,5,768,47"/>
-</map>

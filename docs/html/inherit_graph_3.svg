@@ -12,7 +12,7 @@
 <!-- Node0 -->
 <g id="node1" class="node">
 <title>Node0</title>
-<g id="a_node1"><a xlink:href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver.html" target="_top" xlink:title="ShapeObserver接口定义了观察者模式中的观察者角色。 当被观察的图形对象发生变化时，会调用onShapeChanged()方法。">
+<g id="a_node1"><a xlink:href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 164,-30.5 164,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.bridge.</text>
 <text text-anchor="middle" x="82" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">ShapeObserver</text>

@@ -1,6 +1,0 @@
-<map id="com.example.renderer.factory.CircleTest.testMove_ExtremeNegativeValues" name="com.example.renderer.factory.CircleTest.testMove_ExtremeNegativeValues">
-<area shape="rect" id="node1" title=" " alt="" coords="5,63,276,119"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a5d9565191f8b24714037adaafb0145f2" title="获取圆心x坐标" alt="" coords="324,5,545,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#adbf586a9c1761dce695dce96c7539a18" title="获取圆心y坐标" alt="" coords="324,71,545,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a7dc56b196866cc4d444f59585902442c" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="324,136,545,177"/>
-</map>

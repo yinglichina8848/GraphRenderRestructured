@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -20,9 +25,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">图形渲染系统
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">基于多种设计模式的图形渲染系统</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1singleton.html">singleton</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html">PersistenceManagerTest</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,47 +92,30 @@ $(function() {
 <div class="title">com.example.renderer.singleton.PersistenceManagerTest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for com.example.renderer.singleton.PersistenceManagerTest:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest__coll__graph.svg" width="264" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af7dbae650324dd84eb8b363f812d5bbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#af7dbae650324dd84eb8b363f812d5bbc">testSaveAndLoadShapes</a> ()  throws IOException </td></tr>
-<tr class="memdesc:af7dbae650324dd84eb8b363f812d5bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveAndLoadShapes - 验证保存和加载图形数据是否成功  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#af7dbae650324dd84eb8b363f812d5bbc">More...</a><br /></td></tr>
 <tr class="separator:af7dbae650324dd84eb8b363f812d5bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d3b7bb2335f83af99af6cb002ab4c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a4d3b7bb2335f83af99af6cb002ab4c22">testSingleton</a> ()</td></tr>
-<tr class="memdesc:a4d3b7bb2335f83af99af6cb002ab4c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSingleton - 验证 <a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html">PersistenceManager</a> 是否为单例  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a4d3b7bb2335f83af99af6cb002ab4c22">More...</a><br /></td></tr>
 <tr class="separator:a4d3b7bb2335f83af99af6cb002ab4c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bcfe59fc2e0e3572741b7f56493a162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a1bcfe59fc2e0e3572741b7f56493a162">testSaveShapes_NullList</a> ()</td></tr>
-<tr class="memdesc:a1bcfe59fc2e0e3572741b7f56493a162"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveShapes_NullList - 验证传入 null 列表时抛出 NullPointerException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a1bcfe59fc2e0e3572741b7f56493a162">More...</a><br /></td></tr>
 <tr class="separator:a1bcfe59fc2e0e3572741b7f56493a162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6897f4e5a3b9bd19f1b50caba2374c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a6897f4e5a3b9bd19f1b50caba2374c47">testLoadShapes_InvalidPath</a> ()</td></tr>
-<tr class="memdesc:a6897f4e5a3b9bd19f1b50caba2374c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">testLoadShapes_InvalidPath - 验证无效路径加载图形时抛出 IOException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a6897f4e5a3b9bd19f1b50caba2374c47">More...</a><br /></td></tr>
 <tr class="separator:a6897f4e5a3b9bd19f1b50caba2374c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33893539b4322b1f28ce400481ae67b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a33893539b4322b1f28ce400481ae67b4">testSaveShapes_WithSpecialCharacters</a> ()  throws IOException </td></tr>
-<tr class="memdesc:a33893539b4322b1f28ce400481ae67b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveShapes_WithSpecialCharacters - 验证文件名含特殊字符时仍能正常保存  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a33893539b4322b1f28ce400481ae67b4">More...</a><br /></td></tr>
 <tr class="separator:a33893539b4322b1f28ce400481ae67b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc0595b193e5c952a3149c6cf04aea59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#abc0595b193e5c952a3149c6cf04aea59">testSaveAndLoad_MixedShapes</a> ()  throws IOException </td></tr>
-<tr class="memdesc:abc0595b193e5c952a3149c6cf04aea59"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveAndLoad_MixedShapes - 验证混合图形保存并正确加载  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#abc0595b193e5c952a3149c6cf04aea59">More...</a><br /></td></tr>
 <tr class="separator:abc0595b193e5c952a3149c6cf04aea59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d70f303eacfe8a89f92ad8afdad14fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a5d70f303eacfe8a89f92ad8afdad14fc">testSave_EmptyFileName</a> ()</td></tr>
-<tr class="memdesc:a5d70f303eacfe8a89f92ad8afdad14fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSave_EmptyFileName - 验证空文件名时抛出 IllegalArgumentException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a5d70f303eacfe8a89f92ad8afdad14fc">More...</a><br /></td></tr>
 <tr class="separator:a5d70f303eacfe8a89f92ad8afdad14fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a362e5b096f9bc2c34b968e39de763550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a362e5b096f9bc2c34b968e39de763550">testConcurrentAccess</a> ()  throws InterruptedException </td></tr>
-<tr class="memdesc:a362e5b096f9bc2c34b968e39de763550"><td class="mdescLeft">&#160;</td><td class="mdescRight">testConcurrentAccess - 验证多线程环境下保存图形不抛异常  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a362e5b096f9bc2c34b968e39de763550">More...</a><br /></td></tr>
 <tr class="separator:a362e5b096f9bc2c34b968e39de763550"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a192ab24534097554e67f360ddb0e6694"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a192ab24534097554e67f360ddb0e6694">testSaveShapes_EmptyPath</a> ()</td></tr>
-<tr class="memdesc:a192ab24534097554e67f360ddb0e6694"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveShapes_EmptyPath - 验证空路径保存抛出 IllegalArgumentException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a192ab24534097554e67f360ddb0e6694">More...</a><br /></td></tr>
 <tr class="separator:a192ab24534097554e67f360ddb0e6694"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72c90e87e5dfcad7677d041ae69bec0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a72c90e87e5dfcad7677d041ae69bec0a">testLoadShapes_CorruptedFile</a> ()  throws IOException </td></tr>
-<tr class="memdesc:a72c90e87e5dfcad7677d041ae69bec0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">testLoadShapes_CorruptedFile - 验证加载损坏 JSON 文件时抛出 JsonParseException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a72c90e87e5dfcad7677d041ae69bec0a">More...</a><br /></td></tr>
 <tr class="separator:a72c90e87e5dfcad7677d041ae69bec0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3134efe15efca39d8324432633e55ac0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a3134efe15efca39d8324432633e55ac0">testSaveShapes_ReadOnlyFile</a> ()  throws IOException </td></tr>
-<tr class="memdesc:a3134efe15efca39d8324432633e55ac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">testSaveShapes_ReadOnlyFile - 验证向只读文件保存时抛出 IOException  <a href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a3134efe15efca39d8324432633e55ac0">More...</a><br /></td></tr>
 <tr class="separator:a3134efe15efca39d8324432633e55ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -138,8 +141,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testConcurrentAccess - 验证多线程环境下保存图形不抛异常 </p>
+<p>testConcurrentAccess - 验证多线程环境下保存图形不抛异常</p>
 <p>使用线程池并发执行 saveShapesToFile 操作，确保线程安全。</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -197,8 +199,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testLoadShapes_CorruptedFile - 验证加载损坏 JSON 文件时抛出 JsonParseException </p>
+<p>testLoadShapes_CorruptedFile - 验证加载损坏 JSON 文件时抛出 JsonParseException</p>
 <p>手动构造一个非法 JSON 文件，验证解析失败时是否抛出正确异常。</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -227,12 +228,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>JsonParseException </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a72c90e87e5dfcad7677d041ae69bec0a_cgraph.svg" width="634" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -258,15 +253,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testLoadShapes_InvalidPath - 验证无效路径加载图形时抛出 IOException </p>
+<p>testLoadShapes_InvalidPath - 验证无效路径加载图形时抛出 IOException</p>
 <p>模拟尝试从不存在的路径加载文件，验证是否抛出 IO 异常。 </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a6897f4e5a3b9bd19f1b50caba2374c47_cgraph.svg" width="634" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -292,8 +280,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSave_EmptyFileName - 验证空文件名时抛出 IllegalArgumentException </p>
+<p>testSave_EmptyFileName - 验证空文件名时抛出 IllegalArgumentException</p>
 <p>确保不能将图形保存到空路径或空文件名。 </p>
 
 </div>
@@ -320,8 +307,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveAndLoad_MixedShapes - 验证混合图形保存并正确加载 </p>
+<p>testSaveAndLoad_MixedShapes - 验证混合图形保存并正确加载</p>
 <p>测试 Circle、Rectangle、Triangle 多种图形组合的持久化能力。</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -329,12 +315,6 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_abc0595b193e5c952a3149c6cf04aea59_cgraph.svg" width="614" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -360,8 +340,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveAndLoadShapes - 验证保存和加载图形数据是否成功 </p>
+<p>testSaveAndLoadShapes - 验证保存和加载图形数据是否成功</p>
 <p>流程： </p><ol>
 <li>
 创建包含 Circle、Rectangle、Triangle 的图形列表 </li>
@@ -405,7 +384,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>PersistenceManager::saveShapesToFile(List, String) </dd>
 <dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a2ba7f4135519949ef1b7516b5f17aade" title="从JSON文件加载图形列表">PersistenceManager::loadShapesFromFile(String)</a> 测试图形数据的保存和加载功能。</dd></dl>
+<a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a2ba7f4135519949ef1b7516b5f17aade">PersistenceManager::loadShapesFromFile(String)</a> 测试图形数据的保存和加载功能。</dd></dl>
 <p>验证流程： </p><ol>
 <li>
 创建包含多种图形(Circle, Rectangle, Triangle)的测试列表 </li>
@@ -433,13 +412,7 @@ Here is the call graph for this function:</div>
 </dl>
 <dl class="section see"><dt>See also</dt><dd>PersistenceManager::saveShapesToFile(List, String) </dd>
 <dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a2ba7f4135519949ef1b7516b5f17aade" title="从JSON文件加载图形列表">PersistenceManager::loadShapesFromFile(String)</a> </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_af7dbae650324dd84eb8b363f812d5bbc_cgraph.svg" width="614" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a2ba7f4135519949ef1b7516b5f17aade">PersistenceManager::loadShapesFromFile(String)</a> </dd></dl>
 
 </div>
 </div>
@@ -465,15 +438,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveShapes_EmptyPath - 验证空路径保存抛出 IllegalArgumentException </p>
+<p>testSaveShapes_EmptyPath - 验证空路径保存抛出 IllegalArgumentException</p>
 <p>确保不能将图形保存到空路径。 </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a192ab24534097554e67f360ddb0e6694_cgraph.svg" width="619" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -499,15 +465,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveShapes_NullList - 验证传入 null 列表时抛出 NullPointerException </p>
+<p>testSaveShapes_NullList - 验证传入 null 列表时抛出 NullPointerException</p>
 <p>确保在调用 saveShapesToFile 时传入 null 会触发异常。 </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a1bcfe59fc2e0e3572741b7f56493a162_cgraph.svg" width="619" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -533,8 +492,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveShapes_ReadOnlyFile - 验证向只读文件保存时抛出 IOException </p>
+<p>testSaveShapes_ReadOnlyFile - 验证向只读文件保存时抛出 IOException</p>
 <p>创建只读文件后尝试写入，验证是否抛出 IO 异常。</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -542,12 +500,6 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a3134efe15efca39d8324432633e55ac0_cgraph.svg" width="619" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -573,8 +525,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSaveShapes_WithSpecialCharacters - 验证文件名含特殊字符时仍能正常保存 </p>
+<p>testSaveShapes_WithSpecialCharacters - 验证文件名含特殊字符时仍能正常保存</p>
 <p>创建带有特殊字符的临时文件名并测试保存能力。</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -582,12 +533,6 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a33893539b4322b1f28ce400481ae67b4_cgraph.svg" width="619" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -613,25 +558,22 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>testSingleton - 验证 <a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html">PersistenceManager</a> 是否为单例 </p>
+<p>testSingleton - 验证 <a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html">PersistenceManager</a> 是否为单例</p>
 <p>通过两次调用 getInstance 获取实例，并验证它们是同一对象引用。 </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest_a4d3b7bb2335f83af99af6cb002ab4c22_cgraph.svg" width="567" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/test/java/com/example/renderer/singleton/<a class="el" href="PersistenceManagerTest_8java.html">PersistenceManagerTest.java</a></li>
+<li>src/test/java/com/example/renderer/singleton/PersistenceManagerTest.java</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1singleton.html">singleton</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html">PersistenceManagerTest</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

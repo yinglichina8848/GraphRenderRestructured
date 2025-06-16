@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -20,9 +25,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">图形渲染系统
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">基于多种设计模式的图形渲染系统</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1visitor.html">visitor</a></li><li class="navelem"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html">ExportVisitor</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,148 +92,41 @@ $(function() {
 <div class="title">com.example.renderer.visitor.ExportVisitor Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>ExportVisitor接口定义了访问者模式中的访问者角色。 每个visit方法对应一种图形类型的导出逻辑。  
- <a href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.visitor.ExportVisitor:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor__inherit__graph.svg" width="228" height="331"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Collaboration diagram for com.example.renderer.visitor.ExportVisitor:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor__coll__graph.svg" width="228" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor__inherit__graph.svg" width="228" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02af511539ce8fba0d7b2ed289e2341d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a02af511539ce8fba0d7b2ed289e2341d">visitCircle</a> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> circle)</td></tr>
+<tr class="memitem:a02af511539ce8fba0d7b2ed289e2341d"><td class="memItemLeft" align="right" valign="top"><a id="a02af511539ce8fba0d7b2ed289e2341d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>visitCircle</b> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> circle)</td></tr>
 <tr class="separator:a02af511539ce8fba0d7b2ed289e2341d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33c0696dd06b3a3546ec95fbbb05666d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a33c0696dd06b3a3546ec95fbbb05666d">visitRectangle</a> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a> rectangle)</td></tr>
+<tr class="memitem:a33c0696dd06b3a3546ec95fbbb05666d"><td class="memItemLeft" align="right" valign="top"><a id="a33c0696dd06b3a3546ec95fbbb05666d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>visitRectangle</b> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a> rectangle)</td></tr>
 <tr class="separator:a33c0696dd06b3a3546ec95fbbb05666d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4bac612895ffa57a95f30d98447e6d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#ad4bac612895ffa57a95f30d98447e6d1">visitEllipse</a> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a> ellipse)</td></tr>
+<tr class="memitem:ad4bac612895ffa57a95f30d98447e6d1"><td class="memItemLeft" align="right" valign="top"><a id="ad4bac612895ffa57a95f30d98447e6d1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>visitEllipse</b> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a> ellipse)</td></tr>
 <tr class="separator:ad4bac612895ffa57a95f30d98447e6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53684388713a9f98d485c988e1300f4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a53684388713a9f98d485c988e1300f4c">visitTriangle</a> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> triangle)</td></tr>
+<tr class="memitem:a53684388713a9f98d485c988e1300f4c"><td class="memItemLeft" align="right" valign="top"><a id="a53684388713a9f98d485c988e1300f4c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>visitTriangle</b> (<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> triangle)</td></tr>
 <tr class="separator:a53684388713a9f98d485c988e1300f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>ExportVisitor接口定义了访问者模式中的访问者角色。 每个visit方法对应一种图形类型的导出逻辑。 </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html" title="JSON导出访问者实现类">JSONExportVisitor</a> 访问者接口，用于实现访问者模式 </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a02af511539ce8fba0d7b2ed289e2341d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02af511539ce8fba0d7b2ed289e2341d">&#9670;&nbsp;</a></span>visitCircle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.visitor.ExportVisitor.visitCircle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a>&#160;</td>
-          <td class="paramname"><em>circle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#a5de8e8b575a621b8b9f16a2836e306a9">com.example.renderer.visitor.JSONExportVisitor</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor_a02af511539ce8fba0d7b2ed289e2341d_icgraph.svg" width="498" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ad4bac612895ffa57a95f30d98447e6d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4bac612895ffa57a95f30d98447e6d1">&#9670;&nbsp;</a></span>visitEllipse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.visitor.ExportVisitor.visitEllipse </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a>&#160;</td>
-          <td class="paramname"><em>ellipse</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#abf62cbdace84ab865289b64afae67bc1">com.example.renderer.visitor.JSONExportVisitor</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor_ad4bac612895ffa57a95f30d98447e6d1_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a33c0696dd06b3a3546ec95fbbb05666d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33c0696dd06b3a3546ec95fbbb05666d">&#9670;&nbsp;</a></span>visitRectangle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.visitor.ExportVisitor.visitRectangle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a>&#160;</td>
-          <td class="paramname"><em>rectangle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#af42c3f77485d750dc6ec27edc31c1bf7">com.example.renderer.visitor.JSONExportVisitor</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor_a33c0696dd06b3a3546ec95fbbb05666d_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a53684388713a9f98d485c988e1300f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53684388713a9f98d485c988e1300f4c">&#9670;&nbsp;</a></span>visitTriangle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.visitor.ExportVisitor.visitTriangle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a>&#160;</td>
-          <td class="paramname"><em>triangle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#a09a6928b6de2c8c1fa4f6f059d50f89a">com.example.renderer.visitor.JSONExportVisitor</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor_a53684388713a9f98d485c988e1300f4c_icgraph.svg" width="498" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<hr/>The documentation for this interface was generated from the following file:<ul>
-<li>src/main/java/com/example/renderer/visitor/<a class="el" href="ExportVisitor_8java.html">ExportVisitor.java</a></li>
+<div class="textblock"><p>ExportVisitor接口定义了访问者模式中的访问者角色。 每个visit方法对应一种图形类型的导出逻辑。</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html">JSONExportVisitor</a> 访问者接口，用于实现访问者模式 </dd></dl>
+</div><hr/>The documentation for this interface was generated from the following file:<ul>
+<li>src/main/java/com/example/renderer/visitor/ExportVisitor.java</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><b>visitor</b></li><li class="navelem"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html">ExportVisitor</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

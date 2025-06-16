@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel.html" target="_top" xlink:title="绘图面板组件，负责显示所有图形。">
+<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="82,-0.5 82,-30.5 224,-30.5 224,-0.5 82,-0.5"/>
 <text text-anchor="start" x="90" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.ui.</text>
 <text text-anchor="middle" x="153" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">DrawingPanel</text>

@@ -1,9 +1,0 @@
-<map id="com.example.renderer.factory.Circle.move" name="com.example.renderer.factory.Circle.move">
-<area shape="rect" id="node1" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="348,181,569,223"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a33e9d0a2722a7d196cf6feac61632e80" title=" " alt="" coords="42,5,263,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ade22ece673331e93849d36d133743727" title=" " alt="" coords="41,71,264,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ad82df402953ff77e4ed51097fd5074b9" title=" " alt="" coords="17,137,288,193"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ab773e8783a9ae4b6f52a8c629b8d0867" title=" " alt="" coords="25,217,281,259"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#aa7239f1882032d49d9516ce34d9c81ad" title=" " alt="" coords="36,283,269,324"/>
-<area shape="rect" id="node7" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a6e27a2ee2e9a4ab7acfe2ff2e25b275a" title=" " alt="" coords="5,348,300,389"/>
-</map>

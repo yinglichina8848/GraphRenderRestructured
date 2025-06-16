@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html" target="_top" xlink:title="SwingUI是图形渲染系统的主界面，使用Swing实现。">
+<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="86,-0.5 86,-30.5 228,-30.5 228,-0.5 86,-0.5"/>
 <text text-anchor="start" x="94" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.ui.</text>
 <text text-anchor="middle" x="157" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">SwingUI</text>

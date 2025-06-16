@@ -21,7 +21,7 @@
 <!-- Node0 -->
 <g id="node2" class="node">
 <title>Node0</title>
-<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html" target="_top" xlink:title="运行时类型适配器工厂类">
+<g id="a_node2"><a xlink:href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="149,-0.5 149,-30.5 331,-30.5 331,-0.5 149,-0.5"/>
 <text text-anchor="start" x="157" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.util.</text>
 <text text-anchor="middle" x="240" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">RuntimeTypeAdapterFactory&lt; T &gt;</text>

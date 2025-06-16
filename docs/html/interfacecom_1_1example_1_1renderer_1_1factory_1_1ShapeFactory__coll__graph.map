@@ -1,3 +1,0 @@
-<map id="com.example.renderer.factory.ShapeFactory" name="com.example.renderer.factory.ShapeFactory">
-<area shape="rect" id="node1" title="图形工厂接口，定义了创建各种图形对象的工厂方法。" alt="" coords="5,5,227,112"/>
-</map>

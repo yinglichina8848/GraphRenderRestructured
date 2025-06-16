@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -20,9 +25,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">图形渲染系统
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">基于多种设计模式的图形渲染系统</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1factory.html">factory</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html">TriangleTest</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,44 +92,44 @@ $(function() {
 <div class="title">com.example.renderer.factory.TriangleTest Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Triangle类的单元测试。  
- <a href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#details">More...</a></p>
-<div class="dynheader">
-Collaboration diagram for com.example.renderer.factory.TriangleTest:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest__coll__graph.svg" width="323" height="279"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a824f4b3a890ebe7d42c00a5c892223c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a824f4b3a890ebe7d42c00a5c892223c3">testRender</a> ()</td></tr>
-<tr class="memdesc:a824f4b3a890ebe7d42c00a5c892223c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">测试三角形渲染功能。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a824f4b3a890ebe7d42c00a5c892223c3">More...</a><br /></td></tr>
 <tr class="separator:a824f4b3a890ebe7d42c00a5c892223c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89427b111574a3a44ae82a6b10c61ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a89427b111574a3a44ae82a6b10c61ad4">testMove</a> ()</td></tr>
+<tr class="memitem:a89427b111574a3a44ae82a6b10c61ad4"><td class="memItemLeft" align="right" valign="top"><a id="a89427b111574a3a44ae82a6b10c61ad4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testMove</b> ()</td></tr>
 <tr class="separator:a89427b111574a3a44ae82a6b10c61ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad87bdc8449fa5a004f8a450b77b1809c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#ad87bdc8449fa5a004f8a450b77b1809c">testMove_ExtremeValues</a> ()</td></tr>
+<tr class="memitem:ad87bdc8449fa5a004f8a450b77b1809c"><td class="memItemLeft" align="right" valign="top"><a id="ad87bdc8449fa5a004f8a450b77b1809c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testMove_ExtremeValues</b> ()</td></tr>
 <tr class="separator:ad87bdc8449fa5a004f8a450b77b1809c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0a24ecfe9573890cc1344bf2a419ac3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#ac0a24ecfe9573890cc1344bf2a419ac3">testCreate_RightAngleTriangle</a> ()</td></tr>
+<tr class="memitem:ac0a24ecfe9573890cc1344bf2a419ac3"><td class="memItemLeft" align="right" valign="top"><a id="ac0a24ecfe9573890cc1344bf2a419ac3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testCreate_RightAngleTriangle</b> ()</td></tr>
 <tr class="separator:ac0a24ecfe9573890cc1344bf2a419ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405536b1f909a8cf220f38e7a88373ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a405536b1f909a8cf220f38e7a88373ed">testMove_PartialPointsToBoundary</a> ()</td></tr>
+<tr class="memitem:a405536b1f909a8cf220f38e7a88373ed"><td class="memItemLeft" align="right" valign="top"><a id="a405536b1f909a8cf220f38e7a88373ed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testMove_PartialPointsToBoundary</b> ()</td></tr>
 <tr class="separator:a405536b1f909a8cf220f38e7a88373ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a208e4db0769b85c70eacdf7b13605fb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a208e4db0769b85c70eacdf7b13605fb8">testCreate_ColinearPoints</a> ()</td></tr>
+<tr class="memitem:a208e4db0769b85c70eacdf7b13605fb8"><td class="memItemLeft" align="right" valign="top"><a id="a208e4db0769b85c70eacdf7b13605fb8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testCreate_ColinearPoints</b> ()</td></tr>
 <tr class="separator:a208e4db0769b85c70eacdf7b13605fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24f045d4a1b10e4809e39ef326058902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a24f045d4a1b10e4809e39ef326058902">testRender_AfterComplexTransformation</a> ()</td></tr>
+<tr class="memitem:a24f045d4a1b10e4809e39ef326058902"><td class="memItemLeft" align="right" valign="top"><a id="a24f045d4a1b10e4809e39ef326058902"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testRender_AfterComplexTransformation</b> ()</td></tr>
 <tr class="separator:a24f045d4a1b10e4809e39ef326058902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4abc2416390946f71c3d9fff17f6714c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a4abc2416390946f71c3d9fff17f6714c">testRender_ExtremeCoordinates</a> ()</td></tr>
+<tr class="memitem:a4abc2416390946f71c3d9fff17f6714c"><td class="memItemLeft" align="right" valign="top"><a id="a4abc2416390946f71c3d9fff17f6714c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testRender_ExtremeCoordinates</b> ()</td></tr>
 <tr class="separator:a4abc2416390946f71c3d9fff17f6714c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f20240b6dc10a5f133c171b948bba4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a84f20240b6dc10a5f133c171b948bba4">testCreate_DegenerateTriangle</a> ()</td></tr>
+<tr class="memitem:a84f20240b6dc10a5f133c171b948bba4"><td class="memItemLeft" align="right" valign="top"><a id="a84f20240b6dc10a5f133c171b948bba4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testCreate_DegenerateTriangle</b> ()</td></tr>
 <tr class="separator:a84f20240b6dc10a5f133c171b948bba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbaedb013458248eeac9b70929fb4fc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#adbaedb013458248eeac9b70929fb4fc6">testCreate_AllPointsSame</a> ()</td></tr>
+<tr class="memitem:adbaedb013458248eeac9b70929fb4fc6"><td class="memItemLeft" align="right" valign="top"><a id="adbaedb013458248eeac9b70929fb4fc6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testCreate_AllPointsSame</b> ()</td></tr>
 <tr class="separator:adbaedb013458248eeac9b70929fb4fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbe750c8f3a67d339490df69cda211e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#afbe750c8f3a67d339490df69cda211e0">testMove_ExtremeValuesWithOverflow</a> ()</td></tr>
+<tr class="memitem:afbe750c8f3a67d339490df69cda211e0"><td class="memItemLeft" align="right" valign="top"><a id="afbe750c8f3a67d339490df69cda211e0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>testMove_ExtremeValuesWithOverflow</b> ()</td></tr>
 <tr class="separator:afbe750c8f3a67d339490df69cda211e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Triangle类的单元测试。 </p>
+<div class="textblock"><p>Triangle类的单元测试。</p>
 <p>测试覆盖以下方面： </p><ul>
 <li>
 基本渲染功能 </li>
@@ -122,258 +142,10 @@ Public Member Functions</h2></td></tr>
 <li>
 退化三角形情况 </li>
 </ul>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html" title="三角形图形实现类">Triangle</a> 被测试类 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> 被测试类 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="adbaedb013458248eeac9b70929fb4fc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adbaedb013458248eeac9b70929fb4fc6">&#9670;&nbsp;</a></span>testCreate_AllPointsSame()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testCreate_AllPointsSame </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_adbaedb013458248eeac9b70929fb4fc6_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a208e4db0769b85c70eacdf7b13605fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a208e4db0769b85c70eacdf7b13605fb8">&#9670;&nbsp;</a></span>testCreate_ColinearPoints()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testCreate_ColinearPoints </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a208e4db0769b85c70eacdf7b13605fb8_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a84f20240b6dc10a5f133c171b948bba4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f20240b6dc10a5f133c171b948bba4">&#9670;&nbsp;</a></span>testCreate_DegenerateTriangle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testCreate_DegenerateTriangle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a84f20240b6dc10a5f133c171b948bba4_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ac0a24ecfe9573890cc1344bf2a419ac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0a24ecfe9573890cc1344bf2a419ac3">&#9670;&nbsp;</a></span>testCreate_RightAngleTriangle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testCreate_RightAngleTriangle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_ac0a24ecfe9573890cc1344bf2a419ac3_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a89427b111574a3a44ae82a6b10c61ad4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89427b111574a3a44ae82a6b10c61ad4">&#9670;&nbsp;</a></span>testMove()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testMove </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a89427b111574a3a44ae82a6b10c61ad4_cgraph.svg" width="502" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="ad87bdc8449fa5a004f8a450b77b1809c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad87bdc8449fa5a004f8a450b77b1809c">&#9670;&nbsp;</a></span>testMove_ExtremeValues()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testMove_ExtremeValues </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_ad87bdc8449fa5a004f8a450b77b1809c_cgraph.svg" width="550" height="314"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="afbe750c8f3a67d339490df69cda211e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbe750c8f3a67d339490df69cda211e0">&#9670;&nbsp;</a></span>testMove_ExtremeValuesWithOverflow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testMove_ExtremeValuesWithOverflow </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_afbe750c8f3a67d339490df69cda211e0_cgraph.svg" width="550" height="314"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a405536b1f909a8cf220f38e7a88373ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a405536b1f909a8cf220f38e7a88373ed">&#9670;&nbsp;</a></span>testMove_PartialPointsToBoundary()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testMove_PartialPointsToBoundary </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a405536b1f909a8cf220f38e7a88373ed_cgraph.svg" width="532" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-
-</div>
-</div>
 <a id="a824f4b3a890ebe7d42c00a5c892223c3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a824f4b3a890ebe7d42c00a5c892223c3">&#9670;&nbsp;</a></span>testRender()</h2>
 
@@ -396,8 +168,7 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>测试三角形渲染功能。 </p>
+<p>测试三角形渲染功能。</p>
 <p>验证点： </p><ul>
 <li>
 正确调用Renderer的drawTriangle()方法 </li>
@@ -412,84 +183,20 @@ Here is the call graph for this function:</div>
 <li>
 验证渲染器是否收到正确参数 </li>
 </ol>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a824f4b3a890ebe7d42c00a5c892223c3_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a24f045d4a1b10e4809e39ef326058902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24f045d4a1b10e4809e39ef326058902">&#9670;&nbsp;</a></span>testRender_AfterComplexTransformation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testRender_AfterComplexTransformation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a24f045d4a1b10e4809e39ef326058902_cgraph.svg" width="100%" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
-
-</div>
-</div>
-<a id="a4abc2416390946f71c3d9fff17f6714c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4abc2416390946f71c3d9fff17f6714c">&#9670;&nbsp;</a></span>testRender_ExtremeCoordinates()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void com.example.renderer.factory.TriangleTest.testRender_ExtremeCoordinates </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest_a4abc2416390946f71c3d9fff17f6714c_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/test/java/com/example/renderer/factory/<a class="el" href="TriangleTest_8java.html">TriangleTest.java</a></li>
+<li>src/test/java/com/example/renderer/factory/TriangleTest.java</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1factory.html">factory</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html">TriangleTest</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

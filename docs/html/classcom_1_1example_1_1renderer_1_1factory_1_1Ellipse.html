@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -20,9 +25,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">图形渲染系统
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">基于多种设计模式的图形渲染系统</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1factory.html">factory</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,50 +92,36 @@ $(function() {
 <div class="title">com.example.renderer.factory.Ellipse Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>椭圆图形实现类  
- <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.factory.Ellipse:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse__inherit__graph.svg" width="232" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse__inherit__graph.svg" width="232" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for com.example.renderer.factory.Ellipse:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse__coll__graph.svg" width="232" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse__coll__graph.svg" width="232" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a23ea7d0ffabebe7aea5cec2546e7936c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a23ea7d0ffabebe7aea5cec2546e7936c">Ellipse</a> ()</td></tr>
-<tr class="memdesc:a23ea7d0ffabebe7aea5cec2546e7936c"><td class="mdescLeft">&#160;</td><td class="mdescRight">无参构造器，用于序列化和反射创建实例。 创建后需要通过setter方法设置属性。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a23ea7d0ffabebe7aea5cec2546e7936c">More...</a><br /></td></tr>
 <tr class="separator:a23ea7d0ffabebe7aea5cec2546e7936c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b8b9dd7fbece65cae37d05b3d0a282"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a96b8b9dd7fbece65cae37d05b3d0a282">Ellipse</a> (int x, int y, int width, int height)</td></tr>
-<tr class="memdesc:a96b8b9dd7fbece65cae37d05b3d0a282"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造指定位置和大小的椭圆  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a96b8b9dd7fbece65cae37d05b3d0a282">More...</a><br /></td></tr>
 <tr class="separator:a96b8b9dd7fbece65cae37d05b3d0a282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05bd1b4ddbb8249021da2bbd6f5f0fb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4">render</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a> renderer)</td></tr>
-<tr class="memdesc:a05bd1b4ddbb8249021da2bbd6f5f0fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指定渲染器绘制椭圆。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4">More...</a><br /></td></tr>
 <tr class="separator:a05bd1b4ddbb8249021da2bbd6f5f0fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af348e21237e4722426307b8caaee20e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2">accept</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html">ExportVisitor</a> visitor)</td></tr>
-<tr class="memdesc:af348e21237e4722426307b8caaee20e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">接受访问者访问此椭圆对象  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2">More...</a><br /></td></tr>
 <tr class="separator:af348e21237e4722426307b8caaee20e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a808ff21c247338648adfca587956e352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352">move</a> (int dx, int dy)</td></tr>
-<tr class="memdesc:a808ff21c247338648adfca587956e352"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动椭圆的位置。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352">More...</a><br /></td></tr>
 <tr class="separator:a808ff21c247338648adfca587956e352"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5856f1f689143235929a233715984015"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015">getX</a> ()</td></tr>
-<tr class="memdesc:a5856f1f689143235929a233715984015"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取椭圆中心X坐标。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015">More...</a><br /></td></tr>
 <tr class="separator:a5856f1f689143235929a233715984015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d9e2941518bae18c76c125b5fcc8020"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020">getY</a> ()</td></tr>
-<tr class="memdesc:a4d9e2941518bae18c76c125b5fcc8020"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取椭圆中心Y坐标  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020">More...</a><br /></td></tr>
 <tr class="separator:a4d9e2941518bae18c76c125b5fcc8020"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1f41af217cb0df38ae2026a6b666672"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672">getWidth</a> ()</td></tr>
-<tr class="memdesc:ad1f41af217cb0df38ae2026a6b666672"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取椭圆宽度  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672">More...</a><br /></td></tr>
 <tr class="separator:ad1f41af217cb0df38ae2026a6b666672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58b5bcb233cb1e389900df094e38e9cf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a58b5bcb233cb1e389900df094e38e9cf">getHeight</a> ()</td></tr>
-<tr class="memdesc:a58b5bcb233cb1e389900df094e38e9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取椭圆高度。  <a href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a58b5bcb233cb1e389900df094e38e9cf">More...</a><br /></td></tr>
 <tr class="separator:a58b5bcb233cb1e389900df094e38e9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -143,7 +149,6 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
 <p>无参构造器，用于序列化和反射创建实例。 创建后需要通过setter方法设置属性。 </p>
 
 </div>
@@ -193,9 +198,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>构造指定位置和大小的椭圆 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>构造指定位置和大小的椭圆 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>椭圆中心的X坐标 </td></tr>
     <tr><td class="paramname">y</td><td>椭圆中心的Y坐标 </td></tr>
@@ -231,9 +234,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>接受访问者访问此椭圆对象 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>接受访问者访问此椭圆对象 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">visitor</td><td>用于处理椭圆的访问者对象 </td></tr>
   </table>
@@ -247,18 +248,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a17fdf5b153a81b61bc744ab108c6bcbd">com.example.renderer.factory.Shape</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_af348e21237e4722426307b8caaee20e2_cgraph.svg" width="498" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_af348e21237e4722426307b8caaee20e2_icgraph.svg" width="502" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -284,19 +273,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>获取椭圆高度。 </p>
+<p>获取椭圆高度。</p>
 <p>高度是椭圆在Y轴方向的直径长度。</p>
 <dl class="section return"><dt>Returns</dt><dd>椭圆的高度值 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672" title="获取椭圆宽度">getWidth()</a> 获取宽度 </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672">getWidth()</a> 获取宽度 </dd>
 <dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015" title="获取椭圆中心X坐标。">getX()</a> 获取X坐标 </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a58b5bcb233cb1e389900df094e38e9cf_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015">getX()</a> 获取X坐标 </dd></dl>
 
 </div>
 </div>
@@ -322,15 +304,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>获取椭圆宽度 </p>
-<dl class="section return"><dt>Returns</dt><dd>椭圆的宽度值 </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_ad1f41af217cb0df38ae2026a6b666672_icgraph.svg" width="100%" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>获取椭圆宽度 </p><dl class="section return"><dt>Returns</dt><dd>椭圆的宽度值 </dd></dl>
 
 </div>
 </div>
@@ -356,19 +330,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>获取椭圆中心X坐标。 </p>
+<p>获取椭圆中心X坐标。</p>
 <p>注意：返回的是椭圆的中心点X坐标，不是外接矩形的左上角X坐标。</p>
 <dl class="section return"><dt>Returns</dt><dd>椭圆中心的X坐标值 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020" title="获取椭圆中心Y坐标">getY()</a> 获取Y坐标 </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020">getY()</a> 获取Y坐标 </dd>
 <dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672" title="获取椭圆宽度">getWidth()</a> 获取宽度 </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a5856f1f689143235929a233715984015_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672">getWidth()</a> 获取宽度 </dd></dl>
 
 </div>
 </div>
@@ -394,15 +361,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>获取椭圆中心Y坐标 </p>
-<dl class="section return"><dt>Returns</dt><dd>椭圆中心的Y坐标值 </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a4d9e2941518bae18c76c125b5fcc8020_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-</div>
+<p>获取椭圆中心Y坐标 </p><dl class="section return"><dt>Returns</dt><dd>椭圆中心的Y坐标值 </dd></dl>
 
 </div>
 </div>
@@ -439,8 +398,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>移动椭圆的位置。 </p>
+<p>移动椭圆的位置。</p>
 <p>实现细节： </p><ul>
 <li>
 直接修改椭圆的中心坐标 </li>
@@ -456,15 +414,9 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。">Shape::move(int, int)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">Shape::move(int, int)</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">com.example.renderer.factory.Shape</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a808ff21c247338648adfca587956e352_icgraph.svg" width="535" height="199"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -491,8 +443,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>使用指定渲染器绘制椭圆。 </p>
+<p>使用指定渲染器绘制椭圆。</p>
 <p>实现细节： </p><ul>
 <li>
 调用renderer.drawEllipse()方法进行实际绘制 </li>
@@ -513,31 +464,23 @@ Here is the caller graph for this function:</div>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d" title="绘制椭圆">Renderer::drawEllipse(int, int, int, int)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">Renderer::drawEllipse(int, int, int, int)</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078">com.example.renderer.factory.Shape</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a05bd1b4ddbb8249021da2bbd6f5f0fb4_cgraph.svg" width="499" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse_a05bd1b4ddbb8249021da2bbd6f5f0fb4_icgraph.svg" width="535" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/main/java/com/example/renderer/factory/<a class="el" href="Ellipse_8java.html">Ellipse.java</a></li>
+<li>src/main/java/com/example/renderer/factory/Ellipse.java</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1factory.html">factory</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>

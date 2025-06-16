@@ -1,6 +1,0 @@
-<map id="com.example.renderer.factory.EllipseTest.testMove_FromNegativeToPositive" name="com.example.renderer.factory.EllipseTest.testMove_FromNegativeToPositive">
-<area shape="rect" id="node1" title=" " alt="" coords="5,63,260,119"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015" title="获取椭圆中心X坐标。" alt="" coords="308,5,529,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020" title="获取椭圆中心Y坐标" alt="" coords="308,71,529,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352" title="移动椭圆的位置。" alt="" coords="308,136,529,177"/>
-</map>

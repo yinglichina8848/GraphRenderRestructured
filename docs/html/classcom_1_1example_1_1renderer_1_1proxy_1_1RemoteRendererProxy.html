@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -20,9 +25,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">图形渲染系统
+   &#160;<span id="projectnumber">1.0</span>
    </div>
+   <div id="projectbrief">基于多种设计模式的图形渲染系统</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +53,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -59,11 +84,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><a class="el" href="namespacecom_1_1example_1_1renderer_1_1proxy.html">proxy</a></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html">RemoteRendererProxy</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -72,38 +92,28 @@ $(function() {
 <div class="title">com.example.renderer.proxy.RemoteRendererProxy Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>远程渲染器代理实现类  
- <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.proxy.RemoteRendererProxy:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy__inherit__graph.svg" width="230" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy__inherit__graph.svg" width="230" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for com.example.renderer.proxy.RemoteRendererProxy:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy__coll__graph.svg" width="230" height="346"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy__coll__graph.svg" width="230" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65497b0529c0384d691e2e105db19b6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a65497b0529c0384d691e2e105db19b6a">RemoteRendererProxy</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a> realRenderer)</td></tr>
-<tr class="memdesc:a65497b0529c0384d691e2e105db19b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">创建远程渲染器代理  <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a65497b0529c0384d691e2e105db19b6a">More...</a><br /></td></tr>
 <tr class="separator:a65497b0529c0384d691e2e105db19b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a023bafacacf0b539929be9570863a4a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5">drawCircle</a> (int x, int y, int radius)</td></tr>
-<tr class="memdesc:a023bafacacf0b539929be9570863a4a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">代理绘制圆形操作，添加远程调用日志。  <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5">More...</a><br /></td></tr>
 <tr class="separator:a023bafacacf0b539929be9570863a4a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a230d74acbb60e51bc56724f50459d6bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a230d74acbb60e51bc56724f50459d6bd">drawRectangle</a> (int x, int y, int width, int height)</td></tr>
-<tr class="memdesc:a230d74acbb60e51bc56724f50459d6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制矩形  <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a230d74acbb60e51bc56724f50459d6bd">More...</a><br /></td></tr>
 <tr class="separator:a230d74acbb60e51bc56724f50459d6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af39ad5e5e13e132f23d327c44b0d54e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8">drawTriangle</a> (int x1, int y1, int x2, int y2, int x3, int y3)</td></tr>
-<tr class="memdesc:af39ad5e5e13e132f23d327c44b0d54e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制三角形  <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8">More...</a><br /></td></tr>
 <tr class="separator:af39ad5e5e13e132f23d327c44b0d54e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">drawEllipse</a> (int x, int y, int width, int height)</td></tr>
-<tr class="memdesc:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">绘制椭圆  <a href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">More...</a><br /></td></tr>
 <tr class="separator:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -132,9 +142,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>创建远程渲染器代理 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>创建远程渲染器代理 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">realRenderer</td><td>实际渲染器实例(非null) </td></tr>
   </table>
@@ -189,8 +197,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>代理绘制圆形操作，添加远程调用日志。 </p>
+<p>代理绘制圆形操作，添加远程调用日志。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
@@ -199,7 +206,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735" title="绘制圆形">Renderer::drawCircle(int, int, int)</a> 代理绘制圆形操作，添加远程调用日志。</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> 代理绘制圆形操作，添加远程调用日志。</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
@@ -208,21 +215,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735" title="绘制圆形">Renderer::drawCircle(int, int, int)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">com.example.renderer.bridge.Renderer</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a023bafacacf0b539929be9570863a4a5_cgraph.svg" width="518" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a023bafacacf0b539929be9570863a4a5_icgraph.svg" width="560" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -271,9 +266,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>绘制椭圆 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>绘制椭圆 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
     <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
@@ -290,18 +283,6 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">com.example.renderer.bridge.Renderer</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a62ffaea2a2c43ccfd2e8afe336417ef5_cgraph.svg" width="524" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a62ffaea2a2c43ccfd2e8afe336417ef5_icgraph.svg" width="567" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -350,9 +331,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>绘制矩形 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>绘制矩形 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>左上角x坐标 </td></tr>
     <tr><td class="paramname">y</td><td>左上角y坐标 </td></tr>
@@ -369,18 +348,6 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a544db73ca5c1778c124d3ee53b99b4b6">com.example.renderer.bridge.Renderer</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a230d74acbb60e51bc56724f50459d6bd_cgraph.svg" width="546" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_a230d74acbb60e51bc56724f50459d6bd_icgraph.svg" width="588" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
@@ -441,9 +408,7 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>绘制三角形 </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>绘制三角形 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x1</td><td>第一个顶点x坐标 </td></tr>
     <tr><td class="paramname">y1</td><td>第一个顶点y坐标 </td></tr>
@@ -456,28 +421,20 @@ Here is the caller graph for this function:</div>
 </dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a8da6ee9a1744047767dfccc70cd6da76">com.example.renderer.bridge.Renderer</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_af39ad5e5e13e132f23d327c44b0d54e8_cgraph.svg" width="532" height="52"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy_af39ad5e5e13e132f23d327c44b0d54e8_icgraph.svg" width="575" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
-</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/main/java/com/example/renderer/proxy/<a class="el" href="RemoteRendererProxy_8java.html">RemoteRendererProxy.java</a></li>
+<li>src/main/java/com/example/renderer/proxy/RemoteRendererProxy.java</li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>com</b></li><li class="navelem"><b>example</b></li><li class="navelem"><b>renderer</b></li><li class="navelem"><b>proxy</b></li><li class="navelem"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html">RemoteRendererProxy</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
 </body>
 </html>
