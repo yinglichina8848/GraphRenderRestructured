@@ -7,6 +7,20 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/**
+ * AddShapeCommand的单元测试类。
+ * 
+ * <p>验证命令模式实现是否正确：
+ * <ul>
+ *   <li>execute()添加图形到列表</li>
+ *   <li>undo()从列表移除图形</li>
+ *   <li>边界条件处理</li>
+ * </ul>
+ * 
+ * @see AddShapeCommand
+ * @author liying
+ * @since 1.0
+ */
 public class AddShapeCommandTest {
 
     @Test

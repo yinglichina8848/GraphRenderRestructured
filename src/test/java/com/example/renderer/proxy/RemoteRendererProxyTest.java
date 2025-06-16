@@ -5,6 +5,20 @@ import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * RemoteRendererProxy的单元测试类。
+ * 
+ * <p>测试代理模式是否正确转发调用到真实渲染器，并验证：
+ * <ul>
+ *   <li>方法调用被正确转发</li>
+ *   <li>参数传递正确</li>
+ *   <li>边界值处理</li>
+ * </ul>
+ * 
+ * @see RemoteRendererProxy
+ * @author liying
+ * @since 1.0
+ */
 public class RemoteRendererProxyTest {
 
     @Test

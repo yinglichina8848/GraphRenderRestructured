@@ -1,9 +1,16 @@
 /**
- * LegacyRendererAdapterTest
- *
+ * LegacyRendererAdapter的单元测试类。
+ * 
+ * <p>验证适配器模式是否正确转换新旧接口：
+ * <ul>
+ *   <li>方法调用被正确转发到LegacyRenderer</li>
+ *   <li>参数传递正确</li>
+ *   <li>接口转换完整性</li>
+ * </ul>
+ * 
+ * @see LegacyRendererAdapter
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.adapter;
 
