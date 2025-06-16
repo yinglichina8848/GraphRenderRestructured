@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['paintcomponent_84',['paintComponent',['../classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel.html#a43625526adf869ad234d34f73e085f18',1,'com::example::renderer::ui::DrawingPanel']]],
-  ['persistencemanager_85',['PersistenceManager',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html',1,'com::example::renderer::singleton']]],
-  ['persistencemanager_2ejava_86',['PersistenceManager.java',['../PersistenceManager_8java.html',1,'']]],
-  ['persistencemanagertest_87',['PersistenceManagerTest',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html',1,'com::example::renderer::singleton']]],
-  ['persistencemanagertest_2ejava_88',['PersistenceManagerTest.java',['../PersistenceManagerTest_8java.html',1,'']]]
+  ['rectangle_48',['Rectangle',['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html',1,'com.example.renderer.factory.Rectangle'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a2f720e27200dba60c4603a8aecb1e2ba',1,'com.example.renderer.factory.Rectangle.Rectangle()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a2d307cd7e9d86fe165ee543386095080',1,'com.example.renderer.factory.Rectangle.Rectangle(int x, int y, int width, int height)']]],
+  ['rectangletest_49',['RectangleTest',['../classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html',1,'com::example::renderer::factory']]],
+  ['remoterendererproxy_50',['RemoteRendererProxy',['../classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html',1,'com.example.renderer.proxy.RemoteRendererProxy'],['../classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a65497b0529c0384d691e2e105db19b6a',1,'com.example.renderer.proxy.RemoteRendererProxy.RemoteRendererProxy()']]],
+  ['remoterendererproxytest_51',['RemoteRendererProxyTest',['../classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html',1,'com::example::renderer::proxy']]],
+  ['render_52',['render',['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a',1,'com.example.renderer.factory.Circle.render()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4',1,'com.example.renderer.factory.Ellipse.render()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4',1,'com.example.renderer.factory.Rectangle.render()'],['../interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078',1,'com.example.renderer.factory.Shape.render()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44',1,'com.example.renderer.factory.Triangle.render()']]],
+  ['renderer_53',['Renderer',['../interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html',1,'com::example::renderer::bridge']]],
+  ['runtimetypeadapterfactory_54',['RuntimeTypeAdapterFactory',['../classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html',1,'com::example::renderer::util']]]
 ];
