@@ -1,9 +1,0 @@
-<map id="com.example.renderer.singleton.PersistenceManager.saveShapesToFile" name="com.example.renderer.singleton.PersistenceManager.saveShapesToFile">
-<area shape="rect" id="node1" title="将图形列表序列化为JSON格式并保存到指定文件" alt="" coords="341,213,613,254"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#abc0595b193e5c952a3149c6cf04aea59" title="testSaveAndLoad_MixedShapes &#45; 验证混合图形保存并正确加载" alt="" coords="16,5,283,61"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#af7dbae650324dd84eb8b363f812d5bbc" title="testSaveAndLoadShapes &#45; 验证保存和加载图形数据是否成功" alt="" coords="16,85,283,141"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a192ab24534097554e67f360ddb0e6694" title="testSaveShapes_EmptyPath &#45; 验证空路径保存抛出 IllegalArgumentException" alt="" coords="5,165,293,221"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a1bcfe59fc2e0e3572741b7f56493a162" title="testSaveShapes_NullList &#45; 验证传入 null 列表时抛出 NullPointerException" alt="" coords="5,245,293,301"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a3134efe15efca39d8324432633e55ac0" title="testSaveShapes_ReadOnlyFile &#45; 验证向只读文件保存时抛出 IOException" alt="" coords="5,325,293,381"/>
-<area shape="rect" id="node7" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManagerTest.html#a33893539b4322b1f28ce400481ae67b4" title="testSaveShapes_WithSpecialCharacters &#45; 验证文件名含特殊字符时仍能正常保存" alt="" coords="5,405,293,461"/>
-</map>

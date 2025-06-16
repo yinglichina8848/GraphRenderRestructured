@@ -1,5 +1,0 @@
-<map id="com.example.renderer.command.Command" name="com.example.renderer.command.Command">
-<area shape="rect" id="node1" title="Command接口定义了命令模式的基本操作。 所有具体命令类必须实现execute()和undo()方法。" alt="" coords="139,5,381,112"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html" title="Command implementation for adding a shape to a shape list." alt="" coords="5,160,248,281"/>
-<area shape="rect" id="node3" title=" " alt="" coords="272,160,515,281"/>
-</map>

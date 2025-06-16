@@ -1,5 +1,0 @@
-<map id="com.example.renderer.factory.CircleTest.testRender_ExtremeCoordinates" name="com.example.renderer.factory.CircleTest.testRender_ExtremeCoordinates">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,305,47"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a" title="使用指定的渲染器绘制图形。 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。" alt="" coords="353,5,575,47"/>
-<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735" title="绘制圆形" alt="" coords="623,5,841,47"/>
-</map>

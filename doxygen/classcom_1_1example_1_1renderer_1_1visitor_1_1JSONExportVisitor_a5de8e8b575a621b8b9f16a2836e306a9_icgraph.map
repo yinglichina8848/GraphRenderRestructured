@@ -1,4 +1,0 @@
-<map id="com.example.renderer.visitor.JSONExportVisitor.visitCircle" name="com.example.renderer.visitor.JSONExportVisitor.visitCircle">
-<area shape="rect" id="node1" title="将圆形对象转换为JSON格式输出 格式: {&quot;type&quot;:&quot;circle&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;r&quot;:radius}" alt="" coords="312,5,529,47"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html#a38f4d5f545cd31fa486d91d535a4fd9c" title="测试圆形对象的JSON导出功能。" alt="" coords="5,5,264,47"/>
-</map>

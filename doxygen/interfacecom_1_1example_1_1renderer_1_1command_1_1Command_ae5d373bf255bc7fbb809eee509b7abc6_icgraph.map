@@ -1,6 +1,0 @@
-<map id="com.example.renderer.command.Command.execute" name="com.example.renderer.command.Command.execute">
-<area shape="rect" id="node1" title="Executes the command operation." alt="" coords="533,39,776,80"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c1369e01556b93a5fa11ea888b8183b" title=" " alt="" coords="243,5,485,47"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a986ee81b39ef610656626bb26f5d73c2" title=" " alt="" coords="243,71,485,112"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html#ae7524e76676f44d4196ba579b7cca21a" title="创建并初始化Swing图形用户界面。" alt="" coords="5,39,195,80"/>
-</map>

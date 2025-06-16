@@ -1,3 +1,0 @@
-<map id="com.example.renderer.command.Command" name="com.example.renderer.command.Command">
-<area shape="rect" id="node1" title="Command接口定义了命令模式的基本操作。 所有具体命令类必须实现execute()和undo()方法。" alt="" coords="5,5,248,112"/>
-</map>

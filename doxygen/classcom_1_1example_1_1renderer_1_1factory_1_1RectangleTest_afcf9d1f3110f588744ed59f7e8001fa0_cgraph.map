@@ -1,5 +1,0 @@
-<map id="com.example.renderer.factory.RectangleTest.testRender_ExtremeSize" name="com.example.renderer.factory.RectangleTest.testRender_ExtremeSize">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,227,61"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4" title="使用指定的渲染器绘制图形。 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。" alt="" coords="275,13,496,54"/>
-<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a544db73ca5c1778c124d3ee53b99b4b6" title="绘制矩形" alt="" coords="544,13,763,54"/>
-</map>

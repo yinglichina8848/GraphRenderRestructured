@@ -1,8 +1,0 @@
-<map id="com.example.renderer.factory.Ellipse.getHeight" name="com.example.renderer.factory.Ellipse.getHeight">
-<area shape="rect" id="node1" title="获取椭圆高度。" alt="" coords="669,104,891,145"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#a68e937c4ece8ec298eb5d278760ea774" title=" " alt="" coords="319,5,621,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#acc1377f4c965377822c61bf53d83db24" title=" " alt="" coords="335,71,605,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#a925cf9b9e78b6f6b985c7f5e47662d3a" title=" " alt="" coords="333,136,607,177"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#abf62cbdace84ab865289b64afae67bc1" title="将椭圆对象转换为JSON格式输出" alt="" coords="361,201,579,243"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html#abcdc717259698b439769891f603cc79d" title=" " alt="" coords="5,201,271,243"/>
-</map>

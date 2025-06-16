@@ -1,4 +1,0 @@
-<map id="com.example.renderer.visitor.ExportVisitor" name="com.example.renderer.visitor.ExportVisitor">
-<area shape="rect" id="node1" title="ExportVisitor接口定义了访问者模式中的访问者角色。 每个visit方法对应一种图形类型的导出逻辑。" alt="" coords="5,5,223,141"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html" title="JSON导出访问者实现类" alt="" coords="5,189,223,325"/>
-</map>

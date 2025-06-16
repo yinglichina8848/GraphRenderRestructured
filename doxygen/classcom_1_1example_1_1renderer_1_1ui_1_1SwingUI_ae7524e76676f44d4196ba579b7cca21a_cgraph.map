@@ -1,8 +1,0 @@
-<map id="com.example.renderer.ui.SwingUI.SwingUI" name="com.example.renderer.ui.SwingUI.SwingUI">
-<area shape="rect" id="node1" title="创建并初始化Swing图形用户界面。" alt="" coords="5,71,195,112"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c1369e01556b93a5fa11ea888b8183b" title=" " alt="" coords="243,5,485,47"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a986ee81b39ef610656626bb26f5d73c2" title=" " alt="" coords="243,71,485,112"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ad8ea4408ac901ae7a98bd479c634fcce" title=" " alt="" coords="243,136,485,177"/>
-<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6" title="Executes the command operation." alt="" coords="533,39,776,80"/>
-<area shape="rect" id="node6" href="$interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a3317fbcc32ee08c81e90b7035ce61aeb" title="Undoes the command operation." alt="" coords="533,136,776,177"/>
-</map>
