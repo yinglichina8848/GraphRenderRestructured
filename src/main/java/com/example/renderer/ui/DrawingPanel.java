@@ -24,13 +24,17 @@ import com.example.renderer.bridge.Renderer;
 import com.example.renderer.bridge.SwingRenderer;
 import com.example.renderer.factory.Shape;
 public class DrawingPanel extends JPanel {
+    /** 要渲染的图形列表 */
     private List<com.example.renderer.factory.Shape> shapes;
+    
+    /** 使用的渲染器实现 */
     private Renderer renderer;
 
     /**
      * 创建绘图面板
      * @param shapes 要显示的图形列表(非null)
-     * @param renderer 使用的渲染器(非null)
+     * @param renderer 使用的渲染器实现(非null)
+     * @throws NullPointerException 如果shapes或renderer为null
      */
     public DrawingPanel(List<com.example.renderer.factory.Shape> shapes, Renderer renderer) {
         this.shapes = shapes;
