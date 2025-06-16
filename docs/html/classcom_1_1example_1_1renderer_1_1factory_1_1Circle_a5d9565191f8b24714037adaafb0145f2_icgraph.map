@@ -1,0 +1,11 @@
+<map id="com.example.renderer.factory.Circle.getX" name="com.example.renderer.factory.Circle.getX">
+<area shape="rect" id="node1" title="获取圆心x坐标" alt="" coords="631,209,852,251"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#adfb4426b5c81543bd6a5f592033730dd" title=" " alt="" coords="337,5,558,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a33e9d0a2722a7d196cf6feac61632e80" title=" " alt="" coords="337,71,558,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ade22ece673331e93849d36d133743727" title=" " alt="" coords="336,136,559,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ad82df402953ff77e4ed51097fd5074b9" title=" " alt="" coords="312,202,583,258"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ab773e8783a9ae4b6f52a8c629b8d0867" title=" " alt="" coords="319,283,575,324"/>
+<area shape="rect" id="node7" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#aa7239f1882032d49d9516ce34d9c81ad" title=" " alt="" coords="331,348,564,389"/>
+<area shape="rect" id="node8" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#a5de8e8b575a621b8b9f16a2836e306a9" title="将圆形对象转换为JSON格式输出 格式: {&quot;type&quot;:&quot;circle&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;r&quot;:radius}" alt="" coords="339,413,556,455"/>
+<area shape="rect" id="node9" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html#a38f4d5f545cd31fa486d91d535a4fd9c" title="测试圆形对象的JSON导出功能。" alt="" coords="5,413,264,455"/>
+</map>

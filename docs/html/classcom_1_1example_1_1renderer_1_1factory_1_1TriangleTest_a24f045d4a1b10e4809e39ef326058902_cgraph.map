@@ -1,0 +1,6 @@
+<map id="com.example.renderer.factory.TriangleTest.testRender_AfterComplexTransformation" name="com.example.renderer.factory.TriangleTest.testRender_AfterComplexTransformation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,276,87"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a0aa53deb7dccf8acd100a53a76d414d0" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="324,5,545,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44" title="使用指定的渲染器绘制图形。 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。" alt="" coords="324,71,545,112"/>
+<area shape="rect" id="node4" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a8da6ee9a1744047767dfccc70cd6da76" title="绘制三角形" alt="" coords="593,71,812,112"/>
+</map>

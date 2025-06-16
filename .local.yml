@@ -1,0 +1,44 @@
+# .aider.conf.yml 放在家目录
+
+#DEEPSEEK_API_KEY=sk-953706e5e2ca40faa826f269d29dc8a5
+#deepseek-api-key: sk-953706e5e2ca40faa826f269d29dc8a5
+
+
+openai-api-base: http://192.168.0.252:9998/v1
+#自建的newap地址
+
+#OPENAI_API_KEY 设置为不需要
+#openai-api-key: dummy
+
+editor: vi  
+#编辑的时候可以用 /editor 指令调出你常用的编辑器
+cache-prompts: true 
+
+#用cache可以省钱，好像只能claude官key
+
+model: openai/DeepSeek-R1-0528-Qwen3-8B
+#model: deepseek/deepseek-chat 
+#主模型
+architect: true 
+#默认开启 architect 模式，可以不开
+
+#editor-model: deepseek/deepseek-chat
+editor-model: openai/DeepSeek-R1-0528-Qwen3-8B 
+#编辑器模型, 用本地的 Qwen3-8B
+#weak-model: deepseek/deepseek-chat
+weak-model: openai/DeepSeek-R1-0528-Qwen3-8B
+#git 提交模型, 用本地的 Qwen3-8B
+
+edit-format: diff #/code 模式时所用的编辑格式
+editor-edit-format: editor-diff # /architect 模式时，用的编辑格式
+
+
+read:  #默认读取的 rules 文件
+  - .rules/
+
+
+# 设置环境变量（根据实际端口调整）
+#export OPENAI_API_BASE=http://192.168.0.252:9998/v1
+#export OPENAI_API_KEY=sk-no-key-required
+#export OPENAI_MODEL=openai/DeepSeek-R1-0528-Qwen3-8B
+#aider --model openai/DeepSeek-R1-0528-Qwen3-8B --temperature 0.1  --context-length 16384 

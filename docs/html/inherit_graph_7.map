@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html" title="Command接口定义了命令模式的基本操作。 所有具体命令类必须实现execute()和undo()方法。" alt="" coords="5,5,248,47"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html" title="Command implementation for adding a shape to a shape list." alt="" coords="296,5,539,47"/>
+</map>

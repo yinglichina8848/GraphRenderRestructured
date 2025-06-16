@@ -1,0 +1,5 @@
+<map id="com.example.renderer.singleton.PersistenceManagerTest.testSaveShapes_EmptyPath" name="com.example.renderer.singleton.PersistenceManagerTest.testSaveShapes_EmptyPath">
+<area shape="rect" id="node1" title="testSaveShapes_EmptyPath &#45; 验证空路径保存抛出 IllegalArgumentException" alt="" coords="5,31,293,87"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a229e6512b9ffae3cddc80a15e779e6e4" title="获取PersistenceManager单例实例" alt="" coords="359,5,596,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a52b2e7f7c4f7913f82e8f9cab5f6115f" title="将图形列表序列化为JSON格式并保存到指定文件" alt="" coords="341,71,613,112"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="com.example.renderer.visitor.ExportVisitor" name="com.example.renderer.visitor.ExportVisitor">
+<area shape="rect" id="node1" title="ExportVisitor接口定义了访问者模式中的访问者角色。 每个visit方法对应一种图形类型的导出逻辑。" alt="" coords="5,5,223,141"/>
+</map>

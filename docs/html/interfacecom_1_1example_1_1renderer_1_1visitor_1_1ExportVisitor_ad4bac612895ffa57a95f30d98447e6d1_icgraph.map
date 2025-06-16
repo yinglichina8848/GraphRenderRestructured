@@ -1,0 +1,5 @@
+<map id="com.example.renderer.visitor.ExportVisitor.visitEllipse" name="com.example.renderer.visitor.ExportVisitor.visitEllipse">
+<area shape="rect" id="node1" title=" " alt="" coords="544,5,761,47"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2" title="接受访问者访问此椭圆对象" alt="" coords="275,5,496,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#af62bc4ad8cc46a83a07d731f0d3f6d93" title="测试椭圆对象接受访问者的功能。" alt="" coords="5,5,227,47"/>
+</map>
