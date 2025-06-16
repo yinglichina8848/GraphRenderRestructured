@@ -113,6 +113,21 @@ public class LegacyRendererAdapter implements Renderer {
         legacyRenderer.drawLegacyTriangle(x1, y1, x2, y2, x3, y3);
     }
 
+    /**
+     * 绘制椭圆，转发调用到LegacyRenderer的drawLegacyEllipse()方法。
+     * 
+     * <p>实现细节：
+     * <ul>
+     *   <li>参数直接转发，不做修改</li>
+     *   <li>不处理LegacyRenderer抛出的异常</li>
+     * </ul>
+     * 
+     * @param x 椭圆中心x坐标
+     * @param y 椭圆中心y坐标
+     * @param rx 椭圆x轴半径(必须>0)
+     * @param ry 椭圆y轴半径(必须>0)
+     * @see LegacyRenderer#drawLegacyEllipse(int, int, int, int)
+     */
     @Override
     public void drawEllipse(int x, int y, int rx, int ry) {
         legacyRenderer.drawLegacyEllipse(x, y, rx, ry);
