@@ -1,9 +1,18 @@
 /**
- * LegacyRendererTest
- *
+ * LegacyRenderer的单元测试类。
+ * 
+ * <p>验证遗留渲染器的以下功能：
+ * <ul>
+ *   <li>正确输出渲染日志</li>
+ *   <li>参数传递正确性</li>
+ *   <li>各种图形的渲染调用</li>
+ * </ul>
+ * 
+ * <p>测试方法通过捕获标准输出来验证渲染调用。</p>
+ * 
+ * @see LegacyRenderer 被测试类
  * @author liying
- * @date 2025-06-14
- * @lastModified 2025-06-14
+ * @since 1.0
  */
 package com.example.renderer.adapter;
 

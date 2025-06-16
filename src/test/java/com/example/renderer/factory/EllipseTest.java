@@ -6,6 +6,22 @@ import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Ellipse类的单元测试。
+ * 
+ * <p>验证椭圆图形的以下行为：
+ * <ul>
+ *   <li>正确渲染椭圆</li>
+ *   <li>移动操作的正确性</li>
+ *   <li>边界尺寸处理</li>
+ *   <li>访问者模式支持</li>
+ *   <li>极端坐标情况</li>
+ * </ul>
+ * 
+ * @see Ellipse 被测试类
+ * @author liying
+ * @since 1.0
+ */
 public class EllipseTest {
 
     @Test

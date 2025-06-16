@@ -1,9 +1,19 @@
 /**
- * SwingRendererTest
- *
+ * SVGRenderer的单元测试类。
+ * 
+ * <p>验证SVG渲染器的以下功能：
+ * <ul>
+ *   <li>正确生成SVG格式字符串</li>
+ *   <li>各种图形的SVG输出格式</li>
+ *   <li>边界值处理</li>
+ *   <li>输出流重定向</li>
+ * </ul>
+ * 
+ * <p>注意：部分测试需要GUI环境，使用@Disabled注解标记。</p>
+ * 
+ * @see SVGRenderer 被测试类
  * @author liying
- * @date 2025-06-15
- * @lastModified 2025-06-15
+ * @since 1.0
  */
 package com.example.renderer.bridge;
 

@@ -5,6 +5,22 @@ import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Triangle类的单元测试。
+ * 
+ * <p>测试覆盖以下方面：
+ * <ul>
+ *   <li>基本渲染功能</li>
+ *   <li>移动操作</li>
+ *   <li>边界值处理</li>
+ *   <li>极端坐标情况</li>
+ *   <li>退化三角形情况</li>
+ * </ul>
+ * 
+ * @see Triangle 被测试类
+ * @author liying
+ * @since 1.0
+ */
 public class TriangleTest {
 
     @Test
