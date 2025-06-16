@@ -10,7 +10,7 @@ package com.example.renderer.factory;
  *   <li>集中管理对象的创建逻辑</li>
  *   <li>便于扩展新的图形类型</li>
  * </ul>
- * </p>
+ * 
  * 
  * @see BasicShapeFactory 基础实现
  * @see Circle 圆形

@@ -28,8 +28,19 @@ import com.example.renderer.visitor.ExportVisitor;
 public class Rectangle implements Shape {
     private int x, y, width, height;
 
+    /**
+     * Default constructor required for serialization.
+     */
     public Rectangle() {} // 必须要无参构造器
 
+    /**
+     * Creates a new Rectangle with specified dimensions.
+     * @param x the x coordinate of top-left corner
+     * @param y the y coordinate of top-left corner
+     * @param width the width of rectangle (must be > 0)
+     * @param height the height of rectangle (must be > 0)
+     * @throws IllegalArgumentException if width or height are <= 0
+     */
     public Rectangle(int x, int y, int width, int height) {
         if (width <= 0) {
             throw new IllegalArgumentException("Width must be positive (was " + width + ")");

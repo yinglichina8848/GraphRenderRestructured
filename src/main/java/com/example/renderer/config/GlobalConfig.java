@@ -15,7 +15,7 @@ package com.example.renderer.config;
  * <ul>
  *   <li>renderMode - 渲染模式(如"swing","svg"等)</li>
  * </ul>
- * </p>
+ * 
  * 
  * <p>线程安全：getInstance()方法线程安全，配置项访问需要外部同步。</p>
  * 

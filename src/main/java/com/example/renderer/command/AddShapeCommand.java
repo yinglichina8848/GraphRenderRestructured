@@ -24,6 +24,10 @@ import com.example.renderer.command.Command;
 
 import java.util.List;
 
+/**
+ * Command implementation for adding a shape to a shape list.
+ * Supports undo operation by removing the added shape.
+ */
 public class AddShapeCommand implements Command {
     private final List<Shape> shapes;
     private final Shape shape;

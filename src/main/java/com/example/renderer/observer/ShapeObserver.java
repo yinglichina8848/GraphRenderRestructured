@@ -1,6 +1,7 @@
 package com.example.renderer.bridge;
 
 import com.example.renderer.factory.Shape;
+import com.example.renderer.observer.ShapeObservable;
 
 /**
  * ShapeObserver接口定义了观察者模式中的观察者角色。

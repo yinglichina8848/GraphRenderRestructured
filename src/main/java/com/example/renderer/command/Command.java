@@ -32,12 +32,14 @@ import com.example.renderer.factory.Shape;
  */
 public interface Command {
     /**
-     * 执行命令操作
+     * Executes the command operation.
+     * Implementations should perform the actual operation here.
      */
     void execute();
     
     /**
-     * 撤销命令操作
+     * Undoes the command operation.
+     * Implementations should revert the execute() operation here.
      */
     void undo();
 }

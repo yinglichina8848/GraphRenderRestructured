@@ -36,9 +36,13 @@ import com.google.gson.GsonBuilder;
 
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonSyntaxException;
 
 public class PersistenceManager {
     private static final PersistenceManager INSTANCE = new PersistenceManager();
