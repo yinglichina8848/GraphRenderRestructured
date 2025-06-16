@@ -42,6 +42,24 @@ public class JSONExportVisitorTest {
      *   <li>验证输出内容</li>
      * </ol>
      */
+    /**
+     * 测试圆形对象的JSON导出格式。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>输出正确的JSON格式</li>
+     *   <li>包含type字段值为"circle"</li>
+     *   <li>x,y,r字段值与输入一致</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>重定向标准输出</li>
+     *   <li>创建圆形实例并调用visitCircle()</li>
+     *   <li>验证输出内容</li>
+     *   <li>恢复标准输出</li>
+     * </ol>
+     */
     @Test
     public void testVisitCircle() {
         System.setOut(new PrintStream(outContent));

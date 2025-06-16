@@ -23,6 +23,16 @@ import static org.mockito.Mockito.*;
  */
 public class AddShapeCommandTest {
 
+    /**
+     * 测试execute()方法是否正确添加图形到列表。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>执行命令后列表大小增加1</li>
+     *   <li>列表包含添加的图形</li>
+     *   <li>原始列表未被修改</li>
+     * </ul>
+     */
     @Test
     public void testExecuteAddsShape() {
         List<Shape> shapes = new ArrayList<>();

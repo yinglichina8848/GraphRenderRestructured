@@ -24,6 +24,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class EllipseTest {
 
+    /**
+     * 测试椭圆渲染功能。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>正确调用Renderer的drawEllipse()方法</li>
+     *   <li>传递正确的坐标和尺寸参数</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建椭圆实例</li>
+     *   <li>使用Mock渲染器调用render()</li>
+     *   <li>验证渲染器是否收到正确参数</li>
+     * </ol>
+     */
     @Test
     public void testRender() {
         Ellipse ellipse = new Ellipse(10, 20, 30, 40);
