@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "/g",
-  1: "/g"
+  0: "g",
+  1: "g"
 };
 
 var indexSectionNames =

@@ -1,58 +1,142 @@
-为 Graph\+Render\+Restructured 项目提供整体说明，包括构建、使用、文档查看和访问方式。\hypertarget{md_README_autotoc_md32}{}\doxysection{Graph\+Render\+Restructured}\label{md_README_autotoc_md32}
-软件工程课程期末作业：利用模式设计的图形渲染系统
+软件工程期末大作业：图形渲染系统的设计与实现\hypertarget{md_README_autotoc_md1}{}\doxysection{🚀 一、项目简介}\label{md_README_autotoc_md1}
+本项目旨在通过设计并实现一个初步的图形渲染系统，综合运用以下9种典型设计模式：
 
-软件工程期末大作业：图形渲染系统的设计与实现 一、任务简介 本项目旨在通过设计并实现一个初步的图形渲染系统，综合运用以下9种典型设计模式： • 创建型模式： ◦ Factory（工厂） ◦ Abstract Factory（抽象工厂） ◦ Singleton（单例） • 结构型模式： ◦ Adapter（适配器） ◦ Bridge（桥接） ◦ Proxy（代理） • 行为型模式： ◦ Command（命令） ◦ Visitor（访问者） ◦ Observer（观察者） 二、项目目标 设计并实现一个简化的图形渲染系统，具备以下功能：
-\begin{DoxyEnumerate}
-\item 渲染基本图形元素（如圆形、矩形、线段）。
-\item 支持不同的渲染引擎（如 SVG、\+Canvas、终端字符图）。
-\item 支持用户操作命令（如添加图形、移动、撤销、重做）。
-\item 支持图形访问器（例如导出图形结构为 JSON、\+XML）。
-\item 具备插件代理机制（如远程渲染服务）。 三、任务要求
-\end{DoxyEnumerate}
-\begin{DoxyEnumerate}
-\item 功能要求 • 图形对象定义（使用抽象工厂+工厂模式创建） • 渲染器接口与实现（使用桥接模式支持多种渲染方式） • 图形命令操作（使用命令模式实现操作和撤销） • 渲染服务代理（使用代理模式本地与远程渲染） • 监听模型变化（使用观察者模式） • 数据导出（访问者模式：导出为\+JSON、\+XML等格式） • 渲染器适配器（适配不同图形库） • 系统全局配置（使用单例模式提供共享配置）
-\item 技术要求 • 使用 Java（建议 Java 11 或以上） • 使用 Power\+Designer 建模（类图、时序图） • 使用 JUnit 实现测试（单元测试、集成测试） • 使用 Java\+Doc 或 Doxygen 自动生成文档 • 提供完整可执行包和源代码
-\end{DoxyEnumerate}
 
-四、开发指导流程 第一步：需求分析与建模 • 使用 Power\+Designer 绘制用例图、类图、活动图 • 识别与映射各设计模式的使用点 • 输出《需求规格说明书》 第二步：系统设计 • 总体架构设计（模块划分、包结构） • 详细设计：类图 + 设计模式注释 • 输出《总体设计说明书》和《详细设计说明书》 第三步：编码实现 • 使用 IDE（如 IntelliJ IDEA 或 Eclipse） • 模块按设计模式划分子包，例如： • com.\+example.\+graphics.\+command com.\+example.\+graphics.\+factory com.\+example.\+graphics.\+render ... • 实现必要接口与类，确保解耦与扩展性 第四步：测试与调试 • 使用 JUnit 编写测试用例 ◦ 单元测试：每个模式和模块独立测试 ◦ 集成测试：渲染整体流程 第五步：文档生成与归档 • 使用 Java\+Doc 或 Doxygen 生成完整 API 文档，集成到 maven 配置中（mvn site) • 编写《安装说明书》和《用户手册》 第六步：项目发布 • 使用 git 发布到 github 或者 Gitee • 使用 Aider 分析项目，补全缺少的单元测试。
+\begin{DoxyItemize}
+\item • 创建型模式：
+\item ◦ Factory（工厂）
+\item ◦ Abstract Factory（抽象工厂）
+\item ◦ Singleton（单例）
+\item • 结构型模式：
+\item ◦ Adapter（适配器）
+\item ◦ Bridge（桥接）
+\item ◦ Proxy（代理）
+\item • 行为型模式：
+\item ◦ Command（命令）
+\item ◦ Visitor（访问者）
+\item ◦ Observer（观察者）
+\item 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{🚀 二、项目目标}\label{md_README_autotoc_md2}
+设计并实现一个简化的图形渲染系统，具备以下功能： -\/1. 渲染基本图形元素（如圆形、矩形、线段）。 -\/2. 支持不同的渲染引擎（如 SVG、\+Canvas、终端字符图）。 -\/3. 支持用户操作命令（如添加图形、移动、撤销、重做）。 -\/4. 支持图形访问器（例如导出图形结构为 JSON、\+XML）。 -\/5. 具备插件代理机制（如远程渲染服务）。\hypertarget{md_README_autotoc_md3}{}\doxysection{🚀 三、任务要求}\label{md_README_autotoc_md3}
 
-五、预期成果 学生应提交如下材料：
-\begin{DoxyEnumerate}
-\item 软件设计文档 ◦ 《需求规格说明书》 ◦ 《总体设计说明书》 ◦ 《详细设计说明书》 ◦ 《单元测试报告》 ◦ 《集成测试报告》
-\item 建模文件 ◦ Power\+Designer 模型文件（.\+pdm/.cdm/.oom 等）
-\item 完整源码包 ◦ 含所有 .java 源文件、测试用例、资源文件等
-\item 可执行文件 ◦ JAR 或其他部署包
-\item 技术文档 ◦ 使用 Java\+Doc 或 Doxygen 自动生成的 API 文档 ◦ 安装说明书（含依赖、打包命令等） ◦ 用户手册（操作流程、截图、示例）
-\item 项目结构要求
-\end{DoxyEnumerate}
-\begin{DoxyEnumerate}
-\item /graphic-\/rendering/ ├── /doc/ │ ├── 需求规格说明书.\+docx │ ├── 总体设计说明书.\+docx │ ├── ... ├── /model/ │ ├── class\+Diagram.\+oom ├── /src/ │ ├── main/java/... │ ├── test/java/... ├── /lib/ ├── /javadoc/ ├── build.\+gradle / pom.\+xml └── README.\+md
-\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item 1. 功能要求
+\item • 图形对象定义（使用抽象工厂+工厂模式创建）
+\item • 渲染器接口与实现（使用桥接模式支持多种渲染方式）
+\item • 图形命令操作（使用命令模式实现操作和撤销）
+\item • 渲染服务代理（使用代理模式本地与远程渲染）
+\item • 监听模型变化（使用观察者模式）
+\item • 数据导出（访问者模式：导出为\+JSON、\+XML等格式）
+\item • 渲染器适配器（适配不同图形库）
+\item • 系统全局配置（使用单例模式提供共享配置）
+\item 2. 技术要求
+\item • 使用 Java（建议 Java 11 或以上）
+\item • 使用 Power\+Designer 建模（类图、时序图）
+\item • 使用 JUnit 实现测试（单元测试、集成测试）
+\item • 使用 Java\+Doc 或 Doxygen 自动生成文档
+\item • 提供完整可执行包和源代码
+\item 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysection{🚀 四、开发指导流程}\label{md_README_autotoc_md4}
+\hypertarget{md_README_autotoc_md5}{}\doxysubsection{第一步：需求分析与建模}\label{md_README_autotoc_md5}
+\hypertarget{md_README_autotoc_md6}{}\doxysubsubsection{• 使用 Power\+Designer 绘制用例图、类图、活动图}\label{md_README_autotoc_md6}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsubsection{• 识别与映射各设计模式的使用点}\label{md_README_autotoc_md7}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsubsection{• 输出《需求规格说明书》}\label{md_README_autotoc_md8}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsection{第二步：系统设计}\label{md_README_autotoc_md9}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsubsection{• 总体架构设计（模块划分、包结构）}\label{md_README_autotoc_md10}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{• 详细设计：类图 + 设计模式注释}\label{md_README_autotoc_md11}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsubsection{• 输出《总体设计说明书》和《详细设计说明书》}\label{md_README_autotoc_md12}
+\hypertarget{md_README_autotoc_md13}{}\doxysubsection{第三步：编码实现}\label{md_README_autotoc_md13}
+\hypertarget{md_README_autotoc_md14}{}\doxysubsubsection{• 使用 IDE（如 Intelli\+J IDEA 或 Eclipse）}\label{md_README_autotoc_md14}
+\hypertarget{md_README_autotoc_md15}{}\doxysubsubsection{• 模块按设计模式划分子包，例如：}\label{md_README_autotoc_md15}
+\hypertarget{md_README_autotoc_md16}{}\doxysubsubsection{• com.\+example.\+graphics.\+command}\label{md_README_autotoc_md16}
+com.\+example.\+graphics.\+factory com.\+example.\+graphics.\+render ...\hypertarget{md_README_autotoc_md17}{}\doxysubsubsection{• 实现必要接口与类，确保解耦与扩展性}\label{md_README_autotoc_md17}
+\hypertarget{md_README_autotoc_md18}{}\doxysubsection{第四步：测试与调试}\label{md_README_autotoc_md18}
+\hypertarget{md_README_autotoc_md19}{}\doxysubsubsection{• 使用 JUnit 编写测试用例}\label{md_README_autotoc_md19}
+\hypertarget{md_README_autotoc_md20}{}\doxysubsubsection{◦ 单元测试：每个模式和模块独立测试}\label{md_README_autotoc_md20}
+\hypertarget{md_README_autotoc_md21}{}\doxysubsubsection{◦ 集成测试：渲染整体流程}\label{md_README_autotoc_md21}
+\hypertarget{md_README_autotoc_md22}{}\doxysubsection{第五步：文档生成与归档}\label{md_README_autotoc_md22}
+\hypertarget{md_README_autotoc_md23}{}\doxysubsubsection{• 使用 Java\+Doc 或 Doxygen 生成完整 API 文档，集成到 maven 配置中（mvn site)}\label{md_README_autotoc_md23}
+\hypertarget{md_README_autotoc_md24}{}\doxysubsubsection{• 编写《安装说明书》和《用户手册》}\label{md_README_autotoc_md24}
+\hypertarget{md_README_autotoc_md25}{}\doxysubsection{第六步：项目发布}\label{md_README_autotoc_md25}
+\hypertarget{md_README_autotoc_md26}{}\doxysubsubsection{• 使用 git 发布到 github 或者 Gitee}\label{md_README_autotoc_md26}
+\hypertarget{md_README_autotoc_md27}{}\doxysubsubsection{• 使用 Aider 分析项目，补全缺少的单元测试。}\label{md_README_autotoc_md27}
+\hypertarget{md_README_autotoc_md28}{}\doxysection{🚀 五、预期成果}\label{md_README_autotoc_md28}
+学生应提交如下材料： \hypertarget{md_README_autotoc_md29}{}\doxysubsection{1. 软件设计文档}\label{md_README_autotoc_md29}
 
-六、评分标准（满分 100 分） 项目 权重 说明 设计模式应用 25 是否覆盖9个指定模式，且实现合理 模型设计 15 UML模型完整性与清晰度 编码实现 15 模块清晰、命名规范、功能完整 测试覆盖 10 是否实现单元测试、集成测试 技术文档 10 Java\+Doc 或 Doxygen 文档完整性 安装说明/使用手册 10 可执行性、说明清晰 归档完整性 10 所有文档、代码、模型齐全 项目演示 5 运行无误、演示逻辑清晰\hypertarget{md_README_autotoc_md33}{}\doxysubsection{autotoc\+\_\+md33}\label{md_README_autotoc_md33}
-📄 项目文档
+\begin{DoxyItemize}
+\item ◦ 《需求规格说明书》
+\item ◦ 《总体设计说明书》
+\item ◦ 《详细设计说明书》
+\item ◦ 《单元测试报告》
+\item ◦ 《集成测试报告》
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md30}{}\doxysubsection{2. 建模文件}\label{md_README_autotoc_md30}
 
-Doxygen 生成的完整 API 文档见：\href{https://yinglichina8848.github.io/GraphRenderRestructured/}{\texttt{ 点击查看}}
+\begin{DoxyItemize}
+\item ◦ Power\+Designer 模型文件（.\+pdm/.cdm/.oom 等） 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md31}{}\doxysubsection{3. 完整源码包}\label{md_README_autotoc_md31}
+
+\begin{DoxyItemize}
+\item ◦ 含所有 .java 源文件、测试用例、资源文件等 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md32}{}\doxysubsection{4. 可执行文件}\label{md_README_autotoc_md32}
+
+\begin{DoxyItemize}
+\item ◦ JAR 或其他部署包 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md33}{}\doxysubsection{5. 技术文档}\label{md_README_autotoc_md33}
+
+\begin{DoxyItemize}
+\item ◦ 使用 Java\+Doc 或 Doxygen 自动生成的 API 文档
+\item ◦ 安装说明书（含依赖、打包命令等）
+\item ◦ 用户手册（操作流程、截图、示例）
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md34}{}\doxysubsection{6. 项目结构要求}\label{md_README_autotoc_md34}
+
+\begin{DoxyItemize}
+\item 6. /graphic-\/rendering/
+\item ├── /doc/
+\item │ ├── 需求规格说明书.\+docx
+\item │ ├── 总体设计说明书.\+docx
+\item │ ├── ...
+\item ├── /model/
+\item │ ├── class\+Diagram.\+oom
+\item ├── /src/
+\item │ ├── main/java/...
+\item │ ├── test/java/...
+\item ├── /lib/
+\item ├── /javadoc/
+\item ├── build.\+gradle / pom.\+xml
+\item └── README.\+md
+\item 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md35}{}\doxysection{🚀 六、评分标准（满分 100 分）}\label{md_README_autotoc_md35}
+\hypertarget{md_README_autotoc_md36}{}\doxysubsubsection{项目                权重                说明}\label{md_README_autotoc_md36}
+\hypertarget{md_README_autotoc_md37}{}\doxysubsubsection{设计模式应用         25                  是否覆盖9个指定模式，且实现合理}\label{md_README_autotoc_md37}
+\hypertarget{md_README_autotoc_md38}{}\doxysubsubsection{模型设计            15                  UML模型完整性与清晰度}\label{md_README_autotoc_md38}
+\hypertarget{md_README_autotoc_md39}{}\doxysubsubsection{编码实现            15                  模块清晰、命名规范、功能完整}\label{md_README_autotoc_md39}
+\hypertarget{md_README_autotoc_md40}{}\doxysubsubsection{测试覆盖            10                  是否实现单元测试、集成测试}\label{md_README_autotoc_md40}
+\hypertarget{md_README_autotoc_md41}{}\doxysubsubsection{技术文档            10                  Java\+Doc 或 Doxygen 文档完整性}\label{md_README_autotoc_md41}
+\hypertarget{md_README_autotoc_md42}{}\doxysubsubsection{安装说明/使用手册    10                  可执行性、说明清晰}\label{md_README_autotoc_md42}
+\hypertarget{md_README_autotoc_md43}{}\doxysubsubsection{归档完整性          10                  所有文档、代码、模型齐全}\label{md_README_autotoc_md43}
+\hypertarget{md_README_autotoc_md44}{}\doxysubsubsection{项目演示            5                   运行无误、演示逻辑清晰}\label{md_README_autotoc_md44}
+\hypertarget{md_README_autotoc_md45}{}\doxysubsection{autotoc\+\_\+md45}\label{md_README_autotoc_md45}
+\#📄 项目文档\hypertarget{md_README_autotoc_md46}{}\doxysubsection{Java\+Doc 生成的完整 API 文档见：https\+://yinglichina8848.\+github.\+io/\+Graph\+Render\+Restructured}\label{md_README_autotoc_md46}
+\hypertarget{md_README_autotoc_md47}{}\doxysubsection{Doxygen 生成的完整 API 文档见：https\+://yinglichina8848.\+github.\+io/\+Graph\+Render\+Restructured/html/index.\+html}\label{md_README_autotoc_md47}
+\DoxyHorRuler{0}
+\hypertarget{md_README_autotoc_md49}{}\doxysubsubsection{Java\+Doc 生成的完整 API 文档见：https\+://apidoc.\+gitee.\+com/yinglichina/graph-\/render-\/restructured}\label{md_README_autotoc_md49}
+\hypertarget{md_README_autotoc_md50}{}\doxysubsubsection{Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).}\label{md_README_autotoc_md50}
+\hypertarget{md_README_autotoc_md51}{}\doxysection{🚀 项目简介}\label{md_README_autotoc_md51}
+这是一个采用 Maven 构建的图形渲染系统，结合 Java 和 多种设计模式，生成了 Java\+Doc 和 Doxygen 两套文档，并整合到 Maven Site 中。
 
 \DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md35}{}\doxysubsection{🚀 项目简介}\label{md_README_autotoc_md35}
-这是一个采用 Maven 构建的图形渲染系统，结合 Java 和 C++，生成了 Java\+Doc 和 Doxygen 两套文档，并整合到 Maven Site 中。
-
-\DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md37}{}\doxysubsection{🧱 构建 \& 安装}\label{md_README_autotoc_md37}
-
+\hypertarget{md_README_autotoc_md53}{}\doxysection{🧱 构建 \& 安装}\label{md_README_autotoc_md53}
+———————————————————————————————————————————————————————————————————————————————————————————————————— 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\# 克隆仓库}
+\DoxyCodeLine{\# 克隆仓库（Github 版本）}
 \DoxyCodeLine{git clone https://github.com/yinglichina8848/GraphRenderRestructured.git}
 \DoxyCodeLine{cd GraphRenderRestructured}
 \DoxyCodeLine{}
 \DoxyCodeLine{\# 构建项目并生成文档}
-\DoxyCodeLine{mvn clean site}
+\DoxyCodeLine{mvn clean package site}
 
 \end{DoxyCode}
-
-
-成功后，你将在 {\ttfamily target/site/} 目录下看到：
+ 成功后，你将在 {\ttfamily target/site/} 目录下看到：
 
 
 \begin{DoxyItemize}
@@ -61,25 +145,31 @@ Doxygen 生成的完整 API 文档见：\href{https://yinglichina8848.github.io/
 \item {\ttfamily index.\+html} —— Maven Site 总入口
 \end{DoxyItemize}
 
-\DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md39}{}\doxysubsection{📄 使用示例}\label{md_README_autotoc_md39}
+—————————————————————————————————————————————————————————————————————————————————————————————————————— \hypertarget{md_README_autotoc_md54}{}\doxysection{克隆 Gitee 仓库（将原 Git\+Hub 地址替换为 Gitee 地址）}\label{md_README_autotoc_md54}
+git clone \href{https://gitee.com/yinglichina/graph-render-restructured.git}{\texttt{ https\+://gitee.\+com/yinglichina/graph-\/render-\/restructured.\+git}} cd graph-\/render-\/restructured\hypertarget{md_README_autotoc_md55}{}\doxysection{构建项目并生成文档（如 Maven Site 或 Doxygen）}\label{md_README_autotoc_md55}
+mvn clean package site 成功后，你将在 {\ttfamily target/site/} 目录下看到：
+
+
+\begin{DoxyItemize}
+\item {\ttfamily apidocs/} —— Java\+Doc 文档
+\item {\ttfamily doxygen/} —— Doxygen 生成的文档
+\item {\ttfamily index.\+html} —— Maven Site 总入口
+\end{DoxyItemize}
+
+———————————————————————————————————————————————————————————————— \hypertarget{md_README_autotoc_md56}{}\doxysubsection{📄 使用示例}\label{md_README_autotoc_md56}
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{mvn package}
 \DoxyCodeLine{java -\/jar target/graph-\/render-\/1.0-\/SNAPSHOT.jar}
 \DoxyCodeLine{\# 或}
 \DoxyCodeLine{mvn exec:java -\/Dexec.mainClass="{}com.example.renderer.ui.MainUI"{}}
 
 \end{DoxyCode}
-
-
-\DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md41}{}\doxysubsection{🧭 文档访问}\label{md_README_autotoc_md41}
-所有文档都已发布至 Git\+Hub Pages / Git\+Lab Pages，可以通过以下链接访问：
-
-👉 \href{https://yinglichina8848.github.io/GraphRenderRestructured/}{\texttt{ 查看项目文档（\+Maven Site）}}
-
-\DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md43}{}\doxysubsection{⭐ 特性亮点}\label{md_README_autotoc_md43}
+ \hypertarget{md_README_autotoc_md57}{}\doxysubsection{\#运行时需要 Java 图形环境。}\label{md_README_autotoc_md57}
+——————————————————————————————————————————————————————————————————— \hypertarget{md_README_autotoc_md58}{}\doxysubsection{🧭 文档访问}\label{md_README_autotoc_md58}
+所有文档都已发布至 Git\+Hub Pages / Git\+Lab Pages，可以通过以下链接访问： \hypertarget{md_README_autotoc_md59}{}\doxysubsection{autotoc\+\_\+md59}\label{md_README_autotoc_md59}
+👉 \mbox{[}查看项目(\+Git\+Hub)\mbox{]} \href{https://yinglichina8848.github.io/GraphRenderRestructured}{\texttt{ https\+://yinglichina8848.\+github.\+io/\+Graph\+Render\+Restructured}}\hypertarget{md_README_autotoc_md60}{}\doxysubsection{autotoc\+\_\+md60}\label{md_README_autotoc_md60}
+👉 \mbox{[}查看项目(\+Gitee)\mbox{]} \href{https://apidoc.gitee.com/yinglichina/graph-render-restructured}{\texttt{ https\+://apidoc.\+gitee.\+com/yinglichina/graph-\/render-\/restructured}}\hypertarget{md_README_autotoc_md61}{}\doxysubsection{⭐ 特性亮点}\label{md_README_autotoc_md61}
 
 \begin{DoxyItemize}
 \item ✅ Java\+Doc（\+Java API 文档）
@@ -89,7 +179,7 @@ Doxygen 生成的完整 API 文档见：\href{https://yinglichina8848.github.io/
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md45}{}\doxysubsection{🤝 贡献指南}\label{md_README_autotoc_md45}
+\hypertarget{md_README_autotoc_md63}{}\doxysubsection{🤝 贡献指南}\label{md_README_autotoc_md63}
 欢迎贡献代码、提交 Issue 或 PR：
 
 
@@ -101,9 +191,9 @@ Doxygen 生成的完整 API 文档见：\href{https://yinglichina8848.github.io/
 \end{DoxyEnumerate}
 
 \DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md47}{}\doxysubsection{📝 许可证}\label{md_README_autotoc_md47}
+\hypertarget{md_README_autotoc_md65}{}\doxysubsection{📝 许可证}\label{md_README_autotoc_md65}
 本项目采用 \mbox{[}MIT License\mbox{]}(LICENSE) 开源，欢迎自由使用和修改。
 
 \DoxyHorRuler{0}
-\hypertarget{md_README_autotoc_md49}{}\doxysubsection{📞 联系方式}\label{md_README_autotoc_md49}
+\hypertarget{md_README_autotoc_md67}{}\doxysubsection{📞 联系方式}\label{md_README_autotoc_md67}
 对接问题或合作，欢迎联系我 ：{\ttfamily yinglichina@gmail.\+com} 
