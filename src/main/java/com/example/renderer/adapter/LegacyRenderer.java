@@ -26,8 +26,8 @@ package com.example.renderer.legacy;
  * adapter.drawCircle(10,10,5); // 通过适配器调用
  * </pre>
  * 
- * @see LegacyRendererAdapter 适配器实现
- * @see Renderer 新渲染器接口
+ * @see com.example.renderer.adapter.LegacyRendererAdapter 适配器实现
+ * @see com.example.renderer.bridge.Renderer 新渲染器接口
  * @author liying
  * @since 1.0
  */

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <body>
+    <menu name="Documentation">
+      <item name="JavaDoc" href="apidocs/index.html"/>
+      <item name="Doxygen" href="doxygen/html/index.html"/>
+    </menu>
+  </body>
+</project>
+

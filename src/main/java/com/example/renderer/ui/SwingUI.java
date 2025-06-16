@@ -200,7 +200,6 @@ public class SwingUI extends JFrame {
      * 3. 调用PersistenceManager保存数据
      * 4. 显示操作结果提示
      * 
-     * @throws IOException 如果文件写入失败
      * @see PersistenceManager#saveShapesToFile(List, String)
      */
     private void saveShapes() {
@@ -231,8 +230,6 @@ public class SwingUI extends JFrame {
      * 5. 刷新绘图面板显示新图形
      * 6. 显示操作结果提示
      * 
-     * @throws IOException 如果文件读取失败
-     * @throws JsonParseException 如果JSON解析失败
      * @see PersistenceManager#loadShapesFromFile(String) 
      */
     private void loadShapes() {

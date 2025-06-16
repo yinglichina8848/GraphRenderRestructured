@@ -154,7 +154,7 @@
                     </dependency>
                 </dependencies>
                 <configuration>
-                    <skip>true</skip> <!-- 跳过PDF生成 -->
+                    <skip>false</skip> <!-- 跳过PDF生成 -->
                 </configuration>
             </plugin>
         </plugins>
