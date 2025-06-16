@@ -150,12 +150,11 @@
                             <report>dependencies</report>
                             <report>scm</report>
                             <report>modules</report>
-                            <report>license</report>
+                            <report>licenses</report>
                             <report>team</report>
                             <report>ci-management</report>
                             <report>issue-management</report>
                             <report>mailing-lists</report>
-                            <report>project-team</report>
                             <report>summary</report>
                         </reports>
                     </reportSet>
