@@ -26,6 +26,7 @@ package com.example.renderer.adapter;
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.legacy.LegacyRenderer;
 import java.util.Objects;
+import java.util.Objects;
 
 public class LegacyRendererAdapter implements Renderer {
 
