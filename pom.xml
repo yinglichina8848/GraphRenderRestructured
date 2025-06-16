@@ -24,6 +24,12 @@
     <dependencies>
         <!-- 这里可以根据需要添加依赖 -->
         <!-- 例如JUnit测试依赖 -->
+        <!-- For latex/pdf generation -->
+        <dependency>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>latex-maven-plugin</artifactId>
+            <version>1.1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -153,6 +159,24 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.3.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>latex-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/latex</outputDirectory>
+                    <texFile>${project.name}.tex</texFile>
+                    <pdfFilename>${project.name}-${project.version}.pdf</pdfFilename>
+                    <title>${project.name} Documentation</title>
+                    <author>${project.organization.name}</author>
+                    <date>\today</date>
+                    <sections>
+                        <section>Introduction</section>
+                        <section>Project Information</section>
+                        <section>Dependencies</section>
+                    </sections>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>
