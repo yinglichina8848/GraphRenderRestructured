@@ -169,6 +169,12 @@
                 <groupId>com.github.trecloux</groupId>
                 <artifactId>pdf-maven-plugin</artifactId>
                 <version>1.4</version>
+                <configuration>
+                    <inputFile>${project.basedir}/src/site/pdf/documentation.md</inputFile>
+                    <outputDirectory>${project.build.directory}/pdf</outputDirectory>
+                    <outputFile>${project.name}-${project.version}.pdf</outputFile>
+                    <pdfBuilder>itext</pdfBuilder>
+                </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.apache.maven.doxia</groupId>
@@ -183,12 +189,6 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
-                        <configuration>
-                            <inputFile>${project.basedir}/src/site/pdf/documentation.md</inputFile>
-                            <outputDirectory>${project.build.directory}/pdf</outputDirectory>
-                            <outputFile>${project.name}-${project.version}.pdf</outputFile>
-                            <pdfBuilder>itext</pdfBuilder>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
