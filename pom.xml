@@ -94,10 +94,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <excludes>
-                        <exclude>**/SwingRendererTest.java</exclude>
-                        <exclude>**/SVGRendererTest.java</exclude>
-                    </excludes>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                    </includes>
                 </configuration>
             </plugin>
             <!-- 编译插件 -->
