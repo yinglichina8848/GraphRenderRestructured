@@ -45,6 +45,7 @@ public class PersistenceManager {
     private final Gson gson;
 
     private PersistenceManager() {
+        // 创建支持多态类型的Gson适配器工厂
         RuntimeTypeAdapterFactory<com.example.renderer.factory.Shape> adapterFactory =
                 RuntimeTypeAdapterFactory.of(Shape.class, "type")
                         .registerSubtype(Circle.class, "Circle")
@@ -52,9 +53,10 @@ public class PersistenceManager {
                         .registerSubtype(Ellipse.class, "Ellipse")
                         .registerSubtype(Triangle.class, "Triangle");
 
+        // 配置Gson实例
         gson = new GsonBuilder()
-                .registerTypeAdapterFactory(adapterFactory)
-                .setPrettyPrinting()
+                .registerTypeAdapterFactory(adapterFactory) // 注册类型适配器
+                .setPrettyPrinting() // 美化输出
                 .create();
     }
 

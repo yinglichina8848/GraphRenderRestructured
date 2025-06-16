@@ -61,6 +61,10 @@ import com.example.renderer.factory.Triangle;
 
 public class JSONExportVisitor implements ExportVisitor {
     // JSON格式模板常量
+    /**
+     * 圆形JSON格式模板
+     * 格式: {"type":"circle", "x":x, "y":y, "r":radius}
+     */
     private static final String CIRCLE_JSON = 
         "{\"type\":\"circle\", \"x\":%d, \"y\":%d, \"r\":%d}";
     private static final String RECTANGLE_JSON = 

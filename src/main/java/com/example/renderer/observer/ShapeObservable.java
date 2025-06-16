@@ -46,7 +46,29 @@ public class ShapeObservable {
     }
 }
 
+/**
+ * 图形观察者接口，定义图形变化时的回调方法。
+ * 
+ * <p>作为观察者模式中的观察者角色，当被观察的图形对象发生变化时，
+ * 会调用onShapeChanged()方法通知所有观察者。</p>
+ * 
+ * <p>典型用法：
+ * <pre>
+ * shapeObservable.addObserver(new ShapeObserver() {
+ *     public void onShapeChanged() {
+ *         // 处理图形变化逻辑
+ *     }
+ * });
+ * </pre>
+ * 
+ * @see ShapeObservable 可观察对象
+ * @author liying
+ * @since 1.0
+ */
 interface ShapeObserver {
+    /**
+     * 当被观察的图形发生变化时调用
+     */
     void onShapeChanged();
 }
 

@@ -71,6 +71,28 @@ public interface ShapeFactory {
  * @author liying
  * @since 1.0
  */
+/**
+ * 基础图形工厂实现类，提供标准图形对象的创建。
+ * 
+ * <p>作为ShapeFactory接口的默认实现，它创建标准的图形实例：
+ * <ul>
+ *   <li>圆形(Circle)</li>
+ *   <li>矩形(Rectangle)</li>
+ * </ul>
+ * 
+ * <p>设计考虑：
+ * <ul>
+ *   <li>简单工厂模式实现</li>
+ *   <li>参数验证由具体图形类处理</li>
+ *   <li>易于扩展新的图形类型</li>
+ * </ul>
+ * 
+ * @see ShapeFactory 工厂接口
+ * @see Circle 圆形实现
+ * @see Rectangle 矩形实现
+ * @author liying
+ * @since 1.0
+ */
 class BasicShapeFactory implements ShapeFactory {
     /**
      * 创建圆形实例
