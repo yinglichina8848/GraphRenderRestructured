@@ -102,7 +102,7 @@
                         <configuration>
                             <executable>doxygen</executable>
                             <arguments>
-                                <argument>${project.basedir}/Doxyfile</argument>
+                                <argument>${project.basedir}/Doxygen</argument>
                             </arguments>
                         </configuration>
                     </execution>

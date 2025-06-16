@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# 项目相关配置
-=======
 # Doxyfile 1.9.1 - 图形渲染系统文档配置
 
 # This file describes the settings to be used by the documentation system
@@ -35,22 +32,10 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
->>>>>>> 305811f (Deploy docs)
 PROJECT_NAME           = "图形渲染系统"
 PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "基于多种设计模式的图形渲染系统"
 PROJECT_LOGO           = docs/logo.png
-<<<<<<< HEAD
-OUTPUT_DIRECTORY       = docs/
-USE_MDFILE_AS_MAINPAGE = docs/mainpage.md  # 添加主页面
-
-# 输入配置
-INPUT                  = src/main/java/ src/test/java/
-RECURSIVE              = YES
-+ FILE_PATTERNS        = *.java  # 简化文件模式
-
-# HTML输出配置
-=======
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -968,7 +953,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = NO
+RECURSIVE              = YES
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
@@ -1238,26 +1223,10 @@ IGNORE_PREFIX          =
 # If the GENERATE_HTML tag is set to YES, doxygen will generate HTML output
 # The default value is: YES.
 
->>>>>>> 305811f (Deploy docs)
 GENERATE_HTML          = YES
-HTML_OUTPUT            = html
+HTML_OUTPUT            = .
 HTML_EXTRA_STYLESHEET  = docs/doxygen-awesome.css
 HTML_EXTRA_FILES       = docs/logo.png
-<<<<<<< HEAD
-GENERATE_TREEVIEW    = YES     # 启用树形导航
-DISABLE_INDEX        = NO      # 确保索引可用
-
-# 图表生成配置
-HAVE_DOT               = YES
-CLASS_DIAGRAMS         = YES
-GRAPHICAL_HIERARCHY  = YES     # 全局类层次结构图
-CLASS_GRAPH          = YES     # 类继承图
-COLLABORATION_GRAPH  = YES     # 类协作图
-DOT_IMAGE_FORMAT       = svg
-INTERACTIVE_SVG        = YES
-DOT_GRAPH_MAX_NODES    = 100
-MAX_DOT_GRAPH_DEPTH  = 3       # 限制继承深度
-=======
 
 # The HTML_OUTPUT tag is used to specify where the HTML docs will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2029,7 +1998,7 @@ LATEX_EMOJI_DIRECTORY  =
 # readers/editors.
 # The default value is: NO.
 
-GENERATE_RTF           = NO
+GENERATE_RTF           = YES
 
 # The RTF_OUTPUT tag is used to specify where the RTF docs will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2703,4 +2672,20 @@ GENERATE_LEGEND        = YES
 # The default value is: YES.
 
 DOT_CLEANUP            = YES
->>>>>>> 305811f (Deploy docs)
+
+
+HAVE_DOT               = YES
+DOT_PATH               =               # 可留空，前提是 dot 命令在 PATH 中
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+DOT_GRAPH_MAX_NODES    = 100           # 可根据项目大小调整
+MAX_DOT_GRAPH_DEPTH    = 0             # 0 表示无限深度
+DOT_MULTI_TARGETS      = YES
+
+UML_LOOK               = YES
+TEMPLATE_RELATIONS     = YES
+DOT_CLEANUP            = YES
+

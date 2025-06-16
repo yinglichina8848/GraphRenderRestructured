@@ -248,5 +248,3 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 
 贵州民族大学软件工程专业的同学，如果在复现项目中遇到问题，欢迎通过邮件或者 QQ 联系我 ：`1820393151@qq.com` 
 
-
-

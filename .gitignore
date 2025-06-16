@@ -13,3 +13,16 @@ docs/doxygen/
 Thumbs.db
 
 .aider*
+
+# 忽略 Doxygen 输出目录
+docs/html/
+docs/latex/
+docs/rtf/
+html/
+latex/
+*.aux
+*.log
+*.toc
+*.out
+*.pdf
+
