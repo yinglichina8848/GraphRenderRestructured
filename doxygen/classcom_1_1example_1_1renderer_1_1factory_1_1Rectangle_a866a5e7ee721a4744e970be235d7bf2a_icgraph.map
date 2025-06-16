@@ -1,0 +1,8 @@
+<map id="com.example.renderer.factory.Rectangle.getWidth" name="com.example.renderer.factory.Rectangle.getWidth">
+<area shape="rect" id="node1" title="获取矩形宽度" alt="" coords="631,133,852,174"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#ab7e8bcb7626443a7675aff0abf185f4d" title=" " alt="" coords="351,5,572,61"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a3b374e05484ee30b1b8514569dead0e9" title=" " alt="" coords="351,85,572,141"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a67ecac95355520f78b9afa19bf1f6ea0" title=" " alt="" coords="340,165,583,221"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#af42c3f77485d750dc6ec27edc31c1bf7" title="将矩形对象转换为JSON格式输出" alt="" coords="344,246,579,287"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html#ae9fbae701c3e953b750637b740dbedfc" title=" " alt="" coords="5,246,292,287"/>
+</map>

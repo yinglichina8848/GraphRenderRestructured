@@ -1,0 +1,4 @@
+<map id="com.example.renderer.factory.Triangle.accept" name="com.example.renderer.factory.Triangle.accept">
+<area shape="rect" id="node1" title="接受访问者访问，实现访问者模式。 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。" alt="" coords="5,5,227,47"/>
+<area shape="rect" id="node2" href="$interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a53684388713a9f98d485c988e1300f4c" title=" " alt="" coords="275,5,492,47"/>
+</map>

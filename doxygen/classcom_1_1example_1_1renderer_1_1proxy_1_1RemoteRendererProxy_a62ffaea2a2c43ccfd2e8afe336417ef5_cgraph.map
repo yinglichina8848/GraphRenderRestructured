@@ -1,0 +1,4 @@
+<map id="com.example.renderer.proxy.RemoteRendererProxy.drawEllipse" name="com.example.renderer.proxy.RemoteRendererProxy.drawEllipse">
+<area shape="rect" id="node1" title="绘制椭圆" alt="" coords="5,5,252,47"/>
+<area shape="rect" id="node2" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d" title="绘制椭圆" alt="" coords="300,5,519,47"/>
+</map>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UndoManager.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.command</a> &gt; <span class="el_source">UndoManager.java</span></div><h1>UndoManager.java</h1><pre class="source lang-java linenums">/**
+ * UndoManager管理命令的撤销和重做操作，使用栈结构保存命令历史。
+ * 
+ * &lt;p&gt;实现了命令模式中的命令管理器角色，支持：
+ * &lt;ul&gt;
+ *   &lt;li&gt;执行命令并保存到撤销栈&lt;/li&gt;
+ *   &lt;li&gt;撤销最近执行的命令&lt;/li&gt;
+ *   &lt;li&gt;重做最近撤销的命令&lt;/li&gt;
+ *   &lt;li&gt;检查是否可以撤销/重做&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;
+ * UndoManager undoManager = new UndoManager();
+ * Command cmd = new AddShapeCommand(shapes, new Circle(10,10,5));
+ * undoManager.executeCommand(cmd); // 执行并保存命令
+ * undoManager.undo(); // 撤销命令
+ * undoManager.redo(); // 重做命令
+ * &lt;/pre&gt;
+ * 
+ * @see Command 命令接口
+ * @see AddShapeCommand 添加图形命令
+ * @see MoveShapeCommand 移动图形命令
+ * @author liying
+ * @since 1.0
+ */
+package com.example.renderer.command;
+
+import java.util.Stack;
+
+<span class="nc" id="L31">public class UndoManager {</span>
+<span class="nc" id="L32">    private final Stack&lt;Command&gt; undoStack = new Stack&lt;&gt;();</span>
+<span class="nc" id="L33">    private final Stack&lt;Command&gt; redoStack = new Stack&lt;&gt;();</span>
+
+    public void executeCommand(Command cmd) {
+<span class="nc" id="L36">        cmd.execute();</span>
+<span class="nc" id="L37">        undoStack.push(cmd);</span>
+<span class="nc" id="L38">        redoStack.clear();</span>
+<span class="nc" id="L39">    }</span>
+
+    public void undo() {
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if (!undoStack.isEmpty()) {</span>
+<span class="nc" id="L43">            Command cmd = undoStack.pop();</span>
+<span class="nc" id="L44">            cmd.undo();</span>
+<span class="nc" id="L45">            redoStack.push(cmd);</span>
+        }
+<span class="nc" id="L47">    }</span>
+
+    public void redo() {
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        if (!redoStack.isEmpty()) {</span>
+<span class="nc" id="L51">            Command cmd = redoStack.pop();</span>
+<span class="nc" id="L52">            cmd.execute();</span>
+<span class="nc" id="L53">            undoStack.push(cmd);</span>
+        }
+<span class="nc" id="L55">    }</span>
+
+    public boolean canUndo() {
+<span class="nc bnc" id="L58" title="All 2 branches missed.">        return !undoStack.isEmpty();</span>
+    }
+
+    public boolean canRedo() {
+<span class="nc bnc" id="L62" title="All 2 branches missed.">        return !redoStack.isEmpty();</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

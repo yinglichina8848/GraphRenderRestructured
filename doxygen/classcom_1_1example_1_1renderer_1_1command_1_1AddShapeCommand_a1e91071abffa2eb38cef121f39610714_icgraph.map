@@ -1,0 +1,4 @@
+<map id="com.example.renderer.command.AddShapeCommand.undo" name="com.example.renderer.command.AddShapeCommand.undo">
+<area shape="rect" id="node1" title="Undoes the command operation." alt="" coords="397,5,640,47"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a1f947250ab97e91ff98423af53e4927a" title=" " alt="" coords="5,5,349,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="com.example.renderer.factory.RectangleTest.testMove" name="com.example.renderer.factory.RectangleTest.testMove">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,227,112"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a04a2b038cf6f21b0875a6bce7dd479e0" title="获取矩形左上角x坐标" alt="" coords="275,5,496,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a8086515b4c50de24274dace98a8ca9ea" title="获取矩形左上角Y坐标" alt="" coords="275,71,496,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a85e3c1cc786f02d3b62399193b44a554" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="275,136,496,177"/>
+</map>

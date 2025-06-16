@@ -1,0 +1,7 @@
+<map id="com.example.renderer.bridge.Renderer" name="com.example.renderer.bridge.Renderer">
+<area shape="rect" id="node1" title="Renderer接口定义了图形渲染的基本操作。 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。" alt="" coords="377,5,596,141"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html" title=" " alt="" coords="5,189,232,340"/>
+<area shape="rect" id="node3" title=" " alt="" coords="256,197,475,333"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html" title=" " alt="" coords="499,189,717,340"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html" title="远程渲染器代理实现类" alt="" coords="742,189,954,340"/>
+</map>

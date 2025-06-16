@@ -1,0 +1,5 @@
+<map id="com.example.renderer.proxy.RemoteRendererProxy.drawRectangle" name="com.example.renderer.proxy.RemoteRendererProxy.drawRectangle">
+<area shape="rect" id="node1" title="绘制矩形" alt="" coords="315,53,583,94"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a2f0b86f8169ea20d532ab8cffb0c7dc3" title=" " alt="" coords="5,5,267,61"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a785672431f7951f8d26c27fece370ad8" title="测试代理模式是否正确转发所有渲染方法调用到真实渲染器。" alt="" coords="5,85,267,141"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html" title="Renderer接口定义了图形渲染的基本操作。 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。" alt="" coords="5,71,224,112"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html" title=" " alt="" coords="272,5,499,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html" title=" " alt="" coords="276,71,495,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html" title="远程渲染器代理实现类" alt="" coords="279,136,491,177"/>
+</map>

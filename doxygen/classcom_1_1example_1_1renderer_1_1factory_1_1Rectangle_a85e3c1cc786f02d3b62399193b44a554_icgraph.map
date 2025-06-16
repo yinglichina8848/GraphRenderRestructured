@@ -1,0 +1,10 @@
+<map id="com.example.renderer.factory.Rectangle.move" name="com.example.renderer.factory.Rectangle.move">
+<area shape="rect" id="node1" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="352,217,573,259"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a101613f477d964b6d2236367011588be" title=" " alt="" coords="44,5,265,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#ab33ead0d042b18a1f2adbf004b06d5bf" title=" " alt="" coords="5,71,304,127"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a04d4b9064734d35b2eda46e3a0aee615" title=" " alt="" coords="13,152,296,193"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a33f1cf3c9fbecfd935496e685d256b38" title=" " alt="" coords="33,217,276,259"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#a28f53549a54d7ccddf2428dd5072b9e2" title=" " alt="" coords="12,283,297,324"/>
+<area shape="rect" id="node7" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#accaa0c110694cb3f70d3725dcc28bd1a" title=" " alt="" coords="44,349,265,405"/>
+<area shape="rect" id="node8" href="$classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html#aef5b4a1255c09f622939851f91bc843c" title=" " alt="" coords="44,429,265,485"/>
+</map>

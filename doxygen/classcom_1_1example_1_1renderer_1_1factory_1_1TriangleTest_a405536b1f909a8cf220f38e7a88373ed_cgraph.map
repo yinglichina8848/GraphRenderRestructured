@@ -1,0 +1,6 @@
+<map id="com.example.renderer.factory.TriangleTest.testMove_PartialPointsToBoundary" name="com.example.renderer.factory.TriangleTest.testMove_PartialPointsToBoundary">
+<area shape="rect" id="node1" title=" " alt="" coords="5,63,257,119"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#aa5ec64f9827fba203174d5e91185e6f2" title=" " alt="" coords="305,5,527,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#af9319090f2c5c5fd18826cae05b094a4" title=" " alt="" coords="305,71,527,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a0aa53deb7dccf8acd100a53a76d414d0" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="305,136,527,177"/>
+</map>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Renderer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.bridge</a> &gt; <span class="el_source">Renderer.java</span></div><h1>Renderer.java</h1><pre class="source lang-java linenums">package com.example.renderer.bridge;
+
+/**
+ * Renderer接口定义了图形渲染的基本操作。
+ * 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。
+ * 
+ * &lt;p&gt;实现类需要提供以下图形的绘制能力：
+ * &lt;ul&gt;
+ *   &lt;li&gt;圆形 - 通过drawCircle方法&lt;/li&gt;
+ *   &lt;li&gt;矩形 - 通过drawRectangle方法&lt;/li&gt; 
+ *   &lt;li&gt;椭圆 - 通过drawEllipse方法&lt;/li&gt;
+ *   &lt;li&gt;三角形 - 通过drawTriangle方法&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;{@code
+ * Renderer renderer = new SwingRenderer();
+ * renderer.drawCircle(100, 100, 50); // 绘制圆形
+ * }&lt;/pre&gt;
+ *
+ * @see SwingRenderer 基于Swing的渲染实现
+ * @see SVGRenderer 基于SVG输出的渲染实现
+ * @since 1.0
+ */
+public interface Renderer {
+    /**
+     * 绘制圆形
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须&gt;0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
+    void drawCircle(int x, int y, int radius);
+    
+    /**
+     * 绘制矩形
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须&gt;0)
+     * @param height 矩形高度(必须&gt;0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
+    void drawRectangle(int x, int y, int width, int height);
+    
+    /**
+     * 绘制椭圆
+     * @param x 椭圆外接矩形左上角x坐标
+     * @param y 椭圆外接矩形左上角y坐标
+     * @param width 椭圆宽度(必须&gt;0)
+     * @param height 椭圆高度(必须&gt;0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
+    void drawEllipse(int x, int y, int width, int height);
+    /**
+     * 绘制三角形
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     */
+    void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
+}
+
+/**
+ * SVGRenderer实现了将图形渲染为SVG格式字符串输出到控制台。
+ * 
+ * &lt;p&gt;作为Renderer接口的实现，它生成标准的SVG元素字符串：
+ * &lt;ul&gt;
+ *   &lt;li&gt;圆形: &amp;lt;circle&amp;gt; 元素&lt;/li&gt;
+ *   &lt;li&gt;矩形: &amp;lt;rect&amp;gt; 元素&lt;/li&gt;
+ *   &lt;li&gt;椭圆: &amp;lt;ellipse&amp;gt; 元素&lt;/li&gt;
+ *   &lt;li&gt;三角形: &amp;lt;polygon&amp;gt; 元素&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;主要用于调试和演示目的，实际应用中可输出到文件或网络。&lt;/p&gt;
+ * 
+ * @see Renderer 渲染器接口
+ * @author liying
+ * @since 1.0
+ */
+<span class="fc" id="L83">class SVGRenderer implements Renderer {</span>
+    /**
+     * 绘制圆形并输出SVG格式字符串。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须&gt;0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
+    @Override
+    public void drawCircle(int x, int y, int radius) {
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (radius &lt;= 0) {</span>
+<span class="nc" id="L95">            throw new IllegalArgumentException(&quot;Radius must be positive (was &quot; + radius + &quot;)&quot;);</span>
+        }
+<span class="fc" id="L97">        System.out.printf(&quot;&lt;circle cx='%d' cy='%d' r='%d' /&gt;\n&quot;, x, y, radius);</span>
+<span class="fc" id="L98">    }</span>
+    public void drawRectangle(int x, int y, int width, int height) {
+<span class="fc" id="L100">        System.out.printf(&quot;&lt;rect x='%d' y='%d' width='%d' height='%d' /&gt;\n&quot;, x, y, width, height);</span>
+<span class="fc" id="L101">    }</span>
+
+    @Override
+    public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+<span class="fc" id="L105">        System.out.printf(&quot;&lt;polygon points='%d,%d %d,%d %d,%d' /&gt;\n&quot;, x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L106">    }</span>
+
+    @Override
+    public void drawEllipse(int x, int y, int rx, int ry) {
+<span class="fc" id="L110">        System.out.printf(&quot;&lt;ellipse cx='%d' cy='%d' rx='%d' ry='%d' /&gt;\n&quot;, x, y, rx, ry);</span>
+<span class="fc" id="L111">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

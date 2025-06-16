@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Triangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.factory</a> &gt; <span class="el_source">Triangle.java</span></div><h1>Triangle.java</h1><pre class="source lang-java linenums">/**
+ * 三角形图形实现类。
+ * 
+ * &lt;p&gt;表示一个由三个顶点定义的三角形图形，包含以下属性：
+ * &lt;ul&gt;
+ *   &lt;li&gt;(x1,y1): 第一个顶点坐标&lt;/li&gt;
+ *   &lt;li&gt;(x2,y2): 第二个顶点坐标&lt;/li&gt;
+ *   &lt;li&gt;(x3,y3): 第三个顶点坐标&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;实现了Shape接口的所有方法：
+ * &lt;ul&gt;
+ *   &lt;li&gt;render(): 使用渲染器绘制三角形&lt;/li&gt;
+ *   &lt;li&gt;move(): 移动所有顶点&lt;/li&gt;
+ *   &lt;li&gt;accept(): 访问者模式支持&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see Shape 图形接口
+ * @author liying
+ * @since 1.0
+ */
+package com.example.renderer.factory;
+
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
+
+
+/**
+ * 三角形图形实现类
+ */
+public class Triangle implements Shape {
+    private int x1, y1, x2, y2, x3, y3;
+
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 创建后需要通过setter方法设置顶点坐标。
+     */
+<span class="fc" id="L39">    public Triangle() {}</span>
+
+<span class="fc" id="L41">    public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {</span>
+<span class="fc" id="L42">        this.x1 = x1; this.y1 = y1;</span>
+<span class="fc" id="L43">        this.x2 = x2; this.y2 = y2;</span>
+<span class="fc" id="L44">        this.x3 = x3; this.y3 = y3;</span>
+<span class="fc" id="L45">    }</span>
+
+    @Override
+    public void render(Renderer renderer) {
+<span class="fc" id="L49">        renderer.drawTriangle(x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L50">    }</span>
+
+    @Override
+    public void accept(ExportVisitor visitor) {
+<span class="nc" id="L54">        visitor.visitTriangle(this);</span>
+<span class="nc" id="L55">    }</span>
+
+    @Override
+    public void move(int dx, int dy) {
+<span class="fc" id="L59">        x1 += dx;</span>
+<span class="fc" id="L60">        y1 += dy;</span>
+<span class="fc" id="L61">        x2 += dx;</span>
+<span class="fc" id="L62">        y2 += dy;</span>
+<span class="fc" id="L63">        x3 += dx;</span>
+<span class="fc" id="L64">        y3 += dy;</span>
+<span class="fc" id="L65">    }</span>
+
+<span class="fc" id="L67">    public int getX1() { return x1; }</span>
+<span class="fc" id="L68">    public int getY1() { return y1; }</span>
+<span class="fc" id="L69">    public int getX2() { return x2; }</span>
+<span class="fc" id="L70">    public int getY2() { return y2; }</span>
+<span class="fc" id="L71">    public int getX3() { return x3; }</span>
+<span class="fc" id="L72">    public int getY3() { return y3; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

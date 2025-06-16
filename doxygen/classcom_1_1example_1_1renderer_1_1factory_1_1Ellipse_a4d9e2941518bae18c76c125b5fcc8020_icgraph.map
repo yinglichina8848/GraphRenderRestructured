@@ -1,0 +1,8 @@
+<map id="com.example.renderer.factory.Ellipse.getY" name="com.example.renderer.factory.Ellipse.getY">
+<area shape="rect" id="node1" title="获取椭圆中心Y坐标" alt="" coords="621,116,843,157"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#a4f34eb166666f1a011fa8d4fa4c2aac2" title=" " alt="" coords="335,5,557,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#adfada185a6c2750c0f74076bc42f7c63" title=" " alt="" coords="319,71,573,127"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html#a56b8a9bf435a25cb80f51d85ab3fecbf" title=" " alt="" coords="327,152,565,193"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#abf62cbdace84ab865289b64afae67bc1" title="将椭圆对象转换为JSON格式输出" alt="" coords="337,217,555,259"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html#abcdc717259698b439769891f603cc79d" title=" " alt="" coords="5,217,271,259"/>
+</map>

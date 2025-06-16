@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rectangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.factory</a> &gt; <span class="el_source">Rectangle.java</span></div><h1>Rectangle.java</h1><pre class="source lang-java linenums">/**
+ * 矩形图形实现类。
+ * 
+ * &lt;p&gt;表示一个矩形图形，包含以下属性：
+ * &lt;ul&gt;
+ *   &lt;li&gt;x,y: 左上角坐标&lt;/li&gt;
+ *   &lt;li&gt;width: 宽度(必须&gt;0)&lt;/li&gt;
+ *   &lt;li&gt;height: 高度(必须&gt;0)&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;实现了Shape接口的所有方法，包括：
+ * &lt;ul&gt;
+ *   &lt;li&gt;render(): 使用渲染器绘制矩形&lt;/li&gt;
+ *   &lt;li&gt;move(): 移动矩形位置&lt;/li&gt;
+ *   &lt;li&gt;accept(): 访问者模式支持&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see Shape 图形接口
+ * @author liying
+ * @since 1.0
+ */
+package com.example.renderer.factory;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
+
+
+public class Rectangle implements Shape {
+    private int x, y, width, height;
+
+    /**
+     * Default constructor required for serialization.
+     */
+<span class="fc" id="L34">    public Rectangle() {} // 必须要无参构造器</span>
+
+    /**
+     * Creates a new Rectangle with specified dimensions.
+     * @param x the x coordinate of top-left corner
+     * @param y the y coordinate of top-left corner
+     * @param width the width of rectangle (must be &gt; 0)
+     * @param height the height of rectangle (must be &gt; 0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法 (&amp;lt;=0)
+     */
+<span class="fc" id="L44">    public Rectangle(int x, int y, int width, int height) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (width &lt;= 0) {</span>
+<span class="fc" id="L46">            throw new IllegalArgumentException(&quot;Width must be positive (was &quot; + width + &quot;)&quot;);</span>
+        }
+<span class="fc bfc" id="L48" title="All 2 branches covered.">        if (height &lt;= 0) {</span>
+<span class="fc" id="L49">            throw new IllegalArgumentException(&quot;Height must be positive (was &quot; + height + &quot;)&quot;);</span>
+        }
+<span class="fc" id="L51">        this.x = x;</span>
+<span class="fc" id="L52">        this.y = y;</span>
+<span class="fc" id="L53">        this.width = width;</span>
+<span class="fc" id="L54">        this.height = height;</span>
+<span class="fc" id="L55">    }</span>
+
+    @Override
+    public void render(Renderer renderer) {
+<span class="fc" id="L59">        renderer.drawRectangle(x, y, width, height);</span>
+<span class="fc" id="L60">    }</span>
+
+    @Override
+    public void accept(ExportVisitor visitor) {
+<span class="fc" id="L64">        visitor.visitRectangle(this);</span>
+<span class="fc" id="L65">    }</span>
+
+    @Override
+    public void move(int dx, int dy) {
+        // 处理x坐标移动，防止溢出
+<span class="fc" id="L70">        long newX = (long)x + dx;</span>
+<span class="fc" id="L71">        x = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newX));</span>
+        
+        // 处理y坐标移动，防止溢出
+<span class="fc" id="L74">        long newY = (long)y + dy;</span>
+<span class="fc" id="L75">        y = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newY));</span>
+<span class="fc" id="L76">    }</span>
+
+    /** 获取矩形左上角x坐标 */
+    /** 
+     * 获取矩形左上角X坐标
+     * @return 矩形左上角的X坐标值
+     */
+<span class="fc" id="L83">    public int getX() { return x; }</span>
+    
+    /**
+     * 获取矩形左上角Y坐标
+     * @return 矩形左上角的Y坐标值
+     */
+<span class="fc" id="L89">    public int getY() { return y; }</span>
+    
+    /**
+     * 获取矩形宽度
+     * @return 矩形的宽度值
+     */
+<span class="fc" id="L95">    public int getWidth() { return width; }</span>
+    
+    /**
+     * 获取矩形高度
+     * @return 矩形的高度值
+     */
+<span class="fc" id="L101">    public int getHeight() { return height; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

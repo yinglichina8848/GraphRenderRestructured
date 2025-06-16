@@ -1,0 +1,4 @@
+<map id="com.example.renderer.adapter.LegacyRendererAdapter.drawEllipse" name="com.example.renderer.adapter.LegacyRendererAdapter.drawEllipse">
+<area shape="rect" id="node1" title="绘制椭圆，转发调用到LegacyRenderer的drawLegacyEllipse()方法。" alt="" coords="5,5,261,47"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1legacy_1_1LegacyRenderer.html#aed811e3b057ef44b9038defe997ab0ea" title=" " alt="" coords="309,5,560,47"/>
+</map>
