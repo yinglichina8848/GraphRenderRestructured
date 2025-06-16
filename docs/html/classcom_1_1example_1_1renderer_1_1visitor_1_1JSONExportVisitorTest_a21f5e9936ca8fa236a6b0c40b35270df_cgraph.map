@@ -1,0 +1,10 @@
+<map id="com.example.renderer.visitor.JSONExportVisitorTest.testVisitTriangle" name="com.example.renderer.visitor.JSONExportVisitorTest.testVisitTriangle">
+<area shape="rect" id="node1" title=" " alt="" coords="5,169,279,211"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html#a09a6928b6de2c8c1fa4f6f059d50f89a" title="将三角形对象转换为JSON格式输出" alt="" coords="327,169,547,211"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#aa5ec64f9827fba203174d5e91185e6f2" title=" " alt="" coords="595,5,816,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#abba5462908667c70efa65edc2b0e17bc" title=" " alt="" coords="595,71,816,112"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a2f27fd932329a59698e80ca4c900eba8" title=" " alt="" coords="595,136,816,177"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#af9319090f2c5c5fd18826cae05b094a4" title=" " alt="" coords="595,201,816,243"/>
+<area shape="rect" id="node7" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a1ab1af5be6782c56d16de7cf9cecf0dc" title=" " alt="" coords="595,267,816,308"/>
+<area shape="rect" id="node8" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#ab8693d7dff18ad8d058df6543f6dd366" title=" " alt="" coords="595,332,816,373"/>
+</map>

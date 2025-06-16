@@ -1,0 +1,4 @@
+<map id="com.example.renderer.proxy.RemoteRendererProxy" name="com.example.renderer.proxy.RemoteRendererProxy">
+<area shape="rect" id="node1" title="远程渲染器代理实现类" alt="" coords="9,189,221,340"/>
+<area shape="rect" id="node2" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html" title="Renderer接口定义了图形渲染的基本操作。 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。" alt="" coords="5,5,224,141"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="com.example.renderer.factory.Circle.render" name="com.example.renderer.factory.Circle.render">
+<area shape="rect" id="node1" title="使用指定的渲染器绘制图形。 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。" alt="" coords="353,104,575,145"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a7e3a7a568f036a4d96dc29755096546b" title=" " alt="" coords="45,5,266,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a6e27a2ee2e9a4ab7acfe2ff2e25b275a" title=" " alt="" coords="8,71,303,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a0910bc5d2c2bde87f1ff86325949e990" title=" " alt="" coords="33,136,278,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ab7ef35cc7fc5f77001038fdb5cc3f82e" title=" " alt="" coords="5,201,305,243"/>
+</map>

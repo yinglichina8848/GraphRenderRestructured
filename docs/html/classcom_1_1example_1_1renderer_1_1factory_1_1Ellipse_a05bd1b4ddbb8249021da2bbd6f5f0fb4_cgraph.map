@@ -1,0 +1,4 @@
+<map id="com.example.renderer.factory.Ellipse.render" name="com.example.renderer.factory.Ellipse.render">
+<area shape="rect" id="node1" title="使用指定渲染器绘制椭圆。" alt="" coords="5,5,227,47"/>
+<area shape="rect" id="node2" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d" title="绘制椭圆" alt="" coords="275,5,493,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="com.example.renderer.legacy.LegacyRenderer.drawLegacyRectangle" name="com.example.renderer.legacy.LegacyRenderer.drawLegacyRectangle">
+<area shape="rect" id="node1" title=" " alt="" coords="332,43,605,84"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#addeae4dba92259721a837dec63a902f9" title="绘制矩形，转发调用到LegacyRenderer的drawLegacyRectangle()方法。" alt="" coords="5,5,284,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererTest.html#aa079f4bfb7ed6404287e7b89392643f1" title=" " alt="" coords="13,71,276,127"/>
+</map>
