@@ -37,6 +37,23 @@ public class LegacyRendererAdapterTest {
         renderer = new LegacyRendererAdapter(mockLegacyRenderer);
     }
 
+    /**
+     * 测试适配器将drawCircle()转发到drawLegacyCircle()。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>调用适配器的drawCircle()</li>
+     *   <li>验证LegacyRenderer的drawLegacyCircle()被调用</li>
+     *   <li>参数传递正确</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建Mock LegacyRenderer和适配器实例</li>
+     *   <li>调用适配器的drawCircle()</li>
+     *   <li>验证Mock是否收到正确调用</li>
+     * </ol>
+     */
     @Test
     public void testDrawCircle_ForwardsToLegacyRenderer() {
         int x = 10, y = 20, radius = 30;

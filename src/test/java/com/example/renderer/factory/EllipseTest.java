@@ -98,6 +98,23 @@ public class EllipseTest {
         verify(mockRenderer).drawEllipse(0, 0, Integer.MAX_VALUE, 1);
     }
 
+    /**
+     * 测试椭圆对象接受访问者的功能。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>正确调用访问者的visitEllipse()方法</li>
+     *   <li>传递正确的椭圆实例</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建椭圆实例</li>
+     *   <li>创建Mock访问者</li>
+     *   <li>调用accept()方法</li>
+     *   <li>验证访问者是否收到正确调用</li>
+     * </ol>
+     */
     @Test
     public void testAcceptVisitor() {
         Ellipse ellipse = new Ellipse(10, 20, 30, 40);

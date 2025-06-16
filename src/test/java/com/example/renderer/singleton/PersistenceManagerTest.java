@@ -86,6 +86,29 @@ public class PersistenceManagerTest {
      * @see PersistenceManager#saveShapesToFile(List, String)
      * @see PersistenceManager#loadShapesFromFile(String)
      */
+    /**
+     * 测试图形数据的保存和加载功能。
+     * 
+     * <p>验证流程：
+     * <ol>
+     *   <li>创建包含多种图形(Circle, Rectangle, Triangle)的测试列表</li>
+     *   <li>将图形列表保存到临时文件</li>
+     *   <li>从临时文件加载图形列表</li>
+     *   <li>验证加载结果：
+     *     <ul>
+     *       <li>图形数量与保存前一致</li>
+     *       <li>图形类型正确</li>
+     *       <li>图形顺序保持不变</li>
+     *     </ul>
+     *   </li>
+     * </ol>
+     * 
+     * <p>测试文件会在测试完成后自动删除。
+     * 
+     * @throws IOException 如果文件操作失败
+     * @see PersistenceManager#saveShapesToFile(List, String)
+     * @see PersistenceManager#loadShapesFromFile(String)
+     */
     @Test
     public void testSaveAndLoadShapes() throws IOException {
         // Setup

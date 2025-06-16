@@ -21,6 +21,24 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class RemoteRendererProxyTest {
 
+    /**
+     * 测试代理模式是否正确转发所有渲染方法调用到真实渲染器。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>drawCircle()调用被正确转发</li>
+     *   <li>drawRectangle()调用被正确转发</li>
+     *   <li>drawTriangle()调用被正确转发</li>
+     *   <li>drawEllipse()调用被正确转发</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建Mock渲染器和代理实例</li>
+     *   <li>调用代理的各种绘制方法</li>
+     *   <li>验证Mock渲染器是否收到正确调用</li>
+     * </ol>
+     */
     @Test
     public void testProxyCallsRealRenderer() {
         Renderer mockRenderer = mock(Renderer.class);

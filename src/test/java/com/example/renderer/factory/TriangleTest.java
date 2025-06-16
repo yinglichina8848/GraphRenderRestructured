@@ -23,6 +23,22 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class TriangleTest {
 
+    /**
+     * 测试三角形渲染功能。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>正确调用Renderer的drawTriangle()方法</li>
+     *   <li>传递正确的顶点坐标</li>
+     * </ul>
+     * 
+     * <p>测试方法：
+     * <ol>
+     *   <li>创建三角形实例</li>
+     *   <li>使用Mock渲染器调用render()</li>
+     *   <li>验证渲染器是否收到正确参数</li>
+     * </ol>
+     */
     @Test
     public void testRender() {
         Triangle triangle = new Triangle(10, 20, 30, 40, 50, 60);
