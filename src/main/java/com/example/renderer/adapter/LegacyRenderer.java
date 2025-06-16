@@ -8,8 +8,28 @@
 package com.example.renderer.legacy;
 
 /**
- * LegacyRenderer 是一个老旧的图形绘制类，
- * 它有自己专门的方法绘制各类图形，但不符合新的 Renderer 接口。
+ * LegacyRenderer是一个遗留的图形渲染类，提供专有的图形绘制方法。
+ * 
+ * <p>该类不符合新的Renderer接口规范，需要通过适配器模式适配到新系统。
+ * 提供以下图形绘制方法：
+ * <ul>
+ *   <li>drawLegacyCircle(): 绘制圆形</li>
+ *   <li>drawLegacyRectangle(): 绘制矩形</li>
+ *   <li>drawLegacyTriangle(): 绘制三角形</li>
+ *   <li>drawLegacyEllipse(): 绘制椭圆</li>
+ * </ul>
+ * 
+ * <p>典型用法：
+ * <pre>
+ * LegacyRenderer legacy = new LegacyRenderer();
+ * Renderer adapter = new LegacyRendererAdapter(legacy);
+ * adapter.drawCircle(10,10,5); // 通过适配器调用
+ * </pre>
+ * 
+ * @see LegacyRendererAdapter 适配器实现
+ * @see Renderer 新渲染器接口
+ * @author liying
+ * @since 1.0
  */
 public class LegacyRenderer {
     public void drawLegacyCircle(int x, int y, int radius) {
