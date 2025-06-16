@@ -10,6 +10,18 @@ public class SVGRendererTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
 
+    /**
+     * 测试SVG圆形输出格式。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>输出正确的SVG circle标签</li>
+     *   <li>包含正确的cx,cy,r属性</li>
+     *   <li>属性值与输入参数一致</li>
+     * </ul>
+     * 
+     * <p>注意：此测试需要GUI环境，使用@Disabled注解标记。
+     */
     @Test
     @Disabled("Requires GUI environment")
     public void testDrawCircle() {
