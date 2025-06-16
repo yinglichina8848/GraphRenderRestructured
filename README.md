@@ -146,11 +146,21 @@
 
 
 
+
+
 # 🚀 项目简介
 
-这是一个采用 Maven 构建的图形渲染系统，结合 Java 和 多种设计模式，生成了 JavaDoc 和 Doxygen 两套文档，并整合到 Maven Site 中。
+这是一个采用 AI + IDEA + Java 构建的图形渲染系统，结合多种设计模式（9种），整个系统完全在 Ubuntu 22 图形环境下开发，历时3天，展示了开源环境和软件的性能。
+整个开发环境配置了魔法梯子（使用 ChatGPT，安装 IDEA 工具及 AI 插件，以及 Aider 和 Github 环境），后续迁移到 国内的 Gitee 环境。
 
----
+doc 目录下的3个PDF 文件记录了图形渲染环境的设计过程。
+基本框架是通过AI 对话得到的各个源码文件，然后用 IDEA 建立的 基于 Maven 的 Java 项目（JDK 21）。
+然后使用了 Aider + Deepseek 对整个项目进行了优化，单元测试补全，注释补全，也使用了 IDEA 环境的 通义灵码纠正编译错误和 JavaDoc 的生成错误。
+
+大家在开发过程中遇到问题，建议使用 Deepseek 或者 ChatGPT 进行排错。
+整个项目的开发，耗时3天（6月14 22：00 -16日 20：00），这是最终的结果。期间配置 Aider 使用 Deepseek 进行开发，API 方式充值10元，额度已经基本用完。
+还有个别的单元测试需要改进，部分测试代码的注释尚未完全补全（可以使用 IDEA + 通义灵码逐步补全每个文件，但是过于烦琐，本项目是示例程序，已经足够说明AI编程的能力）。
+
 
 # 🧱 构建 & 安装
 ————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -170,11 +180,14 @@ mvn clean package site
 
 ——————————————————————————————————————————————————————————————————————————————————————————————————————
 # 克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
+
 git clone https://gitee.com/yinglichina/graph-render-restructured.git
+
 cd graph-render-restructured
 
 # 构建项目并生成文档（如 Maven Site 或 Doxygen）
 mvn clean package site
+
 成功后，你将在 `target/site/` 目录下看到：
 
 - `apidocs/` —— JavaDoc 文档
@@ -186,6 +199,7 @@ mvn clean package site
 
 ```bash
 mvn package
+# 
 java -jar target/graph-render-1.0-SNAPSHOT.jar
 # 或
 mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
@@ -232,5 +246,7 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 
 ## 📞 联系方式
 
-对接问题或合作，欢迎联系我 ：`yinglichina@gmail.com`
+贵州民族大学软件工程专业的同学，如果在复现项目中遇到问题，欢迎通过邮件或者 QQ 联系我 ：`1820393151@qq.com` 
+
+
 
