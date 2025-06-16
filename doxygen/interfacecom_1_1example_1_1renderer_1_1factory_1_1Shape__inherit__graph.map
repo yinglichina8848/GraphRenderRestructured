@@ -1,7 +1,0 @@
-<map id="com.example.renderer.factory.Shape" name="com.example.renderer.factory.Shape">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,227,145"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html" title=" " alt="" coords="275,5,496,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html" title=" " alt="" coords="275,71,496,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html" title=" " alt="" coords="275,136,496,177"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html" title=" " alt="" coords="275,201,496,243"/>
-</map>

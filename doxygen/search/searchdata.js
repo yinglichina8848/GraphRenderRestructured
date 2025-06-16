@@ -1,24 +1,18 @@
 var indexSectionsWithContent =
 {
-  0: "acdegjlmoprstuv",
-  1: "acdegjlmprstu",
-  2: "c",
-  3: "acdeglmoprstuv"
+  0: "g图",
+  1: "g图"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes",
-  2: "namespaces",
-  3: "functions"
+  1: "pages"
 };
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Classes",
-  2: "Namespaces",
-  3: "Functions"
+  0: "全部",
+  1: "页"
 };
 
