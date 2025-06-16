@@ -23,6 +23,21 @@ import java.util.Objects;
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.bridge.SwingRenderer;
 import com.example.renderer.factory.Shape;
+/**
+ * 绘图面板组件，负责显示所有图形。
+ * 
+ * <p>主要功能：
+ * <ul>
+ *   <li>维护图形列表和渲染器引用</li>
+ *   <li>重写paintComponent()实现图形绘制</li>
+ *   <li>默认尺寸800x600像素</li>
+ * </ul>
+ * 
+ * @see SwingUI
+ * @see Shape
+ * @author liying
+ * @since 2025-06-14
+ */
 public class DrawingPanel extends JPanel {
     /** 要渲染的图形列表 */
     private List<com.example.renderer.factory.Shape> shapes;

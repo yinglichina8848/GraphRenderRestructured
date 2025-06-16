@@ -23,8 +23,33 @@ package com.example.renderer.bridge;
  * @since 1.0
  */
 public interface Renderer {
+    /**
+     * 绘制圆形
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
     void drawCircle(int x, int y, int radius);
+    
+    /**
+     * 绘制矩形
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
     void drawRectangle(int x, int y, int width, int height);
+    
+    /**
+     * 绘制椭圆
+     * @param x 椭圆外接矩形左上角x坐标
+     * @param y 椭圆外接矩形左上角y坐标
+     * @param width 椭圆宽度(必须>0)
+     * @param height 椭圆高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
     void drawEllipse(int x, int y, int width, int height);
     /**
      * 绘制三角形

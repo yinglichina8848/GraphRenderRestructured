@@ -32,7 +32,11 @@ import com.example.renderer.visitor.ExportVisitor;
 public class Triangle implements Shape {
     private int x1, y1, x2, y2, x3, y3;
 
-    public Triangle() {} // 必须要无参构造器
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 创建后需要通过setter方法设置顶点坐标。
+     */
+    public Triangle() {}
 
     public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         this.x1 = x1; this.y1 = y1;

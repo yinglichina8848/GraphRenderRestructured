@@ -75,10 +75,17 @@ import com.example.renderer.singleton.PersistenceManager;
  * @since 1.0
  */
 public class SwingUI extends JFrame {
+    /** 图形列表 */
     private final List<com.example.renderer.factory.Shape> shapes = new ArrayList<>();
+    
+    /** 渲染器实现 */
     private Renderer renderer;
+    
+    /** 撤销管理器 */
     private UndoManager undoManager = new UndoManager();
-    private DrawingPanel drawingPanel;  // 新增绘图面板变量
+    
+    /** 绘图面板组件 */
+    private DrawingPanel drawingPanel;
 
 
     /**

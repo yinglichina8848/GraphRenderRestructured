@@ -39,7 +39,7 @@ public class Rectangle implements Shape {
      * @param y the y coordinate of top-left corner
      * @param width the width of rectangle (must be > 0)
      * @param height the height of rectangle (must be > 0)
-     * @throws IllegalArgumentException 如果宽度或高度不合法(<=0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法 (&lt;=0)
      */
     public Rectangle(int x, int y, int width, int height) {
         if (width <= 0) {
