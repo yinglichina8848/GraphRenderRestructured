@@ -20,6 +20,9 @@ package com.example.renderer.proxy;
 import com.example.renderer.bridge.Renderer;
 import java.util.Objects;
 
+/**
+ * 远程渲染器代理实现类
+ */
 public class RemoteRendererProxy implements Renderer {
     private final Renderer realRenderer;
 

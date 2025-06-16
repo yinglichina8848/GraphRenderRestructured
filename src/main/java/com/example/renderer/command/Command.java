@@ -22,7 +22,6 @@ import com.example.renderer.factory.Shape;
  * cmd.execute(); // 执行命令
  * cmd.undo();    // 撤销命令
  * </pre>
- * </p>
  * 
  * @see UndoManager 命令管理器
  * @see AddShapeCommand 添加图形命令

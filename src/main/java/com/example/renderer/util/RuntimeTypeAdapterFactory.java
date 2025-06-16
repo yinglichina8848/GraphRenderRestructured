@@ -55,6 +55,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 运行时类型适配器工厂类
+ * @param <T> 基类型
+ */
 public class RuntimeTypeAdapterFactory<T> implements TypeAdapterFactory {
     private final Class<?> baseType;
     private final String typeFieldName;

@@ -11,6 +11,9 @@ import com.example.renderer.factory.Triangle;
  * 
  * @see JSONExportVisitor
  */
+/**
+ * 访问者接口，用于实现访问者模式
+ */
 public interface ExportVisitor {
     void visitCircle(Circle circle);
     void visitRectangle(Rectangle rectangle);

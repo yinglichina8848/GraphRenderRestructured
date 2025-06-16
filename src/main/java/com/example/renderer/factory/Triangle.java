@@ -26,6 +26,9 @@ import com.example.renderer.visitor.ExportVisitor;
 
 
 
+/**
+ * 三角形图形实现类
+ */
 public class Triangle implements Shape {
     private int x1, y1, x2, y2, x3, y3;
 

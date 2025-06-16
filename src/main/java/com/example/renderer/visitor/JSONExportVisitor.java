@@ -59,6 +59,9 @@ import com.example.renderer.factory.Rectangle;
 import com.example.renderer.factory.Ellipse;
 import com.example.renderer.factory.Triangle;
 
+/**
+ * JSON导出访问者实现类
+ */
 public class JSONExportVisitor implements ExportVisitor {
     // JSON格式模板常量
     /**

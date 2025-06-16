@@ -26,6 +26,9 @@ import com.example.renderer.visitor.ExportVisitor;
 
 
 
+/**
+ * 椭圆图形实现类
+ */
 public class Ellipse implements Shape {
     private int x, y, width, height;
 
