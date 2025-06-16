@@ -1,6 +1,0 @@
-var searchData=
-[
-  ['accept_253',['accept',['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a9319379e8169bced107758a43b0932cd',1,'com.example.renderer.factory.Circle.accept()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2',1,'com.example.renderer.factory.Ellipse.accept()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a5b6d782ad3dc266f7757c5c451bbe602',1,'com.example.renderer.factory.Rectangle.accept()'],['../interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a17fdf5b153a81b61bc744ab108c6bcbd',1,'com.example.renderer.factory.Shape.accept()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a51521258d26e87a98467aef864272484',1,'com.example.renderer.factory.Triangle.accept()']]],
-  ['addobserver_254',['addObserver',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObservable.html#a02477e160b8237fb3c570999088cb867',1,'com::example::renderer::observer::ShapeObservable']]],
-  ['addshapecommand_255',['AddShapeCommand',['../classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#ad798313f05fe723f9481569229e3ce57',1,'com::example::renderer::command::AddShapeCommand']]]
-];

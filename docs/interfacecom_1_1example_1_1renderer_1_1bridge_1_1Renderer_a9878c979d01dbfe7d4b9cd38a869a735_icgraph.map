@@ -1,8 +1,0 @@
-<map id="com.example.renderer.bridge.Renderer.drawCircle" name="com.example.renderer.bridge.Renderer.drawCircle">
-<area shape="rect" id="node1" title=" " alt="" coords="667,85,885,126"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5" title=" " alt="" coords="347,15,587,57"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a" title=" " alt="" coords="356,85,577,126"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderertest_1_1adapter_1_1LegacyRendererAdapterTest.html#afa09562b35921dc9cdab3bcbed31266d" title=" " alt="" coords="315,151,619,207"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a785672431f7951f8d26c27fece370ad8" title=" " alt="" coords="5,5,267,61"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a7e3a7a568f036a4d96dc29755096546b" title=" " alt="" coords="25,86,247,127"/>
-</map>
