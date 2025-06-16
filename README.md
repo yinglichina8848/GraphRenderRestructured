@@ -134,7 +134,7 @@
 
 #📄 项目文档
 
-## JavaDoc 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured
+## JavaDoc + Doxygen 包括 单元测试的结果以及代码覆盖率报告：：https://yinglichina8848.github.io/GraphRenderRestructured
 
 ## Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
 
