@@ -26,7 +26,21 @@ import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * SwingRenderer 的单元测试。
+ * SwingRenderer的单元测试类。
+ * 
+ * <p>验证Swing渲染器的以下功能：
+ * <ul>
+ *   <li>正确委托给Graphics2D对象</li>
+ *   <li>各种图形的渲染调用</li>
+ *   <li>极端坐标处理</li>
+ *   <li>退化图形情况</li>
+ * </ul>
+ * 
+ * <p>使用Mockito模拟Graphics2D对象进行验证。</p>
+ * 
+ * @see SwingRenderer 被测试类
+ * @author liying
+ * @since 1.0
  */
 public class SwingRendererTest {
 
