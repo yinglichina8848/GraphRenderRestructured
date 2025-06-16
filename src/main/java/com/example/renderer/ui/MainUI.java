@@ -57,6 +57,16 @@ public class MainUI {
      * @see SwingUtilities
      * @see SwingUI
      */
+    /**
+     * 程序主入口，启动Swing图形界面。
+     * 
+     * <p>使用SwingUtilities.invokeLater()确保界面在事件分发线程中创建，
+     * 这是Swing线程安全的最佳实践。</p>
+     * 
+     * @param args 命令行参数(未使用)
+     * @see SwingUtilities
+     * @see SwingUI
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             SwingUI ui = new SwingUI();
