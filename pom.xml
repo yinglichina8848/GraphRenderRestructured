@@ -140,7 +140,6 @@
 
     <reporting>
         <plugins>
-            <!-- 只保留报告插件，移除 pdf-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -168,5 +167,33 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pdf-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-pdf</id>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>pdf</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/pdf</outputDirectory>
+                            <documents>
+                                <document>
+                                    <inputFile>${project.basedir}/src/site/pdf/documentation.md</inputFile>
+                                    <outputFile>documentation.pdf</outputFile>
+                                </document>
+                            </documents>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
