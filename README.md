@@ -1,46 +1,57 @@
 # GraphRenderRestructured
 
 软件工程期末大作业：图形渲染系统的设计与实现
+
 # 🚀 一、项目简介
 
 本项目旨在通过设计并实现一个初步的图形渲染系统，综合运用以下9种典型设计模式：
-• 创建型模式：
-◦ Factory（工厂）
-◦ Abstract Factory（抽象工厂）
-◦ Singleton（单例）
-• 结构型模式：
-◦ Adapter（适配器）
-◦ Bridge（桥接）
-◦ Proxy（代理）
-• 行为型模式：
-◦ Command（命令）
-◦ Visitor（访问者）
-◦ Observer（观察者）
+
+- • 创建型模式：
+- ◦ Factory（工厂）
+- ◦ Abstract Factory（抽象工厂）
+- ◦ Singleton（单例）
+- • 结构型模式：
+- ◦ Adapter（适配器）
+- ◦ Bridge（桥接）
+- ◦ Proxy（代理）
+- • 行为型模式：
+- ◦ Command（命令）
+- ◦ Visitor（访问者）
+- ◦ Observer（观察者）
+- 
 
 # 🚀 二、项目目标
 设计并实现一个简化的图形渲染系统，具备以下功能：
-1. 渲染基本图形元素（如圆形、矩形、线段）。
-2. 支持不同的渲染引擎（如 SVG、Canvas、终端字符图）。
-3. 支持用户操作命令（如添加图形、移动、撤销、重做）。
-4. 支持图形访问器（例如导出图形结构为 JSON、XML）。
-5. 具备插件代理机制（如远程渲染服务）。
+- - - - - 1. 1. 渲染基本图形元素（如圆形、矩形、线段）。
+- - - - - 1. 2. 支持不同的渲染引擎（如 SVG、Canvas、终端字符图）。
+- - - - - 1. 3. 支持用户操作命令（如添加图形、移动、撤销、重做）。
+- - - - - 1. 4. 支持图形访问器（例如导出图形结构为 JSON、XML）。
+- - - - - 1. 5. 具备插件代理机制（如远程渲染服务）。
+
+
+
+
+
+
 
 # 🚀 三、任务要求
-1. 功能要求
-   • 图形对象定义（使用抽象工厂+工厂模式创建）
-   • 渲染器接口与实现（使用桥接模式支持多种渲染方式）
-   • 图形命令操作（使用命令模式实现操作和撤销）
-   • 渲染服务代理（使用代理模式本地与远程渲染）
-   • 监听模型变化（使用观察者模式）
-   • 数据导出（访问者模式：导出为JSON、XML等格式）
-   • 渲染器适配器（适配不同图形库）
-   • 系统全局配置（使用单例模式提供共享配置）
-2. 技术要求
-   • 使用 Java（建议 Java 11 或以上）
-   • 使用 PowerDesigner 建模（类图、时序图）
-   • 使用 JUnit 实现测试（单元测试、集成测试）
-   • 使用 JavaDoc 或 Doxygen 自动生成文档
-   • 提供完整可执行包和源代码
+
+- 1. 功能要求
+-    • 图形对象定义（使用抽象工厂+工厂模式创建）
+-    • 渲染器接口与实现（使用桥接模式支持多种渲染方式）
+-    • 图形命令操作（使用命令模式实现操作和撤销）
+-    • 渲染服务代理（使用代理模式本地与远程渲染）
+-    • 监听模型变化（使用观察者模式）
+-    • 数据导出（访问者模式：导出为JSON、XML等格式）
+-    • 渲染器适配器（适配不同图形库）
+-    • 系统全局配置（使用单例模式提供共享配置）
+- 2. 技术要求
+-    • 使用 Java（建议 Java 11 或以上）
+-    • 使用 PowerDesigner 建模（类图、时序图）
+-    • 使用 JUnit 实现测试（单元测试、集成测试）
+-    • 使用 JavaDoc 或 Doxygen 自动生成文档
+-    • 提供完整可执行包和源代码
+- 
 
 # 🚀 四、开发指导流程
 ## 第一步：需求分析与建模
@@ -75,36 +86,42 @@
 # 🚀 五、预期成果
 学生应提交如下材料：
 ##1. 软件设计文档
-◦ 《需求规格说明书》
-◦ 《总体设计说明书》
-◦ 《详细设计说明书》
-◦ 《单元测试报告》
-◦ 《集成测试报告》
+
+- ◦ 《需求规格说明书》
+- ◦ 《总体设计说明书》
+- ◦ 《详细设计说明书》
+- ◦ 《单元测试报告》
+- ◦ 《集成测试报告》
+
 ##2. 建模文件
-◦ PowerDesigner 模型文件（.pdm/.cdm/.oom 等）
+- ◦ PowerDesigner 模型文件（.pdm/.cdm/.oom 等）
 ##3. 完整源码包
-◦ 含所有 .java 源文件、测试用例、资源文件等
+- ◦ 含所有 .java 源文件、测试用例、资源文件等
 ##4. 可执行文件
-◦ JAR 或其他部署包
+- ◦ JAR 或其他部署包
 ##5. 技术文档
-◦ 使用 JavaDoc 或 Doxygen 自动生成的 API 文档
-◦ 安装说明书（含依赖、打包命令等）
-◦ 用户手册（操作流程、截图、示例）
+
+- ◦ 使用 JavaDoc 或 Doxygen 自动生成的 API 文档
+- ◦ 安装说明书（含依赖、打包命令等）
+- ◦ 用户手册（操作流程、截图、示例）
+
 ##6. 项目结构要求
-    6. /graphic-rendering/
-    ├── /doc/
-    │     ├── 需求规格说明书.docx
-    │     ├── 总体设计说明书.docx
-    │     ├── ...
-    ├── /model/
-    │     ├── classDiagram.oom
-    ├── /src/
-    │     ├── main/java/...
-    │     ├── test/java/...
-    ├── /lib/
-    ├── /javadoc/
-    ├── build.gradle / pom.xml
-    └── README.md
+
+-     6. /graphic-rendering/
+-     ├── /doc/
+-     │     ├── 需求规格说明书.docx
+-     │     ├── 总体设计说明书.docx
+-     │     ├── ...
+-     ├── /model/
+-     │     ├── classDiagram.oom
+-     ├── /src/
+-     │     ├── main/java/...
+-     │     ├── test/java/...
+-     ├── /lib/
+-     ├── /javadoc/
+-     ├── build.gradle / pom.xml
+-     └── README.md
+- 
     
 # 🚀 六、评分标准（满分 100 分）
 ###项目                权重                说明
@@ -122,14 +139,15 @@
 
 📄 项目文档
 
-JavaDoc 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured
-Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
+###JavaDoc 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured
+
+###Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
 
 --------------------------------------------------------------------------------------------------------------
 
-JavaDoc 生成的完整 API 文档见：https://apidoc.gitee.com/yinglichina/graph-render-restructured
+###JavaDoc 生成的完整 API 文档见：https://apidoc.gitee.com/yinglichina/graph-render-restructured
 
-Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).
+###Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).
 
 
 
@@ -168,7 +186,7 @@ mvn clean package site
 - `doxygen/` —— Doxygen 生成的文档
 - `index.html` —— Maven Site 总入口
 
-——————————————————————————————————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————
 ## 📄 使用示例
 
 ```bash
@@ -180,14 +198,14 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 #运行时需要 Java 图形环境。
 ---
 
-——————————————————————————————————————————————————————————————————————————————————————————————————————
+———————————————————————————————————————————————————————————————————
 ## 🧭 文档访问
 
 所有文档都已发布至 GitHub Pages / GitLab Pages，可以通过以下链接访问：
-
+##
 👉 [查看项目(GitHub)]    https://yinglichina8848.github.io/GraphRenderRestructured
 
----
+##
 👉 [查看项目(Gitee)]    https://apidoc.gitee.com/yinglichina/graph-render-restructured
 
 
