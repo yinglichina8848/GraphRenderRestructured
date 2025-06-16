@@ -1,7 +1,0 @@
-<map id="com.example.renderer.proxy.RemoteRendererProxyTest.testProxy_ExtremeCoordinates" name="com.example.renderer.proxy.RemoteRendererProxyTest.testProxy_ExtremeCoordinates">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,267,87"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5" title="代理绘制圆形操作，添加远程调用日志。" alt="" coords="329,5,569,47"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a230d74acbb60e51bc56724f50459d6bd" title="绘制矩形" alt="" coords="315,71,583,112"/>
-<area shape="rect" id="node3" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735" title="绘制圆形" alt="" coords="631,5,849,47"/>
-<area shape="rect" id="node5" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a544db73ca5c1778c124d3ee53b99b4b6" title="绘制矩形" alt="" coords="631,71,849,112"/>
-</map>

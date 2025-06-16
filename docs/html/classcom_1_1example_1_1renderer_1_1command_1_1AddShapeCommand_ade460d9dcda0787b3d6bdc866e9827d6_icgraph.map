@@ -1,5 +1,0 @@
-<map id="com.example.renderer.command.AddShapeCommand.execute" name="com.example.renderer.command.AddShapeCommand.execute">
-<area shape="rect" id="node1" title="Executes the command operation." alt="" coords="397,39,640,80"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a7db619a6c5f453ccdb952f556a211b79" title="测试execute()方法是否正确添加图形到列表。" alt="" coords="11,5,343,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a1f947250ab97e91ff98423af53e4927a" title=" " alt="" coords="5,71,349,112"/>
-</map>

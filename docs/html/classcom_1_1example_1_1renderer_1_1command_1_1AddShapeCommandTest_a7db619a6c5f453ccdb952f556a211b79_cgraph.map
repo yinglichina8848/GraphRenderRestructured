@@ -1,4 +1,0 @@
-<map id="com.example.renderer.command.AddShapeCommandTest.testExecuteAddsShape" name="com.example.renderer.command.AddShapeCommandTest.testExecuteAddsShape">
-<area shape="rect" id="node1" title="测试execute()方法是否正确添加图形到列表。" alt="" coords="5,5,337,47"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#ade460d9dcda0787b3d6bdc866e9827d6" title="Executes the command operation." alt="" coords="385,5,628,47"/>
-</map>

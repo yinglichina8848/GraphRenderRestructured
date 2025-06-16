@@ -1,4 +1,0 @@
-<map id="com.example.renderer.proxy.RemoteRendererProxy.drawCircle" name="com.example.renderer.proxy.RemoteRendererProxy.drawCircle">
-<area shape="rect" id="node1" title="代理绘制圆形操作，添加远程调用日志。" alt="" coords="5,5,245,47"/>
-<area shape="rect" id="node2" href="$interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735" title="绘制圆形" alt="" coords="293,5,512,47"/>
-</map>

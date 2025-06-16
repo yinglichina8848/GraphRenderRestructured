@@ -1,3 +1,0 @@
-<map id="com.example.renderer.factory.Shape" name="com.example.renderer.factory.Shape">
-<area shape="rect" id="node1" title="Shape接口定义了所有图形对象的基本行为。 作为图形系统的核心接口，它支持以下操作：" alt="" coords="5,5,227,127"/>
-</map>

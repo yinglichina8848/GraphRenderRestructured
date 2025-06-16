@@ -1,4 +1,0 @@
-<map id="com.example.renderer.proxy.RemoteRendererProxy.drawEllipse" name="com.example.renderer.proxy.RemoteRendererProxy.drawEllipse">
-<area shape="rect" id="node1" title="绘制椭圆" alt="" coords="315,13,561,54"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a785672431f7951f8d26c27fece370ad8" title="测试代理模式是否正确转发所有渲染方法调用到真实渲染器。" alt="" coords="5,5,267,61"/>
-</map>

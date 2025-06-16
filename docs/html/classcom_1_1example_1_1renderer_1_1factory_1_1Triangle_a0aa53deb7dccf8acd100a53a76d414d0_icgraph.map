@@ -1,8 +1,0 @@
-<map id="com.example.renderer.factory.Triangle.move" name="com.example.renderer.factory.Triangle.move">
-<area shape="rect" id="node1" title="移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。" alt="" coords="324,144,545,185"/>
-<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a89427b111574a3a44ae82a6b10c61ad4" title=" " alt="" coords="30,5,251,47"/>
-<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#ad87bdc8449fa5a004f8a450b77b1809c" title=" " alt="" coords="6,71,275,112"/>
-<area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#afbe750c8f3a67d339490df69cda211e0" title=" " alt="" coords="6,137,275,193"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a405536b1f909a8cf220f38e7a88373ed" title=" " alt="" coords="15,217,267,273"/>
-<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html#a24f045d4a1b10e4809e39ef326058902" title=" " alt="" coords="5,297,276,353"/>
-</map>
