@@ -1,5 +1,12 @@
 var NAVTREEINDEX0 =
 {
+"":[0,0,0],
+"":[0,0,0,0],
+"":[0,0,0,0,0,10],
+"":[0,0,0,0,0,11],
+"":[0,0,0,0,0],
+"":[0,0,0,0,0,6],
+"":[0,0,0,0,0,7],
 "annotated.html":[1,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html":[1,0,0,0,0,0,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a66bbddb14487b0ab0827075a9d915350":[1,0,0,0,0,0,0,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX0 =
 "namespacecom_1_1example_1_1renderer_1_1adapter.html":[0,0,0,0,0,0],
 "namespacecom_1_1example_1_1renderer_1_1bridge.html":[0,0,0,0,0,1],
 "namespacecom_1_1example_1_1renderer_1_1command.html":[0,0,0,0,0,2],
-"namespacecom_1_1example_1_1renderer_1_1config.html":[0,0,0,0,0,3],
-"namespacecom_1_1example_1_1renderer_1_1factory.html":[0,0,0,0,0,4],
-"namespacecom_1_1example_1_1renderer_1_1legacy.html":[0,0,0,0,0,5],
-"namespacecom_1_1example_1_1renderer_1_1singleton.html":[0,0,0,0,0,8],
-"namespacecom_1_1example_1_1renderer_1_1ui.html":[0,0,0,0,0,9],
-"namespaces.html":[0,0],
-"pages.html":[],
-"":[0,0,0,0]
+"namespacecom_1_1example_1_1renderer_1_1config.html":[0,0,0,0,0,3]
 };
