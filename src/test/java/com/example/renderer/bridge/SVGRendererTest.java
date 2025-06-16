@@ -92,9 +92,8 @@ public class SVGRendererTest {
 
     @Test
     public void testDrawEllipse_ZeroRadius() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            SVGRenderer renderer = new SVGRenderer();
-            renderer.drawEllipse(10, 10, 0, 10);
-        });
+        SVGRenderer renderer = new SVGRenderer();
+        // Should not throw for zero radius since SVG spec allows it
+        assertDoesNotThrow(() -> renderer.drawEllipse(10, 10, 0, 10));
     }
 }
