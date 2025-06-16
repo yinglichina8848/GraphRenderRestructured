@@ -11,9 +11,14 @@
  *   <li>命令模式 - move方法支持位置变更</li>
  * </ul>
  * 
+ * <p>修改记录：
+ * <ul>
+ *   <li>2025-06-16 | v1.1 | 完善类和方法注释</li>
+ * </ul>
+ * 
  * @author liying
  * @since 2025-06-14
- * @version 1.0
+ * @version 1.1
  */
 package com.example.renderer.factory;
 import com.example.renderer.bridge.Renderer;
@@ -42,9 +47,18 @@ public class Ellipse implements Shape {
     }
 
     /**
-     * 使用指定渲染器绘制椭圆
-     * @param renderer 用于绘制椭圆的渲染器实现
+     * 使用指定渲染器绘制椭圆。
+     * 
+     * <p>实现细节：
+     * <ul>
+     *   <li>调用renderer.drawEllipse()方法进行实际绘制</li>
+     *   <li>传递椭圆的中心坐标和尺寸参数</li>
+     *   <li>不处理渲染器抛出的异常，由调用方处理</li>
+     * </ul>
+     * 
+     * @param renderer 用于绘制椭圆的渲染器实现(非null)
      * @throws NullPointerException 如果renderer参数为null
+     * @see Renderer#drawEllipse(int, int, int, int)
      */
     @Override
     public void render(Renderer renderer) {
@@ -62,9 +76,18 @@ public class Ellipse implements Shape {
     }
 
     /**
-     * 移动椭圆的位置
+     * 移动椭圆的位置。
+     * 
+     * <p>实现细节：
+     * <ul>
+     *   <li>直接修改椭圆的中心坐标</li>
+     *   <li>不检查坐标溢出，由调用方确保参数合理</li>
+     *   <li>支持负值移动(向左/上移动)</li>
+     * </ul>
+     * 
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
+     * @see Shape#move(int, int)
      */
     @Override
     public void move(int dx, int dy) {
@@ -73,8 +96,13 @@ public class Ellipse implements Shape {
     }
 
     /**
-     * 获取椭圆中心X坐标
+     * 获取椭圆中心X坐标。
+     * 
+     * <p>注意：返回的是椭圆的中心点X坐标，不是外接矩形的左上角X坐标。
+     * 
      * @return 椭圆中心的X坐标值
+     * @see #getY() 获取Y坐标
+     * @see #getWidth() 获取宽度
      */
     public int getX() { return x; }
     
@@ -91,8 +119,13 @@ public class Ellipse implements Shape {
     public int getWidth() { return width; }
     
     /**
-     * 获取椭圆高度
+     * 获取椭圆高度。
+     * 
+     * <p>高度是椭圆在Y轴方向的直径长度。
+     * 
      * @return 椭圆的高度值
+     * @see #getWidth() 获取宽度
+     * @see #getX() 获取X坐标
      */
     public int getHeight() { return height; }
 }
