@@ -127,10 +127,11 @@ JavaDoc 生成的完整 API 文档见：[点击查看](https://yinglichina8848.g
 Doxygen 生成的完整 API 文档见：[点击查看](https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html)
 
 --------------------------------------------------------------------------------------------------------------
+
+JavaDoc 生成的完整 API 文档见：https://apidoc.gitee.com/yinglichina/graph-render-restructured
+
 Gitee 由于 Gitee Pages 服务关闭，所以无法看在线的文档，可以根据下面的教程在本地生成（mvn clean site).
 
-JavaDoc 生成的完整 API 文档见：[点击查看](https://yinglichina8848.github.io/GraphRenderRestructured/)
-Doxygen 生成的完整 API 文档见：[点击查看](https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html)
 
 
 
@@ -149,7 +150,7 @@ git clone https://github.com/yinglichina8848/GraphRenderRestructured.git
 cd GraphRenderRestructured
 
 # 构建项目并生成文档
-mvn clean site
+mvn clean package site
 ```
 成功后，你将在 `target/site/` 目录下看到：
 
@@ -163,7 +164,7 @@ git clone https://gitee.com/yinglichina/graph-render-restructured.git
 cd graph-render-restructured
 
 # 构建项目并生成文档（如 Maven Site 或 Doxygen）
-mvn clean site
+mvn clean package site
 成功后，你将在 `target/site/` 目录下看到：
 
 - `apidocs/` —— JavaDoc 文档
@@ -176,11 +177,12 @@ mvn clean site
 ## 📄 使用示例
 
 ```bash
+mvn package
 java -jar target/graph-render-1.0-SNAPSHOT.jar
 # 或
 mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 ```
-
+#运行时需要 Java 图形环境。
 ---
 
 ——————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -191,6 +193,8 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 👉 [查看项目文档（Maven Site）](https://yinglichina8848.github.io/GraphRenderRestructured/)
 
 ---
+👉 [查看项目文档（JavaDoc）](https://apidoc.gitee.com/yinglichina/graph-render-restructured)
+
 
 ## ⭐ 特性亮点
 
