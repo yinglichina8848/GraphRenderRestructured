@@ -44,6 +44,17 @@ public class LegacyRenderer {
         System.out.printf("LegacyRenderer: 绘制三角形，顶点(%d,%d),(%d,%d),(%d,%d)\n", x1, y1, x2, y2, x3, y3);
     }
 
+    /**
+     * 绘制椭圆，使用LegacyRenderer的绘制方法。
+     * 
+     * @param x      椭圆中心的x坐标
+     * @param y      椭圆中心的y坐标
+     * @param rx     椭圆X轴半径
+     * @param ry     椭圆Y轴半径
+     * 
+     * 修改记录:
+     * <li>2025-06-19, Aider + Qwen3-8B: 添加注释</li>
+     */
     public void drawLegacyEllipse(int x, int y, int rx, int ry) {
         System.out.printf("LegacyRenderer: 绘制椭圆，中心(%d,%d)，X半轴 %d，Y半轴 %d\n", x, y, rx, ry);
     }
