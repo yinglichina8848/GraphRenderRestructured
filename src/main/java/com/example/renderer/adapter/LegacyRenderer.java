@@ -86,12 +86,13 @@ public class LegacyRenderer {
      * 绘制椭圆，使用LegacyRenderer的绘制方法。
      * 
      * @param x      椭圆中心的x坐标
-     * @param y      椭圆中心的y坐标
-     * @param rx     椭圆X轴半径
-     * @param ry     椭圆Y轴半径
+     * @param y      椭圆中心的y坐标 
+     * @param rx     椭圆X轴半径(必须>0)
+     * @param ry     椭圆Y轴半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
      * 
-     * 修改记录:
-     * <li>2025-06-19, Aider + Qwen3-8B: 添加注释</li>
+     * 修改记录：
+     * - Aider + Qwen3-8B: 2025-06-19 初始化注释
      */
     public void drawLegacyEllipse(int x, int y, int rx, int ry) {
         System.out.printf("LegacyRenderer: 绘制椭圆，中心(%d,%d)，X半轴 %d，Y半轴 %d\n", x, y, rx, ry);
