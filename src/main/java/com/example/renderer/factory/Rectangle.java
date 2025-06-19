@@ -41,6 +41,18 @@ public class Rectangle implements Shape {
      * @param height the height of rectangle (must be > 0)
      * @throws IllegalArgumentException 如果宽度或高度不合法 (&lt;=0)
      */
+    /**
+     * 创建指定尺寸和位置的新矩形实例。
+     * <p>对宽度和高度进行合法性检查，确保其大于0。
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * <p>
+     * 修改记录:
+     *   - 对方法进行注释
+     * 作者: Aider + Qwen3-8B
+     */
     public Rectangle(int x, int y, int width, int height) {
         if (width <= 0) {
             throw new IllegalArgumentException("Width must be positive (was " + width + ")");
