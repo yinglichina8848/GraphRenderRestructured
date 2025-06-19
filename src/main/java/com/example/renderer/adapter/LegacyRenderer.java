@@ -36,6 +36,17 @@ public class LegacyRenderer {
         System.out.printf("LegacyRenderer: 绘制圆形，中心(%d,%d)，半径 %d\n", x, y, radius);
     }
 
+    /**
+     * 绘制矩形，使用LegacyRenderer的绘制方法。
+     * 
+     * @param x      矩形左上角的x坐标
+     * @param y      矩形左上角的y坐标
+     * @param width  矩形的宽度
+     * @param height 矩形的高度
+     * 
+     * 修改记录:
+     * <li>2025-06-19, Aider + Qwen3-8B: 添加注释</li>
+     */
     public void drawLegacyRectangle(int x, int y, int width, int height) {
         System.out.printf("LegacyRenderer: 绘制矩形，左上角(%d,%d)，宽 %d，高 %d\n", x, y, width, height);
     }
