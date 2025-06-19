@@ -1,2 +1,2 @@
-#git remote set-url origin git@github.com:yinglichina8848/GraphRenderRestructured.git
-git remote add gitee git@gitee.com:yinglichina/graph-render-restructured.git
+#git remote set-url github git@github.com:yinglichina8848/GraphRenderRestructured.git
+#git remote set-utl gitee git@gitee.com:yinglichina/graph-render-restructured.git
