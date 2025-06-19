@@ -51,6 +51,19 @@ public class LegacyRenderer {
         System.out.printf("LegacyRenderer: 绘制矩形，左上角(%d,%d)，宽 %d，高 %d\n", x, y, width, height);
     }
 
+    /**
+     * 绘制三角形，使用LegacyRenderer的绘制方法。
+     * 
+     * @param x1 三角形第一个顶点的x坐标
+     * @param y1 三角形第一个顶点的y坐标
+     * @param x2 三角形第二个顶点的x坐标
+     * @param y2 三角形第二个顶点的y坐标
+     * @param x3 三角形第三个顶点的x坐标
+     * @param y3 三角形第三个顶点的y坐标
+     * 
+     * 修改记录:
+     * <li>2025-06-19, Aider + Qwen3-8B: 添加注释</li>
+     */
     public void drawLegacyTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         System.out.printf("LegacyRenderer: 绘制三角形，顶点(%d,%d),(%d,%d),(%d,%d)\n", x1, y1, x2, y2, x3, y3);
     }
