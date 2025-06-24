@@ -140,11 +140,24 @@ public class LegacyRendererAdapterTest {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 测试drawEllipse()方法是否正确转发到LegacyRenderer。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>LegacyRenderer.drawLegacyEllipse()被调用一次</li>
+     *   <li>中心坐标和半径参数传递正确</li>
+     *   <li>无返回值处理</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawEllipse_ForwardsToLegacyRenderer() {
-        int x = 10, y = 20, rx = 30, ry = 40;
-        renderer.drawEllipse(x, y, rx, ry);
-        verify(mockLegacyRenderer).drawLegacyEllipse(x, y, rx, ry);
+        int x = 10, y = 20, width = 30, height = 40;
+        renderer.drawEllipse(x, y, width, height);
+        verify(mockLegacyRenderer).drawLegacyEllipse(x, y, width, height);
     }
     /**
      * 测试构造器对null参数的处理。
