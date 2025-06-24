@@ -75,6 +75,17 @@ public interface Shape {
     void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
     /**
+     * 创建并返回当前图形的一个副本
+     */
+    Shape clone() throws CloneNotSupportedException;
+    
+    default void validatePosition(int x, int y) {
+        if (x < 0 || y < 0) {
+            throw new IllegalArgumentException("坐标不能为负数");
+        }
+    }
+
+    /**
      * 移动图形的位置。
      * 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。
      *
