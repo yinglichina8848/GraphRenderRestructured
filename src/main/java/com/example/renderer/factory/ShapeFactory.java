@@ -142,9 +142,33 @@ class BasicShapeFactory implements ShapeFactory {
      * @return 新创建的圆形实例
      * @throws IllegalArgumentException 如果半径不合法
      */
+    /**
+     * 创建圆形实例。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 半径(必须>0)
+     * @return 新创建的圆形实例
+     * @throws IllegalArgumentException 如果半径不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Shape createCircle(int x, int y, int radius) {
         return new Circle(x, y, radius);
     }
+
+    /**
+     * 创建矩形实例。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @return 新创建的矩形实例
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Shape createRectangle(int x, int y, int width, int height) {
         return new Rectangle(x, y, width, height);
     }

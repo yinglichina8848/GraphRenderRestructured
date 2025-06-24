@@ -89,12 +89,35 @@ public class RemoteRendererProxy implements Renderer {
     }
 
 
+    /**
+     * 代理绘制三角形操作，添加远程调用日志。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         System.out.printf("Remote call: drawTriangle(%d, %d, %d, %d, %d, %d)\n", x1, y1, x2, y2, x3, y3);
         realRenderer.drawTriangle(x1, y1, x2, y2, x3, y3);
     }
 
+    /**
+     * 代理绘制椭圆操作，添加远程调用日志。
+     * 
+     * @param x 椭圆中心x坐标
+     * @param y 椭圆中心y坐标
+     * @param width 椭圆宽度(必须>0)
+     * @param height 椭圆高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
         System.out.printf("Remote call: drawEllipse(%d, %d, %d, %d)\n", x, y, width, height);
