@@ -1,6 +1,7 @@
 package com.example.renderer.bridge;
 
 import java.awt.*;
+import java.awt.font.GlyphVector;
 import java.awt.Rectangle;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
@@ -42,6 +43,11 @@ public class MockGraphics2D extends Graphics2D {
     @Override
     public void drawString(AttributedCharacterIterator iterator, int x, int y) {
         lastDrawCall = "drawString:attributed";
+    }
+
+    @Override
+    public void drawGlyphVector(java.awt.font.GlyphVector g, float x, float y) {
+        lastDrawCall = "drawGlyphVector";
     }
 
     @Override
