@@ -52,6 +52,17 @@ public interface Renderer {
      * @param height 矩形高度(必须>0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
      */
+    /**
+     * 绘制矩形。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void drawRectangle(int x, int y, int width, int height);
     
     /**
@@ -62,6 +73,17 @@ public interface Renderer {
      * @param height 椭圆高度(必须>0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
      */
+    /**
+     * 绘制椭圆。
+     * 
+     * @param x 椭圆外接矩形左上角x坐标
+     * @param y 椭圆外接矩形左上角y坐标
+     * @param width 椭圆宽度(必须>0)
+     * @param height 椭圆高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void drawEllipse(int x, int y, int width, int height);
     /**
      * 绘制三角形
@@ -71,6 +93,18 @@ public interface Renderer {
      * @param y2 第二个顶点y坐标
      * @param x3 第三个顶点x坐标
      * @param y3 第三个顶点y坐标
+     */
+    /**
+     * 绘制三角形。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
 }

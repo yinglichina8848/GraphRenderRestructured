@@ -73,6 +73,16 @@ public class RemoteRendererProxy implements Renderer {
         realRenderer.drawCircle(x, y, radius);
     }
 
+    /**
+     * 代理绘制矩形操作，添加远程调用日志。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void drawRectangle(int x, int y, int width, int height) {
         System.out.println("[Proxy] Sending drawRectangle to remote...");
         realRenderer.drawRectangle(x, y, width, height);

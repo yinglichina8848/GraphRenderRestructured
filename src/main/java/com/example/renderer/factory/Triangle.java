@@ -90,10 +90,51 @@ public class Triangle implements Shape {
         y3 += dy;
     }
 
+    /**
+     * 获取第一个顶点的x坐标
+     * @return 第一个顶点的x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getX1() { return x1; }
+
+    /**
+     * 获取第一个顶点的y坐标
+     * @return 第一个顶点的y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getY1() { return y1; }
+
+    /**
+     * 获取第二个顶点的x坐标
+     * @return 第二个顶点的x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getX2() { return x2; }
+
+    /**
+     * 获取第二个顶点的y坐标
+     * @return 第二个顶点的y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getY2() { return y2; }
+
+    /**
+     * 获取第三个顶点的x坐标
+     * @return 第三个顶点的x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getX3() { return x3; }
+
+    /**
+     * 获取第三个顶点的y坐标
+     * @return 第三个顶点的y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getY3() { return y3; }
 }

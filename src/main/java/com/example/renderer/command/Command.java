@@ -44,11 +44,23 @@ public interface Command {
      * Executes the command operation.
      * Implementations should perform the actual operation here.
      */
+    /**
+     * 执行命令操作。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void execute();
     
     /**
      * Undoes the command operation.
      * Implementations should revert the execute() operation here.
+     */
+    /**
+     * 撤销命令操作。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     void undo();
 }
@@ -66,9 +78,30 @@ public interface Command {
 class MoveShapeCommand implements Command {
     private final Shape shape;
     private final int dx, dy;
+    /**
+     * 创建移动图形命令实例。
+     * 
+     * @param shape 要移动的图形(非null)
+     * @param dx X轴移动距离
+     * @param dy Y轴移动距离
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public MoveShapeCommand(Shape shape, int dx, int dy) {
         this.shape = shape; this.dx = dx; this.dy = dy;
     }
+    /**
+     * 执行移动命令。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void execute() { shape.move(dx, dy); }
+    /**
+     * 撤销移动命令。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void undo() { shape.move(-dx, -dy); }
 }

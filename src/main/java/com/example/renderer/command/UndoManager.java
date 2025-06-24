@@ -64,6 +64,12 @@ public class UndoManager {
         }
     }
 
+    /**
+     * 重做最近撤销的命令。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void redo() {
         if (!redoStack.isEmpty()) {
             Command cmd = redoStack.pop();
@@ -72,10 +78,24 @@ public class UndoManager {
         }
     }
 
+    /**
+     * 检查是否可以执行撤销操作。
+     * 
+     * @return 如果撤销栈不为空返回true，否则返回false
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public boolean canUndo() {
         return !undoStack.isEmpty();
     }
 
+    /**
+     * 检查是否可以执行重做操作。
+     * 
+     * @return 如果重做栈不为空返回true，否则返回false
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public boolean canRedo() {
         return !redoStack.isEmpty();
     }

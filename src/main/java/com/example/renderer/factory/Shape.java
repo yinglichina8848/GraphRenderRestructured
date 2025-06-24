@@ -79,6 +79,14 @@ public interface Shape {
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
      */
+    /**
+     * 移动图形的位置。
+     * 
+     * @param dx X轴方向的移动距离（像素）
+     * @param dy Y轴方向的移动距离（像素）
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void move(int dx, int dy);
 
     /**
@@ -87,6 +95,14 @@ public interface Shape {
      *
      * @param visitor 用于处理图形的访问者对象，不能为null
      * @throws NullPointerException 如果visitor参数为null
+     */
+    /**
+     * 接受访问者访问此图形对象。
+     * 
+     * @param visitor 用于处理图形的访问者对象(非null)
+     * @throws NullPointerException 如果visitor参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     void accept(ExportVisitor visitor);
 }
