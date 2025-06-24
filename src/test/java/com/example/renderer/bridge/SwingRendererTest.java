@@ -140,18 +140,57 @@ public class SwingRendererTest {
         verify(mockGraphics).drawOval(1, 1, Integer.MAX_VALUE-2, Integer.MAX_VALUE-2);
     }
 
+    /**
+     * 测试绘制矩形时极端坐标的处理。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawRect()被调用一次</li>
+     *   <li>超大坐标值处理正确</li>
+     *   <li>不会抛出算术异常</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawRectangle_ExtremeCoordinates() {
         renderer.drawRectangle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
         verify(mockGraphics).drawRect(Integer.MAX_VALUE, Integer.MIN_VALUE, 1, 1);
     }
 
+    /**
+     * 测试绘制退化三角形(所有顶点相同)的情况。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawPolygon()被调用一次</li>
+     *   <li>退化三角形被正确处理</li>
+     *   <li>不会抛出异常</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawTriangle_DegenerateTriangle() {
         renderer.drawTriangle(0, 0, 0, 0, 0, 0);
         verify(mockGraphics).drawPolygon(any());
     }
 
+    /**
+     * 测试drawRectangle()方法是否正确委托给Graphics2D.drawRect()。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawRect()被调用一次</li>
+     *   <li>参数传递正确</li>
+     *   <li>坐标转换正确</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawRectangle_DelegatesToGraphicsDrawRect() {
         int x = 10, y = 20, width = 40, height = 50;
@@ -160,6 +199,19 @@ public class SwingRendererTest {
         verify(mockGraphics).drawRect(x, y, width, height);
     }
 
+    /**
+     * 测试drawEllipse()方法是否正确委托给Graphics2D.drawOval()。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawOval()被调用一次</li>
+     *   <li>参数传递正确</li>
+     *   <li>坐标转换正确</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawEllipse_DelegatesToGraphicsDrawOval() {
         int x = 10, y = 20, width = 40, height = 50;
@@ -168,6 +220,19 @@ public class SwingRendererTest {
         verify(mockGraphics).drawOval(x, y, width, height);
     }
 
+    /**
+     * 测试drawTriangle()方法是否正确委托给Graphics2D.drawPolygon()。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawPolygon()被调用一次</li>
+     *   <li>顶点坐标传递正确</li>
+     *   <li>多边形点数为3</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawTriangle_DelegatesToGraphicsDrawPolygon() {
         int x1 = 10, y1 = 20, x2 = 30, y2 = 40, x3 = 50, y3 = 60;

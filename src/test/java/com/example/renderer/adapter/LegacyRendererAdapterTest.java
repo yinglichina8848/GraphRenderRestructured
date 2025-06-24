@@ -66,6 +66,19 @@ public class LegacyRendererAdapterTest {
      *   <li>验证Mock是否收到正确调用</li>
      * </ol>
      */
+    /**
+     * 测试drawCircle()方法是否正确转发到LegacyRenderer。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>LegacyRenderer.drawLegacyCircle()被调用一次</li>
+     *   <li>圆心坐标和半径参数传递正确</li>
+     *   <li>无返回值处理</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawCircle_ForwardsToLegacyRenderer() {
         int x = 10, y = 20, radius = 30;
