@@ -32,6 +32,16 @@ public interface Renderer {
      * @param radius 圆形半径(必须>0)
      * @throws IllegalArgumentException 如果半径不合法
      */
+    /**
+     * 绘制圆形。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void drawCircle(int x, int y, int radius);
     
     /**

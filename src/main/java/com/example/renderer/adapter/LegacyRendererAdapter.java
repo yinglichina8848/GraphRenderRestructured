@@ -43,6 +43,14 @@ public class LegacyRendererAdapter implements Renderer {
      * @throws NullPointerException 如果legacyRenderer为null
      * @see LegacyRenderer
      */
+    /**
+     * 创建LegacyRenderer适配器实例。
+     * 
+     * @param legacyRenderer 要适配的旧版渲染器实例(非null)
+     * @throws NullPointerException 如果legacyRenderer为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public LegacyRendererAdapter(LegacyRenderer legacyRenderer) {
         this.legacyRenderer = Objects.requireNonNull(legacyRenderer, "LegacyRenderer cannot be null");
     }

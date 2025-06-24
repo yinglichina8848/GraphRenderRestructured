@@ -36,6 +36,17 @@ public interface ShapeFactory {
      * @return 新创建的圆形实例
      * @throws IllegalArgumentException 如果半径不合法
      */
+    /**
+     * 创建圆形实例。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 半径(必须>0)
+     * @return 新创建的圆形实例
+     * @throws IllegalArgumentException 如果半径不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     Shape createCircle(int x, int y, int radius);
     /**
      * 创建矩形实例

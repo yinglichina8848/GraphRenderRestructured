@@ -40,5 +40,12 @@ public interface ShapeObserver {
      * 当被观察的图形发生变化时调用
      * @param shape 发生变化的图形对象
      */
+    /**
+     * 当被观察的图形发生变化时调用。
+     * 
+     * @param shape 发生变化的图形对象
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void onShapeChanged(Shape shape);
 }

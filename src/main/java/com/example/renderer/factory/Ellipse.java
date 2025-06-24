@@ -37,6 +37,12 @@ public class Ellipse implements Shape {
      * 无参构造器，用于序列化和反射创建实例。
      * 创建后需要通过setter方法设置属性。
      */
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Ellipse() {}
 
     /**

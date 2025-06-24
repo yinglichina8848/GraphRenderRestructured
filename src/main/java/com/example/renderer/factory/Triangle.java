@@ -44,8 +44,26 @@ public class Triangle implements Shape {
      * 无参构造器，用于序列化和反射创建实例。
      * 创建后需要通过setter方法设置顶点坐标。
      */
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Triangle() {}
 
+    /**
+     * 创建指定顶点坐标的三角形实例。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Triangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         this.x1 = x1; this.y1 = y1;
         this.x2 = x2; this.y2 = y2;

@@ -37,12 +37,25 @@ public class UndoManager {
     private final Stack<Command> undoStack = new Stack<>();
     private final Stack<Command> redoStack = new Stack<>();
 
+    /**
+     * 执行命令并保存到撤销栈。
+     * 
+     * @param cmd 要执行的命令(非null)
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void executeCommand(Command cmd) {
         cmd.execute();
         undoStack.push(cmd);
         redoStack.clear();
     }
 
+    /**
+     * 撤销最近执行的命令。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void undo() {
         if (!undoStack.isEmpty()) {
             Command cmd = undoStack.pop();

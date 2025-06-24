@@ -39,6 +39,14 @@ public class RemoteRendererProxy implements Renderer {
      * @param realRenderer 实际渲染器实例(非null)
      * @throws NullPointerException 如果realRenderer为null
      */
+    /**
+     * 创建远程渲染器代理实例。
+     * 
+     * @param realRenderer 实际渲染器实例(非null)
+     * @throws NullPointerException 如果realRenderer为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public RemoteRendererProxy(Renderer realRenderer) {
         Objects.requireNonNull(realRenderer, "Real renderer cannot be null");
         this.realRenderer = realRenderer;

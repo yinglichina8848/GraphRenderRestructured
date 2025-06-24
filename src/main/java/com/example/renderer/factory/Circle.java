@@ -56,6 +56,12 @@ public class Circle implements Shape {
      * <p>注意：使用此构造器创建的圆形需要手动设置坐标和半径，
      * 否则可能导致渲染异常。
      */
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public Circle() {}
 
     /**

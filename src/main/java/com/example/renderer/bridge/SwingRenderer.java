@@ -43,6 +43,13 @@ public class SwingRenderer implements Renderer {
      * @param g Graphics2D绘图上下文对象
      * @see Graphics2D
      */
+    /**
+     * 设置绘图上下文。
+     * 
+     * @param g Graphics2D绘图上下文对象
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void setGraphics(Graphics2D g) {
         this.g = g;
         g.setColor(java.awt.Color.BLUE);

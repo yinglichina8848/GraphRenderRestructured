@@ -62,6 +62,14 @@ public interface Shape {
      * @param renderer 用于绘制图形的渲染器实现
      * @throws NullPointerException 如果renderer为null
      */
+    /**
+     * 使用指定的渲染器绘制图形。
+     * 
+     * @param renderer 用于绘制图形的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void render(Renderer renderer);
 
     /**
