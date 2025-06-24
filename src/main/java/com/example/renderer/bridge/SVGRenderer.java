@@ -22,7 +22,7 @@ public class SVGRenderer implements Renderer {
         if (radius <= 0) {
             throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        System.out.printf("<circle cx='%d' cy='%d' r='%d' fill='none' stroke='black' stroke-width='2'/>\n", 
+        System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", 
             x, y, radius);
     }
 
@@ -38,6 +38,6 @@ public class SVGRenderer implements Renderer {
 
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
-        System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width/2, height/2);
+        System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width, height);
     }
 }
