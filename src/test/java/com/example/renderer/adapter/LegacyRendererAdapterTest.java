@@ -93,6 +93,19 @@ public class LegacyRendererAdapterTest {
         verify(mockLegacyRenderer).drawLegacyRectangle(x, y, width, height);
     }
 
+    /**
+     * 测试drawTriangle()方法是否正确转发到LegacyRenderer。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>LegacyRenderer.drawLegacyTriangle()被调用一次</li>
+     *   <li>所有顶点坐标传递正确</li>
+     *   <li>调用顺序正确</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawTriangle_ForwardsToLegacyRenderer() {
         int x1 = 10, y1 = 20, x2 = 30, y2 = 40, x3 = 50, y3 = 60;
@@ -100,6 +113,19 @@ public class LegacyRendererAdapterTest {
         verify(mockLegacyRenderer).drawLegacyTriangle(x1, y1, x2, y2, x3, y3);
     }
 
+    /**
+     * 测试drawEllipse()方法是否正确转发到LegacyRenderer。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>LegacyRenderer.drawLegacyEllipse()被调用一次</li>
+     *   <li>中心坐标和半径参数传递正确</li>
+     *   <li>无返回值处理</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawEllipse_ForwardsToLegacyRenderer() {
         int x = 10, y = 20, rx = 30, ry = 40;

@@ -61,6 +61,19 @@ public class SwingRendererTest {
     private SwingRenderer renderer;
     private Graphics2D mockGraphics;
 
+    /**
+     * 测试前置设置，在每个测试方法执行前运行。
+     * 
+     * <p>初始化：
+     * <ul>
+     *   <li>创建SwingRenderer实例</li>
+     *   <li>创建模拟的Graphics2D对象</li>
+     *   <li>设置渲染器的绘图上下文</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @BeforeEach
     public void setUp() {
         renderer = new SwingRenderer();
@@ -88,13 +101,37 @@ public class SwingRendererTest {
         verify(mockGraphics).drawOval(x - radius, y - radius, radius * 2, radius * 2);
     }
 
-    // 边界值测试
+    /**
+     * 测试绘制圆形时无效半径的处理。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>当半径<=0时抛出IllegalArgumentException</li>
+     *   <li>错误消息包含无效值</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawCircle_InvalidRadius() {
         assertThrows(IllegalArgumentException.class, () -> 
             renderer.drawCircle(10, 10, -1));
     }
 
+    /**
+     * 测试绘制圆形时最大半径的处理。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawOval()被调用一次</li>
+     *   <li>超大半径计算正确</li>
+     *   <li>不会抛出算术异常</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawCircle_MaxRadius() {
         int x = Integer.MAX_VALUE/2, y = Integer.MAX_VALUE/2;
