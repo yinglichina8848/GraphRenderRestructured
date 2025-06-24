@@ -26,6 +26,7 @@ package com.example.renderer.adapter;
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.adapter.LegacyRendererAdapter;
 import com.example.renderer.legacy.LegacyRenderer;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
