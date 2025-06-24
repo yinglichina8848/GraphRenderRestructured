@@ -1,6 +1,7 @@
 package com.example.renderer.bridge;
 
 import java.awt.*;
+import java.awt.Rectangle;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
 import java.awt.font.FontRenderContext;
@@ -176,6 +177,11 @@ public class MockGraphics2D extends Graphics2D {
     @Override
     public FontRenderContext getFontRenderContext() {
         return new FontRenderContext(null, false, false);
+    }
+
+    @Override
+    public boolean hit(Rectangle rect, Shape s, boolean onStroke) {
+        return false; // 简单实现，测试中不需要实际命中检测
     }
 
     @Override
