@@ -150,10 +150,24 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果realRenderer为null 创建远程渲染器代理实例。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">realRenderer</td><td>实际渲染器实例(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果realRenderer为null </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -215,7 +229,23 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> 代理绘制圆形操作，添加远程调用日志。</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>圆心y坐标 </td></tr>
+    <tr><td class="paramname">radius</td><td>圆形半径(必须&gt;0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -266,10 +296,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>绘制椭圆 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>代理绘制椭圆操作，添加远程调用日志。</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
+    <tr><td class="paramname">x</td><td>椭圆中心x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>椭圆中心y坐标 </td></tr>
     <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
     <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
   </table>
@@ -281,6 +312,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -331,7 +364,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>绘制矩形 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>代理绘制矩形操作，添加远程调用日志。</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>左上角x坐标 </td></tr>
     <tr><td class="paramname">y</td><td>左上角y坐标 </td></tr>
@@ -340,12 +374,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a544db73ca5c1778c124d3ee53b99b4b6">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -408,7 +438,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>绘制三角形 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>代理绘制三角形操作，添加远程调用日志。</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x1</td><td>第一个顶点x坐标 </td></tr>
     <tr><td class="paramname">y1</td><td>第一个顶点y坐标 </td></tr>
@@ -419,6 +450,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a8da6ee9a1744047767dfccc70cd6da76">com.example.renderer.bridge.Renderer</a>.</p>
 

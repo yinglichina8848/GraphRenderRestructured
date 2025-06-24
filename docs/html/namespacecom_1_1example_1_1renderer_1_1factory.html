@@ -136,29 +136,28 @@ Classes</h2></td></tr>
 <p>典型用法： </p><pre><div class="fragment"><div class="line">Circle circle = <span class="keyword">new</span> Circle(100, 100, 50); <span class="comment">// 创建圆形</span></div>
 <div class="line">circle.render(renderer); <span class="comment">// 绘制圆形</span></div>
 <div class="line">circle.move(10, 10); <span class="comment">// 移动圆形</span></div>
-</div><!-- fragment --> </pre><dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> 图形接口 </dd>
+</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> 图形接口 </dd>
 <dd>
 SwingRenderer Swing渲染实现 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0.0</dd></dl>
-<p>表示椭圆图形的实现类。</p>
-<p>椭圆由中心坐标(x,y)和宽度(width)、高度(height)定义。 该类实现了Shape接口，支持基本的渲染、移动和访问者模式操作。</p>
-<p>遵循的设计模式： </p><ul>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24</dd></dl>
+<p>椭圆图形实现类。</p>
+<p>表示一个由中心坐标(x,y)和宽度(width)、高度(height)定义的椭圆。 实现了Shape接口，支持以下操作： </p><ul>
 <li>
-桥接模式 - 通过Renderer接口实现绘制逻辑 </li>
+渲染 - 通过render()方法使用指定渲染器绘制 </li>
 <li>
-访问者模式 - 通过accept方法支持扩展操作 </li>
+移动 - 通过move()方法改变位置 </li>
 <li>
-命令模式 - move方法支持位置变更 </li>
+访问者模式 - 通过accept()方法支持扩展操作 </li>
 </ul>
-<p>修改记录： </p><ul>
-<li>
-2025-06-16 | v1.1 | 完善类和方法注释 </li>
-</ul>
-<dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-14 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.1</dd></dl>
+<p>典型用法： </p><pre><div class="fragment"><div class="line">Ellipse ellipse = <span class="keyword">new</span> Ellipse(100, 100, 80, 40);</div>
+<div class="line">ellipse.render(renderer); <span class="comment">// 绘制椭圆</span></div>
+<div class="line">ellipse.move(10, 5); <span class="comment">// 移动椭圆</span></div>
+</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> 图形接口 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24</dd></dl>
 <p>矩形图形实现类。</p>
 <p>表示一个矩形图形，包含以下属性： </p><ul>
 <li>
@@ -196,9 +195,13 @@ move(): 移动所有顶点 </li>
 <li>
 accept(): 访问者模式支持 </li>
 </ul>
+<p>典型用法： </p><pre><div class="fragment"><div class="line">Triangle triangle = <span class="keyword">new</span> Triangle(10,10, 50,10, 30,40);</div>
+<div class="line">triangle.render(renderer); <span class="comment">// 绘制三角形</span></div>
+<div class="line">triangle.move(5,5); <span class="comment">// 移动三角形</span></div>
+</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> 图形接口 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -101,17 +101,26 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ShapeObserver接口定义了观察者模式中的观察者角色。 当被观察的图形对象发生变化时，会调用onShapeChanged()方法。</p>
 <dl class="section see"><dt>See also</dt><dd>ShapeObservable ShapeObserver接口定义了观察者模式中的观察者角色。 当被观察的图形对象发生变化时，会调用onShapeChanged()方法。</dd></dl>
-<p>典型用法： </p><pre>
-shapeObservable.addObserver(new ShapeObserver() {
-    public void <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver.html#ad1710033610ca4cbf942acaad2bba261">onShapeChanged(Shape shape)</a> {
-        // 处理图形变化
-    }
-});
-</pre><dl class="section see"><dt>See also</dt><dd>ShapeObservable 可观察对象 </dd>
+<p>典型用法： </p><pre><div class="fragment"><div class="line">shapeObservable.addObserver(<span class="keyword">new</span> ShapeObserver() {</div>
+<div class="line">    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver.html#ad1710033610ca4cbf942acaad2bba261">onShapeChanged</a>(Shape shape) {</div>
+<div class="line">        <span class="comment">// 处理图形变化</span></div>
+<div class="line">    }</div>
+<div class="line">});</div>
+<div class="ttc" id="ainterfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver_html_ad1710033610ca4cbf942acaad2bba261"><div class="ttname"><a href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1ShapeObserver.html#ad1710033610ca4cbf942acaad2bba261">com.example.renderer.bridge.ShapeObserver.onShapeChanged</a></div><div class="ttdeci">void onShapeChanged(Shape shape)</div></div>
+</div><!-- fragment --> </pre><p>设计考虑： </p><ul>
+<li>
+松耦合 - 观察者与被观察者之间没有直接依赖 </li>
+<li>
+支持多个观察者 </li>
+<li>
+事件驱动 - 只在变化时通知 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>ShapeObservable 可观察对象 </dd>
 <dd>
 Shape 图形接口 </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad1710033610ca4cbf942acaad2bba261"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1710033610ca4cbf942acaad2bba261">&#9670;&nbsp;</a></span>onShapeChanged()</h2>
@@ -130,10 +139,27 @@ Shape 图形接口 </dd></dl>
 </div><div class="memdoc">
 <p>当被观察的图形发生变化时调用 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">shape</td><td>发生变化的图形对象 当被观察的图形发生变化时调用。</td></tr>
     <tr><td class="paramname">shape</td><td>发生变化的图形对象 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 当被观察的图形发生变化时调用。</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>发生变化的图形对象(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果shape参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>

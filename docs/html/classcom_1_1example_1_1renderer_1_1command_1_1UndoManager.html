@@ -95,22 +95,181 @@ $(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1com
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c1369e01556b93a5fa11ea888b8183b"><td class="memItemLeft" align="right" valign="top"><a id="a4c1369e01556b93a5fa11ea888b8183b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>executeCommand</b> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a> cmd)</td></tr>
+<tr class="memitem:a4c1369e01556b93a5fa11ea888b8183b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c1369e01556b93a5fa11ea888b8183b">executeCommand</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a> cmd)</td></tr>
 <tr class="separator:a4c1369e01556b93a5fa11ea888b8183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ea4408ac901ae7a98bd479c634fcce"><td class="memItemLeft" align="right" valign="top"><a id="ad8ea4408ac901ae7a98bd479c634fcce"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>undo</b> ()</td></tr>
+<tr class="memitem:ad8ea4408ac901ae7a98bd479c634fcce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ad8ea4408ac901ae7a98bd479c634fcce">undo</a> ()</td></tr>
 <tr class="separator:ad8ea4408ac901ae7a98bd479c634fcce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986ee81b39ef610656626bb26f5d73c2"><td class="memItemLeft" align="right" valign="top"><a id="a986ee81b39ef610656626bb26f5d73c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>redo</b> ()</td></tr>
+<tr class="memitem:a986ee81b39ef610656626bb26f5d73c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a986ee81b39ef610656626bb26f5d73c2">redo</a> ()</td></tr>
 <tr class="separator:a986ee81b39ef610656626bb26f5d73c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7e2812b370fa11e235bbdfdf44be930"><td class="memItemLeft" align="right" valign="top"><a id="aa7e2812b370fa11e235bbdfdf44be930"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canUndo</b> ()</td></tr>
+<tr class="memitem:aa7e2812b370fa11e235bbdfdf44be930"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#aa7e2812b370fa11e235bbdfdf44be930">canUndo</a> ()</td></tr>
 <tr class="separator:aa7e2812b370fa11e235bbdfdf44be930"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab961f4aa33e22e7edb846ce2da0fa5f1"><td class="memItemLeft" align="right" valign="top"><a id="ab961f4aa33e22e7edb846ce2da0fa5f1"></a>
-boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canRedo</b> ()</td></tr>
+<tr class="memitem:ab961f4aa33e22e7edb846ce2da0fa5f1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ab961f4aa33e22e7edb846ce2da0fa5f1">canRedo</a> ()</td></tr>
 <tr class="separator:ab961f4aa33e22e7edb846ce2da0fa5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab961f4aa33e22e7edb846ce2da0fa5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab961f4aa33e22e7edb846ce2da0fa5f1">&#9670;&nbsp;</a></span>canRedo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.example.renderer.command.UndoManager.canRedo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>检查是否可以执行重做操作。</p>
+<dl class="section return"><dt>Returns</dt><dd>如果重做栈不为空返回true，否则返回false </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="aa7e2812b370fa11e235bbdfdf44be930"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e2812b370fa11e235bbdfdf44be930">&#9670;&nbsp;</a></span>canUndo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean com.example.renderer.command.UndoManager.canUndo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>检查是否可以执行撤销操作。</p>
+<dl class="section return"><dt>Returns</dt><dd>如果撤销栈不为空返回true，否则返回false </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="a4c1369e01556b93a5fa11ea888b8183b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1369e01556b93a5fa11ea888b8183b">&#9670;&nbsp;</a></span>executeCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.UndoManager.executeCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a>&#160;</td>
+          <td class="paramname"><em>cmd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>执行命令并保存到撤销栈。</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>要执行的命令(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 执行命令并保存到撤销栈。</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmd</td><td>要执行的命令(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果cmd参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="a986ee81b39ef610656626bb26f5d73c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986ee81b39ef610656626bb26f5d73c2">&#9670;&nbsp;</a></span>redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.UndoManager.redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>重做最近撤销的命令。</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="ad8ea4408ac901ae7a98bd479c634fcce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ea4408ac901ae7a98bd479c634fcce">&#9670;&nbsp;</a></span>undo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.UndoManager.undo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>撤销最近执行的命令。</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/com/example/renderer/command/UndoManager.java</li>
 </ul>

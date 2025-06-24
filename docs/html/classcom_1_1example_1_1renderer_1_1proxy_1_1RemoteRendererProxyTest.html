@@ -97,12 +97,12 @@ $(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1pro
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a785672431f7951f8d26c27fece370ad8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a785672431f7951f8d26c27fece370ad8">testProxyCallsRealRenderer</a> ()</td></tr>
 <tr class="separator:a785672431f7951f8d26c27fece370ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f0b86f8169ea20d532ab8cffb0c7dc3"><td class="memItemLeft" align="right" valign="top"><a id="a2f0b86f8169ea20d532ab8cffb0c7dc3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testProxy_ExtremeCoordinates</b> ()</td></tr>
+<tr class="memitem:a2f0b86f8169ea20d532ab8cffb0c7dc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a2f0b86f8169ea20d532ab8cffb0c7dc3">testProxy_ExtremeCoordinates</a> ()</td></tr>
 <tr class="separator:a2f0b86f8169ea20d532ab8cffb0c7dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3090d3bf372e088d1ac3f9ea32e576b"><td class="memItemLeft" align="right" valign="top"><a id="ac3090d3bf372e088d1ac3f9ea32e576b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>testConstructor_NullRenderer</b> ()</td></tr>
+<tr class="memitem:ac3090d3bf372e088d1ac3f9ea32e576b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#ac3090d3bf372e088d1ac3f9ea32e576b">testConstructor_NullRenderer</a> ()</td></tr>
 <tr class="separator:ac3090d3bf372e088d1ac3f9ea32e576b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3709be98c59cad6c44ea5a4546857396"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html#a3709be98c59cad6c44ea5a4546857396">tearDown</a> ()</td></tr>
+<tr class="separator:a3709be98c59cad6c44ea5a4546857396"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RemoteRendererProxy的单元测试类。</p>
@@ -113,11 +113,128 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>testConstructor_NullR
 参数传递正确 </li>
 <li>
 边界值处理 </li>
+<li>
+日志输出正确 </li>
 </ul>
+<p>测试策略： </p><ul>
+<li>
+使用Mockito模拟Renderer实例 </li>
+<li>
+验证方法调用转发逻辑 </li>
+<li>
+边界值测试 </li>
+<li>
+异常情况测试 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html">RemoteRendererProxy</a> </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3709be98c59cad6c44ea5a4546857396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3709be98c59cad6c44ea5a4546857396">&#9670;&nbsp;</a></span>tearDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxyTest.tearDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>测试后置清理，在每个测试方法执行后运行。</p>
+<p>清理： </p><ul>
+<li>
+重置模拟对象 </li>
+<li>
+释放资源 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="ac3090d3bf372e088d1ac3f9ea32e576b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3090d3bf372e088d1ac3f9ea32e576b">&#9670;&nbsp;</a></span>testConstructor_NullRenderer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxyTest.testConstructor_NullRenderer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>测试构造器对null参数的处理。</p>
+<p>验证点： </p><ul>
+<li>
+传入null参数时抛出NullPointerException </li>
+<li>
+错误消息包含有意义的信息 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="a2f0b86f8169ea20d532ab8cffb0c7dc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f0b86f8169ea20d532ab8cffb0c7dc3">&#9670;&nbsp;</a></span>testProxy_ExtremeCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxyTest.testProxy_ExtremeCoordinates </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>测试代理处理极端坐标值的情况。</p>
+<p>验证点： </p><ul>
+<li>
+超大坐标值被正确转发 </li>
+<li>
+不会抛出算术异常 </li>
+<li>
+参数传递顺序正确 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
 <a id="a785672431f7951f8d26c27fece370ad8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a785672431f7951f8d26c27fece370ad8">&#9670;&nbsp;</a></span>testProxyCallsRealRenderer()</h2>
 

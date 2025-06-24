@@ -161,7 +161,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>无参构造器，用于序列化和反射创建实例。 创建后需要通过setter方法设置属性。</p>
-<p>注意：使用此构造器创建的圆形需要手动设置坐标和半径， 否则可能导致渲染异常。 </p>
+<p>注意：使用此构造器创建的圆形需要手动设置坐标和半径， 否则可能导致渲染异常。 无参构造器，用于序列化和反射创建实例。</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -255,10 +257,38 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null 接受访问者访问此图形对象。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 接受访问者访问此图形对象。</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a17fdf5b153a81b61bc744ab108c6bcbd">com.example.renderer.factory.Shape</a>.</p>
 
@@ -286,9 +316,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取圆形半径。</p>
+<p>获取圆形半径(简写方法)。</p>
 <dl class="section return"><dt>Returns</dt><dd>圆形半径值 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#af06f178fee411628e85f616fc4b27be9">getRadius()</a> 等效方法 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -314,7 +346,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取圆形半径 </p><dl class="section return"><dt>Returns</dt><dd>圆形半径值 </dd></dl>
+<p>获取圆形半径。</p>
+<dl class="section return"><dt>Returns</dt><dd>圆形半径值 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -340,7 +375,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取圆心x坐标 </p><dl class="section return"><dt>Returns</dt><dd>圆心x坐标值 </dd></dl>
+<p>获取圆心x坐标。</p>
+<dl class="section return"><dt>Returns</dt><dd>圆心x坐标值 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -366,7 +404,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取圆心y坐标 </p><dl class="section return"><dt>Returns</dt><dd>圆心y坐标值 </dd></dl>
+<p>获取圆心y坐标。</p>
+<dl class="section return"><dt>Returns</dt><dd>圆心y坐标值 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 </div>
 </div>
@@ -403,7 +444,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
+<p>移动圆形位置。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
@@ -411,6 +452,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">com.example.renderer.factory.Shape</a>.</p>
 
@@ -468,10 +511,24 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果renderer为null </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果renderer为null 使用指定的渲染器绘制图形。</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>用于绘制图形的渲染器实现(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果renderer参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078">com.example.renderer.factory.Shape</a>.</p>
 

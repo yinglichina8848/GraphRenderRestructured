@@ -132,14 +132,16 @@ Public Member Functions</h2></td></tr>
 <div class="line">    <span class="comment">// 其他方法实现...</span></div>
 <div class="line">}</div>
 <div class="ttc" id="ainterfacecom_1_1example_1_1renderer_1_1factory_1_1Shape_html_a6db3090c675b8919fb2077d812440078"><div class="ttname"><a href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078">com.example.renderer.factory.Shape.render</a></div><div class="ttdeci">void render(Renderer renderer)</div></div>
-</div><!-- fragment --> </pre><dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> 圆形实现 </dd>
+</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> 圆形实现 </dd>
 <dd>
 <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a> 矩形实现 </dd>
 <dd>
 <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a> 椭圆实现 </dd>
 <dd>
 <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> 三角形实现 </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a17fdf5b153a81b61bc744ab108c6bcbd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17fdf5b153a81b61bc744ab108c6bcbd">&#9670;&nbsp;</a></span>accept()</h2>
@@ -165,10 +167,38 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null 接受访问者访问此图形对象。</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 接受访问者访问此图形对象。</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a51521258d26e87a98467aef864272484">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a5b6d782ad3dc266f7757c5c451bbe602">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a9319379e8169bced107758a43b0932cd">com.example.renderer.factory.Circle</a>.</p>
 
@@ -203,10 +233,14 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
+    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） 移动图形的位置。</td></tr>
+    <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
     <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a0aa53deb7dccf8acd100a53a76d414d0">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a85e3c1cc786f02d3b62399193b44a554">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a7dc56b196866cc4d444f59585902442c">com.example.renderer.factory.Circle</a>.</p>
 
@@ -256,10 +290,24 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果renderer为null </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果renderer为null 使用指定的渲染器绘制图形。</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>用于绘制图形的渲染器实现(非null) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">NullPointerException</td><td>如果renderer参数为null </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a">com.example.renderer.factory.Circle</a>.</p>
 

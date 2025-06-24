@@ -107,11 +107,22 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command接口定义了命令模式的基本操作。 所有具体命令类必须实现execute()和undo()方法。</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html">AddShapeCommand</a> </dd>
+<p>命令模式允许将请求封装为对象，从而支持： </p><ul>
+<li>
+参数化客户端请求 </li>
+<li>
+请求排队或记录 </li>
+<li>
+支持可撤销操作 </li>
+</ul>
+<dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html">AddShapeCommand</a> 添加图形命令 </dd>
 <dd>
-MoveShapeCommand </dd>
+MoveShapeCommand 移动图形命令 </dd>
 <dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html">UndoManager</a> Command接口定义了命令模式中的命令操作。</dd></dl>
+<a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html">UndoManager</a> 命令管理器 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 Command接口定义了命令模式中的命令操作。</dd></dl>
 <p>所有具体命令必须实现execute()执行操作和undo()撤销操作。 与UndoManager配合使用可实现操作的撤销/重做功能。</p>
 <p>典型用法： </p><pre>
 <a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a> cmd = new AddShapeCommand(shapes, new Circle(10,10,5));
@@ -139,7 +150,17 @@ MoveShapeCommand 移动图形命令 </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Executes the command operation. Implementations should perform the actual operation here. </p>
+<p>Executes the command operation. Implementations should perform the actual operation here. 执行命令操作。</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 执行命令操作。</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">RuntimeException</td><td>如果执行过程中发生错误 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#ade460d9dcda0787b3d6bdc866e9827d6">com.example.renderer.command.AddShapeCommand</a>.</p>
 
@@ -159,7 +180,9 @@ MoveShapeCommand 移动图形命令 </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Undoes the command operation. Implementations should revert the <a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6">execute()</a> operation here. </p>
+<p>Undoes the command operation. Implementations should revert the <a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6">execute()</a> operation here. 撤销命令操作。</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#a1e91071abffa2eb38cef121f39610714">com.example.renderer.command.AddShapeCommand</a>.</p>
 
