@@ -90,28 +90,39 @@ public class Rectangle implements Shape {
         y = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newY));
     }
 
-    /** 获取矩形左上角x坐标 */
-    /** 
-     * 获取矩形左上角X坐标
-     * @return 矩形左上角的X坐标值
+    /**
+     * 获取矩形左上角x坐标。
+     * 
+     * @return 矩形左上角x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getX() { return x; }
     
     /**
-     * 获取矩形左上角Y坐标
-     * @return 矩形左上角的Y坐标值
+     * 获取矩形左上角y坐标。
+     * 
+     * @return 矩形左上角y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getY() { return y; }
     
     /**
-     * 获取矩形宽度
-     * @return 矩形的宽度值
+     * 获取矩形宽度。
+     * 
+     * @return 矩形宽度值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getWidth() { return width; }
     
     /**
-     * 获取矩形高度
-     * @return 矩形的高度值
+     * 获取矩形高度。
+     * 
+     * @return 矩形高度值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getHeight() { return height; }
 }

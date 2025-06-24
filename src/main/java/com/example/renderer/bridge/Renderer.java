@@ -142,15 +142,47 @@ class SVGRenderer implements Renderer {
         }
         System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", x, y, radius);
     }
+    /**
+     * 绘制矩形并输出SVG格式字符串。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void drawRectangle(int x, int y, int width, int height) {
         System.out.printf("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
     }
 
+    /**
+     * 绘制三角形并输出SVG格式字符串。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         System.out.printf("<polygon points='%d,%d %d,%d %d,%d' />\n", x1, y1, x2, y2, x3, y3);
     }
 
+    /**
+     * 绘制椭圆并输出SVG格式字符串。
+     * 
+     * @param x 椭圆中心x坐标
+     * @param y 椭圆中心y坐标
+     * @param rx 椭圆x轴半径(必须>0)
+     * @param ry 椭圆y轴半径(必须>0)
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void drawEllipse(int x, int y, int rx, int ry) {
         System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, rx, ry);
