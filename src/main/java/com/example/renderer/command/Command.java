@@ -71,5 +71,16 @@ public interface Command {
      * @since 2025-06-24
      */
     void undo();
+
+    /**
+     * Redoes the command operation.
+     */
+    void redo();
+    
+    default boolean canExecute() { return true; }
+    
+    default boolean canUndo() { return true; }
+    
+    default boolean canRedo() { return true; }
 }
 
