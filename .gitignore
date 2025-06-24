@@ -7,7 +7,7 @@
 
 # Doxygen HTML
 docs/doxygen/
-docs
+docs/*
 
 # System
 .DS_Store
