@@ -84,9 +84,13 @@ public class SwingRenderer implements Renderer {
      */
     @Override
     public void drawCircle(int x, int y, int radius) {
-        if (g != null) {
-            g.drawOval(x - radius, y - radius, radius * 2, radius * 2);
+        if (radius <= 0) {
+            throw new IllegalArgumentException("Radius must be positive (was " + radius + ")");
         }
+        if (g == null) {
+            throw new IllegalStateException("Graphics context not initialized. Call setGraphics() first.");
+        }
+        g.drawOval(x - radius, y - radius, radius * 2, radius * 2);
     }
 
     /**

@@ -72,6 +72,13 @@ public class PersistenceManager {
      * @return 全局唯一的PersistenceManager实例(永不为null)
      * @see #PersistenceManager() 私有构造函数
      */
+    /**
+     * 获取线程安全的PersistenceManager单例实例
+     * 
+     * <p>该方法使用类初始化保证线程安全，无需同步</p>
+     * 
+     * @return 全局唯一的PersistenceManager实例
+     */
     public static PersistenceManager getInstance() {
         return INSTANCE;
     }

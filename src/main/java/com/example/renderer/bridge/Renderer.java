@@ -7,11 +7,12 @@ public interface Renderer {
     /**
      * 绘制圆形
      * @param x 圆心x坐标
-     * @param y 圆心y坐标
+     * @param y 圆心y坐标 
      * @param radius 圆形半径(必须>0)
      * @throws IllegalArgumentException 如果半径不合法
+     * @throws IllegalStateException 如果渲染器未正确初始化
      */
-    void drawCircle(int x, int y, int radius);
+    void drawCircle(int x, int y, int radius) throws IllegalArgumentException, IllegalStateException;
     
     /**
      * 绘制矩形
