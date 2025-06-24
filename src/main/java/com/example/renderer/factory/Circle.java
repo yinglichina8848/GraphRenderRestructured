@@ -98,28 +98,39 @@ public class Circle implements Shape {
     }
 
     /**
-     * 获取圆心x坐标
+     * 获取圆心x坐标。
+     * 
      * @return 圆心x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getX() { return x; }
 
     /**
-     * 获取圆心y坐标
+     * 获取圆心y坐标。
+     * 
      * @return 圆心y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getY() { return y; }
-
-    /**
-     * 获取圆形半径
-     * @return 圆形半径值
-     */
-    public int getRadius() { return radius; }
 
     /**
      * 获取圆形半径。
      * 
      * @return 圆形半径值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    public int getRadius() { return radius; }
+
+    /**
+     * 获取圆形半径(简写方法)。
+     * 
+     * @return 圆形半径值
      * @see #getRadius() 等效方法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public int getR() {
         return radius;
