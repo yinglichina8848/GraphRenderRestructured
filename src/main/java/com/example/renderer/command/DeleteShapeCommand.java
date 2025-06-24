@@ -41,4 +41,24 @@ public class DeleteShapeCommand implements Command {
             shapes.add(index, shape);
         }
     }
+
+    @Override
+    public void redo() {
+        execute();
+    }
+
+    @Override
+    public boolean canExecute() {
+        return shapes != null && shape != null && shapes.contains(shape);
+    }
+
+    @Override
+    public boolean canUndo() {
+        return index != -1 && !shapes.contains(shape);
+    }
+
+    @Override
+    public boolean canRedo() {
+        return index != -1 && !shapes.contains(shape);
+    }
 }

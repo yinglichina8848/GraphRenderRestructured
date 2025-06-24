@@ -145,5 +145,14 @@ public class Ellipse implements Shape {
      * @see #getX() 获取X坐标
      */
     public int getHeight() { return height; }
+
+    @Override
+    public Ellipse clone() {
+        try {
+            return (Ellipse) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
 

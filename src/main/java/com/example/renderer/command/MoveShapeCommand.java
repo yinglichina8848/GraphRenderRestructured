@@ -60,4 +60,24 @@ public class MoveShapeCommand implements Command {
     public void undo() {
         shape.move(-dx, -dy);
     }
+
+    @Override
+    public void redo() {
+        execute();
+    }
+
+    @Override
+    public boolean canExecute() {
+        return shape != null;
+    }
+
+    @Override
+    public boolean canUndo() {
+        return true;
+    }
+
+    @Override
+    public boolean canRedo() {
+        return true;
+    }
 }

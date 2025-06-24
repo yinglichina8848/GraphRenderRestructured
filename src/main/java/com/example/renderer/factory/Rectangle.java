@@ -133,4 +133,13 @@ public class Rectangle implements Shape {
      * @since 2025-06-24
      */
     public int getHeight() { return height; }
+
+    @Override
+    public Rectangle clone() {
+        try {
+            return (Rectangle) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }

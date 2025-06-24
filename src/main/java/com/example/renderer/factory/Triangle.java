@@ -145,4 +145,13 @@ public class Triangle implements Shape {
      * @since 2025-06-24
      */
     public int getY3() { return y3; }
+
+    @Override
+    public Triangle clone() {
+        try {
+            return (Triangle) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
