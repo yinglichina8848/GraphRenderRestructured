@@ -57,6 +57,18 @@ public interface ShapeFactory {
      * @return 新创建的矩形实例
      * @throws IllegalArgumentException 如果宽度或高度不合法
      */
+    /**
+     * 创建矩形实例。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须>0)
+     * @param height 矩形高度(必须>0)
+     * @return 新创建的矩形实例
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     Shape createRectangle(int x, int y, int width, int height);
 }
 

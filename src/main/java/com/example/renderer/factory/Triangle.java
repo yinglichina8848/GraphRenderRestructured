@@ -70,6 +70,14 @@ public class Triangle implements Shape {
         this.x3 = x3; this.y3 = y3;
     }
 
+    /**
+     * 使用指定渲染器绘制三角形。
+     * 
+     * @param renderer 用于绘制图形的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void render(Renderer renderer) {
         renderer.drawTriangle(x1, y1, x2, y2, x3, y3);

@@ -91,6 +91,14 @@ public class Circle implements Shape {
         visitor.visitCircle(this);
     }
 
+    /**
+     * 移动圆形位置。
+     * 
+     * @param dx X轴方向的移动距离（像素）
+     * @param dy Y轴方向的移动距离（像素）
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void move(int dx, int dy) {
         x += dx;

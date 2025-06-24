@@ -47,5 +47,13 @@ public interface ShapeObserver {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 当被观察的图形发生变化时调用。
+     * 
+     * @param shape 发生变化的图形对象(非null)
+     * @throws NullPointerException 如果shape参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void onShapeChanged(Shape shape);
 }

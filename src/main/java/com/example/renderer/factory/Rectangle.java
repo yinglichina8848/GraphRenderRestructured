@@ -69,6 +69,14 @@ public class Rectangle implements Shape {
         this.height = height;
     }
 
+    /**
+     * 使用指定渲染器绘制矩形。
+     * 
+     * @param renderer 用于绘制图形的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void render(Renderer renderer) {
         renderer.drawRectangle(x, y, width, height);

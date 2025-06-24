@@ -50,6 +50,13 @@ public interface Command {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 执行命令操作。
+     * 
+     * @throws RuntimeException 如果执行过程中发生错误
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void execute();
     
     /**

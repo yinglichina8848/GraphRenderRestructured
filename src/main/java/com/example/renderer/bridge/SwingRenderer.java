@@ -145,6 +145,18 @@ public class SwingRenderer implements Renderer {
      * @param y3 第三个顶点y坐标
      * @see Polygon
      */
+    /**
+     * 使用Swing绘制三角形。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
         if (g != null) {

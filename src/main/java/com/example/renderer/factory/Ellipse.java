@@ -114,6 +114,13 @@ public class Ellipse implements Shape {
      * @see #getY() 获取Y坐标
      * @see #getWidth() 获取宽度
      */
+    /**
+     * 获取椭圆中心X坐标。
+     * 
+     * @return 椭圆中心的X坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public int getX() { return x; }
     
     /**

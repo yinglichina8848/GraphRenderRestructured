@@ -68,6 +68,16 @@ public class RemoteRendererProxy implements Renderer {
      * @param radius 圆形半径
      * @see Renderer#drawCircle(int, int, int)
      */
+    /**
+     * 代理绘制圆形操作，添加远程调用日志。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须>0)
+     * @throws IllegalArgumentException 如果半径不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void drawCircle(int x, int y, int radius) {
         System.out.println("[Proxy] Sending drawCircle to remote...");
         realRenderer.drawCircle(x, y, radius);

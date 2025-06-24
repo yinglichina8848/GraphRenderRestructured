@@ -104,5 +104,13 @@ public interface Shape {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 接受访问者访问此图形对象。
+     * 
+     * @param visitor 用于处理图形的访问者对象(非null)
+     * @throws NullPointerException 如果visitor参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     void accept(ExportVisitor visitor);
 }

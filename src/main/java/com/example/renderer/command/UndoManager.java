@@ -44,7 +44,16 @@ public class UndoManager {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 执行命令并保存到撤销栈。
+     * 
+     * @param cmd 要执行的命令(非null)
+     * @throws NullPointerException 如果cmd参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     public void executeCommand(Command cmd) {
+        Objects.requireNonNull(cmd, "Command cannot be null");
         cmd.execute();
         undoStack.push(cmd);
         redoStack.clear();
