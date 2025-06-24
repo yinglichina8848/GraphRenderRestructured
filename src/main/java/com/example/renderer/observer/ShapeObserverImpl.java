@@ -8,6 +8,8 @@ import com.example.renderer.factory.Shape;
 public class ShapeObserverImpl implements ShapeObserver {
     @Override
     public void onShapeChanged(Shape shape) {
-        System.out.println("Shape changed: " + shape.getClass().getSimpleName());
+        if (shape != null) {
+            System.out.println("Shape changed: " + shape.getClass().getSimpleName());
+        }
     }
 }
