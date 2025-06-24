@@ -313,4 +313,9 @@ public class MockGraphics2D extends Graphics2D {
     
     @Override
     public boolean drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, Color bgcolor, ImageObserver observer) { return true; }
+
+    @Override
+    public void drawRenderableImage(RenderableImage img, AffineTransform xform) {
+        lastDrawCall = "drawRenderableImage";
+    }
 }
