@@ -29,7 +29,7 @@ import java.awt.Graphics2D;
 import java.awt.Polygon;
 
 public class SwingRenderer implements Renderer {
-    private Graphics2D g;
+    protected Graphics2D g; // 改为protected以便测试子类访问
 
     /**
      * 设置绘图上下文。

@@ -31,8 +31,8 @@ public class XMLExportVisitor implements ExportVisitor {
     @Override
     public void visitEllipse(Ellipse e) {
         System.out.printf(
-            "<ellipse x=\"%d\" y=\"%d\" rx=\"%d\" ry=\"%d\"/>\n",
-            e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);
+            "<ellipse cx=\"%d\" cy=\"%d\" rx=\"%d\" ry=\"%d\"/>\n",
+            e.getX(), e.getY(), e.getWidth(), e.getHeight());
     }
 
     @Override
