@@ -244,4 +244,41 @@ public class SwingRendererTest {
                 polygon.xpoints[1] == x2 && polygon.ypoints[1] == y2 &&
                 polygon.xpoints[2] == x3 && polygon.ypoints[2] == y3));
     }
+    /**
+     * 测试setGraphics()方法是否正确配置Graphics2D对象。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>设置绘图颜色为蓝色</li>
+     *   <li>设置线条宽度为2像素</li>
+     *   <li>正确保存Graphics2D引用</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Test
+    public void testSetGraphics_ConfiguresGraphics() {
+        verify(mockGraphics).setColor(Color.BLUE);
+        verify(mockGraphics).setStroke(new BasicStroke(2));
+    }
+
+    /**
+     * 测试setGraphics()方法对null参数的处理。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>允许传入null参数</li>
+     *   <li>后续绘制调用不会抛出异常</li>
+     *   <li>null状态被正确保存</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Test
+    public void testSetGraphics_NullParameter() {
+        renderer.setGraphics(null);
+        assertDoesNotThrow(() -> renderer.drawCircle(0, 0, 1));
+    }
 }

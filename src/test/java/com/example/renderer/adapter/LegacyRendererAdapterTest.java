@@ -145,4 +145,41 @@ public class LegacyRendererAdapterTest {
         renderer.drawEllipse(x, y, rx, ry);
         verify(mockLegacyRenderer).drawLegacyEllipse(x, y, rx, ry);
     }
+    /**
+     * 测试构造器对null参数的处理。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>传入null参数时抛出NullPointerException</li>
+     *   <li>错误消息包含有意义的信息</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Test
+    public void testConstructor_NullParameter() {
+        Exception exception = assertThrows(NullPointerException.class, () -> 
+            new LegacyRendererAdapter(null));
+        assertTrue(exception.getMessage().contains("LegacyRenderer cannot be null"));
+    }
+
+    /**
+     * 测试drawCircle()方法处理极端坐标的情况。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>超大坐标值被正确传递</li>
+     *   <li>不会抛出算术异常</li>
+     *   <li>参数传递顺序正确</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Test
+    public void testDrawCircle_ExtremeCoordinates() {
+        renderer.drawCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE/2);
+        verify(mockLegacyRenderer).drawLegacyCircle(Integer.MAX_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE/2);
+    }
 }
