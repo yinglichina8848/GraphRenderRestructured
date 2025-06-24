@@ -20,9 +20,10 @@ public class SVGRenderer implements Renderer {
     @Override
     public void drawCircle(int x, int y, int radius) {
         if (radius <= 0) {
-            throw new IllegalArgumentException("Radius must be positive (was " + radius + ")");
+            throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", x, y, radius);
+        System.out.printf("<circle cx='%d' cy='%d' r='%d' fill='none' stroke='black' stroke-width='2'/>\n", 
+            x, y, radius);
     }
 
     @Override

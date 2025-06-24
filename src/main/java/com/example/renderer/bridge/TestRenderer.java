@@ -6,7 +6,11 @@ package com.example.renderer.bridge;
 public class TestRenderer implements Renderer {
     @Override
     public void drawCircle(int x, int y, int radius) {
-        System.out.printf("TestRenderer: drawCircle(%d,%d,%d)\n", x, y, radius);
+        if (radius <= 0) {
+            throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
+        }
+        System.out.printf("[DEBUG] TestRenderer.drawCircle - 位置: (%d,%d), 半径: %d, 面积: %.2f\n", 
+            x, y, radius, Math.PI * radius * radius);
     }
 
     @Override

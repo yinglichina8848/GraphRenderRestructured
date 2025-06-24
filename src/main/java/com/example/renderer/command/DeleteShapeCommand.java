@@ -18,9 +18,20 @@ public class DeleteShapeCommand implements Command {
 
     @Override
     public void execute() {
+        if (shapes == null) {
+            throw new IllegalStateException("图形列表未初始化");
+        }
+        if (shape == null) {
+            throw new IllegalArgumentException("要删除的图形不能为null");
+        }
+        
         index = shapes.indexOf(shape);
         if (index != -1) {
-            shapes.remove(index);
+            Shape removed = shapes.remove(index);
+            System.out.printf("[INFO] 删除图形: %s (索引: %d)\n", 
+                removed.getClass().getSimpleName(), index);
+        } else {
+            System.out.println("[WARN] 未找到要删除的图形");
         }
     }
 

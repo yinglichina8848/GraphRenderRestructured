@@ -6,7 +6,12 @@ package com.example.renderer.factory;
 public class ShapeFactoryImpl implements ShapeFactory {
     @Override
     public Circle createCircle(int x, int y, int radius) {
-        return new Circle(x, y, radius);
+        if (radius <= 0) {
+            throw new IllegalArgumentException("圆的半径必须为正数 (当前值: " + radius + ")");
+        }
+        Circle circle = new Circle(x, y, radius);
+        System.out.printf("[INFO] 创建圆形 - 位置: (%d,%d), 半径: %d\n", x, y, radius);
+        return circle;
     }
 
     @Override

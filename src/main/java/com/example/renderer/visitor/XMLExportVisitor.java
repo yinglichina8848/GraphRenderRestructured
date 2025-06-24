@@ -8,9 +8,17 @@ import com.example.renderer.factory.*;
 public class XMLExportVisitor implements ExportVisitor {
     @Override
     public void visitCircle(Circle c) {
+        if (c.getR() <= 0) {
+            throw new IllegalArgumentException("圆的半径必须为正数");
+        }
         System.out.printf(
-            "<circle x=\"%d\" y=\"%d\" radius=\"%d\"/>\n",
-            c.getX(), c.getY(), c.getR());
+            "<circle>\n" +
+            "  <x>%d</x>\n" +
+            "  <y>%d</y>\n" +
+            "  <radius>%d</radius>\n" +
+            "  <area>%.2f</area>\n" +
+            "</circle>\n",
+            c.getX(), c.getY(), c.getR(), Math.PI * c.getR() * c.getR());
     }
 
     @Override
