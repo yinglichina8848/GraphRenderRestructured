@@ -7,10 +7,19 @@
  *   <li>参数传递正确</li>
  *   <li>接口转换完整性</li>
  * </ul>
- * 
+ *
+ * <p>测试策略：
+ * <ul>
+ *   <li>使用Mockito模拟LegacyRenderer</li>
+ *   <li>验证方法转发逻辑</li>
+ *   <li>参数传递验证</li>
+ *   <li>边界条件测试</li>
+ * </ul>
+ *
+ * @author Aider+DeepSeek
+ * @version 1.0
  * @see LegacyRendererAdapter
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 package com.example.renderer.adapter;
 
@@ -28,7 +37,10 @@ import static org.mockito.Mockito.*;
  */
 public class LegacyRendererAdapterTest {
 
+    /** 模拟的LegacyRenderer实例 */
     private LegacyRenderer mockLegacyRenderer;
+    
+    /** 待测试的适配器实例 */
     private Renderer renderer;
 
     @BeforeEach
@@ -61,6 +73,19 @@ public class LegacyRendererAdapterTest {
         verify(mockLegacyRenderer).drawLegacyCircle(x, y, radius);
     }
 
+    /**
+     * 测试drawRectangle()方法是否正确转发到LegacyRenderer。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>LegacyRenderer.drawLegacyRectangle()被调用一次</li>
+     *   <li>参数传递正确</li>
+     *   <li>无返回值处理</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawRectangle_ForwardsToLegacyRenderer() {
         int x = 10, y = 20, width = 40, height = 50;

@@ -39,12 +39,19 @@ import static org.junit.jupiter.api.Assertions.*;
  *   <li>极端坐标处理</li>
  *   <li>退化图形情况</li>
  * </ul>
- * 
- * <p>使用Mockito模拟Graphics2D对象进行验证。</p>
- * 
+ *
+ * <p>测试策略：
+ * <ul>
+ *   <li>使用Mockito模拟Graphics2D对象</li>
+ *   <li>验证方法调用参数和次数</li>
+ *   <li>边界值测试</li>
+ *   <li>异常情况测试</li>
+ * </ul>
+ *
+ * @author Aider+DeepSeek
+ * @version 1.0
  * @see SwingRenderer 被测试类
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 @Tag("gui")
 @EnabledOnOs({OS.WINDOWS, OS.MAC, OS.LINUX})
@@ -61,6 +68,19 @@ public class SwingRendererTest {
         renderer.setGraphics(mockGraphics);
     }
 
+    /**
+     * 测试drawCircle()方法是否正确委托给Graphics2D.drawOval()。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>Graphics2D.drawOval()被调用一次</li>
+     *   <li>参数计算正确</li>
+     *   <li>坐标转换正确</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testDrawCircle_DelegatesToGraphicsDrawOval() {
         int x = 10, y = 20, radius = 30;
