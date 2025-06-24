@@ -318,4 +318,9 @@ public class MockGraphics2D extends Graphics2D {
     public void drawRenderableImage(RenderableImage img, AffineTransform xform) {
         lastDrawCall = "drawRenderableImage";
     }
+
+    @Override
+    public void drawRenderedImage(RenderedImage img, AffineTransform xform) {
+        lastDrawCall = "drawRenderedImage";
+    }
 }
