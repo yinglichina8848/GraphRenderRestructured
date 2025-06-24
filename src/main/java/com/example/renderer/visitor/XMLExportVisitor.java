@@ -32,7 +32,10 @@ public class XMLExportVisitor implements ExportVisitor {
     public void visitEllipse(Ellipse e) {
         System.out.printf(
             "<ellipse cx=\"%d\" cy=\"%d\" rx=\"%d\" ry=\"%d\"/>\n",
-            e.getX(), e.getY(), e.getWidth(), e.getHeight());
+            e.getX() + e.getWidth()/2, 
+            e.getY() + e.getHeight()/2,
+            e.getWidth()/2,
+            e.getHeight()/2);
     }
 
     @Override
