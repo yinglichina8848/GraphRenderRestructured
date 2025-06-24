@@ -53,11 +53,12 @@ public interface Command {
     /**
      * 执行命令操作。
      * 
+     * @throws IllegalStateException 如果命令已经执行过且不可重复执行
      * @throws RuntimeException 如果执行过程中发生错误
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
-    void execute();
+    void execute() throws IllegalStateException, RuntimeException;
     
     /**
      * Undoes the command operation.

@@ -67,10 +67,12 @@ public interface Shape {
      * 
      * @param renderer 用于绘制图形的渲染器实现(非null)
      * @throws NullPointerException 如果renderer参数为null
+     * @throws IllegalArgumentException 如果图形参数不合法
+     * @throws IllegalStateException 如果图形状态不适合渲染
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
-    void render(Renderer renderer);
+    void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
     /**
      * 移动图形的位置。
