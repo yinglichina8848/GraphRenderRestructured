@@ -37,6 +37,16 @@ import java.util.Objects;
 public class UndoManager {
     private final Stack<Command> undoStack = new Stack<>();
     private final Stack<Command> redoStack = new Stack<>();
+    private int maxHistorySize = 100; // 默认最大历史记录数
+
+    public void setMaxHistorySize(int size) {
+        this.maxHistorySize = size;
+    }
+
+    public void clearHistory() {
+        undoStack.clear();
+        redoStack.clear();
+    }
 
     /**
      * 执行命令并保存到撤销栈。
@@ -56,6 +66,9 @@ public class UndoManager {
     public void executeCommand(Command cmd) {
         Objects.requireNonNull(cmd, "Command cannot be null");
         cmd.execute();
+        if (undoStack.size() >= maxHistorySize) {
+            undoStack.remove(0); // 移除最旧的命令
+        }
         undoStack.push(cmd);
         redoStack.clear();
     }

@@ -52,8 +52,16 @@ public class SwingRenderer implements Renderer {
      */
     public void setGraphics(Graphics2D g) {
         this.g = g;
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
+                          RenderingHints.VALUE_ANTIALIAS_ON);
         g.setColor(java.awt.Color.BLUE);
         g.setStroke(new java.awt.BasicStroke(2));
+    }
+
+    public void setFillMode(boolean fill) {
+        if (g != null) {
+            g.setPaint(fill ? g.getColor() : null);
+        }
     }
 
     /**

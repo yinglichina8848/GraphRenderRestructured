@@ -18,10 +18,14 @@ import java.util.Map;
 public class MockGraphics2D extends Graphics2D {
     // 记录绘制调用
     public String lastDrawCall = "";
+    public int drawCallCount = 0;
+    public Color lastColorSet = null;
+    public Stroke lastStrokeSet = null;
     
     @Override
     public void draw(Shape s) {
         lastDrawCall = "draw:" + s.getClass().getSimpleName();
+        drawCallCount++;
     }
 
     @Override

@@ -55,6 +55,8 @@ public class DrawingPanel extends JPanel {
         this.shapes = shapes;
         this.renderer = renderer;
         setPreferredSize(new Dimension(800, 600));
+        setBackground(Color.WHITE);
+        setDoubleBuffered(true); // 启用双缓冲
     }
 
     /**

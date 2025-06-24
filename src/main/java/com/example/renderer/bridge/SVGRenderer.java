@@ -17,13 +17,31 @@ package com.example.renderer.bridge;
  * @since 1.0
  */
 public class SVGRenderer implements Renderer {
+    private String strokeColor = "black";
+    private String fillColor = "none";
+    private int strokeWidth = 1;
+
+    public SVGRenderer() {
+        System.out.println("<svg xmlns='http://www.w3.org/2000/svg'>");
+    }
+
+    public void setStyle(String stroke, String fill, int width) {
+        this.strokeColor = stroke;
+        this.fillColor = fill;
+        this.strokeWidth = width;
+    }
+
+    private String getStyle() {
+        return String.format("stroke='%s' fill='%s' stroke-width='%d'", 
+            strokeColor, fillColor, strokeWidth);
+    }
     @Override
     public void drawCircle(int x, int y, int radius) {
         if (radius <= 0) {
             throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", 
-            x, y, radius);
+        System.out.printf("<circle cx='%d' cy='%d' r='%d' %s />\n", 
+            x, y, radius, getStyle());
     }
 
     @Override
