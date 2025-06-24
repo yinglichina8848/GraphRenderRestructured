@@ -22,7 +22,7 @@ public class SVGRenderer implements Renderer {
     private int strokeWidth = 1;
 
     public SVGRenderer() {
-        System.out.println("<svg xmlns='http://www.w3.org/2000/svg'>");
+        // 不再自动输出SVG文档头，由调用方控制
     }
 
     public void setStyle(String stroke, String fill, int width) {
@@ -31,17 +31,14 @@ public class SVGRenderer implements Renderer {
         this.strokeWidth = width;
     }
 
-    private String getStyle() {
-        return String.format("stroke='%s' fill='%s' stroke-width='%d'", 
-            strokeColor, fillColor, strokeWidth);
-    }
+    // 移除样式相关代码，保持简单输出格式
     @Override
     public void drawCircle(int x, int y, int radius) {
         if (radius <= 0) {
             throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        System.out.printf("<circle cx='%d' cy='%d' r='%d' %s />\n", 
-            x, y, radius, getStyle());
+        System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", 
+            x, y, radius);
     }
 
     @Override
