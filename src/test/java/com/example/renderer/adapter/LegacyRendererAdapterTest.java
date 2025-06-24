@@ -37,7 +37,7 @@ import static org.mockito.Mockito.*;
  */
 public class LegacyRendererAdapterTest {
 
-    /** 模拟的LegacyRenderer实例 */
+    /** 模拟的LegacyRenderer实例，用于验证方法调用 */
     private LegacyRenderer mockLegacyRenderer;
     
     /** 待测试的适配器实例 */
