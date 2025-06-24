@@ -29,7 +29,10 @@ public class Rectangle implements Shape {
     private int x, y, width, height;
 
     /**
-     * Default constructor required for serialization.
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
      */
     public Rectangle() {} // 必须要无参构造器
 
