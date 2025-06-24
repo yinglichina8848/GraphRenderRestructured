@@ -10,11 +10,19 @@ package com.example.renderer.proxy;
  *   <li>控制对真实渲染器的访问</li>
  *   <li>可以添加额外的网络通信逻辑</li>
  * </ul>
- * 
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * Renderer realRenderer = new SwingRenderer();
+ * Renderer proxy = new RemoteRendererProxy(realRenderer);
+ * proxy.drawCircle(100,100,50); // 通过代理调用
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Renderer 渲染器接口
  * @see Proxy 代理模式
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 
 import com.example.renderer.bridge.Renderer;

@@ -14,10 +14,18 @@
  *   <li>move(): 移动所有顶点</li>
  *   <li>accept(): 访问者模式支持</li>
  * </ul>
- * 
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * Triangle triangle = new Triangle(10,10, 50,10, 30,40);
+ * triangle.render(renderer); // 绘制三角形
+ * triangle.move(5,5); // 移动三角形
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Shape 图形接口
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 package com.example.renderer.factory;
 

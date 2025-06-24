@@ -14,18 +14,26 @@ import com.example.renderer.observer.ShapeObservable;
  * 当被观察的图形对象发生变化时，会调用onShapeChanged()方法。
  * 
  * <p>典型用法：
- * <pre>
+ * <pre>{@code
  * shapeObservable.addObserver(new ShapeObserver() {
  *     public void onShapeChanged(Shape shape) {
  *         // 处理图形变化
  *     }
  * });
- * </pre>
- * 
+ * }</pre>
+ *
+ * <p>设计考虑：
+ * <ul>
+ *   <li>松耦合 - 观察者与被观察者之间没有直接依赖</li>
+ *   <li>支持多个观察者</li>
+ *   <li>事件驱动 - 只在变化时通知</li>
+ * </ul>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see ShapeObservable 可观察对象
  * @see Shape 图形接口
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 public interface ShapeObserver {
     /**
