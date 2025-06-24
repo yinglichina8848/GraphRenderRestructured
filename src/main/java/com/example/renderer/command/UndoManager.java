@@ -32,6 +32,7 @@
 package com.example.renderer.command;
 
 import java.util.Stack;
+import java.util.Objects;
 
 public class UndoManager {
     private final Stack<Command> undoStack = new Stack<>();
