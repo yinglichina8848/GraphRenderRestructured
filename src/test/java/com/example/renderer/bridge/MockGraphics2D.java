@@ -46,6 +46,11 @@ public class MockGraphics2D extends Graphics2D {
     }
 
     @Override
+    public void drawString(AttributedCharacterIterator iterator, float x, float y) {
+        lastDrawCall = "drawString:attributedFloat";
+    }
+
+    @Override
     public void drawGlyphVector(java.awt.font.GlyphVector g, float x, float y) {
         lastDrawCall = "drawGlyphVector";
     }
