@@ -21,11 +21,11 @@
  * circle.move(10, 10); // 移动圆形
  * }</pre>
  * 
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Shape 图形接口
  * @see SwingRenderer Swing渲染实现
- * @author liying
- * @since 1.0
- * @version 1.0.0
+ * @since 2025-06-24
  */
 package com.example.renderer.factory;
 import com.example.renderer.bridge.Renderer;

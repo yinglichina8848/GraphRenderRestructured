@@ -6,9 +6,19 @@ import com.example.renderer.factory.Shape;
  * Command接口定义了命令模式的基本操作。
  * 所有具体命令类必须实现execute()和undo()方法。
  * 
- * @see AddShapeCommand
- * @see MoveShapeCommand
- * @see UndoManager
+ * <p>命令模式允许将请求封装为对象，从而支持：
+ * <ul>
+ *   <li>参数化客户端请求</li>
+ *   <li>请求排队或记录</li>
+ *   <li>支持可撤销操作</li>
+ * </ul>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see AddShapeCommand 添加图形命令
+ * @see MoveShapeCommand 移动图形命令
+ * @see UndoManager 命令管理器
+ * @since 2025-06-24
  */
 /**
  * Command接口定义了命令模式中的命令操作。

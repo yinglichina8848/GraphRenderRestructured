@@ -30,11 +30,13 @@ import com.example.renderer.visitor.ExportVisitor;
  * }
  * }</pre>
  *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Circle 圆形实现
  * @see Rectangle 矩形实现 
  * @see Ellipse 椭圆实现
  * @see Triangle 三角形实现
- * @since 1.0
+ * @since 2025-06-24
  */
 
 

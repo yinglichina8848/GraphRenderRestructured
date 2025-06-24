@@ -18,9 +18,11 @@ package com.example.renderer.bridge;
  * renderer.drawCircle(100, 100, 50); // 绘制圆形
  * }</pre>
  *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see SwingRenderer 基于Swing的渲染实现
  * @see SVGRenderer 基于SVG输出的渲染实现
- * @since 1.0
+ * @since 2025-06-24
  */
 public interface Renderer {
     /**
