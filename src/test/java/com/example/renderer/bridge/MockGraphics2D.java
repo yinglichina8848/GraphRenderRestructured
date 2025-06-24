@@ -1,6 +1,8 @@
 package com.example.renderer.bridge;
 
 import java.awt.*;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsEnvironment;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
@@ -174,6 +176,13 @@ public class MockGraphics2D extends Graphics2D {
     @Override
     public FontRenderContext getFontRenderContext() {
         return new FontRenderContext(null, false, false);
+    }
+
+    @Override
+    public GraphicsConfiguration getDeviceConfiguration() {
+        return GraphicsEnvironment.getLocalGraphicsEnvironment()
+            .getDefaultScreenDevice()
+            .getDefaultConfiguration();
     }
 
     @Override
