@@ -128,20 +128,4 @@ public class RemoteRendererProxyTest {
     public void tearDown() {
         // 可添加必要的清理逻辑
     }
-    /**
-     * 测试后置清理，在每个测试方法执行后运行。
-     * 
-     * <p>清理：
-     * <ul>
-     *   <li>重置模拟对象</li>
-     *   <li>释放资源</li>
-     * </ul>
-     * 
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
-     */
-    @AfterEach
-    public void tearDown() {
-        // 可添加必要的清理逻辑
-    }
 }
