@@ -1,6 +1,5 @@
 package com.example.renderer.observer;
 
-import com.example.renderer.factory.Shape;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -12,16 +11,9 @@ public class LoggingShapeObserver implements ShapeObserver {
         DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     @Override
-    public void onShapeChanged(Shape shape) {
-        if (shape == null) {
-            System.err.println("[ERROR] 图形变化通知收到null对象");
-            return;
-        }
-        
-        String log = String.format("[%s] 图形变化 - 类型: %s, 哈希: %d",
-            LocalDateTime.now().format(formatter),
-            shape.getClass().getSimpleName(),
-            shape.hashCode());
+    public void onShapeChanged() {
+        String log = String.format("[%s] 图形发生变化",
+            LocalDateTime.now().format(formatter));
         
         System.out.println(log);
     }
