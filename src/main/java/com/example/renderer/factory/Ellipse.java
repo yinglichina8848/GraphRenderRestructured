@@ -1,24 +1,25 @@
 /**
- * 表示椭圆图形的实现类。
+ * 椭圆图形实现类。
  * 
- * <p>椭圆由中心坐标(x,y)和宽度(width)、高度(height)定义。
- * 该类实现了Shape接口，支持基本的渲染、移动和访问者模式操作。
- * 
- * <p>遵循的设计模式：
+ * <p>表示一个由中心坐标(x,y)和宽度(width)、高度(height)定义的椭圆。
+ * 实现了Shape接口，支持以下操作：
  * <ul>
- *   <li>桥接模式 - 通过Renderer接口实现绘制逻辑</li>
- *   <li>访问者模式 - 通过accept方法支持扩展操作</li>
- *   <li>命令模式 - move方法支持位置变更</li>
+ *   <li>渲染 - 通过render()方法使用指定渲染器绘制</li>
+ *   <li>移动 - 通过move()方法改变位置</li>
+ *   <li>访问者模式 - 通过accept()方法支持扩展操作</li>
  * </ul>
- * 
- * <p>修改记录：
- * <ul>
- *   <li>2025-06-16 | v1.1 | 完善类和方法注释</li>
- * </ul>
- * 
- * @author liying
- * @since 2025-06-14
- * @version 1.1
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * Ellipse ellipse = new Ellipse(100, 100, 80, 40);
+ * ellipse.render(renderer); // 绘制椭圆
+ * ellipse.move(10, 5); // 移动椭圆
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see Shape 图形接口
+ * @since 2025-06-24
  */
 package com.example.renderer.factory;
 import com.example.renderer.bridge.Renderer;

@@ -10,11 +10,19 @@ package com.example.renderer.bridge;
  *   <li>使用2像素宽的线条</li>
  *   <li>需要先调用setGraphics()设置绘图上下文</li>
  * </ul>
- * 
- * @see Renderer
- * @see Graphics2D
- * @author liying
- * @since 2025-06-14
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * SwingRenderer renderer = new SwingRenderer();
+ * renderer.setGraphics(graphics2D); // 必须先设置绘图上下文
+ * renderer.drawCircle(100, 100, 50); // 绘制蓝色圆形
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see Renderer 渲染器接口
+ * @see Graphics2D Swing绘图上下文
+ * @since 2025-06-24
  */
 
 import java.awt.Graphics2D;

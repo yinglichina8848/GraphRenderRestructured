@@ -8,21 +8,26 @@
  *   <li>重做最近撤销的命令</li>
  *   <li>检查是否可以撤销/重做</li>
  * </ul>
- * 
+ *
  * <p>典型用法：
- * <pre>
+ * <pre>{@code
  * UndoManager undoManager = new UndoManager();
  * Command cmd = new AddShapeCommand(shapes, new Circle(10,10,5));
  * undoManager.executeCommand(cmd); // 执行并保存命令
- * undoManager.undo(); // 撤销命令
- * undoManager.redo(); // 重做命令
- * </pre>
- * 
+ * if (undoManager.canUndo()) {
+ *     undoManager.undo(); // 撤销命令
+ * }
+ * if (undoManager.canRedo()) {
+ *     undoManager.redo(); // 重做命令
+ * }
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Command 命令接口
  * @see AddShapeCommand 添加图形命令
  * @see MoveShapeCommand 移动图形命令
- * @author liying
- * @since 1.0
+ * @since 2025-06-24
  */
 package com.example.renderer.command;
 

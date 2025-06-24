@@ -9,17 +9,19 @@
  *   <li>将drawTriangle()适配到drawLegacyTriangle()</li>
  *   <li>将drawEllipse()适配到drawLegacyEllipse()</li>
  * </ul>
- * 
- * <p>修改记录：
- * <ul>
- *   <li>2025-06-16 | v1.1 | 完善类和方法注释</li>
- * </ul>
- * 
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * LegacyRenderer legacy = new LegacyRendererImpl();
+ * Renderer adapter = new LegacyRendererAdapter(legacy);
+ * adapter.drawCircle(100, 100, 50); // 通过适配器调用旧版渲染器
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
  * @see Renderer 新渲染器接口
  * @see LegacyRenderer 旧版渲染器接口
- * @author liying
- * @since 1.0
- * @version 1.1
+ * @since 2025-06-24
  */
 package com.example.renderer.adapter;
 
