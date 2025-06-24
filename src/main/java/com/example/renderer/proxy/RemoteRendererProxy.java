@@ -80,7 +80,16 @@ public class RemoteRendererProxy implements Renderer {
      */
     public void drawCircle(int x, int y, int radius) {
         System.out.println("[Proxy] Sending drawCircle to remote...");
-        realRenderer.drawCircle(x, y, radius);
+        int retries = 3;
+        while (retries-- > 0) {
+            try {
+                realRenderer.drawCircle(x, y, radius);
+                return;
+            } catch (Exception e) {
+                if (retries == 0) throw e;
+                System.out.println("远程调用失败，剩余重试次数: " + retries);
+            }
+        }
     }
 
     /**

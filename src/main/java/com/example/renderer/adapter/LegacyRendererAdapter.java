@@ -80,8 +80,15 @@ public class LegacyRendererAdapter implements Renderer {
      * @since 2025-06-24
      */
     @Override
-    public void drawCircle(int x, int y, int radius) {
-        legacyRenderer.drawLegacyCircle(x, y, radius);
+    public synchronized void drawCircle(int x, int y, int radius) {
+        if (radius <= 0) {
+            throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
+        }
+        try {
+            legacyRenderer.drawLegacyCircle(x, y, radius);
+        } catch (Exception e) {
+            throw new IllegalStateException("调用旧版渲染器失败", e);
+        }
     }
 
     /**

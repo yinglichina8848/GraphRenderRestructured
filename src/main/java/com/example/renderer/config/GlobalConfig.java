@@ -23,17 +23,17 @@ package com.example.renderer.config;
  * @author liying
  * @since 1.0
  */
-public class GlobalConfig {
-    private static GlobalConfig instance;
-    private String renderMode = "swing";
+public enum GlobalConfig {
+    INSTANCE;
 
-    private GlobalConfig() {}
+    private volatile String renderMode = "swing";
+    private static final Set<String> VALID_MODES = Set.of("swing", "svg", "test");
 
-    public static GlobalConfig getInstance() {
-        if (instance == null) {
-            instance = new GlobalConfig();
+    public synchronized void setRenderMode(String mode) {
+        if (!VALID_MODES.contains(mode)) {
+            throw new IllegalArgumentException("无效的渲染模式: " + mode);
         }
-        return instance;
+        this.renderMode = mode;
     }
 
     public String getRenderMode() {
