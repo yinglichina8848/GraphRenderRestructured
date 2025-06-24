@@ -50,5 +50,25 @@ public class AddShapeCommand implements Command {
     public void undo() {
         shapes.remove(shape);
     }
+
+    @Override
+    public void redo() {
+        execute();
+    }
+
+    @Override
+    public boolean canExecute() {
+        return shapes != null && shape != null;
+    }
+
+    @Override
+    public boolean canUndo() {
+        return shapes != null && !shapes.contains(shape);
+    }
+
+    @Override
+    public boolean canRedo() {
+        return shapes != null && !shapes.contains(shape);
+    }
 }
 

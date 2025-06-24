@@ -144,5 +144,14 @@ public class Circle implements Shape {
         return radius;
     }
 
+    @Override
+    public Circle clone() {
+        try {
+            return (Circle) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(); // 不会发生，因为我们实现了Cloneable
+        }
+    }
+
 }
 

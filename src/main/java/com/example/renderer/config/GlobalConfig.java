@@ -8,6 +8,8 @@
  */
 package com.example.renderer.config;
 
+import java.util.Set;
+
 /**
  * 全局配置类，使用单例模式管理应用程序的全局设置。
  * 
@@ -15,7 +17,6 @@ package com.example.renderer.config;
  * <ul>
  *   <li>renderMode - 渲染模式(如"swing","svg"等)</li>
  * </ul>
- * 
  * 
  * <p>线程安全：getInstance()方法线程安全，配置项访问需要外部同步。</p>
  * 
@@ -38,10 +39,6 @@ public enum GlobalConfig {
 
     public String getRenderMode() {
         return renderMode;
-    }
-
-    public void setRenderMode(String renderMode) {
-        this.renderMode = renderMode;
     }
 }
 
