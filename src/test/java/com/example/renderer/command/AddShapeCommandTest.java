@@ -16,6 +16,29 @@ import static org.mockito.Mockito.*;
  * <ul>
  *   <li>execute()方法是否正确添加图形到列表</li>
  *   <li>undo()方法是否正确移除图形</li>
+ *   <li>边界条件处理</li>
+ * </ul>
+ *
+ * <p>测试策略：
+ * <ul>
+ *   <li>使用Mockito模拟Shape对象</li>
+ *   <li>验证命令执行后的列表状态</li>
+ *   <li>验证命令撤销后的列表状态</li>
+ * </ul>
+ *
+ * @author Aider+DeepSeek
+ * @version 1.0
+ * @see AddShapeCommand 被测试的命令类
+ * @since 2025-06-24
+ */
+
+/**
+ * AddShapeCommand类的单元测试。
+ * 
+ * <p>测试覆盖以下功能：
+ * <ul>
+ *   <li>execute()方法是否正确添加图形到列表</li>
+ *   <li>undo()方法是否正确移除图形</li>
  *   <li>命令执行前后列表状态验证</li>
  * </ul>
  *
@@ -42,6 +65,19 @@ public class AddShapeCommandTest {
     /** 待测试的命令对象 */
     private AddShapeCommand command;
 
+    /**
+     * 测试前置设置，在每个测试方法执行前运行。
+     * 
+     * <p>初始化：
+     * <ul>
+     *   <li>创建空的图形列表</li>
+     *   <li>创建模拟的图形对象</li>
+     *   <li>初始化待测试的命令对象</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     /**
      * 测试前置设置，在每个测试方法执行前运行。
      * 
@@ -93,6 +129,19 @@ public class AddShapeCommandTest {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 测试execute()方法是否正确添加图形到列表。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>执行命令后列表大小增加1</li>
+     *   <li>列表包含添加的图形</li>
+     *   <li>原始列表未被修改</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testExecuteAddsShape() {
         command.execute();
@@ -101,6 +150,18 @@ public class AddShapeCommandTest {
         assertTrue(shapes.contains(mockShape), "列表应包含添加的图形");
     }
 
+    /**
+     * 测试undo()方法是否正确移除图形。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>执行undo后列表大小恢复原状</li>
+     *   <li>列表不再包含被移除的图形</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     /**
      * 测试undo()方法是否正确移除图形。
      * 
@@ -133,6 +194,18 @@ public class AddShapeCommandTest {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    /**
+     * 测试空列表场景下的命令执行。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>命令能在空列表上正常执行</li>
+     *   <li>执行后列表包含添加的图形</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     @Test
     public void testExecuteOnEmptyList() {
         assertTrue(shapes.isEmpty(), "初始列表应为空");
@@ -140,6 +213,18 @@ public class AddShapeCommandTest {
         assertEquals(1, shapes.size(), "列表大小应为1");
     }
 
+    /**
+     * 测试多次执行和撤销操作。
+     * 
+     * <p>验证点：
+     * <ul>
+     *   <li>多次执行命令正确添加图形</li>
+     *   <li>多次撤销命令正确移除图形</li>
+     * </ul>
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
     /**
      * 测试多次执行和撤销操作。
      * 
