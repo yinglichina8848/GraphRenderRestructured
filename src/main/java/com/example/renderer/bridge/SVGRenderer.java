@@ -76,8 +76,8 @@ public class SVGRenderer implements Renderer {
         if (radius <= 0) {
             throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        System.out.printf("<circle cx='%d' cy='%d' r='%d' />\n", 
-            x, y, radius);
+        svgBuilder.append(String.format("<circle cx='%d' cy='%d' r='%d' />\n", 
+            x, y, radius));
     }
 
     @Override

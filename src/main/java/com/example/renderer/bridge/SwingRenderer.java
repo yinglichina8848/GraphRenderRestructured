@@ -146,9 +146,10 @@ public class SwingRenderer implements Renderer {
         if (width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Width and height must be positive");
         }
-        if (g != null) {
-            g.drawRect(x, y, width, height);
+        if (g == null) {
+            throw new IllegalStateException("Graphics context not initialized. Call setGraphics() first.");
         }
+        g.drawRect(x, y, width, height);
     }
 
     /**
