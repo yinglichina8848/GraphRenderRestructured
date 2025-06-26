@@ -43,14 +43,45 @@ public class SVGRendererTest {
         assertTrue(svg.contains("<circle cx='100' cy='100' r='50' />"));
     }
 
+    /**
+     * 测试矩形输出格式
+     * @since 2025-06-27
+     */
     @Test
     public void testDrawRectangleOutput() {
-        System.setOut(new PrintStream(outContent));
         SVGRenderer renderer = new SVGRenderer();
-        
         renderer.drawRectangle(50, 50, 100, 80);
         assertEquals("<rect x='50' y='50' width='100' height='80' />\n", outContent.toString());
-        System.setOut(originalOut);
+    }
+
+    /**
+     * 测试无效高度参数
+     * @since 2025-06-27
+     */
+    @Test
+    public void testInvalidHeight() {
+        SVGRenderer renderer = new SVGRenderer();
+        assertThrows(IllegalArgumentException.class,
+            () -> renderer.drawRectangle(10, 20, 30, -40));
+    }
+
+    /**
+     * 测试SVG文档结构完整性
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDocumentStructure() {
+        SVGRenderer renderer = new SVGRenderer();
+        renderer.beginFrame();
+        renderer.drawCircle(100, 100, 50);
+        renderer.drawRectangle(50, 50, 100, 80);
+        renderer.endFrame();
+        
+        String svg = outContent.toString();
+        assertTrue(svg.startsWith("<svg"));
+        assertTrue(svg.contains("<circle"));
+        assertTrue(svg.contains("<rect"));
+        assertTrue(svg.endsWith("</svg>\n"));
     }
 
     @Test

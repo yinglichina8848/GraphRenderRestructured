@@ -88,9 +88,27 @@ public class SVGRenderer implements Renderer {
         System.out.printf("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
     }
 
+    /**
+     * 绘制三角形(SVG格式)
+     * 
+     * <p>修改记录：
+     * <ul>
+     *   <li>2025-06-24 - 初始实现</li>
+     *   <li>2025-06-27 - 优化输出格式</li>
+     * </ul>
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @since 2025-06-24
+     */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-        System.out.printf("<polygon points='%d,%d %d,%d %d,%d' />\n", x1, y1, x2, y2, x3, y3);
+        System.out.printf("<polygon points='%d,%d %d,%d %d,%d' />\n", 
+            x1, y1, x2, y2, x3, y3);
     }
 
     @Override

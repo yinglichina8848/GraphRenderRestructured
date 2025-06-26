@@ -103,9 +103,46 @@ public class SwingRendererTest {
      * 测试三角形绘制
      * @since 2025-06-27
      */
+    /**
+     * 测试三角形绘制
+     * @since 2025-06-27
+     */
     @Test
     public void testDrawTriangle() {
         renderer.drawTriangle(10, 10, 20, 30, 30, 10);
         verify(mockGraphics).drawPolygon(any(Polygon.class));
+    }
+
+    /**
+     * 测试椭圆绘制
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDrawEllipse() {
+        renderer.drawEllipse(10, 20, 30, 40);
+        verify(mockGraphics).drawOval(10, 20, 30, 40);
+    }
+
+    /**
+     * 测试未初始化图形上下文时的椭圆绘制
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDrawEllipseWithoutGraphics() {
+        SwingRenderer uninitRenderer = new SwingRenderer();
+        assertThrows(IllegalStateException.class,
+            () -> uninitRenderer.drawEllipse(10, 20, 30, 40));
+    }
+
+    /**
+     * 测试无效椭圆参数
+     * @since 2025-06-27
+     */
+    @Test
+    public void testInvalidEllipseParameters() {
+        assertThrows(IllegalArgumentException.class,
+            () -> renderer.drawEllipse(10, 20, -30, 40));
+        assertThrows(IllegalArgumentException.class,
+            () -> renderer.drawEllipse(10, 20, 30, -40));
     }
 }

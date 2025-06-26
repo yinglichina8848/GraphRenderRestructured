@@ -183,14 +183,32 @@ public class SwingRenderer implements Renderer {
      * @param height 椭圆高度(必须>0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
      */
+    /**
+     * 绘制椭圆
+     * 
+     * <p>修改记录：
+     * <ul>
+     *   <li>2025-06-24 - 初始实现</li>
+     *   <li>2025-06-27 - 添加参数验证</li>
+     * </ul>
+     * 
+     * @param x 椭圆外接矩形左上角x坐标
+     * @param y 椭圆外接矩形左上角y坐标
+     * @param width 椭圆宽度(必须>0)
+     * @param height 椭圆高度(必须>0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @throws IllegalStateException 如果图形上下文未初始化
+     * @since 2025-06-24
+     */
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
         if (width <= 0 || height <= 0) {
-            throw new IllegalArgumentException("Width and height must be positive");
+            throw new IllegalArgumentException("Width and height must be positive (width=" + width + ", height=" + height + ")");
         }
-        if (g != null) {
-            g.drawOval(x, y, width, height);
+        if (g == null) {
+            throw new IllegalStateException("Graphics context not initialized. Call setGraphics() first.");
         }
+        g.drawOval(x, y, width, height);
     }
 
     /**
