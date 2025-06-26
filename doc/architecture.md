@@ -66,6 +66,49 @@ renderer.setGraphics(graphics2D); // 必须设置绘图上下文
 renderer.drawCircle(100, 100, 50);
 ```
 
+### 3. SVG渲染器 (SVGRenderer)
+- 特性：
+  - 生成标准SVG XML输出
+  - 轻量级无外部依赖
+  - 支持控制台输出或字符串构建
+- 使用示例：
+```java
+SVGRenderer renderer = new SVGRenderer();
+renderer.beginFrame();
+renderer.drawCircle(100, 100, 50);
+renderer.endFrame(); // 输出SVG到控制台
+```
+- 输出格式：
+```xml
+<svg xmlns='http://www.w3.org/2000/svg'>
+  <circle cx='100' cy='100' r='50'/>
+</svg>
+```
+
+### 4. 旧版渲染适配器 (LegacyRendererAdapter)
+- 适配逻辑：
+  - 将新接口转换为旧版接口调用
+  - 添加参数校验
+  - 同步方法调用
+- 使用示例：
+```java
+LegacyRenderer legacy = new LegacyRendererImpl();
+Renderer adapter = new LegacyRendererAdapter(legacy);
+adapter.drawCircle(100, 100, 50); // 调用旧版实现
+```
+
+### 5. 远程渲染代理 (RemoteRendererProxy)
+- 特性：
+  - 透明代理真实渲染器
+  - 内置重试机制(默认3次)
+  - 调用日志记录
+- 使用示例：
+```java
+Renderer realRenderer = new SwingRenderer();
+Renderer proxy = new RemoteRendererProxy(realRenderer);
+proxy.drawCircle(100, 100, 50); // 通过代理调用
+```
+
 ## 典型工作流程
 
 1. 通过`RendererFactory`获取渲染器实例
