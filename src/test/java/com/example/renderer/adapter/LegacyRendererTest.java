@@ -17,6 +17,7 @@
 package com.example.renderer.adapter;
 
 import com.example.renderer.legacy.LegacyRenderer;
+import com.example.renderer.adapter.LegacyRendererImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -36,7 +37,7 @@ public class LegacyRendererTest {
 
     @BeforeEach
     public void setUp() {
-        legacyRenderer = new LegacyRenderer();
+        legacyRenderer = new LegacyRendererImpl();
         // 重定向标准输出以便捕获控制台输出
         System.setOut(new PrintStream(outContent));
     }
