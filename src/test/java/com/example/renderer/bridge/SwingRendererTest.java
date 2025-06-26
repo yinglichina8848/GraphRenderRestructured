@@ -28,6 +28,7 @@ import org.junit.jupiter.api.condition.OS;
 import java.awt.*;
 
 import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SwingRendererTest {
