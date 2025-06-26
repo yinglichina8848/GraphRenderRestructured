@@ -33,6 +33,9 @@ import java.util.Objects;
  */
 public class RemoteRendererProxy implements Renderer {
     private final Renderer realRenderer;
+    private String strokeColor = "black";
+    private String fillColor = "none";
+    private int strokeWidth = 1;
 
     /**
      * 创建远程渲染器代理
@@ -137,6 +140,29 @@ public class RemoteRendererProxy implements Renderer {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
+    @Override
+    public void setStyle(String stroke, String fill, int width) {
+        this.strokeColor = stroke;
+        this.fillColor = fill;
+        this.strokeWidth = width;
+        realRenderer.setStyle(stroke, fill, width);
+    }
+
+    @Override
+    public Object getContext() {
+        return realRenderer.getContext();
+    }
+
+    @Override
+    public void beginFrame() {
+        realRenderer.beginFrame();
+    }
+
+    @Override
+    public void endFrame() {
+        realRenderer.endFrame();
+    }
+
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
         System.out.printf("Remote call: drawEllipse(%d, %d, %d, %d)\n", x, y, width, height);
