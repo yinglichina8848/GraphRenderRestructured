@@ -30,12 +30,6 @@ import java.awt.*;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-package com.example.renderer.bridge;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class SwingRendererTest {
     private SwingRenderer renderer;
     private MockGraphics2D mockGraphics;
