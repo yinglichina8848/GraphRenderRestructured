@@ -1,6 +1,7 @@
 package com.example.renderer.bridge;
 
 import com.example.renderer.adapter.LegacyRendererAdapter;
+import com.example.renderer.adapter.LegacyRendererImpl;
 import com.example.renderer.exception.RendererCreationException;
 import com.example.renderer.legacy.LegacyRenderer;
 import java.util.Collections;
@@ -40,7 +41,7 @@ public class RendererFactory {
         registerInternal("swing", SwingRenderer::new);
         registerInternal("svg", SVGRenderer::new);
         registerInternal("test", TestRenderer::new);
-        registerInternal("legacy", () -> new LegacyRendererAdapter(new LegacyRendererImpl()));
+        registerInternal("legacy", () -> new LegacyRendererAdapter(new com.example.renderer.adapter.LegacyRendererImpl()));
     }
     
     private static void registerInternal(String mode, Supplier<Renderer> supplier) {
