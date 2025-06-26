@@ -1,15 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"":[1,0,0],
-"":[1,0,0,0],
-"":[1,0,0,0,0],
-"":[1,0,0,0,0,12],
-"":[1,0,0,0,0,13],
-"":[1,0,0,0,0,4],
-"":[1,0,0,0,0,5],
-"":[1,0,0,0,0,7],
-"":[1,0,0,0,0,8],
-"":[1,0,0,0,0,9],
 "annotated.html":[2,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html":[2,0,0,0,0,0,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a0822a7f731b3083cb65e8580aafa2b12":[2,0,0,0,0,0,0,7],
@@ -249,5 +239,15 @@ var NAVTREEINDEX0 =
 "classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a687994a2d01e358d230c8d27d98e7b64":[2,0,0,0,0,6,8,0],
 "classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a6e27a2ee2e9a4ab7acfe2ff2e25b275a":[2,0,0,0,0,6,8,11],
 "classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a7e3a7a568f036a4d96dc29755096546b":[2,0,0,0,0,6,8,10],
-"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a8614dfdea02a4a977ae63465bcb4a7b9":[2,0,0,0,0,6,8,1]
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#a8614dfdea02a4a977ae63465bcb4a7b9":[2,0,0,0,0,6,8,1],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#aa7239f1882032d49d9516ce34d9c81ad":[2,0,0,0,0,6,8,9],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ab773e8783a9ae4b6f52a8c629b8d0867":[2,0,0,0,0,6,8,8],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ab7ef35cc7fc5f77001038fdb5cc3f82e":[2,0,0,0,0,6,8,13],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ad6b6b3d24ff461787b3338804ba85694":[2,0,0,0,0,6,8,4],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ad82df402953ff77e4ed51097fd5074b9":[2,0,0,0,0,6,8,7],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ade22ece673331e93849d36d133743727":[2,0,0,0,0,6,8,6],
+"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#adfb4426b5c81543bd6a5f592033730dd":[2,0,0,0,0,6,8,3],
+"classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html":[2,0,0,0,0,6,2],
+"classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4":[2,0,0,0,0,6,2,9],
+"classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a19d482c4667e3c70ca4bb1478c8f6b4f":[2,0,0,0,0,6,2,3]
 };
