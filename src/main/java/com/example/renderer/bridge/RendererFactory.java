@@ -1,5 +1,15 @@
 package com.example.renderer.bridge;
 
+import com.example.renderer.exception.RendererCreationException;
+import com.example.renderer.legacy.LegacyRenderer;
+import java.util.Collections;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Supplier;
+
 /**
  * 渲染器工厂，支持动态扩展渲染器实现。
  * 

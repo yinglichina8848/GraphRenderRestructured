@@ -1,5 +1,8 @@
 package com.example.renderer.core;
 
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.RendererFactory;
+import com.example.renderer.config.GlobalConfig;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;

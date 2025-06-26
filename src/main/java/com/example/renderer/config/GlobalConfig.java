@@ -8,6 +8,7 @@
  */
 package com.example.renderer.config;
 
+import com.example.renderer.bridge.RendererFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -77,7 +78,7 @@ public class GlobalConfig {
     }
 
     public synchronized void setRenderMode(String mode) {
-        if (!VALID_MODES.contains(mode)) {
+        if (!validModes.contains(mode)) {
             throw new IllegalArgumentException("无效的渲染模式: " + mode);
         }
         this.renderMode = mode;

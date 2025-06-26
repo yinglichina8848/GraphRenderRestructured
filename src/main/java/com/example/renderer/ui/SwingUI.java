@@ -32,7 +32,20 @@ package com.example.renderer.ui;
  * @version 1.0.0
  */
 
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.RendererFactory;
+import com.example.renderer.config.GlobalConfig;
+import com.example.renderer.exception.RendererCreationException;
+import com.example.renderer.factory.*;
+import com.example.renderer.command.*;
+import com.example.renderer.singleton.PersistenceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.awt.*;
