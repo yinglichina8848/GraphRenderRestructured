@@ -32,6 +32,26 @@ import java.util.Objects;
 
 public class LegacyRendererAdapter implements Renderer {
 
+    @Override
+    public void setStyle(String stroke, String fill, int width) {
+        // 旧版渲染器不支持样式设置
+    }
+
+    @Override
+    public Object getContext() {
+        return null; // 旧版渲染器没有上下文
+    }
+
+    @Override
+    public void beginFrame() {
+        // 旧版渲染器不需要帧控制
+    }
+
+    @Override
+    public void endFrame() {
+        // 旧版渲染器不需要帧控制
+    }
+
     private final LegacyRenderer legacyRenderer;
 
     /**
@@ -154,22 +174,3 @@ public class LegacyRendererAdapter implements Renderer {
     }
 }
 
-    @Override
-    public void setStyle(String stroke, String fill, int width) {
-        // 旧版渲染器不支持样式设置
-    }
-
-    @Override
-    public Object getContext() {
-        return null; // 旧版渲染器没有上下文
-    }
-
-    @Override
-    public void beginFrame() {
-        // 旧版渲染器不需要帧控制
-    }
-
-    @Override
-    public void endFrame() {
-        // 旧版渲染器不需要帧控制
-    }

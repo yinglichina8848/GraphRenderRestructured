@@ -5,6 +5,27 @@ package com.example.renderer.bridge;
  */
 public class TestRenderer implements Renderer {
     private Object testContext = new Object();
+
+    @Override
+    public void setStyle(String stroke, String fill, int width) {
+        System.out.printf("TestRenderer: 设置样式 - 描边:%s 填充:%s 线宽:%d\n", 
+                         stroke, fill, width);
+    }
+
+    @Override
+    public Object getContext() {
+        return testContext;
+    }
+
+    @Override
+    public void beginFrame() {
+        System.out.println("TestRenderer: 开始新帧");
+    }
+
+    @Override
+    public void endFrame() {
+        System.out.println("TestRenderer: 结束帧");
+    }
     @Override
     public void drawCircle(int x, int y, int radius) {
         if (radius <= 0) {
@@ -32,23 +53,3 @@ public class TestRenderer implements Renderer {
             x1, y1, x2, y2, x3, y3);
     }
 }
-    @Override
-    public void setStyle(String stroke, String fill, int width) {
-        System.out.printf("TestRenderer: 设置样式 - 描边:%s 填充:%s 线宽:%d\n", 
-                         stroke, fill, width);
-    }
-
-    @Override
-    public Object getContext() {
-        return testContext;
-    }
-
-    @Override
-    public void beginFrame() {
-        System.out.println("TestRenderer: 开始新帧");
-    }
-
-    @Override
-    public void endFrame() {
-        System.out.println("TestRenderer: 结束帧");
-    }
