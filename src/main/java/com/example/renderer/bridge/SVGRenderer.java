@@ -53,13 +53,16 @@ public class SVGRenderer implements Renderer {
     @Override
     public void beginFrame() {
         svgBuilder = new StringBuilder();
-        svgBuilder.append("<svg xmlns='http://www.w3.org/2000/svg'>\n");
+        String svgHeader = "<svg xmlns='http://www.w3.org/2000/svg'>\n";
+        svgBuilder.append(svgHeader);
+        System.out.print(svgHeader);
     }
 
     @Override
     public void endFrame() {
-        svgBuilder.append("</svg>\n");
-        System.out.print(svgBuilder.toString());
+        String svgFooter = "</svg>\n";
+        svgBuilder.append(svgFooter);
+        System.out.print(svgFooter);
     }
 
     /**
@@ -67,6 +70,10 @@ public class SVGRenderer implements Renderer {
      * @return 完整的SVG文档字符串
      */
     public String getSVG() {
+        // 确保返回完整的SVG文档
+        if (!svgBuilder.toString().contains("</svg>")) {
+            return svgBuilder.toString() + "</svg>\n";
+        }
         return svgBuilder.toString();
     }
 
