@@ -25,9 +25,9 @@ package com.example.renderer.bridge;
  * @since 2025-06-24
  */
 
-import java.awt.Graphics2D;
-import java.awt.Polygon;
-import java.awt.RenderingHints;
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 
 public class SwingRenderer implements Renderer {
     protected Graphics2D g; // 改为protected以便测试子类访问
@@ -59,10 +59,31 @@ public class SwingRenderer implements Renderer {
         g.setStroke(new java.awt.BasicStroke(2));
     }
 
-    public void setFillMode(boolean fill) {
+    @Override
+    public void setStyle(String stroke, String fill, int width) {
         if (g != null) {
-            g.setPaint(fill ? g.getColor() : null);
+            g.setStroke(new BasicStroke(width));
+            g.setColor(Color.decode(stroke));
+            // 填充颜色处理
         }
+    }
+
+    @Override
+    public Object getContext() {
+        return g;
+    }
+
+    @Override
+    public void beginFrame() {
+        if (g != null) {
+            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
+                             RenderingHints.VALUE_ANTIALIAS_ON);
+        }
+    }
+
+    @Override
+    public void endFrame() {
+        // 可添加帧结束处理逻辑
     }
 
     /**

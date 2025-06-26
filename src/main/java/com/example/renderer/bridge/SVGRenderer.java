@@ -16,7 +16,10 @@ package com.example.renderer.bridge;
  * @author liying
  * @since 1.0
  */
+import java.util.Objects;
+
 public class SVGRenderer implements Renderer {
+    private StringBuilder svgBuilder = new StringBuilder();
     private String strokeColor = "black";
     private String fillColor = "none";
     private int strokeWidth = 1;
@@ -25,10 +28,31 @@ public class SVGRenderer implements Renderer {
         // 不再自动输出SVG文档头，由调用方控制
     }
 
+    @Override
     public void setStyle(String stroke, String fill, int width) {
-        this.strokeColor = stroke;
-        this.fillColor = fill;
+        this.strokeColor = Objects.requireNonNull(stroke);
+        this.fillColor = Objects.requireNonNull(fill);
+        if (width < 0) {
+            throw new IllegalArgumentException("线宽不能为负数");
+        }
         this.strokeWidth = width;
+    }
+
+    @Override
+    public Object getContext() {
+        return svgBuilder;
+    }
+
+    @Override
+    public void beginFrame() {
+        svgBuilder.append("<svg xmlns='http://www.w3.org/2000/svg'>\n");
+    }
+
+    @Override
+    public void endFrame() {
+        svgBuilder.append("</svg>");
+        System.out.println(svgBuilder.toString());
+        svgBuilder.setLength(0); // 清空以便下次使用
     }
 
     // 移除样式相关代码，保持简单输出格式
