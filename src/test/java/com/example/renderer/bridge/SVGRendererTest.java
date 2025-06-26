@@ -44,7 +44,6 @@ public class SVGRendererTest {
         
         String svg = renderer.getSVG();
         assertTrue(svg.startsWith("<svg"));
-        assertTrue(svg.contains("circle"));
-        // Don't check for closing tag since endFrame() clears the buffer
+        assertTrue(svg.contains("<circle cx='100' cy='100' r='50' />"));
     }
 }

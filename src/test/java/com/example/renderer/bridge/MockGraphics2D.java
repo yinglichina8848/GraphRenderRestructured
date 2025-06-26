@@ -24,7 +24,19 @@ public class MockGraphics2D extends Graphics2D {
     
     @Override
     public void draw(Shape s) {
-        lastDrawCall = "draw:" + s.getClass().getSimpleName();
+        if (s instanceof Ellipse2D) {
+            Ellipse2D e = (Ellipse2D)s;
+            lastDrawCall = String.format("drawOval:%d,%d,%d,%d", 
+                (int)e.getX(), (int)e.getY(), 
+                (int)e.getWidth(), (int)e.getHeight());
+        } else if (s instanceof Rectangle2D) {
+            Rectangle2D r = (Rectangle2D)s;
+            lastDrawCall = String.format("drawRect:%d,%d,%d,%d",
+                (int)r.getX(), (int)r.getY(),
+                (int)r.getWidth(), (int)r.getHeight());
+        } else {
+            lastDrawCall = "draw:" + s.getClass().getSimpleName();
+        }
         drawCallCount++;
     }
 

@@ -44,14 +44,14 @@ public class SwingRendererTest {
     @Test
     public void testDrawCircle() {
         renderer.drawCircle(100, 100, 50);
-        assertEquals("draw:Ellipse2D", mockGraphics.lastDrawCall);
+        assertEquals("drawOval:50,50,100,100", mockGraphics.lastDrawCall);
         assertEquals(1, mockGraphics.drawCallCount);
     }
 
     @Test
     public void testDrawRectangle() {
         renderer.drawRectangle(50, 50, 100, 80);
-        assertEquals("draw:Rectangle2D", mockGraphics.lastDrawCall);
+        assertEquals("drawRect:50,50,100,80", mockGraphics.lastDrawCall);
     }
 
     @Test
