@@ -77,10 +77,22 @@ public interface Command {
      */
     void redo();
     
+    /**
+     * 检查命令是否可以执行
+     * @return 如果可以执行返回true，否则返回false
+     */
     default boolean canExecute() { return true; }
     
+    /**
+     * 检查命令是否可以撤销
+     * @return 如果可以撤销返回true，否则返回false
+     */
     default boolean canUndo() { return true; }
     
+    /**
+     * 检查命令是否可以重做
+     * @return 如果可以重做返回true，否则返回false
+     */
     default boolean canRedo() { return true; }
 }
 
