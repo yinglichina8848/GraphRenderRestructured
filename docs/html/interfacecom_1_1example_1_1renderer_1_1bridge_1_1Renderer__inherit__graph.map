@@ -1,7 +1,8 @@
 <map id="com.example.renderer.bridge.Renderer" name="com.example.renderer.bridge.Renderer">
-<area shape="rect" id="node1" title=" " alt="" coords="5,104,224,145"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,224,177"/>
 <area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html" title=" " alt="" coords="272,5,499,47"/>
-<area shape="rect" id="node3" title=" " alt="" coords="276,71,495,112"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html" title=" " alt="" coords="276,71,495,112"/>
 <area shape="rect" id="node4" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html" title=" " alt="" coords="276,136,495,177"/>
-<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html" title=" " alt="" coords="279,201,491,243"/>
+<area shape="rect" id="node5" href="$classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html" title=" " alt="" coords="276,201,495,243"/>
+<area shape="rect" id="node6" href="$classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html" title=" " alt="" coords="279,267,491,308"/>
 </map>

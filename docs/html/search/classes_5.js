@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['jsonexportvisitor_137',['JSONExportVisitor',['../classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html',1,'com::example::renderer::visitor']]],
-  ['jsonexportvisitortest_138',['JSONExportVisitorTest',['../classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html',1,'com::example::renderer::visitor']]]
+  ['globalconfig_156',['GlobalConfig',['../classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html',1,'com::example::renderer::config']]],
+  ['globalconfigtest_157',['GlobalConfigTest',['../classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfigTest.html',1,'com::example::renderer::config']]]
 ];

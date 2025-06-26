@@ -95,50 +95,32 @@ $(document).ready(function(){initNavTree('interfacecom_1_1example_1_1renderer_1_
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.factory.ShapeFactory:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory__inherit__graph.svg" width="232" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory__inherit__graph.svg" width="502" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f07a5d90a398247ec81e9287ea12421"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#a8f07a5d90a398247ec81e9287ea12421">createCircle</a> (int x, int y, int radius)</td></tr>
-<tr class="separator:a8f07a5d90a398247ec81e9287ea12421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8637f16c8e9996b9a584302e69e0246d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#a8637f16c8e9996b9a584302e69e0246d">createRectangle</a> (int x, int y, int width, int height)</td></tr>
-<tr class="separator:a8637f16c8e9996b9a584302e69e0246d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf8b85b4068416843311b45e2ee326ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#adf8b85b4068416843311b45e2ee326ae">createCircle</a> (int x, int y, int radius)</td></tr>
+<tr class="separator:adf8b85b4068416843311b45e2ee326ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039d941a8f75c4213325d3034331d25f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#a039d941a8f75c4213325d3034331d25f">createRectangle</a> (int x, int y, int width, int height)</td></tr>
+<tr class="separator:a039d941a8f75c4213325d3034331d25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ae7d9ce5cbe6f1465790726f28cf47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#af7ae7d9ce5cbe6f1465790726f28cf47">createTriangle</a> (int x1, int y1, int x2, int y2, int x3, int y3)</td></tr>
+<tr class="separator:af7ae7d9ce5cbe6f1465790726f28cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f7ef36ce8d362eab44f8de630bfb4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html#af3f7ef36ce8d362eab44f8de630bfb4c">createEllipse</a> (int x, int y, int width, int height)</td></tr>
+<tr class="separator:af3f7ef36ce8d362eab44f8de630bfb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>图形工厂接口，定义了创建各种图形对象的工厂方法。</p>
-<p>使用工厂模式可以： </p><ul>
-<li>
-解耦图形对象的创建和使用 </li>
-<li>
-集中管理对象的创建逻辑 </li>
-<li>
-便于扩展新的图形类型 </li>
-</ul>
-<p>典型用法： </p><pre><div class="fragment"><div class="line">ShapeFactory factory = <span class="keyword">new</span> BasicShapeFactory();</div>
-<div class="line">Shape circle = factory.createCircle(10,10,5);</div>
-<div class="line">Shape rect = factory.createRectangle(20,20,30,40);</div>
-</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>BasicShapeFactory 基础实现 </dd>
-<dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> 圆形 </dd>
-<dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a> 矩形 </dd>
-<dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a> 椭圆 </dd>
-<dd>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> 三角形 </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<div class="textblock"><p>图形工厂接口，用于创建各种图形对象。 </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8f07a5d90a398247ec81e9287ea12421"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f07a5d90a398247ec81e9287ea12421">&#9670;&nbsp;</a></span>createCircle()</h2>
+<a id="adf8b85b4068416843311b45e2ee326ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf8b85b4068416843311b45e2ee326ae">&#9670;&nbsp;</a></span>createCircle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> com.example.renderer.factory.ShapeFactory.createCircle </td>
+          <td class="memname"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html">Circle</a> com.example.renderer.factory.ShapeFactory.createCircle </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -173,38 +155,81 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>新创建的圆形实例 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 创建圆形实例。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>圆心y坐标 </td></tr>
-    <tr><td class="paramname">radius</td><td>半径(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>新创建的圆形实例 </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html#abd8e8961c49337155a9e75283c182965">com.example.renderer.factory.ShapeFactoryImpl</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory.html#ab2622539d886911cd66c4c36f7f00d5e">com.example.renderer.factory.BasicShapeFactory</a>.</p>
 
 </div>
 </div>
-<a id="a8637f16c8e9996b9a584302e69e0246d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8637f16c8e9996b9a584302e69e0246d">&#9670;&nbsp;</a></span>createRectangle()</h2>
+<a id="af3f7ef36ce8d362eab44f8de630bfb4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3f7ef36ce8d362eab44f8de630bfb4c">&#9670;&nbsp;</a></span>createEllipse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> com.example.renderer.factory.ShapeFactory.createRectangle </td>
+          <td class="memname"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html">Ellipse</a> com.example.renderer.factory.ShapeFactory.createEllipse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建椭圆实例 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>椭圆中心x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>椭圆中心y坐标 </td></tr>
+    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
+    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>新创建的椭圆实例 </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html#aec06eac8758aecf030461dc97db4d377">com.example.renderer.factory.ShapeFactoryImpl</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory.html#a743a3bb108f6e5fce74b966c556a07f1">com.example.renderer.factory.BasicShapeFactory</a>.</p>
+
+</div>
+</div>
+<a id="a039d941a8f75c4213325d3034331d25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a039d941a8f75c4213325d3034331d25f">&#9670;&nbsp;</a></span>createRectangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html">Rectangle</a> com.example.renderer.factory.ShapeFactory.createRectangle </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -246,28 +271,78 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>新创建的矩形实例 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 创建矩形实例。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>左上角x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>左上角y坐标 </td></tr>
-    <tr><td class="paramname">width</td><td>矩形宽度(必须&gt;0) </td></tr>
-    <tr><td class="paramname">height</td><td>矩形高度(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>新创建的矩形实例 </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html#ae0b8c7700f23ec674d9c760c69a8876c">com.example.renderer.factory.ShapeFactoryImpl</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory.html#a30792a1fdd9ae601635d8779ffd8855e">com.example.renderer.factory.BasicShapeFactory</a>.</p>
+
+</div>
+</div>
+<a id="af7ae7d9ce5cbe6f1465790726f28cf47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ae7d9ce5cbe6f1465790726f28cf47">&#9670;&nbsp;</a></span>createTriangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html">Triangle</a> com.example.renderer.factory.ShapeFactory.createTriangle </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建三角形实例 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x1</td><td>第一个顶点x坐标 </td></tr>
+    <tr><td class="paramname">y1</td><td>第一个顶点y坐标 </td></tr>
+    <tr><td class="paramname">x2</td><td>第二个顶点x坐标 </td></tr>
+    <tr><td class="paramname">y2</td><td>第二个顶点y坐标 </td></tr>
+    <tr><td class="paramname">x3</td><td>第三个顶点x坐标 </td></tr>
+    <tr><td class="paramname">y3</td><td>第三个顶点y坐标 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>新创建的三角形实例 </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html#afce25c34d9c8e506c4565a75e0cd2217">com.example.renderer.factory.ShapeFactoryImpl</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory.html#a81327f1105d5967e457b7f46c3e59f50">com.example.renderer.factory.BasicShapeFactory</a>.</p>
 
 </div>
 </div>

@@ -95,7 +95,8 @@ $(document).ready(function(){initNavTree('interfacecom_1_1example_1_1renderer_1_
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.bridge.Renderer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer__inherit__graph.svg" width="504" height="248"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer__inherit__graph.svg" width="504" height="314"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -110,25 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8da6ee9a1744047767dfccc70cd6da76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Renderer接口定义了图形渲染的基本操作。 作为桥接模式中的实现部分(Implementor)，它抽象了不同渲染方式的具体实现。</p>
-<p>实现类需要提供以下图形的绘制能力： </p><ul>
-<li>
-圆形 - 通过drawCircle方法 </li>
-<li>
-矩形 - 通过drawRectangle方法 </li>
-<li>
-椭圆 - 通过drawEllipse方法 </li>
-<li>
-三角形 - 通过drawTriangle方法 </li>
-</ul>
-<p>典型用法： </p><pre><div class="fragment"><div class="line">Renderer renderer = <span class="keyword">new</span> SwingRenderer();</div>
-<div class="line">renderer.drawCircle(100, 100, 50); <span class="comment">// 绘制圆形</span></div>
-</div><!-- fragment --> </pre><dl class="section author"><dt>Author</dt><dd>DeepSeek-Coder </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html">SwingRenderer</a> 基于Swing的渲染实现 </dd>
-<dd>
-SVGRenderer 基于SVG输出的渲染实现 </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<div class="textblock"><p>渲染器接口，定义各种图形的绘制方法。 </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9878c979d01dbfe7d4b9cd38a869a735"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9878c979d01dbfe7d4b9cd38a869a735">&#9670;&nbsp;</a></span>drawCircle()</h2>
@@ -171,28 +154,12 @@ SVGRenderer 基于SVG输出的渲染实现 </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 绘制圆形。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>圆心y坐标 </td></tr>
-    <tr><td class="paramname">radius</td><td>圆形半径(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a3790eaa1dd17a9de4ddd3c4a641a6ac9">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a66bbddb14487b0ab0827075a9d915350">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a023bafacacf0b539929be9570863a4a5">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a4410ace219790bbc264545d4c6c6e023">com.example.renderer.bridge.TestRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a3790eaa1dd17a9de4ddd3c4a641a6ac9">com.example.renderer.bridge.SwingRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a63521a8368a254dd0e8ff2e66f4a0df1">com.example.renderer.bridge.SVGRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a66bbddb14487b0ab0827075a9d915350">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
 
 </div>
 </div>
@@ -244,46 +211,12 @@ SVGRenderer 基于SVG输出的渲染实现 </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 绘制椭圆。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
-    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
-    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 绘制椭圆。</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
-    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
-    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a87ca2b5f00e776b5589f1e7ba09e81b6">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#ab1552c80c0acb89b642022f3d96236a5">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a175004a33b99e9750dc709d5f62e3d54">com.example.renderer.bridge.TestRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a87ca2b5f00e776b5589f1e7ba09e81b6">com.example.renderer.bridge.SwingRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a6932496635e361496aee26b097c6b702">com.example.renderer.bridge.SVGRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#ab1552c80c0acb89b642022f3d96236a5">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
 
 </div>
 </div>
@@ -335,29 +268,12 @@ SVGRenderer 基于SVG输出的渲染实现 </dd></dl>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 绘制矩形。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>左上角x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>左上角y坐标 </td></tr>
-    <tr><td class="paramname">width</td><td>矩形宽度(必须&gt;0) </td></tr>
-    <tr><td class="paramname">height</td><td>矩形高度(必须&gt;0) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a230d74acbb60e51bc56724f50459d6bd">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ad780e42d7a49367c6825796432b21210">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#addeae4dba92259721a837dec63a902f9">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a230d74acbb60e51bc56724f50459d6bd">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a29e2feaeed028fae38c00eb1312663ab">com.example.renderer.bridge.TestRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ad780e42d7a49367c6825796432b21210">com.example.renderer.bridge.SwingRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a187492735c8931f950db24ddd875639a">com.example.renderer.bridge.SVGRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#addeae4dba92259721a837dec63a902f9">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
 
 </div>
 </div>
@@ -417,20 +333,12 @@ SVGRenderer 基于SVG输出的渲染实现 </dd></dl>
     <tr><td class="paramname">x2</td><td>第二个顶点x坐标 </td></tr>
     <tr><td class="paramname">y2</td><td>第二个顶点y坐标 </td></tr>
     <tr><td class="paramname">x3</td><td>第三个顶点x坐标 </td></tr>
-    <tr><td class="paramname">y3</td><td>第三个顶点y坐标 绘制三角形。</td></tr>
-    <tr><td class="paramname">x1</td><td>第一个顶点x坐标 </td></tr>
-    <tr><td class="paramname">y1</td><td>第一个顶点y坐标 </td></tr>
-    <tr><td class="paramname">x2</td><td>第二个顶点x坐标 </td></tr>
-    <tr><td class="paramname">y2</td><td>第二个顶点y坐标 </td></tr>
-    <tr><td class="paramname">x3</td><td>第三个顶点x坐标 </td></tr>
     <tr><td class="paramname">y3</td><td>第三个顶点y坐标 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#aa0510e0bf10c8d982f4789f2774f3154">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#ab1a537d39a4cd1b77033b1f1364a26eb">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8">com.example.renderer.proxy.RemoteRendererProxy</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a5babec6fc97e4c68337516886432dd3b">com.example.renderer.bridge.TestRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#aa0510e0bf10c8d982f4789f2774f3154">com.example.renderer.bridge.SwingRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a818836e2da0eb4b661447796ec587249">com.example.renderer.bridge.SVGRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#ab1a537d39a4cd1b77033b1f1364a26eb">com.example.renderer.adapter.LegacyRendererAdapter</a>.</p>
 
 </div>
 </div>

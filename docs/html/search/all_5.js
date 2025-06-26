@@ -1,5 +1,18 @@
 var searchData=
 [
-  ['jsonexportvisitor_46',['JSONExportVisitor',['../classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html',1,'com::example::renderer::visitor']]],
-  ['jsonexportvisitortest_47',['JSONExportVisitorTest',['../classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html',1,'com::example::renderer::visitor']]]
+  ['getheight_35',['getHeight',['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a58b5bcb233cb1e389900df094e38e9cf',1,'com.example.renderer.factory.Ellipse.getHeight()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ae83e1c0e4055db52f789967fa1209cd6',1,'com.example.renderer.factory.Rectangle.getHeight()']]],
+  ['getinstance_36',['getInstance',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a229e6512b9ffae3cddc80a15e779e6e4',1,'com::example::renderer::singleton::PersistenceManager']]],
+  ['getr_37',['getR',['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a19c164413905081dca567f76825c5e2e',1,'com::example::renderer::factory::Circle']]],
+  ['getradius_38',['getRadius',['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#af06f178fee411628e85f616fc4b27be9',1,'com::example::renderer::factory::Circle']]],
+  ['getwidth_39',['getWidth',['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#ad1f41af217cb0df38ae2026a6b666672',1,'com.example.renderer.factory.Ellipse.getWidth()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a866a5e7ee721a4744e970be235d7bf2a',1,'com.example.renderer.factory.Rectangle.getWidth()']]],
+  ['getx_40',['getX',['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a5d9565191f8b24714037adaafb0145f2',1,'com.example.renderer.factory.Circle.getX()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015',1,'com.example.renderer.factory.Ellipse.getX()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a04a2b038cf6f21b0875a6bce7dd479e0',1,'com.example.renderer.factory.Rectangle.getX()']]],
+  ['getx1_41',['getX1',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#aa5ec64f9827fba203174d5e91185e6f2',1,'com::example::renderer::factory::Triangle']]],
+  ['getx2_42',['getX2',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#abba5462908667c70efa65edc2b0e17bc',1,'com::example::renderer::factory::Triangle']]],
+  ['getx3_43',['getX3',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a2f27fd932329a59698e80ca4c900eba8',1,'com::example::renderer::factory::Triangle']]],
+  ['gety_44',['getY',['../classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020',1,'com.example.renderer.factory.Ellipse.getY()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#adbf586a9c1761dce695dce96c7539a18',1,'com.example.renderer.factory.Circle.getY()'],['../classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a8086515b4c50de24274dace98a8ca9ea',1,'com.example.renderer.factory.Rectangle.getY()']]],
+  ['gety1_45',['getY1',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#af9319090f2c5c5fd18826cae05b094a4',1,'com::example::renderer::factory::Triangle']]],
+  ['gety2_46',['getY2',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a1ab1af5be6782c56d16de7cf9cecf0dc',1,'com::example::renderer::factory::Triangle']]],
+  ['gety3_47',['getY3',['../classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#ab8693d7dff18ad8d058df6543f6dd366',1,'com::example::renderer::factory::Triangle']]],
+  ['globalconfig_48',['GlobalConfig',['../classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html',1,'com::example::renderer::config']]],
+  ['globalconfigtest_49',['GlobalConfigTest',['../classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfigTest.html',1,'com::example::renderer::config']]]
 ];
