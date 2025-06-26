@@ -82,6 +82,9 @@ public class SVGRenderer implements Renderer {
 
     @Override
     public void drawRectangle(int x, int y, int width, int height) {
+        if (width <= 0 || height <= 0) {
+            throw new IllegalArgumentException("Width and height must be positive (width=" + width + ", height=" + height + ")");
+        }
         System.out.printf("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
     }
 
