@@ -30,6 +30,13 @@ import com.example.renderer.legacy.LegacyRenderer;
 import java.util.Objects;
 import java.util.Objects;
 
+/**
+ * 适配器类，将LegacyRenderer接口适配到新的Renderer接口。
+ * 实现了适配器模式，使旧版渲染器可以在新系统中使用。
+ * 
+ * @see Renderer 新渲染器接口
+ * @see LegacyRenderer 旧版渲染器接口
+ */
 public class LegacyRendererAdapter implements Renderer {
 
     @Override

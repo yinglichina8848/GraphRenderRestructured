@@ -34,7 +34,11 @@ import com.example.renderer.bridge.Renderer;
  * Swing渲染器实现
  */
 public class SwingRenderer implements Renderer {
-    protected Graphics2D g; // 改为protected以便测试子类访问
+    /**
+     * Graphics2D绘图上下文
+     * 设置为protected以便子类可以访问
+     */
+    protected Graphics2D g;
 
     /**
      * 设置绘图上下文。
