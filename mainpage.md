@@ -1,5 +1,9 @@
 /** @mainpage 图形渲染系统 - 核心文档
- * @image html images/logo.png width=64px
+ * @tableofcontents
+ * 
+ * @section doc_links 项目文档
+ * 以下是项目相关文档列表：
+ * @subpage md_doc_index
  * 
  * @section intro_sec 项目简介
  * 一个基于现代Java技术的图形渲染框架，主要特点：
