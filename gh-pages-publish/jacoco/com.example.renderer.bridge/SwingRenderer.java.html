@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SwingRenderer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.bridge</a> &gt; <span class="el_source">SwingRenderer.java</span></div><h1>SwingRenderer.java</h1><pre class="source lang-java linenums">package com.example.renderer.bridge;
+
+/**
+ * SwingRenderer实现了使用Java Swing进行图形渲染。
+ * 作为Renderer接口的具体实现，它使用Graphics2D进行实际绘制。
+ * 
+ * &lt;p&gt;该类主要特点：
+ * &lt;ul&gt;
+ *   &lt;li&gt;使用蓝色(BLUE)作为默认绘制颜色&lt;/li&gt;
+ *   &lt;li&gt;使用2像素宽的线条&lt;/li&gt;
+ *   &lt;li&gt;需要先调用setGraphics()设置绘图上下文&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;{@code
+ * SwingRenderer renderer = new SwingRenderer();
+ * renderer.setGraphics(graphics2D); // 必须先设置绘图上下文
+ * renderer.drawCircle(100, 100, 50); // 绘制蓝色圆形
+ * }&lt;/pre&gt;
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see Renderer 渲染器接口
+ * @see Graphics2D Swing绘图上下文
+ * @since 2025-06-24
+ */
+
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+import com.example.renderer.bridge.Renderer;
+
+/**
+ * Swing渲染器实现
+ */
+<span class="nc" id="L36">public class SwingRenderer implements Renderer {</span>
+    /**
+     * Graphics2D绘图上下文
+     * 设置为protected以便子类可以访问
+     */
+    protected Graphics2D g;
+
+    /**
+     * 设置绘图上下文。
+     * 
+     * &lt;p&gt;此方法必须在调用任何绘制方法前调用，用于初始化：
+     * &lt;ul&gt;
+     *   &lt;li&gt;绘图颜色设置为蓝色(BLUE)&lt;/li&gt;
+     *   &lt;li&gt;线条宽度设置为2像素&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     * @param g Graphics2D绘图上下文对象
+     * @see Graphics2D
+     */
+    /**
+     * 设置绘图上下文。
+     * 
+     * @param g Graphics2D绘图上下文对象
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    public void setGraphics(Graphics2D g) {
+<span class="nc" id="L63">        this.g = g;</span>
+<span class="nc" id="L64">        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, </span>
+                          RenderingHints.VALUE_ANTIALIAS_ON);
+<span class="nc" id="L66">        g.setColor(java.awt.Color.BLUE);</span>
+<span class="nc" id="L67">        g.setStroke(new java.awt.BasicStroke(2));</span>
+<span class="nc" id="L68">    }</span>
+
+    @Override
+    public void setStyle(String stroke, String fill, int width) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L73">            g.setStroke(new BasicStroke(width));</span>
+<span class="nc" id="L74">            g.setColor(Color.decode(stroke));</span>
+            // 填充颜色处理
+        }
+<span class="nc" id="L77">    }</span>
+
+    @Override
+    public Object getContext() {
+<span class="nc" id="L81">        return g;</span>
+    }
+
+    @Override
+    public void beginFrame() {
+<span class="nc bnc" id="L86" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L87">            g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, </span>
+                             RenderingHints.VALUE_ANTIALIAS_ON);
+        }
+<span class="nc" id="L90">    }</span>
+
+    @Override
+    public void endFrame() {
+        // 可添加帧结束处理逻辑
+<span class="nc" id="L95">    }</span>
+
+    /**
+     * 绘制圆形
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标 
+     * @param radius 半径(必须&gt;0)
+     * @throws IllegalArgumentException 如果半径不合法
+     */
+    /**
+     * 使用Swing绘制圆形。
+     * 
+     * @param x 圆心x坐标
+     * @param y 圆心y坐标
+     * @param radius 圆形半径(必须&gt;0)
+     * @throws IllegalArgumentException 如果半径不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Override
+    public void drawCircle(int x, int y, int radius) {
+<span class="nc bnc" id="L116" title="All 2 branches missed.">        if (radius &lt;= 0) {</span>
+<span class="nc" id="L117">            throw new IllegalArgumentException(&quot;Radius must be positive (was &quot; + radius + &quot;)&quot;);</span>
+        }
+<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (g == null) {</span>
+<span class="nc" id="L120">            throw new IllegalStateException(&quot;Graphics context not initialized. Call setGraphics() first.&quot;);</span>
+        }
+<span class="nc" id="L122">        g.drawOval(x - radius, y - radius, radius * 2, radius * 2);</span>
+<span class="nc" id="L123">    }</span>
+
+    /**
+     * 绘制矩形
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须&gt;0)
+     * @param height 矩形高度(必须&gt;0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
+    /**
+     * 使用Swing绘制矩形。
+     * 
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须&gt;0)
+     * @param height 矩形高度(必须&gt;0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Override
+    public void drawRectangle(int x, int y, int width, int height) {
+<span class="nc bnc" id="L146" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="nc" id="L147">            throw new IllegalArgumentException(&quot;Width and height must be positive&quot;);</span>
+        }
+<span class="nc bnc" id="L149" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L150">            g.drawRect(x, y, width, height);</span>
+        }
+<span class="nc" id="L152">    }</span>
+
+    /**
+     * 绘制椭圆
+     * @param x 椭圆外接矩形左上角x坐标
+     * @param y 椭圆外接矩形左上角y坐标
+     * @param width 椭圆宽度(必须&gt;0)
+     * @param height 椭圆高度(必须&gt;0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法
+     */
+    @Override
+    public void drawEllipse(int x, int y, int width, int height) {
+<span class="nc bnc" id="L164" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="nc" id="L165">            throw new IllegalArgumentException(&quot;Width and height must be positive&quot;);</span>
+        }
+<span class="nc bnc" id="L167" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L168">            g.drawOval(x, y, width, height);</span>
+        }
+<span class="nc" id="L170">    }</span>
+
+    /**
+     * 绘制三角形。
+     * 
+     * &lt;p&gt;实现细节：
+     * &lt;ul&gt;
+     *   &lt;li&gt;使用Polygon类创建三角形路径&lt;/li&gt;
+     *   &lt;li&gt;继承自父类的线条样式设置&lt;/li&gt;
+     *   &lt;li&gt;如果Graphics2D上下文未设置，则不执行任何操作&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @see Polygon
+     */
+    /**
+     * 使用Swing绘制三角形。
+     * 
+     * @param x1 第一个顶点x坐标
+     * @param y1 第一个顶点y坐标
+     * @param x2 第二个顶点x坐标
+     * @param y2 第二个顶点y坐标
+     * @param x3 第三个顶点x坐标
+     * @param y3 第三个顶点y坐标
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Override
+    public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+<span class="nc bnc" id="L204" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L205">            Polygon triangle = new Polygon();</span>
+<span class="nc" id="L206">            triangle.addPoint(x1, y1);</span>
+<span class="nc" id="L207">            triangle.addPoint(x2, y2);</span>
+<span class="nc" id="L208">            triangle.addPoint(x3, y3);</span>
+<span class="nc" id="L209">            g.drawPolygon(triangle);</span>
+        }
+<span class="nc" id="L211">    }</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

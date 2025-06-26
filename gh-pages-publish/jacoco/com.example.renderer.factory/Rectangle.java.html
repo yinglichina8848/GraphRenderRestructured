@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Rectangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.factory</a> &gt; <span class="el_source">Rectangle.java</span></div><h1>Rectangle.java</h1><pre class="source lang-java linenums">/**
+ * 矩形图形实现类。
+ * 
+ * &lt;p&gt;表示一个矩形图形，包含以下属性：
+ * &lt;ul&gt;
+ *   &lt;li&gt;x,y: 左上角坐标&lt;/li&gt;
+ *   &lt;li&gt;width: 宽度(必须&gt;0)&lt;/li&gt;
+ *   &lt;li&gt;height: 高度(必须&gt;0)&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;实现了Shape接口的所有方法，包括：
+ * &lt;ul&gt;
+ *   &lt;li&gt;render(): 使用渲染器绘制矩形&lt;/li&gt;
+ *   &lt;li&gt;move(): 移动矩形位置&lt;/li&gt;
+ *   &lt;li&gt;accept(): 访问者模式支持&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see Shape 图形接口
+ * @author liying
+ * @since 1.0
+ */
+package com.example.renderer.factory;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
+
+
+/**
+ * 矩形图形实现类
+ * 
+ * &lt;p&gt;表示一个具有位置(x,y)和尺寸(width,height)的矩形
+ * 
+ * &lt;p&gt;实现细节：
+ * &lt;ul&gt;
+ *   &lt;li&gt;宽度和高度必须为正数&lt;/li&gt;
+ *   &lt;li&gt;支持移动操作&lt;/li&gt;
+ *   &lt;li&gt;可被各种渲染器渲染&lt;/li&gt;
+ * &lt;/ul&gt;
+ */
+public class Rectangle implements Shape {
+    private int x, y, width, height;
+
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L49">    public Rectangle() {} // 必须要无参构造器</span>
+
+    /**
+     * Creates a new Rectangle with specified dimensions.
+     * @param x the x coordinate of top-left corner
+     * @param y the y coordinate of top-left corner
+     * @param width the width of rectangle (must be &gt; 0)
+     * @param height the height of rectangle (must be &gt; 0)
+     * @throws IllegalArgumentException 如果宽度或高度不合法 (&amp;lt;=0)
+     */
+    /**
+     * 创建指定尺寸和位置的新矩形实例。
+     * &lt;p&gt;对宽度和高度进行合法性检查，确保其大于0。
+     * @param x 左上角x坐标
+     * @param y 左上角y坐标
+     * @param width 矩形宽度(必须&gt;0)
+     * @param height 矩形高度(必须&gt;0)
+     * &lt;p&gt;
+     * 修改记录:
+     *   - 对方法进行注释
+     * 作者: Aider + Qwen3-8B
+     */
+<span class="fc" id="L71">    public Rectangle(int x, int y, int width, int height) {</span>
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if (width &lt;= 0) {</span>
+<span class="fc" id="L73">            throw new IllegalArgumentException(&quot;Width must be positive (was &quot; + width + &quot;)&quot;);</span>
+        }
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (height &lt;= 0) {</span>
+<span class="fc" id="L76">            throw new IllegalArgumentException(&quot;Height must be positive (was &quot; + height + &quot;)&quot;);</span>
+        }
+<span class="fc" id="L78">        this.x = x;</span>
+<span class="fc" id="L79">        this.y = y;</span>
+<span class="fc" id="L80">        this.width = width;</span>
+<span class="fc" id="L81">        this.height = height;</span>
+<span class="fc" id="L82">    }</span>
+
+    /**
+     * 使用指定渲染器绘制矩形。
+     * 
+     * @param renderer 用于绘制图形的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    @Override
+    public void render(Renderer renderer) {
+<span class="fc" id="L94">        renderer.drawRectangle(x, y, width, height);</span>
+<span class="fc" id="L95">    }</span>
+
+    @Override
+    public void accept(ExportVisitor visitor) {
+<span class="fc" id="L99">        visitor.visitRectangle(this);</span>
+<span class="fc" id="L100">    }</span>
+
+    @Override
+    public void move(int dx, int dy) {
+        // 处理x坐标移动，防止溢出
+<span class="fc" id="L105">        long newX = (long)x + dx;</span>
+<span class="fc" id="L106">        x = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newX));</span>
+        
+        // 处理y坐标移动，防止溢出
+<span class="fc" id="L109">        long newY = (long)y + dy;</span>
+<span class="fc" id="L110">        y = (int)Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, newY));</span>
+<span class="fc" id="L111">    }</span>
+
+    /**
+     * 获取矩形左上角x坐标。
+     * 
+     * @return 矩形左上角x坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L120">    public int getX() { return x; }</span>
+    
+    /**
+     * 获取矩形左上角y坐标。
+     * 
+     * @return 矩形左上角y坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L129">    public int getY() { return y; }</span>
+    
+    /**
+     * 获取矩形宽度。
+     * 
+     * @return 矩形宽度值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L138">    public int getWidth() { return width; }</span>
+    
+    /**
+     * 获取矩形高度。
+     * 
+     * @return 矩形高度值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L147">    public int getHeight() { return height; }</span>
+
+    @Override
+    public Rectangle clone() {
+        try {
+<span class="nc" id="L152">            return (Rectangle) super.clone();</span>
+<span class="nc" id="L153">        } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L154">            throw new AssertionError();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

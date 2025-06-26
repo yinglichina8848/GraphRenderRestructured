@@ -1,0 +1,5 @@
+<map id="com.example.renderer.observer.ShapeObserver" name="com.example.renderer.observer.ShapeObserver">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,239,80"/>
+<area shape="rect" id="node2" href="$classcom_1_1example_1_1renderer_1_1observer_1_1LoggingShapeObserver.html" title=" " alt="" coords="287,5,520,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObserverImpl.html" title=" " alt="" coords="287,71,520,112"/>
+</map>

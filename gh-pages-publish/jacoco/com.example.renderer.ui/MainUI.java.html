@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.ui</a> &gt; <span class="el_source">MainUI.java</span></div><h1>MainUI.java</h1><pre class="source lang-java linenums">
+/**
+ * 主用户界面类，用于启动和显示 Swing 图形界面。
+ */
+/**
+ * MainUI
+ *
+ * @author liying
+ * @date 2025-06-15
+ * @lastModified 2025-06-15
+ */
+package com.example.renderer.ui;
+
+import javax.swing.SwingUtilities;
+
+/**
+ * MainUI 类包含程序的入口点，并负责初始化图形用户界面。
+ */
+
+
+/**
+ * 主用户界面类，负责启动图形渲染系统的Swing界面。
+ * 
+ * &lt;p&gt;该类包含程序的主入口点main()方法，主要功能：
+ * &lt;ul&gt;
+ *   &lt;li&gt;使用SwingUtilities.invokeLater()确保界面在事件分发线程中创建&lt;/li&gt;
+ *   &lt;li&gt;初始化并显示主界面(SwingUI)&lt;/li&gt;
+ *   &lt;li&gt;处理可能的启动异常&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;
+ * public static void main(String[] args) {
+ *     MainUI.launch();
+ * }
+ * &lt;/pre&gt;
+ * 
+ * @see SwingUI 主界面实现类
+ * @see SwingUtilities Swing工具类
+ * @author liying
+ * @since 1.0
+ */
+<span class="nc" id="L43">public class MainUI {</span>
+
+    /**
+     * 程序的入口点。
+     *
+     * @param args 命令行参数（未使用）
+     */
+    /**
+     * 程序主入口，启动Swing图形界面。
+     * 
+     * &lt;p&gt;使用SwingUtilities.invokeLater()确保界面在事件分发线程中创建，
+     * 这是Swing线程安全的最佳实践。&lt;/p&gt;
+     * 
+     * @param args 命令行参数(未使用)
+     * @see SwingUtilities
+     * @see SwingUI
+     */
+    /**
+     * 程序主入口，启动Swing图形界面。
+     * 
+     * &lt;p&gt;使用SwingUtilities.invokeLater()确保界面在事件分发线程中创建，
+     * 这是Swing线程安全的最佳实践。&lt;/p&gt;
+     * 
+     * @param args 命令行参数(未使用)
+     * @see SwingUtilities
+     * @see SwingUI
+     */
+    public static void main(String[] args) {
+<span class="nc" id="L71">        SwingUtilities.invokeLater(() -&gt; {</span>
+<span class="nc" id="L72">            SwingUI ui = new SwingUI();</span>
+<span class="nc" id="L73">            ui.setVisible(true);</span>
+<span class="nc" id="L74">        });</span>
+<span class="nc" id="L75">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

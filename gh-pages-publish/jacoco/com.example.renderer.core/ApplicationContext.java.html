@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ApplicationContext.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.core</a> &gt; <span class="el_source">ApplicationContext.java</span></div><h1>ApplicationContext.java</h1><pre class="source lang-java linenums">package com.example.renderer.core;
+
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.RendererFactory;
+import com.example.renderer.config.GlobalConfig;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.function.Supplier;
+
+/**
+ * 轻量级DI容器，管理核心组件生命周期。
+ * 
+ * &lt;p&gt;设计特点：
+ * &lt;ul&gt;
+ *   &lt;li&gt;按需初始化 - 首次访问时创建实例&lt;/li&gt;
+ *   &lt;li&gt;线程安全 - 内置同步机制&lt;/li&gt;
+ *   &lt;li&gt;可扩展 - 支持动态注册组件&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;
+ * // 注册组件
+ * ApplicationContext.register(Renderer.class, () -&gt; new SwingRenderer());
+ * 
+ * // 获取组件
+ * Renderer renderer = ApplicationContext.getBean(Renderer.class);
+ * &lt;/pre&gt;
+ */
+<span class="nc" id="L31">public class ApplicationContext {</span>
+<span class="nc" id="L32">    private static final Map&lt;Class&lt;?&gt;, Object&gt; beans = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L33">    private static final Map&lt;Class&lt;?&gt;, Supplier&lt;?&gt;&gt; suppliers = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L34">    private static final ReadWriteLock lock = new ReentrantReadWriteLock();</span>
+    
+    static {
+        // 注册核心组件
+<span class="nc" id="L38">        register(Renderer.class, () -&gt; </span>
+<span class="nc" id="L39">            RendererFactory.create(GlobalConfig.getInstance().getRenderMode()));</span>
+<span class="nc" id="L40">    }</span>
+    
+    /**
+     * 注册一个类型及其对应的供应商
+     * @param &lt;T&gt; 要注册的类型
+     * @param type 要注册的类对象
+     * @param supplier 用于创建实例的供应商
+     * @throws NullPointerException 如果type或supplier为null
+     */
+    public static &lt;T&gt; void register(Class&lt;T&gt; type, Supplier&lt;T&gt; supplier) {
+<span class="nc" id="L50">        suppliers.put(type, supplier);</span>
+<span class="nc" id="L51">    }</span>
+    
+    /**
+     * 获取指定类型的Bean实例
+     * 
+     * @param &lt;T&gt; Bean类型
+     * @param type 要获取的Bean类对象
+     * @return 已注册的Bean实例
+     * @throws IllegalStateException 如果类型未注册
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public static &lt;T&gt; T getBean(Class&lt;T&gt; type) {
+        try {
+<span class="nc" id="L64">            lock.readLock().lock();</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            if (!beans.containsKey(type)) {</span>
+<span class="nc" id="L66">                Supplier&lt;?&gt; supplier = suppliers.get(type);</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">                if (supplier == null) {</span>
+<span class="nc" id="L68">                    throw new IllegalStateException(&quot;No supplier registered for &quot; + type);</span>
+                }
+                
+<span class="nc" id="L71">                lock.readLock().unlock();</span>
+<span class="nc" id="L72">                lock.writeLock().lock();</span>
+                try {
+                    // 双重检查
+<span class="nc bnc" id="L75" title="All 2 branches missed.">                    if (!beans.containsKey(type)) {</span>
+<span class="nc" id="L76">                        beans.put(type, supplier.get());</span>
+                    }
+                } finally {
+<span class="nc" id="L79">                    lock.readLock().lock();</span>
+<span class="nc" id="L80">                    lock.writeLock().unlock();</span>
+                }
+            }
+<span class="nc" id="L83">            return (T) beans.get(type);</span>
+        } finally {
+<span class="nc" id="L85">            lock.readLock().unlock();</span>
+        }
+    }
+    
+    /**
+     * 刷新应用上下文，清除所有缓存的Bean实例
+     */
+    public static void refresh() {
+<span class="nc" id="L93">        beans.clear();</span>
+<span class="nc" id="L94">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ellipse.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.factory</a> &gt; <span class="el_source">Ellipse.java</span></div><h1>Ellipse.java</h1><pre class="source lang-java linenums">/**
+ * 椭圆图形实现类。
+ * 
+ * &lt;p&gt;表示一个由中心坐标(x,y)和宽度(width)、高度(height)定义的椭圆。
+ * 实现了Shape接口，支持以下操作：
+ * &lt;ul&gt;
+ *   &lt;li&gt;渲染 - 通过render()方法使用指定渲染器绘制&lt;/li&gt;
+ *   &lt;li&gt;移动 - 通过move()方法改变位置&lt;/li&gt;
+ *   &lt;li&gt;访问者模式 - 通过accept()方法支持扩展操作&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;{@code
+ * Ellipse ellipse = new Ellipse(100, 100, 80, 40);
+ * ellipse.render(renderer); // 绘制椭圆
+ * ellipse.move(10, 5); // 移动椭圆
+ * }&lt;/pre&gt;
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see Shape 图形接口
+ * @since 2025-06-24
+ */
+package com.example.renderer.factory;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
+
+
+/**
+ * 椭圆图形实现类
+ */
+public class Ellipse implements Shape {
+    private int x, y, width, height;
+
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 创建后需要通过setter方法设置属性。
+     */
+    /**
+     * 无参构造器，用于序列化和反射创建实例。
+     * 
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="nc" id="L46">    public Ellipse() {}</span>
+
+    /**
+     * 构造指定位置和大小的椭圆
+     * @param x 椭圆中心的X坐标
+     * @param y 椭圆中心的Y坐标
+     * @param width 椭圆的宽度
+     * @param height 椭圆的高度
+     */
+<span class="fc" id="L55">    public Ellipse(int x, int y, int width, int height) {</span>
+<span class="fc" id="L56">        this.x = x; this.y = y; this.width = width; this.height = height;</span>
+<span class="fc" id="L57">    }</span>
+
+    /**
+     * 使用指定渲染器绘制椭圆。
+     * 
+     * &lt;p&gt;实现细节：
+     * &lt;ul&gt;
+     *   &lt;li&gt;调用renderer.drawEllipse()方法进行实际绘制&lt;/li&gt;
+     *   &lt;li&gt;传递椭圆的中心坐标和尺寸参数&lt;/li&gt;
+     *   &lt;li&gt;不处理渲染器抛出的异常，由调用方处理&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     * @param renderer 用于绘制椭圆的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @see Renderer#drawEllipse(int, int, int, int)
+     */
+    @Override
+    public void render(Renderer renderer) {
+<span class="fc" id="L75">        renderer.drawEllipse(x, y, width, height);</span>
+<span class="fc" id="L76">    }</span>
+
+    /**
+     * 接受访问者访问此椭圆对象
+     * @param visitor 用于处理椭圆的访问者对象
+     * @throws NullPointerException 如果visitor参数为null
+     */
+    @Override
+    public void accept(ExportVisitor visitor) {
+<span class="fc" id="L85">        visitor.visitEllipse(this);</span>
+<span class="fc" id="L86">    }</span>
+
+    /**
+     * 移动椭圆的位置。
+     * 
+     * &lt;p&gt;实现细节：
+     * &lt;ul&gt;
+     *   &lt;li&gt;直接修改椭圆的中心坐标&lt;/li&gt;
+     *   &lt;li&gt;不检查坐标溢出，由调用方确保参数合理&lt;/li&gt;
+     *   &lt;li&gt;支持负值移动(向左/上移动)&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     * @param dx X轴方向的移动距离（像素）
+     * @param dy Y轴方向的移动距离（像素）
+     * @see Shape#move(int, int)
+     */
+    @Override
+    public void move(int dx, int dy) {
+<span class="fc" id="L104">        x += dx;</span>
+<span class="fc" id="L105">        y += dy;</span>
+<span class="fc" id="L106">    }</span>
+
+    /**
+     * 获取椭圆中心X坐标。
+     * 
+     * &lt;p&gt;注意：返回的是椭圆的中心点X坐标，不是外接矩形的左上角X坐标。
+     * 
+     * @return 椭圆中心的X坐标值
+     * @see #getY() 获取Y坐标
+     * @see #getWidth() 获取宽度
+     */
+    /**
+     * 获取椭圆中心X坐标。
+     * 
+     * @return 椭圆中心的X坐标值
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+<span class="fc" id="L124">    public int getX() { return x; }</span>
+    
+    /**
+     * 获取椭圆中心Y坐标
+     * @return 椭圆中心的Y坐标值
+     */
+<span class="fc" id="L130">    public int getY() { return y; }</span>
+    
+    /**
+     * 获取椭圆宽度
+     * @return 椭圆的宽度值
+     */
+<span class="fc" id="L136">    public int getWidth() { return width; }</span>
+    
+    /**
+     * 获取椭圆高度。
+     * 
+     * &lt;p&gt;高度是椭圆在Y轴方向的直径长度。
+     * 
+     * @return 椭圆的高度值
+     * @see #getWidth() 获取宽度
+     * @see #getX() 获取X坐标
+     */
+<span class="fc" id="L147">    public int getHeight() { return height; }</span>
+
+    @Override
+    public Ellipse clone() {
+        try {
+<span class="nc" id="L152">            return (Ellipse) super.clone();</span>
+<span class="nc" id="L153">        } catch (CloneNotSupportedException e) {</span>
+<span class="nc" id="L154">            throw new AssertionError();</span>
+        }
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

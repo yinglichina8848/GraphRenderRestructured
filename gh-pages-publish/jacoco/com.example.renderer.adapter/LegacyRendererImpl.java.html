@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LegacyRendererImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.adapter</a> &gt; <span class="el_source">LegacyRendererImpl.java</span></div><h1>LegacyRendererImpl.java</h1><pre class="source lang-java linenums">package com.example.renderer.adapter;
+
+import com.example.renderer.legacy.LegacyRenderer;
+
+/**
+ * LegacyRenderer接口的默认实现类
+ */
+<span class="fc" id="L8">public class LegacyRendererImpl implements LegacyRenderer {</span>
+    @Override
+    public void drawLegacyCircle(int x, int y, int radius) {
+<span class="fc" id="L11">        System.out.printf(&quot;LegacyRenderer: 绘制圆形，中心(%d,%d)，半径 %d\n&quot;, x, y, radius);</span>
+<span class="fc" id="L12">    }</span>
+
+    @Override 
+    public void drawLegacyRectangle(int x, int y, int width, int height) {
+<span class="fc" id="L16">        System.out.printf(&quot;LegacyRenderer: 绘制矩形，左上角(%d,%d)，宽 %d，高 %d\n&quot;, x, y, width, height);</span>
+<span class="fc" id="L17">    }</span>
+
+    @Override
+    public void drawLegacyTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+<span class="fc" id="L21">        System.out.printf(&quot;LegacyRenderer: 绘制三角形，顶点(%d,%d),(%d,%d),(%d,%d)\n&quot;,</span>
+<span class="fc" id="L22">            x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L23">    }</span>
+
+    @Override
+    public void drawLegacyEllipse(int x, int y, int rx, int ry) {
+<span class="fc" id="L27">        System.out.printf(&quot;LegacyRenderer: 绘制椭圆，中心(%d,%d)，X半轴 %d，Y半轴 %d\n&quot;, x, y, rx, ry);</span>
+<span class="fc" id="L28">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SwingUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.ui</a> &gt; <span class="el_source">SwingUI.java</span></div><h1>SwingUI.java</h1><pre class="source lang-java linenums">package com.example.renderer.ui;
+
+/**
+ * SwingUI是图形渲染系统的主界面，使用Swing实现。
+ * 
+ * &lt;p&gt;主要功能组件：
+ * &lt;ul&gt;
+ *   &lt;li&gt;绘图面板(DrawingPanel) - 显示图形&lt;/li&gt;
+ *   &lt;li&gt;控制按钮 - 添加圆形、矩形、椭圆和三角形&lt;/li&gt;
+ *   &lt;li&gt;撤销/重做功能 - 通过UndoManager实现命令历史管理&lt;/li&gt;
+ *   &lt;li&gt;文件操作 - 通过PersistenceManager实现图形的保存和加载&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;设计模式应用：
+ * &lt;ul&gt;
+ *   &lt;li&gt;命令模式 - 通过Command接口实现操作封装&lt;/li&gt;
+ *   &lt;li&gt;桥接模式 - 通过Renderer接口分离渲染逻辑&lt;/li&gt;
+ *   &lt;li&gt;单例模式 - 使用PersistenceManager管理持久化&lt;/li&gt;
+ *   &lt;li&gt;观察者模式 - 图形变化时自动重绘&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;典型使用场景：
+ * &lt;pre&gt;{@code
+ * SwingUI ui = new SwingUI(); // 创建并显示界面
+ * }&lt;/pre&gt;
+ * 
+ * @see DrawingPanel 绘图面板实现
+ * @see UndoManager 撤销/重做管理
+ * @see PersistenceManager 持久化管理器
+ * @author liying
+ * @since 1.0
+ * @version 1.0.0
+ */
+
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.RendererFactory;
+import com.example.renderer.config.GlobalConfig;
+import com.example.renderer.exception.RendererCreationException;
+import com.example.renderer.factory.*;
+import com.example.renderer.command.*;
+import com.example.renderer.singleton.PersistenceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import com.example.renderer.factory.Circle;
+import com.example.renderer.factory.Rectangle;
+import com.example.renderer.factory.Ellipse;
+import com.example.renderer.factory.Triangle;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.SwingRenderer;
+import com.example.renderer.command.AddShapeCommand;
+import com.example.renderer.command.UndoManager;
+
+
+//import com.example.renderer.persistence.PersistenceManager;
+import com.example.renderer.singleton.PersistenceManager;
+
+
+
+/**
+ * SwingUI是图形渲染系统的主界面，使用Swing实现。
+ * 
+ * &lt;p&gt;主要功能组件：
+ * &lt;ul&gt;
+ *   &lt;li&gt;绘图面板(DrawingPanel) - 显示图形&lt;/li&gt;
+ *   &lt;li&gt;控制按钮 - 添加圆形、矩形、椭圆和三角形&lt;/li&gt;
+ *   &lt;li&gt;撤销/重做功能 - 通过UndoManager实现命令历史管理&lt;/li&gt;
+ *   &lt;li&gt;文件操作 - 通过PersistenceManager实现图形的保存和加载&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see DrawingPanel 绘图面板实现
+ * @see UndoManager 撤销/重做管理
+ * @see PersistenceManager 持久化管理器
+ * @author liying
+ * @since 1.0
+ */
+public class SwingUI extends JFrame {
+<span class="nc" id="L93">    private static final Logger LOGGER = LoggerFactory.getLogger(SwingUI.class);</span>
+    /** 图形列表 */
+<span class="nc" id="L95">    private final List&lt;com.example.renderer.factory.Shape&gt; shapes = new ArrayList&lt;&gt;();</span>
+    
+    /** 渲染器实现 */
+    private Renderer renderer;
+    
+    /** 撤销管理器 */
+<span class="nc" id="L101">    private UndoManager undoManager = new UndoManager();</span>
+    
+    /** 绘图面板组件 */
+    private DrawingPanel drawingPanel;
+
+
+    /**
+     * 创建并初始化Swing图形用户界面。
+     * 
+     * &lt;p&gt;初始化内容包括：
+     * &lt;ul&gt;
+     *   &lt;li&gt;设置窗口标题和大小&lt;/li&gt;
+     *   &lt;li&gt;创建绘图面板&lt;/li&gt;
+     *   &lt;li&gt;添加各种图形按钮&lt;/li&gt;
+     *   &lt;li&gt;设置按钮事件监听器&lt;/li&gt;
+     *   &lt;li&gt;添加撤销/重做功能&lt;/li&gt;
+     *   &lt;li&gt;添加文件保存/加载功能&lt;/li&gt;
+     * &lt;/ul&gt;
+     */
+<span class="nc" id="L120">    public SwingUI() {</span>
+<span class="nc" id="L121">        setTitle(&quot;图形渲染系统 - Swing 可视化&quot;);</span>
+<span class="nc" id="L122">        setSize(800, 600);</span>
+<span class="nc" id="L123">        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L124">        setLocationRelativeTo(null);</span>
+
+
+        // 通过配置获取渲染器
+<span class="nc" id="L128">        String mode = GlobalConfig.getInstance().getRenderMode();</span>
+        try {
+<span class="nc" id="L130">            renderer = RendererFactory.create(mode);</span>
+<span class="nc" id="L131">        } catch (RendererCreationException e) {</span>
+<span class="nc" id="L132">            LOGGER.error(&quot;Renderer initialization failed&quot;, e);</span>
+<span class="nc" id="L133">            JOptionPane.showMessageDialog(this,</span>
+<span class="nc" id="L134">                String.format(&quot;无法初始化渲染器 %s: %s\n将使用默认Swing渲染器&quot;,</span>
+<span class="nc" id="L135">                    mode, e.getMessage()),</span>
+                &quot;渲染器错误&quot;, JOptionPane.ERROR_MESSAGE);
+<span class="nc" id="L137">            renderer = createFallbackRenderer();</span>
+<span class="nc" id="L138">        }</span>
+
+<span class="nc" id="L140">        drawingPanel = new DrawingPanel(shapes, renderer);</span>
+<span class="nc" id="L141">        add(drawingPanel, BorderLayout.CENTER);  // 添加绘图面板到中心区域</span>
+
+<span class="nc" id="L143">        JButton btnCircle = new JButton(&quot;添加圆形&quot;);</span>
+<span class="nc" id="L144">        JButton btnRect = new JButton(&quot;添加矩形&quot;);</span>
+<span class="nc" id="L145">        JButton btnEllipse = new JButton(&quot;添加椭圆&quot;);</span>
+<span class="nc" id="L146">        JButton btnTriangle = new JButton(&quot;添加三角形&quot;);</span>
+<span class="nc" id="L147">        JButton btnUndo = new JButton(&quot;撤销&quot;);</span>
+<span class="nc" id="L148">        JButton btnRedo = new JButton(&quot;重做&quot;);</span>
+
+<span class="nc" id="L150">        JPanel panel = new JPanel();</span>
+<span class="nc" id="L151">        panel.add(btnCircle);</span>
+<span class="nc" id="L152">        panel.add(btnRect);</span>
+<span class="nc" id="L153">        panel.add(btnEllipse);</span>
+<span class="nc" id="L154">        panel.add(btnTriangle);</span>
+<span class="nc" id="L155">        panel.add(btnUndo);</span>
+<span class="nc" id="L156">        panel.add(btnRedo);</span>
+
+        // 添加圆形按钮事件处理
+<span class="nc" id="L159">        btnCircle.addActionListener(e -&gt; {</span>
+            // 创建圆形实例，位置和半径根据已有图形数量动态调整
+<span class="nc" id="L161">            Circle c = new Circle(100 + shapes.size() * 10, 100, 30 + shapes.size() * 5);</span>
+<span class="nc" id="L162">            AddShapeCommand cmd = new AddShapeCommand(shapes, c);</span>
+<span class="nc" id="L163">            undoManager.executeCommand(cmd);</span>
+<span class="nc" id="L164">            repaint();</span>
+<span class="nc" id="L165">        });</span>
+
+<span class="nc" id="L167">        btnRect.addActionListener(e -&gt; {</span>
+<span class="nc" id="L168">            Rectangle r = new Rectangle(200, 150 + shapes.size() * 10, 60, 40);</span>
+<span class="nc" id="L169">            AddShapeCommand cmd = new AddShapeCommand(shapes, r);</span>
+<span class="nc" id="L170">            undoManager.executeCommand(cmd);</span>
+<span class="nc" id="L171">            repaint();</span>
+<span class="nc" id="L172">        });</span>
+
+<span class="nc" id="L174">        btnEllipse.addActionListener(e -&gt; {</span>
+<span class="nc" id="L175">            Ellipse e1 = new Ellipse(300, 200, 50, 30);</span>
+<span class="nc" id="L176">            AddShapeCommand cmd = new AddShapeCommand(shapes, e1);</span>
+<span class="nc" id="L177">            undoManager.executeCommand(cmd);</span>
+<span class="nc" id="L178">            repaint();</span>
+<span class="nc" id="L179">        });</span>
+
+<span class="nc" id="L181">        btnTriangle.addActionListener(e -&gt; {</span>
+<span class="nc" id="L182">            Triangle t = new Triangle(400, 300, 450, 350, 420, 390);</span>
+<span class="nc" id="L183">            AddShapeCommand cmd = new AddShapeCommand(shapes, t);</span>
+<span class="nc" id="L184">            undoManager.executeCommand(cmd);</span>
+<span class="nc" id="L185">            repaint();</span>
+<span class="nc" id="L186">        });</span>
+
+<span class="nc" id="L188">        btnUndo.addActionListener(e -&gt; {</span>
+<span class="nc" id="L189">            undoManager.undo();</span>
+<span class="nc" id="L190">            repaint();</span>
+<span class="nc" id="L191">        });</span>
+
+<span class="nc" id="L193">        btnRedo.addActionListener(e -&gt; {</span>
+<span class="nc" id="L194">            undoManager.redo();</span>
+<span class="nc" id="L195">            repaint();</span>
+<span class="nc" id="L196">        });</span>
+
+<span class="nc" id="L198">        JButton btnSave = new JButton(&quot;保存图形&quot;);</span>
+<span class="nc" id="L199">        btnSave.addActionListener(e -&gt; saveShapes());</span>
+
+<span class="nc" id="L201">        JButton btnLoad = new JButton(&quot;载入图形&quot;);</span>
+<span class="nc" id="L202">        btnLoad.addActionListener(e -&gt; loadShapes());</span>
+
+<span class="nc" id="L204">        panel.add(btnSave);</span>
+<span class="nc" id="L205">        panel.add(btnLoad);</span>
+
+<span class="nc" id="L207">        add(panel, BorderLayout.SOUTH);</span>
+
+<span class="nc" id="L209">        pack();  // 让窗口根据内容尺寸调整</span>
+<span class="nc" id="L210">        setLocationRelativeTo(null);  // 窗口居中</span>
+<span class="nc" id="L211">        setVisible(true);</span>
+
+
+<span class="nc" id="L214">    }</span>
+
+    // 移除paint()方法重写，完全使用DrawingPanel进行绘制
+
+
+    /**
+     * 保存当前图形列表到文件。
+     * 使用JFileChooser让用户选择保存位置，然后通过PersistenceManager
+     * 将图形列表序列化为JSON格式保存。
+     * 
+     * &lt;p&gt;处理流程：
+     * 1. 显示文件选择对话框
+     * 2. 用户选择保存位置
+     * 3. 调用PersistenceManager保存数据
+     * 4. 显示操作结果提示
+     * 
+     * @see PersistenceManager#saveShapesToFile(List, String)
+     */
+    private void saveShapes() {
+<span class="nc" id="L233">        JFileChooser chooser = new JFileChooser();</span>
+<span class="nc" id="L234">        int ret = chooser.showSaveDialog(this);</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">        if (ret == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L236">            File file = chooser.getSelectedFile();</span>
+            try {
+<span class="nc" id="L238">                PersistenceManager.getInstance().saveShapesToFile(shapes, file.getAbsolutePath());</span>
+<span class="nc" id="L239">                JOptionPane.showMessageDialog(this, &quot;保存成功&quot;);</span>
+<span class="nc" id="L240">            } catch (Exception ex) {</span>
+<span class="nc" id="L241">                JOptionPane.showMessageDialog(this, &quot;保存失败: &quot; + ex.getMessage());</span>
+<span class="nc" id="L242">            }</span>
+        }
+<span class="nc" id="L244">    }</span>
+
+
+    /**
+     * 从文件加载图形列表。
+     * 使用JFileChooser让用户选择要加载的文件，然后通过PersistenceManager
+     * 从JSON格式反序列化为图形对象列表。
+     * 
+     * &lt;p&gt;处理流程：
+     * 1. 显示文件选择对话框
+     * 2. 用户选择要加载的文件
+     * 3. 调用PersistenceManager加载数据
+     * 4. 清空当前图形列表并添加加载的图形
+     * 5. 刷新绘图面板显示新图形
+     * 6. 显示操作结果提示
+     * 
+     * @see PersistenceManager#loadShapesFromFile(String) 
+     */
+    private Renderer createFallbackRenderer() {
+        try {
+<span class="nc" id="L264">            return new SwingRenderer();</span>
+<span class="nc" id="L265">        } catch (Exception e) {</span>
+<span class="nc" id="L266">            LOGGER.error(&quot;Fallback renderer creation failed&quot;, e);</span>
+<span class="nc" id="L267">            throw new IllegalStateException(&quot;无法创建回退渲染器&quot;, e);</span>
+        }
+    }
+
+    private void loadShapes() {
+<span class="nc" id="L272">        JFileChooser chooser = new JFileChooser();</span>
+<span class="nc" id="L273">        int ret = chooser.showOpenDialog(this);</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">        if (ret == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L275">            File file = chooser.getSelectedFile();</span>
+            try {
+<span class="nc" id="L277">                List&lt;com.example.renderer.factory.Shape&gt; loadedShapes = PersistenceManager.getInstance().loadShapesFromFile(file.getAbsolutePath());</span>
+<span class="nc" id="L278">                shapes.clear();</span>
+<span class="nc" id="L279">                shapes.addAll(loadedShapes);</span>
+<span class="nc" id="L280">                drawingPanel.repaint();  // 这里刷新绘图面板</span>
+
+<span class="nc" id="L282">                JOptionPane.showMessageDialog(this, &quot;载入成功&quot;);</span>
+<span class="nc" id="L283">            } catch (Exception ex) {</span>
+<span class="nc" id="L284">                JOptionPane.showMessageDialog(this, &quot;载入失败: &quot; + ex.getMessage());</span>
+<span class="nc" id="L285">            }</span>
+        }
+<span class="nc" id="L287">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

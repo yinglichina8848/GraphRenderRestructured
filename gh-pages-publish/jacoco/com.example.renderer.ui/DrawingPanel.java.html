@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DrawingPanel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.ui</a> &gt; <span class="el_source">DrawingPanel.java</span></div><h1>DrawingPanel.java</h1><pre class="source lang-java linenums">package com.example.renderer.ui;
+
+/**
+ * DrawingPanel是SwingUI的绘图面板组件，负责显示所有图形。
+ * 
+ * &lt;p&gt;主要功能：
+ * &lt;ul&gt;
+ *   &lt;li&gt;维护图形列表和渲染器引用&lt;/li&gt;
+ *   &lt;li&gt;重写paintComponent()实现图形绘制&lt;/li&gt;
+ *   &lt;li&gt;默认尺寸800x600像素&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see SwingUI
+ * @see Shape
+ * @author liying
+ * @since 2025-06-14
+ */
+
+import javax.swing.*;
+import java.awt.*;
+import java.util.List;
+import java.util.Objects;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.factory.Shape;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.bridge.SwingRenderer;
+import com.example.renderer.factory.Shape;
+/**
+ * 绘图面板组件，负责显示所有图形。
+ * 
+ * &lt;p&gt;主要功能：
+ * &lt;ul&gt;
+ *   &lt;li&gt;维护图形列表和渲染器引用&lt;/li&gt;
+ *   &lt;li&gt;重写paintComponent()实现图形绘制&lt;/li&gt;
+ *   &lt;li&gt;默认尺寸800x600像素&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * @see SwingUI
+ * @see Shape
+ * @author liying
+ * @since 2025-06-14
+ */
+public class DrawingPanel extends JPanel {
+    /** 要渲染的图形列表 */
+    private List&lt;com.example.renderer.factory.Shape&gt; shapes;
+    
+    /** 使用的渲染器实现 */
+    private Renderer renderer;
+
+    /**
+     * 创建绘图面板
+     * @param shapes 要显示的图形列表(非null)
+     * @param renderer 使用的渲染器实现(非null)
+     * @throws NullPointerException 如果shapes或renderer为null
+     */
+<span class="nc" id="L56">    public DrawingPanel(List&lt;com.example.renderer.factory.Shape&gt; shapes, Renderer renderer) {</span>
+<span class="nc" id="L57">        this.shapes = shapes;</span>
+<span class="nc" id="L58">        this.renderer = renderer;</span>
+<span class="nc" id="L59">        setPreferredSize(new Dimension(800, 600));</span>
+<span class="nc" id="L60">        setBackground(Color.WHITE);</span>
+<span class="nc" id="L61">        setDoubleBuffered(true); // 启用双缓冲</span>
+<span class="nc" id="L62">    }</span>
+
+    /**
+     * 绘制组件内容
+     * @param g 绘图上下文对象
+     * @throws NullPointerException 如果g为null
+     */
+    @Override
+    protected void paintComponent(Graphics g) {
+<span class="nc" id="L71">        Objects.requireNonNull(g, &quot;Graphics context cannot be null&quot;);</span>
+<span class="nc" id="L72">        super.paintComponent(g);</span>
+<span class="nc" id="L73">        System.out.println(&quot;绘制图形数量：&quot; + shapes.size());</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (renderer instanceof SwingRenderer swingRenderer) {</span>
+<span class="nc" id="L75">            swingRenderer.setGraphics((Graphics2D) g);</span>
+<span class="nc bnc" id="L76" title="All 2 branches missed.">            for (Shape shape : shapes) {</span>
+<span class="nc" id="L77">                shape.render(renderer);</span>
+<span class="nc" id="L78">            }</span>
+        }
+<span class="nc" id="L80">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
