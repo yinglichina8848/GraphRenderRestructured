@@ -108,8 +108,16 @@ public class SwingUI extends JFrame {
         setLocationRelativeTo(null);
 
 
-        // 通过工厂或依赖注入获取Renderer
-        renderer = RendererFactory.create(GlobalConfig.getInstance().getRenderMode());
+        // 通过配置获取渲染器
+        String mode = GlobalConfig.getInstance().getRenderMode();
+        try {
+            renderer = RendererFactory.create(mode);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, 
+                "无法初始化渲染器: " + mode + "\n将使用默认渲染器",
+                "渲染器错误", JOptionPane.ERROR_MESSAGE);
+            renderer = new SwingRenderer(); // 回退到默认
+        }
 
         drawingPanel = new DrawingPanel(shapes, renderer);
         add(drawingPanel, BorderLayout.CENTER);  // 添加绘图面板到中心区域

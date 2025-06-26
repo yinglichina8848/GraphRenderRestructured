@@ -30,8 +30,17 @@ public class GlobalConfig {
     private final Set<String> validModes = new HashSet<>();
 
     private GlobalConfig() {
-        // 可以从配置文件加载
-        validModes.addAll(Set.of("swing", "svg", "test", "legacy"));
+        validModes.addAll(RendererFactory.getSupportedModes());
+        loadConfig();
+    }
+    
+    private void loadConfig() {
+        // TODO: 从配置文件加载配置
+        // 示例：从系统属性读取
+        String mode = System.getProperty("render.mode");
+        if (mode != null && validModes.contains(mode)) {
+            renderMode = mode;
+        }
     }
 
     public static synchronized GlobalConfig getInstance() {

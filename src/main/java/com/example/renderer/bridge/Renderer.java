@@ -3,7 +3,19 @@ package com.example.renderer.bridge;
 /**
  * 渲染器接口，定义各种图形的绘制方法。
  */
-public interface Renderer {
+public interface Renderer extends RendererInterface {
+    /**
+     * 设置渲染样式
+     * @param stroke 线条颜色
+     * @param fill 填充颜色
+     * @param width 线宽
+     */
+    void setStyle(String stroke, String fill, int width);
+    
+    /**
+     * 获取当前渲染上下文
+     */
+    Object getContext();
     /**
      * 绘制圆形
      * @param x 圆心x坐标
