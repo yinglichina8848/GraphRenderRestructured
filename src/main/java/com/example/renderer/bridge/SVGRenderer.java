@@ -19,12 +19,18 @@ package com.example.renderer.bridge;
 import java.util.Objects;
 import com.example.renderer.bridge.Renderer;
 
+/**
+ * SVG格式渲染器实现
+ */
 public class SVGRenderer implements Renderer {
     private StringBuilder svgBuilder = new StringBuilder();
     private String strokeColor = "black";
     private String fillColor = "none";
     private int strokeWidth = 1;
 
+    /**
+     * 创建SVG渲染器实例
+     */
     public SVGRenderer() {
         // 不再自动输出SVG文档头，由调用方控制
     }

@@ -30,6 +30,9 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import com.example.renderer.bridge.Renderer;
 
+/**
+ * Swing渲染器实现
+ */
 public class SwingRenderer implements Renderer {
     protected Graphics2D g; // 改为protected以便测试子类访问
 

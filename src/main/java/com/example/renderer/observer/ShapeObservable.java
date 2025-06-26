@@ -32,13 +32,23 @@ package com.example.renderer.observer;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 可观察的图形对象，维护观察者列表并在状态变化时通知观察者
+ */
 public class ShapeObservable {
     private final List<ShapeObserver> observers = new ArrayList<>();
 
+    /**
+     * 添加观察者
+     * @param o 要添加的观察者
+     */
     public void addObserver(ShapeObserver o) {
         observers.add(o);
     }
 
+    /**
+     * 通知所有观察者图形已变化
+     */
     public void notifyChange() {
         for (ShapeObserver o : observers) {
             o.onShapeChanged();

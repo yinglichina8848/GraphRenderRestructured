@@ -39,6 +39,13 @@ public class ApplicationContext {
             RendererFactory.create(GlobalConfig.getInstance().getRenderMode()));
     }
     
+    /**
+     * 注册一个类型及其对应的供应商
+     * @param <T> 要注册的类型
+     * @param type 要注册的类对象
+     * @param supplier 用于创建实例的供应商
+     * @throws NullPointerException 如果type或supplier为null
+     */
     public static <T> void register(Class<T> type, Supplier<T> supplier) {
         suppliers.put(type, supplier);
     }
@@ -50,6 +57,13 @@ public class ApplicationContext {
      * @return 已注册的Bean实例
      * @throws IllegalStateException 如果类型未注册
      * @throws BeanCreationException 如果实例创建失败
+     */
+    /**
+     * 获取指定类型的Bean实例
+     * @param <T> 要获取的类型
+     * @param type 要获取的类对象
+     * @return 已注册的Bean实例
+     * @throws IllegalStateException 如果类型未注册
      */
     public static <T> T getBean(Class<T> type) {
         try {
@@ -78,6 +92,9 @@ public class ApplicationContext {
         }
     }
     
+    /**
+     * 刷新应用上下文，清除所有缓存的Bean实例
+     */
     public static void refresh() {
         beans.clear();
     }

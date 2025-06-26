@@ -34,15 +34,25 @@ package com.example.renderer.command;
 import java.util.Stack;
 import java.util.Objects;
 
+/**
+ * 撤销管理器，管理命令的撤销和重做操作
+ */
 public class UndoManager {
     private final Stack<Command> undoStack = new Stack<>();
     private final Stack<Command> redoStack = new Stack<>();
     private int maxHistorySize = 100; // 默认最大历史记录数
 
+    /**
+     * 设置最大历史记录数
+     * @param size 最大历史记录数
+     */
     public void setMaxHistorySize(int size) {
         this.maxHistorySize = size;
     }
 
+    /**
+     * 清除所有历史记录
+     */
     public void clearHistory() {
         undoStack.clear();
         redoStack.clear();

@@ -70,6 +70,10 @@ public class GlobalConfig {
         return null;
     }
 
+    /**
+     * 获取全局配置单例实例
+     * @return 全局配置实例
+     */
     public static synchronized GlobalConfig getInstance() {
         if (instance == null) {
             instance = new GlobalConfig();
@@ -77,6 +81,11 @@ public class GlobalConfig {
         return instance;
     }
 
+    /**
+     * 设置渲染模式
+     * @param mode 要设置的渲染模式
+     * @throws IllegalArgumentException 如果模式不支持
+     */
     public synchronized void setRenderMode(String mode) {
         if (!validModes.contains(mode)) {
             throw new IllegalArgumentException("无效的渲染模式: " + mode);
@@ -84,6 +93,10 @@ public class GlobalConfig {
         this.renderMode = mode;
     }
 
+    /**
+     * 获取当前渲染模式
+     * @return 当前渲染模式
+     */
     public String getRenderMode() {
         return renderMode;
     }

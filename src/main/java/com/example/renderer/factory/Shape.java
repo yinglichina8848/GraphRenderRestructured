@@ -87,6 +87,12 @@ public interface Shape {
      */
     Shape clone() throws CloneNotSupportedException;
     
+    /**
+     * 验证坐标位置是否有效
+     * @param x x坐标
+     * @param y y坐标
+     * @throws IllegalArgumentException 如果坐标为负数
+     */
     default void validatePosition(int x, int y) {
         if (x < 0 || y < 0) {
             throw new IllegalArgumentException("坐标不能为负数");
