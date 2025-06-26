@@ -28,10 +28,10 @@ SOFTWARE.
 */
 
 html {
-    /* primary theme color. This will affect the entire websites color scheme: links, arrows, labels, ... */
-    --primary-color: #1779c4;
-    --primary-dark-color: #335c80;
-    --primary-light-color: #70b1e9;
+    /* 主色调配置 */
+    --primary-color: #2d7d9a;
+    --primary-dark-color: #1a5f75;
+    --primary-light-color: #4fa8c7;
     --on-primary-color: #ffffff;
 
     /* page base colors */
