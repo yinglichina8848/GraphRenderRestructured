@@ -33,6 +33,8 @@ package com.example.renderer.ui;
  */
 
 import javax.swing.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +77,7 @@ import com.example.renderer.singleton.PersistenceManager;
  * @since 1.0
  */
 public class SwingUI extends JFrame {
+    private static final Logger LOGGER = LoggerFactory.getLogger(SwingUI.class);
     /** 图形列表 */
     private final List<com.example.renderer.factory.Shape> shapes = new ArrayList<>();
     

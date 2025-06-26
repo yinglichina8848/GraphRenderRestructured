@@ -84,14 +84,4 @@ public interface Command {
     default boolean canRedo() { return true; }
 }
 
-public interface UndoableCommand extends Command {
-    void undo();
-    void redo();
-    boolean canUndo();
-    boolean canRedo();
-}
-
-public interface ValidatableCommand extends Command {
-    boolean canExecute();
-}
 

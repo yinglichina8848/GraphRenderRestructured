@@ -2,6 +2,8 @@ package com.example.renderer.core;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Supplier;
 
 /**
@@ -26,6 +28,7 @@ import java.util.function.Supplier;
 public class ApplicationContext {
     private static final Map<Class<?>, Object> beans = new HashMap<>();
     private static final Map<Class<?>, Supplier<?>> suppliers = new HashMap<>();
+    private static final ReadWriteLock lock = new ReentrantReadWriteLock();
     
     static {
         // 注册核心组件
