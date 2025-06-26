@@ -1,23 +1,26 @@
-/** @mainpage 图形渲染系统文档
+/** @mainpage 图形渲染系统 - 核心文档
  * @image html images/logo.png width=64px
  * 
- * @section intro 项目简介
- * 一个基于多种设计模式的图形渲染系统，提供:
- * - 多种基本图形绘制功能
- * - 可扩展的渲染器架构  
- * - 命令模式实现操作历史
- * - 多种导出格式支持
+ * @section intro_sec 项目简介
+ * 一个基于现代Java技术的图形渲染框架，主要特点：
+ * 
+ * - 🎨 多渲染后端支持(Swing/SVG/Legacy/Test)
+ * - 📐 基本图形绘制(圆形/矩形/三角形/椭圆)
+ * - 🔄 命令模式实现完整操作历史
+ * - 📊 多种导出格式(JSON/XML)
+ * - 🔍 可扩展的观察者机制
+ * - 🧩 基于工厂模式的灵活创建
  *
- * @section build 项目构建配置
- * 项目使用Maven构建，主要配置如下：
- *
- * @subsection deps 核心依赖
- * - **Gson**: 2.10.1 - 用于JSON序列化/反序列化
- * - **Guava**: 32.1.2-jre - Google核心工具库
- * - **SLF4J**: 2.0.9 - 日志门面接口
- * - **Logback**: 1.4.11 - 日志实现
- * - **JUnit Jupiter**: 5.10.2 - 单元测试框架
- * - **Mockito**: 5.12.0 - 测试mock框架
+ * @section build_sec 构建与依赖
+ * 
+ * @subsection deps_sec 核心依赖
+ * | 依赖项         | 版本      | 用途                  |
+ * |----------------|----------|----------------------|
+ * | Gson           | 2.10.1   | JSON序列化/反序列化    |
+ * | Guava          | 32.1.2   | 核心工具库            |
+ * | SLF4J+Logback  | 2.0.9    | 日志系统              |
+ * | JUnit Jupiter  | 5.10.2   | 单元测试框架          |
+ * | Mockito        | 5.12.0   | 测试Mock支持          |
  *
  * @subsection plugins 构建插件
  * - **maven-compiler-plugin**: 3.11.0 - 设置Java 17编译环境
@@ -48,15 +51,21 @@
  * java -jar target/graph-render-1.0-SNAPSHOT.jar
  * @endcode
  *
- * @section patterns 设计模式实现
- * - **工厂模式**: ShapeFactory, DefaultShapeFactory
- * - **单例模式**: GlobalConfig
- * - **适配器模式**: SVGRendererAdapter
- * - **桥接模式**: Shape + Renderer
- * - **代理模式**: RendererProxy
- * - **命令模式**: Commander, AddShapeCommand
- * - **访问者模式**: ShapeVisitor, JsonExportVisitor
- * - **观察者模式**: ShapeListObserver
+ * @section patterns_sec 设计模式应用
+ * 
+ * @subsection creation_sec 创建型模式
+ * - 🏭 **工厂模式**: `RendererFactory`、`ShapeFactory`
+ * - 🔒 **单例模式**: `GlobalConfig`、`PersistenceManager`
+ * 
+ * @subsection structural_sec 结构型模式  
+ * - 🔌 **适配器模式**: `LegacyRendererAdapter`
+ * - 🌉 **桥接模式**: `Shape` ←→ `Renderer` 抽象
+ * - 🎭 **代理模式**: `RemoteRendererProxy`
+ * 
+ * @subsection behavioral_sec 行为型模式
+ * - 📜 **命令模式**: `Command` 接口及实现类
+ * - 👀 **观察者模式**: `ShapeObserver` 体系
+ * - 🚶 **访问者模式**: `ExportVisitor` 实现
  *
  * @section classes 核心类列表
  * - \ref com.example.renderer.Shape
