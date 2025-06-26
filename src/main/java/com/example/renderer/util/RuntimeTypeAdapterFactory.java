@@ -70,10 +70,25 @@ public class RuntimeTypeAdapterFactory<T> implements TypeAdapterFactory {
         this.typeFieldName = typeFieldName;
     }
 
+    /**
+     * 创建运行时类型适配器工厂
+     * 
+     * @param <T> 基类型
+     * @param baseType 基类
+     * @param typeFieldName JSON中的类型字段名
+     * @return 适配器工厂实例
+     */
     public static <T> RuntimeTypeAdapterFactory<T> of(Class<T> baseType, String typeFieldName) {
         return new RuntimeTypeAdapterFactory<>(baseType, typeFieldName);
     }
 
+    /**
+     * 注册子类型
+     * 
+     * @param type 子类型类对象
+     * @param label 类型标签
+     * @return 适配器工厂实例(用于链式调用)
+     */
     public RuntimeTypeAdapterFactory<T> registerSubtype(Class<? extends T> type, String label) {
         labelToSubtype.put(label, type);
         subtypeToLabel.put(type, label);

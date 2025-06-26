@@ -48,10 +48,23 @@ public class RendererFactory {
         renderers.put(mode, supplier);
     }
     
+    /**
+     * 注册一个新的渲染器实现
+     * 
+     * @param mode 渲染模式名称
+     * @param supplier 渲染器供应商
+     */
     public static void register(String mode, Supplier<Renderer> supplier) {
         renderers.put(mode, supplier);
     }
     
+    /**
+     * 创建指定模式的渲染器实例
+     * 
+     * @param mode 渲染模式名称
+     * @return 渲染器实例
+     * @throws RendererCreationException 如果创建失败
+     */
     public static Renderer create(String mode) throws RendererCreationException {
         try {
             Supplier<Renderer> supplier = renderers.get(mode);
@@ -68,6 +81,11 @@ public class RendererFactory {
         }
     }
     
+    /**
+     * 获取所有支持的渲染模式
+     * 
+     * @return 支持的渲染模式集合
+     */
     public static Set<String> getSupportedModes() {
         return Collections.unmodifiableSet(renderers.keySet());
     }

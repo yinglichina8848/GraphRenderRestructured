@@ -53,10 +53,11 @@ public class ApplicationContext {
     @SuppressWarnings("unchecked")
     /**
      * 获取指定类型的Bean实例
-     * @param type Bean类型
+     * 
+     * @param <T> 要获取的Bean类型
+     * @param type 要获取的Bean类对象
      * @return 已注册的Bean实例
      * @throws IllegalStateException 如果类型未注册
-     * @throws BeanCreationException 如果实例创建失败
      */
     /**
      * 获取指定类型的Bean实例
