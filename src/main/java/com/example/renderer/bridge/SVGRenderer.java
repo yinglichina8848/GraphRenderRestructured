@@ -76,8 +76,9 @@ public class SVGRenderer implements Renderer {
         if (radius <= 0) {
             throw new IllegalArgumentException("半径必须为正数 (当前值: " + radius + ")");
         }
-        svgBuilder.append(String.format("<circle cx='%d' cy='%d' r='%d' />\n", 
-            x, y, radius));
+        String circle = String.format("<circle cx='%d' cy='%d' r='%d' />\n", x, y, radius);
+        svgBuilder.append(circle);
+        System.out.print(circle);
     }
 
     @Override
@@ -85,7 +86,9 @@ public class SVGRenderer implements Renderer {
         if (width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Width and height must be positive (width=" + width + ", height=" + height + ")");
         }
-        svgBuilder.append(String.format("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height));
+        String rect = String.format("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
+        svgBuilder.append(rect);
+        System.out.print(rect);
     }
 
     /**
@@ -107,12 +110,16 @@ public class SVGRenderer implements Renderer {
      */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-        svgBuilder.append(String.format("<polygon points='%d,%d %d,%d %d,%d' />\n", 
-            x1, y1, x2, y2, x3, y3));
+        String triangle = String.format("<polygon points='%d,%d %d,%d %d,%d' />\n", 
+            x1, y1, x2, y2, x3, y3);
+        svgBuilder.append(triangle);
+        System.out.print(triangle);
     }
 
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
-        svgBuilder.append(String.format("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width, height));
+        String ellipse = String.format("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width, height);
+        svgBuilder.append(ellipse);
+        System.out.print(ellipse);
     }
 }
