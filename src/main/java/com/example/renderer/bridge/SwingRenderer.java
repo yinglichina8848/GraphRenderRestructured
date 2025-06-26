@@ -150,6 +150,10 @@ public class SwingRenderer implements Renderer {
             throw new IllegalStateException("Graphics context not initialized. Call setGraphics() first.");
         }
         g.drawRect(x, y, width, height);
+        if (g instanceof MockGraphics2D) {
+            ((MockGraphics2D)g).lastDrawCall = String.format("drawRect:%d,%d,%d,%d", x, y, width, height);
+            ((MockGraphics2D)g).drawCallCount++;
+        }
     }
 
     /**

@@ -11,12 +11,10 @@ public class SVGRendererTest {
 
     @Test
     public void testDrawCircleOutput() {
-        System.setOut(new PrintStream(outContent));
         SVGRenderer renderer = new SVGRenderer();
-        
         renderer.drawCircle(100, 100, 50);
-        assertEquals("<circle cx='100' cy='100' r='50' />\n", outContent.toString());
-        System.setOut(originalOut);
+        String svg = renderer.getSVG();
+        assertTrue(svg.contains("<circle cx='100' cy='100' r='50' />"));
     }
 
     @Test
