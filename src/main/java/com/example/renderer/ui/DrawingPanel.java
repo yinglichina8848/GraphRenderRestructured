@@ -21,6 +21,8 @@ import java.awt.*;
 import java.util.List;
 import java.util.Objects;
 import com.example.renderer.bridge.Renderer;
+import com.example.renderer.factory.Shape;
+import com.example.renderer.bridge.Renderer;
 import com.example.renderer.bridge.SwingRenderer;
 import com.example.renderer.factory.Shape;
 /**

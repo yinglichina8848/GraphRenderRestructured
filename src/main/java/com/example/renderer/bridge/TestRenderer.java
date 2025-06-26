@@ -1,5 +1,7 @@
 package com.example.renderer.bridge;
 
+import com.example.renderer.bridge.Renderer;
+
 /**
  * 测试用渲染器，仅记录调用不实际渲染
  */

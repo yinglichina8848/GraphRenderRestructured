@@ -28,6 +28,7 @@ package com.example.renderer.bridge;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
+import com.example.renderer.bridge.Renderer;
 
 public class SwingRenderer implements Renderer {
     protected Graphics2D g; // 改为protected以便测试子类访问

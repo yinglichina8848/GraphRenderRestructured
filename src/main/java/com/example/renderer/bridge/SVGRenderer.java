@@ -17,6 +17,7 @@ package com.example.renderer.bridge;
  * @since 1.0
  */
 import java.util.Objects;
+import com.example.renderer.bridge.Renderer;
 
 public class SVGRenderer implements Renderer {
     private StringBuilder svgBuilder = new StringBuilder();
