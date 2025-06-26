@@ -17,10 +17,12 @@ RECURSIVE              = YES
 # HTML输出配置
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
-HTML_EXTRA_STYLESHEET  = docs/doxygen-awesome.css
-HTML_EXTRA_FILES       = docs/logo.png
-GENERATE_TREEVIEW    = YES     # 启用树形导航
-DISABLE_INDEX        = NO      # 确保索引可用
+HTML_EXTRA_STYLESHEET  = ../doxygen-awesome.css
+HTML_EXTRA_FILES       = 
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+SEARCHENGINE           = YES
+GENERATE_LATEX         = NO
 
 # 图表生成配置
 HAVE_DOT               = YES
