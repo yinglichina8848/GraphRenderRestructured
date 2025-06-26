@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>REFERENCE</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">REFERENCE</h1>
+</header>
+<p>以下是《核心API参考手册》和《部署手册》的完整内容框架及示例实现，采用技术文档标准格式：</p>
+<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ┃ 核心API参考手册 ┃ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<ol type="1">
+<li>文档标识</li>
+</ol>
+<p>• 版本：v2.1<br />
+• 适用版本：GraphRenderSystem ≥2.0<br />
+• 生成工具：JavaDoc 18+<br />
+• 最后更新：2025-06-28</p>
+<ol start="2" type="1">
+<li>渲染核心API</li>
+</ol>
+<p>2.1 Renderer接口</p>
+<p>/**<br />
+* 图形渲染核心接口<br />
+* <span class="citation" data-cites="implSpec">@implSpec</span> 实现类必须保证线程安全<br />
+* <span class="citation" data-cites="since">@since</span> 2.0<br />
+*/<br />
+public interface Renderer {<br />
+/**<br />
+* 设置渲染样式<br />
+* <span class="citation" data-cites="param">@param</span> stroke 十六进制颜色码（如“#FF0000”）<br />
+* <span class="citation" data-cites="param">@param</span> fill 填充色（“none”表示无填充）<br />
+* <span class="citation" data-cites="param">@param</span> width 线宽（像素，范围1-10）<br />
+* <span class="citation" data-cites="throws">@throws</span> IllegalArgumentException 参数非法时抛出<br />
+*/<br />
+void setStyle(String stroke, String fill, int width);</p>
+<pre><code>// 其他方法...                                                                                                                  </code></pre>
+<p>}</p>
+<p>典型调用：</p>
+<p>renderer.setStyle(“#0000FF”, “none”, 2); // 蓝色描边，无填充</p>
+<ol start="3" type="1">
+<li>图形对象API</li>
+</ol>
+<p>3.1 Shape接口</p>
+<p>/**<br />
+* 图形对象基础接口<br />
+* <span class="citation" data-cites="see">@see</span> Circle 圆形实现<br />
+* <span class="citation" data-cites="see">@see</span> Rectangle 矩形实现<br />
+*/<br />
+public interface Shape {<br />
+/**<br />
+* 渲染当前图形<br />
+* <span class="citation" data-cites="param">@param</span> renderer 非空渲染器实例<br />
+* <span class="citation" data-cites="throws">@throws</span> NullPointerException 当renderer为null时抛出<br />
+*/<br />
+void render(Renderer renderer);<br />
+}</p>
+<p>继承体系：</p>
+<p>classDiagram<br />
+Shape &lt;|– Circle<br />
+Shape &lt;|– Rectangle<br />
+Shape : +render(Renderer)<br />
+Circle : +int radius<br />
+Rectangle : +int width, height</p>
+<ol start="4" type="1">
+<li>命令系统API</li>
+</ol>
+<p>4.1 Command接口</p>
+<p>/**<br />
+* 命令模式基类<br />
+* <span class="citation" data-cites="see">@see</span> UndoManager 命令管理器<br />
+*/<br />
+public interface Command {<br />
+/**<br />
+* 执行命令<br />
+* <span class="citation" data-cites="return">@return</span> 执行是否成功<br />
+* <span class="citation" data-cites="throws">@throws</span> IllegalStateException 当条件不满足时抛出<br />
+*/<br />
+boolean execute();</p>
+<pre><code>// undo/redo方法...                                                                                                             </code></pre>
+<p>}</p>
+<p>时序逻辑：</p>
+<p>sequenceDiagram<br />
+Client-&gt;&gt;+Command: execute()<br />
+Command-&gt;&gt;+Receiver: 执行业务操作<br />
+Receiver–&gt;&gt;-Command: 结果<br />
+Command–&gt;&gt;-Client: 状态</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</p>
+<p>文档维护说明：</p>
+<p>1 API手册随代码变更实时更新（通过CI自动生成）<br />
+2 关键变更需在CHANGELOG.md中记录</p>
+<p>附件：</p>
+<p>• API完整索引<br />
+• 部署检查清单</p>
+<p>建议将这两个文档存放在docs/目录下：</p>
+<p>doc/<br />
+├── api/<br />
+│ ├── REFERENCE.md # 核心API手册<br />
+│ └── diagrams/ # UML图源文件<br />
+└── operations/<br />
+├── DEPLOYMENT.md # 部署手册<br />
+└── monitoring/ # 监控配置模板</p>
+</body>
+</html>

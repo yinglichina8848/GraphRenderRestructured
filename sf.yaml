@@ -1,0 +1,5 @@
+provider: openai
+model: deepseek-ai/DeepSeek-R1
+api_base: https://api.siliconflow.cn/v1/
+api_key: sk-cmqintvdalmypvyxuanotoysodnnrklxjxqwyiuhhukmyded
+

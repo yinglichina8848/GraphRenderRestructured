@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>class-diagram</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">class-diagram</h1>
+</header>
+<h1 id="系统类图">系统类图</h1>
+<pre class="plantuml"><code>@startuml
+
+&#39; 渲染器相关类
+interface Renderer {
+  +setStyle(stroke, fill, width)
+  +getContext(): Object
+  +beginFrame()
+  +endFrame()
+  +drawCircle(x, y, radius)
+  +drawRectangle(x, y, width, height)
+  +drawEllipse(x, y, width, height)
+  +drawTriangle(x1, y1, x2, y2, x3, y3)
+}
+
+class SwingRenderer {
+  -Graphics2D g
+  +setGraphics(g)
+}
+
+class SVGRenderer {
+  -StringBuilder svgBuilder
+  +getSVG(): String
+}
+
+class LegacyRendererAdapter {
+  -LegacyRenderer legacyRenderer
+}
+
+class RemoteRendererProxy {
+  -Renderer realRenderer
+  +RemoteRendererProxy(realRenderer)
+}
+
+&#39; 图形相关类
+interface Shape {
+  +draw(renderer)
+}
+
+class Circle {
+  -int x, y, radius
+}
+
+class Rectangle {
+  -int x, y, width, height
+}
+
+class Triangle {
+  -int x1, y1, x2, y2, x3, y3
+}
+
+class Ellipse {
+  -int x, y, width, height
+}
+
+&#39; 工厂模式
+interface ShapeFactory {
+  +createCircle(x, y, radius): Circle
+  +createRectangle(x, y, width, height): Rectangle
+  +createTriangle(x1, y1, x2, y2, x3, y3): Triangle
+  +createEllipse(x, y, width, height): Ellipse
+}
+
+&#39; 命令模式
+interface Command {
+  +execute()
+  +undo()
+  +redo()
+}
+
+class UndoManager {
+  -Stack&lt;Command&gt; undoStack
+  -Stack&lt;Command&gt; redoStack
+  +executeCommand(cmd)
+  +undo()
+  +redo()
+}
+
+&#39; 观察者模式
+interface ShapeObserver {
+  +onShapeChanged()
+}
+
+class LoggingShapeObserver {
+  +onShapeChanged()
+}
+
+&#39; 关系定义
+Renderer &lt;|-- SwingRenderer
+Renderer &lt;|-- SVGRenderer
+Renderer &lt;|-- LegacyRendererAdapter
+Renderer &lt;|-- RemoteRendererProxy
+
+Shape &lt;|-- Circle
+Shape &lt;|-- Rectangle
+Shape &lt;|-- Triangle
+Shape &lt;|-- Ellipse
+
+LegacyRendererAdapter --&gt; LegacyRenderer
+RemoteRendererProxy --&gt; Renderer
+
+ShapeFactory ..&gt; Circle
+ShapeFactory ..&gt; Rectangle
+ShapeFactory ..&gt; Triangle
+ShapeFactory ..&gt; Ellipse
+
+UndoManager --&gt; Command
+LoggingShapeObserver ..|&gt; ShapeObserver
+
+@enduml</code></pre>
+<h2 id="关键类说明">关键类说明</h2>
+<h3 id="渲染器相关">渲染器相关</h3>
+<ul>
+<li><code>Renderer</code>: 定义统一的渲染接口</li>
+<li><code>SwingRenderer</code>: 基于Swing的实现</li>
+<li><code>SVGRenderer</code>: 生成SVG格式输出</li>
+<li><code>LegacyRendererAdapter</code>: 适配旧版渲染器</li>
+<li><code>RemoteRendererProxy</code>: 远程渲染代理</li>
+</ul>
+<h3 id="图形相关">图形相关</h3>
+<ul>
+<li><code>Shape</code>: 图形基类接口</li>
+<li><code>Circle</code>/<code>Rectangle</code>/<code>Triangle</code>/<code>Ellipse</code>: 具体图形实现</li>
+</ul>
+<h3 id="设计模式">设计模式</h3>
+<ul>
+<li><code>ShapeFactory</code>: 工厂模式创建图形</li>
+<li><code>Command</code>/<code>UndoManager</code>: 命令模式实现撤销重做</li>
+<li><code>ShapeObserver</code>: 观察者模式通知变化</li>
+</ul>
+<h2 id="如何查看图表">如何查看图表</h2>
+<ol type="1">
+<li>安装PlantUML插件(VSCode/IntelliJ等)</li>
+<li>或使用在线PlantUML渲染器</li>
+<li>将代码复制到编辑器中即可生成图表 # 系统类图文档</li>
+</ol>
+<pre class="plantuml"><code>@startuml
+
+&#39; 1. 渲染器核心接口和实现
+interface Renderer {
+  +setStyle(stroke, fill, width)
+  +getContext(): Object
+  +beginFrame()
+  +endFrame()
+  +drawCircle(x, y, radius)
+  +drawRectangle(x, y, width, height)
+  +drawEllipse(x, y, width, height)
+  +drawTriangle(x1, y1, x2, y2, x3, y3)
+}
+
+class SwingRenderer {
+  -Graphics2D graphics
+  +setGraphics(g: Graphics2D)
+}
+
+class SVGRenderer {
+  -StringBuilder svgBuilder
+  +getSVG(): String
+}
+
+class LegacyRendererAdapter {
+  -LegacyRenderer legacyImpl
+  +LegacyRendererAdapter(legacy: LegacyRenderer)
+}
+
+class RemoteRendererProxy {
+  -Renderer realRenderer
+  +RemoteRendererProxy(renderer: Renderer)
+}
+
+&#39; 2. 图形相关类
+interface Shape {
+  +draw(renderer: Renderer)
+  +move(dx: int, dy: int)
+}
+
+class Circle {
+  -int x, y, radius
+  +getRadius(): int
+}
+
+class Rectangle {
+  -int x, y, width, height
+  +getWidth(): int
+  +getHeight(): int
+}
+
+class Triangle {
+  -int x1, y1, x2, y2, x3, y3
+}
+
+class Ellipse {
+  -int x, y, width, height
+}
+
+&#39; 3. 工厂模式
+interface ShapeFactory {
+  +createCircle(x, y, radius): Circle
+  +createRectangle(x, y, width, height): Rectangle
+  +createTriangle(x1, y1, x2, y2, x3, y3): Triangle
+  +createEllipse(x, y, width, height): Ellipse
+}
+
+&#39; 4. 命令模式
+interface Command {
+  +execute()
+  +undo()
+  +redo()
+}
+
+class UndoManager {
+  -Stack&lt;Command&gt; undoStack
+  -Stack&lt;Command&gt; redoStack
+  +executeCommand(cmd: Command)
+  +undo()
+  +redo()
+}
+
+&#39; 5. 观察者模式
+interface ShapeObserver {
+  +onShapeChanged()
+}
+
+class LoggingShapeObserver {
+  -DateTimeFormatter formatter
+  +onShapeChanged()
+}
+
+&#39; 6. 关系定义
+Renderer &lt;|-- SwingRenderer
+Renderer &lt;|-- SVGRenderer
+Renderer &lt;|-- LegacyRendererAdapter
+Renderer &lt;|-- RemoteRendererProxy
+
+Shape &lt;|-- Circle
+Shape &lt;|-- Rectangle
+Shape &lt;|-- Triangle
+Shape &lt;|-- Ellipse
+
+LegacyRendererAdapter --&gt; LegacyRenderer
+RemoteRendererProxy --&gt; Renderer
+
+ShapeFactory ..&gt; Circle
+ShapeFactory ..&gt; Rectangle
+ShapeFactory ..&gt; Triangle
+ShapeFactory ..&gt; Ellipse
+
+UndoManager --&gt; Command
+LoggingShapeObserver ..|&gt; ShapeObserver
+
+@enduml</code></pre>
+<h2 id="类说明">类说明</h2>
+<h3 id="渲染器相关-1">1. 渲染器相关</h3>
+<ul>
+<li><strong>Renderer</strong>: 定义统一的渲染接口</li>
+<li><strong>SwingRenderer</strong>: 基于Java Swing的实现</li>
+<li><strong>SVGRenderer</strong>: 生成SVG格式输出</li>
+<li><strong>LegacyRendererAdapter</strong>: 适配旧版渲染器</li>
+<li><strong>RemoteRendererProxy</strong>: 远程渲染代理</li>
+</ul>
+<h3 id="图形相关-1">2. 图形相关</h3>
+<ul>
+<li><strong>Shape</strong>: 图形基类接口</li>
+<li><strong>Circle</strong>: 圆形实现</li>
+<li><strong>Rectangle</strong>: 矩形实现</li>
+<li><strong>Triangle</strong>: 三角形实现</li>
+<li><strong>Ellipse</strong>: 椭圆实现</li>
+</ul>
+<h3 id="工厂模式">3. 工厂模式</h3>
+<ul>
+<li><strong>ShapeFactory</strong>: 图形创建工厂接口</li>
+</ul>
+<h3 id="命令模式">4. 命令模式</h3>
+<ul>
+<li><strong>Command</strong>: 命令接口</li>
+<li><strong>UndoManager</strong>: 撤销/重做管理器</li>
+</ul>
+<h3 id="观察者模式">5. 观察者模式</h3>
+<ul>
+<li><strong>ShapeObserver</strong>: 观察者接口</li>
+<li><strong>LoggingShapeObserver</strong>: 日志观察者实现</li>
+</ul>
+<h2 id="关键关系说明">关键关系说明</h2>
+<ol type="1">
+<li><strong>实现关系</strong>:
+<ul>
+<li>所有具体渲染器实现<code>Renderer</code>接口</li>
+<li>所有具体图形实现<code>Shape</code>接口</li>
+</ul></li>
+<li><strong>适配关系</strong>:
+<ul>
+<li><code>LegacyRendererAdapter</code>适配<code>LegacyRenderer</code>到<code>Renderer</code>接口</li>
+</ul></li>
+<li><strong>代理关系</strong>:
+<ul>
+<li><code>RemoteRendererProxy</code>代理真实的<code>Renderer</code>实现</li>
+</ul></li>
+<li><strong>工厂关系</strong>:
+<ul>
+<li><code>ShapeFactory</code>负责创建各种图形对象</li>
+</ul></li>
+<li><strong>命令模式</strong>:
+<ul>
+<li><code>UndoManager</code>管理<code>Command</code>对象的执行历史</li>
+</ul></li>
+<li><strong>观察者模式</strong>:
+<ul>
+<li><code>LoggingShapeObserver</code>实现<code>ShapeObserver</code>接口</li>
+</ul></li>
+</ol>
+<h2 id="如何使用">如何使用</h2>
+<ol type="1">
+<li>安装PlantUML插件(VSCode/IntelliJ等)</li>
+<li>将上述代码复制到<code>.puml</code>文件中</li>
+<li>使用插件渲染生成类图</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="co"># 生成PNG图片</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="ex">plantuml</span> class-diagram.puml -png</span></code></pre></div>
+<blockquote>
+<p>注意：需要先安装PlantUML，在Ubuntu上可以使用<code>sudo apt-get install plantuml</code></p>
+</blockquote>
+</body>
+</html>

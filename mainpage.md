@@ -3,24 +3,14 @@
  * 
  * @section doc_links 项目文档
  * 以下是项目相关文档列表：
- * @subpage md_doc_index
-# 欢迎使用 GraphRender 文档
-
-这是项目的主页简介，你可以在以下部分找到详细说明：
-
-## 📄 文档索引
-
-- [安装指南](install.md)
-- [使用教程](usage.md)
-- [开发文档](dev.md)
-- [API 参考](api.md)
-
-## 📚 附加资料
-
-- [项目结构说明](structure.md)
-- [贡献指南](contributing.md)
-
- * 
+ * - @subpage architecture
+ * - @subpage usage
+ * - @subpage dev
+ * - @subpage api
+ * - @subpage structure
+ * - @subpage install
+ * - @subpage contributing
+ *
  * @section intro_sec 项目简介
  * 一个基于现代Java技术的图形渲染框架，主要特点：
  * 
@@ -116,3 +106,4 @@
  * [Shape] <|-- [Rectangle]
  * @enduml
  */
+

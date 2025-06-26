@@ -1,0 +1,127 @@
+<h1 id="图形渲染系统api使用指南">图形渲染系统API使用指南</h1>
+<h2 id="渲染器接口renderer">1. 渲染器接口(Renderer)</h2>
+<h3 id="基本用法">基本用法</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co">// 获取渲染器实例</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="bu">Renderer</span> renderer = RendererFactory.<span class="fu">getRenderer</span>(<span class="st">&quot;swing&quot;</span>);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="co">// 设置绘图样式</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a>renderer.<span class="fu">setStyle</span>(<span class="st">&quot;#FF0000&quot;</span>, <span class="st">&quot;#00FF00&quot;</span>, <span class="dv">2</span>); <span class="co">// 红色描边，绿色填充，2px线宽</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="co">// 绘制图形</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>renderer.<span class="fu">beginFrame</span>();</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a>renderer.<span class="fu">drawCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">50</span>);</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>renderer.<span class="fu">drawRectangle</span>(<span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">80</span>);</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a>renderer.<span class="fu">endFrame</span>();</span></code></pre></div>
+<h3 id="方法说明">方法说明</h3>
+<h4 id="setstylestring-stroke-string-fill-int-width">setStyle(String stroke, String fill, int width)</h4>
+<ul>
+<li><p>功能：设置绘图样式</p></li>
+<li><p>参数：</p>
+<ul>
+<li>stroke: 描边颜色(十六进制或颜色名称)</li>
+<li>fill: 填充颜色</li>
+<li>width: 线宽(像素)</li>
+</ul></li>
+<li><p>示例：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>renderer.<span class="fu">setStyle</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="dv">3</span>);</span></code></pre></div></li>
+</ul>
+<h4 id="drawcircleint-x-int-y-int-radius">drawCircle(int x, int y, int radius)</h4>
+<ul>
+<li><p>功能：绘制圆形</p></li>
+<li><p>参数：</p>
+<ul>
+<li>x,y: 圆心坐标</li>
+<li>radius: 半径(必须&gt;0)</li>
+</ul></li>
+<li><p>异常：</p>
+<ul>
+<li>IllegalArgumentException: 半径不合法</li>
+</ul></li>
+<li><p>示例：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a>renderer.<span class="fu">drawCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">30</span>);</span></code></pre></div></li>
+</ul>
+<h2 id="图形工厂shapefactory">2. 图形工厂(ShapeFactory)</h2>
+<h3 id="基本用法-1">基本用法</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>ShapeFactory factory = <span class="kw">new</span> <span class="fu">ShapeFactoryImpl</span>();</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="co">// 创建图形</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a>Circle circle = factory.<span class="fu">createCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">30</span>);</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true"></a><span class="bu">Rectangle</span> rect = factory.<span class="fu">createRectangle</span>(<span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">80</span>);</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true"></a><span class="co">// 使用图形</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true"></a>circle.<span class="fu">draw</span>(renderer);</span></code></pre></div>
+<h3 id="方法说明-1">方法说明</h3>
+<h4 id="createcircleint-x-int-y-int-radius">createCircle(int x, int y, int radius)</h4>
+<ul>
+<li><p>功能：创建圆形</p></li>
+<li><p>参数：</p>
+<ul>
+<li>x,y: 圆心坐标</li>
+<li>radius: 半径(必须&gt;0)</li>
+</ul></li>
+<li><p>返回：Circle实例</p></li>
+<li><p>异常：</p>
+<ul>
+<li>IllegalArgumentException: 半径不合法</li>
+</ul></li>
+<li><p>示例：</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a>Circle circle = factory.<span class="fu">createCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">30</span>);</span></code></pre></div></li>
+</ul>
+<h2 id="命令模式commandundomanager">3. 命令模式(Command/UndoManager)</h2>
+<h3 id="基本用法-2">基本用法</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="bu">UndoManager</span> undoManager = <span class="kw">new</span> <span class="bu">UndoManager</span>();</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="bu">List</span>&lt;<span class="bu">Shape</span>&gt; shapes = <span class="kw">new</span> <span class="bu">ArrayList</span>&lt;&gt;();</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="co">// 创建并执行命令</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a>Command addCmd = <span class="kw">new</span> <span class="fu">AddShapeCommand</span>(shapes, circle);</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a>undoManager.<span class="fu">executeCommand</span>(addCmd);</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="co">// 撤销操作</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="kw">if</span> (undoManager.<span class="fu">canUndo</span>()) {</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a>    undoManager.<span class="fu">undo</span>();</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a>}</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="co">// 重做操作  </span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="kw">if</span> (undoManager.<span class="fu">canRedo</span>()) {</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a>    undoManager.<span class="fu">redo</span>();</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a>}</span></code></pre></div>
+<h2 id="渲染器实现类">4. 渲染器实现类</h2>
+<h3 id="swingrenderer">SwingRenderer</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a>SwingRenderer renderer = <span class="kw">new</span> <span class="fu">SwingRenderer</span>();</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true"></a>renderer.<span class="fu">setGraphics</span>(graphics2D); <span class="co">// 必须设置Graphics2D上下文</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true"></a>renderer.<span class="fu">drawCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">50</span>);</span></code></pre></div>
+<h3 id="svgrenderer">SVGRenderer</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a>SVGRenderer renderer = <span class="kw">new</span> <span class="fu">SVGRenderer</span>();</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>renderer.<span class="fu">beginFrame</span>();</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>renderer.<span class="fu">drawCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">50</span>);</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a><span class="bu">String</span> svg = renderer.<span class="fu">getSVG</span>(); <span class="co">// 获取SVG字符串</span></span></code></pre></div>
+<h3 id="legacyrendereradapter">LegacyRendererAdapter</h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a>LegacyRenderer legacy = <span class="kw">new</span> <span class="fu">LegacyRendererImpl</span>();</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a><span class="bu">Renderer</span> adapter = <span class="kw">new</span> <span class="fu">LegacyRendererAdapter</span>(legacy);</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>adapter.<span class="fu">drawCircle</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">50</span>); <span class="co">// 调用旧版实现</span></span></code></pre></div>
+<h2 id="常见问题">5. 常见问题</h2>
+<h3 id="q-如何切换渲染器">Q: 如何切换渲染器？</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="co">// 使用Swing渲染器</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a><span class="bu">Renderer</span> swingRenderer = RendererFactory.<span class="fu">getRenderer</span>(<span class="st">&quot;swing&quot;</span>);</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a><span class="co">// 使用SVG渲染器 </span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="bu">Renderer</span> svgRenderer = RendererFactory.<span class="fu">getRenderer</span>(<span class="st">&quot;svg&quot;</span>);</span></code></pre></div>
+<h3 id="q-如何实现撤销重做">Q: 如何实现撤销/重做？</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="bu">UndoManager</span> manager = <span class="kw">new</span> <span class="bu">UndoManager</span>();</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true"></a><span class="co">// 执行命令</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true"></a>manager.<span class="fu">executeCommand</span>(<span class="kw">new</span> <span class="fu">AddShapeCommand</span>(shapes, circle));</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true"></a><span class="co">// 撤销</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true"></a>manager.<span class="fu">undo</span>();</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true"></a><span class="co">// 重做</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true"></a>manager.<span class="fu">redo</span>();</span></code></pre></div>
+<h2 id="最佳实践">6. 最佳实践</h2>
+<ol type="1">
+<li>总是先调用<code>beginFrame()</code>再开始绘制</li>
+<li>使用工厂方法创建图形对象</li>
+<li>对用户输入参数进行校验</li>
+<li>使用命令模式实现撤销/重做功能</li>
+<li>通过观察者模式监听图形变化</li>
+</ol>

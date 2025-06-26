@@ -108,8 +108,8 @@ public class LegacyRendererAdapter implements Renderer {
      */
     @Override
     public synchronized void drawCircle(int x, int y, int radius) {
-<span class="pc bpc" id="L111" title="1 of 2 branches missed.">        if (radius &lt;= 0) {</span>
-<span class="nc" id="L112">            throw new IllegalArgumentException(&quot;半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
+<span class="fc bfc" id="L111" title="All 2 branches covered.">        if (radius &lt;= 0) {</span>
+<span class="fc" id="L112">            throw new IllegalArgumentException(&quot;半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
         }
         try {
 <span class="fc" id="L115">            legacyRenderer.drawLegacyCircle(x, y, radius);</span>
@@ -157,8 +157,8 @@ public class LegacyRendererAdapter implements Renderer {
      */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-<span class="fc" id="L160">        legacyRenderer.drawLegacyTriangle(x1, y1, x2, y2, x3, y3);</span>
-<span class="fc" id="L161">    }</span>
+<span class="nc" id="L160">        legacyRenderer.drawLegacyTriangle(x1, y1, x2, y2, x3, y3);</span>
+<span class="nc" id="L161">    }</span>
 
     /**
      * 绘制椭圆，转发调用到LegacyRenderer的drawLegacyEllipse()方法。
@@ -177,8 +177,8 @@ public class LegacyRendererAdapter implements Renderer {
      */
     @Override
     public void drawEllipse(int x, int y, int rx, int ry) {
-<span class="fc" id="L180">        legacyRenderer.drawLegacyEllipse(x, y, rx, ry);</span>
-<span class="fc" id="L181">    }</span>
+<span class="nc" id="L180">        legacyRenderer.drawLegacyEllipse(x, y, rx, ry);</span>
+<span class="nc" id="L181">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

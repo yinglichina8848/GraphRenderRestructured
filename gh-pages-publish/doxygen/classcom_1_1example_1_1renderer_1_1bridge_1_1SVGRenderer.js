@@ -8,5 +8,6 @@ var classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer =
     [ "drawTriangle", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a818836e2da0eb4b661447796ec587249", null ],
     [ "endFrame", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#abe4fb1113c25ced6b8619ed82c0dee36", null ],
     [ "getContext", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#ae2025c2512c87a15935f12edbe8e651e", null ],
+    [ "getSVG", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#acf391c20d9dbc0c47c2e3d2ffd08e6f3", null ],
     [ "setStyle", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a5e5b346b80110f750729d5b1172d9845", null ]
 ];

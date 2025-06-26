@@ -33,7 +33,7 @@ import com.example.renderer.bridge.Renderer;
 /**
  * Swing渲染器实现
  */
-<span class="nc" id="L36">public class SwingRenderer implements Renderer {</span>
+<span class="fc" id="L36">public class SwingRenderer implements Renderer {</span>
     /**
      * Graphics2D绘图上下文
      * 设置为protected以便子类可以访问
@@ -60,21 +60,21 @@ import com.example.renderer.bridge.Renderer;
      * @since 2025-06-24
      */
     public void setGraphics(Graphics2D g) {
-<span class="nc" id="L63">        this.g = g;</span>
-<span class="nc" id="L64">        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, </span>
+<span class="fc" id="L63">        this.g = g;</span>
+<span class="fc" id="L64">        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, </span>
                           RenderingHints.VALUE_ANTIALIAS_ON);
-<span class="nc" id="L66">        g.setColor(java.awt.Color.BLUE);</span>
-<span class="nc" id="L67">        g.setStroke(new java.awt.BasicStroke(2));</span>
-<span class="nc" id="L68">    }</span>
+<span class="fc" id="L66">        g.setColor(java.awt.Color.BLUE);</span>
+<span class="fc" id="L67">        g.setStroke(new java.awt.BasicStroke(2));</span>
+<span class="fc" id="L68">    }</span>
 
     @Override
     public void setStyle(String stroke, String fill, int width) {
-<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (g != null) {</span>
-<span class="nc" id="L73">            g.setStroke(new BasicStroke(width));</span>
-<span class="nc" id="L74">            g.setColor(Color.decode(stroke));</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if (g != null) {</span>
+<span class="fc" id="L73">            g.setStroke(new BasicStroke(width));</span>
+<span class="fc" id="L74">            g.setColor(Color.decode(stroke));</span>
             // 填充颜色处理
         }
-<span class="nc" id="L77">    }</span>
+<span class="fc" id="L77">    }</span>
 
     @Override
     public Object getContext() {
@@ -113,14 +113,14 @@ import com.example.renderer.bridge.Renderer;
      */
     @Override
     public void drawCircle(int x, int y, int radius) {
-<span class="nc bnc" id="L116" title="All 2 branches missed.">        if (radius &lt;= 0) {</span>
-<span class="nc" id="L117">            throw new IllegalArgumentException(&quot;Radius must be positive (was &quot; + radius + &quot;)&quot;);</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if (radius &lt;= 0) {</span>
+<span class="fc" id="L117">            throw new IllegalArgumentException(&quot;Radius must be positive (was &quot; + radius + &quot;)&quot;);</span>
         }
-<span class="nc bnc" id="L119" title="All 2 branches missed.">        if (g == null) {</span>
-<span class="nc" id="L120">            throw new IllegalStateException(&quot;Graphics context not initialized. Call setGraphics() first.&quot;);</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        if (g == null) {</span>
+<span class="fc" id="L120">            throw new IllegalStateException(&quot;Graphics context not initialized. Call setGraphics() first.&quot;);</span>
         }
-<span class="nc" id="L122">        g.drawOval(x - radius, y - radius, radius * 2, radius * 2);</span>
-<span class="nc" id="L123">    }</span>
+<span class="fc" id="L122">        g.drawOval(x - radius, y - radius, radius * 2, radius * 2);</span>
+<span class="fc" id="L123">    }</span>
 
     /**
      * 绘制矩形
@@ -143,13 +143,14 @@ import com.example.renderer.bridge.Renderer;
      */
     @Override
     public void drawRectangle(int x, int y, int width, int height) {
-<span class="nc bnc" id="L146" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="pc bpc" id="L146" title="2 of 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
 <span class="nc" id="L147">            throw new IllegalArgumentException(&quot;Width and height must be positive&quot;);</span>
         }
-<span class="nc bnc" id="L149" title="All 2 branches missed.">        if (g != null) {</span>
-<span class="nc" id="L150">            g.drawRect(x, y, width, height);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        if (g == null) {</span>
+<span class="nc" id="L150">            throw new IllegalStateException(&quot;Graphics context not initialized. Call setGraphics() first.&quot;);</span>
         }
-<span class="nc" id="L152">    }</span>
+<span class="fc" id="L152">        g.drawRect(x, y, width, height);</span>
+<span class="fc" id="L153">    }</span>
 
     /**
      * 绘制椭圆
@@ -161,13 +162,13 @@ import com.example.renderer.bridge.Renderer;
      */
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
-<span class="nc bnc" id="L164" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
-<span class="nc" id="L165">            throw new IllegalArgumentException(&quot;Width and height must be positive&quot;);</span>
+<span class="nc bnc" id="L165" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="nc" id="L166">            throw new IllegalArgumentException(&quot;Width and height must be positive&quot;);</span>
         }
-<span class="nc bnc" id="L167" title="All 2 branches missed.">        if (g != null) {</span>
-<span class="nc" id="L168">            g.drawOval(x, y, width, height);</span>
+<span class="nc bnc" id="L168" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L169">            g.drawOval(x, y, width, height);</span>
         }
-<span class="nc" id="L170">    }</span>
+<span class="nc" id="L171">    }</span>
 
     /**
      * 绘制三角形。
@@ -201,14 +202,14 @@ import com.example.renderer.bridge.Renderer;
      */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-<span class="nc bnc" id="L204" title="All 2 branches missed.">        if (g != null) {</span>
-<span class="nc" id="L205">            Polygon triangle = new Polygon();</span>
-<span class="nc" id="L206">            triangle.addPoint(x1, y1);</span>
-<span class="nc" id="L207">            triangle.addPoint(x2, y2);</span>
-<span class="nc" id="L208">            triangle.addPoint(x3, y3);</span>
-<span class="nc" id="L209">            g.drawPolygon(triangle);</span>
+<span class="nc bnc" id="L205" title="All 2 branches missed.">        if (g != null) {</span>
+<span class="nc" id="L206">            Polygon triangle = new Polygon();</span>
+<span class="nc" id="L207">            triangle.addPoint(x1, y1);</span>
+<span class="nc" id="L208">            triangle.addPoint(x2, y2);</span>
+<span class="nc" id="L209">            triangle.addPoint(x3, y3);</span>
+<span class="nc" id="L210">            g.drawPolygon(triangle);</span>
         }
-<span class="nc" id="L211">    }</span>
+<span class="nc" id="L212">    }</span>
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
