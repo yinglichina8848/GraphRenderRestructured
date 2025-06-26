@@ -100,8 +100,13 @@ Inheritance diagram for com.example.renderer.factory.Shape:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6db3090c675b8919fb2077d812440078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078">render</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a> renderer)</td></tr>
+<tr class="memitem:a6db3090c675b8919fb2077d812440078"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6db3090c675b8919fb2077d812440078">render</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a> renderer)  throws NullPointerException, IllegalArgumentException, IllegalStateException</td></tr>
 <tr class="separator:a6db3090c675b8919fb2077d812440078"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29d9bb1411031067e90644d53514f17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa29d9bb1411031067e90644d53514f17">clone</a> ()  throws CloneNotSupportedException</td></tr>
+<tr class="separator:aa29d9bb1411031067e90644d53514f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6322ded7857a802cea68dd4d1932d0cc"><td class="memItemLeft" align="right" valign="top"><a id="a6322ded7857a802cea68dd4d1932d0cc"></a>
+default void&#160;</td><td class="memItemRight" valign="bottom"><b>validatePosition</b> (int x, int y)</td></tr>
+<tr class="separator:a6322ded7857a802cea68dd4d1932d0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa825d511e08fc9af9b8e62f41f1fc2ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">move</a> (int dx, int dy)</td></tr>
 <tr class="separator:aa825d511e08fc9af9b8e62f41f1fc2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17fdf5b153a81b61bc744ab108c6bcbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a17fdf5b153a81b61bc744ab108c6bcbd">accept</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html">ExportVisitor</a> visitor)</td></tr>
@@ -204,6 +209,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa29d9bb1411031067e90644d53514f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa29d9bb1411031067e90644d53514f17">&#9670;&nbsp;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a> com.example.renderer.factory.Shape.clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> throws CloneNotSupportedException</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>创建并返回当前图形的一个副本 </p>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a75697839c878777338a81df631881f33">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a9387fcb0aba596e3174f9edb4d817036">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a19d482c4667e3c70ca4bb1478c8f6b4f">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a63521bf6d44d46ca577ad1b43362423f">com.example.renderer.factory.Circle</a>.</p>
+
+</div>
+</div>
 <a id="aa825d511e08fc9af9b8e62f41f1fc2ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa825d511e08fc9af9b8e62f41f1fc2ad">&#9670;&nbsp;</a></span>move()</h2>
 
@@ -257,7 +282,7 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a>&#160;</td>
           <td class="paramname"><em>renderer</em></td><td>)</td>
-          <td></td>
+          <td> throws NullPointerException, IllegalArgumentException, IllegalStateException</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -303,6 +328,8 @@ Public Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果renderer参数为null </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果图形参数不合法 </td></tr>
+    <tr><td class="paramname">IllegalStateException</td><td>如果图形状态不适合渲染 </td></tr>
   </table>
   </dd>
 </dl>

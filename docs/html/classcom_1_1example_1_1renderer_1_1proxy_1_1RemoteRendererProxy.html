@@ -113,6 +113,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a230d74acbb60e51bc56724f50459d6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af39ad5e5e13e132f23d327c44b0d54e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#af39ad5e5e13e132f23d327c44b0d54e8">drawTriangle</a> (int x1, int y1, int x2, int y2, int x3, int y3)</td></tr>
 <tr class="separator:af39ad5e5e13e132f23d327c44b0d54e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09773b6472c3cfd720cac7a02efc3092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a09773b6472c3cfd720cac7a02efc3092">setStyle</a> (String stroke, String fill, int width)</td></tr>
+<tr class="separator:a09773b6472c3cfd720cac7a02efc3092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e430993c87d6fb67fbc82e0409a381a"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a6e430993c87d6fb67fbc82e0409a381a">getContext</a> ()</td></tr>
+<tr class="separator:a6e430993c87d6fb67fbc82e0409a381a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc65293e606701a73e724ec1803154b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a3dc65293e606701a73e724ec1803154b">beginFrame</a> ()</td></tr>
+<tr class="separator:a3dc65293e606701a73e724ec1803154b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1b7528622e54db3284be4fd737c326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#aec1b7528622e54db3284be4fd737c326">endFrame</a> ()</td></tr>
+<tr class="separator:aec1b7528622e54db3284be4fd737c326"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">drawEllipse</a> (int x, int y, int width, int height)</td></tr>
 <tr class="separator:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -172,6 +180,34 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3dc65293e606701a73e724ec1803154b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc65293e606701a73e724ec1803154b">&#9670;&nbsp;</a></span>beginFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxy.beginFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>开始新帧/页的绘制 </p>
+
+<p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a99434071c08c8cbc7613e25a34098008">com.example.renderer.bridge.Renderer</a>.</p>
+
+</div>
+</div>
 <a id="a023bafacacf0b539929be9570863a4a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a023bafacacf0b539929be9570863a4a5">&#9670;&nbsp;</a></span>drawCircle()</h2>
 
@@ -296,11 +332,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>代理绘制椭圆操作，添加远程调用日志。</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>绘制椭圆 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>椭圆中心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>椭圆中心y坐标 </td></tr>
+    <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
     <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
     <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
   </table>
@@ -312,8 +347,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -454,6 +487,124 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a8da6ee9a1744047767dfccc70cd6da76">com.example.renderer.bridge.Renderer</a>.</p>
+
+</div>
+</div>
+<a id="aec1b7528622e54db3284be4fd737c326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1b7528622e54db3284be4fd737c326">&#9670;&nbsp;</a></span>endFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxy.endFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>结束当前帧/页的绘制 </p>
+
+<p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a5832b5aeb04c85f6d240b803f29abe4a">com.example.renderer.bridge.Renderer</a>.</p>
+
+</div>
+</div>
+<a id="a6e430993c87d6fb67fbc82e0409a381a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e430993c87d6fb67fbc82e0409a381a">&#9670;&nbsp;</a></span>getContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Object com.example.renderer.proxy.RemoteRendererProxy.getContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>获取当前渲染上下文 </p><dl class="section return"><dt>Returns</dt><dd>底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等) </dd></dl>
+
+<p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a13d904a200fc06bda2cb5e7ee4fd2c27">com.example.renderer.bridge.Renderer</a>.</p>
+
+</div>
+</div>
+<a id="a09773b6472c3cfd720cac7a02efc3092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09773b6472c3cfd720cac7a02efc3092">&#9670;&nbsp;</a></span>setStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.proxy.RemoteRendererProxy.setStyle </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>stroke</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>fill</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>代理绘制椭圆操作，添加远程调用日志。</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>椭圆中心x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>椭圆中心y坐标 </td></tr>
+    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
+    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+<p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf">com.example.renderer.bridge.Renderer</a>.</p>
 
 </div>
 </div>

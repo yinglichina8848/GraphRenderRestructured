@@ -6,10 +6,13 @@ PROJECT_LOGO           = docs/images/logo.png
 OUTPUT_DIRECTORY       = docs/
 USE_MDFILE_AS_MAINPAGE = docs/mainpage.md
 MARKDOWN_SUPPORT = YES
+EXTENSION_MAPPING = md=markdown
 
 
 # 输入配置
 INPUT                  = src
+INPUT += docs/mainpage.md
+
 RECURSIVE              = YES
 + FILE_PATTERNS        = *.java  # 简化文件模式
 

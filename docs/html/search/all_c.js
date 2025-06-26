@@ -1,17 +1,18 @@
 var searchData=
 [
-  ['saveshapestofile_76',['saveShapesToFile',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a52b2e7f7c4f7913f82e8f9cab5f6115f',1,'com::example::renderer::singleton::PersistenceManager']]],
-  ['setgraphics_77',['setGraphics',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ac3c41cc9cb191cb7b7e2f003ce170987',1,'com::example::renderer::bridge::SwingRenderer']]],
-  ['setup_78',['setUp',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html#a19d05b17744f7cb65ea7343e9e410eff',1,'com.example.renderer.bridge.SwingRendererTest.setUp()'],['../classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a75311a9de1aadf7fb99beb1324fa4aa2',1,'com.example.renderer.command.AddShapeCommandTest.setUp()']]],
-  ['shape_79',['Shape',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html',1,'com::example::renderer::factory']]],
-  ['shapefactory_80',['ShapeFactory',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html',1,'com::example::renderer::factory']]],
-  ['shapefactoryimpl_81',['ShapeFactoryImpl',['../classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html',1,'com::example::renderer::factory']]],
-  ['shapeobservable_82',['ShapeObservable',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObservable.html',1,'com::example::renderer::observer']]],
-  ['shapeobserver_83',['ShapeObserver',['../interfacecom_1_1example_1_1renderer_1_1observer_1_1ShapeObserver.html',1,'com::example::renderer::observer']]],
-  ['shapeobserverimpl_84',['ShapeObserverImpl',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObserverImpl.html',1,'com::example::renderer::observer']]],
-  ['svgrenderer_85',['SVGRenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html',1,'com::example::renderer::bridge']]],
-  ['svgrenderertest_86',['SVGRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html',1,'com::example::renderer::bridge']]],
-  ['swingrenderer_87',['SwingRenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html',1,'com::example::renderer::bridge']]],
-  ['swingrenderertest_88',['SwingRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html',1,'com::example::renderer::bridge']]],
-  ['swingui_89',['SwingUI',['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html',1,'com.example.renderer.ui.SwingUI'],['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html#ae7524e76676f44d4196ba579b7cca21a',1,'com.example.renderer.ui.SwingUI.SwingUI()']]]
+  ['saveshapestofile_81',['saveShapesToFile',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a52b2e7f7c4f7913f82e8f9cab5f6115f',1,'com::example::renderer::singleton::PersistenceManager']]],
+  ['setgraphics_82',['setGraphics',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ac3c41cc9cb191cb7b7e2f003ce170987',1,'com::example::renderer::bridge::SwingRenderer']]],
+  ['setstyle_83',['setStyle',['../classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a09773b6472c3cfd720cac7a02efc3092',1,'com.example.renderer.proxy.RemoteRendererProxy.setStyle()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#addb78968e494f9ba3ae7960ccf8d4185',1,'com.example.renderer.bridge.TestRenderer.setStyle()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a441ae335d373437e9bb6eb4edb773193',1,'com.example.renderer.bridge.SwingRenderer.setStyle()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a5e5b346b80110f750729d5b1172d9845',1,'com.example.renderer.bridge.SVGRenderer.setStyle()'],['../interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf',1,'com.example.renderer.bridge.Renderer.setStyle()'],['../classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a582b214c88878be00e546ed3492081d1',1,'com.example.renderer.adapter.LegacyRendererAdapter.setStyle()']]],
+  ['setup_84',['setUp',['../classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a75311a9de1aadf7fb99beb1324fa4aa2',1,'com.example.renderer.command.AddShapeCommandTest.setUp()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html#a19d05b17744f7cb65ea7343e9e410eff',1,'com.example.renderer.bridge.SwingRendererTest.setUp()']]],
+  ['shape_85',['Shape',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html',1,'com::example::renderer::factory']]],
+  ['shapefactory_86',['ShapeFactory',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html',1,'com::example::renderer::factory']]],
+  ['shapefactoryimpl_87',['ShapeFactoryImpl',['../classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html',1,'com::example::renderer::factory']]],
+  ['shapeobservable_88',['ShapeObservable',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObservable.html',1,'com::example::renderer::observer']]],
+  ['shapeobserver_89',['ShapeObserver',['../interfacecom_1_1example_1_1renderer_1_1observer_1_1ShapeObserver.html',1,'com::example::renderer::observer']]],
+  ['shapeobserverimpl_90',['ShapeObserverImpl',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObserverImpl.html',1,'com::example::renderer::observer']]],
+  ['svgrenderer_91',['SVGRenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html',1,'com::example::renderer::bridge']]],
+  ['svgrenderertest_92',['SVGRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html',1,'com::example::renderer::bridge']]],
+  ['swingrenderer_93',['SwingRenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html',1,'com::example::renderer::bridge']]],
+  ['swingrenderertest_94',['SwingRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html',1,'com::example::renderer::bridge']]],
+  ['swingui_95',['SwingUI',['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html',1,'com.example.renderer.ui.SwingUI'],['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html#ae7524e76676f44d4196ba579b7cca21a',1,'com.example.renderer.ui.SwingUI.SwingUI()']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>图形渲染系统: Main Page</title>
+<title>图形渲染系统: 图形渲染系统文档</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,11 +84,91 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">图形渲染系统 Documentation</div>  </div>
+<div class="title">图形渲染系统文档 </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_docs_mainpage"></a> <img src="images/logo.png" alt="项目Logo" class="inline"/>{width=64}</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+项目简介</h1>
+<p>一个基于多种设计模式的图形渲染系统，提供:</p><ul>
+<li>多种基本图形绘制功能</li>
+<li>可扩展的渲染器架构 <br  />
+</li>
+<li>命令模式实现操作历史</li>
+<li>多种导出格式支持</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+项目构建配置</h1>
+<p>项目使用Maven构建，主要配置如下：</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+核心依赖</h2>
+<ul>
+<li><b>Gson</b>: 2.10.1 - 用于JSON序列化/反序列化</li>
+<li><b>Guava</b>: 32.1.2-jre - Google核心工具库</li>
+<li><b>SLF4J</b>: 2.0.9 - 日志门面接口</li>
+<li><b>Logback</b>: 1.4.11 - 日志实现</li>
+<li><b>JUnit Jupiter</b>: 5.10.2 - 单元测试框架</li>
+<li><b>Mockito</b>: 5.12.0 - 测试mock框架</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+构建插件</h2>
+<ul>
+<li><b>maven-compiler-plugin</b>: 3.11.0 - 设置Java 17编译环境</li>
+<li><b>maven-jar-plugin</b>: 3.3.0 - 生成可执行JAR</li>
+<li><b>jacoco-maven-plugin</b>: 0.8.11 - 生成测试覆盖率报告</li>
+<li><b>exec-maven-plugin</b>: 3.1.0 - 集成Doxygen文档生成</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+文档生成</h2>
+<ul>
+<li><b>maven-javadoc-plugin</b>: 3.3.2 - 生成Java API文档</li>
+<li><b>maven-site-plugin</b>: 3.12.1 - 生成项目站点</li>
+<li><b>doxygen</b>: 通过exec插件调用生成技术文档</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+构建命令</h1>
+<div class="fragment"><div class="line"># 编译项目</div>
+<div class="line">mvn compile</div>
+<div class="line"> </div>
+<div class="line"># 运行测试</div>
+<div class="line">mvn test</div>
+<div class="line"> </div>
+<div class="line"># 生成可执行JAR</div>
+<div class="line">mvn package</div>
+<div class="line"> </div>
+<div class="line"># 生成文档站点(包含JavaDoc和Doxygen)</div>
+<div class="line">mvn site</div>
+<div class="line"> </div>
+<div class="line"># 运行应用程序</div>
+<div class="line">java -jar target/graph-render-1.0-SNAPSHOT.jar</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+设计模式实现</h1>
+<ul>
+<li><b>工厂模式</b>: ShapeFactory, DefaultShapeFactory</li>
+<li><b>单例模式</b>: GlobalConfig</li>
+<li><b>适配器模式</b>: SVGRendererAdapter</li>
+<li><b>桥接模式</b>: Shape + Renderer</li>
+<li><b>代理模式</b>: RendererProxy</li>
+<li><b>命令模式</b>: Commander, AddShapeCommand</li>
+<li><b>访问者模式</b>: ShapeVisitor, JsonExportVisitor</li>
+<li><b>观察者模式</b>: ShapeListObserver</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+类继承图</h1>
+<h1><a class="anchor" id="autotoc_md9"></a>
+核心类列表</h1>
+<ul>
+<li>com.example.renderer.Shape</li>
+<li>com.example.renderer.Circle</li>
+<li>com.example.renderer.Rectangle</li>
+<li>com.example.renderer.Renderer</li>
+<li>com.example.renderer.ShapeModel</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+设计模式关系</h1>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

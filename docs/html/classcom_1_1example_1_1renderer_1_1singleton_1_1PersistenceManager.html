@@ -132,7 +132,9 @@ Static Public Member Functions</h2></td></tr>
 <p>获取PersistenceManager单例实例</p>
 <p>该方法线程安全，始终返回同一个实例。</p>
 <dl class="section return"><dt>Returns</dt><dd>全局唯一的PersistenceManager实例(永不为null) </dd></dl>
-<dl class="section see"><dt>See also</dt><dd>#PersistenceManager() 私有构造函数 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>#PersistenceManager() 私有构造函数 获取线程安全的PersistenceManager单例实例</dd></dl>
+<p>该方法使用类初始化保证线程安全，无需同步</p>
+<dl class="section return"><dt>Returns</dt><dd>全局唯一的PersistenceManager实例 </dd></dl>
 
 </div>
 </div>

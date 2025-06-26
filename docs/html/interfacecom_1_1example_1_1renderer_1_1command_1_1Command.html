@@ -95,16 +95,26 @@ $(document).ready(function(){initNavTree('interfacecom_1_1example_1_1renderer_1_
 <div class="dynheader">
 Inheritance diagram for com.example.renderer.command.Command:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1command_1_1Command__inherit__graph.svg" width="544" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
-</div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="interfacecom_1_1example_1_1renderer_1_1command_1_1Command__inherit__graph.svg" width="544" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae5d373bf255bc7fbb809eee509b7abc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6">execute</a> ()</td></tr>
+<tr class="memitem:ae5d373bf255bc7fbb809eee509b7abc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6">execute</a> ()  throws IllegalStateException, RuntimeException</td></tr>
 <tr class="separator:ae5d373bf255bc7fbb809eee509b7abc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3317fbcc32ee08c81e90b7035ce61aeb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a3317fbcc32ee08c81e90b7035ce61aeb">undo</a> ()</td></tr>
 <tr class="separator:a3317fbcc32ee08c81e90b7035ce61aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d42326a6b960fd3b9c47999702534a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a69d42326a6b960fd3b9c47999702534a">redo</a> ()</td></tr>
+<tr class="separator:a69d42326a6b960fd3b9c47999702534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b425fa0b9a1de8538939d247115cb28"><td class="memItemLeft" align="right" valign="top"><a id="a4b425fa0b9a1de8538939d247115cb28"></a>
+default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canExecute</b> ()</td></tr>
+<tr class="separator:a4b425fa0b9a1de8538939d247115cb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc097314b44e81ee7cab1dfc2178ce3"><td class="memItemLeft" align="right" valign="top"><a id="aadc097314b44e81ee7cab1dfc2178ce3"></a>
+default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canUndo</b> ()</td></tr>
+<tr class="separator:aadc097314b44e81ee7cab1dfc2178ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5aee8877d40b597b4732351f9c42d0f"><td class="memItemLeft" align="right" valign="top"><a id="ab5aee8877d40b597b4732351f9c42d0f"></a>
+default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canRedo</b> ()</td></tr>
+<tr class="separator:ab5aee8877d40b597b4732351f9c42d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command接口定义了命令模式的基本操作。 所有具体命令类必须实现execute()和undo()方法。</p>
@@ -147,7 +157,7 @@ cmd.undo();    // 撤销命令
           <td class="memname">void com.example.renderer.command.Command.execute </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> throws IllegalStateException, RuntimeException</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -156,6 +166,7 @@ cmd.undo();    // 撤销命令
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 执行命令操作。</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
+    <tr><td class="paramname">IllegalStateException</td><td>如果命令已经执行过且不可重复执行 </td></tr>
     <tr><td class="paramname">RuntimeException</td><td>如果执行过程中发生错误 </td></tr>
   </table>
   </dd>
@@ -164,6 +175,26 @@ cmd.undo();    // 撤销命令
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html#a3f935979690d6d3dfa5eb52b04b18ea0">com.example.renderer.command.MoveShapeCommand</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html#abfe4eaabc4a87ee03ea6cc5c219dd0a3">com.example.renderer.command.DeleteShapeCommand</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#ade460d9dcda0787b3d6bdc866e9827d6">com.example.renderer.command.AddShapeCommand</a>.</p>
+
+</div>
+</div>
+<a id="a69d42326a6b960fd3b9c47999702534a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d42326a6b960fd3b9c47999702534a">&#9670;&nbsp;</a></span>redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.Command.redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Redoes the command operation. </p>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html#a47d8563b9483e36045887d1b4fbf9f88">com.example.renderer.command.MoveShapeCommand</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html#aa4f7092e8e4a6a6d6822e4b2b6d47998">com.example.renderer.command.DeleteShapeCommand</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#aa431bea3f87f995fa254b4e1e7b291a0">com.example.renderer.command.AddShapeCommand</a>.</p>
 
 </div>
 </div>

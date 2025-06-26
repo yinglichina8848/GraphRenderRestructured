@@ -111,6 +111,17 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade460d9dcda0787b3d6bdc866e9827d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e91071abffa2eb38cef121f39610714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#a1e91071abffa2eb38cef121f39610714">undo</a> ()</td></tr>
 <tr class="separator:a1e91071abffa2eb38cef121f39610714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa431bea3f87f995fa254b4e1e7b291a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#aa431bea3f87f995fa254b4e1e7b291a0">redo</a> ()</td></tr>
+<tr class="separator:aa431bea3f87f995fa254b4e1e7b291a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353c176094b73d0d75789c91101c9c2a"><td class="memItemLeft" align="right" valign="top"><a id="a353c176094b73d0d75789c91101c9c2a"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canExecute</b> ()</td></tr>
+<tr class="separator:a353c176094b73d0d75789c91101c9c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad47c0e0d11549eadff20d7e57e5dd6ef"><td class="memItemLeft" align="right" valign="top"><a id="ad47c0e0d11549eadff20d7e57e5dd6ef"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canUndo</b> ()</td></tr>
+<tr class="separator:ad47c0e0d11549eadff20d7e57e5dd6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade9a0f999b9d8717971e223eee9a66c"><td class="memItemLeft" align="right" valign="top"><a id="aade9a0f999b9d8717971e223eee9a66c"></a>
+boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canRedo</b> ()</td></tr>
+<tr class="separator:aade9a0f999b9d8717971e223eee9a66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a> implementation for adding a shape to a shape list. Supports undo operation by removing the added shape. </p>
@@ -192,6 +203,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 执行命令操作。</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
+    <tr><td class="paramname">IllegalStateException</td><td>如果命令已经执行过且不可重复执行 </td></tr>
     <tr><td class="paramname">RuntimeException</td><td>如果执行过程中发生错误 </td></tr>
   </table>
   </dd>
@@ -200,6 +212,34 @@ Public Member Functions</h2></td></tr>
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ae5d373bf255bc7fbb809eee509b7abc6">com.example.renderer.command.Command</a>.</p>
+
+</div>
+</div>
+<a id="aa431bea3f87f995fa254b4e1e7b291a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa431bea3f87f995fa254b4e1e7b291a0">&#9670;&nbsp;</a></span>redo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.AddShapeCommand.redo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Redoes the command operation. </p>
+
+<p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a69d42326a6b960fd3b9c47999702534a">com.example.renderer.command.Command</a>.</p>
 
 </div>
 </div>
