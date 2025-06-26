@@ -37,12 +37,7 @@ public class RemoteRendererProxy implements Renderer {
     private String fillColor = "none";
     private int strokeWidth = 1;
 
-    /**
-     * 创建远程渲染器代理
-     * @param realRenderer 实际渲染器实例(非null)
-     * @throws NullPointerException 如果realRenderer为null
-     */
-    /**
+     /**
      * 创建远程渲染器代理实例。
      * 
      * @param realRenderer 实际渲染器实例(非null)
@@ -55,22 +50,6 @@ public class RemoteRendererProxy implements Renderer {
         this.realRenderer = realRenderer;
     }
 
-    /**
-     * 代理绘制圆形操作，添加远程调用日志。
-     * 
-     * @param x 圆心x坐标
-     * @param y 圆心y坐标
-     * @param radius 圆形半径
-     * @see Renderer#drawCircle(int, int, int)
-     */
-    /**
-     * 代理绘制圆形操作，添加远程调用日志。
-     * 
-     * @param x 圆心x坐标
-     * @param y 圆心y坐标
-     * @param radius 圆形半径
-     * @see Renderer#drawCircle(int, int, int)
-     */
     /**
      * 代理绘制圆形操作，添加远程调用日志。
      * 
@@ -161,9 +140,4 @@ public class RemoteRendererProxy implements Renderer {
         realRenderer.endFrame();
     }
 
-    @Override
-    public void drawEllipse(int x, int y, int width, int height) {
-        System.out.printf("Remote call: drawEllipse(%d, %d, %d, %d)\n", x, y, width, height);
-        realRenderer.drawEllipse(x, y, width, height);
-    }
 }
