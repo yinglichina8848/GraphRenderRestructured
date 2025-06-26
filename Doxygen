@@ -13,6 +13,7 @@ EXTENSION_MAPPING = md=markdown
 INPUT                  = src doc
 INPUT                  += mainpage.md
 
+FILE_PATTERNS = *.md *.java
 RECURSIVE              = YES
 + FILE_PATTERNS        = *.java  # 简化文件模式
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>图形渲染系统: Main Page</title>
+<title>图形渲染系统: 图形渲染系统 - 核心文档</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,11 +83,169 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">图形渲染系统 Documentation</div>  </div>
+<div class="title">图形渲染系统 - 核心文档 </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#doc_links">项目文档</a></li>
+<li class="level1"><a href="#intro_sec">项目简介</a></li>
+<li class="level1"><a href="#build_sec">构建与依赖</a><ul><li class="level2"><a href="#deps_sec">核心依赖</a></li>
+<li class="level2"><a href="#plugins">构建插件</a></li>
+<li class="level2"><a href="#docs">文档生成</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#commands">构建命令</a></li>
+<li class="level1"><a href="#patterns_sec">设计模式应用</a><ul><li class="level2"><a href="#creation_sec">创建型模式</a></li>
+<li class="level2"><a href="#structural_sec">结构型模式  &lt;br&gt;</a></li>
+<li class="level2"><a href="#behavioral_sec">行为型模式</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#classes">核心类列表</a></li>
+</ul>
+</div>
+<div class="textblock"><ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h1><a class="anchor" id="doc_links"></a>
+项目文档</h1>
+<ul>
+<li>以下是项目相关文档列表：</li>
+<li>md_doc_index</li>
+<li></li>
+<li></li>
+</ul>
+<h1><a class="anchor" id="intro_sec"></a>
+项目简介</h1>
+<ul>
+<li>一个基于现代Java技术的图形渲染框架，主要特点：</li>
+<li></li>
+<li>- 🎨 多渲染后端支持(Swing/SVG/Legacy/Test)</li>
+<li>- 📐 基本图形绘制(圆形/矩形/三角形/椭圆)</li>
+<li>- 🔄 命令模式实现完整操作历史</li>
+<li>- 📊 多种导出格式(JSON/XML)</li>
+<li>- 🔍 可扩展的观察者机制</li>
+<li>- 🧩 基于工厂模式的灵活创建</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h1><a class="anchor" id="build_sec"></a>
+构建与依赖</h1>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h2><a class="anchor" id="deps_sec"></a>
+核心依赖</h2>
+<ul>
+<li>| 依赖项 | 版本 | 用途 |</li>
+<li>|-------------&mdash;|-------&mdash;|-------------------&mdash;|</li>
+<li>| Gson | 2.10.1 | JSON序列化/反序列化 |</li>
+<li>| Guava | 32.1.2 | 核心工具库 |</li>
+<li>| SLF4J+Logback | 2.0.9 | 日志系统 |</li>
+<li>| JUnit Jupiter | 5.10.2 | 单元测试框架 |</li>
+<li>| Mockito | 5.12.0 | 测试Mock支持 |</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h2><a class="anchor" id="plugins"></a>
+构建插件</h2>
+<ul>
+<li>- <b>maven-compiler-plugin</b>: 3.11.0 - 设置Java 17编译环境</li>
+<li>- <b>maven-jar-plugin</b>: 3.3.0 - 生成可执行JAR</li>
+<li>- <b>jacoco-maven-plugin</b>: 0.8.11 - 生成测试覆盖率报告</li>
+<li>- <b>exec-maven-plugin</b>: 3.1.0 - 集成Doxygen文档生成</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h2><a class="anchor" id="docs"></a>
+文档生成</h2>
+<ul>
+<li>- <b>maven-javadoc-plugin</b>: 3.3.2 - 生成Java API文档</li>
+<li>- <b>maven-site-plugin</b>: 3.12.1 - 生成项目站点</li>
+<li>- <b>doxygen</b>: 通过exec插件调用生成技术文档</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h1><a class="anchor" id="commands"></a>
+构建命令</h1>
+<ul>
+<li><div class="fragment"><div class="line">* # 编译项目</div>
+<div class="line">* mvn compile</div>
+<div class="line">*</div>
+<div class="line">* # 运行测试</div>
+<div class="line">* mvn test</div>
+<div class="line">*</div>
+<div class="line">* # 生成可执行JAR</div>
+<div class="line">* mvn package</div>
+<div class="line">*</div>
+<div class="line">* # 生成文档站点(包含JavaDoc和Doxygen)</div>
+<div class="line">* mvn site</div>
+<div class="line">*</div>
+<div class="line">* # 运行应用程序</div>
+<div class="line">* java -jar target/graph-render-1.0-SNAPSHOT.jar</div>
+<div class="line">* </div>
+</div><!-- fragment --></li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h1><a class="anchor" id="patterns_sec"></a>
+设计模式应用</h1>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<h2><a class="anchor" id="creation_sec"></a>
+创建型模式</h2>
+<ul>
+<li>- 🏭 <b>工厂模式</b>: <code>RendererFactory</code>、<code>ShapeFactory</code></li>
+<li>- 🔒 <b>单例模式</b>: <code>GlobalConfig</code>、<code>PersistenceManager</code></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a class="anchor" id="structural_sec"></a>
+结构型模式  &lt;br&gt;</h2>
+<ul>
+<li>- 🔌 <b>适配器模式</b>: <code>LegacyRendererAdapter</code></li>
+<li>- 🌉 <b>桥接模式</b>: <code>Shape</code> ←→ <code>Renderer</code> 抽象</li>
+<li>- 🎭 <b>代理模式</b>: <code>RemoteRendererProxy</code></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a class="anchor" id="behavioral_sec"></a>
+行为型模式</h2>
+<ul>
+<li>- 📜 <b>命令模式</b>: <code>Command</code> 接口及实现类</li>
+<li>- 👀 <b>观察者模式</b>: <code>ShapeObserver</code> 体系</li>
+<li>- 🚶 <b>访问者模式</b>: <code>ExportVisitor</code> 实现</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<h1><a class="anchor" id="classes"></a>
+核心类列表</h1>
+<ul>
+<li>- com.example.renderer.Shape</li>
+<li>- com.example.renderer.Circle</li>
+<li>- com.example.renderer.Rectangle</li>
+<li>- com.example.renderer.Renderer</li>
+<li>- com.example.renderer.ShapeModel</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<ul>
+<li>*/ </li>
+</ul>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
