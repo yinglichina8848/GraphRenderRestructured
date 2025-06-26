@@ -11,7 +11,16 @@ public class DeleteShapeCommand implements Command {
     private final Shape shape;
     private int index = -1;
 
+    /**
+     * 创建删除图形命令实例
+     * 
+     * @param shapes 目标图形列表(不能为null)
+     * @param shape 要删除的图形(不能为null)
+     * @throws NullPointerException 如果shapes或shape为null
+     */
     public DeleteShapeCommand(List<Shape> shapes, Shape shape) {
+        Objects.requireNonNull(shapes, "图形列表不能为null");
+        Objects.requireNonNull(shape, "要删除的图形不能为null");
         this.shapes = shapes;
         this.shape = shape;
     }

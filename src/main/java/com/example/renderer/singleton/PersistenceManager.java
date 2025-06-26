@@ -44,6 +44,18 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 
+/**
+ * 图形持久化管理器，使用单例模式
+ * 
+ * <p>负责图形的序列化和反序列化，主要功能：
+ * <ul>
+ *   <li>将图形列表保存为JSON文件</li>
+ *   <li>从JSON文件加载图形列表</li>
+ *   <li>处理多态类型的序列化</li>
+ * </ul>
+ * 
+ * <p>使用Gson库实现JSON序列化
+ */
 public class PersistenceManager {
     private static final PersistenceManager INSTANCE = new PersistenceManager();
     private final Gson gson;

@@ -25,6 +25,18 @@ import com.example.renderer.visitor.ExportVisitor;
 
 
 
+/**
+ * 矩形图形实现类
+ * 
+ * <p>表示一个具有位置(x,y)和尺寸(width,height)的矩形
+ * 
+ * <p>实现细节：
+ * <ul>
+ *   <li>宽度和高度必须为正数</li>
+ *   <li>支持移动操作</li>
+ *   <li>可被各种渲染器渲染</li>
+ * </ul>
+ */
 public class Rectangle implements Shape {
     private int x, y, width, height;
 
