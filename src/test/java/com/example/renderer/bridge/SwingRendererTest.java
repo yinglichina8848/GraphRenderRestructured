@@ -78,4 +78,34 @@ public class SwingRendererTest {
         verify(mockGraphics).setStroke(argThat(stroke -> 
             stroke instanceof BasicStroke && ((BasicStroke)stroke).getLineWidth() == 2));
     }
+
+    /**
+     * 测试无效颜色格式
+     * @since 2025-06-27
+     */
+    @Test
+    public void testInvalidColorFormat() {
+        assertThrows(IllegalArgumentException.class,
+            () -> renderer.setStyle("invalidColor", "#00FF00", 1));
+    }
+
+    /**
+     * 测试负线宽
+     * @since 2025-06-27
+     */
+    @Test
+    public void testNegativeStrokeWidth() {
+        assertThrows(IllegalArgumentException.class,
+            () -> renderer.setStyle("#FF0000", "#00FF00", -1));
+    }
+
+    /**
+     * 测试三角形绘制
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDrawTriangle() {
+        renderer.drawTriangle(10, 10, 20, 30, 30, 10);
+        verify(mockGraphics).drawPolygon(any(Polygon.class));
+    }
 }

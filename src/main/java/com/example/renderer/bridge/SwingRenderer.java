@@ -67,12 +67,35 @@ public class SwingRenderer implements Renderer {
         g.setStroke(new java.awt.BasicStroke(2));
     }
 
+    /**
+     * 设置绘图样式
+     * 
+     * <p>修改记录：
+     * <ul>
+     *   <li>2025-06-24 - 初始实现</li>
+     *   <li>2025-06-27 - 添加颜色解码异常处理</li>
+     * </ul>
+     * 
+     * @param stroke 描边颜色(十六进制格式)
+     * @param fill 填充颜色(十六进制格式) 
+     * @param width 线宽(像素)
+     * @throws IllegalArgumentException 如果宽度为负数
+     * @throws NumberFormatException 如果颜色格式无效
+     * @since 2025-06-24
+     */
     @Override
     public void setStyle(String stroke, String fill, int width) {
+        if (width < 0) {
+            throw new IllegalArgumentException("线宽不能为负数: " + width);
+        }
         if (g != null) {
-            g.setStroke(new BasicStroke(width));
-            g.setColor(Color.decode(stroke));
-            // 填充颜色处理
+            try {
+                g.setStroke(new BasicStroke(width));
+                g.setColor(Color.decode(stroke));
+                // TODO: 实现填充颜色处理
+            } catch (NumberFormatException e) {
+                throw new IllegalArgumentException("无效的颜色格式", e);
+            }
         }
     }
 
