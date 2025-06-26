@@ -62,6 +62,14 @@ public class SVGRenderer implements Renderer {
         svgBuilder.setLength(0); // 清空以便下次使用
     }
 
+    /**
+     * 获取当前生成的SVG字符串
+     * @return 完整的SVG文档字符串
+     */
+    public String getSVG() {
+        return svgBuilder.toString();
+    }
+
     // 移除样式相关代码，保持简单输出格式
     @Override
     public void drawCircle(int x, int y, int radius) {
