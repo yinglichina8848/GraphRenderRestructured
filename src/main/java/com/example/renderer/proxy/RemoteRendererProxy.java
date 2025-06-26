@@ -118,11 +118,17 @@ public class RemoteRendererProxy implements Renderer {
      * @throws IllegalArgumentException 如果宽度或高度不合法
      */
     @Override
-    public void drawEllipse(int x, int y, int width, int height) {
+    public void setStyle(String stroke, String fill, int width) {
         this.strokeColor = stroke;
         this.fillColor = fill;
         this.strokeWidth = width;
         realRenderer.setStyle(stroke, fill, width);
+    }
+
+    @Override
+    public void drawEllipse(int x, int y, int width, int height) {
+        System.out.printf("Remote call: drawEllipse(%d, %d, %d, %d)\n", x, y, width, height);
+        realRenderer.drawEllipse(x, y, width, height);
     }
 
     @Override
