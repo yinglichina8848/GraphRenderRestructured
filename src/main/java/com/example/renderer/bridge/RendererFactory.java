@@ -40,12 +40,20 @@ public class RendererFactory {
         renderers.put(mode, supplier);
     }
     
-    public static Renderer create(String mode) {
-        Supplier<Renderer> supplier = renderers.get(mode);
-        if (supplier == null) {
-            throw new IllegalArgumentException("Unsupported render mode: " + mode);
+    public static Renderer create(String mode) throws RendererCreationException {
+        try {
+            Supplier<Renderer> supplier = renderers.get(mode);
+            if (supplier == null) {
+                throw new IllegalArgumentException("Unsupported render mode: " + mode);
+            }
+            Renderer renderer = supplier.get();
+            if (renderer == null) {
+                throw new RendererCreationException("Renderer creation failed for mode: " + mode);
+            }
+            return renderer;
+        } catch (Exception e) {
+            throw new RendererCreationException("Failed to create renderer", e);
         }
-        return supplier.get();
     }
     
     public static Set<String> getSupportedModes() {

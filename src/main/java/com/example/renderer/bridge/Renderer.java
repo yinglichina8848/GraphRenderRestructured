@@ -26,7 +26,19 @@ package com.example.renderer.bridge;
  * 
  * @see RendererFactory 创建实例的工厂类
  */
-public interface Renderer extends RendererInterface {
+/**
+ * 增强渲染器接口，扩展基础渲染能力。
+ * 
+ * <p>合并RendererInterface功能，避免接口分散。
+ * 现在包含：
+ * <ul>
+ *   <li>基础绘制方法(drawXxx)</li>
+ *   <li>样式管理(setStyle)</li> 
+ *   <li>渲染上下文访问(getContext)</li>
+ *   <li>帧控制(beginFrame/endFrame)</li>
+ * </ul>
+ */
+public interface Renderer {
     /**
      * 设置渲染样式
      * @param stroke 线条颜色(支持CSS颜色格式)

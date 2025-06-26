@@ -112,11 +112,13 @@ public class SwingUI extends JFrame {
         String mode = GlobalConfig.getInstance().getRenderMode();
         try {
             renderer = RendererFactory.create(mode);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, 
-                "无法初始化渲染器: " + mode + "\n将使用默认渲染器",
+        } catch (RendererCreationException e) {
+            LOGGER.error("Renderer initialization failed", e);
+            JOptionPane.showMessageDialog(this,
+                String.format("无法初始化渲染器 %s: %s\n将使用默认Swing渲染器",
+                    mode, e.getMessage()),
                 "渲染器错误", JOptionPane.ERROR_MESSAGE);
-            renderer = new SwingRenderer(); // 回退到默认
+            renderer = createFallbackRenderer();
         }
 
         drawingPanel = new DrawingPanel(shapes, renderer);
@@ -241,6 +243,15 @@ public class SwingUI extends JFrame {
      * 
      * @see PersistenceManager#loadShapesFromFile(String) 
      */
+    private Renderer createFallbackRenderer() {
+        try {
+            return new SwingRenderer();
+        } catch (Exception e) {
+            LOGGER.error("Fallback renderer creation failed", e);
+            throw new IllegalStateException("无法创建回退渲染器", e);
+        }
+    }
+
     private void loadShapes() {
         JFileChooser chooser = new JFileChooser();
         int ret = chooser.showOpenDialog(this);
