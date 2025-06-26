@@ -51,7 +51,6 @@ public class ApplicationContext {
      * @throws IllegalStateException 如果类型未注册
      * @throws BeanCreationException 如果实例创建失败
      */
-    @SuppressWarnings("unchecked")
     public static <T> T getBean(Class<T> type) {
         try {
             lock.readLock().lock();

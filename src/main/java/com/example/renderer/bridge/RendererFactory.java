@@ -1,5 +1,6 @@
 package com.example.renderer.bridge;
 
+import com.example.renderer.adapter.LegacyRendererAdapter;
 import com.example.renderer.exception.RendererCreationException;
 import com.example.renderer.legacy.LegacyRenderer;
 import java.util.Collections;
