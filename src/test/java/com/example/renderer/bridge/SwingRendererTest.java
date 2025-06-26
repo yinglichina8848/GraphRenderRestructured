@@ -45,8 +45,7 @@ public class SwingRendererTest {
     @Test
     public void testDrawCircle() {
         renderer.drawCircle(100, 100, 50);
-        assertEquals("drawOval:50,50,100,100", mockGraphics.lastDrawCall);
-        assertEquals(1, mockGraphics.drawCallCount);
+        verify(mockGraphics).drawOval(50, 50, 100, 100);
     }
 
     @Test
@@ -71,7 +70,8 @@ public class SwingRendererTest {
     @Test
     public void testStyleSetting() {
         renderer.setStyle("#FF0000", "#00FF00", 2);
-        assertEquals(Color.RED, mockGraphics.lastColorSet);
-        assertEquals(2, ((BasicStroke)mockGraphics.lastStrokeSet).getLineWidth());
+        verify(mockGraphics).setColor(Color.RED);
+        verify(mockGraphics).setStroke(argThat(stroke -> 
+            stroke instanceof BasicStroke && ((BasicStroke)stroke).getLineWidth() == 2));
     }
 }
