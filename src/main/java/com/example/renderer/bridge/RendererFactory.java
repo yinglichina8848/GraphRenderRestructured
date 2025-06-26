@@ -40,7 +40,7 @@ public class RendererFactory {
         registerInternal("swing", SwingRenderer::new);
         registerInternal("svg", SVGRenderer::new);
         registerInternal("test", TestRenderer::new);
-        registerInternal("legacy", () -> new LegacyRendererAdapter(new LegacyRenderer()));
+        registerInternal("legacy", () -> new LegacyRendererAdapter(new LegacyRendererImpl()));
     }
     
     private static void registerInternal(String mode, Supplier<Renderer> supplier) {
