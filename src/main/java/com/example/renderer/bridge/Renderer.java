@@ -1,7 +1,17 @@
 package com.example.renderer.bridge;
 
 /**
- * 渲染器接口，定义各种图形的绘制方法。
+ * 增强型渲染器接口，扩展基础渲染能力。
+ * 
+ * <p>架构演进记录：
+ * <ul>
+ *   <li>v1.0 - 基础绘制方法</li>
+ *   <li>v1.1 - 分离为RendererInterface和Renderer</li>
+ *   <li>v1.2 - 增加样式设置和上下文访问</li>
+ * </ul>
+ * 
+ * @see RendererInterface 基础绘制接口
+ * @see RendererFactory 渲染器创建工厂
  */
 public interface Renderer extends RendererInterface {
     /**
