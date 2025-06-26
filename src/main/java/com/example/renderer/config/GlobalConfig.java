@@ -24,11 +24,22 @@ import java.util.Set;
  * @author liying
  * @since 1.0
  */
-public enum GlobalConfig {
-    INSTANCE;
-
+public class GlobalConfig {
+    private static GlobalConfig instance;
     private volatile String renderMode = "swing";
-    private static final Set<String> VALID_MODES = Set.of("swing", "svg", "test");
+    private final Set<String> validModes = new HashSet<>();
+
+    private GlobalConfig() {
+        // 可以从配置文件加载
+        validModes.addAll(Set.of("swing", "svg", "test", "legacy"));
+    }
+
+    public static synchronized GlobalConfig getInstance() {
+        if (instance == null) {
+            instance = new GlobalConfig();
+        }
+        return instance;
+    }
 
     public synchronized void setRenderMode(String mode) {
         if (!VALID_MODES.contains(mode)) {

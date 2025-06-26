@@ -108,7 +108,8 @@ public class SwingUI extends JFrame {
         setLocationRelativeTo(null);
 
 
-        renderer = new SwingRenderer();
+        // 通过工厂或依赖注入获取Renderer
+        renderer = RendererFactory.create(GlobalConfig.getInstance().getRenderMode());
 
         drawingPanel = new DrawingPanel(shapes, renderer);
         add(drawingPanel, BorderLayout.CENTER);  // 添加绘图面板到中心区域

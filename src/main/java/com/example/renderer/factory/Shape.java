@@ -72,7 +72,7 @@ public interface Shape {
      * @author Aider+DeepSeek
      * @since 2025-06-24
      */
-    void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
+    void render(RendererInterface renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
     /**
      * 创建并返回当前图形的一个副本
