@@ -33,26 +33,38 @@
 
 ## 核心组件
 
-### 渲染相关
-- `Renderer.java`: 定义渲染器核心接口
-  - 支持帧控制(beginFrame/endFrame)
-  - 样式管理(setStyle)
-  - 多图形绘制API
-- `SwingRenderer.java`: Swing实现
-  - 基于Graphics2D
-  - 自动抗锯齿
-  - 需要先setGraphics()
-- `SVGRenderer.java`: SVG实现
-  - 控制台输出SVG标记
-  - 轻量级无依赖
-- `LegacyRendererAdapter.java`: 旧版适配器
-  - 适配LegacyRenderer接口
-  - 添加参数校验
-  - 异常转换
-- `RemoteRendererProxy.java`: 远程渲染代理
-  - 添加重试机制
-  - 调用日志记录
-  - 透明代理模式
+### 1. 渲染器接口 (Renderer)
+```java
+public interface Renderer {
+    // 设置绘制样式
+    void setStyle(String stroke, String fill, int width);
+    
+    // 获取渲染上下文
+    Object getContext();
+    
+    // 帧控制
+    void beginFrame();
+    void endFrame();
+    
+    // 图形绘制方法
+    void drawCircle(int x, int y, int radius);
+    void drawRectangle(int x, int y, int width, int height);
+    void drawEllipse(int x, int y, int width, int height);
+    void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
+}
+```
+
+### 2. Swing渲染器 (SwingRenderer)
+- 特性：
+  - 基于Java Swing的Graphics2D
+  - 内置抗锯齿处理
+  - 默认蓝色2px线条样式
+- 使用示例：
+```java
+SwingRenderer renderer = new SwingRenderer();
+renderer.setGraphics(graphics2D); // 必须设置绘图上下文
+renderer.drawCircle(100, 100, 50);
+```
 
 ## 典型工作流程
 
