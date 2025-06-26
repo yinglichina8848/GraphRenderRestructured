@@ -2,7 +2,7 @@
 PROJECT_NAME           = "图形渲染系统"
 PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "基于多种设计模式的图形渲染系统"
-PROJECT_LOGO           = docs/logo.png
+PROJECT_LOGO           = docs/images/logo.png
 OUTPUT_DIRECTORY       = docs/
 #USE_MDFILE_AS_MAINPAGE = docs/mainpage.md  # 添加主页面
 USE_MDFILE_AS_MAINPAGE = docs/mainpage.md
@@ -17,7 +17,7 @@ RECURSIVE              = YES
 # HTML输出配置
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
-HTML_EXTRA_STYLESHEET  = ../doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = docs/doxygen-awesome.css
 HTML_EXTRA_FILES       = 
 GENERATE_TREEVIEW      = YES
 DISABLE_INDEX          = NO
