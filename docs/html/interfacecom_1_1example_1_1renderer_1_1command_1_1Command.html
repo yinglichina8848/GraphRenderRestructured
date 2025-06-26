@@ -105,14 +105,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3317fbcc32ee08c81e90b7035ce61aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d42326a6b960fd3b9c47999702534a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a69d42326a6b960fd3b9c47999702534a">redo</a> ()</td></tr>
 <tr class="separator:a69d42326a6b960fd3b9c47999702534a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b425fa0b9a1de8538939d247115cb28"><td class="memItemLeft" align="right" valign="top"><a id="a4b425fa0b9a1de8538939d247115cb28"></a>
-default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canExecute</b> ()</td></tr>
+<tr class="memitem:a4b425fa0b9a1de8538939d247115cb28"><td class="memItemLeft" align="right" valign="top">default boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#a4b425fa0b9a1de8538939d247115cb28">canExecute</a> ()</td></tr>
 <tr class="separator:a4b425fa0b9a1de8538939d247115cb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadc097314b44e81ee7cab1dfc2178ce3"><td class="memItemLeft" align="right" valign="top"><a id="aadc097314b44e81ee7cab1dfc2178ce3"></a>
-default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canUndo</b> ()</td></tr>
+<tr class="memitem:aadc097314b44e81ee7cab1dfc2178ce3"><td class="memItemLeft" align="right" valign="top">default boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#aadc097314b44e81ee7cab1dfc2178ce3">canUndo</a> ()</td></tr>
 <tr class="separator:aadc097314b44e81ee7cab1dfc2178ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5aee8877d40b597b4732351f9c42d0f"><td class="memItemLeft" align="right" valign="top"><a id="ab5aee8877d40b597b4732351f9c42d0f"></a>
-default boolean&#160;</td><td class="memItemRight" valign="bottom"><b>canRedo</b> ()</td></tr>
+<tr class="memitem:ab5aee8877d40b597b4732351f9c42d0f"><td class="memItemLeft" align="right" valign="top">default boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html#ab5aee8877d40b597b4732351f9c42d0f">canRedo</a> ()</td></tr>
 <tr class="separator:ab5aee8877d40b597b4732351f9c42d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -146,6 +143,90 @@ cmd.undo();    // 撤销命令
 <dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4b425fa0b9a1de8538939d247115cb28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b425fa0b9a1de8538939d247115cb28">&#9670;&nbsp;</a></span>canExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">default boolean com.example.renderer.command.Command.canExecute </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>检查命令是否可以执行 </p><dl class="section return"><dt>Returns</dt><dd>如果可以执行返回true，否则返回false </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html#a88e6a2f1b5400a8068926d09e324cb82">com.example.renderer.command.MoveShapeCommand</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html#a62b0b7d5ab89fe35e306ca3b5f8270de">com.example.renderer.command.DeleteShapeCommand</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#a353c176094b73d0d75789c91101c9c2a">com.example.renderer.command.AddShapeCommand</a>.</p>
+
+</div>
+</div>
+<a id="ab5aee8877d40b597b4732351f9c42d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5aee8877d40b597b4732351f9c42d0f">&#9670;&nbsp;</a></span>canRedo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">default boolean com.example.renderer.command.Command.canRedo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>检查命令是否可以重做 </p><dl class="section return"><dt>Returns</dt><dd>如果可以重做返回true，否则返回false </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html#a7c4600faaa00f491aa15f0e61449f66a">com.example.renderer.command.MoveShapeCommand</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html#aed5f43ef6f8ff2c9a775e968bf454c6e">com.example.renderer.command.DeleteShapeCommand</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#aade9a0f999b9d8717971e223eee9a66c">com.example.renderer.command.AddShapeCommand</a>.</p>
+
+</div>
+</div>
+<a id="aadc097314b44e81ee7cab1dfc2178ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc097314b44e81ee7cab1dfc2178ce3">&#9670;&nbsp;</a></span>canUndo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">default boolean com.example.renderer.command.Command.canUndo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>检查命令是否可以撤销 </p><dl class="section return"><dt>Returns</dt><dd>如果可以撤销返回true，否则返回false </dd></dl>
+
+<p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html#a082f0535f8dc13d966aca553dc51739c">com.example.renderer.command.MoveShapeCommand</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html#a855fdc2408f80f279f43aa9033536bae">com.example.renderer.command.DeleteShapeCommand</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html#ad47c0e0d11549eadff20d7e57e5dd6ef">com.example.renderer.command.AddShapeCommand</a>.</p>
+
+</div>
+</div>
 <a id="ae5d373bf255bc7fbb809eee509b7abc6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5d373bf255bc7fbb809eee509b7abc6">&#9670;&nbsp;</a></span>execute()</h2>
 

@@ -114,14 +114,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af39ad5e5e13e132f23d327c44b0d54e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09773b6472c3cfd720cac7a02efc3092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a09773b6472c3cfd720cac7a02efc3092">setStyle</a> (String stroke, String fill, int width)</td></tr>
 <tr class="separator:a09773b6472c3cfd720cac7a02efc3092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">drawEllipse</a> (int x, int y, int width, int height)</td></tr>
+<tr class="separator:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e430993c87d6fb67fbc82e0409a381a"><td class="memItemLeft" align="right" valign="top">Object&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a6e430993c87d6fb67fbc82e0409a381a">getContext</a> ()</td></tr>
 <tr class="separator:a6e430993c87d6fb67fbc82e0409a381a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dc65293e606701a73e724ec1803154b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a3dc65293e606701a73e724ec1803154b">beginFrame</a> ()</td></tr>
 <tr class="separator:a3dc65293e606701a73e724ec1803154b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1b7528622e54db3284be4fd737c326"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#aec1b7528622e54db3284be4fd737c326">endFrame</a> ()</td></tr>
 <tr class="separator:aec1b7528622e54db3284be4fd737c326"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html#a62ffaea2a2c43ccfd2e8afe336417ef5">drawEllipse</a> (int x, int y, int width, int height)</td></tr>
-<tr class="separator:a62ffaea2a2c43ccfd2e8afe336417ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>远程渲染器代理实现类 </p>
@@ -149,18 +149,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>创建远程渲染器代理 </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">realRenderer</td><td>实际渲染器实例(非null) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果realRenderer为null 创建远程渲染器代理实例。</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>创建远程渲染器代理实例。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">realRenderer</td><td>实际渲染器实例(非null) </td></tr>
@@ -247,24 +236,6 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>代理绘制圆形操作，添加远程调用日志。</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>圆心y坐标 </td></tr>
-    <tr><td class="paramname">radius</td><td>圆形半径 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> 代理绘制圆形操作，添加远程调用日志。</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>圆心y坐标 </td></tr>
-    <tr><td class="paramname">radius</td><td>圆形半径 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">Renderer::drawCircle(int, int, int)</a> 代理绘制圆形操作，添加远程调用日志。</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x</td><td>圆心x坐标 </td></tr>
@@ -584,24 +555,20 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>代理绘制椭圆操作，添加远程调用日志。</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>设置渲染样式 </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>椭圆中心x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>椭圆中心y坐标 </td></tr>
-    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
-    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
+    <tr><td class="paramname">stroke</td><td>线条颜色(支持CSS颜色格式) </td></tr>
+    <tr><td class="paramname">fill</td><td>填充颜色(支持CSS颜色格式) </td></tr>
+    <tr><td class="paramname">width</td><td>线宽(像素，必须&gt;=0) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度为负数 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf">com.example.renderer.bridge.Renderer</a>.</p>
 

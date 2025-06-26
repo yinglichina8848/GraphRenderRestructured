@@ -95,17 +95,14 @@ $(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1con
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac30b85c18b42b3fc82253b374fd2c484"><td class="memItemLeft" align="right" valign="top"><a id="ac30b85c18b42b3fc82253b374fd2c484"></a>
-synchronized void&#160;</td><td class="memItemRight" valign="bottom"><b>setRenderMode</b> (String mode)</td></tr>
+<tr class="memitem:ac30b85c18b42b3fc82253b374fd2c484"><td class="memItemLeft" align="right" valign="top">synchronized void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html#ac30b85c18b42b3fc82253b374fd2c484">setRenderMode</a> (String mode)</td></tr>
 <tr class="separator:ac30b85c18b42b3fc82253b374fd2c484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a868f70e0f607398f8c11ff5b428f5549"><td class="memItemLeft" align="right" valign="top"><a id="a868f70e0f607398f8c11ff5b428f5549"></a>
-String&#160;</td><td class="memItemRight" valign="bottom"><b>getRenderMode</b> ()</td></tr>
+<tr class="memitem:a868f70e0f607398f8c11ff5b428f5549"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html#a868f70e0f607398f8c11ff5b428f5549">getRenderMode</a> ()</td></tr>
 <tr class="separator:a868f70e0f607398f8c11ff5b428f5549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a3baefc4192c7e207c02c8c4ca0b79433"><td class="memItemLeft" align="right" valign="top"><a id="a3baefc4192c7e207c02c8c4ca0b79433"></a>
-static synchronized <a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html">GlobalConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
+<tr class="memitem:a3baefc4192c7e207c02c8c4ca0b79433"><td class="memItemLeft" align="right" valign="top">static synchronized <a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html">GlobalConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html#a3baefc4192c7e207c02c8c4ca0b79433">getInstance</a> ()</td></tr>
 <tr class="separator:a3baefc4192c7e207c02c8c4ca0b79433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -115,10 +112,101 @@ static synchronized <a class="el" href="classcom_1_1example_1_1renderer_1_1confi
 renderMode - 渲染模式(如"swing","svg"等) </li>
 </ul>
 <p>线程安全：getInstance()方法线程安全，配置项访问需要外部同步。</p>
-<dl class="section see"><dt>See also</dt><dd>#getInstance() 获取单例实例 </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html#a3baefc4192c7e207c02c8c4ca0b79433">getInstance()</a> 获取单例实例 </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>liying </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>1.0 </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3baefc4192c7e207c02c8c4ca0b79433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3baefc4192c7e207c02c8c4ca0b79433">&#9670;&nbsp;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static synchronized <a class="el" href="classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html">GlobalConfig</a> com.example.renderer.config.GlobalConfig.getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>获取全局配置单例实例 </p><dl class="section return"><dt>Returns</dt><dd>全局配置实例 </dd></dl>
+
+</div>
+</div>
+<a id="a868f70e0f607398f8c11ff5b428f5549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868f70e0f607398f8c11ff5b428f5549">&#9670;&nbsp;</a></span>getRenderMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String com.example.renderer.config.GlobalConfig.getRenderMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>获取当前渲染模式 </p><dl class="section return"><dt>Returns</dt><dd>当前渲染模式 </dd></dl>
+
+</div>
+</div>
+<a id="ac30b85c18b42b3fc82253b374fd2c484"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac30b85c18b42b3fc82253b374fd2c484">&#9670;&nbsp;</a></span>setRenderMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">synchronized void com.example.renderer.config.GlobalConfig.setRenderMode </td>
+          <td>(</td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>设置渲染模式 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>要设置的渲染模式 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果模式不支持 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/com/example/renderer/config/GlobalConfig.java</li>
 </ul>
 </div><!-- contents -->

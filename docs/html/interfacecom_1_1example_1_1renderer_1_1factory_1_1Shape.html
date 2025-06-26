@@ -103,8 +103,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6db3090c675b8919fb2077d812440078"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29d9bb1411031067e90644d53514f17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa29d9bb1411031067e90644d53514f17">clone</a> ()  throws CloneNotSupportedException</td></tr>
 <tr class="separator:aa29d9bb1411031067e90644d53514f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6322ded7857a802cea68dd4d1932d0cc"><td class="memItemLeft" align="right" valign="top"><a id="a6322ded7857a802cea68dd4d1932d0cc"></a>
-default void&#160;</td><td class="memItemRight" valign="bottom"><b>validatePosition</b> (int x, int y)</td></tr>
+<tr class="memitem:a6322ded7857a802cea68dd4d1932d0cc"><td class="memItemLeft" align="right" valign="top">default void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a6322ded7857a802cea68dd4d1932d0cc">validatePosition</a> (int x, int y)</td></tr>
 <tr class="separator:a6322ded7857a802cea68dd4d1932d0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa825d511e08fc9af9b8e62f41f1fc2ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">move</a> (int dx, int dy)</td></tr>
 <tr class="separator:aa825d511e08fc9af9b8e62f41f1fc2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,7 +221,13 @@ default void&#160;</td><td class="memItemRight" valign="bottom"><b>validatePosit
         </tr>
       </table>
 </div><div class="memdoc">
-<p>创建并返回当前图形的一个副本 </p>
+<p>创建并返回当前图形的一个副本 创建并返回当前图形的一个深拷贝 </p><dl class="section return"><dt>Returns</dt><dd>图形的新副本 </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">CloneNotSupportedException</td><td>如果图形不支持克隆 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a75697839c878777338a81df631881f33">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a9387fcb0aba596e3174f9edb4d817036">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a19d482c4667e3c70ca4bb1478c8f6b4f">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a63521bf6d44d46ca577ad1b43362423f">com.example.renderer.factory.Circle</a>.</p>
 
@@ -336,6 +341,55 @@ default void&#160;</td><td class="memItemRight" valign="bottom"><b>validatePosit
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a">com.example.renderer.factory.Circle</a>.</p>
+
+</div>
+</div>
+<a id="a6322ded7857a802cea68dd4d1932d0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6322ded7857a802cea68dd4d1932d0cc">&#9670;&nbsp;</a></span>validatePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">default void com.example.renderer.factory.Shape.validatePosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>验证坐标位置是否有效 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>y坐标 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果坐标为负数 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

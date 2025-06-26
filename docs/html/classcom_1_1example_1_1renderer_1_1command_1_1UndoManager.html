@@ -94,11 +94,9 @@ $(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1com
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c040d06153c2272bd3534037ccbeccf"><td class="memItemLeft" align="right" valign="top"><a id="a4c040d06153c2272bd3534037ccbeccf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMaxHistorySize</b> (int size)</td></tr>
+<tr class="memitem:a4c040d06153c2272bd3534037ccbeccf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c040d06153c2272bd3534037ccbeccf">setMaxHistorySize</a> (int size)</td></tr>
 <tr class="separator:a4c040d06153c2272bd3534037ccbeccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a544f5330ee31bb00f14eb8f70e8588c2"><td class="memItemLeft" align="right" valign="top"><a id="a544f5330ee31bb00f14eb8f70e8588c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clearHistory</b> ()</td></tr>
+<tr class="memitem:a544f5330ee31bb00f14eb8f70e8588c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a544f5330ee31bb00f14eb8f70e8588c2">clearHistory</a> ()</td></tr>
 <tr class="separator:a544f5330ee31bb00f14eb8f70e8588c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c1369e01556b93a5fa11ea888b8183b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c1369e01556b93a5fa11ea888b8183b">executeCommand</a> (<a class="el" href="interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html">Command</a> cmd)</td></tr>
 <tr class="separator:a4c1369e01556b93a5fa11ea888b8183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,7 +109,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearHistory</b> ()</
 <tr class="memitem:ab961f4aa33e22e7edb846ce2da0fa5f1"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ab961f4aa33e22e7edb846ce2da0fa5f1">canRedo</a> ()</td></tr>
 <tr class="separator:ab961f4aa33e22e7edb846ce2da0fa5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>撤销管理器，管理命令的撤销和重做操作 </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab961f4aa33e22e7edb846ce2da0fa5f1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab961f4aa33e22e7edb846ce2da0fa5f1">&#9670;&nbsp;</a></span>canRedo()</h2>
 
@@ -167,6 +167,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearHistory</b> ()</
 <dl class="section return"><dt>Returns</dt><dd>如果撤销栈不为空返回true，否则返回false </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="a544f5330ee31bb00f14eb8f70e8588c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a544f5330ee31bb00f14eb8f70e8588c2">&#9670;&nbsp;</a></span>clearHistory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.UndoManager.clearHistory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>清除所有历史记录 </p>
 
 </div>
 </div>
@@ -244,6 +270,38 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearHistory</b> ()</
 <p>重做最近撤销的命令。</p>
 <dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+
+</div>
+</div>
+<a id="a4c040d06153c2272bd3534037ccbeccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c040d06153c2272bd3534037ccbeccf">&#9670;&nbsp;</a></span>setMaxHistorySize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void com.example.renderer.command.UndoManager.setMaxHistorySize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>设置最大历史记录数 </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>最大历史记录数 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

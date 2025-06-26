@@ -2,15 +2,17 @@
 PROJECT_NAME           = "图形渲染系统"
 PROJECT_NUMBER         = 1.0
 PROJECT_BRIEF          = "基于多种设计模式的图形渲染系统"
-PROJECT_LOGO           = docs/logo.png
+PROJECT_LOGO           = docs/images/logo.png
 OUTPUT_DIRECTORY       = docs/
-#USE_MDFILE_AS_MAINPAGE = docs/mainpage.md  # 添加主页面
 USE_MDFILE_AS_MAINPAGE = docs/mainpage.md
 MARKDOWN_SUPPORT = YES
+EXTENSION_MAPPING = md=markdown
 
 
 # 输入配置
 INPUT                  = src
+INPUT += docs/mainpage.md
+
 RECURSIVE              = YES
 + FILE_PATTERNS        = *.java  # 简化文件模式
 
@@ -18,9 +20,11 @@ RECURSIVE              = YES
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 HTML_EXTRA_STYLESHEET  = docs/doxygen-awesome.css
-HTML_EXTRA_FILES       = docs/logo.png
-GENERATE_TREEVIEW    = YES     # 启用树形导航
-DISABLE_INDEX        = NO      # 确保索引可用
+HTML_EXTRA_FILES       = 
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+SEARCHENGINE           = YES
+GENERATE_LATEX         = NO
 
 # 图表生成配置
 HAVE_DOT               = YES

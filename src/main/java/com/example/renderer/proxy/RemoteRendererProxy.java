@@ -108,15 +108,6 @@ public class RemoteRendererProxy implements Renderer {
         realRenderer.drawTriangle(x1, y1, x2, y2, x3, y3);
     }
 
-    /**
-     * 代理绘制椭圆操作，添加远程调用日志。
-     * 
-     * @param x 椭圆外接矩形左上角x坐标
-     * @param y 椭圆外接矩形左上角y坐标
-     * @param width 椭圆宽度(必须>0)
-     * @param height 椭圆高度(必须>0)
-     * @throws IllegalArgumentException 如果宽度或高度不合法
-     */
     @Override
     public void setStyle(String stroke, String fill, int width) {
         this.strokeColor = stroke;

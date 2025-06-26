@@ -105,14 +105,12 @@ Collaboration diagram for com.example.renderer.util.RuntimeTypeAdapterFactory&lt
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab63a18458e6ecd8e8f7e0dc6dea80edb"><td class="memItemLeft" align="right" valign="top"><a id="ab63a18458e6ecd8e8f7e0dc6dea80edb"></a>
-<a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>registerSubtype</b> (Class&lt;? extends T &gt; type, String label)</td></tr>
+<tr class="memitem:ab63a18458e6ecd8e8f7e0dc6dea80edb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html#ab63a18458e6ecd8e8f7e0dc6dea80edb">registerSubtype</a> (Class&lt;? extends T &gt; type, String label)</td></tr>
 <tr class="separator:ab63a18458e6ecd8e8f7e0dc6dea80edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa79a857cb079c7e68aa58977c0d31ebd"><td class="memItemLeft" align="right" valign="top"><a id="aa79a857cb079c7e68aa58977c0d31ebd"></a>
-static&lt; T &gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>of</b> (Class&lt; T &gt; baseType, String typeFieldName)</td></tr>
+<tr class="memitem:aa79a857cb079c7e68aa58977c0d31ebd"><td class="memItemLeft" align="right" valign="top">static&lt; T &gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html#aa79a857cb079c7e68aa58977c0d31ebd">of</a> (Class&lt; T &gt; baseType, String typeFieldName)</td></tr>
 <tr class="separator:aa79a857cb079c7e68aa58977c0d31ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -122,7 +120,99 @@ static&lt; T &gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_
   </table>
   </dd>
 </dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa79a857cb079c7e68aa58977c0d31ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79a857cb079c7e68aa58977c0d31ebd">&#9670;&nbsp;</a></span>of()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static &lt;T&gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt;T&gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">com.example.renderer.util.RuntimeTypeAdapterFactory</a>&lt; T &gt;.of </td>
+          <td>(</td>
+          <td class="paramtype">Class&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>baseType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>typeFieldName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>创建运行时类型适配器工厂</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">&lt;T&gt;</td><td>基类型 </td></tr>
+    <tr><td class="paramname">baseType</td><td>基类 </td></tr>
+    <tr><td class="paramname">typeFieldName</td><td>JSON中的类型字段名 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>适配器工厂实例 </dd></dl>
+
+</div>
+</div>
+<a id="ab63a18458e6ecd8e8f7e0dc6dea80edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab63a18458e6ecd8e8f7e0dc6dea80edb">&#9670;&nbsp;</a></span>registerSubtype()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">RuntimeTypeAdapterFactory</a>&lt;T&gt; <a class="el" href="classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html">com.example.renderer.util.RuntimeTypeAdapterFactory</a>&lt; T &gt;.registerSubtype </td>
+          <td>(</td>
+          <td class="paramtype">Class&lt;? extends T &gt;&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">String&#160;</td>
+          <td class="paramname"><em>label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>注册子类型</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>子类型类对象 </td></tr>
+    <tr><td class="paramname">label</td><td>类型标签 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>适配器工厂实例(用于链式调用) </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/main/java/com/example/renderer/util/RuntimeTypeAdapterFactory.java</li>
 </ul>
 </div><!-- contents -->
