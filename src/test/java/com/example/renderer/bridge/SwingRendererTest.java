@@ -29,6 +29,7 @@ import java.awt.*;
 
 import static org.mockito.Mockito.*;
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.reset;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SwingRendererTest {
@@ -69,6 +70,9 @@ public class SwingRendererTest {
 
     @Test
     public void testStyleSetting() {
+        // Reset mock to ignore initial setup calls
+        reset(mockGraphics);
+        
         renderer.setStyle("#FF0000", "#00FF00", 2);
         verify(mockGraphics).setColor(Color.RED);
         verify(mockGraphics).setStroke(argThat(stroke -> 
