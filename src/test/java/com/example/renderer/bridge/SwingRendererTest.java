@@ -32,12 +32,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SwingRendererTest {
     private SwingRenderer renderer;
-    private MockGraphics2D mockGraphics;
+    private Graphics2D mockGraphics;
 
     @BeforeEach
     public void setUp() {
         renderer = new SwingRenderer();
-        mockGraphics = new MockGraphics2D();
+        mockGraphics = mock(Graphics2D.class);
         renderer.setGraphics(mockGraphics);
     }
 
@@ -51,7 +51,7 @@ public class SwingRendererTest {
     @Test
     public void testDrawRectangle() {
         renderer.drawRectangle(50, 50, 100, 80);
-        assertEquals("drawRect:50,50,100,80", mockGraphics.lastDrawCall);
+        verify(mockGraphics).drawRect(50, 50, 100, 80);
     }
 
     @Test
