@@ -2,6 +2,7 @@ package com.example.renderer.command;
 
 import com.example.renderer.factory.Shape;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 删除图形命令实现类
