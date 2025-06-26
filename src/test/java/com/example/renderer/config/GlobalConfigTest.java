@@ -21,15 +21,19 @@ public class GlobalConfigTest {
 
     @Test
     public void testSingletonInstance() {
-        GlobalConfig instance1 = GlobalConfig.getInstance();
-        GlobalConfig instance2 = GlobalConfig.getInstance();
+        GlobalConfig instance1 = GlobalConfig.INSTANCE;
+        GlobalConfig instance2 = GlobalConfig.INSTANCE;
         assertSame(instance1, instance2);
     }
 
     @Test
     public void testRenderMode() {
-        GlobalConfig config = GlobalConfig.getInstance();
-        config.setRenderMode("test-mode");
-        assertEquals("test-mode", config.getRenderMode());
+        GlobalConfig config = GlobalConfig.INSTANCE;
+        config.setRenderMode("svg");
+        assertEquals("svg", config.getRenderMode());
+        
+        // 测试无效模式
+        assertThrows(IllegalArgumentException.class, 
+            () -> config.setRenderMode("invalid-mode"));
     }
 }
