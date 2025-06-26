@@ -13,19 +13,44 @@ package com.example.renderer.bridge;
  * @see RendererInterface 基础绘制接口
  * @see RendererFactory 渲染器创建工厂
  */
+/**
+ * 增强渲染器接口，扩展基础渲染能力。
+ * 
+ * <p>架构角色：桥接模式中的抽象部分，将图形绘制与具体实现解耦。
+ * 
+ * <p>生命周期：
+ * 1. 通过RendererFactory创建实例
+ * 2. 配置样式(setStyle)
+ * 3. 执行绘制操作(drawXxx)
+ * 4. 可通过getContext获取底层实现对象
+ * 
+ * @see RendererFactory 创建实例的工厂类
+ */
 public interface Renderer extends RendererInterface {
     /**
      * 设置渲染样式
-     * @param stroke 线条颜色
-     * @param fill 填充颜色
-     * @param width 线宽
+     * @param stroke 线条颜色(支持CSS颜色格式)
+     * @param fill 填充颜色(支持CSS颜色格式)
+     * @param width 线宽(像素，必须>=0)
+     * @throws IllegalArgumentException 如果宽度为负数
      */
-    void setStyle(String stroke, String fill, int width);
+    void setStyle(String stroke, String fill, int width) throws IllegalArgumentException;
     
     /**
      * 获取当前渲染上下文
+     * @return 底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等)
      */
     Object getContext();
+    
+    /**
+     * 开始新帧/页的绘制
+     */
+    default void beginFrame() {}
+    
+    /**
+     * 结束当前帧/页的绘制
+     */
+    default void endFrame() {}
     /**
      * 绘制圆形
      * @param x 圆心x坐标

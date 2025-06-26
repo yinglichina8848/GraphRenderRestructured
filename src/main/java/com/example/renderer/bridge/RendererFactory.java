@@ -21,13 +21,19 @@ package com.example.renderer.bridge;
  * </ul>
  */
 public class RendererFactory {
-    private static final Map<String, Supplier<Renderer>> renderers = new HashMap<>();
+    private static final ConcurrentMap<String, Supplier<Renderer>> renderers = new ConcurrentHashMap<>();
+    private static final ReadWriteLock lock = new ReentrantReadWriteLock();
     
     static {
-        register("swing", SwingRenderer::new);
-        register("svg", SVGRenderer::new);
-        register("test", TestRenderer::new);
-        register("legacy", () -> new LegacyRendererAdapter(new LegacyRenderer()));
+        // 内置渲染器注册
+        registerInternal("swing", SwingRenderer::new);
+        registerInternal("svg", SVGRenderer::new);
+        registerInternal("test", TestRenderer::new);
+        registerInternal("legacy", () -> new LegacyRendererAdapter(new LegacyRenderer()));
+    }
+    
+    private static void registerInternal(String mode, Supplier<Renderer> supplier) {
+        renderers.put(mode, supplier);
     }
     
     public static void register(String mode, Supplier<Renderer> supplier) {

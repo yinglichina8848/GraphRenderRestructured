@@ -35,12 +35,32 @@ public class GlobalConfig {
     }
     
     private void loadConfig() {
-        // TODO: 从配置文件加载配置
-        // 示例：从系统属性读取
+        // 1. 尝试从系统属性读取
         String mode = System.getProperty("render.mode");
+        
+        // 2. 尝试从配置文件读取
+        if (mode == null) {
+            mode = loadFromConfigFile();
+        }
+        
+        // 3. 使用默认值
         if (mode != null && validModes.contains(mode)) {
             renderMode = mode;
         }
+    }
+    
+    private String loadFromConfigFile() {
+        Path configPath = Paths.get("config/renderer.properties");
+        if (Files.exists(configPath)) {
+            try {
+                Properties props = new Properties();
+                props.load(Files.newInputStream(configPath));
+                return props.getProperty("render.mode");
+            } catch (IOException e) {
+                System.err.println("加载配置文件失败: " + e.getMessage());
+            }
+        }
+        return null;
     }
 
     public static synchronized GlobalConfig getInstance() {

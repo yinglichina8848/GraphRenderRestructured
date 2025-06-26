@@ -38,15 +38,39 @@ public class ApplicationContext {
     }
     
     @SuppressWarnings("unchecked")
+    /**
+     * 获取指定类型的Bean实例
+     * @param type Bean类型
+     * @return 已注册的Bean实例
+     * @throws IllegalStateException 如果类型未注册
+     * @throws BeanCreationException 如果实例创建失败
+     */
+    @SuppressWarnings("unchecked")
     public static <T> T getBean(Class<T> type) {
-        if (!beans.containsKey(type)) {
-            Supplier<?> supplier = suppliers.get(type);
-            if (supplier == null) {
-                throw new IllegalStateException("No supplier registered for " + type);
+        try {
+            lock.readLock().lock();
+            if (!beans.containsKey(type)) {
+                Supplier<?> supplier = suppliers.get(type);
+                if (supplier == null) {
+                    throw new IllegalStateException("No supplier registered for " + type);
+                }
+                
+                lock.readLock().unlock();
+                lock.writeLock().lock();
+                try {
+                    // 双重检查
+                    if (!beans.containsKey(type)) {
+                        beans.put(type, supplier.get());
+                    }
+                } finally {
+                    lock.readLock().lock();
+                    lock.writeLock().unlock();
+                }
             }
-            beans.put(type, supplier.get());
+            return (T) beans.get(type);
+        } finally {
+            lock.readLock().unlock();
         }
-        return (T) beans.get(type);
     }
     
     public static void refresh() {
