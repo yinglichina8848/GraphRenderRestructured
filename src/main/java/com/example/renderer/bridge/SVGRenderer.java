@@ -52,14 +52,14 @@ public class SVGRenderer implements Renderer {
 
     @Override
     public void beginFrame() {
+        svgBuilder = new StringBuilder();
         svgBuilder.append("<svg xmlns='http://www.w3.org/2000/svg'>\n");
     }
 
     @Override
     public void endFrame() {
-        svgBuilder.append("</svg>");
-        System.out.println(svgBuilder.toString());
-        svgBuilder.setLength(0); // 清空以便下次使用
+        svgBuilder.append("</svg>\n");
+        System.out.print(svgBuilder.toString());
     }
 
     /**
@@ -85,7 +85,7 @@ public class SVGRenderer implements Renderer {
         if (width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Width and height must be positive (width=" + width + ", height=" + height + ")");
         }
-        System.out.printf("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
+        svgBuilder.append(String.format("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height));
     }
 
     /**
@@ -107,12 +107,12 @@ public class SVGRenderer implements Renderer {
      */
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-        System.out.printf("<polygon points='%d,%d %d,%d %d,%d' />\n", 
-            x1, y1, x2, y2, x3, y3);
+        svgBuilder.append(String.format("<polygon points='%d,%d %d,%d %d,%d' />\n", 
+            x1, y1, x2, y2, x3, y3));
     }
 
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
-        System.out.printf("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width, height);
+        svgBuilder.append(String.format("<ellipse cx='%d' cy='%d' rx='%d' ry='%d' />\n", x, y, width, height));
     }
 }
