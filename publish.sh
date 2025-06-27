@@ -102,8 +102,8 @@ if [ -d "$WORKTREE_DIR" ]; then
   git worktree remove "$WORKTREE_DIR" --force || true
 fi
 
-git fetch github "$GH_PAGES_BRANCH"
-git worktree add "$WORKTREE_DIR" github/"$GH_PAGES_BRANCH"
+git fetch origin "$GH_PAGES_BRANCH"
+git worktree add "$WORKTREE_DIR" origin/"$GH_PAGES_BRANCH"
 
 echo "📦 Step 6: 替换 gh-pages 内容..."
 rm -rf "$WORKTREE_DIR"/*
@@ -115,7 +115,7 @@ git config user.name "GitHub Actions"
 git config user.email "actions@github.com"
 git add .
 git commit -m "📄 Auto-publish site on $(date +'%Y-%m-%d %H:%M:%S')" || echo "ℹ️ Nothing to commit."
-git push -f  github "$GH_PAGES_BRANCH"
+git push -f  origin "$GH_PAGES_BRANCH"
 cd ..
 
 echo "🧹 清理 worktree..."
