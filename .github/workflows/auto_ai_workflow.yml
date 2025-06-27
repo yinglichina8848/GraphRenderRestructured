@@ -28,6 +28,9 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install jinja2
 
+      - name: Install Python dependencies
+        run: pip install beautifulsoup4 lxml
+
       - name: 🚀 编译、测试、生成报告并渲染发布
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
