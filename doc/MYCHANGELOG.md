@@ -8,27 +8,31 @@
 
 ## [Unreleased]
 
-### ✨ 新增功能
+## [v0.2.0] - 2025-06-27
+### ✨ 新增功能 主要集中在 健全文档化和测试环境
+- 加入模板分离的 Action 支持，云端也能生成美化的首页。
+- 使用模板分离和渲染方式index.html，publish.sh 专注于代码逻辑，页面内容和美化效果由 python 和 模板文件完成。
+- 美化 publish.sh 生成的index.html，后续考虑使用模板自动生成美化效果。 
+- 加入 MyChangLog 模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。
 - 集成 GitHub Actions 工作流，实现云端自动编译、测试、生成报告。
 - 自动发布 `target/site` 中的静态文档至 `gh-pages` 分支。
 - 添加 `publish.sh` 脚本，支持本地/CI 自动构建发布文档。（综合在生成的网站的首页显示各种资源）
 - 添加 `push.sh` 脚本，提交本地源码到 Github main 分支, 并触发云端的 Action， 完成自动编译测试和文档发布。
 - 实现 Markdown → HTML 转换，文档索引页自动生成（针对doc目录下 Aider 生成的 Markdown 报告）。
-- 加入 ChangLog 模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。
-
-### 🧠 AI 提升
+- 
+### 🧠 AI 提升 2025-06-25
 - 补充多个 Aider 生成的 Markdown 分析报告，从多个角度健全项目的软件工程文档。
 - 集成 Aider 脚本，辅助分析代码质量、自动补全注释与测试。（测试功能，Aider 的反馈并未直接加入代码，只是显示修改意见）
 - 自动生成 `doc/ai_fix_suggestions.md` AI 建议报告。
 
-### 🛠 持续集成改进
+### 🛠 持续集成改进 2025-06-26
 - 添加 `.github/workflows/auto_ai_workflow.yml` 支持自动发布。
 - 准备自动生成 `CHANGELOG.md` 并集成进发布流程。
 - 支持多格式代码质量分析：PMD、Checkstyle、JaCoCo、SpotBugs、OWASP Dependency Check。
 
 ---
 
-## [v0.1.0] - 2025-06-27
+## [v0.1.0] - 2025-06-24
 
 ### 🎉 初始版本
 - Java + JavaScript 渲染核心代码结构搭建。

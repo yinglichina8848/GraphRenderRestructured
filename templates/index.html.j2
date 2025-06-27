@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>📚 GraphRender 文档索引</title>
+  <style>
+    body {
+      max-width: 960px;
+      margin: 3em auto;
+      padding: 1.5em;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2em;
+      border-bottom: 3px solid #ddd;
+      padding-bottom: 0.3em;
+    }
+    h2 {
+      margin-top: 2em;
+      color: #444;
+    }
+    ul {
+      list-style: none;
+      padding-left: 1em;
+    }
+    ul li::before {
+      content: "📄";
+      margin-right: 0.5em;
+    }
+    li a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+    li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 GraphRender 技术文档索引</h1>
+
+  <h2>🔗 核心入口</h2>
+  <ul>
+    <li><a href="index.html">📂 文档主页（当前）</a></li>
+    <li><a href="apidocs/index.html">📘 JavaDoc API</a></li>
+    <li><a href="doxygen/index.html">📗 Doxygen 接口文档</a></li>
+  </ul>
+
+  <h2>📘 更新与 AI 建议</h2>
+  <ul>
+    <li><a href="doc/MYCHANGELOG.html">📝 更新记录（CHANGELOG）</a></li>
+    <li><a href="doc/ai_fix_suggestions.html">🤖 AI 改进建议</a></li>
+  </ul>
+
+  <h2>📄 PDF 文档</h2>
+  <ul>
+    {% for pdf in pdfs %}
+    <li><a href="doc/{{ pdf }}">{{ pdf }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>📄 Markdown 文档（已转 HTML）</h2>
+  <ul>
+    {% for doc in docs %}
+    <li><a href="doc/{{ doc }}.html">{{ doc }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>🧪 测试与分析报告</h2>
+  <ul>
+    {% for item in reports %}
+    <li><a href="{{ item.path }}">{{ item.label }}</a></li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
+

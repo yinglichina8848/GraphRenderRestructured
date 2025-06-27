@@ -21,29 +21,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 💡 安装 Pandoc Doxygen Graphviz
+      - name: 💡 安装 Pandoc Doxygen Graphviz 和 Python3 + pip + jinja2
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc doxygen graphviz
+          sudo apt-get install -y pandoc doxygen graphviz python3 python3-pip
+          python3 -m pip install --upgrade pip
+          pip3 install jinja2
 
-      - name: 🛠️ 初始化 gh-pages 分支（如尚未存在）
-        run: |
-          if ! git ls-remote --exit-code --heads origin gh-pages; then
-            echo "🔧 gh-pages 不存在，自动创建..."
-            git checkout --orphan gh-pages
-            git rm -rf .
-            echo "# gh-pages" > README.md
-            git add README.md
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -m "Initialize gh-pages branch"
-            git push origin gh-pages
-            git checkout main
-          else
-            echo "✅ gh-pages 分支已存在，跳过初始化"
-          fi
-
-      - name: 🚀 编译、测试、生成报告并发布文档
+      - name: 🚀 编译、测试、生成报告并渲染发布
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
