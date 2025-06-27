@@ -6,60 +6,254 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>MYCHANGELOG</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">MYCHANGELOG</h1>
 </header>
-<h1 id="changelog">📘 Changelog</h1>
+<h1 id="release-note-作者编写的软件版本说明">📘 Release Note
+作者编写的软件版本说明</h1>
 <p>本项目的所有可公开更改将记录于此文件中。</p>
-<p>遵循 <a href="https://keepachangelog.com/zh-CN/1.0.0/">Keep a Changelog</a> 和 <a href="https://semver.org/lang/zh-CN/">语义化版本控制</a>。</p>
+<p>遵循 <a href="https://keepachangelog.com/zh-CN/1.0.0/">Keep a
+Changelog</a> 和 <a
+href="https://semver.org/lang/zh-CN/">语义化版本控制</a>。</p>
 <hr />
+<h2
+id="完整的项目文档httpsyinglichina8848.github.iographrenderrestructured">完整的项目文档：https://yinglichina8848.github.io/GraphRenderRestructured</h2>
+<h2
+id="软件质量报告httpsyinglichina8848.github.iographrenderrestructureddocquality-summary.html">软件质量报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html</h2>
+<h2
+id="自动生成的软件变更报告httpsyinglichina8848.github.iographrenderrestructureddocchangelog.html">自动生成的软件变更报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html</h2>
+<h2
+id="软件版本说明httpsyinglichina8848.github.iographrenderrestructureddocmychangelog.html">软件版本说明：https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html</h2>
 <h2 id="unreleased">[Unreleased]</h2>
+<p>###考虑加入 AI
+自动分析，提升软件质量，引入MCP工作流，完成烦琐的提示、测试、补全注释等非创造性的工作。</p>
+<h2 id="v1.0.0---2025-06-28">[v1.0.0] - 2025-06-28</h2>
+<h3 id="集成了语义版本控制提交源码时自动升级版本号并生成变更记录">✨
+集成了语义版本控制，提交源码时自动升级版本号，并生成变更记录。</h3>
+<ul>
+<li>✅ 集成同步发布功能，一次提交，自动同步到 Github 和 Gitee</li>
+<li>✅ 云端文档自动生成和发布，main
+分支的任何代码提交，会自动触发云端编译、测试和报告生成，并自动发布到
+gh-pages 分支，以 Github Pages 网页的形式展示。</li>
+<li>✅
+语义代码注释和版本集成，自动抽取函数注释，错误修正，生成版本变更记录，并生成版本号。</li>
+<li>✅ 加入了 AI
+工具对话过程文档，方便读者学习和复现整个项目的开发和配置。</li>
+</ul>
 <h2 id="v0.4.0---2025-06-28">[v0.4.0] - 2025-06-28</h2>
-<h3 id="整理项目加入语义版本控制进一步提高文档的规范性和全面性">✨ 整理项目，加入语义版本控制，进一步提高文档的规范性和全面性。</h3>
+<h3 id="整理项目加入语义版本控制进一步提高文档的规范性和全面性">✨
+整理项目，加入语义版本控制，进一步提高文档的规范性和全面性。</h3>
 <ul>
 <li>使用 semantic-release 配置了自动运行的 Action 工作流</li>
 <li>手动方式，使用 standard-version 更改版本号。</li>
-<li>整合 软件质量总结报告，用 Python 分析自动生成的各个测试报告，给出最终评价。</li>
+<li>整合 软件质量总结报告，用 Python
+分析自动生成的各个测试报告，给出最终评价。</li>
 </ul>
 <h2 id="v0.3.0---2025-06-27">[v0.3.0] - 2025-06-27</h2>
-<h3 id="一点感想-ai-opensource-是大势所趋">✨ 一点感想： AI + OpenSource 是大势所趋</h3>
+<h3 id="一点感想-ai-opensource-是大势所趋">✨ 一点感想： AI + OpenSource
+是大势所趋</h3>
 <ul>
-<li>感谢 Github， 感谢各个开源软件的开发者和提供者，你们让软件开发工作重新变成了一种享受！</li>
-<li>所有烦琐的，繁重的测试、注释和整理工作，交给开源的工作流和 AI 来自动完成。</li>
+<li>感谢 Github，
+感谢各个开源软件的开发者和提供者，你们让软件开发工作重新变成了一种享受！</li>
+<li>所有烦琐的，繁重的测试、注释和整理工作，交给开源的工作流和 AI
+来自动完成。</li>
 <li>设计师可以更加关注于软件的进化方向和真正的有效功能和软件的性呢。</li>
 <li>AI + 开源软件， 是人类软件自主进化的发动机和翅膀。</li>
 </ul>
 <h2 id="v0.2.0---2025-06-27">[v0.2.0] - 2025-06-27</h2>
-<h3 id="新增功能-主要集中在-健全文档化和测试环境">✨ 新增功能 主要集中在 健全文档化和测试环境</h3>
+<h3 id="新增功能-主要集中在-健全文档化和测试环境">✨ 新增功能 主要集中在
+健全文档化和测试环境</h3>
 <ul>
 <li>加入模板分离的 Action 支持，云端也能生成美化的首页。</li>
-<li>使用模板分离和渲染方式index.html，publish.sh 专注于代码逻辑，页面内容和美化效果由 python 和 模板文件完成。</li>
-<li>美化 publish.sh 生成的index.html，后续考虑使用模板自动生成美化效果。</li>
-<li>加入 MyChangLog 模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。</li>
+<li>使用模板分离和渲染方式index.html，publish.sh
+专注于代码逻辑，页面内容和美化效果由 python 和 模板文件完成。</li>
+<li>美化 publish.sh
+生成的index.html，后续考虑使用模板自动生成美化效果。</li>
+<li>加入 MyChangLog
+模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。</li>
 <li>集成 GitHub Actions 工作流，实现云端自动编译、测试、生成报告。</li>
-<li>自动发布 <code>target/site</code> 中的静态文档至 <code>gh-pages</code> 分支。</li>
-<li>添加 <code>publish.sh</code> 脚本，支持本地/CI 自动构建发布文档。（综合在生成的网站的首页显示各种资源）</li>
-<li>添加 <code>push.sh</code> 脚本，提交本地源码到 Github main 分支, 并触发云端的 Action， 完成自动编译测试和文档发布。</li>
-<li>实现 Markdown → HTML 转换，文档索引页自动生成（针对doc目录下 Aider 生成的 Markdown 报告）。</li>
+<li>自动发布 <code>target/site</code> 中的静态文档至
+<code>gh-pages</code> 分支。</li>
+<li>添加 <code>publish.sh</code> 脚本，支持本地/CI
+自动构建发布文档。（综合在生成的网站的首页显示各种资源）</li>
+<li>添加 <code>push.sh</code> 脚本，提交本地源码到 Github main 分支,
+并触发云端的 Action， 完成自动编译测试和文档发布。</li>
+<li>实现 Markdown → HTML 转换，文档索引页自动生成（针对doc目录下 Aider
+生成的 Markdown 报告）。</li>
 <li><h3 id="ai-提升-2025-06-25">🧠 AI 提升 2025-06-25</h3></li>
-<li>补充多个 Aider 生成的 Markdown 分析报告，从多个角度健全项目的软件工程文档。</li>
-<li>集成 Aider 脚本，辅助分析代码质量、自动补全注释与测试。（测试功能，Aider 的反馈并未直接加入代码，只是显示修改意见）</li>
+<li>补充多个 Aider 生成的 Markdown
+分析报告，从多个角度健全项目的软件工程文档。</li>
+<li>集成 Aider
+脚本，辅助分析代码质量、自动补全注释与测试。（测试功能，Aider
+的反馈并未直接加入代码，只是显示修改意见）</li>
 <li>自动生成 <code>doc/ai_fix_suggestions.md</code> AI 建议报告。</li>
 </ul>
 <h3 id="持续集成改进-2025-06-26">🛠 持续集成改进 2025-06-26</h3>
 <ul>
-<li>添加 <code>.github/workflows/auto_ai_workflow.yml</code> 支持自动发布。</li>
+<li>添加 <code>.github/workflows/auto_ai_workflow.yml</code>
+支持自动发布。</li>
 <li>准备自动生成 <code>CHANGELOG.md</code> 并集成进发布流程。</li>
-<li>支持多格式代码质量分析：PMD、Checkstyle、JaCoCo、SpotBugs、OWASP Dependency Check。</li>
+<li>支持多格式代码质量分析：PMD、Checkstyle、JaCoCo、SpotBugs、OWASP
+Dependency Check。</li>
 </ul>
 <hr />
 <h2 id="v0.1.0---2025-06-24">[v0.1.0] - 2025-06-24</h2>
