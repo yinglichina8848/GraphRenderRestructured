@@ -88,41 +88,28 @@ done
 echo "  </ul>" >> "$INDEX_HTML"
 echo "  <h2>🧪 测试与分析报告</h2><ul>" >> "$INDEX_HTML"
 
-# ✅ 整合所有常见报告
-REPORT_FILES=(
-  "surefire-report.html"
-  "jacoco/index.html"
-  "jacoco-aggregate/index.html"
-  "checkstyle.html"
-  "pmd.html"
-  "cpd.html"
-  "spotbugs.html"
-  "dependency-check-report.html"
-  "dependencies.html"
-  "scm.html"
-  "modules.html"
-  "licenses.html"
-  "team.html"
-  "ci-management.html"
-  "issue-management.html"
-  "summary.html"
+# 映射：报告文件路径 → 中文标题 + 图标
+declare -A report_map=(
+  ["surefire-report.html"]="✅ 单元测试报告"
+  ["jacoco/index.html"]="📊 JaCoCo 覆盖率"
+  ["jacoco-aggregate/index.html"]="📊 JaCoCo 聚合覆盖率"
+  ["checkstyle.html"]="🧹 Checkstyle 报告"
+  ["pmd.html"]="🧽 PMD 检查"
+  ["cpd.html"]="🔍 重复代码检查 (CPD)"
+  ["spotbugs.html"]="🐞 SpotBugs 缺陷报告"
+  ["dependency-check-report.html"]="🛡️ 依赖安全检查 (OWASP)"
+  ["dependencies.html"]="📦 项目依赖分析"
+  ["scm.html"]="🔗 版本控制信息 (SCM)"
+  ["summary.html"]="📖 项目概览摘要"
 )
 
-for report in "${REPORT_FILES[@]}"; do
-  REPORT_PATH="$SITE_DIR/$report"
-  if [ -f "$REPORT_PATH" ]; then
-    name=$(basename "$report")
-    if [[ "$name" == "index.html" ]]; then
-      section=$(basename "$(dirname "$report")")
-      title="$section"
-    else
-      title=$(basename "$report" .html)
-    fi
-    title=$(echo "$title" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) substr($i,2)}1')
-    echo "    <li><a href=\"$report\">📄 $title</a></li>" >> "$INDEX_HTML"
+for path in "${!report_map[@]}"; do
+  if [ -f "$SITE_DIR/$path" ]; then
+    echo "    <li><a href=\"$path\">${report_map[$path]}</a></li>" >> "$INDEX_HTML"
   fi
 done
 
+echo "  </ul>" >> "$INDEX_HTML"
 echo "  </ul>" >> "$INDEX_HTML"
 echo "</body></html>" >> "$INDEX_HTML"
 echo "✅ index.html generated."
