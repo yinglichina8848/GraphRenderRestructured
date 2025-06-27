@@ -1,3 +1,10 @@
+## <small>1.0.1 (2025-06-27)</small>
+
+* Merge branch 'main' of github.com:yinglichina8848/GraphRenderRestructured ([9503061](https://github.com/yinglichina8848/GraphRenderRestructured/commit/9503061))
+* 改进语义化文档，控制自动提交时的版本号，只升级小版本，不做大版本升级。自动附加软件质量报告到ReleaseNote ([a543634](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a543634))
+* 适应云端环境自动编译测试, 恢复工作流 ([7324669](https://github.com/yinglichina8848/GraphRenderRestructured/commit/7324669))
+* docs: 改进了软件质量总结报告，利用 Python 处理自动生成的各种测试报告，给出总结。 ([438c448](https://github.com/yinglichina8848/GraphRenderRestructured/commit/438c448))
+
 # 1.0.0 (2025-06-27)
 
 
