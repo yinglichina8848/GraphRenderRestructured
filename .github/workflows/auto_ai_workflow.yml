@@ -31,7 +31,7 @@ jobs:
 
       - name: 🤖 启动 AI 自动改进 + 构建 + 发布
         run: |
-          chmod +x ai_improve.sh
+          chmod +x aiimprove.sh
           ./aiimprove.sh
 
       - name: 🤖 启动 AI 自动修复 + 构建 + 发布
@@ -40,7 +40,7 @@ jobs:
           ./aiimprove.sh
 
       - name: 📦 上传 AI 报告
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ai-fix-report
           path: doc/ai_fix_suggestions.md
