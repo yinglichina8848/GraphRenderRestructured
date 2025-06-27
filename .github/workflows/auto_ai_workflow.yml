@@ -25,7 +25,7 @@ jobs:
       - name: 💡 安装 Aider + Pandoc
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc
+          sudo apt-get install -y pandoc doxygen dot
 
       - name: 🧪 执行测试并生成网站
         run: |
