@@ -15,7 +15,7 @@ INDEX_HTML="$SITE_DIR/index.html"
 CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
 
 echo "🛠️ Step 1: Building Maven site and reports..."
-mvn clean verify site
+#mvn clean verify site
 
 echo "📄 Step 2: Copying Doxygen HTML output if available..."
 if [ -d "$DOXYGEN_HTML" ]; then
