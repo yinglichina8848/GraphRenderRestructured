@@ -99,8 +99,8 @@ echo "✅ index.html generated."
 echo "📁 Step 5: Cloning $GH_PAGES_BRANCH branch..."
 rm -rf "$PUBLISH_DIR"
 # 禁止克隆文档的原始记录，每次完全从本地覆盖
-#git clone --branch "$GH_PAGES_BRANCH" --depth 1 "$REPO_URL" "$PUBLISH_DIR"
-mkdir -p $PUBLISH_DIR
+git clone --branch "$GH_PAGES_BRANCH" --depth 1 "$REPO_URL" "$PUBLISH_DIR"
+#mkdir -p $PUBLISH_DIR
 
 echo "📦 Step 6: Replacing site content..."
 rm -rf "$PUBLISH_DIR"/*
