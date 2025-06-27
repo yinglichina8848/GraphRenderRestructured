@@ -5,53 +5,36 @@
   <title>📚 GraphRender 文档索引</title>
   <style>
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #f9fafb;
+      max-width: 960px;
+      margin: 3em auto;
+      padding: 1.5em;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
     h1 {
-      color: #2c3e50;
-      text-align: center;
-      margin-bottom: 40px;
+      font-size: 2em;
+      border-bottom: 3px solid #ddd;
+      padding-bottom: 0.3em;
     }
     h2 {
-      border-bottom: 2px solid #2980b9;
-      padding-bottom: 6px;
-      margin-top: 40px;
-      color: #2980b9;
+      margin-top: 2em;
+      color: #444;
     }
     ul {
       list-style: none;
-      padding: 0;
-      margin: 15px 0 40px 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      padding-left: 1em;
     }
-    ul li {
-      background: white;
-      border-radius: 8px;
-      padding: 12px 18px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-      flex: 1 1 280px;
-      transition: box-shadow 0.3s ease;
+    ul li::before {
+      content: "📄";
+      margin-right: 0.5em;
     }
-    ul li:hover {
-      box-shadow: 0 4px 15px rgb(0 0 0 / 0.15);
-    }
-    a {
+    li a {
       text-decoration: none;
-      color: #2980b9;
-      font-weight: 600;
-      font-size: 1.05em;
-      display: block;
+      color: #0066cc;
     }
-    a:hover {
-      color: #1b5980;
+    li a:hover {
       text-decoration: underline;
     }
   </style>
@@ -68,52 +51,87 @@
 
   <h2>📘 更新与 AI 建议</h2>
   <ul>
-    <li><a href="doc/MYCHANGELOG.html">📝 手工记录的更新记录 (CHANGELOG)</a></li>
+    <li><a href="doc/MYCHANGELOG.html">📝 更新记录（CHANGELOG）</a></li>
     <li><a href="doc/ai_fix_suggestions.html">🤖 AI 改进建议</a></li>
   </ul>
 
   <h2>📄 PDF 文档</h2>
   <ul>
+    
     <li><a href="doc/图形渲染环境设计报告.pdf">图形渲染环境设计报告.pdf</a></li>
-    <li><a href="doc/ChatGPT对话过程.pdf">ChatGPT对话过程.pdf</a></li>
+    
     <li><a href="doc/Deepseek对话过程.pdf">Deepseek对话过程.pdf</a></li>
+    
+    <li><a href="doc/ChatGPT对话过程.pdf">ChatGPT对话过程.pdf</a></li>
+    
   </ul>
 
   <h2>📄 Markdown 文档（已转 HTML）</h2>
   <ul>
-    <li><a href="doc/ai_fix_suggestions.html">ai_fix_suggestions</a></li>
-    <li><a href="doc/api-usage-guide.html">api-usage-guide</a></li>
-    <li><a href="doc/architecture.html">architecture</a></li>
-    <li><a href="doc/class-diagram.html">class-diagram</a></li>
-    <li><a href="doc/class-reference.html">class-reference</a></li>
-    <li><a href="doc/deployment2.html">deployment2</a></li>
-    <li><a href="doc/deployment.html">deployment</a></li>
-    <li><a href="doc/design-specification2.html">design-specification2</a></li>
-    <li><a href="doc/design-specification.html">design-specification</a></li>
-    <li><a href="doc/doc_list.html">doc_list</a></li>
-    <li><a href="doc/documents-guide.html">documents-guide</a></li>
+    
     <li><a href="doc/legacy-renderer-adapter.html">legacy-renderer-adapter</a></li>
+    
+    <li><a href="doc/doc_list.html">doc_list</a></li>
+    
     <li><a href="doc/md_doc_index.html">md_doc_index</a></li>
-    <li><a href="doc/MYCHANGELOG.html">MYCHANGELOG</a></li>
-    <li><a href="doc/optimization-guide.html">optimization-guide</a></li>
-    <li><a href="doc/REFERENCE.html">REFERENCE</a></li>
-    <li><a href="doc/sequence-diagrams.html">sequence-diagrams</a></li>
+    
+    <li><a href="doc/class-reference.html">class-reference</a></li>
+    
     <li><a href="doc/test-plan.html">test-plan</a></li>
+    
+    <li><a href="doc/api-usage-guide.html">api-usage-guide</a></li>
+    
+    <li><a href="doc/design-specification.html">design-specification</a></li>
+    
+    <li><a href="doc/design-specification2.html">design-specification2</a></li>
+    
+    <li><a href="doc/sequence-diagrams.html">sequence-diagrams</a></li>
+    
+    <li><a href="doc/deployment.html">deployment</a></li>
+    
+    <li><a href="doc/documents-guide.html">documents-guide</a></li>
+    
+    <li><a href="doc/ai_fix_suggestions.html">ai_fix_suggestions</a></li>
+    
+    <li><a href="doc/optimization-guide.html">optimization-guide</a></li>
+    
+    <li><a href="doc/architecture.html">architecture</a></li>
+    
+    <li><a href="doc/MYCHANGELOG.html">MYCHANGELOG</a></li>
+    
+    <li><a href="doc/REFERENCE.html">REFERENCE</a></li>
+    
+    <li><a href="doc/class-diagram.html">class-diagram</a></li>
+    
+    <li><a href="doc/deployment2.html">deployment2</a></li>
+    
   </ul>
 
   <h2>🧪 测试与分析报告</h2>
   <ul>
-    <li><a href="checkstyle.html">🧹 Checkstyle 报告</a></li>
-    <li><a href="spotbugs.html">🐞 SpotBugs 缺陷报告</a></li>
-    <li><a href="jacoco/index.html">📊 JaCoCo 覆盖率</a></li>
+    
     <li><a href="surefire-report.html">✅ 单元测试报告</a></li>
-    <li><a href="pmd.html">🧽 PMD 检查</a></li>
-    <li><a href="scm.html">🔗 版本控制信息 (SCM)</a></li>
-    <li><a href="summary.html">📖 项目概览摘要</a></li>
-    <li><a href="dependency-check-report.html">🛡️ 依赖安全检查 (OWASP)</a></li>
-    <li><a href="dependencies.html">📦 项目依赖分析</a></li>
+    
+    <li><a href="jacoco/index.html">📊 JaCoCo 覆盖率</a></li>
+    
     <li><a href="jacoco-aggregate/index.html">📊 JaCoCo 聚合覆盖率</a></li>
+    
+    <li><a href="checkstyle.html">🧹 Checkstyle 报告</a></li>
+    
+    <li><a href="pmd.html">🧽 PMD 检查</a></li>
+    
     <li><a href="cpd.html">🔍 重复代码检查 (CPD)</a></li>
+    
+    <li><a href="spotbugs.html">🐞 SpotBugs 缺陷报告</a></li>
+    
+    <li><a href="dependency-check-report.html">🛡️ 依赖安全检查 (OWASP)</a></li>
+    
+    <li><a href="dependencies.html">📦 项目依赖分析</a></li>
+    
+    <li><a href="scm.html">🔗 版本控制信息 (SCM)</a></li>
+    
+    <li><a href="summary.html">📖 项目概览摘要</a></li>
+    
   </ul>
 </body>
 </html>
