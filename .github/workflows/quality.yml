@@ -1,0 +1,51 @@
+name: Maven Quality Analysis
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧾 检出代码
+        uses: actions/checkout@v4
+
+      - name: ☕ 设置 Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: 🧪 构建 & 分析
+        run: mvn clean verify site
+
+      - name: 🔍 查找 JaCoCo 报告
+        run: |
+          mkdir -p coverage
+          cp target/site/jacoco/jacoco.xml coverage/
+
+      - name: 📤 上传覆盖率到 Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ acf1e7e7-35b0-4564-bafd-bcd784193864 }}
+          files: coverage/jacoco.xml
+          fail_ci_if_error: true
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ 94622ba90b3dc15dbf55c6e61f7aab1864330d59 }}
+        run: mvn sonar:sonar \
+          -Dsonar.projectKey=yinglichina8848_GraphRenderRestructured \
+          -Dsonar.organization=yinglichina8848 \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=$SONAR_TOKEN
+
+
