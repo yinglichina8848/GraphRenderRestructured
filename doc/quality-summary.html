@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>quality-summary</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">quality-summary</h1>
+</header>
+<h1 id="代码质量摘要报告">📊 代码质量摘要报告</h1>
+<blockquote>
+<p>项目：GraphRenderSystem (<a href="https://github.com/yinglichina8848/GraphRenderRestructured">GitHub Repo</a>)<br />
+构建时间：2025-06-28<br />
+构建环境：Maven + GitHub Actions + Java 17</p>
+</blockquote>
+<hr />
+<h2 id="自动化质量检查工具集成情况">✅ 自动化质量检查工具集成情况</h2>
+<table>
+<thead>
+<tr class="header">
+<th>工具</th>
+<th>功能描述</th>
+<th>执行状态</th>
+<th>报告路径</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>✔️ Checkstyle</td>
+<td>代码风格检查</td>
+<td>✅ 无违规项</td>
+<td><a href="../checkstyle.html">checkstyle.html</a></td>
+</tr>
+<tr class="even">
+<td>✔️ PMD</td>
+<td>潜在问题、长方法等检测</td>
+<td>✅ 无违规项</td>
+<td><a href="../pmd.html">pmd.html</a></td>
+</tr>
+<tr class="odd">
+<td>✔️ SpotBugs</td>
+<td>空指针、死代码等缺陷检测</td>
+<td>⚠️ 分析失败</td>
+<td><a href="../spotbugs.html">spotbugs.html</a></td>
+</tr>
+<tr class="even">
+<td>✔️ OWASP DC</td>
+<td>依赖漏洞扫描（CVEs）</td>
+<td>✅ 无漏洞</td>
+<td><a href="../dependency-check-report.html">dependency-check-report.html</a></td>
+</tr>
+<tr class="odd">
+<td>✔️ JaCoCo</td>
+<td>测试覆盖率分析</td>
+<td>❌ 覆盖率较低 (0.0%)</td>
+<td><a href="../jacoco/index.html">jacoco/index.html</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="测试覆盖率概览来自-jacoco">📈 测试覆盖率概览（来自 JaCoCo）</h2>
+<table>
+<thead>
+<tr class="header">
+<th>指标</th>
+<th>覆盖率</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total</td>
+<td>35.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.ui</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.command</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.bridge</td>
+<td>65.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.factory</td>
+<td>37.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.visitor</td>
+<td>41.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.core</td>
+<td>0.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.observer</td>
+<td>0.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.proxy</td>
+<td>25.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.adapter</td>
+<td>100.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.config</td>
+<td>58.0%</td>
+</tr>
+<tr class="even">
+<td>com.example.renderer.util</td>
+<td>70.0%</td>
+</tr>
+<tr class="odd">
+<td>com.example.renderer.singleton</td>
+<td>66.0%</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📌 点击进入详细报告：<a href="../jacoco/index.html">jacoco/index.html</a></p>
+</blockquote>
+<hr />
+<h2 id="ai-分析建议来自-deepseekgpt">💡 AI 分析建议（来自 DeepSeek/GPT）</h2>
+<ul>
+<li>✅ <code>MainUI.java</code> 中 <code>renderButton.addActionListener</code> 可提取为独立方法，增强代码复用。</li>
+<li>✅ <code>ShapeFactory</code> 的分支逻辑可用 <code>Map&lt;String, Supplier&lt;Shape&gt;&gt;</code> 优化。</li>
+<li>⚠️ <code>GraphModel</code> 中缺少边界测试建议补充。</li>
+<li>⚠️ 建议对 <code>RendererFactory</code> 添加异常分支测试。</li>
+<li>🧼 <code>GraphRenderer</code> 存在未使用的导入，建议清理。</li>
+<li>📦 <code>model</code> 与 <code>render</code> 模块耦合度较高，建议重构接口。</li>
+</ul>
+<hr />
+<h2 id="报告与资源导航">📌 报告与资源导航</h2>
+<ul>
+<li><a href="../index.html">📘 项目首页</a></li>
+<li><a href="CHANGELOG.html">📄 CHANGELOG 变更日志</a></li>
+<li><a href="../project-info.html">📦 依赖报告</a></li>
+<li><a href="../dependency-check-report.html">🔐 安全漏洞报告</a></li>
+<li><a href="../surefire-report.html">🧪 单元测试报告</a></li>
+<li><a href="../jacoco/index.html">🎯 覆盖率报告</a></li>
+<li><a href="../spotbugs.html">⚠️ SpotBugs 报告</a></li>
+<li><a href="../site/checkstyle.html">🔍 Checkstyle 风格检查</a></li>
+<li><a href="../pmd.html">📏 PMD 静态分析</a></li>
+</ul>
+<hr />
+<p><em>本摘要由 Python 脚本自动生成，可集成于 GitHub Actions 的 CI 流程中。</em></p>
+</body>
+</html>
