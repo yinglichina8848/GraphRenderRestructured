@@ -1,19 +1,42 @@
 {
   "branches": ["main"],
+  "preset": "conventionalcommits",
   "plugins": [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
     [
-      "@semantic-release/changelog",
+      "@semantic-release/commit-analyzer",
       {
-        "changelogFile": "CHANGELOG.md"
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "feat", "release": "minor" },
+          { "type": "fix", "release": "patch" },
+          { "type": "docs", "release": "patch" },
+          { "type": "style", "release": "patch" },
+          { "type": "refactor", "release": "patch" },
+          { "type": "test", "release": "patch" },
+          { "type": "chore", "release": "patch" },
+          { "type": "perf", "release": "patch" },
+          { "breaking": true, "release": false }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "mvn versions:set -DnewVersion=${nextRelease.version} -DgenerateBackupPoms=false"
       }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": ["CHANGELOG.md", "package.json"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]"
+        "assets": ["CHANGELOG.md", "pom.xml"],
+        "message": "🔖 发布版本: ${nextRelease.version} [skip ci]"
       }
     ],
     [
@@ -21,12 +44,11 @@
       {
         "assets": [
           {
-            "path": "doc/",
-            "label": "文档打包文件夹"
+            "path": "doc/quality-summary.md",
+            "label": "📊 软件质量报告 (Markdown)"
           }
         ]
       }
     ]
   ]
 }
-

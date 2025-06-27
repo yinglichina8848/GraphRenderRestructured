@@ -1,51 +1,50 @@
-name: Maven Quality Analysis
+name: 🧪 代码质量报告生成与部署
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   quality-check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 检出代码
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: ☕ 设置 Java 17
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'
 
-      - name: 🧪 构建 & 分析
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r scripts/requirements.txt || pip install beautifulsoup4 lxml
+
+      - name: Build Maven site and reports
         run: mvn clean verify site
 
-      - name: 🔍 查找 JaCoCo 报告
+      - name: Generate quality-summary.md
+        run: python3 scripts/generate_quality_summary.py
+
+      - name: Copy generated files to doc/
         run: |
-          mkdir -p coverage
-          cp target/site/jacoco/jacoco.xml coverage/
+          cp -r target/site/* doc/
+          cp quality-summary.md doc/
 
-      - name: 📤 上传覆盖率到 Codecov
-        uses: codecov/codecov-action@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          token: ${{ acf1e7e7-35b0-4564-bafd-bcd784193864 }}
-          files: coverage/jacoco.xml
-          fail_ci_if_error: true
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: SonarCloud Scan
-        env:
-          SONAR_TOKEN: ${{ 94622ba90b3dc15dbf55c6e61f7aab1864330d59 }}
-        run: mvn sonar:sonar \
-          -Dsonar.projectKey=yinglichina8848_GraphRenderRestructured \
-          -Dsonar.organization=yinglichina8848 \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=$SONAR_TOKEN
-
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./doc
+          publish_branch: gh-pages

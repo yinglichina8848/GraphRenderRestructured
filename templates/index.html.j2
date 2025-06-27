@@ -70,6 +70,13 @@
     {% endfor %}
   </ul>
 
+  <h2>📊代码质量报告（已转 HTML）</h2>
+  <ul>
+    <li><a href="doc/quality-summary.html">📊 MVN 自动生成的代码质量报告</a></li>
+    <li><a href="doc/quality_summary.html">📊 ChatGPT 模板的代码质量报告（固定）</a></li>
+  </ul>
+
+
   <h2>🧪 测试与分析报告</h2>
   <ul>
     {% for item in reports %}
@@ -77,9 +84,6 @@
     {% endfor %}
   </ul>
 
-    <footer style="margin-top: 3em; font-size: 0.9em; color: gray;">
-      📌 当前版本：v{{ version }}
-    </footer>
     <footer style="margin-top: 3em; font-size: 0.9em; color: gray;">
       📌 当前版本：v{{ version }}<br>
       🕒 最近更新：{{ last_updated }}<br>
