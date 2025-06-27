@@ -1,12 +1,33 @@
-# 📘 Changelog
+# 📘 Release Note 作者编写的软件版本说明
 
 本项目的所有可公开更改将记录于此文件中。
 
 遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/) 和 [语义化版本控制](https://semver.org/lang/zh-CN/)。
 
----
+------------------------------------------------------------------------------------------------
+
+## 完整的项目文档：https://yinglichina8848.github.io/GraphRenderRestructured
+
+## 软件质量报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html
+
+## 自动生成的软件变更报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html
+
+## 软件版本说明：https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html
+
+
 
 ## [Unreleased]
+
+###考虑加入 AI 自动分析，提升软件质量，引入MCP工作流，完成烦琐的提示、测试、补全注释等非创造性的工作。
+
+
+## [v1.0.0] - 2025-06-28
+### ✨ 集成了语义版本控制，提交源码时自动升级版本号，并生成变更记录。
+- ✅ 集成同步发布功能，一次提交，自动同步到 Github 和 Gitee
+- ✅ 云端文档自动生成和发布，main 分支的任何代码提交，会自动触发云端编译、测试和报告生成，并自动发布到 gh-pages 分支，以 Github Pages 网页的形式展示。
+- ✅ 语义代码注释和版本集成，自动抽取函数注释，错误修正，生成版本变更记录，并生成版本号。
+- ✅ 加入了 AI 工具对话过程文档，方便读者学习和复现整个项目的开发和配置。
+
 
 ## [v0.4.0] - 2025-06-28
 ### ✨ 整理项目，加入语义版本控制，进一步提高文档的规范性和全面性。

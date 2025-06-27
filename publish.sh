@@ -40,8 +40,6 @@ echo "📄 拷贝 PDF 文件..."
 if compgen -G "$DOCS_SRC/*.pdf" > /dev/null; then
   cp "$DOCS_SRC"/*.pdf "$DOCS_HTML/"
 fi
-
-
 echo "📋 渲染 index.html..."
 python3 scripts/render-index.py
 
