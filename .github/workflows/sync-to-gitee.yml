@@ -1,0 +1,29 @@
+name: 🔁 SSH 同步 main & gh-pages 到 Gitee
+
+on:
+  push:
+    branches:
+      - main
+      - gh-pages
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout current branch
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 🚀 Push to Gitee
+        run: |
+          CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+          echo "Current branch: $CURRENT_BRANCH"
+
+          git config user.name "YingLi"
+          git config user.email "8586728+yinglichina@user.noreply.gitee.com"
+
+          git remote add gitee git@gitee.com:yinglichina/graph-render-restructured.git
+          git push --force gitee "$CURRENT_BRANCH":"$CURRENT_BRANCH"
+
