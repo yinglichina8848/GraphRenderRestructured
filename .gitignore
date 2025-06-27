@@ -27,3 +27,40 @@ latex/
 *.out
 *.pdf
 
+# === Java / Maven ===
+target/
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*.log
+
+# === IntelliJ IDEA / Eclipse / VSCode ===
+*.iml
+.idea/
+.project
+.classpath
+.settings/
+.vscode/
+
+# === Mac / Linux / Windows OS 临时文件 ===
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*.tmp
+*.log
+
+# === Python 缓存 ===
+__pycache__/
+*.py[cod]
+*.pyo
+
+# === 发布相关 ===
+.gh-pages-worktree/
+
+# === Node/npm 临时依赖（如果用了 JS 工具）===
+node_modules/
+dist/
+build/
+
