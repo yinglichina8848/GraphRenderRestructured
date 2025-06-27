@@ -6,19 +6,171 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>design-specification2</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">design-specification2</h1>
 </header>
-<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ┃ 架构设计规范 ┃ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 架构设计规范 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
 <ol type="1">
 <li>文档概述</li>
 </ol>
@@ -48,7 +200,8 @@
 </ol>
 <p>3.1 层次定义</p>
 <p>层级 组件示例 职责 允许依赖<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 表现层 SwingUI, DrawingPanel 用户交互和展示 业务逻辑层<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+表现层 SwingUI, DrawingPanel 用户交互和展示 业务逻辑层<br />
 业务逻辑层 Command, UndoManager 核心业务流程 服务层、领域层<br />
 服务层 RendererFactory, ShapeFactory 技术服务提供 领域层<br />
 领域层 Shape, Renderer 核心业务模型 无<br />
@@ -82,7 +235,8 @@ persistence –&gt; factory</p>
 <p>1 明确职责：</p>
 <p>/**<br />
 * 图形渲染接口<br />
-* <span class="citation" data-cites="implSpec">@implSpec</span> 实现类必须保证线程安全<br />
+* <span class="citation" data-cites="implSpec">@implSpec</span>
+实现类必须保证线程安全<br />
 */<br />
 public interface Renderer {<br />
 void drawCircle(int x, int y, int radius);<br />
@@ -102,7 +256,8 @@ if (radius &lt;= 0) throw new IllegalArgumentException();<br />
 </ol>
 <p>6.1 类职责矩阵</p>
 <p>类别 示例 职责数量 方法数量 属性数量<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 控制类 UndoManager 1 5-10 2-5<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 控制类
+UndoManager 1 5-10 2-5<br />
 实体类 Circle 1 5-8 3-6<br />
 服务类 RendererFactory 1 3-5 1-3</p>
 <p>6.2 类设计约束</p>
@@ -120,7 +275,8 @@ private final int y;<br />
 </ol>
 <p>7.1 模式选用标准</p>
 <p>场景 首选模式 替代方案 禁用情况<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 对象创建 工厂方法 简单工厂 直接new<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 对象创建 工厂方法 简单工厂
+直接new<br />
 行为扩展 访问者 策略 继承<br />
 状态管理 备忘录 状态 标志位</p>
 <p>7.2 模式实现模板</p>
@@ -147,7 +303,8 @@ protected abstract void doExecute();                                            
 </ol>
 <p>8.1 异常分类</p>
 <p>类型 示例 处理方式<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 业务异常 InvalidShapeException 展示给用户<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 业务异常
+InvalidShapeException 展示给用户<br />
 系统异常 RenderingException 日志记录后恢复<br />
 致命错误 OutOfMemoryError 终止应用</p>
 <p>8.2 异常处理模板</p>
@@ -180,7 +337,8 @@ return size() &gt; MAX_SIZE;<br />
 }</p>
 <p>9.2 并发控制</p>
 <p>1 线程安全级别：</p>
-<p><span class="citation" data-cites="ThreadSafe">@ThreadSafe</span><br />
+<p><span class="citation"
+data-cites="ThreadSafe">@ThreadSafe</span><br />
 public class GlobalConfig {<br />
 // 使用volatile保证可见性<br />
 private volatile String renderMode;<br />
@@ -214,9 +372,12 @@ private final Object lock = new Object();</p>
 <p>2 方法注释：</p>
 <p>/**<br />
 * 绘制圆形<br />
-* <span class="citation" data-cites="param">@param</span> radius 半径(必须&gt;0)<br />
-* <span class="citation" data-cites="throws">@throws</span> IllegalArgumentException 如果半径≤0<br />
-* <span class="citation" data-cites="throws">@throws</span> RenderingException 当底层渲染失败时<br />
+* <span class="citation" data-cites="param">@param</span> radius
+半径(必须&gt;0)<br />
+* <span class="citation" data-cites="throws">@throws</span>
+IllegalArgumentException 如果半径≤0<br />
+* <span class="citation" data-cites="throws">@throws</span>
+RenderingException 当底层渲染失败时<br />
 */<br />
 public void drawCircle(int radius) {</p>
 <p>10.2 设计决策记录</p>
