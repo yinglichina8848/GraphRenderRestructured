@@ -41,21 +41,21 @@
             <version>5.12.0</version>
             <scope>test</scope>
         </dependency>
-        
+
         <!-- JSON -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
-        
+
         <!-- Utilities -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>32.1.2-jre</version>
         </dependency>
-        
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -67,7 +67,7 @@
             <artifactId>logback-classic</artifactId>
             <version>1.4.11</version>
         </dependency>
-        
+
         <!-- Concurrency -->
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -90,7 +90,7 @@
                 </configuration>
             </plugin>
 
-            <!-- 打包成可执行JAR -->
+            <!-- 可执行 JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -104,7 +104,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Javadoc 文档生成 -->
+            <!-- Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -120,7 +120,7 @@
                 </executions>
             </plugin>
 
-            <!-- Doxygen 调用 -->
+            <!-- Doxygen -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -142,14 +142,14 @@
                 </executions>
             </plugin>
 
-            <!-- 测试插件 -->
+            <!-- 单元测试 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.2</version>
             </plugin>
 
-            <!-- Jacoco 测试覆盖率 -->
+            <!-- Jacoco 覆盖率 -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -168,6 +168,40 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+                    <output>file</output>
+                    <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                </configuration>
+
+            </plugin>
+
+            <!-- Checkstyle -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+
+            <!-- PMD -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.21.0</version>
+            </plugin>
+
+            <!-- SpotBugs -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.8.3.0</version>
+            </plugin>
+
+            <!-- OWASP Dependency-Check -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>8.4.0</version>
             </plugin>
 
             <!-- Site 插件 -->
@@ -182,7 +216,7 @@
     <reporting>
         <outputDirectory>${project.build.directory}/site</outputDirectory>
         <plugins>
-            <!-- 项目报告 -->
+            <!-- 项目信息报告 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -215,7 +249,45 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.11</version>
+
+            </plugin>
+
+            <!-- Checkstyle 报告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+
+            <!-- PMD 报告 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.21.0</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>pmd</report>
+                            <report>cpd</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!-- SpotBugs 报告 -->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.8.3.0</version>
+            </plugin>
+
+            <!-- 安全漏洞报告 -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>8.4.0</version>
             </plugin>
         </plugins>
     </reporting>
 </project>
+

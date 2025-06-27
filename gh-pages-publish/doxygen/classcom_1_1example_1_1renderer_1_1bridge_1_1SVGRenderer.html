@@ -429,7 +429,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>绘制三角形 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>绘制三角形(SVG格式)</p>
+<p>修改记录： </p><ul>
+<li>
+2025-06-24 - 初始实现 </li>
+<li>
+2025-06-27 - 优化输出格式 </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">x1</td><td>第一个顶点x坐标 </td></tr>
     <tr><td class="paramname">y1</td><td>第一个顶点y坐标 </td></tr>
@@ -440,6 +447,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a8da6ee9a1744047767dfccc70cd6da76">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -523,7 +531,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取当前生成的SVG字符串 </p><dl class="section return"><dt>Returns</dt><dd>完整的SVG文档字符串 </dd></dl>
+<p>获取当前生成的SVG字符串</p>
+<p>如果文档未结束会自动添加闭合标签</p>
+<p>修改记录： </p><ul>
+<li>
+2025-06-27 - 添加自动闭合标签功能 </li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>完整的SVG文档字符串 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-27 </dd></dl>
 
 </div>
 </div>

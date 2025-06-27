@@ -5,10 +5,19 @@
       <item name="JavaDoc" href="apidocs/index.html"/>
       <item name="Doxygen" href="doxygen/index.html"/>
     </menu>
+
     <menu name="Project Reports">
       <item name="Dependencies" href="dependencies.html"/>
-      <item name="Test Results" href="surefire-report.html"/>
+      <item name="Test Results (Surefire)" href="surefire-report.html"/>
+      <item name="JaCoCo Coverage Report" href="jacoco/index.html"/>
+      <item name="JaCoCo Aggregate Coverage Report" href="jacoco-aggregate/index.html"/>
+      <item name="Checkstyle Report" href="checkstyle.html"/>
+      <item name="PMD Report" href="pmd.html"/>
+      <item name="CPD Duplicate Code" href="cpd.html"/>
+      <item name="SpotBugs Report" href="spotbugs.html"/>
+      <item name="Dependency-Check Report" href="dependency-check-report.html"/>
     </menu>
+
     <menu name="项目报告">
       <item name="摘要" href="summary.html"/>
       <item name="依赖" href="dependencies.html"/>
@@ -18,4 +27,3 @@
     </menu>
   </body>
 </project>
-

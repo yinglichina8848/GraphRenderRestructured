@@ -77,17 +77,23 @@ echo "  </ul>" >> "$INDEX_HTML"
 echo "  <h2>🧪 测试与分析报告</h2>" >> "$INDEX_HTML"
 echo "  <ul>" >> "$INDEX_HTML"
 
+# 先写核心常见报告
 [ -f "$SITE_DIR/surefire-report.html" ] && echo "    <li><a href=\"surefire-report.html\">✅ 单元测试报告</a></li>" >> "$INDEX_HTML"
 [ -f "$SITE_DIR/jacoco/index.html" ] && echo "    <li><a href=\"jacoco/index.html\">📊 覆盖率报告 (JaCoCo)</a></li>" >> "$INDEX_HTML"
+[ -f "$SITE_DIR/dependencies.html" ] && echo "    <li><a href=\"dependencies.html\">📦 依赖报告</a></li>" >> "$INDEX_HTML"
+[ -f "$SITE_DIR/scm.html" ] && echo "    <li><a href=\"scm.html\">🔖 版本管理报告</a></li>" >> "$INDEX_HTML"
 
-for report in dependencies.html scm.html modules.html licenses.html team.html ci-management.html issue-management.html summary.html; do
+# 其他各种报告
+for report in modules.html licenses.html team.html ci-management.html issue-management.html summary.html checkstyle.html pmd.html cpd.html spotbugs.html dependency-check-report.html; do
   if [ -f "$SITE_DIR/$report" ]; then
+    # 生成漂亮标题，首字母大写，空格替换短横线
     title=$(basename "$report" .html | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) substr($i,2)}1')
     echo "    <li><a href=\"$report\">📄 $title</a></li>" >> "$INDEX_HTML"
   fi
 done
 
 echo "  </ul>" >> "$INDEX_HTML"
+
 echo "</body></html>" >> "$INDEX_HTML"
 echo "✅ index.html generated."
 

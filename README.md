@@ -1,4 +1,6 @@
 # GraphRenderRestructured
+![Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)
+[![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
 
 软件工程期末大作业：图形渲染系统的设计与实现
 
@@ -247,4 +249,7 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 ## 📞 联系方式
 
 贵州民族大学软件工程专业的同学，如果在复现项目中遇到问题，欢迎通过邮件或者 QQ 联系我 ：`1820393151@qq.com` 
+
+![Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)
+[![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
 

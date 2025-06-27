@@ -290,10 +290,33 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 绘制椭圆</td></tr>
   </table>
   </dd>
 </dl>
+<p>修改记录： </p><ul>
+<li>
+2025-06-24 - 初始实现 </li>
+<li>
+2025-06-27 - 添加参数验证 </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>椭圆外接矩形左上角x坐标 </td></tr>
+    <tr><td class="paramname">y</td><td>椭圆外接矩形左上角y坐标 </td></tr>
+    <tr><td class="paramname">width</td><td>椭圆宽度(必须&gt;0) </td></tr>
+    <tr><td class="paramname">height</td><td>椭圆高度(必须&gt;0) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalStateException</td><td>如果图形上下文未初始化 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -620,20 +643,31 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>设置渲染样式 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>设置绘图样式</p>
+<p>修改记录： </p><ul>
+<li>
+2025-06-24 - 初始实现 </li>
+<li>
+2025-06-27 - 添加颜色解码异常处理 </li>
+<li>
+2025-06-27 - 添加填充颜色支持 </li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">stroke</td><td>线条颜色(支持CSS颜色格式) </td></tr>
-    <tr><td class="paramname">fill</td><td>填充颜色(支持CSS颜色格式) </td></tr>
-    <tr><td class="paramname">width</td><td>线宽(像素，必须&gt;=0) </td></tr>
+    <tr><td class="paramname">stroke</td><td>描边颜色(十六进制格式) </td></tr>
+    <tr><td class="paramname">fill</td><td>填充颜色(十六进制格式) </td></tr>
+    <tr><td class="paramname">width</td><td>线宽(像素) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度为负数 </td></tr>
+    <tr><td class="paramname">NumberFormatException</td><td>如果颜色格式无效 </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf">com.example.renderer.bridge.Renderer</a>.</p>
 
