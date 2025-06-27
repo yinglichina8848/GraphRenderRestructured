@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 检出代码
-        uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 克隆完整历史，包括所有分支
+
 
       - name: ⚙️ 设置 JDK 17
         uses: actions/setup-java@v4
