@@ -1,12 +1,9 @@
 name: 🧠 自动 编译测试 生成静态网页并发布到 gh-pages
 
 on:
-  # 手动触发：可从 GitHub Web UI 点击 Run workflow
-  workflow_dispatch:
-
-  # 推送到 main 分支时触发（可选保留）
+  workflow_dispatch:  # 手动触发
   push:
-    branches: [ main ]
+    branches: [ main ]  # 推送到 main 分支时触发
 
 jobs:
   build-and-ai-fix:
@@ -16,8 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # 克隆完整历史，包括所有分支
-
+          fetch-depth: 0  # 获取完整历史以支持分支创建等操作
 
       - name: ⚙️ 设置 JDK 17
         uses: actions/setup-java@v4
@@ -25,18 +21,39 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 💡 安装 Pandoc Doxygen
+      - name: 💡 安装 Pandoc Doxygen Graphviz
         run: |
           sudo apt-get update
           sudo apt-get install -y pandoc doxygen graphviz
 
-      - name: 🚀 编译、测试、生成报告、发布文档到 gh-pages
+      - name: 🛠️ 初始化 gh-pages 分支（如尚未存在）
+        run: |
+          if ! git ls-remote --exit-code --heads origin gh-pages; then
+            echo "🔧 gh-pages 不存在，自动创建..."
+            git checkout --orphan gh-pages
+            git rm -rf .
+            echo "# gh-pages" > README.md
+            git add README.md
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "Initialize gh-pages branch"
+            git push origin gh-pages
+            git checkout main
+          else
+            echo "✅ gh-pages 分支已存在，跳过初始化"
+          fi
+
+      - name: 🚀 编译、测试、生成报告并发布文档
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           chmod +x publish.sh
           ./publish.sh
 
-      - name: 📦 上传 AI 报告
+      - name: 📦 上传 AI 分析报告(如果存在）
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: ai-fix-report
           path: doc/ai_fix_suggestions.md
+
