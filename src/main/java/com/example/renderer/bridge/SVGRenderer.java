@@ -67,7 +67,16 @@ public class SVGRenderer implements Renderer {
 
     /**
      * 获取当前生成的SVG字符串
+     * 
+     * <p>如果文档未结束会自动添加闭合标签</p>
+     * 
+     * <p>修改记录：
+     * <ul>
+     *   <li>2025-06-27 - 添加自动闭合标签功能</li>
+     * </ul>
+     * 
      * @return 完整的SVG文档字符串
+     * @since 2025-06-27
      */
     public String getSVG() {
         // 确保返回完整的SVG文档

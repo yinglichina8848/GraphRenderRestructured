@@ -138,4 +138,43 @@ public class SVGRendererTest {
         assertThrows(IllegalArgumentException.class,
             () -> renderer.drawRectangle(10, 20, -30, 40));
     }
+
+    /**
+     * 测试三角形SVG输出格式
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDrawTriangleOutput() {
+        SVGRenderer renderer = new SVGRenderer();
+        renderer.drawTriangle(10, 10, 20, 30, 30, 10);
+        assertEquals("<polygon points='10,10 20,30 30,10' />\n", 
+                     outContent.toString());
+    }
+
+    /**
+     * 测试椭圆SVG输出格式
+     * @since 2025-06-27
+     */
+    @Test
+    public void testDrawEllipseOutput() {
+        SVGRenderer renderer = new SVGRenderer();
+        renderer.drawEllipse(100, 100, 50, 30);
+        assertEquals("<ellipse cx='100' cy='100' rx='50' ry='30' />\n",
+                     outContent.toString());
+    }
+
+    /**
+     * 测试样式设置功能
+     * @since 2025-06-27
+     */
+    @Test
+    public void testSetStyle() {
+        SVGRenderer renderer = new SVGRenderer();
+        renderer.setStyle("#FF0000", "#00FF00", 2);
+        renderer.drawRectangle(10, 10, 20, 20);
+        // 验证样式是否应用到输出
+        assertTrue(outContent.toString().contains("stroke='#FF0000'"));
+        assertTrue(outContent.toString().contains("fill='#00FF00'"));
+        assertTrue(outContent.toString().contains("stroke-width='2'"));
+    }
 }

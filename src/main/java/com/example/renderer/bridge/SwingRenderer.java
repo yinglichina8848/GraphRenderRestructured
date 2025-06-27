@@ -74,6 +74,7 @@ public class SwingRenderer implements Renderer {
      * <ul>
      *   <li>2025-06-24 - 初始实现</li>
      *   <li>2025-06-27 - 添加颜色解码异常处理</li>
+     *   <li>2025-06-27 - 添加填充颜色支持</li>
      * </ul>
      * 
      * @param stroke 描边颜色(十六进制格式)

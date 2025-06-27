@@ -145,4 +145,41 @@ public class SwingRendererTest {
         assertThrows(IllegalArgumentException.class,
             () -> renderer.drawEllipse(10, 20, 30, -40));
     }
+
+    /**
+     * 测试三角形顶点验证
+     * @since 2025-06-27
+     */
+    @Test
+    public void testTriangleVertices() {
+        renderer.drawTriangle(10, 10, 20, 30, 30, 10);
+        verify(mockGraphics).drawPolygon(argThat(polygon -> 
+            polygon.npoints == 3 &&
+            polygon.xpoints[0] == 10 &&
+            polygon.ypoints[1] == 30));
+    }
+
+    /**
+     * 测试图形上下文获取
+     * @since 2025-06-27
+     */
+    @Test
+    public void testGetContext() {
+        assertSame(mockGraphics, renderer.getContext());
+    }
+
+    /**
+     * 测试帧控制方法
+     * @since 2025-06-27
+     */
+    @Test
+    public void testFrameControl() {
+        renderer.beginFrame();
+        verify(mockGraphics).setRenderingHint(
+            RenderingHints.KEY_ANTIALIASING,
+            RenderingHints.VALUE_ANTIALIAS_ON);
+        
+        renderer.endFrame();
+        // 验证无异常抛出
+    }
 }
