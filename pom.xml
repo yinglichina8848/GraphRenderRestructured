@@ -11,6 +11,15 @@
     <name>GraphRenderSystem</name>
     <description>图形渲染系统，设计模式综合练习项目</description>
 
+    <url>https://github.com/yinglichina8848/GraphRenderRestructured</url>
+
+    <scm>
+        <connection>scm:git:https://github.com/yinglichina8848/GraphRenderRestructured.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:yinglichina8848/GraphRenderRestructured.git</developerConnection>
+        <url>https://github.com/yinglichina8848/GraphRenderRestructured</url>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
