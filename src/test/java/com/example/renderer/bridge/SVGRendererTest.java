@@ -51,7 +51,8 @@ public class SVGRendererTest {
     public void testDrawRectangleOutput() {
         SVGRenderer renderer = new SVGRenderer();
         renderer.drawRectangle(50, 50, 100, 80);
-        assertEquals("<rect x='50' y='50' width='100' height='80' />\n", outContent.toString());
+        assertEquals("<rect x='50' y='50' width='100' height='80' stroke='black' fill='none' stroke-width='1' />\n", 
+                     outContent.toString());
     }
 
     /**
@@ -124,7 +125,7 @@ public class SVGRendererTest {
     public void testRectangleOutputFormat() {
         SVGRenderer renderer = new SVGRenderer();
         renderer.drawRectangle(10, 20, 30, 40);
-        assertEquals("<rect x='10' y='20' width='30' height='40' />\n", 
+        assertEquals("<rect x='10' y='20' width='30' height='40' stroke='black' fill='none' stroke-width='1' />\n", 
                      outContent.toString());
     }
 
