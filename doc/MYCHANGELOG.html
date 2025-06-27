@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>MYCHANGELOG</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">MYCHANGELOG</h1>
+</header>
+<h1 id="changelog">📘 Changelog</h1>
+<p>本项目的所有可公开更改将记录于此文件中。</p>
+<p>遵循 <a href="https://keepachangelog.com/zh-CN/1.0.0/">Keep a
+Changelog</a> 和 <a
+href="https://semver.org/lang/zh-CN/">语义化版本控制</a>。</p>
+<hr />
+<h2 id="unreleased">[Unreleased]</h2>
+<h3 id="新增功能">✨ 新增功能</h3>
+<ul>
+<li>集成 GitHub Actions 工作流，实现云端自动编译、测试、生成报告。</li>
+<li>自动发布 <code>target/site</code> 中的静态文档至
+<code>gh-pages</code> 分支。</li>
+<li>添加 <code>publish.sh</code> 脚本，支持本地/CI
+自动构建发布文档。（综合在生成的网站的首页显示各种资源）</li>
+<li>添加 <code>push.sh</code> 脚本，提交本地源码到 Github main 分支,
+并触发云端的 Action， 完成自动编译测试和文档发布。</li>
+<li>实现 Markdown → HTML 转换，文档索引页自动生成（针对doc目录下 Aider
+生成的 Markdown 报告）。</li>
+<li>加入 ChangLog
+模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。</li>
+</ul>
+<h3 id="ai-提升">🧠 AI 提升</h3>
+<ul>
+<li>补充多个 Aider 生成的 Markdown
+分析报告，从多个角度健全项目的软件工程文档。</li>
+<li>集成 Aider
+脚本，辅助分析代码质量、自动补全注释与测试。（测试功能，Aider
+的反馈并未直接加入代码，只是显示修改意见）</li>
+<li>自动生成 <code>doc/ai_fix_suggestions.md</code> AI 建议报告。</li>
+</ul>
+<h3 id="持续集成改进">🛠 持续集成改进</h3>
+<ul>
+<li>添加 <code>.github/workflows/auto_ai_workflow.yml</code>
+支持自动发布。</li>
+<li>准备自动生成 <code>CHANGELOG.md</code> 并集成进发布流程。</li>
+<li>支持多格式代码质量分析：PMD、Checkstyle、JaCoCo、SpotBugs、OWASP
+Dependency Check。</li>
+</ul>
+<hr />
+<h2 id="v0.1.0---2025-06-27">[v0.1.0] - 2025-06-27</h2>
+<h3 id="初始版本">🎉 初始版本</h3>
+<ul>
+<li>Java + JavaScript 渲染核心代码结构搭建。</li>
+<li>支持 JavaDoc 与 Doxygen 双文档系统。</li>
+<li>上传类图、顺序图，文档结构标准化。</li>
+</ul>
+</body>
+</html>
