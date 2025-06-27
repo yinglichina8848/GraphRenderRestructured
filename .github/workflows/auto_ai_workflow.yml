@@ -28,11 +28,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc
 
-      - name: 🤖 AI 自动修复 + 生成改进报告
-        run: |
-          chmod +x aiimprove.sh
-          ./aiimprove.sh
-
       - name: 🧪 执行测试并生成网站
         run: |
           mvn clean verify site
