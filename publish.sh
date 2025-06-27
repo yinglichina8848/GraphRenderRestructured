@@ -79,19 +79,46 @@ for mdfile in "$DOCS_SRC"/*.md; do
   echo "    <li><a href=\"doc/$name.html\">$name</a></li>" >> "$INDEX_HTML"
 done
 
-echo "  </ul><h2>🧪 测试与分析报告</h2><ul>" >> "$INDEX_HTML"
+echo "  </ul>" >> "$INDEX_HTML"
+echo "  <h2>🧪 测试与分析报告</h2><ul>" >> "$INDEX_HTML"
 
-[ -f "$SITE_DIR/surefire-report.html" ] && echo "    <li><a href=\"surefire-report.html\">✅ 单元测试报告</a></li>" >> "$INDEX_HTML"
-[ -f "$SITE_DIR/jacoco/index.html" ] && echo "    <li><a href=\"jacoco/index.html\">📊 覆盖率报告 (JaCoCo)</a></li>" >> "$INDEX_HTML"
+# ✅ 整合所有常见报告
+REPORT_FILES=(
+  "surefire-report.html"
+  "jacoco/index.html"
+  "jacoco-aggregate/index.html"
+  "checkstyle.html"
+  "pmd.html"
+  "cpd.html"
+  "spotbugs.html"
+  "dependency-check-report.html"
+  "dependencies.html"
+  "scm.html"
+  "modules.html"
+  "licenses.html"
+  "team.html"
+  "ci-management.html"
+  "issue-management.html"
+  "summary.html"
+)
 
-for report in dependencies.html scm.html modules.html licenses.html team.html ci-management.html issue-management.html summary.html; do
-  if [ -f "$SITE_DIR/$report" ]; then
-    title=$(basename "$report" .html | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) substr($i,2)}1')
+for report in "${REPORT_FILES[@]}"; do
+  REPORT_PATH="$SITE_DIR/$report"
+  if [ -f "$REPORT_PATH" ]; then
+    name=$(basename "$report")
+    if [[ "$name" == "index.html" ]]; then
+      section=$(basename "$(dirname "$report")")
+      title="$section"
+    else
+      title=$(basename "$report" .html)
+    fi
+    title=$(echo "$title" | sed 's/-/ /g' | awk '{for(i=1;i<=NF;i++)$i=toupper(substr($i,1,1)) substr($i,2)}1')
     echo "    <li><a href=\"$report\">📄 $title</a></li>" >> "$INDEX_HTML"
   fi
 done
 
-echo "  </ul></body></html>" >> "$INDEX_HTML"
+echo "  </ul>" >> "$INDEX_HTML"
+echo "</body></html>" >> "$INDEX_HTML"
 echo "✅ index.html generated."
 
 echo "📁 Step 5: 添加 git worktree 到 $WORKTREE_DIR..."
