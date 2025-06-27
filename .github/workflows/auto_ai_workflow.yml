@@ -1,52 +1,50 @@
-name: AI自动修复与发布
+name: 🧠 自动 AI 改进与文档发布
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # 每小时
+  # 手动触发：可从 GitHub Web UI 点击 Run workflow
+  workflow_dispatch:
+
+  # 推送到 main 分支时触发（可选保留）
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build-and-ai-fix:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ⬇️ 检出仓库
+      - name: 🧾 检出代码
         uses: actions/checkout@v4
 
-      - name: ⚙️ 安装 Java 和 Node.js
+      - name: ⚙️ 设置 JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: 🧠 安装 aider CLI（或你自己的 AI 工具）
+      - name: 💡 安装 Aider + Pandoc
         run: |
-          pip install aider  # 如果你用的是 pip 安装
-          aider --version || echo "验证 Aider 是否安装成功"
+          pip install aider
+          sudo apt-get update
+          sudo apt-get install -y pandoc
 
-      - name: 🤖 启动 AI 自动改进 + 构建 + 发布
+      - name: 🤖 AI 自动修复 + 生成改进报告
         run: |
           chmod +x aiimprove.sh
           ./aiimprove.sh
 
-      - name: 🤖 启动 AI 修复可能的错误 + 构建 + 发布
+      - name: 🧪 执行测试并生成网站
         run: |
-          chmod +x aifix.sh
-          ./aifix.sh
+          mvn clean verify site
+
+      - name: 🚀 发布文档到 gh-pages
+        run: |
+          chmod +x publish.sh
+          ./publish.sh
 
       - name: 📦 上传 AI 报告
         uses: actions/upload-artifact@v4
         with:
           name: ai-fix-report
           path: doc/ai_fix_suggestions.md
-
-      - name: 📤 发布文档到 gh-pages
-        run: |
-          chmod +x publish.sh
-          ./publish.sh
 

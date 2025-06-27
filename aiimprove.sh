@@ -1,51 +1,45 @@
 #!/bin/bash
 set -e
 
-# 目录
-PROJECT_DIR=$(pwd)
-DOC_DIR="$PROJECT_DIR/doc"
-REPORT_FILE="$DOC_DIR/aider_report.md"
-
 echo "== Step 1: AI自动生成/补全单元测试和注释 =="
-# 调用 aider CLI 对所有 java/js 文件生成测试和注释
-find "$PROJECT_DIR" -type f \( -name "*.java" -o -name "*.js" \) | while read -r file; do
-  echo "Processing $file ..."
-  # 这里假设 aider 有个命令 auto-improve 支持生成测试和注释
-  # 请根据实际 aider CLI 修改命令
-  aider auto-improve --file "$file" >> "$REPORT_FILE" 2>&1 || echo "Warn: AI提升失败 $file"
+
+# 创建输出目录和文件
+REPORT_FILE="doc/ai_fix_suggestions.md"
+mkdir -p doc
+echo "# 🤖 Aider 自动改进报告（$(date '+%Y-%m-%d %H:%M:%S')）" > "$REPORT_FILE"
+echo "" >> "$REPORT_FILE"
+
+# 限定处理范围：只包含源码目录
+SRC_DIRS=(src test doc)
+
+# 遍历 .java 和 .js 文件
+for dir in "${SRC_DIRS[@]}"; do
+  find "$dir" -type f \( -name "*.java" -o -name "*.js" \) | while read -r file; do
+    echo "🛠️ Processing: $file"
+    
+    # 提示内容，可以自定义优化方向
+    PROMPT="请改进以下文件的代码质量，包括注释补全、命名规范、结构简化，并补充可能缺失的单元测试。保持原有功能不变。"
+    
+    # 使用 aider 执行 AI 改进（需要配置好 aider 和模型）
+    {
+      echo "---"
+      echo "## 📄 $file"
+      echo ""
+      echo "\`\`\`java"
+      cat "$file"
+      echo "\`\`\`"
+      echo ""
+      echo "**💡 Aider 改进建议：**"
+      echo ""
+      aider --no-chat --input "$file" --message "$PROMPT" >> "$REPORT_FILE"
+    } || {
+      echo "⚠️ Warn: AI提升失败 $file"
+      echo "- $file: ❌ 分析失败，跳过。" >> "$REPORT_FILE"
+    }
+    
+    echo "" >> "$REPORT_FILE"
+  done
 done
 
-echo "== Step 2: 编译并执行测试 =="
-mvn clean verify
-
-echo "== Step 3: 测试失败，调用 AI 自动修复 =="
-if [ $? -ne 0 ]; then
-  echo "Tests failed, collecting logs..."
-  mvn test > test.log 2>&1 || true
-
-  # 假设有个脚本用 AI 解析 test.log 并自动修复代码
-  ./ai_fix_code.sh test.log
-
-  echo "== Step 4: 代码修复后，重新编译测试 =="
-  mvn clean verify
-fi
-
-echo "== Step 5: 生成最终报告 =="
-# 生成 markdown 报告供审阅
-echo "# Aider 扫描和改进报告" > "$REPORT_FILE"
-date >> "$REPORT_FILE"
-# 假设有日志或扫描结果文件合并
-cat test.log >> "$REPORT_FILE"
-
-echo "== Step 6: Git提交代码 =="
-git config user.name "github-actions"
-git config user.email "actions@github.com"
-git add .
-git commit -m "🤖 AI 自动改进单元测试和注释" || echo "Nothing to commit"
-git push origin main
-
-echo "== Step 7: 发布文档 =="
-./publish.sh
-
-echo "== 流水线结束，已自动提交并发布 =="
+echo "✅ 所有文件处理完毕，报告已生成：$REPORT_FILE"
 
