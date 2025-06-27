@@ -6,12 +6,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>documents-guide</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
 </head>
 <body>
@@ -19,37 +169,54 @@
 <h1 class="title">documents-guide</h1>
 </header>
 <p>以下是建议为图形渲染系统编写的完整技术文档清单及内容概要，按优先级排序：</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 1. 核心开发文档</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+1. 核心开发文档</p>
 <p>文档名称 内容重点 关联组件<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《核心API参考手册》 详细类/方法说明、调用示例、参数边界值 全部核心接口<br />
-《模块依赖规范》 模块划分图、通信协议、版本兼容性说明 Maven/Gradle模块<br />
-《设计模式应用手册》 模式使用场景、实现示例、扩展指导 Command/Factory等</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 2. 质量保障文档</p>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《核心API参考手册》 详细类/方法说明、调用示例、参数边界值
+全部核心接口<br />
+《模块依赖规范》 模块划分图、通信协议、版本兼容性说明
+Maven/Gradle模块<br />
+《设计模式应用手册》 模式使用场景、实现示例、扩展指导
+Command/Factory等</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+2. 质量保障文档</p>
 <p>文档名称 内容重点 输出示例<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《测试策略报告》 分层测试方案（单元/集成/UI）、覆盖率目标 JUnit5测试用例集<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《测试策略报告》 分层测试方案（单元/集成/UI）、覆盖率目标
+JUnit5测试用例集<br />
 《性能基准报告》 各场景性能基线数据、压测脚本 JMH基准测试结果<br />
 《安全审计指南》 输入验证、序列化风险、权限控制点 OWASP检查项</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 3. 运维支撑文档</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+3. 运维支撑文档</p>
 <p>文档名称 内容重点 工具链<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《部署手册》 JVM参数调优、容器化配置 Dockerfile模板<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《部署手册》 JVM参数调优、容器化配置 Dockerfile模板<br />
 《监控方案白皮书》 指标采集（FPS/内存）、告警规则 Prometheus仪表盘<br />
 《故障诊断手册》 常见错误码、日志分析流程 Arthas使用案例</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 4. 扩展开发文档</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+4. 扩展开发文档</p>
 <p>文档名称 内容重点 示例<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《插件开发指南》 自定义渲染器接入规范 SVG插件实现<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《插件开发指南》 自定义渲染器接入规范 SVG插件实现<br />
 《跨平台适配方案》 平台差异处理（如HiDPI） macOS适配记录<br />
 《多语言支持规范》 国际化资源文件格式 中文/日文案</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 5. 项目管理文档</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+5. 项目管理文档</p>
 <p>文档名称 内容重点 交付物<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《技术债务清单》 待优化项、影响评估 Tech Debt雷达图<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《技术债务清单》 待优化项、影响评估 Tech Debt雷达图<br />
 《架构决策记录(ADR)》 关键技术选型原因 渲染引擎选型分析<br />
 《版本升级指南》 破坏性变更说明 v2→v3迁移步骤</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 6. 专项技术报告</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+6. 专项技术报告</p>
 <p>文档名称 内容重点 技术点<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 《渲染管线优化白皮书》 批处理/实例化渲染 OpenGL最佳实践<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+《渲染管线优化白皮书》 批处理/实例化渲染 OpenGL最佳实践<br />
 《内存管理深度分析》 对象池VS GC调优 Azul C4算法<br />
 《硬件加速方案》 GPU资源利用策略 Vulkan/DirectX</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 文档生成建议</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+文档生成建议</p>
 <p>1 自动化工具：<br />
 • 使用JavaDoc生成API参考<br />
 • 通过Maven Site生成项目站点</p>
