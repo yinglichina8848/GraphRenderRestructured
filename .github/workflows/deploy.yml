@@ -1,30 +1,35 @@
-name: Deploy Maven Site to GitHub Pages
+name: 🚀 构建并发布文档到 GitHub Pages
 
 on:
+  workflow_dispatch:  # 手动触发
   push:
-    branches:
-      - main
-
-permissions:
-  contents: write
+    branches: [ main ]  # 可修改为你的主分支
 
 jobs:
-  deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub 自动注入，无需配置
+      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
+      - name: 🧾 检出仓库
+        uses: actions/checkout@v4
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
+      - name: ☕️ 设置 Java 17 环境
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          distribution: 'temurin'
+          java-version: 17
 
-      - name: Build site
-        run: mvn clean site
+      - name: 🧰 安装依赖工具
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz pandoc
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site
+      - name: 🏗️ 运行 publish.sh 脚本
+        run: |
+          chmod +x publish.sh
+          ./publish.sh
+
