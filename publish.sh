@@ -22,6 +22,11 @@ if [ -d "$DOXYGEN_HTML" ]; then
   mkdir -p "$SITE_DIR/doxygen"
   cp -r "$DOXYGEN_HTML"/* "$SITE_DIR/doxygen/"
 fi
+# 2. 如果有 CHANGELOG.md，则复制到 doc/
+echo "📁 拷贝 CHANGELOG.md（如果存在）..."
+if [ -f CHANGELOG.md ]; then
+  cp CHANGELOG.md doc/
+fi
 
 echo "📝 转换 Markdown 为 HTML..."
 mkdir -p "$DOCS_HTML"
@@ -35,6 +40,7 @@ echo "📄 拷贝 PDF 文件..."
 if compgen -G "$DOCS_SRC/*.pdf" > /dev/null; then
   cp "$DOCS_SRC"/*.pdf "$DOCS_HTML/"
 fi
+
 
 echo "📋 渲染 index.html..."
 python3 scripts/render-index.py
