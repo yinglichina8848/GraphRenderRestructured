@@ -1,6 +1,7 @@
 # GraphRenderRestructured
 ![Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)
 [![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=yinglichina8848_GraphRenderRestructured&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yinglichina8848_GraphRenderRestructured)
 
 软件工程期末大作业：图形渲染系统的设计与实现
 
@@ -252,4 +253,4 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 
 ![Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)
 [![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
-
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=yinglichina8848_GraphRenderRestructured&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yinglichina8848_GraphRenderRestructured)
