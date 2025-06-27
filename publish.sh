@@ -64,6 +64,12 @@ cat > "$INDEX_HTML" <<EOF
     <li><a href="doxygen/index.html">📗 Doxygen 接口文档</a></li>
   </ul>
 
+  <h2>📘 更新与 AI 建议</h2>
+  <ul>
+    <li><a href="CHANGELOG.md">📝 更新记录 (CHANGELOG)</a></li>
+    <li><a href="doc/ai_fix_suggestions.html">🤖 AI 改进建议</a></li>
+  </ul>
+
   <h2>📄 PDF 文档</h2><ul>
 EOF
 
