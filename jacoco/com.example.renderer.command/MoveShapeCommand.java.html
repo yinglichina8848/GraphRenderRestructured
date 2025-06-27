@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MoveShapeCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.command</a> &gt; <span class="el_source">MoveShapeCommand.java</span></div><h1>MoveShapeCommand.java</h1><pre class="source lang-java linenums">package com.example.renderer.command;
+
+import com.example.renderer.factory.Shape;
+import java.util.Objects;
+
+/**
+ * 移动图形命令实现类。
+ * 
+ * &lt;p&gt;封装了移动图形的操作，支持执行和撤销。
+ * 
+ * &lt;p&gt;典型用法：
+ * &lt;pre&gt;{@code
+ * Shape shape = new Circle(10, 10, 5);
+ * Command cmd = new MoveShapeCommand(shape, 20, 30);
+ * cmd.execute(); // 移动图形
+ * cmd.undo();   // 撤销移动
+ * }&lt;/pre&gt;
+ *
+ * @author Aider+DeepSeek
+ * @version 1.0
+ * @see Command 命令接口
+ * @see Shape 图形接口
+ * @since 2025-06-24
+ */
+public class MoveShapeCommand implements Command {
+    private final Shape shape;
+    private final int dx;
+    private final int dy;
+
+    /**
+     * 创建移动图形命令实例。
+     * 
+     * @param shape 要移动的图形(不能为null)
+     * @param dx X轴移动距离
+     * @param dy Y轴移动距离
+     * @throws NullPointerException 如果shape参数为null
+     */
+<span class="fc" id="L38">    public MoveShapeCommand(Shape shape, int dx, int dy) {</span>
+<span class="fc" id="L39">        this.shape = Objects.requireNonNull(shape, &quot;Shape cannot be null&quot;);</span>
+<span class="fc" id="L40">        this.dx = dx;</span>
+<span class="fc" id="L41">        this.dy = dy;</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * 执行移动命令。
+     * 
+     * &lt;p&gt;将图形移动指定的距离。
+     */
+    @Override
+    public void execute() {
+<span class="fc" id="L51">        shape.move(dx, dy);</span>
+<span class="fc" id="L52">    }</span>
+
+    /**
+     * 撤销移动命令。
+     * 
+     * &lt;p&gt;将图形移动回原来的位置。
+     */
+    @Override
+    public void undo() {
+<span class="fc" id="L61">        shape.move(-dx, -dy);</span>
+<span class="fc" id="L62">    }</span>
+
+    @Override
+    public void redo() {
+<span class="nc" id="L66">        execute();</span>
+<span class="nc" id="L67">    }</span>
+
+    @Override
+    public boolean canExecute() {
+<span class="nc bnc" id="L71" title="All 2 branches missed.">        return shape != null;</span>
+    }
+
+    @Override
+    public boolean canUndo() {
+<span class="nc" id="L76">        return true;</span>
+    }
+
+    @Override
+    public boolean canRedo() {
+<span class="nc" id="L81">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

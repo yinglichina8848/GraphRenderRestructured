@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shape.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.factory</a> &gt; <span class="el_source">Shape.java</span></div><h1>Shape.java</h1><pre class="source lang-java linenums">
+package com.example.renderer.factory;
+
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
+/**
+ * Shape接口定义了所有图形对象的基本行为。
+ * 作为图形系统的核心接口，它支持以下操作：
+ * &lt;ul&gt;
+ *   &lt;li&gt;渲染 - 通过render(Renderer)方法&lt;/li&gt;
+ *   &lt;li&gt;移动 - 通过move(int, int)方法&lt;/li&gt;
+ *   &lt;li&gt;访问者模式 - 通过accept(ExportVisitor)方法&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 所有具体图形类(如圆形、矩形等)都应实现此接口。
+ * 
+ * &lt;p&gt;该接口遵循以下设计模式：
+ * &lt;ul&gt;
+ *   &lt;li&gt;桥接模式 - 通过Renderer参数实现绘制逻辑的解耦&lt;/li&gt;
+ *   &lt;li&gt;访问者模式 - 通过accept方法支持对图形的扩展操作&lt;/li&gt;
+ *   &lt;li&gt;命令模式 - move方法支持图形位置的变更操作&lt;/li&gt;
+ * &lt;/ul&gt;
+ *
+ * &lt;p&gt;典型实现示例：
+ * &lt;pre&gt;{@code
+ * public class Circle implements Shape {
+ *     public void render(Renderer r) {
+ *         r.drawCircle(x, y, radius);
+ *     }
+ *     // 其他方法实现...
+ * }
+ * }&lt;/pre&gt;
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @see Circle 圆形实现
+ * @see Rectangle 矩形实现 
+ * @see Ellipse 椭圆实现
+ * @see Triangle 三角形实现
+ * @since 2025-06-24
+ */
+
+
+
+public interface Shape {
+    /**
+     * 使用指定的渲染器绘制图形。
+     * 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。
+     *
+     * @param renderer 用于绘制图形的渲染器实现，不能为null
+     * @throws NullPointerException 如果renderer参数为null
+     */
+    /**
+     * 使用指定的渲染器绘制图形。
+     * 
+     * &lt;p&gt;实现类应确保：
+     * &lt;ul&gt;
+     *   &lt;li&gt;参数renderer不为null&lt;/li&gt;
+     *   &lt;li&gt;正确调用renderer的对应绘制方法&lt;/li&gt;
+     *   &lt;li&gt;处理渲染器抛出的异常&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
+     * @param renderer 用于绘制图形的渲染器实现
+     * @throws NullPointerException 如果renderer为null
+     */
+    /**
+     * 使用指定的渲染器绘制图形。
+     * 
+     * @param renderer 用于绘制图形的渲染器实现(非null)
+     * @throws NullPointerException 如果renderer参数为null
+     * @throws IllegalArgumentException 如果图形参数不合法
+     * @throws IllegalStateException 如果图形状态不适合渲染
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
+
+    /**
+     * 创建并返回当前图形的一个副本
+     */
+    /**
+     * 创建并返回当前图形的一个深拷贝
+     * @return 图形的新副本
+     * @throws CloneNotSupportedException 如果图形不支持克隆
+     */
+    Shape clone() throws CloneNotSupportedException;
+    
+    /**
+     * 验证坐标位置是否有效
+     * @param x x坐标
+     * @param y y坐标
+     * @throws IllegalArgumentException 如果坐标为负数
+     */
+    default void validatePosition(int x, int y) {
+<span class="nc bnc" id="L97" title="All 4 branches missed.">        if (x &lt; 0 || y &lt; 0) {</span>
+<span class="nc" id="L98">            throw new IllegalArgumentException(&quot;坐标不能为负数&quot;);</span>
+        }
+<span class="nc" id="L100">    }</span>
+
+    /**
+     * 移动图形的位置。
+     * 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。
+     *
+     * @param dx X轴方向的移动距离（像素）
+     * @param dy Y轴方向的移动距离（像素）
+     */
+    /**
+     * 移动图形的位置。
+     * 
+     * @param dx X轴方向的移动距离（像素）
+     * @param dy Y轴方向的移动距离（像素）
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    void move(int dx, int dy);
+
+    /**
+     * 接受访问者访问，实现访问者模式。
+     * 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。
+     *
+     * @param visitor 用于处理图形的访问者对象，不能为null
+     * @throws NullPointerException 如果visitor参数为null
+     */
+    /**
+     * 接受访问者访问此图形对象。
+     * 
+     * @param visitor 用于处理图形的访问者对象(非null)
+     * @throws NullPointerException 如果visitor参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    /**
+     * 接受访问者访问此图形对象。
+     * 
+     * @param visitor 用于处理图形的访问者对象(非null)
+     * @throws NullPointerException 如果visitor参数为null
+     * @author Aider+DeepSeek
+     * @since 2025-06-24
+     */
+    void accept(ExportVisitor visitor);
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

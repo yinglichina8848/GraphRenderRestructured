@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>design-specification</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">design-specification</h1>
+</header>
+<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 图形渲染系统架构设计文档 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<ol type="1">
+<li>系统概述</li>
+</ol>
+<p>本系统是一个基于Java的图形渲染框架，采用模块化设计，支持多种渲染后端和图形类型。系统核心目标是提供灵活、可扩展的图形渲染能力，同时保
+持代码的可维护性和高性能。</p>
+<ol start="2" type="1">
+<li>架构设计原则</li>
+</ol>
+<p>1 分层架构：清晰分离表现层、业务逻辑层和数据访问层<br />
+2 松耦合：通过接口定义模块边界<br />
+3 可扩展性：支持新图形类型和渲染器的动态添加<br />
+4 可测试性：各组件可独立测试</p>
+<ol start="3" type="1">
+<li>核心架构图</li>
+</ol>
+<table style="width:31%;">
+<colgroup>
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre><code>  Client</code></pre></td>
+</tr>
+</tbody>
+</table>
+<pre><code>      |                                                                                                                         
+      v                                                                                                                         </code></pre>
+<table style="width:31%;">
+<colgroup>
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre><code>  UI Layer</code></pre>
+<p>(SwingUI, Panels)</p></td>
+</tr>
+</tbody>
+</table>
+<pre><code>      |                                                                                                                         
+      v                                                                                                                         </code></pre>
+<table style="width:31%;">
+<colgroup>
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Business Logic (Commands, Factory)</td>
+</tr>
+</tbody>
+</table>
+<pre><code>      |                                                                                                                         
+      v                                                                                                                         </code></pre>
+<table style="width:31%;">
+<colgroup>
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Rendering Layer (Renderers, Adapter)</td>
+</tr>
+</tbody>
+</table>
+<pre><code>      |                                                                                                                         
+      v                                                                                                                         </code></pre>
+<table style="width:31%;">
+<colgroup>
+<col style="width: 30%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Persistence Layer (Serialization, IO)</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li>核心组件说明</li>
+</ol>
+<p>4.1 UI层组件</p>
+/**<br />
+* 主界面框架，基于Swing实现<br />
+*<br />
+*
+<p>
+职责：<br />
+*
+<ul>
+<ul>
+<li><li>
+提供用户交互界面
+</li></li>
+<li><li>
+管理绘图面板
+</li></li>
+<li><li>
+协调各组件交互
+</li></li>
+<li></ul></li>
+<li></li>
+<li><span class="citation" data-cites="see">@see</span> DrawingPanel
+绘图面板实现<br />
+*/<br />
+public class SwingUI extends JFrame {<br />
+// 实现细节…<br />
+}</li>
+</ul>
+<p>4.2 业务逻辑层</p>
+<p>4.2.1 命令模式实现</p>
+/**<br />
+* 命令模式基类，支持撤销/重做操作<br />
+*<br />
+*
+<p>
+设计特点：<br />
+*
+<ul>
+<ul>
+<li><li>
+封装操作逻辑
+</li></li>
+<li><li>
+支持事务性操作
+</li></li>
+<li><li>
+与UndoManager配合实现命令历史
+</li></li>
+<li></ul>
+*/<br />
+public interface Command {<br />
+void execute();<br />
+void undo();<br />
+void redo();<br />
+}</li>
+</ul>
+<p>4.2.2 工厂模式实现</p>
+/**<br />
+* 图形工厂接口，支持创建各种图形对象<br />
+*<br />
+*
+<p>
+扩展机制：<br />
+*
+<ol>
+<ul>
+<li><li>
+实现ShapeFactory接口
+</li></li>
+<li><li>
+注册到FactoryRegistry
+</li></li>
+<li><li>
+通过createXxx方法创建实例
+</li></li>
+<li></ol>
+*/<br />
+public interface ShapeFactory {<br />
+Circle createCircle(int x, int y, int radius);<br />
+// 其他工厂方法…<br />
+}</li>
+</ul>
+<p>4.3 渲染层设计</p>
+<p>4.3.1 渲染器接口</p>
+/**<br />
+* 渲染器核心接口，定义基本绘图操作<br />
+*<br />
+*
+<p>
+实现说明：<br />
+*
+<ul>
+<ul>
+<li><li>
+各实现类负责具体渲染逻辑
+</li></li>
+<li><li>
+支持多种渲染后端(Swing/SVG/Test等)
+</li></li>
+<li><li>
+通过RendererFactory获取实例
+</li></li>
+<li></ul>
+*/<br />
+public interface Renderer {<br />
+void drawCircle(int x, int y, int radius);<br />
+// 其他渲染方法…<br />
+}</li>
+</ul>
+<p>4.3.2 适配器模式</p>
+/**<br />
+* 旧版渲染器适配器，实现新旧系统兼容<br />
+*<br />
+*
+<p>
+工作原理：<br />
+*
+<ol>
+<ul>
+<li><li>
+接收LegacyRenderer实例
+</li></li>
+<li><li>
+实现Renderer接口
+</li></li>
+<li><li>
+方法调用转发
+</li></li>
+<li></ol>
+*/<br />
+public class LegacyRendererAdapter implements Renderer {<br />
+// 实现细节…<br />
+}</li>
+</ul>
+<p>4.4 持久化层</p>
+/**<br />
+* 持久化管理器，负责图形序列化/反序列化<br />
+*<br />
+*
+<p>
+特性：<br />
+*
+<ul>
+<ul>
+<li><li>
+单例模式确保全局唯一
+</li></li>
+<li><li>
+支持JSON格式
+</li></li>
+<li><li>
+类型安全的多态序列化
+</li></li>
+<li></ul>
+*/<br />
+public class PersistenceManager {<br />
+// 实现细节…<br />
+}</li>
+</ul>
+<ol start="5" type="1">
+<li>关键设计模式应用</li>
+</ol>
+<p>设计模式 应用场景 实现类<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 工厂模式
+创建图形和渲染器 RendererFactory, ShapeFactory<br />
+适配器模式 旧版渲染器兼容 LegacyRendererAdapter<br />
+命令模式 操作封装与撤销 Command接口及实现<br />
+观察者模式 图形变更通知 ShapeObserver<br />
+单例模式 全局配置管理 GlobalConfig, PersistenceManager<br />
+访问者模式 图形导出功能 ExportVisitor</p>
+<ol start="6" type="1">
+<li>模块依赖关系</li>
+</ol>
+<p>graph-render<br />
+├── ui<br />
+│ ├── depends on → core<br />
+│ └── depends on → bridge<br />
+├── core<br />
+│ ├── depends on → factory<br />
+│ └── depends on → command<br />
+├── bridge<br />
+│ ├── depends on → legacy<br />
+│ └── depends on → proxy<br />
+└── persistence<br />
+└── depends on → factory</p>
+<ol start="7" type="1">
+<li>性能考量</li>
+</ol>
+<p>1 渲染性能：<br />
+• Swing渲染器直接操作Graphics2D<br />
+• SVG渲染器使用StringBuilder缓存输出<br />
+• 测试渲染器无实际渲染开销<br />
+2 内存管理：<br />
+• 图形对象轻量化设计<br />
+• 大对象使用懒加载<br />
+3 多线程安全：<br />
+• 关键组件使用线程安全实现<br />
+• 避免共享可变状态</p>
+<ol start="8" type="1">
+<li>扩展性设计</li>
+</ol>
+<p>8.1 添加新图形类型</p>
+<p>1 实现Shape接口<br />
+2 实现对应的工厂方法<br />
+3 更新PersistenceManager的类型注册</p>
+<p>8.2 添加新渲染器</p>
+<p>1 实现Renderer接口<br />
+2 在RendererFactory中注册<br />
+3 更新GlobalConfig支持新类型</p>
+<ol start="9" type="1">
+<li>已知限制</li>
+</ol>
+<p>1 SwingUI与渲染逻辑存在一定耦合<br />
+2 旧版渲染器适配有约20%性能开销<br />
+3 复杂图形组合性能待优化</p>
+<ol start="10" type="1">
+<li>未来演进计划</li>
+</ol>
+<p>1 v2.1：Web渲染器支持<br />
+2 v2.2：硬件加速渲染<br />
+3 v3.0：分布式渲染架构</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+文档版本：2.0<br />
+最后更新：2025-06-27<br />
+归档位置：docs/architecture/design-specification.md</p>
+<p>图形渲染系统设计文档（续）</p>
+<ol start="5" type="1">
+<li>动态行为建模</li>
+</ol>
+<p>5.1 图形绘制顺序图</p>
+<p>sequenceDiagram<br />
+participant User<br />
+participant SwingUI<br />
+participant Command<br />
+participant Shape<br />
+participant Renderer<br />
+participant DrawingPanel</p>
+<p>User-&gt;&gt;SwingUI: 点击”添加圆形”按钮<br />
+SwingUI-&gt;&gt;Command: 创建AddShapeCommand<br />
+Command-&gt;&gt;Shape: 创建Circle实例<br />
+SwingUI-&gt;&gt;Command: execute()<br />
+Command-&gt;&gt;DrawingPanel: 添加Shape到列表<br />
+DrawingPanel-&gt;&gt;Renderer: setGraphics()<br />
+loop 对每个Shape<br />
+DrawingPanel-&gt;&gt;Shape: render(Renderer)<br />
+Shape-&gt;&gt;Renderer: drawCircle(x,y,radius)<br />
+end<br />
+Renderer–&gt;&gt;DrawingPanel: 绘制完成<br />
+DrawingPanel–&gt;&gt;SwingUI: 重绘请求<br />
+SwingUI–&gt;&gt;User: 显示更新后的图形</p>
+<p>5.2 图形绘制状态图</p>
+<p>stateDiagram-v2<br />
+[*] –&gt; Idle<br />
+Idle –&gt; Rendering: 开始绘制<br />
+Rendering –&gt; Rendering: 添加图形元素<br />
+Rendering –&gt; Processing: 提交绘制命令<br />
+Processing –&gt; Rendering: 撤销操作<br />
+Processing –&gt; Persisting: 保存图形<br />
+Persisting –&gt; Idle: 保存完成<br />
+Processing –&gt; Idle: 完成绘制</p>
+<p>5.3 Undo/Redo顺序图</p>
+<p>sequenceDiagram<br />
+participant User<br />
+participant SwingUI<br />
+participant UndoManager<br />
+participant Command<br />
+participant DrawingPanel</p>
+<p>User-&gt;&gt;SwingUI: 点击”撤销”按钮<br />
+SwingUI-&gt;&gt;UndoManager: undo()<br />
+UndoManager-&gt;&gt;Command: undo()<br />
+Command-&gt;&gt;DrawingPanel: 从图形列表移除元素<br />
+DrawingPanel–&gt;&gt;SwingUI: 重绘请求<br />
+SwingUI–&gt;&gt;User: 显示更新后的图形</p>
+<p>User-&gt;&gt;SwingUI: 点击”重做”按钮<br />
+SwingUI-&gt;&gt;UndoManager: redo()<br />
+UndoManager-&gt;&gt;Command: redo()<br />
+Command-&gt;&gt;DrawingPanel: 重新添加图形元素<br />
+DrawingPanel–&gt;&gt;SwingUI: 重绘请求<br />
+SwingUI–&gt;&gt;User: 显示更新后的图形</p>
+<p>5.4 Undo/Redo状态图</p>
+<p>stateDiagram-v2<br />
+[*] –&gt; Clean<br />
+Clean –&gt; HasHistory: 执行命令<br />
+HasHistory –&gt; HasHistory: 执行新命令(清空redo栈)<br />
+HasHistory –&gt; Undoing: 执行undo<br />
+Undoing –&gt; Redoing: 执行redo<br />
+Redoing –&gt; Undoing: 执行undo<br />
+Undoing –&gt; Clean: undo到初始状态<br />
+Redoing –&gt; HasHistory: redo到最后状态</p>
+<ol start="6" type="1">
+<li>关键流程说明</li>
+</ol>
+<p>6.1 图形绘制流程</p>
+<p>1 初始化阶段：</p>
+<p>// 伪代码示例<br />
+Renderer renderer = RendererFactory.create(“swing”);<br />
+DrawingPanel panel = new DrawingPanel(shapes, renderer);<br />
+SwingUI ui = new SwingUI(panel);</p>
+<p>2 绘制执行阶段：</p>
+<p>// 命令模式执行<br />
+Command cmd = new AddShapeCommand(shapes, new Circle(100,100,50));<br />
+undoManager.executeCommand(cmd);</p>
+<p>3 渲染阶段：</p>
+<p>// 在DrawingPanel的paintComponent中<br />
+for (Shape shape : shapes) {<br />
+shape.render(renderer);<br />
+}</p>
+<p>6.2 Undo/Redo实现机制</p>
+<p>1 命令历史管理：</p>
+<p>public class UndoManager {<br />
+private Deque<Command> undoStack = new ArrayDeque&lt;&gt;();<br />
+private Deque<Command> redoStack = new ArrayDeque&lt;&gt;();</p>
+<pre><code>  public void executeCommand(Command cmd) {                                                                                    
+       cmd.execute();                                                                                                           
+       undoStack.push(cmd);                                                                                                     
+       redoStack.clear();                                                                                                       
+   }                                                                                                                            
+                                                                                                                                
+   public void undo() {                                                                                                         
+       Command cmd = undoStack.pop();                                                                                           
+       cmd.undo();                                                                                                              
+       redoStack.push(cmd);                                                                                                     
+   }                                                                                                                            </code></pre>
+<p>}</p>
+<p>2 状态恢复：</p>
+<p>flowchart LR<br />
+A[执行命令] –&gt; B[保存到undo栈]<br />
+B –&gt; C[清空redo栈]<br />
+D[撤销] –&gt; E[从undo栈弹出]<br />
+E –&gt; F[执行undo]<br />
+F –&gt; G[保存到redo栈]<br />
+H[重做] –&gt; I[从redo栈弹出]<br />
+I –&gt; J[执行redo]<br />
+J –&gt; K[保存到undo栈]</p>
+<ol start="7" type="1">
+<li>异常处理流程</li>
+</ol>
+<p>7.1 渲染异常处理</p>
+<p>sequenceDiagram<br />
+participant Shape<br />
+participant Renderer<br />
+participant DrawingPanel<br />
+participant ErrorHandler</p>
+<p>Shape-&gt;&gt;Renderer: drawCircle(x,y,radius)<br />
+alt 渲染成功<br />
+Renderer–&gt;&gt;Shape: 正常返回<br />
+else 渲染失败<br />
+Renderer-&gt;&gt;ErrorHandler: 捕获异常<br />
+ErrorHandler-&gt;&gt;DrawingPanel: 标记错误状态<br />
+DrawingPanel-&gt;&gt;Renderer: 恢复上下文<br />
+end</p>
+<p>7.2 Undo/Redo边界条件</p>
+<p>1 空栈处理：</p>
+<p>public void undo() {<br />
+if (undoStack.isEmpty()) {<br />
+return; // 或抛出特定异常<br />
+}<br />
+// …正常处理<br />
+}</p>
+<p>2 命令不可撤销：</p>
+<p>public interface Command {<br />
+default boolean canUndo() {<br />
+return true;<br />
+}<br />
+}</p>
+<p>附录：典型场景示例</p>
+<p>场景1：绘制并撤销圆形</p>
+<p>1 用户点击”添加圆形”按钮<br />
+2 系统创建Circle(100,100,50)并执行AddShapeCommand<br />
+3 用户点击”撤销”按钮<br />
+4 系统从图形列表移除该圆形并重绘</p>
+<p>场景2：重做操作</p>
+<p>1 用户执行步骤1-3<br />
+2 用户点击”重做”按钮<br />
+3 系统重新添加圆形并重绘</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+文档版本：2.1<br />
+最后更新：2025-06-27<br />
+图表工具：Mermaid 9.3.0<br />
+相关文档：</p>
+<p>• 架构设计规范.md<br />
+• 核心API参考.md<br />
+• 性能优化指南.md</p>
+</body>
+</html>

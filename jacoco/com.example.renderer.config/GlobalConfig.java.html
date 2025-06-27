@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.config</a> &gt; <span class="el_source">GlobalConfig.java</span></div><h1>GlobalConfig.java</h1><pre class="source lang-java linenums">// 8. GlobalConfig.java
+/**
+ * GlobalConfig
+ *
+ * @author liying
+ * @date 2025-06-14
+ * @lastModified 2025-06-14
+ */
+package com.example.renderer.config;
+
+import com.example.renderer.bridge.RendererFactory;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.HashSet;
+import java.util.Properties;
+import java.util.Set;
+
+/**
+ * 全局配置类，使用单例模式管理应用程序的全局设置。
+ * 
+ * &lt;p&gt;当前支持的配置项：
+ * &lt;ul&gt;
+ *   &lt;li&gt;renderMode - 渲染模式(如&quot;swing&quot;,&quot;svg&quot;等)&lt;/li&gt;
+ * &lt;/ul&gt;
+ * 
+ * &lt;p&gt;线程安全：getInstance()方法线程安全，配置项访问需要外部同步。&lt;/p&gt;
+ * 
+ * @see #getInstance() 获取单例实例
+ * @author liying
+ * @since 1.0
+ */
+public class GlobalConfig {
+    private static GlobalConfig instance;
+<span class="fc" id="L36">    private volatile String renderMode = &quot;swing&quot;;</span>
+<span class="fc" id="L37">    private final Set&lt;String&gt; validModes = new HashSet&lt;&gt;();</span>
+
+<span class="fc" id="L39">    private GlobalConfig() {</span>
+<span class="fc" id="L40">        validModes.addAll(RendererFactory.getSupportedModes());</span>
+<span class="fc" id="L41">        loadConfig();</span>
+<span class="fc" id="L42">    }</span>
+    
+    private void loadConfig() {
+        // 1. 尝试从系统属性读取
+<span class="fc" id="L46">        String mode = System.getProperty(&quot;render.mode&quot;);</span>
+        
+        // 2. 尝试从配置文件读取
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">        if (mode == null) {</span>
+<span class="fc" id="L50">            mode = loadFromConfigFile();</span>
+        }
+        
+        // 3. 使用默认值
+<span class="pc bpc" id="L54" title="3 of 4 branches missed.">        if (mode != null &amp;&amp; validModes.contains(mode)) {</span>
+<span class="nc" id="L55">            renderMode = mode;</span>
+        }
+<span class="fc" id="L57">    }</span>
+    
+    private String loadFromConfigFile() {
+<span class="fc" id="L60">        Path configPath = Paths.get(&quot;config/renderer.properties&quot;);</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">        if (Files.exists(configPath)) {</span>
+            try {
+<span class="nc" id="L63">                Properties props = new Properties();</span>
+<span class="nc" id="L64">                props.load(Files.newInputStream(configPath));</span>
+<span class="nc" id="L65">                return props.getProperty(&quot;render.mode&quot;);</span>
+<span class="nc" id="L66">            } catch (IOException e) {</span>
+<span class="nc" id="L67">                System.err.println(&quot;加载配置文件失败: &quot; + e.getMessage());</span>
+            }
+        }
+<span class="fc" id="L70">        return null;</span>
+    }
+
+    /**
+     * 获取全局配置单例实例
+     * @return 全局配置实例
+     */
+    public static synchronized GlobalConfig getInstance() {
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (instance == null) {</span>
+<span class="fc" id="L79">            instance = new GlobalConfig();</span>
+        }
+<span class="fc" id="L81">        return instance;</span>
+    }
+
+    /**
+     * 设置渲染模式
+     * @param mode 要设置的渲染模式
+     * @throws IllegalArgumentException 如果模式不支持
+     */
+    public synchronized void setRenderMode(String mode) {
+<span class="fc bfc" id="L90" title="All 2 branches covered.">        if (!validModes.contains(mode)) {</span>
+<span class="fc" id="L91">            throw new IllegalArgumentException(&quot;无效的渲染模式: &quot; + mode);</span>
+        }
+<span class="fc" id="L93">        this.renderMode = mode;</span>
+<span class="fc" id="L94">    }</span>
+
+    /**
+     * 获取当前渲染模式
+     * @return 当前渲染模式
+     */
+    public String getRenderMode() {
+<span class="fc" id="L101">        return renderMode;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

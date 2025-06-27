@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['saveshapestofile_0',['saveShapesToFile',['../classcom_1_1example_1_1renderer_1_1singleton_1_1PersistenceManager.html#a52b2e7f7c4f7913f82e8f9cab5f6115f',1,'com::example::renderer::singleton::PersistenceManager']]],
+  ['setgraphics_1',['setGraphics',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ac3c41cc9cb191cb7b7e2f003ce170987',1,'com::example::renderer::bridge::SwingRenderer']]],
+  ['setmaxhistorysize_2',['setMaxHistorySize',['../classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c040d06153c2272bd3534037ccbeccf',1,'com::example::renderer::command::UndoManager']]],
+  ['setrendermode_3',['setRenderMode',['../classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html#ac30b85c18b42b3fc82253b374fd2c484',1,'com::example::renderer::config::GlobalConfig']]],
+  ['setstyle_4',['setstyle',['../classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#addb78968e494f9ba3ae7960ccf8d4185',1,'com.example.renderer.bridge.TestRenderer.setStyle()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a441ae335d373437e9bb6eb4edb773193',1,'com.example.renderer.bridge.SwingRenderer.setStyle()'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a5e5b346b80110f750729d5b1172d9845',1,'com.example.renderer.bridge.SVGRenderer.setStyle()'],['../interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf',1,'com.example.renderer.bridge.Renderer.setStyle()']]],
+  ['setup_5',['setUp',['../classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html#a75311a9de1aadf7fb99beb1324fa4aa2',1,'com::example::renderer::command::AddShapeCommandTest']]],
+  ['shape_6',['Shape',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html',1,'com::example::renderer::factory']]],
+  ['shapefactory_7',['ShapeFactory',['../interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html',1,'com::example::renderer::factory']]],
+  ['shapefactoryimpl_8',['ShapeFactoryImpl',['../classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html',1,'com::example::renderer::factory']]],
+  ['shapeobservable_9',['ShapeObservable',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObservable.html',1,'com::example::renderer::observer']]],
+  ['shapeobserver_10',['ShapeObserver',['../interfacecom_1_1example_1_1renderer_1_1observer_1_1ShapeObserver.html',1,'com::example::renderer::observer']]],
+  ['shapeobserverimpl_11',['ShapeObserverImpl',['../classcom_1_1example_1_1renderer_1_1observer_1_1ShapeObserverImpl.html',1,'com::example::renderer::observer']]],
+  ['svgrenderer_12',['svgrenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html',1,'com.example.renderer.bridge.SVGRenderer'],['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a870451d2b88c268ad93aa53b237231dd',1,'com.example.renderer.bridge.SVGRenderer.SVGRenderer()']]],
+  ['svgrenderertest_13',['SVGRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html',1,'com::example::renderer::bridge']]],
+  ['swingrenderer_14',['SwingRenderer',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html',1,'com::example::renderer::bridge']]],
+  ['swingrenderertest_15',['SwingRendererTest',['../classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html',1,'com::example::renderer::bridge']]],
+  ['swingui_16',['swingui',['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html',1,'com.example.renderer.ui.SwingUI'],['../classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html#ae7524e76676f44d4196ba579b7cca21a',1,'com.example.renderer.ui.SwingUI.SwingUI()']]]
+];

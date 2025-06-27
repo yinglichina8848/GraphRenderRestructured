@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>optimization-guide</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">optimization-guide</h1>
+</header>
+<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 性能优化指南 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<ol type="1">
+<li>文档概述</li>
+</ol>
+<p>本文档提供图形渲染系统的性能优化方法和最佳实践，帮助开发人员识别和解决性能瓶颈。</p>
+<ol start="2" type="1">
+<li>性能指标体系</li>
+</ol>
+<p>2.1 关键性能指标(KPI)</p>
+<p>指标类别 目标值 测量方法<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 渲染延迟 &lt;50ms/帧
+帧耗时统计<br />
+内存占用 &lt;100MB JVM内存监控<br />
+命令执行 &lt;10ms/次 操作耗时采样<br />
+启动时间 &lt;2s 冷启动测量</p>
+<ol start="3" type="1">
+<li>渲染性能优化</li>
+</ol>
+<p>3.1 渲染循环优化</p>
+<p>// 优化前：每次创建新对象<br />
+for (Shape shape : shapes) {<br />
+Graphics2D g = createNewGraphics();<br />
+shape.render(g);<br />
+}</p>
+<p>// 优化后：重用渲染上下文<br />
+Graphics2D g = createSharedGraphics();<br />
+for (Shape shape : shapes) {<br />
+shape.render(g); // 减少对象分配<br />
+}</p>
+<p>优化技巧：</p>
+<p>1 避免在渲染循环中创建临时对象<br />
+2 预计算不变的状态值<br />
+3 使用DoubleBuffering减少闪烁</p>
+<p>3.2 图形批处理</p>
+<p>// 批处理示例<br />
+public class BatchRenderer {<br />
+private List<RenderCommand> batch = new ArrayList&lt;&gt;(1000);</p>
+<pre><code>public void addToBatch(RenderCommand cmd) {                                                                                     
+    batch.add(cmd);                                                                                                             
+    if (batch.size() &gt;= 1000) {                                                                                                 
+        flushBatch();                                                                                                           
+    }                                                                                                                           
+}                                                                                                                               
+                                                                                                                                
+private void flushBatch() {                                                                                                     
+    // 批量执行渲染命令                                                                                                         
+}                                                                                                                               </code></pre>
+<p>}</p>
+<ol start="4" type="1">
+<li>内存优化</li>
+</ol>
+<p>4.1 对象池模式</p>
+<p>public class ShapePool {<br />
+private static final int MAX_POOL_SIZE = 100;<br />
+private static Queue<Circle> circlePool = new
+ConcurrentLinkedQueue&lt;&gt;();</p>
+<pre><code>public static Circle acquire(int x, int y, int r) {                                                                             
+    Circle c = circlePool.poll();                                                                                               
+    return c != null ? c.reset(x,y,r) : new Circle(x,y,r);                                                                      
+}                                                                                                                               
+                                                                                                                                
+public static void release(Circle c) {                                                                                          
+    if (circlePool.size() &lt; MAX_POOL_SIZE) {                                                                                    
+        circlePool.offer(c);                                                                                                    
+    }                                                                                                                           
+}                                                                                                                               </code></pre>
+<p>}</p>
+<p>4.2 缓存策略</p>
+<p>缓存类型 实现方式 适用场景<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 软引用缓存
+SoftReference<Bitmap> 大图形对象<br />
+LRU缓存 LinkedHashMap 常用图形资源<br />
+线程局部缓存 ThreadLocal 渲染临时对象</p>
+<ol start="5" type="1">
+<li>并发优化</li>
+</ol>
+<p>5.1 并行渲染</p>
+<p>// 使用ForkJoin并行处理<br />
+public class ParallelRenderer {<br />
+public void render(List<Shape> shapes) {<br />
+ForkJoinPool.commonPool().submit(() -&gt;<br />
+shapes.parallelStream().forEach(shape -&gt;<br />
+shape.render(threadLocalRenderer.get()))<br />
+.join();<br />
+}<br />
+}</p>
+<p>5.2 锁优化技巧</p>
+<p>1 减小锁粒度：</p>
+<p>// 粗粒度锁<br />
+synchronized(this) { /* 整个方法 */ }</p>
+<p>// 细粒度锁<br />
+synchronized(renderLock) { /* 仅渲染相关 */ }</p>
+<p>2 无锁数据结构：</p>
+<p>private final AtomicInteger renderCount = new AtomicInteger();</p>
+<p>public void increment() {<br />
+renderCount.incrementAndGet();<br />
+}</p>
+<ol start="6" type="1">
+<li>算法优化</li>
+</ol>
+<p>6.1 空间分区</p>
+<p>public class SpatialGrid {<br />
+private final int cellSize;<br />
+private final Map&lt;GridKey, List<Shape>&gt; grid = new
+ConcurrentHashMap&lt;&gt;();</p>
+<pre><code>public void addShape(Shape s) {                                                                                                 
+    getGridKeys(s.bounds()).forEach(key -&gt;                                                                                      
+        grid.computeIfAbsent(key, k -&gt; new CopyOnWriteArrayList()).add(s));                                                     
+}                                                                                                                               
+                                                                                                                                
+public List&lt;Shape&gt; query(Rectangle area) {                                                                                      
+    // 只查询相关网格                                                                                                           
+}                                                                                                                               </code></pre>
+<p>}</p>
+<p>6.2 懒加载模式</p>
+<p>public class LazyShape implements Shape {<br />
+private volatile Shape realShape;</p>
+<pre><code>public void render(Renderer r) {                                                                                                
+    if (realShape == null) {                                                                                                    
+        synchronized(this) {                                                                                                    
+            if (realShape == null) {                                                                                            
+                realShape = loadShape();                                                                                        
+            }                                                                                                                   
+        }                                                                                                                       
+    }                                                                                                                           
+    realShape.render(r);                                                                                                        
+}                                                                                                                               </code></pre>
+<p>}</p>
+<ol start="7" type="1">
+<li>性能分析工具</li>
+</ol>
+<p>7.1 工具矩阵</p>
+<p>工具名称 用途 使用场景<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ JProfiler CPU/Memory分析
+深度性能调优<br />
+VisualVM 基础监控 快速问题定位<br />
+JMH 微基准测试 算法性能对比<br />
+GC日志分析 内存问题 OOM诊断</p>
+<p>7.2 典型分析流程</p>
+<p>1 收集数据：</p>
+<p>java -XX:+PrintGC -Xloggc:gc.log -jar app.jar</p>
+<p>2 识别热点：</p>
+<p>jstack <pid> &gt; thread_dump.txt</p>
+<p>3 优化验证：</p>
+<p><span class="citation" data-cites="Benchmark">@Benchmark</span><br />
+public void testRenderPerformance() {<br />
+renderer.drawTestScene();<br />
+}</p>
+<ol start="8" type="1">
+<li>优化案例库</li>
+</ol>
+<p>8.1 案例1：渲染卡顿优化</p>
+<p>问题现象：</p>
+<p>• 复杂场景下FPS降至10以下</p>
+<p>解决方案：</p>
+<p>1 实现四叉树空间分区<br />
+2 增加视口裁剪<br />
+3 使用分级细节(LOD)</p>
+<p>效果：</p>
+<p>• FPS提升至60+<br />
+• CPU使用率降低40%</p>
+<p>8.2 案例2：内存泄漏解决</p>
+<p>问题现象：</p>
+<p>• 长时间运行后OOM</p>
+<p>根本原因：</p>
+<p>• 未释放的图形缓存引用</p>
+<p>修复方案：</p>
+<p>// 使用弱引用管理缓存<br />
+private static final Map&lt;Key, WeakReference<Bitmap>&gt; cache = new
+HashMap&lt;&gt;();</p>
+<ol start="9" type="1">
+<li>性能测试方案</li>
+</ol>
+<p>9.1 测试场景设计</p>
+<p>场景编号 描述 性能指标<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ PTS-001
+1000基本图形渲染 帧耗时、内存<br />
+PTS-002 连续撤销/重做压力测试 操作延迟<br />
+PTS-003 大文件加载测试 IO耗时、内存</p>
+<p>9.2 测试代码示例</p>
+<p>public class RenderingBenchmark {<br />
+<span class="citation" data-cites="Test">@Test</span><br />
+public void stressTest() {<br />
+TimeMeter meter = new TimeMeter();<br />
+for (int i = 0; i &lt; 10000; i++) {<br />
+meter.record(() -&gt; renderer.drawComplexScene());<br />
+}<br />
+assertTrue(meter.avgTime() &lt; 50, “单帧超过50ms阈值”);<br />
+}<br />
+}</p>
+<ol start="10" type="1">
+<li>持续优化机制</li>
+</ol>
+<p>10.1 性能看板</p>
+<p>1 监控指标：<br />
+• 实时FPS显示<br />
+• 内存占用图表<br />
+• 操作响应时间<br />
+2 告警阈值：</p>
+<p>if (frameTime &gt; 50) {<br />
+PerformanceMonitor.alert(“渲染超时”);<br />
+}</p>
+<p>10.2 优化工作流</p>
+<p>[性能测试] -&gt; [问题分析] -&gt; [方案设计]<br />
+-&gt; [代码优化] -&gt; [验证测试] -&gt; [文档更新]</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+版本记录：</p>
+<p>• v1.0 2025-06-20 初始版本<br />
+• v1.1 2025-06-25 新增并发优化章节<br />
+• v1.2 2025-06-27 补充实际案例</p>
+<p>归档位置：docs/performance/optimization-guide.md</p>
+</body>
+</html>
