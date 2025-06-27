@@ -5,7 +5,7 @@ set -e
 SITE_DIR=target/site
 DOXYGEN_HTML=docs/html
 GH_PAGES_BRANCH=gh-pages
-PUBLISH_DIR=gh-pages-publish
+WORKTREE_DIR=.gh-pages-worktree
 DOCS_SRC=doc
 DOCS_HTML="$SITE_DIR/doc"
 INDEX_HTML="$SITE_DIR/index.html"
@@ -19,10 +19,10 @@ fi
 
 CURRENT_BRANCH=$(git symbolic-ref --short HEAD 2>/dev/null || echo "unknown")
 
-echo "🛠️ Step 1: Building Maven site and reports..."
+echo "🛠️ Step 1: 构建 Maven Site 和测试报告..."
 mvn clean verify site
 
-echo "📄 Step 2: Copying Doxygen HTML output if available..."
+echo "📄 Step 2: 拷贝 Doxygen HTML（如果存在）..."
 if [ -d "$DOXYGEN_HTML" ]; then
   mkdir -p "$SITE_DIR/doxygen"
   cp -r "$DOXYGEN_HTML"/* "$SITE_DIR/doxygen/"
@@ -30,7 +30,7 @@ else
   echo "ℹ️ No Doxygen output found in $DOXYGEN_HTML"
 fi
 
-echo "📝 Step 3: Converting doc/*.md → HTML..."
+echo "📝 Step 3: 转换 doc/*.md → HTML..."
 mkdir -p "$DOCS_HTML"
 for mdfile in "$DOCS_SRC"/*.md; do
   name=$(basename "$mdfile" .md)
@@ -38,7 +38,7 @@ for mdfile in "$DOCS_SRC"/*.md; do
   echo "✅ Converted: $mdfile → $DOCS_HTML/$name.html"
 done
 
-echo "📄 Step 3.5: Copying PDF files from doc/ to site/doc/..."
+echo "📄 Step 3.5: 复制 PDF 文件（如果有）..."
 if compgen -G "$DOCS_SRC/*.pdf" > /dev/null; then
   cp "$DOCS_SRC"/*.pdf "$DOCS_HTML/"
   echo "✅ PDF files copied."
@@ -46,7 +46,7 @@ else
   echo "ℹ️ No PDF files found in $DOCS_SRC, skipping."
 fi
 
-echo "📋 Step 4: Generating index.html..."
+echo "📋 Step 4: 生成 index.html..."
 cat > "$INDEX_HTML" <<EOF
 <!DOCTYPE html>
 <html lang="zh">
@@ -64,8 +64,7 @@ cat > "$INDEX_HTML" <<EOF
     <li><a href="doxygen/index.html">📗 Doxygen 接口文档</a></li>
   </ul>
 
-  <h2>📄 PDF 文档</h2>
-  <ul>
+  <h2>📄 PDF 文档</h2><ul>
 EOF
 
 for pdffile in "$DOCS_SRC"/*.pdf; do
@@ -73,16 +72,14 @@ for pdffile in "$DOCS_SRC"/*.pdf; do
   echo "    <li><a href=\"doc/$name\">$name</a></li>" >> "$INDEX_HTML"
 done 2>/dev/null
 
-echo "  </ul>" >> "$INDEX_HTML"
-echo "  <h2>📄 Markdown 文档（已转 HTML）</h2><ul>" >> "$INDEX_HTML"
+echo "  </ul><h2>📄 Markdown 文档（已转 HTML）</h2><ul>" >> "$INDEX_HTML"
 
 for mdfile in "$DOCS_SRC"/*.md; do
   name=$(basename "$mdfile" .md)
   echo "    <li><a href=\"doc/$name.html\">$name</a></li>" >> "$INDEX_HTML"
 done
 
-echo "  </ul>" >> "$INDEX_HTML"
-echo "  <h2>🧪 测试与分析报告</h2><ul>" >> "$INDEX_HTML"
+echo "  </ul><h2>🧪 测试与分析报告</h2><ul>" >> "$INDEX_HTML"
 
 [ -f "$SITE_DIR/surefire-report.html" ] && echo "    <li><a href=\"surefire-report.html\">✅ 单元测试报告</a></li>" >> "$INDEX_HTML"
 [ -f "$SITE_DIR/jacoco/index.html" ] && echo "    <li><a href=\"jacoco/index.html\">📊 覆盖率报告 (JaCoCo)</a></li>" >> "$INDEX_HTML"
@@ -94,27 +91,36 @@ for report in dependencies.html scm.html modules.html licenses.html team.html ci
   fi
 done
 
-echo "  </ul>" >> "$INDEX_HTML"
-echo "</body></html>" >> "$INDEX_HTML"
+echo "  </ul></body></html>" >> "$INDEX_HTML"
 echo "✅ index.html generated."
 
-echo "📁 Step 5: Cloning $GH_PAGES_BRANCH branch..."
-rm -rf "$PUBLISH_DIR"
-git clone --branch "$GH_PAGES_BRANCH" --depth 1 "$REPO_URL" "$PUBLISH_DIR"
+echo "📁 Step 5: 添加 git worktree 到 $WORKTREE_DIR..."
+mkdir -p "$(dirname "$WORKTREE_DIR")"
 
-echo "📦 Step 6: Replacing site content..."
-rm -rf "$PUBLISH_DIR"/*
-cp -r "$SITE_DIR"/* "$PUBLISH_DIR"
+if [ -d "$WORKTREE_DIR" ]; then
+  echo "⚠️ $WORKTREE_DIR 已存在，移除旧 worktree..."
+  git worktree remove "$WORKTREE_DIR" --force || true
+fi
 
-echo "✅ Step 7: Committing and pushing to GitHub Pages..."
-cd "$PUBLISH_DIR"
+git fetch github "$GH_PAGES_BRANCH"
+git worktree add "$WORKTREE_DIR" github/"$GH_PAGES_BRANCH"
+
+echo "📦 Step 6: 替换 gh-pages 内容..."
+rm -rf "$WORKTREE_DIR"/*
+cp -r "$SITE_DIR"/* "$WORKTREE_DIR"
+
+echo "✅ Step 7: 提交并推送更新..."
+cd "$WORKTREE_DIR"
 git config user.name "GitHub Actions"
 git config user.email "actions@github.com"
 git add .
-git commit -m "📄 Auto-publish site on $(date +'%Y-%m-%d %H:%M:%S')" || echo "⚠️ Nothing to commit"
-git push github "$GH_PAGES_BRANCH"
+git commit -m "📄 Auto-publish site on $(date +'%Y-%m-%d %H:%M:%S')" || echo "ℹ️ Nothing to commit."
+git push -f  github "$GH_PAGES_BRANCH"
 cd ..
 
-echo "🎉 Deployment complete!"
-echo "🔗 View site at: https://yinglichina8848.github.io/GraphRenderRestructured/"
+echo "🧹 清理 worktree..."
+git worktree remove "$WORKTREE_DIR" --force || true
+rm -rf "$WORKTREE_DIR"
+
+echo "🎉 发布完成！访问地址：https://yinglichina8848.github.io/GraphRenderRestructured/"
 
