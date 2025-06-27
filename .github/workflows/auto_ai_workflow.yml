@@ -22,10 +22,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: 💡 安装 Aider + Pandoc
+      - name: 💡 安装 Pandoc Doxygen
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc doxygen
+          sudo apt-get install -y pandoc doxygen graphviz
 
       - name: 🧪 执行测试并生成网站
         run: |
