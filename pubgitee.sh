@@ -25,7 +25,7 @@ cp -r "$SITE_DIR"/* "$PUBLISH_DIR"
 echo "✅ Step 6: Committing and pushing to GitHub Pages..."
 cd "$PUBLISH_DIR"
 git config user.name "GitHub Actions"
-git config user.email "yinglichina@gmail.com"
+git config user.email "yinglichina@163.com"
 git add .
 git commit -m "Auto-publish site $(date +'%Y-%m-%d %H:%M:%S')" || echo "Nothing to commit"
 #git push gitee "$GH_PAGES_BRANCH"

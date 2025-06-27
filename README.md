@@ -7,7 +7,8 @@
 
 [![CI Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)](https://github.com/yinglichina8848/GraphRenderRestructured/actions)
 [![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
-软件工程期末大作业：图形渲染系统的设计与实现
+
+## 软件工程期末大作业：图形渲染系统的设计与实现
 
 # 🚀 一、项目简介
 
@@ -141,9 +142,15 @@
 
 #📄 项目文档
 
-## JavaDoc + Doxygen 包括 单元测试的结果以及代码覆盖率报告：：https://yinglichina8848.github.io/GraphRenderRestructured
+## 完整的项目文档：https://yinglichina8848.github.io/GraphRenderRestructured
 
 ## Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
+
+## 软件质量报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html
+
+## 软件变更报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html
+
+## 软件版本说明：https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -152,6 +159,12 @@
 ###Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).
 
 
+#📄 PDF 文档：记录整个软件的开发过程，主要是和各种 AI 工具的对话过程
+
+    图形渲染环境设计报告.pdf       https://yinglichina8848.github.io/GraphRenderRestructured/doc/%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A.pdf
+    Deepseek对话过程.pdf          https://yinglichina8848.github.io/GraphRenderRestructured/doc/Deepseek%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
+    ChatGPT-GraphRender项目问答全过程.pdf https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT-GraphRender%E9%A1%B9%E7%9B%AE%E9%97%AE%E7%AD%94%E5%85%A8%E8%BF%87%E7%A8%8B.pdf
+    ChatGPT对话过程.pdf           https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
 
 
 
@@ -170,7 +183,7 @@ doc 目录下的3个PDF 文件记录了图形渲染环境的设计过程。
 
 
 # 🧱 构建 & 安装
-————————————————————————————————————————————————————————————————————————————————————————————————————
+————————————————————————————————————————————————————————————————————————————————————————————————
 ```bash
 # 克隆仓库（Github 版本）
 git clone https://github.com/yinglichina8848/GraphRenderRestructured.git
@@ -185,7 +198,7 @@ mvn clean package site
 - `doxygen/` —— Doxygen 生成的文档
 - `index.html` —— Maven Site 总入口
 
-——————————————————————————————————————————————————————————————————————————————————————————————————————
+—————————————————————————————————————————————————————————————————————————————————————————————————
 # 克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
 
 git clone https://gitee.com/yinglichina/graph-render-restructured.git
@@ -231,6 +244,13 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 - ✅ Doxygen（C++ 代码结构 & 注释文档）
 - ✅ Maven Site 集成，统一输出在 `target/site/`
 - ✅ 可通过 GitHub Pages 自动部署
+- ✅ 集成各种测试和文档报告工具，更改日志和软件质量分析报告自动生成
+- ✅ 集成单元测试工具，单元测试代码自动生成
+- ✅ 集成同步发布功能，一次提交，自动同步到 Github 和 Gitee 
+- ✅ 云端文档自动生成和发布，main 分支的任何代码提交，会自动触发云端编译、测试和报告生成，并自动发布到 gh-pages 分支，以 Github Pages 网页的形式展示。
+- ✅ 语义代码注释和版本集成，自动抽取函数注释，错误修正，生成版本变更记录，并生成版本号。
+- ✅ AI 注释补全和测试代码生成。
+
 
 ---
 
