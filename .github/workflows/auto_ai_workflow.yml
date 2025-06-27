@@ -1,4 +1,4 @@
-name: 🧠 自动 AI 改进与文档发布
+name: 🧠 自动 编译测试 生成静态网页并发布到 gh-pages
 
 on:
   # 手动触发：可从 GitHub Web UI 点击 Run workflow
