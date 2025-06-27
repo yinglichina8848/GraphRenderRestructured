@@ -102,7 +102,8 @@ public class SVGRenderer implements Renderer {
         if (width <= 0 || height <= 0) {
             throw new IllegalArgumentException("Width and height must be positive (width=" + width + ", height=" + height + ")");
         }
-        String rect = String.format("<rect x='%d' y='%d' width='%d' height='%d' />\n", x, y, width, height);
+        String rect = String.format("<rect x='%d' y='%d' width='%d' height='%d' stroke='%s' fill='%s' stroke-width='%d' />\n", 
+            x, y, width, height, strokeColor, fillColor, strokeWidth);
         svgBuilder.append(rect);
         System.out.print(rect);
     }

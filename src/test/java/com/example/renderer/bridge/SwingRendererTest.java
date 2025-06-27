@@ -174,6 +174,9 @@ public class SwingRendererTest {
      */
     @Test
     public void testFrameControl() {
+        // 重置mock以忽略setGraphics()中的初始调用
+        reset(mockGraphics);
+        
         renderer.beginFrame();
         verify(mockGraphics).setRenderingHint(
             RenderingHints.KEY_ANTIALIASING,
