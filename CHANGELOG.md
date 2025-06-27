@@ -1,37 +1,119 @@
-# 📘 Changelog
+# Changelog
 
-本项目的所有可公开更改将记录于此文件中。
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.0.0/) 和 [语义化版本控制](https://semver.org/lang/zh-CN/)。
+## 0.4.0 (2025-06-27)
 
----
 
-## [Unreleased]
+### ⚠ BREAKING CHANGES
 
-### ✨ 新增功能
-- 集成 GitHub Actions 工作流，实现云端自动编译、测试、生成报告。
-- 自动发布 `target/site` 中的静态文档至 `gh-pages` 分支。
-- 添加 `publish.sh` 脚本，支持本地/CI 自动构建发布文档。（综合在生成的网站的首页显示各种资源）
-- 添加 `push.sh` 脚本，提交本地源码到 Github main 分支, 并触发云端的 Action， 完成自动编译测试和文档发布。
-- 实现 Markdown → HTML 转换，文档索引页自动生成（针对doc目录下 Aider 生成的 Markdown 报告）。
-- 加入 ChangLog 模板（本页面），手动记录项目的重大改进，以后考虑提供自动生成版本。
+* 为drawLegacyRectangle添加方法注释和修改记录，作者Aider + Qwen3-8B
 
-### 🧠 AI 提升
-- 补充多个 Aider 生成的 Markdown 分析报告，从多个角度健全项目的软件工程文档。
-- 集成 Aider 脚本，辅助分析代码质量、自动补全注释与测试。（测试功能，Aider 的反馈并未直接加入代码，只是显示修改意见）
-- 自动生成 `doc/ai_fix_suggestions.md` AI 建议报告。
+### Features
 
-### 🛠 持续集成改进
-- 添加 `.github/workflows/auto_ai_workflow.yml` 支持自动发布。
-- 准备自动生成 `CHANGELOG.md` 并集成进发布流程。
-- 支持多格式代码质量分析：PMD、Checkstyle、JaCoCo、SpotBugs、OWASP Dependency Check。
+* 更新Doxygen HTML输出配置 ([19dfbcf](https://github.com/yinglichina8848/GraphRenderRestructured/commit/19dfbcf73a7953b54876c49aa0640afe5153e072))
+* 实现RemoteRendererProxy的缺失方法 ([d74ec07](https://github.com/yinglichina8848/GraphRenderRestructured/commit/d74ec077b17c0abb1509555997f961767f214990))
+* 添加带null检查的MoveShapeCommand实现 ([8f2f3d6](https://github.com/yinglichina8848/GraphRenderRestructured/commit/8f2f3d63c4759926b61ec0e4cb0218ae578b5ab4))
+* 添加多个接口的实现类 ([2628d4d](https://github.com/yinglichina8848/GraphRenderRestructured/commit/2628d4d7d828972aa33a2e4e6b64f2405f2c9d3b))
+* 添加LaTeX/PDF文档生成支持 ([fbadadd](https://github.com/yinglichina8848/GraphRenderRestructured/commit/fbadaddc1b45d14c4d5f0072a415d5432388a45f))
+* 添加SVG渲染器桥接类 ([38a9f60](https://github.com/yinglichina8848/GraphRenderRestructured/commit/38a9f60a37eb7260f6e2dfb34bbfeda05cdfcd7e))
+* 完善实现类功能并添加输入验证 ([a59b22e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a59b22ef9187f154ca9c18f05f078ccd1c09b980))
+* 为Command接口添加redo和状态检查方法 ([178ba18](https://github.com/yinglichina8848/GraphRenderRestructured/commit/178ba18d12460076ddfaa530c1a868d67095b26f))
+* 为Shape和Command接口添加异常处理声明 ([d2f3e64](https://github.com/yinglichina8848/GraphRenderRestructured/commit/d2f3e6422032f442bcb7a085e681c274b816ac1d))
+* 为Shape接口添加clone方法和坐标验证 ([b75a999](https://github.com/yinglichina8848/GraphRenderRestructured/commit/b75a999e1bad938be18edd895d87fdfdcdb68192))
+* 为SVGRenderer添加getSVG方法并更新测试 ([868ddba](https://github.com/yinglichina8848/GraphRenderRestructured/commit/868ddbaa2e76bcfd5f85ef2083943d919efc3266))
+* 增强渲染器功能并改进UI组件 ([7b88c63](https://github.com/yinglichina8848/GraphRenderRestructured/commit/7b88c63d756d785b268305d98c15db9c9f3d7fcb))
+* 重构渲染系统架构，解耦核心组件 ([23e47ed](https://github.com/yinglichina8848/GraphRenderRestructured/commit/23e47ed264d92a9d394aab90d435342a5d19ca05))
+* 重新添加PDF文档生成功能 ([10865b4](https://github.com/yinglichina8848/GraphRenderRestructured/commit/10865b40dcf00068dc0d6e40cf26cf16ed737e80))
 
----
 
-## [v0.1.0] - 2025-06-27
+### Bug Fixes
 
-### 🎉 初始版本
-- Java + JavaScript 渲染核心代码结构搭建。
-- 支持 JavaDoc 与 Doxygen 双文档系统。
-- 上传类图、顺序图，文档结构标准化。
+* 更新maven-pdf-plugin配置并跳过PDF生成 ([b41f477](https://github.com/yinglichina8848/GraphRenderRestructured/commit/b41f477baa90625ed812c6504e1d3d88c0bc8efb))
+* 更新SVGRenderer测试以匹配实际输出格式 ([be32eb9](https://github.com/yinglichina8848/GraphRenderRestructured/commit/be32eb9092e2db0eb27ba08db4954568c405457e))
+* 明确指定assertDoesNotThrow使用Executable版本 ([e2e6c95](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e2e6c95758d8f336008270c74642f15dabc59608))
+* 删除测试文件中的重复类定义 ([b4072ce](https://github.com/yinglichina8848/GraphRenderRestructured/commit/b4072ce05b95bcdd755976279fa77c850b594862))
+* 实现MockGraphics2D的getDeviceConfiguration方法 ([0e05c0c](https://github.com/yinglichina8848/GraphRenderRestructured/commit/0e05c0c5800d27b944927af5ae4c552cc3cd98d6))
+* 实现MockGraphics2D中缺失的drawString方法 ([4eb99ac](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4eb99acf9512a0f556697aac29520a76498ba40c))
+* 替换latex-maven-plugin为pdf-maven-plugin并添加文档模板 ([6e20c59](https://github.com/yinglichina8848/GraphRenderRestructured/commit/6e20c59ad31d0a3f2cce16dec787e6997785687c))
+* 添加缺失的JUnit5注解导入 ([87af5c5](https://github.com/yinglichina8848/GraphRenderRestructured/commit/87af5c5c3e54a3f1f7a3618aeac7c30f1509eb28))
+* 添加缺失的Objects导入 ([0256df0](https://github.com/yinglichina8848/GraphRenderRestructured/commit/0256df0a5345fdf68f60cc5d66f9c26e944248e9))
+* 添加缺失的Objects导入并清理重复注释 ([cd8e3e5](https://github.com/yinglichina8848/GraphRenderRestructured/commit/cd8e3e549ca78e346c3243a4cc41a208e3c40130))
+* 添加缺失的Objects导入并修复RemoteRendererProxy实现 ([782b599](https://github.com/yinglichina8848/GraphRenderRestructured/commit/782b599a861a0394d73ab2e701ad1a78d08c9c1a))
+* 添加缺失的Objects类导入 ([895e030](https://github.com/yinglichina8848/GraphRenderRestructured/commit/895e030388c853128b3772dbee47860c653b065a))
+* 添加缺失的RenderingHints导入 ([59b0f3a](https://github.com/yinglichina8848/GraphRenderRestructured/commit/59b0f3a8305794fd0ff9e0d680a32fdff47a14f6))
+* 添加AfterEach注解导入 ([bcb81c4](https://github.com/yinglichina8848/GraphRenderRestructured/commit/bcb81c46fd19025cd622adeef673c09899a3fbcc))
+* 添加AfterEach注解导入以修复编译错误 ([2649a72](https://github.com/yinglichina8848/GraphRenderRestructured/commit/2649a72c858434c9728b2c74e58326b1c639a0c8))
+* 添加AfterEach注解导入以修复编译错误 ([98911cc](https://github.com/yinglichina8848/GraphRenderRestructured/commit/98911ccbcaec20df7b193745e99f71d207e17728))
+* 添加Circle和Rectangle的参数验证及溢出处理 ([386831c](https://github.com/yinglichina8848/GraphRenderRestructured/commit/386831c86af295632dbca78e3656ec03a35c3d71))
+* 添加JUnit断言静态导入以修复编译错误 ([4daae20](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4daae2042eeca77e84ed83108dc880727a81ff45))
+* 添加MockGraphics2D中缺失的drawRenderableImage方法实现 ([3fe29a6](https://github.com/yinglichina8848/GraphRenderRestructured/commit/3fe29a6eefe43f85e6682ce13645440fca0e2331))
+* 添加PDF生成所需的依赖和配置 ([e4d1e9a](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e4d1e9a16eb7eda77d7a18d8acefa5724b9df67c))
+* 添加PersistenceManagerTest缺失的导入 ([1bbfe50](https://github.com/yinglichina8848/GraphRenderRestructured/commit/1bbfe506d4cd4a29fb9310889440538d2c897046))
+* 跳过需要GUI环境的Swing测试 ([6f1836e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/6f1836e610a3207b79ed05d65c4060cc0d853150))
+* 完善MockGraphics2D实现所有Graphics2D抽象方法 ([454edb3](https://github.com/yinglichina8848/GraphRenderRestructured/commit/454edb36ad9ae4f3306530ce3dd8b82ed8310c3c))
+* 为形状类和命令类实现缺失的抽象方法 ([7bc020c](https://github.com/yinglichina8848/GraphRenderRestructured/commit/7bc020c1c35d09f58cc9cd991feecfa4722a5a36))
+* 为RuntimeTypeAdapterFactory添加类型安全注解 ([e6e474a](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e6e474ac2093572c72d4f1b3405dbcd5e9d67e23))
+* 修复编译错误，添加缺失的方法实现 ([39d9134](https://github.com/yinglichina8848/GraphRenderRestructured/commit/39d9134a2da840eb8cb5f59dfca20a835debf334))
+* 修复编译错误并添加缺失的导入 ([bec35f1](https://github.com/yinglichina8848/GraphRenderRestructured/commit/bec35f16eeba508521ec29359e260bbb74a3b403))
+* 修复编译错误并添加缺失的导入和变量 ([b1e27f0](https://github.com/yinglichina8848/GraphRenderRestructured/commit/b1e27f0d470eff912e95685d576b8782f228a750))
+* 修复编译错误并添加缺失的依赖 ([e195458](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e1954583695f498c814e8ee824fec97beb77e242))
+* 修复编译错误并添加缺失的LegacyRenderer接口 ([012dcb3](https://github.com/yinglichina8848/GraphRenderRestructured/commit/012dcb3cde570a50c281d2af693f045dbe9b68c8))
+* 修复测试类中缺少的assertThrows静态导入 ([4171e9d](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4171e9dbce497fb4448410701151186258d884f3))
+* 修复测试类中缺失的导入语句 ([aae3454](https://github.com/yinglichina8848/GraphRenderRestructured/commit/aae34544c0eb881bacd63b41e2ec71c40d4e5646))
+* 修复测试用例中的单例访问和接口实例化问题 ([d16dfac](https://github.com/yinglichina8848/GraphRenderRestructured/commit/d16dfac554444cf2ee3e0fcc736262bf20b23170))
+* 修复测试中assertDoesNotThrow方法引用不明确的问题 ([4c35697](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4c35697c74fc9a8e5d6651727904ea89be34a7b1))
+* 修复测试中assertDoesNotThrow方法引用不明确的问题 ([a01b6a3](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a01b6a3344501d420149a74c737ccd1a09569562))
+* 修复观察者类编译错误并简化日志输出 ([c98ef30](https://github.com/yinglichina8848/GraphRenderRestructured/commit/c98ef30001c38359be8ebb82395f8b0d1f2f54a9))
+* 修复椭圆渲染坐标计算问题并增强参数校验 ([6a08d84](https://github.com/yinglichina8848/GraphRenderRestructured/commit/6a08d84e51a821e859406fe86acedb6f94733f13))
+* 修复注释问题，启用Aider命令 ([766cada](https://github.com/yinglichina8848/GraphRenderRestructured/commit/766cada05a9b9a5342be06ac23355a2500da8597))
+* 修复Javadoc生成错误并补充缺失的文档注释 ([a799223](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a79922379ab304ae35bc437c6c98a4f75aa548d9))
+* 修复Javadoc生成错误并补充缺失注释 ([6d1cc42](https://github.com/yinglichina8848/GraphRenderRestructured/commit/6d1cc42e043167345ec2f865b21f1ef59559bc28))
+* 修复PersistenceManagerTest中的编译错误 ([780be76](https://github.com/yinglichina8848/GraphRenderRestructured/commit/780be76f4f86361e880d482e9e81151cd162c8d0))
+* 修复pom.xml格式并添加必要依赖 ([301f891](https://github.com/yinglichina8848/GraphRenderRestructured/commit/301f8913098b69ca0a955b0cd5d014a8276372b1))
+* 修复pom.xml中pdf-maven-plugin的依赖配置 ([fe01a55](https://github.com/yinglichina8848/GraphRenderRestructured/commit/fe01a5573da2e28f16791ab29cf7ee41f74c622e))
+* 修复Rectangle移动时的整数溢出问题并增强测试 ([734c123](https://github.com/yinglichina8848/GraphRenderRestructured/commit/734c12357e48de0347ba017c5cbb2370b04c4db7))
+* 修复RemoteRendererProxy中缺失的setStyle方法和drawEllipse实现 ([ae991d1](https://github.com/yinglichina8848/GraphRenderRestructured/commit/ae991d19891d20dde6e0d220375819c2ed913120))
+* 修复RendererFactory中LegacyRendererImpl的引用问题 ([819dcfb](https://github.com/yinglichina8848/GraphRenderRestructured/commit/819dcfb5577d539bece624c9582d43a60cbb4bbd))
+* 修复ShapeObserver接口与实现类的方法签名不一致问题 ([d392d50](https://github.com/yinglichina8848/GraphRenderRestructured/commit/d392d509899064d972f3c235a7349a5086c2bae0))
+* 修复SVG渲染器测试并跳过GUI测试 ([4f63941](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4f639417bc660eea3295435659959d122429a16c))
+* 修复SVGRenderer测试失败问题 ([84252c3](https://github.com/yinglichina8848/GraphRenderRestructured/commit/84252c3b1ec799bc846900d68f9ab12121baa7df))
+* 修复SVGRenderer测试失败问题 ([2c4f59e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/2c4f59e0efca66837fbad12ccaab2f67ff78f87a))
+* 修复SVGRenderer和SwingRenderer测试失败问题 ([4261a11](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4261a11f2e5aaa8994bfa943447e53e15188d668))
+* 修复SVGRenderer和SwingRenderer的测试断言 ([38b8669](https://github.com/yinglichina8848/GraphRenderRestructured/commit/38b8669ad14e7c2cf6fad00a962bdca5f25921a7))
+* 修复SVGRenderer和SwingRenderer的测试失败问题 ([541cfb2](https://github.com/yinglichina8848/GraphRenderRestructured/commit/541cfb2f772da64bc43f98e6fd1d6683c027cf30))
+* 修复SVGRenderer矩形输出格式问题 ([5ac48fb](https://github.com/yinglichina8848/GraphRenderRestructured/commit/5ac48fb142923a324050bbf36928051749048417))
+* 修复SVGRenderer文档结构测试失败问题 ([af9f3ae](https://github.com/yinglichina8848/GraphRenderRestructured/commit/af9f3ae94892312ce156379eeeb44a9dc5d8b17e))
+* 修复SVGRenderer样式设置和SwingRenderer测试问题 ([4c28d7e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4c28d7e70cffdb2abfbe340756dabbde26ed7ba0))
+* 修复SwingRendererTest测试中使用Mockito验证方法调用 ([2f85861](https://github.com/yinglichina8848/GraphRenderRestructured/commit/2f85861f95800e8f64db2f05c4eb0a8e0f857373))
+* 修复SwingRendererTest中setStroke调用次数验证问题 ([0e56ccd](https://github.com/yinglichina8848/GraphRenderRestructured/commit/0e56ccd18dc901ccc47d077133a7fff7b66e3d23))
+* 修复TestRenderer和LegacyRendererAdapter中的编译错误 ([52d0ffe](https://github.com/yinglichina8848/GraphRenderRestructured/commit/52d0ffe02e2c4f2df77fb292cfbcc34af623baa6))
+* 修复XML导出椭圆参数并改进测试支持 ([3df76b6](https://github.com/yinglichina8848/GraphRenderRestructured/commit/3df76b63a626e36d5749afc4af0e80e1a1357ff6))
+* 修正测试方法参数名以匹配接口定义 ([886cfe7](https://github.com/yinglichina8848/GraphRenderRestructured/commit/886cfe7d4361fa074e1553e1dca71ddeded6d54f))
+* 修正椭圆JSON输出的半径计算并禁用GUI测试 ([cf24c18](https://github.com/yinglichina8848/GraphRenderRestructured/commit/cf24c18956ecea1208a8c9891b81936073db6794))
+* 修正GlobalConfigTest以匹配枚举单例模式 ([b6c67dd](https://github.com/yinglichina8848/GraphRenderRestructured/commit/b6c67ddeb197f49d220a8a65a8c4e369fd270400))
+* 修正SVGRenderer测试失败问题 ([ab6b846](https://github.com/yinglichina8848/GraphRenderRestructured/commit/ab6b84678d9456d4e09e83216a8205d76abc339b))
+* 修正SVGRenderer输出格式以匹配测试期望 ([bf22733](https://github.com/yinglichina8848/GraphRenderRestructured/commit/bf22733e0c6cfb91f36334c509c31619e4f5abc2))
+* 修正SVGRenderer椭圆绘制方法的参数命名 ([1aaf060](https://github.com/yinglichina8848/GraphRenderRestructured/commit/1aaf060aada39933790287288f20887c7cffb418))
+* 修正Triangle测试中的整数溢出预期值 ([ac30ea6](https://github.com/yinglichina8848/GraphRenderRestructured/commit/ac30ea63357b313b6678153addfc571783c9eb62))
+* 移除 PersistenceManagerTest 中的重复类定义 ([f6be704](https://github.com/yinglichina8848/GraphRenderRestructured/commit/f6be7048d03eefc4e3b56794e6b4c9b8beb6ccad))
+* 移除生产代码中对测试类的依赖并使用Mockito ([85bdcf8](https://github.com/yinglichina8848/GraphRenderRestructured/commit/85bdcf83b2e1cd81347c3f6c68d25cd03867d1e0))
+* 移除重复的包声明和导入语句 ([038fa4e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/038fa4ea70822df9171b266adea8a053fec0d115))
+* 移除重复的exec插件声明并修复Objects导入 ([15b8ef0](https://github.com/yinglichina8848/GraphRenderRestructured/commit/15b8ef047227af6de5026e89fbbaba3048467d7d))
+* 移除Command.java中的重复MoveShapeCommand类定义 ([622a840](https://github.com/yinglichina8848/GraphRenderRestructured/commit/622a840f9f9184910bfe3bf248ce490adcd19f61))
+* 移除LegacyRenderer.java中的重复接口定义 ([036a115](https://github.com/yinglichina8848/GraphRenderRestructured/commit/036a11526cd60d24422a76d40500e45291af0044))
+* 移除MockGraphics2D中的重复类定义并合并实现 ([cb8a3fd](https://github.com/yinglichina8848/GraphRenderRestructured/commit/cb8a3fd3c6b36f14d583780949d9b6bfaca3292f))
+* 移除pom.xml中的重复配置 ([ab9abc8](https://github.com/yinglichina8848/GraphRenderRestructured/commit/ab9abc8a501544fbcffc06b221fdad4bd0f02f84))
+* 移除ShapeFactory.java中的重复接口定义和实现类 ([4a59a22](https://github.com/yinglichina8848/GraphRenderRestructured/commit/4a59a22cbc83756555331ee01a24a6402552b66a))
+* 移除ShapeObservable.java中重复的ShapeObserver接口定义 ([80cf761](https://github.com/yinglichina8848/GraphRenderRestructured/commit/80cf761b91f523401585fd0c8b6cea13b570ead8))
+* 移除SwingUI中的paint方法重写以避免图形重复绘制 ([1e985ae](https://github.com/yinglichina8848/GraphRenderRestructured/commit/1e985ae7606cef616f05e142058d066aec0078d8))
+* 在MockGraphics2D中添加缺失的drawRenderedImage方法实现 ([cedfa7b](https://github.com/yinglichina8848/GraphRenderRestructured/commit/cedfa7b80da99e591c3948ea7bd64fc0bf8154ce))
+* 在MockGraphics2D中添加缺失的drawString(float,float)方法实现 ([0accf7e](https://github.com/yinglichina8848/GraphRenderRestructured/commit/0accf7e8ab2f870d0053bd902087a56236c80a1f))
+* 在MockGraphics2D中添加缺失的hit方法实现 ([37888f8](https://github.com/yinglichina8848/GraphRenderRestructured/commit/37888f8e0fc452a3d0e602faa4cf66eb6b68ccd1))
+* 在MockGraphics2D中添加drawGlyphVector方法实现 ([a81c479](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a81c479ac8fa953a9bcbda905479358e675f297f))
+* 在pom.xml中排除图形相关测试 ([8d10af0](https://github.com/yinglichina8848/GraphRenderRestructured/commit/8d10af0cddd5ef33a5f0fa6eac754c65a73bfd58))
+* 在SVGRenderer中添加矩形宽度和高度参数验证 ([1ff0546](https://github.com/yinglichina8848/GraphRenderRestructured/commit/1ff0546f2f76ae788407ac2ace4e1e01615a182b))
+* 重构LegacyRenderer接口与实现类分离 ([e593271](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e593271fa3ead47721253293e9685d89589974d1))
 
+
+* 为drawLegacyRectangle添加方法注释和修改记录，作者Aider + Qwen3-8B ([745a51a](https://github.com/yinglichina8848/GraphRenderRestructured/commit/745a51aa92611556ae01dc80d241e04361d1d8f0))

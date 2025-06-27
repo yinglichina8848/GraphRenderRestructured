@@ -1,0 +1,19 @@
+{
+  "name": "graph-render",
+  "version": "0.4.0",
+  "description": "The Graph Render System",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "jest": "^30.0.3",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
