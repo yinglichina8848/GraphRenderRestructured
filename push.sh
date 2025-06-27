@@ -1,6 +1,7 @@
 # Update the work flow on Github Actions.
 touch publish.sh
 touch push.sh
+git add CHANGELOG.md
 git add publish.sh
 git add push.sh
 git add .github/workflows/auto_ai_workflow.yml
