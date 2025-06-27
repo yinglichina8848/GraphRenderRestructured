@@ -1,11 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "abcdegjlmnoprstuvx创图文构核结行设项",
+  0: "abcdegjlmnoprstuvx图",
   1: "abcdegjlmprstux",
   2: "c",
   3: "abcdeglmnoprstuv",
   4: "g",
-  5: "m图核"
+  5: "图"
 };
 
 var indexSectionNames =
