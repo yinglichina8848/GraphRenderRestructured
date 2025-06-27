@@ -110,17 +110,21 @@ rm -rf "$WORKTREE_DIR"/*
 cp -r "$SITE_DIR"/* "$WORKTREE_DIR"
 
 echo "✅ Step 7: 提交并推送更新..."
-cd "$WORKTREE_DIR"
+cd "$WORKTREE_DIR" || { echo "❌ Failed to enter worktree"; exit 1; }
+
 git config user.name "GitHub Actions"
 git config user.email "actions@github.com"
 git add .
-git commit -m "📄 Auto-publish site on $(date +'%Y-%m-%d %H:%M:%S')" || echo "ℹ️ Nothing to commit."
-git push -f  origin "$GH_PAGES_BRANCH"
-cd ..
+
+git commit -m "📄 Auto-publish site on $(date -u +'%Y-%m-%dT%H:%M:%SZ')" || echo "ℹ️ Only update static HTML document. Nothing to commit."
+
+git push -f origin HEAD:gh-pages
+
+cd -
 
 echo "🧹 清理 worktree..."
 git worktree remove "$WORKTREE_DIR" --force || true
-rm -rf "$WORKTREE_DIR"
+#rm -rf "$WORKTREE_DIR"
 
 echo "🎉 发布完成！访问地址：https://yinglichina8848.github.io/GraphRenderRestructured/"
 
