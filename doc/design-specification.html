@@ -6,176 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>design-specification</title>
   <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    ul.task-list{list-style: none;}
   </style>
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">design-specification</h1>
 </header>
-<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ 图形渲染系统架构设计文档 ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<p>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ┃ 图形渲染系统架构设计文档 ┃ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
 <ol type="1">
 <li>系统概述</li>
 </ol>
-<p>本系统是一个基于Java的图形渲染框架，采用模块化设计，支持多种渲染后端和图形类型。系统核心目标是提供灵活、可扩展的图形渲染能力，同时保
-持代码的可维护性和高性能。</p>
+<p>本系统是一个基于Java的图形渲染框架，采用模块化设计，支持多种渲染后端和图形类型。系统核心目标是提供灵活、可扩展的图形渲染能力，同时保 持代码的可维护性和高性能。</p>
 <ol start="2" type="1">
 <li>架构设计原则</li>
 </ol>
@@ -186,65 +33,33 @@
 <ol start="3" type="1">
 <li>核心架构图</li>
 </ol>
-<table style="width:31%;">
-<colgroup>
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><pre><code>  Client</code></pre></td>
-</tr>
-</tbody>
-</table>
-<pre><code>      |                                                                                                                         
-      v                                                                                                                         </code></pre>
-<table style="width:31%;">
-<colgroup>
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><pre><code>  UI Layer</code></pre>
-<p>(SwingUI, Panels)</p></td>
-</tr>
-</tbody>
-</table>
-<pre><code>      |                                                                                                                         
-      v                                                                                                                         </code></pre>
-<table style="width:31%;">
-<colgroup>
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Business Logic (Commands, Factory)</td>
-</tr>
-</tbody>
-</table>
-<pre><code>      |                                                                                                                         
-      v                                                                                                                         </code></pre>
-<table style="width:31%;">
-<colgroup>
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Rendering Layer (Renderers, Adapter)</td>
-</tr>
-</tbody>
-</table>
-<pre><code>      |                                                                                                                         
-      v                                                                                                                         </code></pre>
-<table style="width:31%;">
-<colgroup>
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>Persistence Layer (Serialization, IO)</td>
-</tr>
-</tbody>
-</table>
+<p>+———————+<br />
+| Client |<br />
++———————+<br />
+|<br />
+v<br />
++———————+<br />
+| UI Layer |<br />
+| (SwingUI, Panels) |<br />
++———————+<br />
+|<br />
+v<br />
++———————+<br />
+| Business Logic |<br />
+| (Commands, Factory) |<br />
++———————+<br />
+|<br />
+v<br />
++———————+<br />
+| Rendering Layer |<br />
+| (Renderers, Adapter)|<br />
++———————+<br />
+|<br />
+v<br />
++———————+<br />
+| Persistence Layer |<br />
+| (Serialization, IO) |<br />
++———————+</p>
 <ol start="4" type="1">
 <li>核心组件说明</li>
 </ol>
@@ -269,8 +84,7 @@
 </li></li>
 <li></ul></li>
 <li></li>
-<li><span class="citation" data-cites="see">@see</span> DrawingPanel
-绘图面板实现<br />
+<li><span class="citation" data-cites="see">@see</span> DrawingPanel 绘图面板实现<br />
 */<br />
 public class SwingUI extends JFrame {<br />
 // 实现细节…<br />
@@ -411,8 +225,7 @@ public class PersistenceManager {<br />
 <li>关键设计模式应用</li>
 </ol>
 <p>设计模式 应用场景 实现类<br />
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 工厂模式
-创建图形和渲染器 RendererFactory, ShapeFactory<br />
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 工厂模式 创建图形和渲染器 RendererFactory, ShapeFactory<br />
 适配器模式 旧版渲染器兼容 LegacyRendererAdapter<br />
 命令模式 操作封装与撤销 Command接口及实现<br />
 观察者模式 图形变更通知 ShapeObserver<br />
@@ -469,8 +282,7 @@ public class PersistenceManager {<br />
 <p>1 v2.1：Web渲染器支持<br />
 2 v2.2：硬件加速渲染<br />
 3 v3.0：分布式渲染架构</p>
-<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-文档版本：2.0<br />
+<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 文档版本：2.0<br />
 最后更新：2025-06-27<br />
 归档位置：docs/architecture/design-specification.md</p>
 <p>图形渲染系统设计文档（续）</p>
@@ -485,7 +297,7 @@ participant Command<br />
 participant Shape<br />
 participant Renderer<br />
 participant DrawingPanel</p>
-<p>User-&gt;&gt;SwingUI: 点击”添加圆形”按钮<br />
+<p>User-&gt;&gt;SwingUI: 点击“添加圆形”按钮<br />
 SwingUI-&gt;&gt;Command: 创建AddShapeCommand<br />
 Command-&gt;&gt;Shape: 创建Circle实例<br />
 SwingUI-&gt;&gt;Command: execute()<br />
@@ -515,13 +327,13 @@ participant SwingUI<br />
 participant UndoManager<br />
 participant Command<br />
 participant DrawingPanel</p>
-<p>User-&gt;&gt;SwingUI: 点击”撤销”按钮<br />
+<p>User-&gt;&gt;SwingUI: 点击“撤销”按钮<br />
 SwingUI-&gt;&gt;UndoManager: undo()<br />
 UndoManager-&gt;&gt;Command: undo()<br />
 Command-&gt;&gt;DrawingPanel: 从图形列表移除元素<br />
 DrawingPanel–&gt;&gt;SwingUI: 重绘请求<br />
 SwingUI–&gt;&gt;User: 显示更新后的图形</p>
-<p>User-&gt;&gt;SwingUI: 点击”重做”按钮<br />
+<p>User-&gt;&gt;SwingUI: 点击“重做”按钮<br />
 SwingUI-&gt;&gt;UndoManager: redo()<br />
 UndoManager-&gt;&gt;Command: redo()<br />
 Command-&gt;&gt;DrawingPanel: 重新添加图形元素<br />
@@ -615,16 +427,15 @@ return true;<br />
 }</p>
 <p>附录：典型场景示例</p>
 <p>场景1：绘制并撤销圆形</p>
-<p>1 用户点击”添加圆形”按钮<br />
+<p>1 用户点击“添加圆形”按钮<br />
 2 系统创建Circle(100,100,50)并执行AddShapeCommand<br />
-3 用户点击”撤销”按钮<br />
+3 用户点击“撤销”按钮<br />
 4 系统从图形列表移除该圆形并重绘</p>
 <p>场景2：重做操作</p>
 <p>1 用户执行步骤1-3<br />
-2 用户点击”重做”按钮<br />
+2 用户点击“重做”按钮<br />
 3 系统重新添加圆形并重绘</p>
-<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-文档版本：2.1<br />
+<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── 文档版本：2.1<br />
 最后更新：2025-06-27<br />
 图表工具：Mermaid 9.3.0<br />
 相关文档：</p>
