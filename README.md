@@ -54,35 +54,35 @@
 
 # 🚀 四、开发指导流程
 ## 第一步：需求分析与建模
-###• 使用 PowerDesigner 绘制用例图、类图、活动图
-###• 识别与映射各设计模式的使用点
-###• 输出《需求规格说明书》
+- 使用 PowerDesigner 绘制用例图、类图、活动图
+- 识别与映射各设计模式的使用点
+- 输出《需求规格说明书》
 
 ## 第二步：系统设计
-###• 总体架构设计（模块划分、包结构）
-###• 详细设计：类图 + 设计模式注释
-###• 输出《总体设计说明书》和《详细设计说明书》
+- 总体架构设计（模块划分、包结构）
+- 详细设计：类图 + 设计模式注释
+- 输出《总体设计说明书》和《详细设计说明书》
 
 ## 第三步：编码实现
-###• 使用 IDE（如 IntelliJ IDEA 或 Eclipse）
-###• 模块按设计模式划分子包，例如：
-###• com.example.graphics.command
+- 使用 IDE（如 IntelliJ IDEA 或 Eclipse）
+- 模块按设计模式划分子包，例如：
+     com.example.graphics.command
      com.example.graphics.factory
      com.example.graphics.render
-###• 实现必要接口与类，确保解耦与扩展性
+- 实现必要接口与类，确保解耦与扩展性
 
 ## 第四步：测试与调试
-###• 使用 JUnit 编写测试用例
-###◦ 单元测试：每个模式和模块独立测试
-###◦ 集成测试：渲染整体流程
+- 使用 JUnit 编写测试用例
+- 单元测试：每个模式和模块独立测试
+- 集成测试：渲染整体流程
 
 ## 第五步：文档生成与归档
-###• 使用 JavaDoc 或 Doxygen 生成完整 API 文档，集成到 maven 配置中（mvn site)
-###• 编写《安装说明书》和《用户手册》
+- 使用 JavaDoc 或 Doxygen 生成完整 API 文档，集成到 maven 配置中（mvn site)
+- 编写《安装说明书》和《用户手册》
 
 ## 第六步：项目发布
-###• 使用 git 发布到 github 或者 Gitee
-###• 使用 Aider 分析项目，补全缺少的单元测试。
+- 使用 git 发布到 github 或者 Gitee
+- 使用 Aider 分析项目，补全缺少的单元测试。
 
 
 # 🚀 五、预期成果
@@ -108,7 +108,7 @@
 
 - 6. 项目结构要求
 
--     6. /graphic-rendering/
+- /graphic-rendering/
 -     ├── /doc/
 -     │     ├── 需求规格说明书.docx
 -     │     ├── 总体设计说明书.docx
@@ -125,17 +125,21 @@
 - 
     
 # 🚀 六、评分标准（满分 100 分）
--  项目                权重                说明
--  设计模式应用         25                  是否覆盖9个指定模式，且实现合理
--  模型设计            15                  UML模型完整性与清晰度
--  编码实现            15                  模块清晰、命名规范、功能完整
--  测试覆盖            10                  是否实现单元测试、集成测试
--  技术文档            10                  JavaDoc 或 Doxygen 文档完整性
--  安装说明/使用手册    10                  可执行性、说明清晰
--  归档完整性          10                  所有文档、代码、模型齐全
--  项目演示            5                   运行无误、演示逻辑清晰
+|--------|----------|----------|
+|  项目           |   权重      |          说明                              |
+|  设计模式应用    |     25      |            是否覆盖9个指定模式，且实现合理     |
+|  模型设计        |    15      |            UML模型完整性与清晰度               |
+|  编码实现        |    15      |            模块清晰、命名规范、功能完整     |
+|  测试覆盖        |    10      |            是否实现单元测试、集成测试|
+|  技术文档        |    10      |            JavaDoc 或 Doxygen 文档完整性|
+|  安装说明/使用手册|    10      |            可执行性、说明清晰|
+|  归档完整性      |    10      |            所有文档、代码、模型齐全|
+|  项目演示        |     5      |             运行无误、演示逻辑清晰|
+|--------|----------|----------|
 
 ---
+
+该项目的实现示例：GraphRender
 
 #📄 项目文档
 
@@ -163,6 +167,7 @@
 - [Deepseek对话过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/Deepseek%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
 - [ChatGPT-GraphRender项目问答全过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT-GraphRender%E9%A1%B9%E7%9B%AE%E9%97%AE%E7%AD%94%E5%85%A8%E8%BF%87%E7%A8%8B.pdf)
 - [ChatGPT对话过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf)
+- [Aider对话过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/aider对话过程.pdf)
 
 
 # 🚀 项目简介
@@ -175,9 +180,17 @@ doc 目录下的3个PDF 文件记录了图形渲染环境的设计过程。
 然后使用了 Aider + Deepseek 对整个项目进行了优化，单元测试补全，注释补全，也使用了 IDEA 环境的 通义灵码纠正编译错误和 JavaDoc 的生成错误。
 
 大家在开发过程中遇到问题，建议使用 Deepseek 或者 ChatGPT 进行排错。
-整个项目的开发，耗时3天（6月14 22：00 -16日 20：00），这是最终的结果。期间配置 Aider 使用 Deepseek 进行开发，API 方式充值10元，额度已经基本用完。
+## 🛠 开发过程
+整个项目的开发，耗时14天（6月14 22：00 -28日 20：00），这是最终的结果。
+🎉 1. 初始版本 0.1.0
+期间配置 Aider 使用 Deepseek 进行开发，API 方式充值10元，额度已经基本用完。
 还有个别的单元测试需要改进，部分测试代码的注释尚未完全补全（可以使用 IDEA + 通义灵码逐步补全每个文件，但是过于烦琐，本项目是示例程序，已经足够说明AI编程的能力）。
-
+🎉 2. 文档补全版本 0.2.0
+期间为了配合课堂演示，API 方式又充值10元，额度已经基本用完，主要是利用 Aider + Deepseek 生成各种报告，代码注释等，过程详见：aider对话过程.pdf。
+🎉 3. 文档自动化集成 0.3.0
+期间在 ChatGPT 辅助下（详见ChatGPT-GraphRender项目问答全过程.pdf），集成了文档自动化工具。
+🎉 4. 语义化文档集成 1.0.0
+期间在 ChatGPT 辅助下（详见ChatGPT-GraphRender项目问答全过程.pdf），加入了标准的版本号自动变更和 CHANGELOG 自动生成。
 ---
 
 ## 🧱 构建 & 安装
@@ -197,8 +210,6 @@ mvn clean package site
 `doxygen/` —— Doxygen 生成的文档
 `index.html` —— Maven Site 总入口
 ```
-
-
 ---
 # 克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
 ```bash
