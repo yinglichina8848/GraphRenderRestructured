@@ -6,12 +6,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>REFERENCE</title>
   <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
 </head>
 <body>
@@ -19,7 +169,10 @@
 <h1 class="title">REFERENCE</h1>
 </header>
 <p>以下是《核心API参考手册》和《部署手册》的完整内容框架及示例实现，采用技术文档标准格式：</p>
-<p>──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓ ┃ 核心API参考手册 ┃ ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
+<p>────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 核心API参考手册 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛</p>
 <ol type="1">
 <li>文档标识</li>
 </ol>
@@ -33,16 +186,21 @@
 <p>2.1 Renderer接口</p>
 <p>/**<br />
 * 图形渲染核心接口<br />
-* <span class="citation" data-cites="implSpec">@implSpec</span> 实现类必须保证线程安全<br />
+* <span class="citation" data-cites="implSpec">@implSpec</span>
+实现类必须保证线程安全<br />
 * <span class="citation" data-cites="since">@since</span> 2.0<br />
 */<br />
 public interface Renderer {<br />
 /**<br />
 * 设置渲染样式<br />
-* <span class="citation" data-cites="param">@param</span> stroke 十六进制颜色码（如“#FF0000”）<br />
-* <span class="citation" data-cites="param">@param</span> fill 填充色（“none”表示无填充）<br />
-* <span class="citation" data-cites="param">@param</span> width 线宽（像素，范围1-10）<br />
-* <span class="citation" data-cites="throws">@throws</span> IllegalArgumentException 参数非法时抛出<br />
+* <span class="citation" data-cites="param">@param</span> stroke
+十六进制颜色码（如”#FF0000”）<br />
+* <span class="citation" data-cites="param">@param</span> fill
+填充色（“none”表示无填充）<br />
+* <span class="citation" data-cites="param">@param</span> width
+线宽（像素，范围1-10）<br />
+* <span class="citation" data-cites="throws">@throws</span>
+IllegalArgumentException 参数非法时抛出<br />
 */<br />
 void setStyle(String stroke, String fill, int width);</p>
 <pre><code>// 其他方法...                                                                                                                  </code></pre>
@@ -55,14 +213,18 @@ void setStyle(String stroke, String fill, int width);</p>
 <p>3.1 Shape接口</p>
 <p>/**<br />
 * 图形对象基础接口<br />
-* <span class="citation" data-cites="see">@see</span> Circle 圆形实现<br />
-* <span class="citation" data-cites="see">@see</span> Rectangle 矩形实现<br />
+* <span class="citation" data-cites="see">@see</span> Circle
+圆形实现<br />
+* <span class="citation" data-cites="see">@see</span> Rectangle
+矩形实现<br />
 */<br />
 public interface Shape {<br />
 /**<br />
 * 渲染当前图形<br />
-* <span class="citation" data-cites="param">@param</span> renderer 非空渲染器实例<br />
-* <span class="citation" data-cites="throws">@throws</span> NullPointerException 当renderer为null时抛出<br />
+* <span class="citation" data-cites="param">@param</span> renderer
+非空渲染器实例<br />
+* <span class="citation" data-cites="throws">@throws</span>
+NullPointerException 当renderer为null时抛出<br />
 */<br />
 void render(Renderer renderer);<br />
 }</p>
@@ -79,13 +241,16 @@ Rectangle : +int width, height</p>
 <p>4.1 Command接口</p>
 <p>/**<br />
 * 命令模式基类<br />
-* <span class="citation" data-cites="see">@see</span> UndoManager 命令管理器<br />
+* <span class="citation" data-cites="see">@see</span> UndoManager
+命令管理器<br />
 */<br />
 public interface Command {<br />
 /**<br />
 * 执行命令<br />
-* <span class="citation" data-cites="return">@return</span> 执行是否成功<br />
-* <span class="citation" data-cites="throws">@throws</span> IllegalStateException 当条件不满足时抛出<br />
+* <span class="citation" data-cites="return">@return</span>
+执行是否成功<br />
+* <span class="citation" data-cites="throws">@throws</span>
+IllegalStateException 当条件不满足时抛出<br />
 */<br />
 boolean execute();</p>
 <pre><code>// undo/redo方法...                                                                                                             </code></pre>

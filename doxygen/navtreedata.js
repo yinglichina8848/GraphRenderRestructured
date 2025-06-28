@@ -25,24 +25,10 @@
 var NAVTREE =
 [
   [ "图形渲染系统", "index.html", [
-    [ "图形渲染系统 - 核心文档", "index.html", [
-      [ "项目文档", "index.html#doc_links", null ],
-      [ "项目简介", "index.html#intro_sec", null ],
-      [ "构建与依赖", "index.html#build_sec", [
-        [ "核心依赖", "index.html#deps_sec", null ],
-        [ "构建插件", "index.html#plugins", null ],
-        [ "文档生成", "index.html#docs", null ]
-      ] ],
-      [ "构建命令", "index.html#commands", null ],
-      [ "设计模式应用", "index.html#patterns_sec", [
-        [ "创建型模式", "index.html#creation_sec", null ],
-        [ "结构型模式  <br>", "index.html#structural_sec", null ],
-        [ "行为型模式", "index.html#behavioral_sec", null ]
-      ] ],
-      [ "核心类列表", "index.html#classes", null ]
-    ] ],
+    [ "图形渲染系统 - 核心文档", "index.html", "index" ],
+    [ "mainpage", "md_mainpage.html", null ],
     [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+      [ "Namespace List", "namespaces.html", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -60,8 +46,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html#ad82df402953ff77e4ed51097fd5074b9",
-""
+"functions_func_p.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
