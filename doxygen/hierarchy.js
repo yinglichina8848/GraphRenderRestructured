@@ -25,7 +25,8 @@ var hierarchy =
       [ "com.example.renderer.ui.DrawingPanel", "classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel.html", null ]
     ] ],
     [ "com.example.renderer.visitor.JSONExportVisitorTest", "classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitorTest.html", null ],
-    [ "com.example.renderer.legacy.LegacyRenderer", "interfacecom_1_1example_1_1renderer_1_1legacy_1_1LegacyRenderer.html", [
+    [ "com.example.renderer.legacy.LegacyRenderer", "interfacecom_1_1example_1_1renderer_1_1legacy_1_1LegacyRenderer.html", null ],
+    [ "LegacyRenderer", null, [
       [ "com.example.renderer.adapter.LegacyRendererImpl", "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererImpl.html", null ]
     ] ],
     [ "com.example.renderer.adapter.LegacyRendererAdapterTest", "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapterTest.html", null ],
@@ -37,10 +38,12 @@ var hierarchy =
     [ "com.example.renderer.factory.RectangleTest", "classcom_1_1example_1_1renderer_1_1factory_1_1RectangleTest.html", null ],
     [ "com.example.renderer.proxy.RemoteRendererProxyTest", "classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxyTest.html", null ],
     [ "com.example.renderer.bridge.Renderer", "interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html", [
-      [ "com.example.renderer.adapter.LegacyRendererAdapter", "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html", null ],
       [ "com.example.renderer.bridge.SVGRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html", null ],
       [ "com.example.renderer.bridge.SwingRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html", null ],
-      [ "com.example.renderer.bridge.TestRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html", null ],
+      [ "com.example.renderer.bridge.TestRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html", null ]
+    ] ],
+    [ "Renderer", null, [
+      [ "com.example.renderer.adapter.LegacyRendererAdapter", "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html", null ],
       [ "com.example.renderer.proxy.RemoteRendererProxy", "classcom_1_1example_1_1renderer_1_1proxy_1_1RemoteRendererProxy.html", null ]
     ] ],
     [ "com.example.renderer.bridge.RendererFactory", "classcom_1_1example_1_1renderer_1_1bridge_1_1RendererFactory.html", null ],
@@ -65,8 +68,8 @@ var hierarchy =
     [ "com.example.renderer.bridge.SVGRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html", null ],
     [ "com.example.renderer.bridge.SwingRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html", null ],
     [ "com.example.renderer.factory.TriangleTest", "classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html", null ],
-    [ "com.example.renderer.command.UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", null ],
     [ "TypeAdapterFactory", null, [
       [ "com.example.renderer.util.RuntimeTypeAdapterFactory< T >", "classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html", null ]
-    ] ]
+    ] ],
+    [ "com.example.renderer.command.UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", null ]
 ];
