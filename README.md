@@ -3,12 +3,8 @@
 [![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=yinglichina8848_GraphRenderRestructured&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yinglichina8848_GraphRenderRestructured)
 
-# GraphRenderRestructured
 
-[![CI Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)](https://github.com/yinglichina8848/GraphRenderRestructured/actions)
-[![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
-
-## 软件工程期末大作业：图形渲染系统的设计与实现
+# 软件工程期末大作业：图形渲染系统的设计与实现
 
 # 🚀 一、项目简介
 
@@ -137,35 +133,36 @@
 ### 归档完整性          10                  所有文档、代码、模型齐全
 ### 项目演示            5                   运行无误、演示逻辑清晰
 
+---
+
 
 ## 
 
 #📄 项目文档
 
-## 完整的项目文档：https://yinglichina8848.github.io/GraphRenderRestructured
+-  完整的项目文档：https://yinglichina8848.github.io/GraphRenderRestructured
 
-## Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
+-  Doxygen 生成的完整 API 文档见：https://yinglichina8848.github.io/GraphRenderRestructured/html/index.html
 
-## 软件质量报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html
+-  软件质量报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html
 
-## 软件变更报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html
+-  软件变更报告：https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html
 
-## 软件版本说明：https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html
+-  软件版本说明：https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html
 
---------------------------------------------------------------------------------------------------------------
+---
 
-###JavaDoc 生成的完整 API 文档见：https://apidoc.gitee.com/yinglichina/graph-render-restructured
+- JavaDoc 生成的完整 API 文档见：https://apidoc.gitee.com/yinglichina/graph-render-restructured
 
-###Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).
+- Gitee 由于 Gitee Pages 服务关闭，所以无法看 Doxygen 在线文档，可以根据下面的教程在本地生成（mvn clean site).
 
 
-#📄 PDF 文档：记录整个软件的开发过程，主要是和各种 AI 工具的对话过程
+# 📄 PDF 文档：记录整个软件的开发过程，主要是和各种 AI 工具的对话过程
 
-    图形渲染环境设计报告.pdf       https://yinglichina8848.github.io/GraphRenderRestructured/doc/%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A.pdf
-    Deepseek对话过程.pdf          https://yinglichina8848.github.io/GraphRenderRestructured/doc/Deepseek%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
-    ChatGPT-GraphRender项目问答全过程.pdf https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT-GraphRender%E9%A1%B9%E7%9B%AE%E9%97%AE%E7%AD%94%E5%85%A8%E8%BF%87%E7%A8%8B.pdf
-    ChatGPT对话过程.pdf           https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
-
+- [图形渲染环境设计报告.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E7%8E%AF%E5%A2%83%E8%AE%BE%E8%AE%A1%E6%8A%A5%E5%91%8A.pdf)
+- [Deepseek对话过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/Deepseek%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf
+- [ChatGPT-GraphRender项目问答全过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT-GraphRender%E9%A1%B9%E7%9B%AE%E9%97%AE%E7%AD%94%E5%85%A8%E8%BF%87%E7%A8%8B.pdf)
+- [ChatGPT对话过程.pdf](https://yinglichina8848.github.io/GraphRenderRestructured/doc/ChatGPT%E5%AF%B9%E8%AF%9D%E8%BF%87%E7%A8%8B.pdf)
 
 
 # 🚀 项目简介
@@ -181,9 +178,9 @@ doc 目录下的3个PDF 文件记录了图形渲染环境的设计过程。
 整个项目的开发，耗时3天（6月14 22：00 -16日 20：00），这是最终的结果。期间配置 Aider 使用 Deepseek 进行开发，API 方式充值10元，额度已经基本用完。
 还有个别的单元测试需要改进，部分测试代码的注释尚未完全补全（可以使用 IDEA + 通义灵码逐步补全每个文件，但是过于烦琐，本项目是示例程序，已经足够说明AI编程的能力）。
 
+---
 
-# 🧱 构建 & 安装
-————————————————————————————————————————————————————————————————————————————————————————————————
+## 🧱 构建 & 安装
 ```bash
 # 克隆仓库（Github 版本）
 git clone https://github.com/yinglichina8848/GraphRenderRestructured.git
@@ -191,16 +188,15 @@ cd GraphRenderRestructured
 
 # 构建项目并生成文档
 mvn clean package site
-```
-成功后，你将在 `target/site/` 目录下看到：
-
+#成功后，你将在 `target/site/` 目录下看到：
 - `apidocs/` —— JavaDoc 文档
 - `doxygen/` —— Doxygen 生成的文档
 - `index.html` —— Maven Site 总入口
 
-—————————————————————————————————————————————————————————————————————————————————————————————————
-# 克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
 
+---
+# 克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
+```bash
 git clone https://gitee.com/yinglichina/graph-render-restructured.git
 
 cd graph-render-restructured
@@ -208,13 +204,14 @@ cd graph-render-restructured
 # 构建项目并生成文档（如 Maven Site 或 Doxygen）
 mvn clean package site
 
-成功后，你将在 `target/site/` 目录下看到：
+#成功后，你将在 `target/site/` 目录下看到：
 
-- `apidocs/` —— JavaDoc 文档
-- `doxygen/` —— Doxygen 生成的文档
-- `index.html` —— Maven Site 总入口
+`apidocs/` —— JavaDoc 文档
+`doxygen/` —— Doxygen 生成的文档
+`index.html` —— Maven Site 总入口
+```
 
-————————————————————————————————————————————————————————————————
+---
 ## 📄 使用示例
 
 ```bash
@@ -225,9 +222,8 @@ java -jar target/graph-render-1.0-SNAPSHOT.jar
 mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 ```
 #运行时需要 Java 图形环境。
----
 
-———————————————————————————————————————————————————————————————————
+---
 ## 🧭 文档访问
 
 所有文档都已发布至 GitHub Pages / GitLab Pages，可以通过以下链接访问：
@@ -278,3 +274,129 @@ mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
 ![Build](https://github.com/yinglichina8848/GraphRenderRestructured/actions/workflows/quality.yml/badge.svg)
 [![codecov](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured/branch/main/graph/badge.svg)](https://codecov.io/gh/yinglichina8848/GraphRenderRestructured)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=yinglichina8848_GraphRenderRestructured&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=yinglichina8848_GraphRenderRestructured)
+
+---
+
+# 🎨 ChatGPT 对 GraphRenderRestructured 的介绍
+
+- GraphRenderRestructured 是一个基于设计模式构建的图形渲染系统，使用 Java 实现，重点展示了建模能力、架构设计与自动化工程能力。
+
+- 该项目不仅实现了功能完整的图形渲染逻辑，还配置了完整的 CI/CD 自动化构建、测试、版本控制和文档发布流程。
+
+> 🔗 在线页面：  
+- 📘 [项目首页 (GitHub Pages)](https://yinglichina8848.github.io/GraphRenderRestructured/)  
+- 📊 [软件工程质量评估报告 HTML](https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality-summary.html)
+- 📊 [ChatGPT 总结的软件工程质量评估报告 HTML](https://yinglichina8848.github.io/GraphRenderRestructured/doc/quality_summary.html)
+
+---
+
+## 🗂 项目结构概览
+
+```bash
+GraphRenderRestructured/
+├── src/                   # Java 模块（建造器、图形结构、渲染引擎等）
+├── uml/                   # 类图、时序图、系统设计等 PNG 结构图（暂缺，需要整理补充）
+├── doc/                   # PDF 报告、发布摘要、最终说明文档
+├── scripts/               # 发布脚本（含 Jinja2 渲染、美化 index）
+├── target/site/           # Maven Site 构建输出（含质量报告）
+├── .github/workflows/     # 自动构建发布的 CI/CD 脚本
+└── pom.xml                # Maven 配置文件
+```
+
+---
+
+## 🚀 快速开始
+
+### 1. 克隆项目
+
+```bash
+git clone https://github.com/yinglichina8848/GraphRenderRestructured.git
+cd GraphRenderRestructured
+```
+
+国内学生请使用 Gitee 
+```bash
+#克隆 Gitee 仓库（将原 GitHub 地址替换为 Gitee 地址）
+git clone https://gitee.com/yinglichina/graph-render-restructured.git
+cd graph-render-restructured
+```
+
+### 2. 编译构建 + 文档生成
+
+```bash
+mvn clean package site
+```
+
+### 3. 查看本地文档
+```bash
+`target/site/index.html`：主页汇总
+`target/site/apidocs/`：Java API 文档
+`target/site/surefire-report.html`：单元测试报告
+`target/site/checkstyle.html`：代码风格分析
+`target/site/project-info.html`：依赖关系分析
+```
+### 4. 运行(需要 Java 图形环境)。
+```bash
+java -jar target/graph-render-1.0-SNAPSHOT.jar
+# 或
+mvn exec:java -Dexec.mainClass="com.example.renderer.ui.MainUI"
+```
+
+
+## ✅ 软件工程实践亮点
+
+### 📐 架构设计与设计模式
+
+- 使用 **建造者模式、桥接模式、访问者模式** 等实现图形抽象与渲染解耦
+- 支持图形的组合、图层控制、颜色填充与导出等功能
+- Java 管理数据模型
+
+### 🤖 自动构建与部署（CI/CD）
+
+- 使用 GitHub Actions 自动：
+   - 构建项目
+   - 运行测试
+   - 生成并部署 JavaDoc、Doxygen、Maven Site 到 GitHub Pages
+- 集成 `semantic-release` 实现语义化版本控制与自动化发布流程
+
+### 🔍 测试与质量控制
+
+- 单元测试：覆盖核心模块 `ShapeBuilder`、`PersistenceManager` 等
+- 静态分析：Checkstyle 风格检查、依赖结构报告、构建日志分析
+- 发布报告集成版本、改动、变更日志与质量报告链接
+
+---
+
+## 📈 版本发布历史
+
+| 版本号 | 发布说明 |
+|--------|----------|
+| [v1.0.1](https://github.com/yinglichina8848/GraphRenderRestructured/releases/tag/v1.0.1) | 增加测试用例、补全抽象方法，完善 UML 结构图 |
+| [v1.0.0](https://github.com/yinglichina8848/GraphRenderRestructured/releases/tag/v1.0.0) | 完整系统设计与功能实现，发布初版 API 与文档 |
+
+- 简要的版本说明 请见 [Release 页面](https://yinglichina8848.github.io/GraphRenderRestructured/doc/MYCHANGELOG.html)。
+- 完整变更记录和详细版本历史 请见 [CHANGELOG 变更记录](https://yinglichina8848.github.io/GraphRenderRestructured/doc/CHANGELOG.html)。
+
+---
+
+## 🛠 改进建议（未来工作）
+
+- [ ] 增加功能测试用例，集成 Codecov 报告覆盖率
+- [ ] 自动提取 UML 类图到文档导航页（可使用 PlantUML）
+- [ ] 支持导出 SVG / PNG / JSON 的图形持久化格式
+- [ ] 进一步模块化渲染器接口，便于扩展 WebGL 或 Canvas 后端
+
+---
+
+## 🤝 致谢与许可
+
+- 本项目由 [李莹](https://github.com/yinglichina8848) 独立设计与实现，作为课程设计作品公开发布。
+- 同步发布到 [Gitee] (https://gitee.com/yinglichina/graph-render-restructured) 请国内用户使用 Gitee 
+
+---
+ 
+- 📄 本项目遵循 MIT 许可证，欢迎学习、引用与修改。
+
+> 💬 如你对本项目感兴趣，欢迎 Star ⭐、Fork 🔱 或提交 Pull Request！
+> 
+---
