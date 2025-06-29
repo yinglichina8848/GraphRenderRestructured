@@ -24,7 +24,13 @@ public class SwingUITest {
     @BeforeEach
     void setUp() {
         swingUI = new SwingUI();
+        swingUI.setVisible(false); // 避免实际渲染
         mockedPersistence = mockStatic(PersistenceManager.class);
+    }
+    
+    @AfterEach
+    void tearDown() {
+        mockedPersistence.close(); // 清除静态mock
     }
 
     @Test
