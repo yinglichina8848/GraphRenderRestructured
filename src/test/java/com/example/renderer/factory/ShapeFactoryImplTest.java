@@ -62,11 +62,32 @@ public class ShapeFactoryImplTest {
         assertNotNull(triangle);
         assertEquals(Triangle.class, triangle.getClass());
     }
+    
+    @Test
+    void testCreateTriangle_withNegativeCoordinate_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            factory.createTriangle(-1, TEST_Y1, TEST_X2, TEST_Y2, TEST_X3, TEST_Y3);
+        });
+    }
 
     @Test
     void testCreateEllipse() {
         Ellipse ellipse = factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, TEST_DIMENSION);
         assertNotNull(ellipse);
         assertEquals(Ellipse.class, ellipse.getClass());
+    }
+    
+    @Test
+    void testCreateEllipse_withZeroWidth_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            factory.createEllipse(TEST_X, TEST_Y, 0, TEST_DIMENSION);
+        });
+    }
+    
+    @Test
+    void testCreateEllipse_withNegativeHeight_throwsException() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, -1);
+        });
     }
 }

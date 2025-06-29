@@ -98,6 +98,17 @@ public class EllipseTest {
         ellipse.render(mockRenderer);
         verify(mockRenderer).drawEllipse(10, 10, 40, 60);
     }
+    
+    @Test
+    void testToString() {
+        Ellipse ellipse = new Ellipse(100, 200, 300, 400);
+        String result = ellipse.toString();
+        assertTrue(result.contains("Ellipse"));
+        assertTrue(result.contains("x=100"));
+        assertTrue(result.contains("y=200"));
+        assertTrue(result.contains("width=300"));
+        assertTrue(result.contains("height=400"));
+    }
 
     @Test
     public void testCreate_VeryWideEllipse() {
