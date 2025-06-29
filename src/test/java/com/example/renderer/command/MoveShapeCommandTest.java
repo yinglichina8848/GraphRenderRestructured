@@ -2,9 +2,10 @@ package com.example.renderer.command;
 
 import com.example.renderer.factory.Shape;
 import com.example.renderer.factory.Circle;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * MoveShapeCommand的单元测试类。
