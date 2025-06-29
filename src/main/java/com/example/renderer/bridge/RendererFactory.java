@@ -32,20 +32,23 @@ import java.util.function.Supplier;
  *   <li>legacy - LegacyRendererAdapter</li>
  * </ul>
  */
+import java.util.Set;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.function.Supplier;
+
 public class RendererFactory {
     private static final ConcurrentMap<String, Supplier<Renderer>> renderers = new ConcurrentHashMap<>();
-    private static final ReadWriteLock lock = new ReentrantReadWriteLock();
+    private static final Set<String> builtInModes = Set.of("swing", "svg", "test", "legacy");
     
     static {
         // 内置渲染器注册
-        registerInternal("swing", SwingRenderer::new);
-        registerInternal("svg", SVGRenderer::new);
-        registerInternal("test", TestRenderer::new);
-        registerInternal("legacy", () -> new LegacyRendererAdapter(new com.example.renderer.adapter.LegacyRendererImpl()));
-    }
-    
-    private static void registerInternal(String mode, Supplier<Renderer> supplier) {
-        renderers.put(mode, supplier);
+        register("swing", SwingRenderer::new);
+        register("svg", SVGRenderer::new);
+        register("test", TestRenderer::new);
+        register("legacy", () -> new LegacyRendererAdapter(new com.example.renderer.adapter.LegacyRendererImpl()));
     }
     
     /**
@@ -56,6 +59,17 @@ public class RendererFactory {
      */
     public static void register(String mode, Supplier<Renderer> supplier) {
         renderers.put(mode, supplier);
+    }
+    
+    /**
+     * 清除所有自定义注册的渲染器
+     * <p>仅用于测试</p>
+     */
+    public static void clearCustomRegistrations() {
+        // 保存内置渲染器
+        Set<String> builtInKeys = new HashSet<>(builtInModes);
+        // 移除所有非内置的条目
+        renderers.keySet().removeIf(key -> !builtInKeys.contains(key));
     }
     
     /**
