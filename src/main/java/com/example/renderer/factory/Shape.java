@@ -62,18 +62,10 @@ public interface Shape {
      *   <li>处理渲染器抛出的异常</li>
      * </ul>
      * 
-     * @param renderer 用于绘制图形的渲染器实现
-     * @throws NullPointerException 如果renderer为null
-     */
-    /**
-     * 使用指定的渲染器绘制图形。
-     * 
      * @param renderer 用于绘制图形的渲染器实现(非null)
-     * @throws NullPointerException 如果renderer参数为null
-     * @throws IllegalArgumentException 如果图形参数不合法
-     * @throws IllegalStateException 如果图形状态不适合渲染
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
+     * @throws NullPointerException 如果渲染器参数为null
+     * @throws IllegalArgumentException 如果当前图形的参数不合法(如负尺寸)
+     * @throws IllegalStateException 如果图形处于不可渲染的状态
      */
     void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
