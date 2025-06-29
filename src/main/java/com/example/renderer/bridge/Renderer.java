@@ -1,42 +1,30 @@
 package com.example.renderer.bridge;
 
 /**
- * 增强型渲染器接口，扩展基础渲染能力。
+ * 增强渲染器接口，扩展基础渲染能力。
  * 
  * <p>架构演进记录：
  * <ul>
  *   <li>v1.0 - 基础绘制方法</li>
  *   <li>v1.1 - 分离为RendererInterface和Renderer</li>
  *   <li>v1.2 - 增加样式设置和上下文访问</li>
+ *   <li>v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理、渲染上下文访问和帧控制</li>
  * </ul>
- * 
- * @see RendererInterface 基础绘制接口
- * @see RendererFactory 渲染器创建工厂
- */
-/**
- * 增强渲染器接口，扩展基础渲染能力。
  * 
  * <p>架构角色：桥接模式中的抽象部分，将图形绘制与具体实现解耦。
  * 
  * <p>生命周期：
- * 1. 通过RendererFactory创建实例
- * 2. 配置样式(setStyle)
- * 3. 执行绘制操作(drawXxx)
- * 4. 可通过getContext获取底层实现对象
+ * <ol>
+ *   <li>通过RendererFactory创建实例</li>
+ *   <li>配置样式(setStyle)</li>
+ *   <li>执行绘制操作(drawXxx)</li>
+ *   <li>可通过getContext获取底层实现对象</li>
+ * </ol>
  * 
+ * @author Aider+SillconFlow-Deepseek-R1
+ * @since 2025-06-29
  * @see RendererFactory 创建实例的工厂类
- */
-/**
- * 增强渲染器接口，扩展基础渲染能力。
- * 
- * <p>合并RendererInterface功能，避免接口分散。
- * 现在包含：
- * <ul>
- *   <li>基础绘制方法(drawXxx)</li>
- *   <li>样式管理(setStyle)</li> 
- *   <li>渲染上下文访问(getContext)</li>
- *   <li>帧控制(beginFrame/endFrame)</li>
- * </ul>
+ * @see RendererInterface 基础绘制接口
  */
 public interface Renderer {
     /**

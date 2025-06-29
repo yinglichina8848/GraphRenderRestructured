@@ -52,16 +52,16 @@ import com.example.renderer.visitor.ExportVisitor;
  * @since 2025-06-24
  */
 public class Ellipse implements Shape {
-    // 私有成员变量 - 带作者和时间注释
-    private int x, y, width, height; // @author DeepSeek-Renderer; @since 2025-06-29
+    private int x, y, width, height; 
 
     /**
      * 无参构造器，用于序列化和反射创建实例。
      * 创建后需要通过setter方法设置属性。
      * 
      * @author Aider+DeepSeek
-     * @author Aider+SillconFlow-DeepSeek
      * @since 2025-06-24
+     * @author Aider+SillconFlow-DeepSeek
+     * @modified Aider+SillconFlow-Deepseek-R1 2025-06-29
      */
     public Ellipse() {}
 
