@@ -34,7 +34,11 @@ public class MoveShapeCommandTest {
         int dx = 10, dy = 20;
         MoveShapeCommand cmd = new MoveShapeCommand(mockShape, dx, dy);
         
-        cmd.undo();
+        // 需要先执行命令
+        cmd.execute();
+        cmd.undo();   // 再撤销移动
+        
+        verify(mockShape).move(dx, dy);
         verify(mockShape).move(-dx, -dy);
     }
 
@@ -101,34 +105,47 @@ public class MoveShapeCommandTest {
     }
 
     @Test
-    @DisplayName("canUndo方法始终返回true")
-    public void testCanUndo_AlwaysTrue() {
+    @DisplayName("canUndo方法正确反映状态")
+    public void testCanUndo() {
         Shape mockShape = mock(Shape.class);
         MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
-        assertTrue(cmd.canUndo());
         
+        // 未执行前
+        assertFalse(cmd.canUndo(), "未执行前，canUndo应为false");
+        
+        // 执行后
         cmd.execute();
-        assertTrue(cmd.canUndo());
+        assertTrue(cmd.canUndo(), "执行后，canUndo应为true");
         
+        // 撤销后
         cmd.undo();
-        assertTrue(cmd.canUndo());
+        assertFalse(cmd.canUndo(), "撤销后，canUndo应为false");
+        
+        // 重做后
+        cmd.redo();
+        assertTrue(cmd.canUndo(), "重做后，canUndo应为true");
     }
 
     @Test
-    @DisplayName("canRedo方法始终返回true")
-    public void testCanRedo_AlwaysTrue() {
+    @DisplayName("canRedo方法正确反映状态")
+    public void testCanRedo() {
         Shape mockShape = mock(Shape.class);
         MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
-        assertTrue(cmd.canRedo());
         
+        // 未执行前
+        assertFalse(cmd.canRedo(), "未执行前，canRedo应为false");
+        
+        // 执行后
         cmd.execute();
-        assertTrue(cmd.canRedo());
+        assertFalse(cmd.canRedo(), "执行后但未撤销，canRedo应为false");
         
+        // 撤销后
         cmd.undo();
-        assertTrue(cmd.canRedo());
+        assertTrue(cmd.canRedo(), "撤销后，canRedo应为true");
         
+        // 重做后
         cmd.redo();
-        assertTrue(cmd.canRedo());
+        assertFalse(cmd.canRedo(), "重做后，canRedo应为false");
     }
 
     @Test
