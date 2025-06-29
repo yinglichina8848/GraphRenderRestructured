@@ -74,6 +74,7 @@ public interface Shape {
      */
     /**
      * 创建并返回当前图形的一个深拷贝
+     * 
      * @return 图形的新副本
      * @throws CloneNotSupportedException 如果图形不支持克隆
      * 
