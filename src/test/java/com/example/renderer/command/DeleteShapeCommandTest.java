@@ -2,6 +2,7 @@ package com.example.renderer.command;
 
 import com.example.renderer.factory.Shape;
 import org.junit.jupiter.api.*;
+import org.mockito.MockedStatic;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -106,6 +107,15 @@ public class DeleteShapeCommandTest {
     @Test
     @DisplayName("可重做检查：执行前应返回false")
     public void testCanRedo_BeforeExecute() {
+        assertFalse(command.canRedo());
+    }
+
+    @Test
+    @DisplayName("可重做检查：重做后应返回false")
+    public void testCanRedo_AfterRedo() {
+        command.execute();
+        command.undo();
+        command.redo();
         assertFalse(command.canRedo());
     }
 

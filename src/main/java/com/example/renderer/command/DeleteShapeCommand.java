@@ -62,6 +62,6 @@ public class DeleteShapeCommand implements Command {
 
     @Override
     public boolean canRedo() {
-        return index != -1;
+        return index != -1 && shapes.contains(shape);
     }
 }
