@@ -26,6 +26,8 @@ public class MoveShapeCommand implements Command {
     private final Shape shape;
     private final int dx;
     private final int dy;
+    private boolean executed = false;
+    private boolean undone = false;
 
     /**
      * 创建移动图形命令实例。
@@ -48,7 +50,11 @@ public class MoveShapeCommand implements Command {
      */
     @Override
     public void execute() {
+        if (!canExecute()) {
+            throw new IllegalStateException("无法执行命令");
+        }
         shape.move(dx, dy);
+        executed = true;
     }
 
     /**
@@ -58,12 +64,20 @@ public class MoveShapeCommand implements Command {
      */
     @Override
     public void undo() {
+        if (!canUndo()) {
+            throw new IllegalStateException("无法撤销命令");
+        }
         shape.move(-dx, -dy);
+        undone = true;
     }
 
     @Override
     public void redo() {
-        execute();
+        if (!canRedo()) {
+            throw new IllegalStateException("无法重做命令");
+        }
+        shape.move(dx, dy);
+        undone = false;
     }
 
     @Override
@@ -73,11 +87,11 @@ public class MoveShapeCommand implements Command {
 
     @Override
     public boolean canUndo() {
-        return true;
+        return executed && !undone;
     }
 
     @Override
     public boolean canRedo() {
-        return true;
+        return executed && undone;
     }
 }
