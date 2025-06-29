@@ -13,10 +13,10 @@ public class XMLExportVisitor implements ExportVisitor {
         }
         System.out.printf(
             "<circle>\n" +
-            "  <x>%d</x>\n" +
-            "  <y>%d</y>\n" +
-            "  <radius>%d</radius>\n" +
-            "  <area>%.2f</area>\n" +
+            "  <x>%d</x>\n" +   // 圆心X坐标(像素)
+            "  <y>%d</y>\n" +   // 圆心Y坐标(像素)
+            "  <radius>%d</radius>\n" +  // 圆半径(像素)
+            "  <area>%.2f</area>\n" +    // 圆面积(平方像素)
             "</circle>\n",
             c.getX(), c.getY(), c.getR(), Math.PI * c.getR() * c.getR());
     }

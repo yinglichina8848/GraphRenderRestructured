@@ -89,9 +89,14 @@ public interface Shape {
     
     /**
      * 验证坐标位置是否有效
-     * @param x x坐标
-     * @param y y坐标
-     * @throws IllegalArgumentException 如果坐标为负数
+     * 
+     * <p>此方法用于检查图形坐标是否在合理范围内</p>
+     * 
+     * @param x x坐标(单位为像素)
+     * @param y y坐标(单位为像素)
+     * @throws IllegalArgumentException 当坐标为负数时抛出
+     * @since 2025-06-24    
+     * @author Aider+DeepSeek
      */
     default void validatePosition(int x, int y) {
         if (x < 0 || y < 0) {
