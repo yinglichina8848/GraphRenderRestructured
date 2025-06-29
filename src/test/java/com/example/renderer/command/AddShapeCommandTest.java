@@ -67,14 +67,18 @@ public class AddShapeCommandTest {
 
     @Test
     public void testMultipleExecuteAndUndo() {
-        command.execute();
-        command.execute();
+        // 创建两个独立的命令对象
+        AddShapeCommand cmd1 = new AddShapeCommand(shapes, mockShape);
+        AddShapeCommand cmd2 = new AddShapeCommand(shapes, mockShape);
+        
+        cmd1.execute();
+        cmd2.execute();
         assertEquals(2, shapes.size(), "列表大小应为2");
         
-        command.undo();
+        cmd2.undo();
         assertEquals(1, shapes.size(), "列表大小应为1");
         
-        command.undo();
+        cmd1.undo();
         assertTrue(shapes.isEmpty(), "列表应为空");
     }
 
