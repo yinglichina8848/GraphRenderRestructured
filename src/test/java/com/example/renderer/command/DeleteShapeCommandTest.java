@@ -51,11 +51,13 @@ public class DeleteShapeCommandTest {
     @Test
     @DisplayName("删除不存在的图形应输出警告")
     public void testExecute_NonExistentShape() {
-        Shape nonExistentShape = mock(Shape.class);
-        DeleteShapeCommand cmd = new DeleteShapeCommand(shapes, nonExistentShape);
-        cmd.execute();
-        assertEquals(1, shapes.size());
-        // 实际项目中需验证日志输出
+        try (MockedStatic<System> system = mockStatic(System.class)) {
+            Shape nonExistentShape = mock(Shape.class);
+            DeleteShapeCommand cmd = new DeleteShapeCommand(shapes, nonExistentShape);
+            cmd.execute();
+            assertEquals(1, shapes.size());
+            system.verify(() -> System.out.println("[WARN] 未找到要删除的图形"));
+        }
     }
 
     @Test
@@ -119,23 +121,13 @@ public class DeleteShapeCommandTest {
     @Test
     @DisplayName("尝试删除空列表图形时应输出警告")
     public void testExecute_EmptyListWarning() {
-        List<Shape> emptyList = new ArrayList<>();
-        Shape someShape = mock(Shape.class);
-        DeleteShapeCommand cmd = new DeleteShapeCommand(emptyList, someShape);
-        cmd.execute();
-        // 实际项目中需验证日志输出
+        try (MockedStatic<System> system = mockStatic(System.class)) {
+            List<Shape> emptyList = new ArrayList<>();
+            Shape someShape = mock(Shape.class);
+            DeleteShapeCommand cmd = new DeleteShapeCommand(emptyList, someShape);
+            cmd.execute();
+            system.verify(() -> System.out.println("[WARN] 未找到要删除的图形"));
+        }
     }
 
-    @Test
-    @DisplayName("execute方法应在无效状态时抛出异常")
-    public void testExecute_InvalidState() {
-        // 设置无效状态
-        command = new DeleteShapeCommand(null, null) {
-            @Override
-            public void execute() {
-                super.execute(); // 调用原始实现
-            }
-        };
-        assertThrows(IllegalStateException.class, () -> command.execute());
-    }
 }

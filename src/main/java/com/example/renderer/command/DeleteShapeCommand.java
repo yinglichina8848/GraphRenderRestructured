@@ -52,7 +52,7 @@ public class DeleteShapeCommand implements Command {
 
     @Override
     public boolean canExecute() {
-        return shapes != null && shape != null && shapes.contains(shape);
+        return shapes.contains(shape);
     }
 
     @Override
