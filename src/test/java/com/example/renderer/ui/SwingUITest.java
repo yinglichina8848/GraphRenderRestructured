@@ -8,7 +8,7 @@ import com.example.renderer.factory.Shape;
 import com.example.renderer.singleton.PersistenceManager;
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
@@ -16,8 +16,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
+import static org.mockito.Mockito.*;
 
-public class SwingUITest {
+public class SwingUITest extends SwingUI {
+    // 空实现测试子类，用于重写对话框方法
 
     private SwingUI swingUI;
     private MockedStatic<PersistenceManager> mockedPersistence;
@@ -97,19 +99,36 @@ public class SwingUITest {
 
     @Test
     void testSaveLoadShapes() throws Exception {
+        // 创建测试子类，重写对话框方法
+        SwingUI testUI = new SwingUI() {
+            @Override
+            protected File selectSaveFile() {
+                return new File("test_save.json");
+            }
+
+            @Override
+            protected File selectOpenFile() {
+                return new File("test_load.json");
+            }
+
+            @Override
+            protected void showMessage(String message) {
+                // 空实现，避免显示对话框
+            }
+        };
+        testUI.setVisible(false);
+        
         PersistenceManager manager = mock(PersistenceManager.class);
         mockedPersistence.when(PersistenceManager::getInstance).thenReturn(manager);
 
-        List<Shape> mockShapes = new ArrayList<>();
-        when(manager.loadShapesFromFile(anyString())).thenReturn(mockShapes);
-
-        JButton btnSave = (JButton) findComponentByName(swingUI, "btnSave");
-        JButton btnLoad = (JButton) findComponentByName(swingUI, "btnLoad");
-
-        btnLoad.doClick();
-        verify(manager, times(1)).loadShapesFromFile(anyString());
-
+        // 测试保存操作
+        JButton btnSave = (JButton) findComponentByName(testUI, "btnSave");
         btnSave.doClick();
-        verify(manager, times(1)).saveShapesToFile(anyList(), anyString());
+        verify(manager).saveShapesToFile(anyList(), eq("test_save.json"));
+
+        // 测试加载操作
+        JButton btnLoad = (JButton) findComponentByName(testUI, "btnLoad");
+        btnLoad.doClick();
+        verify(manager).loadShapesFromFile(eq("test_load.json"));
     }
 }
