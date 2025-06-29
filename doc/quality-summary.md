@@ -1,7 +1,7 @@
 # 📊 代码质量摘要报告
 
 > 项目：GraphRenderSystem ([GitHub Repo](https://github.com/yinglichina8848/GraphRenderRestructured))  
-> 构建时间：2025-06-29  
+> 构建时间：2025-06-30  
 > 构建环境：Maven + GitHub Actions + Java 17
 
 ---
@@ -22,9 +22,9 @@
 
 | 指标         | 覆盖率 |
 |--------------|--------|
-| Total        | 71.0%  |
+| Total        | 77.0%  |
 | com.example.renderer.ui | 0.0%  |
-| com.example.renderer.factory | 37.0%  |
+| com.example.renderer.factory | 88.0%  |
 | com.example.renderer.proxy | 25.0%  |
 | com.example.renderer.bridge | 80.0%  |
 | com.example.renderer.adapter | 100.0%  |
