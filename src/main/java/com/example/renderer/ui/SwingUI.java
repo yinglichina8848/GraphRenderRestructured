@@ -141,11 +141,17 @@ public class SwingUI extends JFrame {
         add(drawingPanel, BorderLayout.CENTER);  // 添加绘图面板到中心区域
 
         JButton btnCircle = new JButton("添加圆形");
+        btnCircle.setName("btnCircle");
         JButton btnRect = new JButton("添加矩形");
+        btnRect.setName("btnRect");
         JButton btnEllipse = new JButton("添加椭圆");
+        btnEllipse.setName("btnEllipse");
         JButton btnTriangle = new JButton("添加三角形");
+        btnTriangle.setName("btnTriangle");
         JButton btnUndo = new JButton("撤销");
+        btnUndo.setName("btnUndo");
         JButton btnRedo = new JButton("重做");
+        btnRedo.setName("btnRedo");
 
         JPanel panel = new JPanel();
         panel.add(btnCircle);

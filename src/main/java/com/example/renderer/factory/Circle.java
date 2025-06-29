@@ -153,5 +153,13 @@ public class Circle implements Shape {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "x=" + x +
+                ", y=" + y +
+                ", radius=" + radius +
+                '}';
+    }
 }
 
