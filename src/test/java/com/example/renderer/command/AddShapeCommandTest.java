@@ -77,4 +77,45 @@ public class AddShapeCommandTest {
         command.undo();
         assertTrue(shapes.isEmpty(), "列表应为空");
     }
+
+    @Test
+    public void testCanExecute() {
+        // 初始参数应允许执行
+        assertTrue(command.canExecute());
+
+        // 当shapes为null时不可执行
+        AddShapeCommand nullShapesCmd = new AddShapeCommand(null, mockShape);
+        assertFalse(nullShapesCmd.canExecute());
+
+        // 当shape为null时不可执行
+        AddShapeCommand nullShapeCmd = new AddShapeCommand(shapes, null);
+        assertFalse(nullShapeCmd.canExecute());
+    }
+
+    @Test
+    public void testCanUndo() {
+        // 未执行前不能撤销
+        assertFalse(command.canUndo());
+
+        // 执行后可撤销
+        command.execute();
+        assertTrue(command.canUndo());
+
+        // 撤销后不能再撤销
+        command.undo();
+        assertFalse(command.canUndo());
+    }
+
+    @Test
+    public void testCanRedo() {
+        command.execute();
+        command.undo();
+        
+        // 撤销后可重做
+        assertTrue(command.canRedo());
+        
+        // 重做后不能再重做
+        command.redo();
+        assertFalse(command.canRedo());
+    }
 }
