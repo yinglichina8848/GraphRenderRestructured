@@ -202,9 +202,11 @@ public class SwingUI extends JFrame {
         });
 
         JButton btnSave = new JButton("保存图形");
+        btnSave.setName("btnSave");
         btnSave.addActionListener(e -> saveShapes());
 
         JButton btnLoad = new JButton("载入图形");
+        btnLoad.setName("btnLoad");
         btnLoad.addActionListener(e -> loadShapes());
 
         panel.add(btnSave);
