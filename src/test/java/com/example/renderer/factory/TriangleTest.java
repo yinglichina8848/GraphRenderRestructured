@@ -126,6 +126,19 @@ public class TriangleTest {
             Integer.MAX_VALUE - 1, Integer.MIN_VALUE + 1,
             Integer.MAX_VALUE - 2, Integer.MIN_VALUE + 2);
     }
+    
+    @Test
+    void testToString() {
+        Triangle triangle = new Triangle(100, 200, 300, 400, 500, 600);
+        String result = triangle.toString();
+        assertTrue(result.contains("Triangle"));
+        assertTrue(result.contains("x1=100"));
+        assertTrue(result.contains("y1=200"));
+        assertTrue(result.contains("x2=300"));
+        assertTrue(result.contains("y2=400"));
+        assertTrue(result.contains("x3=500"));
+        assertTrue(result.contains("y3=600"));
+    }
 
     @Test
     public void testCreate_DegenerateTriangle() {

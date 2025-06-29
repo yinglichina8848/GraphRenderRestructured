@@ -14,6 +14,27 @@ public class ShapeValidatorTest {
     }
     
     @Test
+    void testValidatePosition_zeroX_zeroY() {
+        assertDoesNotThrow(() -> {
+            ShapeValidator.validatePosition(0, 0);
+        });
+    }
+    
+    @Test
+    void testValidatePosition_zeroX_positiveY() {
+        assertDoesNotThrow(() -> {
+            ShapeValidator.validatePosition(0, 20);
+        });
+    }
+    
+    @Test
+    void testValidatePosition_positiveX_zeroY() {
+        assertDoesNotThrow(() -> {
+            ShapeValidator.validatePosition(10, 0);
+        });
+    }
+    
+    @Test
     void testValidatePosition_withNegativeX_throwsException() {
         assertThrows(IllegalArgumentException.class, () -> {
             ShapeValidator.validatePosition(-1, 20);

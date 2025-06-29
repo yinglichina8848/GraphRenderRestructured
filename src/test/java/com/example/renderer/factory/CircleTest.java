@@ -113,4 +113,14 @@ public class CircleTest {
         circle.render(mockRenderer);
         verify(mockRenderer).drawCircle(10, 10, 10);
     }
+    
+    @Test
+    void testToString() {
+        Circle circle = new Circle(100, 200, 300);
+        String result = circle.toString();
+        assertTrue(result.contains("Circle"));
+        assertTrue(result.contains("x=100"));
+        assertTrue(result.contains("y=200"));
+        assertTrue(result.contains("radius=300"));
+    }
 }

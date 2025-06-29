@@ -152,4 +152,15 @@ public class RectangleTest {
         rect.render(mockRenderer);
         verify(mockRenderer).drawRectangle(12, 12, 20, 20);
     }
+    
+    @Test
+    void testToString() {
+        Rectangle rect = new Rectangle(100, 200, 300, 400);
+        String result = rect.toString();
+        assertTrue(result.contains("Rectangle"));
+        assertTrue(result.contains("x=100"));
+        assertTrue(result.contains("y=200"));
+        assertTrue(result.contains("width=300"));
+        assertTrue(result.contains("height=400"));
+    }
 }
