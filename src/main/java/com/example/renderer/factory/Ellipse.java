@@ -217,5 +217,15 @@ public class Ellipse implements Shape {
             throw new AssertionError();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Ellipse{" +
+                "x=" + x +
+                ", y=" + y +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }
 
