@@ -124,8 +124,10 @@ public interface Shape {
      * @param x x坐标(单位为像素)
      * @param y y坐标(单位为像素)
      * @throws IllegalArgumentException 当坐标为负数时抛出
-     * @since 2025-06-24    
+     * 
      * @author Aider+DeepSeek
+     * @since 2025-06-24
+     * @modified 2025-06-29: 格式化时间注释
      */
     default void validatePosition(int x, int y) {
         if (x < 0 || y < 0) {
@@ -135,20 +137,16 @@ public interface Shape {
 
     /**
      * 移动图形的位置。
-     * 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。
-     *
-     * @param dx X轴方向的移动距离（像素）
-     * @param dy Y轴方向的移动距离（像素）
-     */
-    /**
-     * 移动图形的位置。
+     * 
+     * <p>根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
      * 
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
+     * 
      * @author Aider+DeepSeek
-     * @since 2025-06-24
      * @author Aider+SillconFlow-DeepSeek-R1
-     * @since 2025-06-29
+     * @since 2025-06-24
+     * @modified 2025-06-29: 合并重复注释
      */
     void move(int dx, int dy);
 

@@ -69,6 +69,19 @@ public class Ellipse implements Shape {
      * @param width 椭圆的宽度
      * @param height 椭圆的高度
      */
+    /**
+     * 构造指定位置和大小的椭圆
+     * 
+     * <p>此构造器创建一个中心在(x,y)处，宽度为width，高度为height的椭圆。</p>
+     * 
+     * @param x 椭圆中心的X坐标
+     * @param y 椭圆中心的Y坐标
+     * @param width 椭圆的宽度
+     * @param height 椭圆的高度
+     * 
+     * @author DeepSeek-Coder
+     * @since 2025-06-29
+     */
     public Ellipse(int x, int y, int width, int height) {
         this.x = x; this.y = y; this.width = width; this.height = height;
     }
