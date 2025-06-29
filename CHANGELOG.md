@@ -1,3 +1,10 @@
+## <small>1.0.4 (2025-06-29)</small>
+
+* Merge branch 'main' of github.com:yinglichina8848/GraphRenderRestructured CHANGELOG ([a74692c](https://github.com/yinglichina8848/GraphRenderRestructured/commit/a74692c))
+* The diff shows that the test class `BasicShapeFactoryTest` was changed from package-private to publi ([182ae95](https://github.com/yinglichina8848/GraphRenderRestructured/commit/182ae95))
+* test: 增加了单元测试，把总体的代码覆盖率提升到了 72% ([0f3c8b7](https://github.com/yinglichina8848/GraphRenderRestructured/commit/0f3c8b7))
+* test: 添加BasicShapeFactory的单元测试 ([29792c0](https://github.com/yinglichina8848/GraphRenderRestructured/commit/29792c0))
+
 ## <small>1.0.3 (2025-06-29)</small>
 
 * docs：规范化和统一代码注释接口的文档说明 ([f323675](https://github.com/yinglichina8848/GraphRenderRestructured/commit/f323675))
