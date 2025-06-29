@@ -38,10 +38,10 @@ class XMLExportVisitorTest {
     @Test
     @DisplayName("导出圆形 - 正常情况")
     void visitCircle_Valid() {
-        Circle circle = new Circle();
-        circle.setX(10);
-        circle.setY(20);
-        circle.setR(5);
+        Circle circle = mock(Circle.class);
+        when(circle.getX()).thenReturn(10);
+        when(circle.getY()).thenReturn(20);
+        when(circle.getR()).thenReturn(5);
 
         visitor.visitCircle(circle);
 
@@ -57,8 +57,8 @@ class XMLExportVisitorTest {
     @Test
     @DisplayName("导出圆形 - 半径为0的边界值")
     void visitCircle_ZeroRadius() {
-        Circle circle = new Circle();
-        circle.setR(0);
+        Circle circle = mock(Circle.class);
+        when(circle.getR()).thenReturn(0);
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> 
             visitor.visitCircle(circle));
