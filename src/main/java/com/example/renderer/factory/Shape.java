@@ -119,27 +119,16 @@ public interface Shape {
     void move(int dx, int dy);
 
     /**
-     * 接受访问者访问，实现访问者模式。
-     * 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。
-     *
-     * @param visitor 用于处理图形的访问者对象，不能为null
-     * @throws NullPointerException 如果visitor参数为null
-     */
-    /**
-     * 接受访问者访问此图形对象。
+     * 接受访问者访问此图形对象，实现访问者模式。
+     * <p>允许访问者对图形对象进行操作而不修改图形本身。</p>
      * 
      * @param visitor 用于处理图形的访问者对象(非null)
-     * @throws NullPointerException 如果visitor参数为null
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
-     */
-    /**
-     * 接受访问者访问此图形对象。
+     * @throws NullPointerException 如果visitor为null
      * 
-     * @param visitor 用于处理图形的访问者对象(非null)
-     * @throws NullPointerException 如果visitor参数为null
      * @author Aider+DeepSeek
      * @since 2025-06-24
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     void accept(ExportVisitor visitor);
 }

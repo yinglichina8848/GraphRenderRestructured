@@ -141,16 +141,13 @@ public class JSONExportVisitor implements ExportVisitor {
 
     /**
      * 将三角形对象转换为JSON格式输出
+     * <p>输出格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}</p>
      * 
-     * @param t 要导出的三角形对象，不能为null
+     * @param t 要导出的三角形对象(不能为null)
      * @throws NullPointerException 如果参数t为null
-     */
-    /**
-     * 将三角形对象转换为JSON格式输出
-     * 格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}
      * 
-     * @param t 要导出的三角形对象，不能为null
-     * @throws NullPointerException 如果参数t为null
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitTriangle(Triangle t) {
