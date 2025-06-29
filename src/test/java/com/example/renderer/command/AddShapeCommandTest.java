@@ -122,4 +122,55 @@ public class AddShapeCommandTest {
         command.redo();
         assertFalse(command.canRedo());
     }
+
+    @Test
+    @DisplayName("重做操作应恢复图形")
+    public void testRedoRestoresShape() {
+        command.execute();
+        command.undo();
+        assertFalse(shapes.contains(mockShape), "撤销后图形应从列表移除");
+        
+        command.redo();
+        assertTrue(shapes.contains(mockShape), "重做后图形应恢复");
+        assertEquals(1, shapes.size(), "列表大小应为1");
+    }
+
+    @Test
+    @DisplayName("多次重做和撤销操作")
+    public void testMultipleRedoAndUndo() {
+        command.execute();
+        assertTrue(shapes.contains(mockShape), "执行后图形应在列表中");
+        
+        command.undo();
+        assertFalse(shapes.contains(mockShape), "撤销后图形应移出列表");
+        
+        command.redo();
+        assertTrue(shapes.contains(mockShape), "第一次重做后图形应恢复");
+        
+        command.undo();
+        assertFalse(shapes.contains(mockShape), "第二次撤销后图形应移出列表");
+        
+        command.redo();
+        assertTrue(shapes.contains(mockShape), "第二次重做后图形应恢复");
+    }
+
+    @Test
+    @DisplayName("执行新命令前无法重做")
+    public void testCannotRedoBeforeExecution() {
+        // 未执行任何操作
+        assertFalse(command.canRedo(), "未执行命令前无法重做");
+        
+        command.execute();
+        assertFalse(command.canRedo(), "执行后但未撤销无法重做");
+    }
+
+    @Test
+    @DisplayName("重做后不能再重做")
+    public void testCannotRedoAfterRedo() {
+        command.execute();
+        command.undo();
+        command.redo();
+        
+        assertFalse(command.canRedo(), "重做后不能再重做");
+    }
 }
