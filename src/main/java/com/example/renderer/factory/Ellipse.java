@@ -29,6 +29,26 @@ import com.example.renderer.visitor.ExportVisitor;
 
 /**
  * 椭圆图形实现类
+ * 
+ * <p>表示一个由中心坐标(x,y)和宽度(width)、高度(height)定义的椭圆。
+ * 实现了Shape接口，支持以下操作：
+ * <ul>
+ *   <li>渲染 - 通过render()方法使用指定渲染器绘制</li>
+ *   <li>移动 - 通过move()方法改变位置</li>
+ *   <li>访问者模式 - 通过accept()方法支持扩展操作</li>
+ * </ul>
+ *
+ * <p>典型用法：
+ * <pre>{@code
+ * Ellipse ellipse = new Ellipse(100, 100, 80, 40);
+ * ellipse.render(renderer); // 绘制椭圆
+ * ellipse.move(10, 5); // 移动椭圆
+ * }</pre>
+ *
+ * @author DeepSeek-Coder
+ * @version 1.0
+ * @author Aider+SillconFlow-DeepSeek
+ * @since 2025-06-24
  */
 public class Ellipse implements Shape {
     private int x, y, width, height;
@@ -158,6 +178,15 @@ public class Ellipse implements Shape {
      */
     public int getHeight() { return height; }
 
+    /**
+     * 创建并返回当前椭圆的一个深拷贝
+     * 
+     * <p>此方法通过调用Object.clone()实现拷贝, 适用于只包含基本类型字段的对象。</p>
+     * 
+     * @return 椭圆的新副本
+     * @author Aider+SillconFlow-DeepSeek
+     * @since 2025-06-24
+     */
     @Override
     public Ellipse clone() {
         try {
