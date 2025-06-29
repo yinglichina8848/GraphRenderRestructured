@@ -45,17 +45,26 @@ public class AddShapeCommand implements Command {
     }
 
     public void execute() {
+        if (!canExecute()) {
+            throw new IllegalStateException("无法执行命令");
+        }
         shapes.add(shape);
         executed = true;
     }
 
     public void undo() {
+        if (!canUndo()) {
+            throw new IllegalStateException("无法撤销命令");
+        }
         shapes.remove(shape);
         executed = false;
     }
 
     @Override
     public void redo() {
+        if (!canRedo()) {
+            throw new IllegalStateException("无法重做命令");
+        }
         execute();
     }
 
