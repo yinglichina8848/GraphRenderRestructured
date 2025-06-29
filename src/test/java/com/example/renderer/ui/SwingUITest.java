@@ -131,4 +131,14 @@ public class SwingUITest extends SwingUI {
         btnLoad.doClick();
         verify(manager).loadShapesFromFile(eq("test_load.json"));
     }
+
+    // 确保保存和加载按钮存在于UI中
+    @Test
+    void testSaveLoadButtonsExist() {
+        JButton btnSave = (JButton) findComponentByName(swingUI, "btnSave");
+        JButton btnLoad = (JButton) findComponentByName(swingUI, "btnLoad");
+        
+        assertNotNull(btnSave, "保存按钮不存在");
+        assertNotNull(btnLoad, "加载按钮不存在");
+    }
 }

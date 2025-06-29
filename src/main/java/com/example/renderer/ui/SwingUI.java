@@ -280,23 +280,47 @@ public class SwingUI extends JFrame {
         }
     }
 
-    private void loadShapes() {
-        JFileChooser chooser = new JFileChooser();
-        int ret = chooser.showOpenDialog(this);
-        if (ret == JFileChooser.APPROVE_OPTION) {
-            File file = chooser.getSelectedFile();
+    protected void saveShapes() {
+        File file = selectSaveFile();
+        if (file != null) {
             try {
-                List<com.example.renderer.factory.Shape> loadedShapes = PersistenceManager.getInstance().loadShapesFromFile(file.getAbsolutePath());
-                shapes.clear();
-                shapes.addAll(loadedShapes);
-                drawingPanel.repaint();  // 这里刷新绘图面板
-
-                JOptionPane.showMessageDialog(this, "载入成功");
+                PersistenceManager.getInstance().saveShapesToFile(shapes, file.getAbsolutePath());
+                showMessage("保存成功");
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "载入失败: " + ex.getMessage());
+                showMessage("保存失败: " + ex.getMessage());
             }
         }
     }
 
+    protected void loadShapes() {
+        File file = selectOpenFile();
+        if (file != null) {
+            try {
+                List<com.example.renderer.factory.Shape> loadedShapes = PersistenceManager.getInstance().loadShapesFromFile(file.getAbsolutePath());
+                shapes.clear();
+                shapes.addAll(loadedShapes);
+                drawingPanel.repaint();
+                showMessage("载入成功");
+            } catch (Exception ex) {
+                showMessage("载入失败: " + ex.getMessage());
+            }
+        }
+    }
+
+    protected File selectSaveFile() {
+        JFileChooser chooser = new JFileChooser();
+        int ret = chooser.showSaveDialog(this);
+        return (ret == JFileChooser.APPROVE_OPTION) ? chooser.getSelectedFile() : null;
+    }
+
+    protected File selectOpenFile() {
+        JFileChooser chooser = new JFileChooser();
+        int ret = chooser.showOpenDialog(this);
+        return (ret == JFileChooser.APPROVE_OPTION) ? chooser.getSelectedFile() : null;
+    }
+
+    protected void showMessage(String message) {
+        JOptionPane.showMessageDialog(this, message);
+    }
 }
 
