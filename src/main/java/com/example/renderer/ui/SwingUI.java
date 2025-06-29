@@ -259,7 +259,11 @@ public class SwingUI extends JFrame {
      * 
      * @see PersistenceManager#loadShapesFromFile(String) 
      */
-    private Renderer createFallbackRenderer() {
+    /**
+     * 创建回退渲染器（包级访问权限，供单元测试使用）
+     * @return 渲染器实例
+     */
+    Renderer createFallbackRenderer() {
         try {
             return new SwingRenderer();
         } catch (Exception e) {
