@@ -99,6 +99,10 @@ public class Ellipse implements Shape {
      * @param renderer 用于绘制椭圆的渲染器实现(非null)
      * @throws NullPointerException 如果renderer参数为null
      * @see Renderer#drawEllipse(int, int, int, int)
+     * 
+     * @author Aider+DeepSeek
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-24
      */
     @Override
     public void render(Renderer renderer) {
@@ -106,9 +110,16 @@ public class Ellipse implements Shape {
     }
 
     /**
-     * 接受访问者访问此椭圆对象
-     * @param visitor 用于处理椭圆的访问者对象
+     * 接受访问者访问此椭圆对象。
+     * 
+     * <p>实现访问者模式，将访问请求转发给访问者的visitEllipse方法。</p>
+     * 
+     * @param visitor 用于处理椭圆的访问者对象(非null)
      * @throws NullPointerException 如果visitor参数为null
+     * 
+     * @author DeepSeek-Coder
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void accept(ExportVisitor visitor) {
@@ -167,6 +178,24 @@ public class Ellipse implements Shape {
     public int getY() { return y; }
     
     /**
+     * 设置椭圆中心X坐标
+     * @param x 椭圆的新X坐标
+     * 
+     * @author Aider+SillconFlow-DeepSeek
+     * @since 2025-06-29
+     */
+    public void setX(int x) { this.x = x; }
+    
+    /**
+     * 设置椭圆中心Y坐标
+     * @param y 椭圆的新Y坐标
+     * 
+     * @author Aider+SillconFlow-DeepSeek
+     * @since 2025-06-29
+     */
+    public void setY(int y) { this.y = y; }
+    
+    /**
      * 获取椭圆宽度。
      * 
      * <p>宽度是椭圆在X轴方向的直径长度。</p>
@@ -177,6 +206,15 @@ public class Ellipse implements Shape {
      * @since 2025-06-29
      */
     public int getWidth() { return width; }
+    
+    /**
+     * 设置椭圆宽度
+     * @param width 椭圆的新宽度（像素）
+     * 
+     * @author Aider+SillconFlow-DeepSeek
+     * @since 2025-06-29
+     */
+    public void setWidth(int width) { this.width = width; }
     
     /**
      * 获取椭圆高度。
@@ -190,6 +228,15 @@ public class Ellipse implements Shape {
      * @since 2025-06-29
      */
     public int getHeight() { return height; }
+    
+    /**
+     * 设置椭圆高度
+     * @param height 椭圆的新高度（像素）
+     * 
+     * @author Aider+SillconFlow-DeepSeek
+     * @since 2025-06-29
+     */
+    public void setHeight(int height) { this.height = height; }
 
     /**
      * 创建并返回当前椭圆的一个深拷贝
