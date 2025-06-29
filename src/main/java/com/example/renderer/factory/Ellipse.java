@@ -173,10 +173,10 @@ public class Ellipse implements Shape {
     public int getWidth() { return width; }
     
     /**
-     * 设置椭圆宽度
-     * @param width 椭圆的新宽度（像素）
+     * 设置椭圆的新宽度（像素）
+     * @param width 椭圆的新宽度值
      * 
-     * @author Aider+SillconFlow-DeepSeek
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public void setWidth(int width) { this.width = width; }

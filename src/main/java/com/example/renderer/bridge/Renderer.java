@@ -37,7 +37,12 @@ public interface Renderer {
     
     /**
      * 获取当前渲染上下文
-     * @return 底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等)
+     * 
+     * <p>此方法返回渲染器使用的底层实现对象</p>
+     * 
+     * @return 底层实现对象 (Swing返回Graphics2D，SVG返回StringBuilder等)
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     Object getContext();
     

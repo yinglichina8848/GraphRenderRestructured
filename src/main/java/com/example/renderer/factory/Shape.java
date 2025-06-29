@@ -95,7 +95,7 @@ public interface Shape {
      * @param y y坐标(单位为像素)
      * @throws IllegalArgumentException 当坐标为负数时抛出
      * 
-     * @author Aider+DeepSeek
+     * 
      * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
