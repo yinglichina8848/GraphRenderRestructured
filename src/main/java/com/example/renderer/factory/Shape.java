@@ -3,8 +3,6 @@ package com.example.renderer.factory;
 
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.visitor.ExportVisitor;
-import com.example.renderer.bridge.Renderer;
-import com.example.renderer.visitor.ExportVisitor;
 
 /**
  * Shape接口定义了所有图形对象的基本行为。
@@ -67,9 +65,6 @@ public interface Shape {
      */
     void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
-    /**
-     * 创建并返回当前图形的一个副本
-     */
     /**
      * 创建并返回当前图形的一个深拷贝。
      * 

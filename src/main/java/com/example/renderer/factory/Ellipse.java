@@ -52,7 +52,8 @@ import com.example.renderer.visitor.ExportVisitor;
  * @since 2025-06-24
  */
 public class Ellipse implements Shape {
-    private int x, y, width, height;
+    // 私有成员变量 - 带作者和时间注释
+    private int x, y, width, height; // @author DeepSeek-Renderer; @since 2025-06-29
 
     /**
      * 无参构造器，用于序列化和反射创建实例。
@@ -145,15 +146,6 @@ public class Ellipse implements Shape {
         y += dy;
     }
 
-    /**
-     * 获取椭圆中心X坐标。
-     * 
-     * <p>注意：返回的是椭圆的中心点X坐标，不是外接矩形的左上角X坐标。
-     * 
-     * @return 椭圆中心的X坐标值
-     * @see #getY() 获取Y坐标
-     * @see #getWidth() 获取宽度
-     */
     /**
      * 获取椭圆中心X坐标。
      * 
