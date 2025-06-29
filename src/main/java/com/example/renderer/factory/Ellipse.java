@@ -1,3 +1,7 @@
+package com.example.renderer.factory;
+import com.example.renderer.bridge.Renderer;
+import com.example.renderer.visitor.ExportVisitor;
+
 /**
  * 椭圆图形实现类。
  * 
@@ -21,9 +25,6 @@
  * @see Shape 图形接口
  * @since 2025-06-24
  */
-package com.example.renderer.factory;
-import com.example.renderer.bridge.Renderer;
-import com.example.renderer.visitor.ExportVisitor;
 
 
 
@@ -58,6 +59,7 @@ public class Ellipse implements Shape {
      * 创建后需要通过setter方法设置属性。
      * 
      * @author Aider+DeepSeek
+     * @author Aider+SillconFlow-DeepSeek
      * @since 2025-06-24
      */
     public Ellipse() {}
@@ -139,6 +141,9 @@ public class Ellipse implements Shape {
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
      * @see Shape#move(int, int)
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void move(int dx, int dy) {
