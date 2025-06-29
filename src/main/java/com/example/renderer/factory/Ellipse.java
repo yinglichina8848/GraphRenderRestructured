@@ -65,12 +65,6 @@ public class Ellipse implements Shape {
     public Ellipse() {}
 
     /**
-     * 构造指定位置和大小的椭圆
-     * @param x 椭圆中心的X坐标
-     * @param y 椭圆中心的Y坐标
-     * @param width 椭圆的宽度
-     * @param height 椭圆的高度
-     */
     /**
      * 构造指定位置和大小的椭圆
      * 
