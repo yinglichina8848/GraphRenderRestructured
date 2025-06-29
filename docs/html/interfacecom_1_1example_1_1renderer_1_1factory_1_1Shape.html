@@ -161,19 +161,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>接受访问者访问，实现访问者模式。 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象，不能为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null 接受访问者访问此图形对象。</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>接受访问者访问此图形对象，实现访问者模式。 </p>
+<p>允许访问者对图形对象进行操作而不修改图形本身。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
@@ -182,26 +171,14 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor为null</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 接受访问者访问此图形对象。</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd>
+<dd>
+Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a51521258d26e87a98467aef864272484">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a5b6d782ad3dc266f7757c5c451bbe602">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#af348e21237e4722426307b8caaee20e2">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a9319379e8169bced107758a43b0932cd">com.example.renderer.factory.Circle</a>.</p>
 
@@ -221,13 +198,25 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>创建并返回当前图形的一个副本 创建并返回当前图形的一个深拷贝 </p><dl class="section return"><dt>Returns</dt><dd>图形的新副本 </dd></dl>
+<p>创建并返回当前图形的一个深拷贝。</p>
+<p>此方法返回图形对象的精确副本，包括所有内部状态数据。对于包含引用类型字段的对象，需要递归实现深拷贝。</p>
+<p>实现要求： </p><ul>
+<li>
+必须返回独立的新对象 </li>
+<li>
+修改副本不应影响原对象 </li>
+<li>
+字段值为引用类型时必须深拷贝 </li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>图形的新副本 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">CloneNotSupportedException</td><td>如果图形不支持克隆 </td></tr>
+    <tr><td class="paramname">CloneNotSupportedException</td><td>如果图形不支持克隆</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a75697839c878777338a81df631881f33">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a9387fcb0aba596e3174f9edb4d817036">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a19d482c4667e3c70ca4bb1478c8f6b4f">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a63521bf6d44d46ca577ad1b43362423f">com.example.renderer.factory.Circle</a>.</p>
 
@@ -258,18 +247,17 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
+<p>移动图形的位置。</p>
+<p>根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
-    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） 移动图形的位置。</td></tr>
-    <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
-    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） </td></tr>
+    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素）</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a0aa53deb7dccf8acd100a53a76d414d0">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a85e3c1cc786f02d3b62399193b44a554">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a7dc56b196866cc4d444f59585902442c">com.example.renderer.factory.Circle</a>.</p>
 
@@ -290,19 +278,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>使用指定的渲染器绘制图形。 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">renderer</td><td>用于绘制图形的渲染器实现，不能为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果renderer参数为null 使用指定的渲染器绘制图形。</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>使用指定的渲染器绘制图形。</p>
+<p>具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。</p>
 <p>实现类应确保： </p><ul>
 <li>
 参数renderer不为null </li>
@@ -313,32 +290,20 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">renderer</td><td>用于绘制图形的渲染器实现 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果renderer为null 使用指定的渲染器绘制图形。</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
     <tr><td class="paramname">renderer</td><td>用于绘制图形的渲染器实现(非null) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果renderer参数为null </td></tr>
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果图形参数不合法 </td></tr>
-    <tr><td class="paramname">IllegalStateException</td><td>如果图形状态不适合渲染 </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果渲染器参数为null </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果当前图形的参数不合法(如负尺寸) </td></tr>
+    <tr><td class="paramname">IllegalStateException</td><td>如果图形处于不可渲染的状态</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44">com.example.renderer.factory.Triangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4">com.example.renderer.factory.Rectangle</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4">com.example.renderer.factory.Ellipse</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a">com.example.renderer.factory.Circle</a>.</p>
 
@@ -377,19 +342,23 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>验证坐标位置是否有效 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>验证坐标位置是否有效</p>
+<p>此方法用于检查图形坐标是否在合理范围内</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td>x坐标 </td></tr>
-    <tr><td class="paramname">y</td><td>y坐标 </td></tr>
+    <tr><td class="paramname">x</td><td>x坐标(单位为像素) </td></tr>
+    <tr><td class="paramname">y</td><td>y坐标(单位为像素) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果坐标为负数 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>当坐标为负数时抛出</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 </div>
 </div>

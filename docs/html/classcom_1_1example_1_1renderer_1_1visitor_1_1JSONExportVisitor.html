@@ -149,10 +149,12 @@ Public Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果参数c为null </td></tr>
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果半径值为负数 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果半径值为负数</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a02af511539ce8fba0d7b2ed289e2341d">com.example.renderer.visitor.ExportVisitor</a>.</p>
 
@@ -182,31 +184,22 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>将椭圆对象转换为JSON格式输出</p>
+<p>输出格式: {"type":"ellipse", "x":x, "y":y, "rx":xRadius, "ry":yRadius}</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">e</td><td>要导出的椭圆对象，不能为null </td></tr>
+    <tr><td class="paramname">e</td><td>要导出的椭圆对象(不能为null) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果参数e为null 将椭圆对象转换为JSON格式输出 格式: {"type":"ellipse", "x":x, "y":y, "rx":xRadius, "ry":yRadius}</td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果椭圆对象为null </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果椭圆宽度或高度为负数</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>要导出的椭圆对象，不能为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果参数e为null </td></tr>
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度为负数 </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#ad4bac612895ffa57a95f30d98447e6d1">com.example.renderer.visitor.ExportVisitor</a>.</p>
 
@@ -257,10 +250,12 @@ Public Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">NullPointerException</td><td>如果参数r为null </td></tr>
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度为负数 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度为负数</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a33c0696dd06b3a3546ec95fbbb05666d">com.example.renderer.visitor.ExportVisitor</a>.</p>
 
@@ -289,31 +284,22 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>将三角形对象转换为JSON格式输出</p>
+<p>将三角形对象转换为JSON格式输出 </p>
+<p>输出格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>要导出的三角形对象，不能为null </td></tr>
+    <tr><td class="paramname">t</td><td>要导出的三角形对象(不能为null) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果参数t为null 将三角形对象转换为JSON格式输出 格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}</td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果三角形对象为null</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">t</td><td>要导出的三角形对象，不能为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果参数t为null </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html#a53684388713a9f98d485c988e1300f4c">com.example.renderer.visitor.ExportVisitor</a>.</p>
 

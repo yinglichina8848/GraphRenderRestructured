@@ -261,19 +261,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>接受访问者访问，实现访问者模式。 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象，不能为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null 接受访问者访问此图形对象。</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>接受访问者访问此图形对象，实现访问者模式。 </p>
+<p>允许访问者对图形对象进行操作而不修改图形本身。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
@@ -282,26 +271,14 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
+    <tr><td class="paramname">NullPointerException</td><td>如果visitor为null</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 接受访问者访问此图形对象。</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">visitor</td><td>用于处理图形的访问者对象(非null) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname">NullPointerException</td><td>如果visitor参数为null </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd>
+<dd>
+Aider+SillconFlow-DeepSeek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#a17fdf5b153a81b61bc744ab108c6bcbd">com.example.renderer.factory.Shape</a>.</p>
 
@@ -329,13 +306,25 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>创建并返回当前图形的一个副本 创建并返回当前图形的一个深拷贝 </p><dl class="section return"><dt>Returns</dt><dd>图形的新副本 </dd></dl>
+<p>创建并返回当前图形的一个深拷贝。</p>
+<p>此方法返回图形对象的精确副本，包括所有内部状态数据。对于包含引用类型字段的对象，需要递归实现深拷贝。</p>
+<p>实现要求： </p><ul>
+<li>
+必须返回独立的新对象 </li>
+<li>
+修改副本不应影响原对象 </li>
+<li>
+字段值为引用类型时必须深拷贝 </li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>图形的新副本 </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">CloneNotSupportedException</td><td>如果图形不支持克隆 </td></tr>
+    <tr><td class="paramname">CloneNotSupportedException</td><td>如果图形不支持克隆</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa29d9bb1411031067e90644d53514f17">com.example.renderer.factory.Shape</a>.</p>
 
@@ -542,18 +531,17 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>移动图形的位置。 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
+<p>移动图形的位置。</p>
+<p>根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
-    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） 移动图形的位置。</td></tr>
-    <tr><td class="paramname">dx</td><td>X轴方向的移动距离（像素） </td></tr>
-    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素） </td></tr>
+    <tr><td class="paramname">dy</td><td>Y轴方向的移动距离（像素）</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section author"><dt>Author</dt><dd>Aider+DeepSeek </dd></dl>
-<dl class="section since"><dt>Since</dt><dd>2025-06-24 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html#aa825d511e08fc9af9b8e62f41f1fc2ad">com.example.renderer.factory.Shape</a>.</p>
 

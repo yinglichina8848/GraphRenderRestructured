@@ -4,7 +4,7 @@
 /*.iml
 *.class
 *.log
-
+!/target/site/jacoco/jacoco.xml
 # Doxygen HTML
 docs/doxygen/
 docs/*
@@ -25,7 +25,7 @@ latex/
 *.log
 *.toc
 *.out
-*.pdf
+#*.pdf
 
 # === Java / Maven ===
 target/

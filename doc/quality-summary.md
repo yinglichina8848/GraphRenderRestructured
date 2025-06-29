@@ -1,7 +1,7 @@
 # 📊 代码质量摘要报告
 
 > 项目：GraphRenderSystem ([GitHub Repo](https://github.com/yinglichina8848/GraphRenderRestructured))  
-> 构建时间：2025-06-28  
+> 构建时间：2025-06-29  
 > 构建环境：Maven + GitHub Actions + Java 17
 
 ---
@@ -13,7 +13,7 @@
 | ✔️ Checkstyle | 代码风格检查                 | ✅ 无违规项   | [checkstyle.html](../checkstyle.html) |
 | ✔️ PMD        | 潜在问题、长方法等检测            | ✅ 无违规项   | [pmd.html](../pmd.html) |
 | ✔️ SpotBugs   | 空指针、死代码等缺陷检测           | ⚠️ 分析失败  | [spotbugs.html](../spotbugs.html) |
-| ✔️ OWASP DC   | 依赖漏洞扫描（CVEs）           | ✅ 无漏洞    | [dependency-check-report.html](../dependency-check-report.html) |
+| ✔️ OWASP DC   | 依赖漏洞扫描（CVEs）           | Report not found | N/A |
 | ✔️ JaCoCo     | 测试覆盖率分析                | ❌ 覆盖率较低 (0.0%) | [jacoco/index.html](../jacoco/index.html) |
 
 ---
@@ -22,19 +22,19 @@
 
 | 指标         | 覆盖率 |
 |--------------|--------|
-| Total        | 35.0%  |
+| Total        | 71.0%  |
 | com.example.renderer.ui | 0.0%  |
-| com.example.renderer.command | 0.0%  |
-| com.example.renderer.bridge | 65.0%  |
 | com.example.renderer.factory | 37.0%  |
-| com.example.renderer.visitor | 41.0%  |
-| com.example.renderer.core | 0.0%  |
-| com.example.renderer.observer | 0.0%  |
 | com.example.renderer.proxy | 25.0%  |
+| com.example.renderer.bridge | 80.0%  |
 | com.example.renderer.adapter | 100.0%  |
 | com.example.renderer.config | 58.0%  |
 | com.example.renderer.util | 70.0%  |
+| com.example.renderer.visitor | 65.0%  |
+| com.example.renderer.command | 94.0%  |
 | com.example.renderer.singleton | 66.0%  |
+| com.example.renderer.core | 83.0%  |
+| com.example.renderer.observer | 100.0%  |
 
 > 📌 点击进入详细报告：[jacoco/index.html](../jacoco/index.html)
 

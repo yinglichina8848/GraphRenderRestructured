@@ -34,8 +34,15 @@ class RendererFactoryTest {
         Exception ex = assertThrows(RendererCreationException.class, () -> 
             RendererFactory.create("unregistered"));
         
-        assertTrue(ex.getMessage().contains("Unsupported render mode"), 
-                   "异常消息应指示不支持的渲染模式");
+        // 获取最内层异常消息
+        Throwable cause = ex.getCause();
+        if (cause != null) {
+            assertTrue(cause.getMessage().contains("Unsupported render mode"), 
+                       "最内层异常消息应指示不支持的渲染模式");
+        } else {
+            assertTrue(ex.getMessage().contains("Unsupported render mode"), 
+                       "异常消息应指示不支持的渲染模式");
+        }
     }
 
     @Test
@@ -45,8 +52,15 @@ class RendererFactoryTest {
         Exception ex = assertThrows(RendererCreationException.class, () -> 
             RendererFactory.create("null-renderer"));
         
-        assertTrue(ex.getMessage().contains("Renderer creation failed"), 
-                   "异常消息应指示渲染器创建失败");
+        // 获取最内层异常消息
+        Throwable cause = ex.getCause();
+        if (cause != null) {
+            assertTrue(cause.getMessage().contains("Renderer creation failed for mode"), 
+                       "最内层异常消息应指示渲染器创建失败");
+        } else {
+            assertTrue(ex.getMessage().contains("Renderer creation failed for mode"), 
+                       "异常消息应指示渲染器创建失败");
+        }
     }
 
     @Test
