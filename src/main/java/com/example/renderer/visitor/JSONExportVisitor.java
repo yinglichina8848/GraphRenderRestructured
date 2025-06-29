@@ -127,8 +127,11 @@ public class JSONExportVisitor implements ExportVisitor {
      * <p>输出格式: {"type":"ellipse", "x":x, "y":y, "rx":xRadius, "ry":yRadius}</p>
      * 
      * @param e 要导出的椭圆对象(不能为null)
-     * @throws NullPointerException 如果传入的椭圆对象为null
+     * @throws NullPointerException 如果椭圆对象为null
      * @throws IllegalArgumentException 如果椭圆宽度或高度为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitEllipse(Ellipse e) {
@@ -144,7 +147,7 @@ public class JSONExportVisitor implements ExportVisitor {
      * <p>输出格式: {"type":"triangle", "x1":x1, "y1":y1, ..., "y3":y3}</p>
      * 
      * @param t 要导出的三角形对象(不能为null)
-     * @throws NullPointerException 如果参数t为null
+     * @throws NullPointerException 如果三角形对象为null
      * 
      * @author Aider+SillconFlow-DeepSeek-R1
      * @since 2025-06-29

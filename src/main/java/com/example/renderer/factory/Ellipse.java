@@ -127,19 +127,27 @@ public class Ellipse implements Shape {
     public int getY() { return y; }
     
     /**
-     * 获取椭圆宽度
-     * @return 椭圆的宽度值
+     * 获取椭圆宽度。
+     * 
+     * <p>宽度是椭圆在X轴方向的直径长度。</p>
+     * 
+     * @return 椭圆的宽度值（像素）
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     public int getWidth() { return width; }
     
     /**
      * 获取椭圆高度。
      * 
-     * <p>高度是椭圆在Y轴方向的直径长度。
+     * <p>高度是椭圆在Y轴方向的直径长度。</p>
      * 
-     * @return 椭圆的高度值
+     * @return 椭圆的高度值（像素）
      * @see #getWidth() 获取宽度
-     * @see #getX() 获取X坐标
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     public int getHeight() { return height; }
 
