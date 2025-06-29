@@ -96,8 +96,8 @@ public interface Shape {
      * @throws IllegalArgumentException 当坐标为负数时抛出
      * 
      * @author Aider+DeepSeek
-     * @since 2025-06-24
-     * @modified 2025-06-29: 格式化时间注释
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     default void validatePosition(int x, int y) {
         if (x < 0 || y < 0) {
@@ -114,9 +114,8 @@ public interface Shape {
      * @param dy Y轴方向的移动距离（像素）
      * 
      * @author Aider+DeepSeek
-     * @author Aider+SillconFlow-DeepSeek-R1
-     * @since 2025-06-24
-     * @modified 2025-06-29: 合并重复注释
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void move(int dx, int dy);
 

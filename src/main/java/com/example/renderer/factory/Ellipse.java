@@ -21,34 +21,9 @@ import com.example.renderer.visitor.ExportVisitor;
  * }</pre>
  *
  * @author DeepSeek-Coder
- * @version 1.0
- * @see Shape 图形接口
- * @since 2025-06-24
- */
-
-
-
-/**
- * 椭圆图形实现类
- * 
- * <p>表示一个由中心坐标(x,y)和宽度(width)、高度(height)定义的椭圆。
- * 实现了Shape接口，支持以下操作：
- * <ul>
- *   <li>渲染 - 通过render()方法使用指定渲染器绘制</li>
- *   <li>移动 - 通过move()方法改变位置</li>
- *   <li>访问者模式 - 通过accept()方法支持扩展操作</li>
- * </ul>
- *
- * <p>典型用法：
- * <pre>{@code
- * Ellipse ellipse = new Ellipse(100, 100, 80, 40);
- * ellipse.render(renderer); // 绘制椭圆
- * ellipse.move(10, 5); // 移动椭圆
- * }</pre>
- *
- * @author DeepSeek-Coder
- * @version 1.0
  * @author Aider+SillconFlow-DeepSeek
+ * @author Aider+SillconFlow-Deepseek-R1
+ * @version 1.0
  * @since 2025-06-24
  */
 public class Ellipse implements Shape {
@@ -59,9 +34,9 @@ public class Ellipse implements Shape {
      * 创建后需要通过setter方法设置属性。
      * 
      * @author Aider+DeepSeek
-     * @since 2025-06-24
      * @author Aider+SillconFlow-DeepSeek
-     * @modified Aider+SillconFlow-Deepseek-R1 2025-06-29
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     public Ellipse() {}
 
