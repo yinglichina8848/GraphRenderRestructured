@@ -127,7 +127,6 @@ public interface Shape {
      * @throws NullPointerException 如果visitor为null
      * 
      * @author Aider+DeepSeek
-     * @since 2025-06-24
      * @author Aider+SillconFlow-DeepSeek-R1
      * @since 2025-06-29
      */

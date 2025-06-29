@@ -41,7 +41,6 @@ public class Ellipse implements Shape {
     public Ellipse() {}
 
     /**
-    /**
      * 构造指定位置和大小的椭圆
      * 
      * <p>此构造器创建一个中心在(x,y)处，宽度为width，高度为height的椭圆。</p>
