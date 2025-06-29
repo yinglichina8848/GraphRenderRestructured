@@ -109,6 +109,9 @@ public class JSONExportVisitor implements ExportVisitor {
      * @param r 要导出的矩形对象，不能为null
      * @throws NullPointerException 如果参数r为null
      * @throws IllegalArgumentException 如果宽度或高度为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitRectangle(Rectangle r) {
