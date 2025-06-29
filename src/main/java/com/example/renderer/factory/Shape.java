@@ -112,7 +112,6 @@ public interface Shape {
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
      * 
-     * @author Aider+DeepSeek
      * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */

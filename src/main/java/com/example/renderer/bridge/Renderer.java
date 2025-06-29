@@ -53,11 +53,21 @@ public interface Renderer {
     
     /**
      * 开始新帧/页的绘制
+     * 
+     * <p>此方法应在序列绘制的开始处调用，用于初始化帧状态</p>
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     default void beginFrame() {}
     
     /**
      * 结束当前帧/页的绘制
+     * 
+     * <p>此方法应在序列绘制的末尾调用，用于清理帧资源</p>
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     default void endFrame() {}
     /**
@@ -67,6 +77,9 @@ public interface Renderer {
      * @param radius 圆形半径(必须>0)
      * @throws IllegalArgumentException 如果半径不合法
      * @throws IllegalStateException 如果渲染器未正确初始化
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawCircle(int x, int y, int radius) throws IllegalArgumentException, IllegalStateException;
     
@@ -77,6 +90,9 @@ public interface Renderer {
      * @param width 矩形宽度(必须>0)
      * @param height 矩形高度(必须>0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawRectangle(int x, int y, int width, int height);
     
@@ -87,6 +103,9 @@ public interface Renderer {
      * @param width 椭圆宽度(必须>0)
      * @param height 椭圆高度(必须>0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawEllipse(int x, int y, int width, int height);
     
@@ -98,6 +117,9 @@ public interface Renderer {
      * @param y2 第二个顶点y坐标
      * @param x3 第三个顶点x坐标
      * @param y3 第三个顶点y坐标
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
 }

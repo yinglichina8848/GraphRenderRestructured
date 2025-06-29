@@ -159,20 +159,20 @@ public class Ellipse implements Shape {
     public void setY(int y) { this.y = y; }
     
     /**
-     * 获取椭圆宽度。
+     * 获取椭圆宽度值（像素）。
      * 
      * <p>宽度是椭圆在X轴方向的直径长度。</p>
      * 
      * @return 椭圆的宽度值（像素）
      * 
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public int getWidth() { return width; }
     
     /**
-     * 设置椭圆的新宽度（像素）
-     * @param width 椭圆的新宽度值
+     * 设置椭圆的新宽度值
+     * @param width 椭圆的新宽度值（像素）
      * 
      * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
@@ -192,10 +192,10 @@ public class Ellipse implements Shape {
     public int getHeight() { return height; }
     
     /**
-     * 设置椭圆高度
-     * @param height 椭圆的新高度（像素）
+     * 设置椭圆的新高度值
+     * @param height 椭圆的新高度值（像素）
      * 
-     * @author Aider+SillconFlow-DeepSeek
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public void setHeight(int height) { this.height = height; }
