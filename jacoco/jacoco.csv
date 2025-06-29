@@ -14,7 +14,7 @@ GraphRenderSystem,com.example.renderer.command,DeleteShapeCommand,136,0,22,0,27,
 GraphRenderSystem,com.example.renderer.command,Command,6,0,0,0,3,0,3,0,3,0
 GraphRenderSystem,com.example.renderer.command,MoveShapeCommand,14,33,2,0,5,9,5,3,4,3
 GraphRenderSystem,com.example.renderer.command,AddShapeCommand,39,23,12,0,5,8,10,3,4,3
-GraphRenderSystem,com.example.renderer.factory,Ellipse,12,55,0,0,4,14,2,8,2,8
+GraphRenderSystem,com.example.renderer.factory,Ellipse,28,55,0,0,8,14,6,8,6,8
 GraphRenderSystem,com.example.renderer.factory,ShapeFactoryImpl,125,0,6,0,14,0,8,0,5,0
 GraphRenderSystem,com.example.renderer.factory,BasicShapeFactory,36,0,0,0,5,0,5,0,5,0
 GraphRenderSystem,com.example.renderer.factory,Circle,13,57,0,2,5,17,2,9,2,8
@@ -24,7 +24,7 @@ GraphRenderSystem,com.example.renderer.factory,Rectangle,9,92,0,4,3,24,1,11,1,9
 GraphRenderSystem,com.example.renderer.ui,MainUI,14,0,0,0,6,0,3,0,3,0
 GraphRenderSystem,com.example.renderer.ui,SwingUI,408,0,4,0,102,0,15,0,13,0
 GraphRenderSystem,com.example.renderer.ui,DrawingPanel,65,0,4,0,16,0,4,0,2,0
-GraphRenderSystem,com.example.renderer.visitor,XMLExportVisitor,168,0,2,0,18,0,6,0,5,0
+GraphRenderSystem,com.example.renderer.visitor,XMLExportVisitor,190,0,10,0,22,0,10,0,5,0
 GraphRenderSystem,com.example.renderer.visitor,JSONExportVisitor,15,152,5,5,3,14,5,5,0,5
 GraphRenderSystem,com.example.renderer.config,GlobalConfig,28,67,5,7,6,22,4,8,0,6
 GraphRenderSystem,com.example.renderer.observer,LoggingShapeObserver,22,0,0,0,7,0,3,0,3,0

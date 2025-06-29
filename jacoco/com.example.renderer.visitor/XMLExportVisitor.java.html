@@ -13,36 +13,68 @@ import com.example.renderer.factory.*;
         }
 <span class="nc" id="L14">        System.out.printf(</span>
             &quot;&lt;circle&gt;\n&quot; +
-            &quot;  &lt;x&gt;%d&lt;/x&gt;\n&quot; +
-            &quot;  &lt;y&gt;%d&lt;/y&gt;\n&quot; +
-            &quot;  &lt;radius&gt;%d&lt;/radius&gt;\n&quot; +
-            &quot;  &lt;area&gt;%.2f&lt;/area&gt;\n&quot; +
+            &quot;  &lt;x&gt;%d&lt;/x&gt;\n&quot; +   // 圆心X坐标(像素)
+            &quot;  &lt;y&gt;%d&lt;/y&gt;\n&quot; +   // 圆心Y坐标(像素)
+            &quot;  &lt;radius&gt;%d&lt;/radius&gt;\n&quot; +  // 圆半径(像素)
+            &quot;  &lt;area&gt;%.2f&lt;/area&gt;\n&quot; +    // 圆面积(平方像素)
             &quot;&lt;/circle&gt;\n&quot;,
 <span class="nc" id="L21">            c.getX(), c.getY(), c.getR(), Math.PI * c.getR() * c.getR());</span>
 <span class="nc" id="L22">    }</span>
 
+    /**
+     * 将矩形对象转换为XML格式输出
+     * 
+     * &lt;p&gt;输出格式: &amp;lt;rectangle x=&quot;x&quot; y=&quot;y&quot; width=&quot;width&quot; height=&quot;height&quot;/&amp;gt;&lt;/p&gt;
+     * 
+     * @param r 要导出的矩形对象(不能为null)
+     * @throws NullPointerException 如果矩形对象为null
+     * @throws IllegalArgumentException 如果矩形宽度或高度为负数
+     */
     @Override
     public void visitRectangle(Rectangle r) {
-<span class="nc" id="L26">        System.out.printf(</span>
+<span class="nc bnc" id="L35" title="All 4 branches missed.">        if (r.getWidth() &lt; 0 || r.getHeight() &lt; 0) {</span>
+<span class="nc" id="L36">            throw new IllegalArgumentException(&quot;矩形的宽度和高度不能为负数&quot;);</span>
+        }
+<span class="nc" id="L38">        System.out.printf(</span>
             &quot;&lt;rectangle x=\&quot;%d\&quot; y=\&quot;%d\&quot; width=\&quot;%d\&quot; height=\&quot;%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L28">            r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
-<span class="nc" id="L29">    }</span>
+<span class="nc" id="L40">            r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
+<span class="nc" id="L41">    }</span>
 
+    /**
+     * 将椭圆对象转换为XML格式输出
+     * 
+     * &lt;p&gt;输出格式: &amp;lt;ellipse cx=&quot;centerX&quot; cy=&quot;centerY&quot; rx=&quot;xRadius&quot; ry=&quot;yRadius&quot;/&amp;gt;&lt;/p&gt;
+     * 
+     * @param e 要导出的椭圆对象(不能为null)
+     * @throws NullPointerException 如果椭圆对象为null
+     * @throws IllegalArgumentException 如果椭圆宽度或高度为负数
+     */
     @Override
     public void visitEllipse(Ellipse e) {
-<span class="nc" id="L33">        System.out.printf(</span>
+<span class="nc bnc" id="L54" title="All 4 branches missed.">        if (e.getWidth() &lt; 0 || e.getHeight() &lt; 0) {</span>
+<span class="nc" id="L55">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度不能为负数&quot;);</span>
+        }
+<span class="nc" id="L57">        System.out.printf(</span>
             &quot;&lt;ellipse cx=\&quot;%d\&quot; cy=\&quot;%d\&quot; rx=\&quot;%d\&quot; ry=\&quot;%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L35">            e.getX() + e.getWidth()/2, </span>
-<span class="nc" id="L36">            e.getY() + e.getHeight()/2,</span>
-<span class="nc" id="L37">            e.getWidth()/2,</span>
-<span class="nc" id="L38">            e.getHeight()/2);</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L59">            e.getX() + e.getWidth()/2, </span>
+<span class="nc" id="L60">            e.getY() + e.getHeight()/2,</span>
+<span class="nc" id="L61">            e.getWidth()/2,</span>
+<span class="nc" id="L62">            e.getHeight()/2);</span>
+<span class="nc" id="L63">    }</span>
 
+    /**
+     * 将三角形对象转换为XML格式输出
+     * 
+     * &lt;p&gt;输出格式: &amp;lt;polygon points=&quot;x1,y1 x2,y2 x3,y3&quot;/&amp;gt;&lt;/p&gt;
+     * 
+     * @param t 要导出的三角形对象(不能为null)
+     * @throws NullPointerException 如果三角形对象为null
+     */
     @Override
     public void visitTriangle(Triangle t) {
-<span class="nc" id="L43">        System.out.printf(</span>
+<span class="nc" id="L75">        System.out.printf(</span>
             &quot;&lt;polygon points=\&quot;%d,%d %d,%d %d,%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L45">            t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L77">            t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
+<span class="nc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

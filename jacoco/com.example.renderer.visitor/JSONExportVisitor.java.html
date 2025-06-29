@@ -35,8 +35,10 @@
  * @see Shape#accept(ExportVisitor) 接受访问者的入口方法
  * @see &lt;a href=&quot;https://en.wikipedia.org/wiki/Visitor_pattern&quot;&gt;Visitor Pattern&lt;/a&gt;
  * @author liying
+ * @author Aider+SillconFlow-DeepSeek-R1
  * @since 1.0
  * @version 1.0
+ * @createdAt 2025-06-29
  * 
  * &lt;p&gt;JSON编码说明：
  * &lt;ul&gt;
@@ -62,12 +64,8 @@ import com.example.renderer.factory.Triangle;
 /**
  * JSON导出访问者实现类
  */
-<span class="fc" id="L65">public class JSONExportVisitor implements ExportVisitor {</span>
+<span class="fc" id="L67">public class JSONExportVisitor implements ExportVisitor {</span>
     // JSON格式模板常量
-    /**
-     * 圆形JSON格式模板
-     * 格式: {&quot;type&quot;:&quot;circle&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;r&quot;:radius}
-     */
     /**
      * 圆形JSON格式模板
      * 格式: {&quot;type&quot;:&quot;circle&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;r&quot;:radius}
@@ -88,14 +86,17 @@ import com.example.renderer.factory.Triangle;
      * @param c 要导出的圆形对象，不能为null
      * @throws NullPointerException 如果参数c为null
      * @throws IllegalArgumentException 如果半径值为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitCircle(Circle c) {
-<span class="pc bpc" id="L94" title="1 of 2 branches missed.">        if (c.getR() &lt; 0) {</span>
-<span class="nc" id="L95">            throw new IllegalArgumentException(&quot;圆的半径不能为负数&quot;);</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">        if (c.getR() &lt; 0) {</span>
+<span class="nc" id="L96">            throw new IllegalArgumentException(&quot;圆的半径不能为负数&quot;);</span>
         }
-<span class="fc" id="L97">        System.out.printf(CIRCLE_JSON + &quot;\n&quot;, c.getX(), c.getY(), c.getR());</span>
-<span class="fc" id="L98">    }</span>
+<span class="fc" id="L98">        System.out.printf(CIRCLE_JSON + &quot;\n&quot;, c.getX(), c.getY(), c.getR());</span>
+<span class="fc" id="L99">    }</span>
 
     /**
      * 将矩形对象转换为JSON格式输出
@@ -110,56 +111,54 @@ import com.example.renderer.factory.Triangle;
      * @param r 要导出的矩形对象，不能为null
      * @throws NullPointerException 如果参数r为null
      * @throws IllegalArgumentException 如果宽度或高度为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitRectangle(Rectangle r) {
-<span class="pc bpc" id="L116" title="2 of 4 branches missed.">        if (r.getWidth() &lt; 0 || r.getHeight() &lt; 0) {</span>
-<span class="nc" id="L117">            throw new IllegalArgumentException(&quot;矩形的宽度和高度不能为负数&quot;);</span>
+<span class="pc bpc" id="L120" title="2 of 4 branches missed.">        if (r.getWidth() &lt; 0 || r.getHeight() &lt; 0) {</span>
+<span class="nc" id="L121">            throw new IllegalArgumentException(&quot;矩形的宽度和高度不能为负数&quot;);</span>
         }
-<span class="fc" id="L119">        System.out.printf(RECTANGLE_JSON + &quot;\n&quot;, r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
-<span class="fc" id="L120">    }</span>
+<span class="fc" id="L123">        System.out.printf(RECTANGLE_JSON + &quot;\n&quot;, r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
+<span class="fc" id="L124">    }</span>
 
     /**
      * 将椭圆对象转换为JSON格式输出
      * 
-     * @param e 要导出的椭圆对象，不能为null
-     * @throws NullPointerException 如果参数e为null
-     */
-    /**
-     * 将椭圆对象转换为JSON格式输出
-     * 格式: {&quot;type&quot;:&quot;ellipse&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;rx&quot;:xRadius, &quot;ry&quot;:yRadius}
+     * &lt;p&gt;输出格式: {&quot;type&quot;:&quot;ellipse&quot;, &quot;x&quot;:x, &quot;y&quot;:y, &quot;rx&quot;:xRadius, &quot;ry&quot;:yRadius}&lt;/p&gt;
      * 
-     * @param e 要导出的椭圆对象，不能为null
-     * @throws NullPointerException 如果参数e为null
-     * @throws IllegalArgumentException 如果宽度或高度为负数
+     * @param e 要导出的椭圆对象(不能为null)
+     * @throws NullPointerException 如果椭圆对象为null
+     * @throws IllegalArgumentException 如果椭圆宽度或高度为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitEllipse(Ellipse e) {
-<span class="pc bpc" id="L138" title="2 of 4 branches missed.">        if (e.getWidth() &lt; 0 || e.getHeight() &lt; 0) {</span>
-<span class="nc" id="L139">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度不能为负数&quot;);</span>
+<span class="pc bpc" id="L140" title="2 of 4 branches missed.">        if (e.getWidth() &lt; 0 || e.getHeight() &lt; 0) {</span>
+<span class="nc" id="L141">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度不能为负数&quot;);</span>
         }
-<span class="fc" id="L141">        System.out.printf(ELLIPSE_JSON + &quot;\n&quot;, </span>
-<span class="fc" id="L142">            e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);</span>
-<span class="fc" id="L143">    }</span>
+<span class="fc" id="L143">        System.out.printf(ELLIPSE_JSON + &quot;\n&quot;, </span>
+<span class="fc" id="L144">            e.getX(), e.getY(), e.getWidth()/2, e.getHeight()/2);</span>
+<span class="fc" id="L145">    }</span>
 
     /**
      * 将三角形对象转换为JSON格式输出
+     * &lt;p&gt;输出格式: {&quot;type&quot;:&quot;triangle&quot;, &quot;x1&quot;:x1, &quot;y1&quot;:y1, ..., &quot;y3&quot;:y3}&lt;/p&gt;
      * 
-     * @param t 要导出的三角形对象，不能为null
-     * @throws NullPointerException 如果参数t为null
-     */
-    /**
-     * 将三角形对象转换为JSON格式输出
-     * 格式: {&quot;type&quot;:&quot;triangle&quot;, &quot;x1&quot;:x1, &quot;y1&quot;:y1, ..., &quot;y3&quot;:y3}
+     * @param t 要导出的三角形对象(不能为null)
+     * @throws NullPointerException 如果三角形对象为null
      * 
-     * @param t 要导出的三角形对象，不能为null
-     * @throws NullPointerException 如果参数t为null
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitTriangle(Triangle t) {
-<span class="fc" id="L160">        System.out.printf(TRIANGLE_JSON + &quot;\n&quot;,</span>
-<span class="fc" id="L161">                t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
-<span class="fc" id="L162">    }</span>
+<span class="fc" id="L159">        System.out.printf(TRIANGLE_JSON + &quot;\n&quot;,</span>
+<span class="fc" id="L160">                t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
+<span class="fc" id="L161">    }</span>
 
 
 }

@@ -3,8 +3,6 @@ package com.example.renderer.factory;
 
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.visitor.ExportVisitor;
-import com.example.renderer.bridge.Renderer;
-import com.example.renderer.visitor.ExportVisitor;
 
 /**
  * Shape接口定义了所有图形对象的基本行为。
@@ -47,13 +45,8 @@ import com.example.renderer.visitor.ExportVisitor;
 public interface Shape {
     /**
      * 使用指定的渲染器绘制图形。
-     * 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。
-     *
-     * @param renderer 用于绘制图形的渲染器实现，不能为null
-     * @throws NullPointerException 如果renderer参数为null
-     */
-    /**
-     * 使用指定的渲染器绘制图形。
+     * 
+     * &lt;p&gt;具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。&lt;/p&gt;
      * 
      * &lt;p&gt;实现类应确保：
      * &lt;ul&gt;
@@ -62,82 +55,80 @@ public interface Shape {
      *   &lt;li&gt;处理渲染器抛出的异常&lt;/li&gt;
      * &lt;/ul&gt;
      * 
-     * @param renderer 用于绘制图形的渲染器实现
-     * @throws NullPointerException 如果renderer为null
-     */
-    /**
-     * 使用指定的渲染器绘制图形。
-     * 
      * @param renderer 用于绘制图形的渲染器实现(非null)
-     * @throws NullPointerException 如果renderer参数为null
-     * @throws IllegalArgumentException 如果图形参数不合法
-     * @throws IllegalStateException 如果图形状态不适合渲染
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
+     * @throws NullPointerException 如果渲染器参数为null
+     * @throws IllegalArgumentException 如果当前图形的参数不合法(如负尺寸)
+     * @throws IllegalStateException 如果图形处于不可渲染的状态
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
     /**
-     * 创建并返回当前图形的一个副本
-     */
-    /**
-     * 创建并返回当前图形的一个深拷贝
+     * 创建并返回当前图形的一个深拷贝。
+     * 
+     * &lt;p&gt;此方法返回图形对象的精确副本，包括所有内部状态数据。&lt;/p&gt;
+     * &lt;p&gt;对于包含引用类型字段的对象，需要递归实现深拷贝。&lt;/p&gt;
+     * 
+     * &lt;p&gt;实现要求：
+     * &lt;ul&gt;
+     *   &lt;li&gt;必须返回独立的新对象&lt;/li&gt;
+     *   &lt;li&gt;修改副本不应影响原对象&lt;/li&gt;
+     *   &lt;li&gt;字段值为引用类型时必须深拷贝&lt;/li&gt;
+     * &lt;/ul&gt;
+     * 
      * @return 图形的新副本
      * @throws CloneNotSupportedException 如果图形不支持克隆
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     Shape clone() throws CloneNotSupportedException;
     
     /**
      * 验证坐标位置是否有效
-     * @param x x坐标
-     * @param y y坐标
-     * @throws IllegalArgumentException 如果坐标为负数
+     * 
+     * &lt;p&gt;此方法用于检查图形坐标是否在合理范围内&lt;/p&gt;
+     * 
+     * @param x x坐标(单位为像素)
+     * @param y y坐标(单位为像素)
+     * @throws IllegalArgumentException 当坐标为负数时抛出
+     * 
+     * @author Aider+DeepSeek
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     default void validatePosition(int x, int y) {
-<span class="nc bnc" id="L97" title="All 4 branches missed.">        if (x &lt; 0 || y &lt; 0) {</span>
-<span class="nc" id="L98">            throw new IllegalArgumentException(&quot;坐标不能为负数&quot;);</span>
+<span class="nc bnc" id="L103" title="All 4 branches missed.">        if (x &lt; 0 || y &lt; 0) {</span>
+<span class="nc" id="L104">            throw new IllegalArgumentException(&quot;坐标不能为负数&quot;);</span>
         }
-<span class="nc" id="L100">    }</span>
+<span class="nc" id="L106">    }</span>
 
     /**
      * 移动图形的位置。
-     * 根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。
-     *
-     * @param dx X轴方向的移动距离（像素）
-     * @param dy Y轴方向的移动距离（像素）
-     */
-    /**
-     * 移动图形的位置。
+     * 
+     * &lt;p&gt;根据给定的偏移量调整图形的坐标位置，正数表示向右/下移动，负数表示向左/上移动。&lt;/p&gt;
      * 
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
+     * 
      * @author Aider+DeepSeek
-     * @since 2025-06-24
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void move(int dx, int dy);
 
     /**
-     * 接受访问者访问，实现访问者模式。
-     * 允许外部访问者对图形对象进行操作，而不需要修改图形类本身。
-     *
-     * @param visitor 用于处理图形的访问者对象，不能为null
-     * @throws NullPointerException 如果visitor参数为null
-     */
-    /**
-     * 接受访问者访问此图形对象。
+     * 接受访问者访问此图形对象，实现访问者模式。
+     * &lt;p&gt;允许访问者对图形对象进行操作而不修改图形本身。&lt;/p&gt;
      * 
      * @param visitor 用于处理图形的访问者对象(非null)
-     * @throws NullPointerException 如果visitor参数为null
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
-     */
-    /**
-     * 接受访问者访问此图形对象。
+     * @throws NullPointerException 如果visitor为null
      * 
-     * @param visitor 用于处理图形的访问者对象(非null)
-     * @throws NullPointerException 如果visitor参数为null
      * @author Aider+DeepSeek
-     * @since 2025-06-24
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     void accept(ExportVisitor visitor);
 }

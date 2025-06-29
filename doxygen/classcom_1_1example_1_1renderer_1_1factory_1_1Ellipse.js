@@ -9,5 +9,9 @@ var classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse =
     [ "getX", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a5856f1f689143235929a233715984015", null ],
     [ "getY", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a4d9e2941518bae18c76c125b5fcc8020", null ],
     [ "move", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a808ff21c247338648adfca587956e352", null ],
-    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4", null ]
+    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a05bd1b4ddbb8249021da2bbd6f5f0fb4", null ],
+    [ "setHeight", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a9c6e1cce0013c0c18d19d8251aa86118", null ],
+    [ "setWidth", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a7277db2f2dea90d093d0de197e2819ff", null ],
+    [ "setX", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a7ef24a03a98328f6f2e453609aac6661", null ],
+    [ "setY", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a765cc29068e7e94d572914ae87dce8fe", null ]
 ];

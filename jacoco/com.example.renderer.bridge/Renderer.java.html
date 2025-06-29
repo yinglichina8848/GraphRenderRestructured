@@ -1,42 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Renderer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GraphRenderSystem</a> &gt; <a href="index.source.html" class="el_package">com.example.renderer.bridge</a> &gt; <span class="el_source">Renderer.java</span></div><h1>Renderer.java</h1><pre class="source lang-java linenums">package com.example.renderer.bridge;
 
 /**
- * 增强型渲染器接口，扩展基础渲染能力。
+ * 增强渲染器接口，扩展基础渲染能力。
  * 
  * &lt;p&gt;架构演进记录：
  * &lt;ul&gt;
  *   &lt;li&gt;v1.0 - 基础绘制方法&lt;/li&gt;
  *   &lt;li&gt;v1.1 - 分离为RendererInterface和Renderer&lt;/li&gt;
  *   &lt;li&gt;v1.2 - 增加样式设置和上下文访问&lt;/li&gt;
+ *   &lt;li&gt;v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理、渲染上下文访问和帧控制&lt;/li&gt;
  * &lt;/ul&gt;
- * 
- * @see RendererInterface 基础绘制接口
- * @see RendererFactory 渲染器创建工厂
- */
-/**
- * 增强渲染器接口，扩展基础渲染能力。
  * 
  * &lt;p&gt;架构角色：桥接模式中的抽象部分，将图形绘制与具体实现解耦。
  * 
  * &lt;p&gt;生命周期：
- * 1. 通过RendererFactory创建实例
- * 2. 配置样式(setStyle)
- * 3. 执行绘制操作(drawXxx)
- * 4. 可通过getContext获取底层实现对象
+ * &lt;ol&gt;
+ *   &lt;li&gt;通过RendererFactory创建实例&lt;/li&gt;
+ *   &lt;li&gt;配置样式(setStyle)&lt;/li&gt;
+ *   &lt;li&gt;执行绘制操作(drawXxx)&lt;/li&gt;
+ *   &lt;li&gt;可通过getContext获取底层实现对象&lt;/li&gt;
+ * &lt;/ol&gt;
  * 
+ * @author Aider+SillconFlow-Deepseek-R1
+ * @since 2025-06-29
  * @see RendererFactory 创建实例的工厂类
- */
-/**
- * 增强渲染器接口，扩展基础渲染能力。
- * 
- * &lt;p&gt;合并RendererInterface功能，避免接口分散。
- * 现在包含：
- * &lt;ul&gt;
- *   &lt;li&gt;基础绘制方法(drawXxx)&lt;/li&gt;
- *   &lt;li&gt;样式管理(setStyle)&lt;/li&gt; 
- *   &lt;li&gt;渲染上下文访问(getContext)&lt;/li&gt;
- *   &lt;li&gt;帧控制(beginFrame/endFrame)&lt;/li&gt;
- * &lt;/ul&gt;
  */
 public interface Renderer {
     /**
@@ -57,12 +44,12 @@ public interface Renderer {
     /**
      * 开始新帧/页的绘制
      */
-<span class="nc" id="L60">    default void beginFrame() {}</span>
+<span class="nc" id="L47">    default void beginFrame() {}</span>
     
     /**
      * 结束当前帧/页的绘制
      */
-<span class="nc" id="L65">    default void endFrame() {}</span>
+<span class="nc" id="L52">    default void endFrame() {}</span>
     /**
      * 绘制圆形
      * @param x 圆心x坐标
