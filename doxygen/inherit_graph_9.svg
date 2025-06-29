@@ -11,10 +11,10 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html" target="_top" xlink:title=" ">
+<g id="a_Node000000"><a xlink:href="classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommandTest.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="182,-30 0,-30 0,0 182,0 182,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">com.example.renderer.command.</text>
-<text text-anchor="middle" x="91" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">UndoManager</text>
+<text text-anchor="middle" x="91" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">DeleteShapeCommandTest</text>
 </a>
 </g>
 </g>

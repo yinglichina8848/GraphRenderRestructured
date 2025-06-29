@@ -195,7 +195,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>开始新帧/页的绘制 </p>
+<p>开始新帧/页的绘制</p>
+<p>此方法应在序列绘制的开始处调用，用于初始化帧状态</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a99434071c08c8cbc7613e25a34098008">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -251,10 +254,12 @@ Public Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 </td></tr>
-    <tr><td class="paramname">IllegalStateException</td><td>如果渲染器未正确初始化 </td></tr>
+    <tr><td class="paramname">IllegalStateException</td><td>如果渲染器未正确初始化</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a9878c979d01dbfe7d4b9cd38a869a735">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -316,10 +321,12 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a4c88cee0908a55d398716a257352a71d">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -381,10 +388,12 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a544db73ca5c1778c124d3ee53b99b4b6">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -493,7 +502,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>结束当前帧/页的绘制 </p>
+<p>结束当前帧/页的绘制</p>
+<p>此方法应在序列绘制的末尾调用，用于清理帧资源</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a5832b5aeb04c85f6d240b803f29abe4a">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -521,7 +533,11 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>获取当前渲染上下文 </p><dl class="section return"><dt>Returns</dt><dd>底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等) </dd></dl>
+<p>获取当前渲染上下文</p>
+<p>此方法返回渲染器使用的底层实现对象</p>
+<dl class="section return"><dt>Returns</dt><dd>底层实现对象 (Swing返回Graphics2D，SVG返回StringBuilder等) </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a13d904a200fc06bda2cb5e7ee4fd2c27">com.example.renderer.bridge.Renderer</a>.</p>
 
@@ -599,7 +615,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>设置渲染样式 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>设置渲染样式</p>
+<p>此方法用于配置图形绘制时的线条、填充和线宽属性</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stroke</td><td>线条颜色(支持CSS颜色格式) </td></tr>
     <tr><td class="paramname">fill</td><td>填充颜色(支持CSS颜色格式) </td></tr>
@@ -613,6 +631,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implements <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html#a892853e7d862f1f7179d61f59b7786bf">com.example.renderer.bridge.Renderer</a>.</p>
 

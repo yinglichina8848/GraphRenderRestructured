@@ -170,7 +170,10 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
   </tr>
 </table>
 </div><div class="memdoc">
-<p>开始新帧/页的绘制 </p>
+<p>开始新帧/页的绘制</p>
+<p>此方法应在序列绘制的开始处调用，用于初始化帧状态</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#ab72f38b814dca8c7d69dc3cd64d3e583">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#aa938e2094a1e5982a06842a48cb3eb60">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a592d8e9e511cd202b74d804423e097ae">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -218,10 +221,12 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>如果半径不合法 </td></tr>
-    <tr><td class="paramname">IllegalStateException</td><td>如果渲染器未正确初始化 </td></tr>
+    <tr><td class="paramname">IllegalStateException</td><td>如果渲染器未正确初始化</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a63521a8368a254dd0e8ff2e66f4a0df1">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a3790eaa1dd17a9de4ddd3c4a641a6ac9">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a4410ace219790bbc264545d4c6c6e023">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -275,10 +280,12 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a6932496635e361496aee26b097c6b702">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a87ca2b5f00e776b5589f1e7ba09e81b6">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a175004a33b99e9750dc709d5f62e3d54">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -332,10 +339,12 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法 </td></tr>
+    <tr><td class="paramname">IllegalArgumentException</td><td>如果宽度或高度不合法</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a187492735c8931f950db24ddd875639a">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#ad780e42d7a49367c6825796432b21210">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a29e2feaeed028fae38c00eb1312663ab">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -397,10 +406,12 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
     <tr><td class="paramname">x2</td><td>第二个顶点x坐标 </td></tr>
     <tr><td class="paramname">y2</td><td>第二个顶点y坐标 </td></tr>
     <tr><td class="paramname">x3</td><td>第三个顶点x坐标 </td></tr>
-    <tr><td class="paramname">y3</td><td>第三个顶点y坐标 </td></tr>
+    <tr><td class="paramname">y3</td><td>第三个顶点y坐标</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a818836e2da0eb4b661447796ec587249">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#aa0510e0bf10c8d982f4789f2774f3154">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a5babec6fc97e4c68337516886432dd3b">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -428,7 +439,10 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
   </tr>
 </table>
 </div><div class="memdoc">
-<p>结束当前帧/页的绘制 </p>
+<p>结束当前帧/页的绘制</p>
+<p>此方法应在序列绘制的末尾调用，用于清理帧资源</p>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#abe4fb1113c25ced6b8619ed82c0dee36">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a257f13f82002b622a8d7f258aefb6b35">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#a0650c9efcaff6187dce014e5597918dc">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -448,7 +462,11 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
         </tr>
       </table>
 </div><div class="memdoc">
-<p>获取当前渲染上下文 </p><dl class="section return"><dt>Returns</dt><dd>底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等) </dd></dl>
+<p>获取当前渲染上下文</p>
+<p>此方法返回渲染器使用的底层实现对象</p>
+<dl class="section return"><dt>Returns</dt><dd>底层实现对象 (Swing返回Graphics2D，SVG返回StringBuilder等) </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#ae2025c2512c87a15935f12edbe8e651e">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#aa448cecfa91964d9a6d0a5db95f80b71">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#ad5ca3a12a986ff0c6ca2e05f98d869a1">com.example.renderer.bridge.TestRenderer</a>.</p>
 
@@ -485,7 +503,9 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
         </tr>
       </table>
 </div><div class="memdoc">
-<p>设置渲染样式 </p><dl class="params"><dt>Parameters</dt><dd>
+<p>设置渲染样式</p>
+<p>此方法用于配置图形绘制时的线条、填充和线宽属性</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stroke</td><td>线条颜色(支持CSS颜色格式) </td></tr>
     <tr><td class="paramname">fill</td><td>填充颜色(支持CSS颜色格式) </td></tr>
@@ -499,6 +519,8 @@ v1.3 - 合并RendererInterface功能，包含基础绘制方法、样式管理�
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Aider+SillconFlow-Deepseek-R1 </dd></dl>
+<dl class="section since"><dt>Since</dt><dd>2025-06-29 </dd></dl>
 
 <p>Implemented in <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRenderer.html#a5e5b346b80110f750729d5b1172d9845">com.example.renderer.bridge.SVGRenderer</a>, <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html#a441ae335d373437e9bb6eb4edb773193">com.example.renderer.bridge.SwingRenderer</a>, and <a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html#addb78968e494f9ba3ae7960ccf8d4185">com.example.renderer.bridge.TestRenderer</a>.</p>
 

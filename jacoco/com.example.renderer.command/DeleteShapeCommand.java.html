@@ -10,7 +10,7 @@ import java.util.Objects;
 public class DeleteShapeCommand implements Command {
     private final List&lt;Shape&gt; shapes;
     private final Shape shape;
-<span class="nc" id="L13">    private int index = -1;</span>
+<span class="fc" id="L13">    private int index = -1;</span>
 
     /**
      * 创建删除图形命令实例
@@ -19,57 +19,48 @@ public class DeleteShapeCommand implements Command {
      * @param shape 要删除的图形(不能为null)
      * @throws NullPointerException 如果shapes或shape为null
      */
-<span class="nc" id="L22">    public DeleteShapeCommand(List&lt;Shape&gt; shapes, Shape shape) {</span>
-<span class="nc" id="L23">        Objects.requireNonNull(shapes, &quot;图形列表不能为null&quot;);</span>
-<span class="nc" id="L24">        Objects.requireNonNull(shape, &quot;要删除的图形不能为null&quot;);</span>
-<span class="nc" id="L25">        this.shapes = shapes;</span>
-<span class="nc" id="L26">        this.shape = shape;</span>
-<span class="nc" id="L27">    }</span>
+<span class="fc" id="L22">    public DeleteShapeCommand(List&lt;Shape&gt; shapes, Shape shape) {</span>
+<span class="fc" id="L23">        Objects.requireNonNull(shapes, &quot;图形列表不能为null&quot;);</span>
+<span class="fc" id="L24">        Objects.requireNonNull(shape, &quot;要删除的图形不能为null&quot;);</span>
+<span class="fc" id="L25">        this.shapes = shapes;</span>
+<span class="fc" id="L26">        this.shape = shape;</span>
+<span class="fc" id="L27">    }</span>
 
     @Override
     public void execute() {
-<span class="nc bnc" id="L31" title="All 2 branches missed.">        if (shapes == null) {</span>
-<span class="nc" id="L32">            throw new IllegalStateException(&quot;图形列表未初始化&quot;);</span>
+<span class="fc" id="L31">        index = shapes.indexOf(shape);</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (index != -1) {</span>
+<span class="fc" id="L33">            shapes.remove(index);</span>
+        } else {
+<span class="fc" id="L35">            System.out.println(&quot;[WARN] 未找到要删除的图形&quot;);</span>
         }
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (shape == null) {</span>
-<span class="nc" id="L35">            throw new IllegalArgumentException(&quot;要删除的图形不能为null&quot;);</span>
-        }
-        
-<span class="nc" id="L38">        index = shapes.indexOf(shape);</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        if (index != -1) {</span>
-<span class="nc" id="L40">            Shape removed = shapes.remove(index);</span>
-<span class="nc" id="L41">            System.out.printf(&quot;[INFO] 删除图形: %s (索引: %d)\n&quot;, </span>
-<span class="nc" id="L42">                removed.getClass().getSimpleName(), index);</span>
-<span class="nc" id="L43">        } else {</span>
-<span class="nc" id="L44">            System.out.println(&quot;[WARN] 未找到要删除的图形&quot;);</span>
-        }
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L37">    }</span>
 
     @Override
     public void undo() {
-<span class="nc bnc" id="L50" title="All 2 branches missed.">        if (index != -1) {</span>
-<span class="nc" id="L51">            shapes.add(index, shape);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (index != -1) {</span>
+<span class="fc" id="L42">            shapes.add(index, shape);</span>
         }
-<span class="nc" id="L53">    }</span>
+<span class="fc" id="L44">    }</span>
 
     @Override
     public void redo() {
-<span class="nc" id="L57">        execute();</span>
-<span class="nc" id="L58">    }</span>
+<span class="fc" id="L48">        execute();</span>
+<span class="fc" id="L49">    }</span>
 
     @Override
     public boolean canExecute() {
-<span class="nc bnc" id="L62" title="All 6 branches missed.">        return shapes != null &amp;&amp; shape != null &amp;&amp; shapes.contains(shape);</span>
+<span class="fc" id="L53">        return shapes.contains(shape);</span>
     }
 
     @Override
     public boolean canUndo() {
-<span class="nc bnc" id="L67" title="All 4 branches missed.">        return index != -1 &amp;&amp; !shapes.contains(shape);</span>
+<span class="pc bpc" id="L58" title="1 of 4 branches missed.">        return index != -1 &amp;&amp; !shapes.contains(shape);</span>
     }
 
     @Override
     public boolean canRedo() {
-<span class="nc bnc" id="L72" title="All 4 branches missed.">        return index != -1 &amp;&amp; !shapes.contains(shape);</span>
+<span class="fc bfc" id="L63" title="All 4 branches covered.">        return index != -1 &amp;&amp; shapes.contains(shape);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

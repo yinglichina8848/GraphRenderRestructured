@@ -5,21 +5,21 @@ import com.example.renderer.factory.*;
 /**
  * XML导出访问者实现类
  */
-<span class="nc" id="L8">public class XMLExportVisitor implements ExportVisitor {</span>
+<span class="fc" id="L8">public class XMLExportVisitor implements ExportVisitor {</span>
     @Override
     public void visitCircle(Circle c) {
-<span class="nc bnc" id="L11" title="All 2 branches missed.">        if (c.getR() &lt;= 0) {</span>
-<span class="nc" id="L12">            throw new IllegalArgumentException(&quot;圆的半径必须为正数&quot;);</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (c.getR() &lt;= 0) {</span>
+<span class="fc" id="L12">            throw new IllegalArgumentException(&quot;圆的半径必须为正数&quot;);</span>
         }
-<span class="nc" id="L14">        System.out.printf(</span>
+<span class="fc" id="L14">        System.out.printf(</span>
             &quot;&lt;circle&gt;\n&quot; +
             &quot;  &lt;x&gt;%d&lt;/x&gt;\n&quot; +   // 圆心X坐标(像素)
             &quot;  &lt;y&gt;%d&lt;/y&gt;\n&quot; +   // 圆心Y坐标(像素)
             &quot;  &lt;radius&gt;%d&lt;/radius&gt;\n&quot; +  // 圆半径(像素)
             &quot;  &lt;area&gt;%.2f&lt;/area&gt;\n&quot; +    // 圆面积(平方像素)
             &quot;&lt;/circle&gt;\n&quot;,
-<span class="nc" id="L21">            c.getX(), c.getY(), c.getR(), Math.PI * c.getR() * c.getR());</span>
-<span class="nc" id="L22">    }</span>
+<span class="fc" id="L21">            c.getX(), c.getY(), c.getR(), Math.PI * c.getR() * c.getR());</span>
+<span class="fc" id="L22">    }</span>
 
     /**
      * 将矩形对象转换为XML格式输出
@@ -32,13 +32,13 @@ import com.example.renderer.factory.*;
      */
     @Override
     public void visitRectangle(Rectangle r) {
-<span class="nc bnc" id="L35" title="All 4 branches missed.">        if (r.getWidth() &lt; 0 || r.getHeight() &lt; 0) {</span>
-<span class="nc" id="L36">            throw new IllegalArgumentException(&quot;矩形的宽度和高度不能为负数&quot;);</span>
+<span class="pc bpc" id="L35" title="1 of 4 branches missed.">        if (r.getWidth() &lt; 0 || r.getHeight() &lt; 0) {</span>
+<span class="fc" id="L36">            throw new IllegalArgumentException(&quot;矩形的宽度和高度不能为负数&quot;);</span>
         }
-<span class="nc" id="L38">        System.out.printf(</span>
+<span class="fc" id="L38">        System.out.printf(</span>
             &quot;&lt;rectangle x=\&quot;%d\&quot; y=\&quot;%d\&quot; width=\&quot;%d\&quot; height=\&quot;%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L40">            r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
-<span class="nc" id="L41">    }</span>
+<span class="fc" id="L40">            r.getX(), r.getY(), r.getWidth(), r.getHeight());</span>
+<span class="fc" id="L41">    }</span>
 
     /**
      * 将椭圆对象转换为XML格式输出
@@ -51,16 +51,16 @@ import com.example.renderer.factory.*;
      */
     @Override
     public void visitEllipse(Ellipse e) {
-<span class="nc bnc" id="L54" title="All 4 branches missed.">        if (e.getWidth() &lt; 0 || e.getHeight() &lt; 0) {</span>
-<span class="nc" id="L55">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度不能为负数&quot;);</span>
+<span class="pc bpc" id="L54" title="1 of 4 branches missed.">        if (e.getWidth() &lt; 0 || e.getHeight() &lt; 0) {</span>
+<span class="fc" id="L55">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度不能为负数&quot;);</span>
         }
-<span class="nc" id="L57">        System.out.printf(</span>
+<span class="fc" id="L57">        System.out.printf(</span>
             &quot;&lt;ellipse cx=\&quot;%d\&quot; cy=\&quot;%d\&quot; rx=\&quot;%d\&quot; ry=\&quot;%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L59">            e.getX() + e.getWidth()/2, </span>
-<span class="nc" id="L60">            e.getY() + e.getHeight()/2,</span>
-<span class="nc" id="L61">            e.getWidth()/2,</span>
-<span class="nc" id="L62">            e.getHeight()/2);</span>
-<span class="nc" id="L63">    }</span>
+<span class="fc" id="L59">            e.getX() + e.getWidth()/2, </span>
+<span class="fc" id="L60">            e.getY() + e.getHeight()/2,</span>
+<span class="fc" id="L61">            e.getWidth()/2,</span>
+<span class="fc" id="L62">            e.getHeight()/2);</span>
+<span class="fc" id="L63">    }</span>
 
     /**
      * 将三角形对象转换为XML格式输出
@@ -72,9 +72,9 @@ import com.example.renderer.factory.*;
      */
     @Override
     public void visitTriangle(Triangle t) {
-<span class="nc" id="L75">        System.out.printf(</span>
+<span class="fc" id="L75">        System.out.printf(</span>
             &quot;&lt;polygon points=\&quot;%d,%d %d,%d %d,%d\&quot;/&gt;\n&quot;,
-<span class="nc" id="L77">            t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
-<span class="nc" id="L78">    }</span>
+<span class="fc" id="L77">            t.getX1(), t.getY1(), t.getX2(), t.getY2(), t.getX3(), t.getY3());</span>
+<span class="fc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

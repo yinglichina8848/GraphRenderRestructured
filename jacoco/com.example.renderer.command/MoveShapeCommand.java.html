@@ -26,6 +26,8 @@ public class MoveShapeCommand implements Command {
     private final Shape shape;
     private final int dx;
     private final int dy;
+<span class="fc" id="L29">    private boolean executed = false;</span>
+<span class="fc" id="L30">    private boolean undone = false;</span>
 
     /**
      * 创建移动图形命令实例。
@@ -35,11 +37,11 @@ public class MoveShapeCommand implements Command {
      * @param dy Y轴移动距离
      * @throws NullPointerException 如果shape参数为null
      */
-<span class="fc" id="L38">    public MoveShapeCommand(Shape shape, int dx, int dy) {</span>
-<span class="fc" id="L39">        this.shape = Objects.requireNonNull(shape, &quot;Shape cannot be null&quot;);</span>
-<span class="fc" id="L40">        this.dx = dx;</span>
-<span class="fc" id="L41">        this.dy = dy;</span>
-<span class="fc" id="L42">    }</span>
+<span class="fc" id="L40">    public MoveShapeCommand(Shape shape, int dx, int dy) {</span>
+<span class="fc" id="L41">        this.shape = Objects.requireNonNull(shape, &quot;Shape cannot be null&quot;);</span>
+<span class="fc" id="L42">        this.dx = dx;</span>
+<span class="fc" id="L43">        this.dy = dy;</span>
+<span class="fc" id="L44">    }</span>
 
     /**
      * 执行移动命令。
@@ -48,8 +50,9 @@ public class MoveShapeCommand implements Command {
      */
     @Override
     public void execute() {
-<span class="fc" id="L51">        shape.move(dx, dy);</span>
-<span class="fc" id="L52">    }</span>
+<span class="fc" id="L53">        shape.move(dx, dy);</span>
+<span class="fc" id="L54">        executed = true;</span>
+<span class="fc" id="L55">    }</span>
 
     /**
      * 撤销移动命令。
@@ -58,27 +61,35 @@ public class MoveShapeCommand implements Command {
      */
     @Override
     public void undo() {
-<span class="fc" id="L61">        shape.move(-dx, -dy);</span>
-<span class="fc" id="L62">    }</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        if (!canUndo()) {</span>
+<span class="fc" id="L65">            throw new IllegalStateException(&quot;无法撤销命令&quot;);</span>
+        }
+<span class="fc" id="L67">        shape.move(-dx, -dy);</span>
+<span class="fc" id="L68">        undone = true;</span>
+<span class="fc" id="L69">    }</span>
 
     @Override
     public void redo() {
-<span class="nc" id="L66">        execute();</span>
-<span class="nc" id="L67">    }</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">        if (!canRedo()) {</span>
+<span class="fc" id="L74">            throw new IllegalStateException(&quot;无法重做命令&quot;);</span>
+        }
+<span class="fc" id="L76">        shape.move(dx, dy);</span>
+<span class="fc" id="L77">        undone = false;</span>
+<span class="fc" id="L78">    }</span>
 
     @Override
     public boolean canExecute() {
-<span class="nc bnc" id="L71" title="All 2 branches missed.">        return shape != null;</span>
+<span class="pc bpc" id="L82" title="1 of 2 branches missed.">        return shape != null;</span>
     }
 
     @Override
     public boolean canUndo() {
-<span class="nc" id="L76">        return true;</span>
+<span class="fc bfc" id="L87" title="All 4 branches covered.">        return executed &amp;&amp; !undone;</span>
     }
 
     @Override
     public boolean canRedo() {
-<span class="nc" id="L81">        return true;</span>
+<span class="fc bfc" id="L92" title="All 4 branches covered.">        return executed &amp;&amp; undone;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -32,21 +32,24 @@ import java.util.function.Supplier;
  *   &lt;li&gt;legacy - LegacyRendererAdapter&lt;/li&gt;
  * &lt;/ul&gt;
  */
-<span class="nc" id="L35">public class RendererFactory {</span>
-<span class="fc" id="L36">    private static final ConcurrentMap&lt;String, Supplier&lt;Renderer&gt;&gt; renderers = new ConcurrentHashMap&lt;&gt;();</span>
-<span class="fc" id="L37">    private static final ReadWriteLock lock = new ReentrantReadWriteLock();</span>
+import java.util.Set;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.function.Supplier;
+
+<span class="nc" id="L42">public class RendererFactory {</span>
+<span class="fc" id="L43">    private static final ConcurrentMap&lt;String, Supplier&lt;Renderer&gt;&gt; renderers = new ConcurrentHashMap&lt;&gt;();</span>
+<span class="fc" id="L44">    private static final Set&lt;String&gt; builtInModes = Set.of(&quot;swing&quot;, &quot;svg&quot;, &quot;test&quot;, &quot;legacy&quot;);</span>
     
     static {
         // 内置渲染器注册
-<span class="fc" id="L41">        registerInternal(&quot;swing&quot;, SwingRenderer::new);</span>
-<span class="fc" id="L42">        registerInternal(&quot;svg&quot;, SVGRenderer::new);</span>
-<span class="fc" id="L43">        registerInternal(&quot;test&quot;, TestRenderer::new);</span>
-<span class="pc" id="L44">        registerInternal(&quot;legacy&quot;, () -&gt; new LegacyRendererAdapter(new com.example.renderer.adapter.LegacyRendererImpl()));</span>
-<span class="fc" id="L45">    }</span>
-    
-    private static void registerInternal(String mode, Supplier&lt;Renderer&gt; supplier) {
-<span class="fc" id="L48">        renderers.put(mode, supplier);</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L48">        register(&quot;swing&quot;, SwingRenderer::new);</span>
+<span class="fc" id="L49">        register(&quot;svg&quot;, SVGRenderer::new);</span>
+<span class="fc" id="L50">        register(&quot;test&quot;, TestRenderer::new);</span>
+<span class="pc" id="L51">        register(&quot;legacy&quot;, () -&gt; new LegacyRendererAdapter(new com.example.renderer.adapter.LegacyRendererImpl()));</span>
+<span class="fc" id="L52">    }</span>
     
     /**
      * 注册一个新的渲染器实现
@@ -55,8 +58,19 @@ import java.util.function.Supplier;
      * @param supplier 渲染器供应商
      */
     public static void register(String mode, Supplier&lt;Renderer&gt; supplier) {
-<span class="nc" id="L58">        renderers.put(mode, supplier);</span>
-<span class="nc" id="L59">    }</span>
+<span class="fc" id="L61">        renderers.put(mode, supplier);</span>
+<span class="fc" id="L62">    }</span>
+    
+    /**
+     * 清除所有自定义注册的渲染器
+     * &lt;p&gt;仅用于测试&lt;/p&gt;
+     */
+    public static void clearCustomRegistrations() {
+        // 保存内置渲染器
+<span class="fc" id="L70">        Set&lt;String&gt; builtInKeys = new HashSet&lt;&gt;(builtInModes);</span>
+        // 移除所有非内置的条目
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        renderers.keySet().removeIf(key -&gt; !builtInKeys.contains(key));</span>
+<span class="fc" id="L73">    }</span>
     
     /**
      * 创建指定模式的渲染器实例
@@ -67,17 +81,17 @@ import java.util.function.Supplier;
      */
     public static Renderer create(String mode) throws RendererCreationException {
         try {
-<span class="nc" id="L70">            Supplier&lt;Renderer&gt; supplier = renderers.get(mode);</span>
-<span class="nc bnc" id="L71" title="All 2 branches missed.">            if (supplier == null) {</span>
-<span class="nc" id="L72">                throw new IllegalArgumentException(&quot;Unsupported render mode: &quot; + mode);</span>
+<span class="fc" id="L84">            Supplier&lt;Renderer&gt; supplier = renderers.get(mode);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">            if (supplier == null) {</span>
+<span class="fc" id="L86">                throw new IllegalArgumentException(&quot;Unsupported render mode: &quot; + mode);</span>
             }
-<span class="nc" id="L74">            Renderer renderer = supplier.get();</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">            if (renderer == null) {</span>
-<span class="nc" id="L76">                throw new RendererCreationException(&quot;Renderer creation failed for mode: &quot; + mode);</span>
+<span class="fc" id="L88">            Renderer renderer = supplier.get();</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">            if (renderer == null) {</span>
+<span class="fc" id="L90">                throw new RendererCreationException(&quot;Renderer creation failed for mode: &quot; + mode);</span>
             }
-<span class="nc" id="L78">            return renderer;</span>
-<span class="nc" id="L79">        } catch (Exception e) {</span>
-<span class="nc" id="L80">            throw new RendererCreationException(&quot;Failed to create renderer&quot;, e);</span>
+<span class="fc" id="L92">            return renderer;</span>
+<span class="fc" id="L93">        } catch (Exception e) {</span>
+<span class="fc" id="L94">            throw new RendererCreationException(&quot;Failed to create renderer&quot;, e);</span>
         }
     }
     
@@ -87,7 +101,7 @@ import java.util.function.Supplier;
      * @return 支持的渲染模式集合
      */
     public static Set&lt;String&gt; getSupportedModes() {
-<span class="fc" id="L90">        return Collections.unmodifiableSet(renderers.keySet());</span>
+<span class="fc" id="L104">        return Collections.unmodifiableSet(renderers.keySet());</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -37,26 +37,26 @@ import java.util.Objects;
 /**
  * 撤销管理器，管理命令的撤销和重做操作
  */
-<span class="nc" id="L40">public class UndoManager {</span>
-<span class="nc" id="L41">    private final Stack&lt;Command&gt; undoStack = new Stack&lt;&gt;();</span>
-<span class="nc" id="L42">    private final Stack&lt;Command&gt; redoStack = new Stack&lt;&gt;();</span>
-<span class="nc" id="L43">    private int maxHistorySize = 100; // 默认最大历史记录数</span>
+<span class="fc" id="L40">public class UndoManager {</span>
+<span class="fc" id="L41">    private final Stack&lt;Command&gt; undoStack = new Stack&lt;&gt;();</span>
+<span class="fc" id="L42">    private final Stack&lt;Command&gt; redoStack = new Stack&lt;&gt;();</span>
+<span class="fc" id="L43">    private int maxHistorySize = 100; // 默认最大历史记录数</span>
 
     /**
      * 设置最大历史记录数
      * @param size 最大历史记录数
      */
     public void setMaxHistorySize(int size) {
-<span class="nc" id="L50">        this.maxHistorySize = size;</span>
-<span class="nc" id="L51">    }</span>
+<span class="fc" id="L50">        this.maxHistorySize = size;</span>
+<span class="fc" id="L51">    }</span>
 
     /**
      * 清除所有历史记录
      */
     public void clearHistory() {
-<span class="nc" id="L57">        undoStack.clear();</span>
-<span class="nc" id="L58">        redoStack.clear();</span>
-<span class="nc" id="L59">    }</span>
+<span class="fc" id="L57">        undoStack.clear();</span>
+<span class="fc" id="L58">        redoStack.clear();</span>
+<span class="fc" id="L59">    }</span>
 
     /**
      * 执行命令并保存到撤销栈。
@@ -74,14 +74,14 @@ import java.util.Objects;
      * @since 2025-06-24
      */
     public void executeCommand(Command cmd) {
-<span class="nc" id="L77">        Objects.requireNonNull(cmd, &quot;Command cannot be null&quot;);</span>
-<span class="nc" id="L78">        cmd.execute();</span>
-<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (undoStack.size() &gt;= maxHistorySize) {</span>
-<span class="nc" id="L80">            undoStack.remove(0); // 移除最旧的命令</span>
+<span class="fc" id="L77">        Objects.requireNonNull(cmd, &quot;Command cannot be null&quot;);</span>
+<span class="fc" id="L78">        cmd.execute();</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (undoStack.size() &gt;= maxHistorySize) {</span>
+<span class="fc" id="L80">            undoStack.remove(0); // 移除最旧的命令</span>
         }
-<span class="nc" id="L82">        undoStack.push(cmd);</span>
-<span class="nc" id="L83">        redoStack.clear();</span>
-<span class="nc" id="L84">    }</span>
+<span class="fc" id="L82">        undoStack.push(cmd);</span>
+<span class="fc" id="L83">        redoStack.clear();</span>
+<span class="fc" id="L84">    }</span>
 
     /**
      * 撤销最近执行的命令。
@@ -90,12 +90,12 @@ import java.util.Objects;
      * @since 2025-06-24
      */
     public void undo() {
-<span class="nc bnc" id="L93" title="All 2 branches missed.">        if (!undoStack.isEmpty()) {</span>
-<span class="nc" id="L94">            Command cmd = undoStack.pop();</span>
-<span class="nc" id="L95">            cmd.undo();</span>
-<span class="nc" id="L96">            redoStack.push(cmd);</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">        if (!undoStack.isEmpty()) {</span>
+<span class="fc" id="L94">            Command cmd = undoStack.pop();</span>
+<span class="fc" id="L95">            cmd.undo();</span>
+<span class="fc" id="L96">            redoStack.push(cmd);</span>
         }
-<span class="nc" id="L98">    }</span>
+<span class="fc" id="L98">    }</span>
 
     /**
      * 重做最近撤销的命令。
@@ -104,12 +104,12 @@ import java.util.Objects;
      * @since 2025-06-24
      */
     public void redo() {
-<span class="nc bnc" id="L107" title="All 2 branches missed.">        if (!redoStack.isEmpty()) {</span>
-<span class="nc" id="L108">            Command cmd = redoStack.pop();</span>
-<span class="nc" id="L109">            cmd.execute();</span>
-<span class="nc" id="L110">            undoStack.push(cmd);</span>
+<span class="fc bfc" id="L107" title="All 2 branches covered.">        if (!redoStack.isEmpty()) {</span>
+<span class="fc" id="L108">            Command cmd = redoStack.pop();</span>
+<span class="fc" id="L109">            cmd.execute();</span>
+<span class="fc" id="L110">            undoStack.push(cmd);</span>
         }
-<span class="nc" id="L112">    }</span>
+<span class="fc" id="L112">    }</span>
 
     /**
      * 检查是否可以执行撤销操作。
@@ -119,7 +119,7 @@ import java.util.Objects;
      * @since 2025-06-24
      */
     public boolean canUndo() {
-<span class="nc bnc" id="L122" title="All 2 branches missed.">        return !undoStack.isEmpty();</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">        return !undoStack.isEmpty();</span>
     }
 
     /**
@@ -130,7 +130,7 @@ import java.util.Objects;
      * @since 2025-06-24
      */
     public boolean canRedo() {
-<span class="nc bnc" id="L133" title="All 2 branches missed.">        return !redoStack.isEmpty();</span>
+<span class="fc bfc" id="L133" title="All 2 branches covered.">        return !redoStack.isEmpty();</span>
     }
 }
 

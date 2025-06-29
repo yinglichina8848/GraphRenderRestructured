@@ -68,8 +68,7 @@ public interface Shape {
     /**
      * 创建并返回当前图形的一个深拷贝。
      * 
-     * &lt;p&gt;此方法返回图形对象的精确副本，包括所有内部状态数据。&lt;/p&gt;
-     * &lt;p&gt;对于包含引用类型字段的对象，需要递归实现深拷贝。&lt;/p&gt;
+     * &lt;p&gt;此方法返回图形对象的精确副本，包括所有内部状态数据。对于包含引用类型字段的对象，需要递归实现深拷贝。&lt;/p&gt;
      * 
      * &lt;p&gt;实现要求：
      * &lt;ul&gt;
@@ -81,7 +80,7 @@ public interface Shape {
      * @return 图形的新副本
      * @throws CloneNotSupportedException 如果图形不支持克隆
      * 
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     Shape clone() throws CloneNotSupportedException;
@@ -95,15 +94,15 @@ public interface Shape {
      * @param y y坐标(单位为像素)
      * @throws IllegalArgumentException 当坐标为负数时抛出
      * 
-     * @author Aider+DeepSeek
+     * 
      * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     default void validatePosition(int x, int y) {
-<span class="nc bnc" id="L103" title="All 4 branches missed.">        if (x &lt; 0 || y &lt; 0) {</span>
-<span class="nc" id="L104">            throw new IllegalArgumentException(&quot;坐标不能为负数&quot;);</span>
+<span class="nc bnc" id="L102" title="All 4 branches missed.">        if (x &lt; 0 || y &lt; 0) {</span>
+<span class="nc" id="L103">            throw new IllegalArgumentException(&quot;坐标不能为负数&quot;);</span>
         }
-<span class="nc" id="L106">    }</span>
+<span class="nc" id="L105">    }</span>
 
     /**
      * 移动图形的位置。
@@ -113,7 +112,6 @@ public interface Shape {
      * @param dx X轴方向的移动距离（像素）
      * @param dy Y轴方向的移动距离（像素）
      * 
-     * @author Aider+DeepSeek
      * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */

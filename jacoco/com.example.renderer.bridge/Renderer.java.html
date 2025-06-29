@@ -28,28 +28,48 @@
 public interface Renderer {
     /**
      * 设置渲染样式
+     * 
+     * &lt;p&gt;此方法用于配置图形绘制时的线条、填充和线宽属性&lt;/p&gt;
+     * 
      * @param stroke 线条颜色(支持CSS颜色格式)
      * @param fill 填充颜色(支持CSS颜色格式)
      * @param width 线宽(像素，必须&gt;=0)
      * @throws IllegalArgumentException 如果宽度为负数
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void setStyle(String stroke, String fill, int width) throws IllegalArgumentException;
     
     /**
      * 获取当前渲染上下文
-     * @return 底层实现对象(Swing返回Graphics2D，SVG返回StringBuilder等)
+     * 
+     * &lt;p&gt;此方法返回渲染器使用的底层实现对象&lt;/p&gt;
+     * 
+     * @return 底层实现对象 (Swing返回Graphics2D，SVG返回StringBuilder等)
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     Object getContext();
     
     /**
      * 开始新帧/页的绘制
+     * 
+     * &lt;p&gt;此方法应在序列绘制的开始处调用，用于初始化帧状态&lt;/p&gt;
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
-<span class="nc" id="L47">    default void beginFrame() {}</span>
+<span class="nc" id="L62">    default void beginFrame() {}</span>
     
     /**
      * 结束当前帧/页的绘制
+     * 
+     * &lt;p&gt;此方法应在序列绘制的末尾调用，用于清理帧资源&lt;/p&gt;
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
-<span class="nc" id="L52">    default void endFrame() {}</span>
+<span class="nc" id="L72">    default void endFrame() {}</span>
     /**
      * 绘制圆形
      * @param x 圆心x坐标
@@ -57,6 +77,9 @@ public interface Renderer {
      * @param radius 圆形半径(必须&gt;0)
      * @throws IllegalArgumentException 如果半径不合法
      * @throws IllegalStateException 如果渲染器未正确初始化
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawCircle(int x, int y, int radius) throws IllegalArgumentException, IllegalStateException;
     
@@ -67,6 +90,9 @@ public interface Renderer {
      * @param width 矩形宽度(必须&gt;0)
      * @param height 矩形高度(必须&gt;0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawRectangle(int x, int y, int width, int height);
     
@@ -77,6 +103,9 @@ public interface Renderer {
      * @param width 椭圆宽度(必须&gt;0)
      * @param height 椭圆高度(必须&gt;0)
      * @throws IllegalArgumentException 如果宽度或高度不合法
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawEllipse(int x, int y, int width, int height);
     
@@ -88,6 +117,9 @@ public interface Renderer {
      * @param y2 第二个顶点y坐标
      * @param x3 第三个顶点x坐标
      * @param y3 第三个顶点y坐标
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3);
 }

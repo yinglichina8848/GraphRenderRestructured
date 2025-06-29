@@ -6,16 +6,16 @@ import java.time.format.DateTimeFormatter;
 /**
  * 记录图形变更日志的观察者实现
  */
-<span class="nc" id="L9">public class LoggingShapeObserver implements ShapeObserver {</span>
-<span class="nc" id="L10">    private static final DateTimeFormatter formatter = </span>
-<span class="nc" id="L11">        DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
+<span class="fc" id="L9">public class LoggingShapeObserver implements ShapeObserver {</span>
+<span class="fc" id="L10">    private static final DateTimeFormatter formatter = </span>
+<span class="fc" id="L11">        DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd HH:mm:ss&quot;);</span>
 
     @Override
     public void onShapeChanged() {
-<span class="nc" id="L15">        String log = String.format(&quot;[%s] 图形发生变化&quot;,</span>
-<span class="nc" id="L16">            LocalDateTime.now().format(formatter));</span>
+<span class="fc" id="L15">        String log = String.format(&quot;[%s] 图形发生变化&quot;,</span>
+<span class="fc" id="L16">            LocalDateTime.now().format(formatter));</span>
         
-<span class="nc" id="L18">        System.out.println(log);</span>
-<span class="nc" id="L19">    }</span>
+<span class="fc" id="L18">        System.out.println(log);</span>
+<span class="fc" id="L19">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

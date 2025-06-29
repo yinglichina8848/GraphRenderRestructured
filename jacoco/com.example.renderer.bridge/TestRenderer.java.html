@@ -5,54 +5,54 @@ import com.example.renderer.bridge.Renderer;
 /**
  * 测试用渲染器，仅记录调用不实际渲染
  */
-<span class="nc" id="L8">public class TestRenderer implements Renderer {</span>
-<span class="nc" id="L9">    private Object testContext = new Object();</span>
+<span class="fc" id="L8">public class TestRenderer implements Renderer {</span>
+<span class="fc" id="L9">    private Object testContext = new Object();</span>
 
     @Override
     public void setStyle(String stroke, String fill, int width) {
-<span class="nc" id="L13">        System.out.printf(&quot;TestRenderer: 设置样式 - 描边:%s 填充:%s 线宽:%d\n&quot;, </span>
-<span class="nc" id="L14">                         stroke, fill, width);</span>
-<span class="nc" id="L15">    }</span>
+<span class="fc" id="L13">        System.out.printf(&quot;TestRenderer: 设置样式 - 描边:%s 填充:%s 线宽:%d\n&quot;, </span>
+<span class="fc" id="L14">                         stroke, fill, width);</span>
+<span class="fc" id="L15">    }</span>
 
     @Override
     public Object getContext() {
-<span class="nc" id="L19">        return testContext;</span>
+<span class="fc" id="L19">        return testContext;</span>
     }
 
     @Override
     public void beginFrame() {
-<span class="nc" id="L24">        System.out.println(&quot;TestRenderer: 开始新帧&quot;);</span>
-<span class="nc" id="L25">    }</span>
+<span class="fc" id="L24">        System.out.println(&quot;TestRenderer: 开始新帧&quot;);</span>
+<span class="fc" id="L25">    }</span>
 
     @Override
     public void endFrame() {
-<span class="nc" id="L29">        System.out.println(&quot;TestRenderer: 结束帧&quot;);</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        System.out.println(&quot;TestRenderer: 结束帧&quot;);</span>
+<span class="fc" id="L30">    }</span>
     @Override
     public void drawCircle(int x, int y, int radius) {
-<span class="nc bnc" id="L33" title="All 2 branches missed.">        if (radius &lt;= 0) {</span>
-<span class="nc" id="L34">            throw new IllegalArgumentException(&quot;半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (radius &lt;= 0) {</span>
+<span class="fc" id="L34">            throw new IllegalArgumentException(&quot;半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
         }
-<span class="nc" id="L36">        System.out.printf(&quot;[DEBUG] TestRenderer.drawCircle - 位置: (%d,%d), 半径: %d, 面积: %.2f\n&quot;, </span>
-<span class="nc" id="L37">            x, y, radius, Math.PI * radius * radius);</span>
-<span class="nc" id="L38">    }</span>
+<span class="fc" id="L36">        System.out.printf(&quot;[DEBUG] TestRenderer.drawCircle - 位置: (%d,%d), 半径: %d, 面积: %.2f\n&quot;, </span>
+<span class="fc" id="L37">            x, y, radius, Math.PI * radius * radius);</span>
+<span class="fc" id="L38">    }</span>
 
     @Override
     public void drawRectangle(int x, int y, int width, int height) {
-<span class="nc" id="L42">        System.out.printf(&quot;TestRenderer: drawRectangle(%d,%d,%d,%d)\n&quot;, </span>
-<span class="nc" id="L43">            x, y, width, height);</span>
-<span class="nc" id="L44">    }</span>
+<span class="fc" id="L42">        System.out.printf(&quot;TestRenderer: drawRectangle(%d,%d,%d,%d)\n&quot;, </span>
+<span class="fc" id="L43">            x, y, width, height);</span>
+<span class="fc" id="L44">    }</span>
 
     @Override
     public void drawEllipse(int x, int y, int width, int height) {
-<span class="nc" id="L48">        System.out.printf(&quot;TestRenderer: drawEllipse(%d,%d,%d,%d)\n&quot;,</span>
-<span class="nc" id="L49">            x, y, width, height);</span>
-<span class="nc" id="L50">    }</span>
+<span class="fc" id="L48">        System.out.printf(&quot;TestRenderer: drawEllipse(%d,%d,%d,%d)\n&quot;,</span>
+<span class="fc" id="L49">            x, y, width, height);</span>
+<span class="fc" id="L50">    }</span>
 
     @Override
     public void drawTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-<span class="nc" id="L54">        System.out.printf(&quot;TestRenderer: drawTriangle(%d,%d,%d,%d,%d,%d)\n&quot;,</span>
-<span class="nc" id="L55">            x1, y1, x2, y2, x3, y3);</span>
-<span class="nc" id="L56">    }</span>
+<span class="fc" id="L54">        System.out.printf(&quot;TestRenderer: drawTriangle(%d,%d,%d,%d,%d,%d)\n&quot;,</span>
+<span class="fc" id="L55">            x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L56">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

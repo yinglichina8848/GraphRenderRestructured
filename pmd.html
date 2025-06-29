@@ -72,16 +72,6 @@
 <p>The following document contains the results of <a class="externalLink" href="https://pmd.github.io">PMD</a> 6.55.0.</p><section>
 <h3><a name="Violations_By_Priority"></a>Violations By Priority</h3><a name="Violations_By_Priority"></a><section>
 <h4><a name="Priority_3"></a>Priority 3</h4><a name="Priority_3"></a><section>
-<h5><a name="com.2Fexample.2Frenderer.2Fbridge.2FRendererFactory.java"></a>com/example/renderer/bridge/RendererFactory.java</h5><a name="com.2Fexample.2Frenderer.2Fbridge.2FRendererFactory.java"></a>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Rule</th>
-<th>Violation</th>
-<th>Line</th></tr>
-<tr class="b">
-<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_bestpractices.html#unusedprivatefield">UnusedPrivateField</a></td>
-<td>Avoid unused private fields such as 'lock'.</td>
-<td>37</td></tr></table></section><section>
 <h5><a name="com.2Fexample.2Frenderer.2Fproxy.2FRemoteRendererProxy.java"></a>com/example/renderer/proxy/RemoteRendererProxy.java</h5><a name="com.2Fexample.2Frenderer.2Fproxy.2FRemoteRendererProxy.java"></a>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -126,9 +116,37 @@
 <td>Unused import 'com.example.renderer.legacy.LegacyRenderer'</td>
 <td>6</td></tr>
 <tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Unused import 'java.util.concurrent.locks.ReadWriteLock'</td>
+<td>11</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Unused import 'java.util.concurrent.locks.ReentrantReadWriteLock'</td>
+<td>12</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.Set'</td>
+<td>35</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.Collections'</td>
+<td>36</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.concurrent.ConcurrentHashMap'</td>
+<td>38</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.concurrent.ConcurrentMap'</td>
+<td>39</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.function.Supplier'</td>
+<td>40</td></tr>
+<tr class="a">
 <td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname">UnnecessaryFullyQualifiedName</a></td>
 <td>Unnecessary use of fully qualified name 'com.example.renderer.adapter.LegacyRendererImpl' due to existing import 'com.example.renderer.adapter.LegacyRendererImpl'</td>
-<td>44</td></tr></table></section><section>
+<td>51</td></tr></table></section><section>
 <h5><a name="com.2Fexample.2Frenderer.2Fbridge.2FSVGRenderer.java"></a>com/example/renderer/bridge/SVGRenderer.java</h5><a name="com.2Fexample.2Frenderer.2Fbridge.2FSVGRenderer.java"></a>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -330,15 +348,45 @@
 <td>4</td>
 <td>6</td></tr>
 <tr class="b">
-<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_bestpractices.html#unusedprivatefield">UnusedPrivateField</a></td>
-<td>Avoid unused private fields such as 'lock'.</td>
-<td>3</td>
-<td>37</td></tr>
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Unused import 'java.util.concurrent.locks.ReadWriteLock'</td>
+<td>4</td>
+<td>11</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Unused import 'java.util.concurrent.locks.ReentrantReadWriteLock'</td>
+<td>4</td>
+<td>12</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.Set'</td>
+<td>4</td>
+<td>35</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.Collections'</td>
+<td>4</td>
+<td>36</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.concurrent.ConcurrentHashMap'</td>
+<td>4</td>
+<td>38</td></tr>
+<tr class="a">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.concurrent.ConcurrentMap'</td>
+<td>4</td>
+<td>39</td></tr>
+<tr class="b">
+<td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryimport">UnnecessaryImport</a></td>
+<td>Duplicate import 'java.util.function.Supplier'</td>
+<td>4</td>
+<td>40</td></tr>
 <tr class="a">
 <td align="left"><a class="externalLink" href="https://pmd.github.io/pmd-6.55.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname">UnnecessaryFullyQualifiedName</a></td>
 <td>Unnecessary use of fully qualified name 'com.example.renderer.adapter.LegacyRendererImpl' due to existing import 'com.example.renderer.adapter.LegacyRendererImpl'</td>
 <td>4</td>
-<td>44</td></tr></table></section><section>
+<td>51</td></tr></table></section><section>
 <h4><a name="com.2Fexample.2Frenderer.2Fbridge.2FSVGRenderer.java"></a>com/example/renderer/bridge/SVGRenderer.java</h4><a name="com.2Fexample.2Frenderer.2Fbridge.2FSVGRenderer.java"></a>
 <table border="0" class="bodyTable">
 <tr class="a">

@@ -17,16 +17,19 @@ var annotated_dup =
             [ "SVGRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest" ],
             [ "SwingRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer.html", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRenderer" ],
             [ "SwingRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest" ],
-            [ "TestRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer" ]
+            [ "TestRenderer", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer.html", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRenderer" ],
+            [ "TestRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRendererTest.html", null ]
           ] ],
           [ "command", "namespacecom_1_1example_1_1renderer_1_1command.html", [
             [ "AddShapeCommand", "classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand.html", "classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommand" ],
             [ "AddShapeCommandTest", "classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest.html", "classcom_1_1example_1_1renderer_1_1command_1_1AddShapeCommandTest" ],
             [ "Command", "interfacecom_1_1example_1_1renderer_1_1command_1_1Command.html", "interfacecom_1_1example_1_1renderer_1_1command_1_1Command" ],
             [ "DeleteShapeCommand", "classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html", "classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand" ],
+            [ "DeleteShapeCommandTest", "classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommandTest.html", null ],
             [ "MoveShapeCommand", "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html", "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand" ],
             [ "MoveShapeCommandTest", "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html", "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest" ],
-            [ "UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager" ]
+            [ "UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager" ],
+            [ "UndoManagerTest", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManagerTest.html", null ]
           ] ],
           [ "config", "namespacecom_1_1example_1_1renderer_1_1config.html", [
             [ "GlobalConfig", "classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig.html", "classcom_1_1example_1_1renderer_1_1config_1_1GlobalConfig" ],

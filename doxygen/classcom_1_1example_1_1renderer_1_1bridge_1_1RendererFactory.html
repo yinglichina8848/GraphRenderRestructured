@@ -101,6 +101,8 @@ $(document).ready(function(){initNavTree('classcom_1_1example_1_1renderer_1_1bri
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a74d1722dc74dff3cb59e6f83c192e7" id="r_a1a74d1722dc74dff3cb59e6f83c192e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1RendererFactory.html#a1a74d1722dc74dff3cb59e6f83c192e7">register</a> (String mode, Supplier&lt; <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a> &gt; supplier)</td></tr>
 <tr class="separator:a1a74d1722dc74dff3cb59e6f83c192e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e053b48a755b269856c79cf457b754" id="r_aa6e053b48a755b269856c79cf457b754"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1RendererFactory.html#aa6e053b48a755b269856c79cf457b754">clearCustomRegistrations</a> ()</td></tr>
+<tr class="separator:aa6e053b48a755b269856c79cf457b754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec1821b25b8440ef97fa5ff418433155" id="r_aec1821b25b8440ef97fa5ff418433155"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="interfacecom_1_1example_1_1renderer_1_1bridge_1_1Renderer.html">Renderer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1RendererFactory.html#aec1821b25b8440ef97fa5ff418433155">create</a> (String mode)  throws RendererCreationException </td></tr>
 <tr class="separator:aec1821b25b8440ef97fa5ff418433155"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad175f55e310fb89f0a206671a9331b26" id="r_ad175f55e310fb89f0a206671a9331b26"><td class="memItemLeft" align="right" valign="top">static Set&lt; String &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1example_1_1renderer_1_1bridge_1_1RendererFactory.html#ad175f55e310fb89f0a206671a9331b26">getSupportedModes</a> ()</td></tr>
@@ -125,6 +127,33 @@ test - TestRenderer </li>
 legacy - LegacyRendererAdapter </li>
 </ul>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa6e053b48a755b269856c79cf457b754" name="aa6e053b48a755b269856c79cf457b754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e053b48a755b269856c79cf457b754">&#9670;&#160;</a></span>clearCustomRegistrations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void com.example.renderer.bridge.RendererFactory.clearCustomRegistrations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>清除所有自定义注册的渲染器 </p>
+<p>仅用于测试</p>
+
+</div>
+</div>
 <a id="aec1821b25b8440ef97fa5ff418433155" name="aec1821b25b8440ef97fa5ff418433155"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec1821b25b8440ef97fa5ff418433155">&#9670;&#160;</a></span>create()</h2>
 

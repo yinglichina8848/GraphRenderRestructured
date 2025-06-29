@@ -8,6 +8,7 @@ var hierarchy =
       [ "com.example.renderer.command.DeleteShapeCommand", "classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommand.html", null ],
       [ "com.example.renderer.command.MoveShapeCommand", "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommand.html", null ]
     ] ],
+    [ "com.example.renderer.command.DeleteShapeCommandTest", "classcom_1_1example_1_1renderer_1_1command_1_1DeleteShapeCommandTest.html", null ],
     [ "com.example.renderer.factory.EllipseTest", "classcom_1_1example_1_1renderer_1_1factory_1_1EllipseTest.html", null ],
     [ "com.example.renderer.visitor.ExportVisitor", "interfacecom_1_1example_1_1renderer_1_1visitor_1_1ExportVisitor.html", [
       [ "com.example.renderer.visitor.JSONExportVisitor", "classcom_1_1example_1_1renderer_1_1visitor_1_1JSONExportVisitor.html", null ],
@@ -67,9 +68,11 @@ var hierarchy =
     ] ],
     [ "com.example.renderer.bridge.SVGRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SVGRendererTest.html", null ],
     [ "com.example.renderer.bridge.SwingRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1SwingRendererTest.html", null ],
+    [ "com.example.renderer.bridge.TestRendererTest", "classcom_1_1example_1_1renderer_1_1bridge_1_1TestRendererTest.html", null ],
     [ "com.example.renderer.factory.TriangleTest", "classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html", null ],
     [ "TypeAdapterFactory", null, [
       [ "com.example.renderer.util.RuntimeTypeAdapterFactory< T >", "classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html", null ]
     ] ],
-    [ "com.example.renderer.command.UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", null ]
+    [ "com.example.renderer.command.UndoManager", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html", null ],
+    [ "com.example.renderer.command.UndoManagerTest", "classcom_1_1example_1_1renderer_1_1command_1_1UndoManagerTest.html", null ]
 ];
