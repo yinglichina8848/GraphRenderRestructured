@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class BasicShapeFactoryTest {
+public class BasicShapeFactoryTest {
     private BasicShapeFactory factory;
     private static final int TEST_X = 10;
     private static final int TEST_Y = 20;
