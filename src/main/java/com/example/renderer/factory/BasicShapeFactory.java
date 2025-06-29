@@ -1,7 +1,5 @@
 package com.example.renderer.factory;
 
-package com.example.renderer.factory;
-
 /**
  * 基础图形工厂实现类，提供标准图形对象的创建。
  * 
