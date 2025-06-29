@@ -182,14 +182,13 @@ public class Ellipse implements Shape {
     public void setWidth(int width) { this.width = width; }
     
     /**
-     * 获取椭圆高度。
+     * 获取椭圆高度值（像素）。
      * 
      * <p>高度是椭圆在Y轴方向的直径长度。</p>
      * 
      * @return 椭圆的高度值（像素）
-     * @see #getWidth() 获取宽度
      * 
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public int getHeight() { return height; }
