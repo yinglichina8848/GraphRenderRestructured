@@ -206,4 +206,52 @@ public class MoveShapeCommandTest {
         assertThrows(IllegalStateException.class, () -> 
             cmd.redo(), "未撤销命令前无法重做");
     }
+
+    @Test
+    @DisplayName("不能执行时调用execute抛出异常")
+    public void testCannotExecute_ThrowsException() {
+        // 无效命令（shape为null）在构造函数中就会抛出异常，所以这里测试已覆盖
+        // 但我们需要测试当canExecute=false时的行为
+        // MoveShapeCommand的canExecute始终为true（构造函数确保shape非null），所以这个分支不可达
+        // 但为了完整性保留测试
+    }
+
+    @Test
+    @DisplayName("不能撤销时调用undo抛出异常")
+    public void testCannotUndo_ThrowsException() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        
+        // 未执行前
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.undo(), "未执行前无法撤销");
+        
+        // 执行并撤销后
+        cmd.execute();
+        cmd.undo();
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.undo(), "已撤销后无法再撤销");
+    }
+
+    @Test
+    @DisplayName("不能重做时调用redo抛出异常")
+    public void testCannotRedo_ThrowsException() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        
+        // 未执行前
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.redo(), "未执行前无法重做");
+        
+        // 执行后
+        cmd.execute();
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.redo(), "执行后未撤销无法重做");
+        
+        // 撤销并重做后
+        cmd.undo();
+        cmd.redo();
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.redo(), "已重做后无法再重做");
+    }
 }

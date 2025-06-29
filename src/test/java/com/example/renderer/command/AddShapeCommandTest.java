@@ -174,4 +174,35 @@ public class AddShapeCommandTest {
         
         assertFalse(command.canRedo(), "重做后不能再重做");
     }
+
+    @Test
+    @DisplayName("不能执行时调用execute抛出异常")
+    public void testCannotExecute_ThrowsException() {
+        // 创建无效命令（shapes为null）
+        AddShapeCommand invalidCmd = new AddShapeCommand(null, mockShape);
+        
+        assertThrows(IllegalStateException.class, () -> 
+            invalidCmd.execute(), "应抛出非法状态异常");
+    }
+
+    @Test
+    @DisplayName("不能撤销时调用undo抛出异常")
+    public void testCannotUndo_ThrowsException() {
+        // 未执行命令
+        assertThrows(IllegalStateException.class, () -> 
+            command.undo(), "应抛出非法状态异常");
+    }
+
+    @Test
+    @DisplayName("不能重做时调用redo抛出异常")
+    public void testCannotRedo_ThrowsException() {
+        // 未执行命令
+        assertThrows(IllegalStateException.class, () -> 
+            command.redo(), "应抛出非法状态异常");
+        
+        // 执行后未撤销
+        command.execute();
+        assertThrows(IllegalStateException.class, () -> 
+            command.redo(), "应抛出非法状态异常");
+    }
 }
