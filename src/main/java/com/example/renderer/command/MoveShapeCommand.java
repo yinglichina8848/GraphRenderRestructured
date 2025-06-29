@@ -50,9 +50,6 @@ public class MoveShapeCommand implements Command {
      */
     @Override
     public void execute() {
-        if (!canExecute()) {
-            throw new IllegalStateException("无法执行命令");
-        }
         shape.move(dx, dy);
         executed = true;
     }
