@@ -32,6 +32,7 @@ public class AddShapeCommand implements Command {
     private final List<Shape> shapes;
     private final Shape shape;
     private boolean executed;
+    private boolean hasBeenExecuted;
 
     /**
      * 创建添加图形命令实例
@@ -48,6 +49,7 @@ public class AddShapeCommand implements Command {
         if (!canExecute()) {
             throw new IllegalStateException("无法执行命令");
         }
+        hasBeenExecuted = true;
         shapes.add(shape);
         executed = true;
     }
@@ -80,7 +82,7 @@ public class AddShapeCommand implements Command {
 
     @Override
     public boolean canRedo() {
-        return !executed;
+        return hasBeenExecuted && !executed;
     }
 }
 
