@@ -31,6 +31,8 @@ public class DeleteShapeCommand implements Command {
         index = shapes.indexOf(shape);
         if (index != -1) {
             shapes.remove(index);
+        } else {
+            System.out.println("[WARN] 未找到要删除的图形");
         }
     }
 
