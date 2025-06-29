@@ -52,12 +52,25 @@ public class DeleteShapeCommandTest {
     @Test
     @DisplayName("删除不存在的图形应输出警告")
     public void testExecute_NonExistentShape() {
-        try (MockedStatic<System> system = mockStatic(System.class)) {
+        // 保存原始输出流
+        PrintStream originalOut = System.out;
+        // 创建内存输出流来捕获控制台输出
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        PrintStream newOut = new PrintStream(bos);
+        // 重定向系统输出
+        System.setOut(newOut);
+        
+        try {
             Shape nonExistentShape = mock(Shape.class);
             DeleteShapeCommand cmd = new DeleteShapeCommand(shapes, nonExistentShape);
             cmd.execute();
             assertEquals(1, shapes.size());
-            system.verify(() -> System.out.println("[WARN] 未找到要删除的图形"));
+            // 验证输出
+            String output = bos.toString();
+            assertTrue(output.contains("[WARN] 未找到要删除的图形"));
+        } finally {
+            // 恢复原始输出流
+            System.setOut(originalOut);
         }
     }
 
@@ -131,12 +144,25 @@ public class DeleteShapeCommandTest {
     @Test
     @DisplayName("尝试删除空列表图形时应输出警告")
     public void testExecute_EmptyListWarning() {
-        try (MockedStatic<System> system = mockStatic(System.class)) {
+        // 保存原始输出流
+        PrintStream originalOut = System.out;
+        // 创建内存输出流来捕获控制台输出
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        PrintStream newOut = new PrintStream(bos);
+        // 重定向系统输出
+        System.setOut(newOut);
+        
+        try {
             List<Shape> emptyList = new ArrayList<>();
             Shape someShape = mock(Shape.class);
             DeleteShapeCommand cmd = new DeleteShapeCommand(emptyList, someShape);
             cmd.execute();
-            system.verify(() -> System.out.println("[WARN] 未找到要删除的图形"));
+            // 验证输出
+            String output = bos.toString();
+            assertTrue(output.contains("[WARN] 未找到要删除的图形"));
+        } finally {
+            // 恢复原始输出流
+            System.setOut(originalOut);
         }
     }
 
