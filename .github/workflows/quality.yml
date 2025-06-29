@@ -31,6 +31,9 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt || pip install beautifulsoup4 lxml
 
+      - name: 安装 Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+
       - name: Build Maven site and reports
         run: mvn clean verify site
 
