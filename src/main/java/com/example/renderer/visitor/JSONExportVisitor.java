@@ -84,6 +84,9 @@ public class JSONExportVisitor implements ExportVisitor {
      * @param c 要导出的圆形对象，不能为null
      * @throws NullPointerException 如果参数c为null
      * @throws IllegalArgumentException 如果半径值为负数
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     @Override
     public void visitCircle(Circle c) {
