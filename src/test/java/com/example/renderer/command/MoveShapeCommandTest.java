@@ -90,4 +90,40 @@ public class MoveShapeCommandTest {
         assertEquals(10, circle.getX());
         assertEquals(20, circle.getY());
     }
+
+    @Test
+    @DisplayName("canExecute方法在shape不为null时返回true")
+    public void testCanExecute_WhenShapeNotNull() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        assertTrue(cmd.canExecute());
+    }
+
+    @Test
+    @DisplayName("canUndo方法始终返回true")
+    public void testCanUndo_AlwaysTrue() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        assertTrue(cmd.canUndo());
+        
+        cmd.execute();
+        assertTrue(cmd.canUndo());
+        
+        cmd.undo();
+        assertTrue(cmd.canUndo());
+    }
+
+    @Test
+    @DisplayName("canRedo方法始终返回true")
+    public void testCanRedo_AlwaysTrue() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        assertTrue(cmd.canRedo());
+        
+        cmd.execute();
+        assertTrue(cmd.canRedo());
+        
+        cmd.undo();
+        assertTrue(cmd.canRedo());
+    }
 }
