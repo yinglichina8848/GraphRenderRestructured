@@ -6,13 +6,16 @@ import com.example.renderer.factory.Ellipse;
 import com.example.renderer.factory.Triangle;
 
 /**
- * ExportVisitor接口定义了访问者模式中的访问者角色。
- * 每个visit方法对应一种图形类型的导出逻辑。
+ * 访问者模式接口，用于实现对图形对象的导出操作。
  * 
- * @see JSONExportVisitor
- */
-/**
- * 访问者接口，用于实现访问者模式
+ * <p>该接口定义了访问者模式中的访问者角色，每个visit方法对应一种图形类型的导出逻辑。
+ * 具体实现类应提供针对不同图形的导出功能。</p>
+ * 
+ * @see JSONExportVisitor JSON格式导出实现
+ * @see XMLExportVisitor XML格式导出实现
+ * 
+ * @author Aider+SillconFlow-DeepSeek-R1
+ * @since 2025-06-29
  */
 public interface ExportVisitor {
     /**
