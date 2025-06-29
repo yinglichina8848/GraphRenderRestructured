@@ -24,7 +24,6 @@ package com.example.renderer.bridge;
  * @author Aider+SillconFlow-Deepseek-R1
  * @since 2025-06-29
  * @see RendererFactory 创建实例的工厂类
- * @see RendererInterface 基础绘制接口
  */
 public interface Renderer {
     /**
