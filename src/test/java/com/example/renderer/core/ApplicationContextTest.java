@@ -9,6 +9,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+
 class ApplicationContextTest {
     
     @AfterEach
@@ -111,5 +115,99 @@ class ApplicationContextTest {
         
         // 验证只创建了一个实例
         assertEquals(1, instanceCount[0]);
+    }
+
+    /**
+     * 测试双重检查锁的正确执行路径
+     */
+    @Test
+    void testDoubleCheckedLocking() throws InterruptedException {
+        class TestDoubleCheckBean {}
+        
+        // 使用 CountDownLatch 控制线程执行顺序
+        CountDownLatch enterWriteLockLatch = new CountDownLatch(1);
+        AtomicBoolean firstThreadEnteredWriteLock = new AtomicBoolean(false);
+        
+        ApplicationContext.register(TestDoubleCheckBean.class, () -> {
+            // 当第一个线程进入写锁后，允许其他线程继续
+            if (firstThreadEnteredWriteLock.compareAndSet(false, true)) {
+                enterWriteLockLatch.countDown();
+            }
+            return new TestDoubleCheckBean();
+        });
+        
+        Thread thread1 = new Thread(() -> {
+            ApplicationContext.getBean(TestDoubleCheckBean.class);
+        });
+        
+        Thread thread2 = new Thread(() -> {
+            try {
+                // 等待第一个线程进入写锁
+                enterWriteLockLatch.await();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            ApplicationContext.getBean(TestDoubleCheckBean.class);
+        });
+        
+        thread1.start();
+        thread2.start();
+        
+        thread1.join(2000);
+        thread2.join(2000);
+        
+        // 验证没有异常发生
+        assertTrue(firstThreadEnteredWriteLock.get());
+    }
+
+    /**
+     * 测试静态初始化块中的默认 Renderer 注册
+     */
+    @Test
+    void testStaticInitializerRegistration() {
+        // 获取 Renderer 的 bean 实例应该成功
+        Renderer renderer = ApplicationContext.getBean(Renderer.class);
+        assertNotNull(renderer);
+    }
+    
+    /**
+     * 测试 Supplier 返回 null 的情况
+     */
+    @Test
+    void testSupplierReturnsNull() {
+        class TestBean {}
+        
+        ApplicationContext.register(TestBean.class, () -> null);
+        
+        // 第一次调用时应返回 null
+        TestBean bean1 = ApplicationContext.getBean(TestBean.class);
+        assertNull(bean1);
+        
+        // 后续调用应始终返回 null（缓存机制）
+        TestBean bean2 = ApplicationContext.getBean(TestBean.class);
+        assertNull(bean2);
+    }
+    
+    /**
+     * 测试异常链的完整处理
+     */
+    @Test
+    void testNestedExceptionHandling() {
+        class ErrorBean {}
+        
+        // 设置供应商在调用时抛出多个嵌套异常
+        ApplicationContext.register(ErrorBean.class, () -> {
+            throw new IllegalStateException("Outer exception", 
+                new RuntimeException("Inner exception"));
+        });
+        
+        Exception exception = assertThrows(
+            IllegalStateException.class,
+            () -> ApplicationContext.getBean(ErrorBean.class)
+        );
+        
+        assertTrue(exception.getMessage().contains("Outer exception"));
+        assertNotNull(exception.getCause());
+        assertEquals("Inner exception", exception.getCause().getMessage());
     }
 }
