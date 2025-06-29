@@ -35,8 +35,10 @@ package com.example.renderer.visitor;
  * @see Shape#accept(ExportVisitor) 接受访问者的入口方法
  * @see <a href="https://en.wikipedia.org/wiki/Visitor_pattern">Visitor Pattern</a>
  * @author liying
+ * @author Aider+SillconFlow-DeepSeek-R1
  * @since 1.0
  * @version 1.0
+ * @createdAt 2025-06-29
  * 
  * <p>JSON编码说明：
  * <ul>

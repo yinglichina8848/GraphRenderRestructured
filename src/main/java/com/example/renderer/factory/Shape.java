@@ -47,13 +47,8 @@ import com.example.renderer.visitor.ExportVisitor;
 public interface Shape {
     /**
      * 使用指定的渲染器绘制图形。
-     * 具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。
-     *
-     * @param renderer 用于绘制图形的渲染器实现，不能为null
-     * @throws NullPointerException 如果renderer参数为null
-     */
-    /**
-     * 使用指定的渲染器绘制图形。
+     * 
+     * <p>具体绘制逻辑由实现类决定，渲染器参数提供实际的绘制能力。</p>
      * 
      * <p>实现类应确保：
      * <ul>
@@ -66,6 +61,9 @@ public interface Shape {
      * @throws NullPointerException 如果渲染器参数为null
      * @throws IllegalArgumentException 如果当前图形的参数不合法(如负尺寸)
      * @throws IllegalStateException 如果图形处于不可渲染的状态
+     * 
+     * @author Aider+SillconFlow-DeepSeek-R1
+     * @since 2025-06-29
      */
     void render(Renderer renderer) throws NullPointerException, IllegalArgumentException, IllegalStateException;
 
