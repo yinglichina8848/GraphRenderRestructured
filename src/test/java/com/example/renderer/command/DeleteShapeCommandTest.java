@@ -130,7 +130,12 @@ public class DeleteShapeCommandTest {
     @DisplayName("execute方法应在无效状态时抛出异常")
     public void testExecute_InvalidState() {
         // 设置无效状态
-        command = new DeleteShapeCommand(null, null);
+        command = new DeleteShapeCommand(null, null) {
+            @Override
+            public void execute() {
+                super.execute(); // 调用原始实现
+            }
+        };
         assertThrows(IllegalStateException.class, () -> command.execute());
     }
 }
