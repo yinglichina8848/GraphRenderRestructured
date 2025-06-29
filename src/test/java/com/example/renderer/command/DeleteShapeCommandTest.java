@@ -2,7 +2,8 @@ package com.example.renderer.command;
 
 import com.example.renderer.factory.Shape;
 import org.junit.jupiter.api.*;
-import org.mockito.MockedStatic;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
