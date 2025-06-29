@@ -126,5 +126,67 @@ public class MoveShapeCommandTest {
         
         cmd.undo();
         assertTrue(cmd.canRedo());
+        
+        cmd.redo();
+        assertTrue(cmd.canRedo());
+    }
+
+    @Test
+    @DisplayName("redo操作应重新移动图形")
+    public void testRedo_MovesShapeAgain() {
+        Shape mockShape = mock(Shape.class);
+        int dx = 10, dy = 20;
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, dx, dy);
+        
+        cmd.execute();
+        cmd.undo();
+        cmd.redo();  // 重做
+        
+        verify(mockShape, times(2)).move(dx, dy); // 执行两次移动操作
+    }
+
+    @Test
+    @DisplayName("连续多次撤销和重做")
+    public void testMultipleUndoRedoCycles() {
+        Shape mockShape = mock(Shape.class);
+        int dx = 10, dy = 20;
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, dx, dy);
+        
+        // 第一次执行和撤销
+        cmd.execute();
+        cmd.undo();
+        verify(mockShape).move(dx, dy);
+        verify(mockShape).move(-dx, -dy);
+        
+        // 第一次重做和第二次撤销
+        cmd.redo();
+        cmd.undo();
+        verify(mockShape, times(2)).move(dx, dy);
+        verify(mockShape, times(2)).move(-dx, -dy);
+        
+        // 第二次重做
+        cmd.redo();
+        verify(mockShape, times(3)).move(dx, dy);
+    }
+
+    @Test
+    @DisplayName("未执行前调用undo应抛出异常")
+    public void testUndoBeforeExecute_ThrowsException() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.undo(), "未执行命令前无法撤销");
+    }
+
+    @Test
+    @DisplayName("未撤销前调用redo应抛出异常")
+    public void testRedoBeforeUndo_ThrowsException() {
+        Shape mockShape = mock(Shape.class);
+        MoveShapeCommand cmd = new MoveShapeCommand(mockShape, 10, 20);
+        
+        cmd.execute();
+        assertThrows(IllegalStateException.class, () -> 
+            cmd.redo(), "未撤销命令前无法重做");
     }
 }
