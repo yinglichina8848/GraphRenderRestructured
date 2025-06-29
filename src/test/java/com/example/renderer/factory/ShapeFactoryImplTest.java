@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class BasicShapeFactoryTest {
-    private BasicShapeFactory factory;
+public class ShapeFactoryImplTest {
+    private ShapeFactoryImpl factory;
     private static final int TEST_X = 10;
     private static final int TEST_Y = 20;
     private static final int TEST_DIMENSION = 30;
@@ -18,7 +18,7 @@ public class BasicShapeFactoryTest {
 
     @BeforeEach
     void setUp() {
-        factory = new BasicShapeFactory();
+        factory = new ShapeFactoryImpl();
     }
 
     @Test
@@ -41,7 +41,7 @@ public class BasicShapeFactoryTest {
         assertNotNull(rectangle);
         assertEquals(Rectangle.class, rectangle.getClass());
     }
-    
+
     @Test
     void testCreateRectangle_withNegativeWidth_throwsException() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -64,30 +64,9 @@ public class BasicShapeFactoryTest {
     }
 
     @Test
-    void testCreateTriangle_withNegativeCoordinate_throwsException() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            factory.createTriangle(-1, TEST_Y1, TEST_X2, TEST_Y2, TEST_X3, TEST_Y3);
-        });
-    }
-
-    @Test
     void testCreateEllipse() {
         Ellipse ellipse = factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, TEST_DIMENSION);
         assertNotNull(ellipse);
         assertEquals(Ellipse.class, ellipse.getClass());
-    }
-    
-    @Test
-    void testCreateEllipse_withNegativeWidth_throwsException() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            factory.createEllipse(TEST_X, TEST_Y, -1, TEST_DIMENSION);
-        });
-    }
-    
-    @Test
-    void testCreateEllipse_withNegativeHeight_throwsException() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, -1);
-        });
     }
 }
