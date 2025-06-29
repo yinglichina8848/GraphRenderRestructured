@@ -1,5 +1,3 @@
-
-// 6. ShapeObservable.java
 package com.example.renderer.observer;
 
 /**
