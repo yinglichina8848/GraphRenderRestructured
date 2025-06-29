@@ -10,13 +10,21 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - name: 📥 Checkout current branch
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: 🚀 Push to Gitee
+      - name: 🔐 配置 SSH 密钥用于 Gitee 推送
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.GITEE_SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan gitee.com >> ~/.ssh/known_hosts
+
+      - name: 🚀 推送当前分支到 Gitee
         run: |
           CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
           echo "Current branch: $CURRENT_BRANCH"

@@ -36,7 +36,7 @@
       "@semantic-release/git",
       {
         "assets": ["CHANGELOG.md", "pom.xml"],
-        "message": "🔖 发布版本: ${nextRelease.version} [skip ci]"
+        "message": "发布版本: ${nextRelease.version} [skip ci]"
       }
     ],
     [
@@ -45,7 +45,7 @@
         "assets": [
           {
             "path": "doc/quality-summary.md",
-            "label": "📊 软件质量报告 (Markdown)"
+            "label": "软件质量报告 (Markdown)"
           }
         ]
       }
