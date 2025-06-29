@@ -2,6 +2,7 @@ package com.example.renderer.ui;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import org.mockito.MockedStatic;
 import javax.swing.SwingUtilities;
 import org.junit.jupiter.api.Test;
 

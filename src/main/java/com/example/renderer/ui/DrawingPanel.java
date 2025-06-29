@@ -42,10 +42,10 @@ import com.example.renderer.factory.Shape;
  */
 public class DrawingPanel extends JPanel {
     /** 要渲染的图形列表 */
-    private List<com.example.renderer.factory.Shape> shapes;
+    List<com.example.renderer.factory.Shape> shapes;
     
     /** 使用的渲染器实现 */
-    private Renderer renderer;
+    Renderer renderer;
 
     /**
      * 创建绘图面板

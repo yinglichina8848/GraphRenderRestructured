@@ -92,10 +92,10 @@ import com.example.renderer.singleton.PersistenceManager;
 public class SwingUI extends JFrame {
     private static final Logger LOGGER = LoggerFactory.getLogger(SwingUI.class);
     /** 图形列表 */
-    private final List<com.example.renderer.factory.Shape> shapes = new ArrayList<>();
+    final List<com.example.renderer.factory.Shape> shapes = new ArrayList<>();
     
     /** 渲染器实现 */
-    private Renderer renderer;
+    Renderer renderer;
     
     /** 撤销管理器 */
     private UndoManager undoManager = new UndoManager();

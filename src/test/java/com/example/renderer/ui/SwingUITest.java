@@ -6,6 +6,8 @@ import static org.mockito.Mockito.*;
 import com.example.renderer.bridge.Renderer;
 import com.example.renderer.factory.Shape;
 import com.example.renderer.singleton.PersistenceManager;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
