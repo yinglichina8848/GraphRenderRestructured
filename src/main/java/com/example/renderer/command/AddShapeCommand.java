@@ -31,6 +31,7 @@ import java.util.List;
 public class AddShapeCommand implements Command {
     private final List<Shape> shapes;
     private final Shape shape;
+    private boolean executed;
 
     /**
      * 创建添加图形命令实例
@@ -45,10 +46,12 @@ public class AddShapeCommand implements Command {
 
     public void execute() {
         shapes.add(shape);
+        executed = true;
     }
 
     public void undo() {
         shapes.remove(shape);
+        executed = false;
     }
 
     @Override
@@ -63,12 +66,12 @@ public class AddShapeCommand implements Command {
 
     @Override
     public boolean canUndo() {
-        return shapes != null && !shapes.contains(shape);
+        return executed;
     }
 
     @Override
     public boolean canRedo() {
-        return shapes != null && !shapes.contains(shape);
+        return !executed;
     }
 }
 
