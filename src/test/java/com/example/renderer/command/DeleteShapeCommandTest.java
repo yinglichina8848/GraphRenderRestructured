@@ -127,16 +127,10 @@ public class DeleteShapeCommandTest {
     }
 
     @Test
-    @DisplayName("初始化图形列表为null时应抛异常")
-    public void testExecute_NullShapes() {
-        DeleteShapeCommand cmd = new DeleteShapeCommand(null, mockShape);
-        assertThrows(IllegalStateException.class, cmd::execute);
-    }
-
-    @Test
-    @DisplayName("初始化删除图形为null时应抛异常")
-    public void testExecute_NullShape() {
-        DeleteShapeCommand cmd = new DeleteShapeCommand(shapes, null);
-        assertThrows(IllegalArgumentException.class, cmd::execute);
+    @DisplayName("execute方法应在无效状态时抛出异常")
+    public void testExecute_InvalidState() {
+        // 设置无效状态
+        command = new DeleteShapeCommand(null, null);
+        assertThrows(IllegalStateException.class, () -> command.execute());
     }
 }

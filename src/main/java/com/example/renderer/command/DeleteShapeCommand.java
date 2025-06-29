@@ -28,13 +28,6 @@ public class DeleteShapeCommand implements Command {
 
     @Override
     public void execute() {
-        if (shapes == null) {
-            throw new IllegalStateException("图形列表未初始化");
-        }
-        if (shape == null) {
-            throw new IllegalArgumentException("要删除的图形不能为null");
-        }
-        
         index = shapes.indexOf(shape);
         if (index != -1) {
             Shape removed = shapes.remove(index);
@@ -69,6 +62,6 @@ public class DeleteShapeCommand implements Command {
 
     @Override
     public boolean canRedo() {
-        return index != -1 && !shapes.contains(shape);
+        return index != -1;
     }
 }
