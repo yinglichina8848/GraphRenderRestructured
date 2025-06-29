@@ -28,10 +28,15 @@ package com.example.renderer.bridge;
 public interface Renderer {
     /**
      * 设置渲染样式
+     * 
+     * <p>此方法用于配置图形绘制时的线条、填充和线宽属性</p>
+     * 
      * @param stroke 线条颜色(支持CSS颜色格式)
      * @param fill 填充颜色(支持CSS颜色格式)
      * @param width 线宽(像素，必须>=0)
      * @throws IllegalArgumentException 如果宽度为负数
+     * @author Aider+SillconFlow-Deepseek-R1
+     * @since 2025-06-29
      */
     void setStyle(String stroke, String fill, int width) throws IllegalArgumentException;
     

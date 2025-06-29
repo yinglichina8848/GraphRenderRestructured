@@ -121,41 +121,39 @@ public class Ellipse implements Shape {
     }
 
     /**
-     * 获取椭圆中心X坐标。
+     * 获取椭圆中心X坐标值（像素）。
      * 
      * @return 椭圆中心的X坐标值（像素）
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public int getX() { return x; }
     
     /**
-     * 获取椭圆中心Y坐标。
+     * 获取椭圆中心Y坐标值（像素）。
      * 
      * @return 椭圆中心的Y坐标值（像素）
-     * @author Aider+DeepSeek
-     * @since 2025-06-24
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * 
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public int getY() { return y; }
     
     /**
-     * 设置椭圆中心X坐标
-     * @param x 椭圆的新X坐标
+     * 设置椭圆中心的新X坐标
+     * @param x 椭圆的新X坐标值
      * 
-     * @author Aider+SillconFlow-DeepSeek
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public void setX(int x) { this.x = x; }
     
     /**
-     * 设置椭圆中心Y坐标
-     * @param y 椭圆的新Y坐标
+     * 设置椭圆中心的新Y坐标
+     * @param y 椭圆的新Y坐标值
      * 
-     * @author Aider+SillconFlow-DeepSeek
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     public void setY(int y) { this.y = y; }

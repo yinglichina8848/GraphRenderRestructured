@@ -68,8 +68,7 @@ public interface Shape {
     /**
      * 创建并返回当前图形的一个深拷贝。
      * 
-     * <p>此方法返回图形对象的精确副本，包括所有内部状态数据。</p>
-     * <p>对于包含引用类型字段的对象，需要递归实现深拷贝。</p>
+     * <p>此方法返回图形对象的精确副本，包括所有内部状态数据。对于包含引用类型字段的对象，需要递归实现深拷贝。</p>
      * 
      * <p>实现要求：
      * <ul>
@@ -81,7 +80,7 @@ public interface Shape {
      * @return 图形的新副本
      * @throws CloneNotSupportedException 如果图形不支持克隆
      * 
-     * @author Aider+SillconFlow-DeepSeek-R1
+     * @author Aider+SillconFlow-Deepseek-R1
      * @since 2025-06-29
      */
     Shape clone() throws CloneNotSupportedException;
