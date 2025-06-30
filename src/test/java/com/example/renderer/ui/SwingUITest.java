@@ -174,10 +174,10 @@ public class SwingUITest {
         testUI.setVisible(false);
         testUI.showMessage("Test message");
 
-        // 验证 JOptionPane.showMessageDialog 被调用
+        // 验证 JOptionPane.showMessageDialog 被调用，所有参数都使用匹配器
         mockedJOptionPane.verify(() -> JOptionPane.showMessageDialog(
-            testUI, 
-            "Test message",
+            eq(testUI), 
+            eq("Test message"),
             anyString(), 
             eq(JOptionPane.INFORMATION_MESSAGE)
         ), times(1));
