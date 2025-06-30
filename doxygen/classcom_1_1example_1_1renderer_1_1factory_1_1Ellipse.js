@@ -13,5 +13,6 @@ var classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse =
     [ "setHeight", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a9c6e1cce0013c0c18d19d8251aa86118", null ],
     [ "setWidth", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a7277db2f2dea90d093d0de197e2819ff", null ],
     [ "setX", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a7ef24a03a98328f6f2e453609aac6661", null ],
-    [ "setY", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a765cc29068e7e94d572914ae87dce8fe", null ]
+    [ "setY", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#a765cc29068e7e94d572914ae87dce8fe", null ],
+    [ "toString", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html#afdc099fa30fc8bf2542b6966a3aed34b", null ]
 ];

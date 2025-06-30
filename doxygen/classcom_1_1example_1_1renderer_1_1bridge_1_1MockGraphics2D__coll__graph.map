@@ -1,5 +1,5 @@
 <map id="com.example.renderer.bridge.MockGraphics2D" name="com.example.renderer.bridge.MockGraphics2D">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,79,224,119"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="66,5,163,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,44,117,79,112,79,112,44"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,95,224,136"/>
+<area shape="rect" id="node2" title=" " alt="" coords="15,5,113,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="137,5,193,32"/>
 </map>

@@ -11,5 +11,6 @@ var classcom_1_1example_1_1renderer_1_1factory_1_1Triangle =
     [ "getY2", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a1ab1af5be6782c56d16de7cf9cecf0dc", null ],
     [ "getY3", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#ab8693d7dff18ad8d058df6543f6dd366", null ],
     [ "move", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a0aa53deb7dccf8acd100a53a76d414d0", null ],
-    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44", null ]
+    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a14d6dde3df18dfcf74f054af84ce5d44", null ],
+    [ "toString", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html#a553f836eeefd82532c189309604a21ff", null ]
 ];

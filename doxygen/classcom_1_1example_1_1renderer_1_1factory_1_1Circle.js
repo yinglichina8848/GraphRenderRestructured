@@ -9,5 +9,6 @@ var classcom_1_1example_1_1renderer_1_1factory_1_1Circle =
     [ "getX", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a5d9565191f8b24714037adaafb0145f2", null ],
     [ "getY", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#adbf586a9c1761dce695dce96c7539a18", null ],
     [ "move", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a7dc56b196866cc4d444f59585902442c", null ],
-    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a", null ]
+    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#ac32a767950b0417badcb3b445052cc8a", null ],
+    [ "toString", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html#a0e19f393c95506ec4ebf2337fd5aa12d", null ]
 ];

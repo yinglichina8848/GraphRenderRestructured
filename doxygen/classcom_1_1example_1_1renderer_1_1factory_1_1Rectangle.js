@@ -9,5 +9,6 @@ var classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle =
     [ "getX", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a04a2b038cf6f21b0875a6bce7dd479e0", null ],
     [ "getY", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a8086515b4c50de24274dace98a8ca9ea", null ],
     [ "move", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a85e3c1cc786f02d3b62399193b44a554", null ],
-    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4", null ]
+    [ "render", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#ade17894b1162081c6948522ddbd325b4", null ],
+    [ "toString", "classcom_1_1example_1_1renderer_1_1factory_1_1Rectangle.html#a7e3867c3afe30b795f085dbcd28f1571", null ]
 ];
