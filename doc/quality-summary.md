@@ -22,9 +22,9 @@
 
 | 指标         | 覆盖率 |
 |--------------|--------|
-| Total        | 78.0%  |
-| com.example.renderer.ui | 12.0%  |
-| com.example.renderer.factory | 88.0%  |
+| Total        | 76.0%  |
+| com.example.renderer.ui | 41.0%  |
+| com.example.renderer.factory | 76.0%  |
 | com.example.renderer.proxy | 25.0%  |
 | com.example.renderer.bridge | 80.0%  |
 | com.example.renderer.adapter | 100.0%  |
