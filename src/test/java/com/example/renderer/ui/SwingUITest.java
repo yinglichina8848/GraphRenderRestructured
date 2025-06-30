@@ -99,16 +99,20 @@ public class SwingUITest extends SwingUI {
 
     @Test
     void testSaveLoadShapes() throws Exception {
+        // 创建临时文件对象
+        final File saveFile = new File("test_save.json");
+        final File openFile = new File("test_load.json");
+
         // 创建测试子类，重写对话框方法
         SwingUI testUI = new SwingUI() {
             @Override
             protected File selectSaveFile() {
-                return new File("test_save.json");
+                return saveFile;
             }
 
             @Override
             protected File selectOpenFile() {
-                return new File("test_load.json");
+                return openFile;
             }
 
             @Override
@@ -124,16 +128,14 @@ public class SwingUITest extends SwingUI {
         // 测试保存操作
         JButton btnSave = (JButton) findComponentByName(testUI, "btnSave");
         btnSave.doClick();
-        // 获取实际保存时使用的文件路径（绝对路径）
-        String actualSavePath = new File("test_save.json").getAbsolutePath();
-        verify(manager).saveShapesToFile(anyList(), eq(actualSavePath));
+        // 使用文件对象的绝对路径进行验证
+        verify(manager).saveShapesToFile(anyList(), eq(saveFile.getAbsolutePath()));
 
         // 测试加载操作
         JButton btnLoad = (JButton) findComponentByName(testUI, "btnLoad");
         btnLoad.doClick();
-        // 获取实际加载时使用的文件路径（绝对路径）
-        String actualLoadPath = new File("test_load.json").getAbsolutePath();
-        verify(manager).loadShapesFromFile(eq(actualLoadPath));
+        // 使用文件对象的绝对路径进行验证
+        verify(manager).loadShapesFromFile(eq(openFile.getAbsolutePath()));
     }
 
     // 确保保存和加载按钮存在于UI中
