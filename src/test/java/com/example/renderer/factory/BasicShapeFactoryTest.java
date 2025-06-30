@@ -3,9 +3,14 @@ package com.example.renderer.factory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.awt.Point;
 
 public class BasicShapeFactoryTest {
     private BasicShapeFactory factory;
@@ -26,6 +31,8 @@ public class BasicShapeFactoryTest {
         Circle circle = factory.createCircle(TEST_X, TEST_Y, TEST_DIMENSION);
         assertNotNull(circle);
         assertEquals(Circle.class, circle.getClass());
+        assertEquals(new Point(TEST_X, TEST_Y), circle.getPosition());
+        assertEquals(TEST_DIMENSION, circle.getRadius());
     }
 
     @Test
@@ -40,6 +47,9 @@ public class BasicShapeFactoryTest {
         Rectangle rectangle = factory.createRectangle(TEST_X, TEST_Y, TEST_DIMENSION, TEST_DIMENSION);
         assertNotNull(rectangle);
         assertEquals(Rectangle.class, rectangle.getClass());
+        assertEquals(new Point(TEST_X, TEST_Y), rectangle.getPosition());
+        assertEquals(TEST_DIMENSION, rectangle.getWidth());
+        assertEquals(TEST_DIMENSION, rectangle.getHeight());
     }
     
     @Test
@@ -61,6 +71,12 @@ public class BasicShapeFactoryTest {
         Triangle triangle = factory.createTriangle(TEST_X1, TEST_Y1, TEST_X2, TEST_Y2, TEST_X3, TEST_Y3);
         assertNotNull(triangle);
         assertEquals(Triangle.class, triangle.getClass());
+        List<Point> expected = Arrays.asList(
+            new Point(TEST_X1, TEST_Y1),
+            new Point(TEST_X2, TEST_Y2),
+            new Point(TEST_X3, TEST_Y3)
+        );
+        assertIterableEquals(expected, triangle.getPoints());
     }
 
     @Test
@@ -69,12 +85,22 @@ public class BasicShapeFactoryTest {
             factory.createTriangle(-1, TEST_Y1, TEST_X2, TEST_Y2, TEST_X3, TEST_Y3);
         });
     }
+    
+    @Test
+    void testCreateTriangle_withDuplicatePoints() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            factory.createTriangle(10, 10, 20, 20, 10, 10);
+        });
+    }
 
     @Test
     void testCreateEllipse() {
         Ellipse ellipse = factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, TEST_DIMENSION);
         assertNotNull(ellipse);
         assertEquals(Ellipse.class, ellipse.getClass());
+        assertEquals(new Point(TEST_X, TEST_Y), ellipse.getPosition());
+        assertEquals(TEST_DIMENSION, ellipse.getXRadius());
+        assertEquals(TEST_DIMENSION, ellipse.getYRadius());
     }
     
     @Test
@@ -88,6 +114,13 @@ public class BasicShapeFactoryTest {
     void testCreateEllipse_withNegativeHeight_throwsException() {
         assertThrows(IllegalArgumentException.class, () -> {
             factory.createEllipse(TEST_X, TEST_Y, TEST_DIMENSION, -1);
+        });
+    }
+    
+    @Test
+    void testCreateShape_UnsupportedType() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            factory.createShape("Pentagon", new Object[]{});
         });
     }
 }
