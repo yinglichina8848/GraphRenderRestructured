@@ -238,15 +238,13 @@ public class SwingUI extends JFrame {
      * @see PersistenceManager#saveShapesToFile(List, String)
      */
     private void saveShapes() {
-        JFileChooser chooser = new JFileChooser();
-        int ret = chooser.showSaveDialog(this);
-        if (ret == JFileChooser.APPROVE_OPTION) {
-            File file = chooser.getSelectedFile();
+        File file = selectSaveFile();
+        if (file != null) {
             try {
                 PersistenceManager.getInstance().saveShapesToFile(shapes, file.getAbsolutePath());
-                JOptionPane.showMessageDialog(this, "保存成功");
+                showMessage("保存成功");
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, "保存失败: " + ex.getMessage());
+                showMessage("保存失败: " + ex.getMessage());
             }
         }
     }
