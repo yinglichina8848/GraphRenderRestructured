@@ -13,8 +13,8 @@ else
   REPO_URL="git@github.com:yinglichina8848/GraphRenderRestructured.git"
 fi
 
-echo "🛠️ 构建 Maven site 和报告..."
-mvn clean verify site
+echo "🛠️ 使用 xvfb-run 构建 Maven site 和报告..."
+xvfb-run --auto-servernum --server-args="-screen 0 1024x768x16" mvn clean verify site
 
 echo "📁 拷贝 Doxygen（如果存在）..."
 DOXYGEN_HTML=docs/html
@@ -22,10 +22,11 @@ if [ -d "$DOXYGEN_HTML" ]; then
   mkdir -p "$SITE_DIR/doxygen"
   cp -r "$DOXYGEN_HTML"/* "$SITE_DIR/doxygen/"
 fi
-# 2. 如果有 CHANGELOG.md，则复制到 doc/
-echo "📁 拷贝 CHANGELOG.md（如果存在）..."
+
+echo "📁 拷贝 CHANGELOG.md（如果存在）到 doc/ 目录..."
 if [ -f CHANGELOG.md ]; then
   cp CHANGELOG.md doc/
+  echo "✅ 已复制 CHANGELOG.md 到 doc/CHANGELOG.md"
 fi
 
 echo "📝 转换 Markdown 为 HTML..."
@@ -40,6 +41,7 @@ echo "📄 拷贝 PDF 文件..."
 if compgen -G "$DOCS_SRC/*.pdf" > /dev/null; then
   cp "$DOCS_SRC"/*.pdf "$DOCS_HTML/"
 fi
+
 echo "📋 渲染 index.html..."
 python3 scripts/render-index.py
 
@@ -66,4 +68,3 @@ echo "🧹 清理 worktree..."
 git worktree remove "$WORKTREE_DIR" --force || true
 
 echo "🎉 发布完成！访问：https://yinglichina8848.github.io/GraphRenderRestructured/"
-

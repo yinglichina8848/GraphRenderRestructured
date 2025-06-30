@@ -1,6 +1,7 @@
 # Update the work flow on Github Actions.
 touch publish.sh
 touch push.sh
+git cz
 git pull origin main
 git add doc/CHANGELOG.md
 git add publish.sh
