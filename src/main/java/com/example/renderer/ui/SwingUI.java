@@ -280,17 +280,6 @@ public class SwingUI extends JFrame {
         }
     }
 
-    protected void saveShapes() {
-        File file = selectSaveFile();
-        if (file != null) {
-            try {
-                PersistenceManager.getInstance().saveShapesToFile(shapes, file.getAbsolutePath());
-                showMessage("保存成功");
-            } catch (Exception ex) {
-                showMessage("保存失败: " + ex.getMessage());
-            }
-        }
-    }
 
     protected void loadShapes() {
         File file = selectOpenFile();
