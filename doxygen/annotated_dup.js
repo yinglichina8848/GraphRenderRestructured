@@ -43,6 +43,7 @@ var annotated_dup =
           ] ],
           [ "factory", "namespacecom_1_1example_1_1renderer_1_1factory.html", [
             [ "BasicShapeFactory", "classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory.html", "classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactory" ],
+            [ "BasicShapeFactoryTest", "classcom_1_1example_1_1renderer_1_1factory_1_1BasicShapeFactoryTest.html", null ],
             [ "Circle", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle.html", "classcom_1_1example_1_1renderer_1_1factory_1_1Circle" ],
             [ "CircleTest", "classcom_1_1example_1_1renderer_1_1factory_1_1CircleTest.html", null ],
             [ "Ellipse", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse.html", "classcom_1_1example_1_1renderer_1_1factory_1_1Ellipse" ],
@@ -52,6 +53,9 @@ var annotated_dup =
             [ "Shape", "interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape.html", "interfacecom_1_1example_1_1renderer_1_1factory_1_1Shape" ],
             [ "ShapeFactory", "interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory.html", "interfacecom_1_1example_1_1renderer_1_1factory_1_1ShapeFactory" ],
             [ "ShapeFactoryImpl", "classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl.html", "classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImpl" ],
+            [ "ShapeFactoryImplTest", "classcom_1_1example_1_1renderer_1_1factory_1_1ShapeFactoryImplTest.html", null ],
+            [ "ShapeValidator", "classcom_1_1example_1_1renderer_1_1factory_1_1ShapeValidator.html", null ],
+            [ "ShapeValidatorTest", "classcom_1_1example_1_1renderer_1_1factory_1_1ShapeValidatorTest.html", null ],
             [ "Triangle", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle.html", "classcom_1_1example_1_1renderer_1_1factory_1_1Triangle" ],
             [ "TriangleTest", "classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest.html", "classcom_1_1example_1_1renderer_1_1factory_1_1TriangleTest" ]
           ] ],
@@ -74,8 +78,11 @@ var annotated_dup =
           ] ],
           [ "ui", "namespacecom_1_1example_1_1renderer_1_1ui.html", [
             [ "DrawingPanel", "classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel.html", "classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanel" ],
+            [ "DrawingPanelTest", "classcom_1_1example_1_1renderer_1_1ui_1_1DrawingPanelTest.html", null ],
             [ "MainUI", "classcom_1_1example_1_1renderer_1_1ui_1_1MainUI.html", null ],
-            [ "SwingUI", "classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html", "classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI" ]
+            [ "MainUITest", "classcom_1_1example_1_1renderer_1_1ui_1_1MainUITest.html", null ],
+            [ "SwingUI", "classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI.html", "classcom_1_1example_1_1renderer_1_1ui_1_1SwingUI" ],
+            [ "SwingUITest", "classcom_1_1example_1_1renderer_1_1ui_1_1SwingUITest.html", null ]
           ] ],
           [ "util", null, [
             [ "RuntimeTypeAdapterFactory", "classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory.html", "classcom_1_1example_1_1renderer_1_1util_1_1RuntimeTypeAdapterFactory" ]

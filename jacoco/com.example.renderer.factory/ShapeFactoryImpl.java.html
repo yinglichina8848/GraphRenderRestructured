@@ -3,36 +3,42 @@
 /**
  * ShapeFactory接口的默认实现类
  */
-<span class="nc" id="L6">public class ShapeFactoryImpl implements ShapeFactory {</span>
+<span class="fc" id="L6">public class ShapeFactoryImpl implements ShapeFactory {</span>
     @Override
     public Circle createCircle(int x, int y, int radius) {
-<span class="nc bnc" id="L9" title="All 2 branches missed.">        if (radius &lt;= 0) {</span>
-<span class="nc" id="L10">            throw new IllegalArgumentException(&quot;圆的半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
+<span class="fc bfc" id="L9" title="All 2 branches covered.">        if (radius &lt;= 0) {</span>
+<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;圆的半径必须为正数 (当前值: &quot; + radius + &quot;)&quot;);</span>
         }
-<span class="nc" id="L12">        Circle circle = new Circle(x, y, radius);</span>
-<span class="nc" id="L13">        System.out.printf(&quot;[INFO] 创建圆形 - 位置: (%d,%d), 半径: %d\n&quot;, x, y, radius);</span>
-<span class="nc" id="L14">        return circle;</span>
+<span class="fc" id="L12">        Circle circle = new Circle(x, y, radius);</span>
+<span class="fc" id="L13">        System.out.printf(&quot;[INFO] 创建圆形 - 位置: (%d,%d), 半径: %d\n&quot;, x, y, radius);</span>
+<span class="fc" id="L14">        return circle;</span>
     }
 
     @Override
     public Rectangle createRectangle(int x, int y, int width, int height) {
-<span class="nc bnc" id="L19" title="All 4 branches missed.">        if (width &lt;= 0 || height &lt;= 0) {</span>
-<span class="nc" id="L20">            throw new IllegalArgumentException(</span>
-<span class="nc" id="L21">                String.format(&quot;矩形的宽高必须为正数 (width=%d, height=%d)&quot;, width, height));</span>
+<span class="fc bfc" id="L19" title="All 4 branches covered.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="fc" id="L20">            throw new IllegalArgumentException(</span>
+<span class="fc" id="L21">                String.format(&quot;矩形的宽高必须为正数 (width=%d, height=%d)&quot;, width, height));</span>
         }
-<span class="nc" id="L23">        return new Rectangle(x, y, width, height);</span>
+<span class="fc" id="L23">        return new Rectangle(x, y, width, height);</span>
     }
 
     @Override
     public Triangle createTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-<span class="nc" id="L28">        System.out.printf(&quot;[INFO] 创建三角形 - 顶点: (%d,%d), (%d,%d), (%d,%d)\n&quot;, </span>
-<span class="nc" id="L29">            x1, y1, x2, y2, x3, y3);</span>
-<span class="nc" id="L30">        return new Triangle(x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L28">        ShapeValidator.validatePosition(x1, y1);</span>
+<span class="fc" id="L29">        ShapeValidator.validatePosition(x2, y2);</span>
+<span class="fc" id="L30">        ShapeValidator.validatePosition(x3, y3);</span>
+<span class="fc" id="L31">        System.out.printf(&quot;[INFO] 创建三角形 - 顶点: (%d,%d), (%d,%d), (%d,%d)\n&quot;, </span>
+<span class="fc" id="L32">            x1, y1, x2, y2, x3, y3);</span>
+<span class="fc" id="L33">        return new Triangle(x1, y1, x2, y2, x3, y3);</span>
     }
 
     @Override
     public Ellipse createEllipse(int x, int y, int width, int height) {
-<span class="nc" id="L35">        return new Ellipse(x, y, width, height);</span>
+<span class="fc bfc" id="L38" title="All 4 branches covered.">        if (width &lt;= 0 || height &lt;= 0) {</span>
+<span class="fc" id="L39">            throw new IllegalArgumentException(&quot;椭圆的宽度和高度必须为正数。 (width=&quot; + width + &quot;, height=&quot; + height + &quot;)&quot;);</span>
+        }
+<span class="fc" id="L41">        return new Ellipse(x, y, width, height);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -11,25 +11,40 @@
  *   &lt;li&gt;椭圆(Ellipse)&lt;/li&gt;
  * &lt;/ul&gt;
  */
-<span class="nc" id="L14">public class BasicShapeFactory implements ShapeFactory {</span>
+<span class="fc" id="L14">public class BasicShapeFactory implements ShapeFactory {</span>
     @Override
     public Circle createCircle(int x, int y, int radius) {
-<span class="nc" id="L17">        return new Circle(x, y, radius);</span>
+<span class="fc" id="L17">        ShapeValidator.validatePosition(x, y);</span>
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (radius &lt; 0) {</span>
+<span class="fc" id="L19">            throw new IllegalArgumentException(&quot;半径不能为负数&quot;);</span>
+        }
+<span class="fc" id="L21">        return new Circle(x, y, radius);</span>
     }
 
     @Override
     public Rectangle createRectangle(int x, int y, int width, int height) {
-<span class="nc" id="L22">        return new Rectangle(x, y, width, height);</span>
+<span class="fc" id="L26">        ShapeValidator.validatePosition(x, y);</span>
+<span class="fc bfc" id="L27" title="All 4 branches covered.">        if (width &lt; 0 || height &lt; 0) {</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException(&quot;宽度和高度不能为负数&quot;);</span>
+        }
+<span class="fc" id="L30">        return new Rectangle(x, y, width, height);</span>
     }
 
     @Override
     public Triangle createTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
-<span class="nc" id="L27">        return new Triangle(x1, y1, x2, y2, x3, y3);</span>
+<span class="nc" id="L35">        ShapeValidator.validatePosition(x1, y1);</span>
+<span class="nc" id="L36">        ShapeValidator.validatePosition(x2, y2);</span>
+<span class="nc" id="L37">        ShapeValidator.validatePosition(x3, y3);</span>
+<span class="nc" id="L38">        return new Triangle(x1, y1, x2, y2, x3, y3);</span>
     }
 
     @Override
     public Ellipse createEllipse(int x, int y, int width, int height) {
-<span class="nc" id="L32">        return new Ellipse(x, y, width, height);</span>
+<span class="nc" id="L43">        ShapeValidator.validatePosition(x, y);</span>
+<span class="nc bnc" id="L44" title="All 4 branches missed.">        if (width &lt; 0 || height &lt; 0) {</span>
+<span class="nc" id="L45">            throw new IllegalArgumentException(&quot;宽度和高度不能为负数&quot;);</span>
+        }
+<span class="nc" id="L47">        return new Ellipse(x, y, width, height);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
