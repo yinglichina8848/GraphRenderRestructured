@@ -1,5 +1,15 @@
 var NAVTREEINDEX0 =
 {
+"":[1,0,0],
+"":[1,0,0,0],
+"":[1,0,0,0,0],
+"":[1,0,0,0,0,12],
+"":[1,0,0,0,0,13],
+"":[1,0,0,0,0,4],
+"":[1,0,0,0,0,5],
+"":[1,0,0,0,0,7],
+"":[1,0,0,0,0,8],
+"":[1,0,0,0,0,9],
 "annotated.html":[2,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html":[2,0,0,0,0,0,0],
 "classcom_1_1example_1_1renderer_1_1adapter_1_1LegacyRendererAdapter.html#a0822a7f731b3083cb65e8580aafa2b12":[2,0,0,0,0,0,0,7],
@@ -239,15 +249,5 @@ var NAVTREEINDEX0 =
 "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#a7dc8ffc78dce589f67a956aa217ba256":[2,0,0,0,0,2,7,5],
 "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#a9f0779109250edb136af1733c49cdd0d":[2,0,0,0,0,2,7,4],
 "classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#aa1e16f7d9f0a1eae983fcd0942a7eb88":[2,0,0,0,0,2,7,8],
-"classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#abba86a7607ffe47373a93b8faacf3eec":[2,0,0,0,0,2,7,2],
-"classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#af0417246e257418f5056f4c9b77b05f5":[2,0,0,0,0,2,7,6],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html":[2,0,0,0,0,2,4],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c040d06153c2272bd3534037ccbeccf":[2,0,0,0,0,2,4,5],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a4c1369e01556b93a5fa11ea888b8183b":[2,0,0,0,0,2,4,3],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a544f5330ee31bb00f14eb8f70e8588c2":[2,0,0,0,0,2,4,2],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#a986ee81b39ef610656626bb26f5d73c2":[2,0,0,0,0,2,4,4],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#aa7e2812b370fa11e235bbdfdf44be930":[2,0,0,0,0,2,4,1],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ab961f4aa33e22e7edb846ce2da0fa5f1":[2,0,0,0,0,2,4,0],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManager.html#ad8ea4408ac901ae7a98bd479c634fcce":[2,0,0,0,0,2,4,6],
-"classcom_1_1example_1_1renderer_1_1command_1_1UndoManagerTest.html":[2,0,0,0,0,2,8]
+"classcom_1_1example_1_1renderer_1_1command_1_1MoveShapeCommandTest.html#abba86a7607ffe47373a93b8faacf3eec":[2,0,0,0,0,2,7,2]
 };
