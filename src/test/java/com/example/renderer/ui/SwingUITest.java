@@ -124,12 +124,16 @@ public class SwingUITest extends SwingUI {
         // 测试保存操作
         JButton btnSave = (JButton) findComponentByName(testUI, "btnSave");
         btnSave.doClick();
-        verify(manager).saveShapesToFile(anyList(), eq("test_save.json"));
+        // 获取实际保存时使用的文件路径（绝对路径）
+        String actualSavePath = new File("test_save.json").getAbsolutePath();
+        verify(manager).saveShapesToFile(anyList(), eq(actualSavePath));
 
         // 测试加载操作
         JButton btnLoad = (JButton) findComponentByName(testUI, "btnLoad");
         btnLoad.doClick();
-        verify(manager).loadShapesFromFile(eq("test_load.json"));
+        // 获取实际加载时使用的文件路径（绝对路径）
+        String actualLoadPath = new File("test_load.json").getAbsolutePath();
+        verify(manager).loadShapesFromFile(eq(actualLoadPath));
     }
 
     // 确保保存和加载按钮存在于UI中

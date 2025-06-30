@@ -71,11 +71,13 @@ public class DrawingPanel extends JPanel {
         Objects.requireNonNull(g, "Graphics context cannot be null");
         super.paintComponent(g);
         System.out.println("绘制图形数量：" + shapes.size());
-        if (renderer instanceof SwingRenderer swingRenderer) {
-            swingRenderer.setGraphics((Graphics2D) g);
-            for (Shape shape : shapes) {
-                shape.render(renderer);
-            }
+        // 将渲染器设置为当前图形上下文
+        if (renderer instanceof SwingRenderer) {
+            ((SwingRenderer) renderer).setGraphics((Graphics2D) g);
+        }
+        // 渲染所有图形
+        for (Shape shape : shapes) {
+            shape.render(renderer);
         }
     }
 }
