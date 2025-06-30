@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>graph-render</artifactId>
-    <version>1.0.4</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
     <name>GraphRenderSystem</name>
     <description>图形渲染系统，设计模式综合练习项目</description>
