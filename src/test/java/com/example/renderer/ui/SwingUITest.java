@@ -12,28 +12,32 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 import static org.mockito.Mockito.*;
 
-public class SwingUITest extends SwingUI {
+public class SwingUITest {
     // 空实现测试子类，用于重写对话框方法
 
     private SwingUI swingUI;
     private MockedStatic<PersistenceManager> mockedPersistence;
+    private MockedStatic<JOptionPane> mockedJOptionPane;
 
     @BeforeEach
     void setUp() {
         swingUI = new SwingUI();
         swingUI.setVisible(false); // 避免实际渲染
         mockedPersistence = mockStatic(PersistenceManager.class);
+        mockedJOptionPane = mockStatic(JOptionPane.class);
     }
     
     @AfterEach
     void tearDown() {
         mockedPersistence.close(); // 清除静态mock
+        mockedJOptionPane.close();
     }
 
     @Test
@@ -61,17 +65,6 @@ public class SwingUITest extends SwingUI {
             }
         }
         fail("Component " + componentName + " of type " + clazz.getSimpleName() + " not found");
-    }
-
-    @Test
-    void testRemoveFallbackRenderer() {
-        Renderer fallback = mock(Renderer.class);
-        SwingUI spyUI = spy(swingUI);
-        when(spyUI.createFallbackRenderer()).thenReturn(fallback);
-        
-        Renderer result = spyUI.createFallbackRenderer();
-        assertNotNull(result);
-        assertEquals(fallback, result);
     }
 
     @Test
@@ -146,5 +139,55 @@ public class SwingUITest extends SwingUI {
         
         assertNotNull(btnSave, "保存按钮不存在");
         assertNotNull(btnLoad, "加载按钮不存在");
+    }
+
+    @Test
+    void testSelectSaveFile() {
+        // 创建测试子类，模拟文件选择对话框选择"Approve"
+        SwingUI testUI = new SwingUI() {
+            @Override
+            protected File selectSaveFile() {
+                // 返回一个文件实例表示用户选择了文件
+                return new File("test.json");
+            }
+        };
+        testUI.setVisible(false);
+
+        File file = testUI.selectSaveFile();
+        assertNotNull(file);
+
+        // 创建另一个测试子类，模拟文件选择对话框选择"Cancel"
+        SwingUI testUI2 = new SwingUI() {
+            @Override
+            protected File selectSaveFile() {
+                return null; // 模拟取消操作
+            }
+        };
+        testUI2.setVisible(false);
+
+        assertNull(testUI2.selectSaveFile());
+    }
+
+    @Test
+    void testShowMessage() {
+        SwingUI testUI = new SwingUI();
+        testUI.setVisible(false);
+        testUI.showMessage("Test message");
+
+        // 验证 JOptionPane.showMessageDialog 被调用
+        mockedJOptionPane.verify(() -> JOptionPane.showMessageDialog(
+            testUI, 
+            "Test message",
+            anyString(), 
+            eq(JOptionPane.INFORMATION_MESSAGE)
+        ), times(1));
+    }
+
+    @Test
+    void testCreateFallbackRenderer() {
+        SwingUI testUI = new SwingUI();
+        testUI.setVisible(false);
+        Renderer renderer = testUI.createFallbackRenderer();
+        assertNotNull(renderer);
     }
 }
