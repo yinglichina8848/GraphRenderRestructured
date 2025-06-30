@@ -1,3 +1,8 @@
+## <small>1.1.1 (2025-06-30)</small>
+
+* Merge branch 'main' of github.com:yinglichina8848/GraphRenderRestructured ([58c932f](https://github.com/yinglichina8848/GraphRenderRestructured/commit/58c932f))
+* test: 触发版本变更 ([ee8272d](https://github.com/yinglichina8848/GraphRenderRestructured/commit/ee8272d))
+
 ## 1.1.0 (2025-06-30)
 
 * Based on the provided diffs, the changes involve refactoring the file selection logic in `SwingUI` t ([e5bc1bb](https://github.com/yinglichina8848/GraphRenderRestructured/commit/e5bc1bb))
